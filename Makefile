@@ -1,0 +1,2 @@
+build:
+	hugo --disableRSS=true

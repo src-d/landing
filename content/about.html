@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>source{d}</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/mobile.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700,800&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400italic' rel='stylesheet' type='text/css'>
+    <script src='https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js'></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function(f){
+			var element = f('.header-hide');
+			f(window).scroll(function(){
+				element['fade'+ (f(this).scrollTop() > 450 ? 'In': 'Out')](500);           
+			});
+		});
+	</script>
+    <script> 
+    google.maps.event.addDomListener(window, 'load', init);
+    var map;
+    function init() {
+        var mapOptions = {
+            center: new google.maps.LatLng(40.447123,-3.696845),
+            zoom: 16,
+            zoomControl: true,
+            zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.SMALL,
+            },
+            disableDoubleClickZoom: true,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            },
+            scaleControl: true,
+            scrollwheel: false,
+            panControl: false,
+            streetViewControl: false,
+            draggable : true,
+            overviewMapControl: false,
+            overviewMapControlOptions: {
+                opened: false,
+            },
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            styles: [
+
+  {
+
+    "featureType": "water",
+
+    "elementType": "geometry.fill",
+
+    "stylers": [
+
+      { "color": "#d3d3d3" }
+
+    ]
+
+  },{
+
+    "featureType": "transit",
+
+    "stylers": [
+
+      { "color": "#808080" },
+
+      { "visibility": "off" }
+
+    ]
+
+  },{
+
+    "featureType": "road.highway",
+
+    "elementType": "geometry.stroke",
+
+    "stylers": [
+
+      { "visibility": "on" },
+
+      { "color": "#b3b3b3" }
+
+    ]
+
+  },{
+
+    "featureType": "road.highway",
+
+    "elementType": "geometry.fill",
+
+    "stylers": [
+
+      { "color": "#ffffff" }
+
+    ]
+
+  },{
+
+    "featureType": "road.local",
+
+    "elementType": "geometry.fill",
+
+    "stylers": [
+
+      { "visibility": "on" },
+
+      { "color": "#ffffff" },
+
+      { "weight": 1.8 }
+
+    ]
+
+  },{
+
+    "featureType": "road.local",
+
+    "elementType": "geometry.stroke",
+
+    "stylers": [
+
+      { "color": "#d7d7d7" }
+
+    ]
+
+  },{
+
+    "featureType": "poi",
+
+    "elementType": "geometry.fill",
+
+    "stylers": [
+
+      { "visibility": "on" },
+
+      { "color": "#ebebeb" }
+
+    ]
+
+  },{
+
+    "featureType": "administrative",
+
+    "elementType": "geometry",
+
+    "stylers": [
+
+      { "color": "#a7a7a7" }
+
+    ]
+
+  },{
+
+    "featureType": "road.arterial",
+
+    "elementType": "geometry.fill",
+
+    "stylers": [
+
+      { "color": "#ffffff" }
+
+    ]
+
+  },{
+
+    "featureType": "road.arterial",
+
+    "elementType": "geometry.fill",
+
+    "stylers": [
+
+      { "color": "#ffffff" }
+
+    ]
+
+  },{
+
+    "featureType": "landscape",
+
+    "elementType": "geometry.fill",
+
+    "stylers": [
+
+      { "visibility": "on" },
+
+      { "color": "#efefef" }
+
+    ]
+
+  },{
+
+    "featureType": "road",
+
+    "elementType": "labels.text.fill",
+
+    "stylers": [
+
+      { "color": "#696969" }
+
+    ]
+
+  },{
+
+    "featureType": "administrative",
+
+    "elementType": "labels.text.fill",
+
+    "stylers": [
+
+      { "visibility": "on" },
+
+      { "color": "#737373" }
+
+    ]
+
+  },{
+
+    "featureType": "poi",
+
+    "elementType": "labels.icon",
+
+    "stylers": [
+
+      { "visibility": "off" }
+
+    ]
+
+  },{
+
+    "featureType": "poi",
+
+    "elementType": "labels",
+
+    "stylers": [
+
+      { "visibility": "off" }
+
+    ]
+
+  },{
+
+    "featureType": "road.arterial",
+
+    "elementType": "geometry.stroke",
+
+    "stylers": [
+
+      { "color": "#d6d6d6" }
+
+    ]
+
+  },{
+
+    "featureType": "road",
+
+    "elementType": "labels.icon",
+
+    "stylers": [
+
+      { "visibility": "off" }
+
+    ]
+
+  },{
+
+  },{
+
+    "featureType": "poi",
+
+    "elementType": "geometry.fill",
+
+    "stylers": [
+
+      { "color": "#dadada" }
+
+    ]
+
+  }
+
+],
+        }
+        var mapElement = document.getElementById('map-tyba');
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var locations = [
+['Tyba', 'undefined', 'undefined', 'undefined', 'undefined', 40.4467541, -3.697584699999993, 'https://mapbuildr.com/assets/img/markers/default.png']
+        ];
+        for (i = 0; i < locations.length; i++) {
+			if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+			if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+			if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+            marker = new google.maps.Marker({
+                icon: markericon,
+                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+                map: map,
+                title: locations[i][0],
+                desc: description,
+                tel: telephone,
+                email: email,
+                web: web
+            });
+link = '';     }
+
+}
+</script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="header-wrap">
+          <div class="sourced-logo"><a href="#"><img src="image/logo.png" alt="logo"></a></div>
+          <div class="main-menu">
+            <nav>
+              <a href="index.html">For Developers</a>
+              <a href="company.html">For Companies</a>
+              <a href="about.html" class="active">About</a>
+              <a href="faq.html">FAQ</a>
+            </nav>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="header-hide">
+        <div class="header-wrap">
+          <div class="sourced-logo"><a href="#"><img src="image/logo.png" alt="logo"></a></div>
+          <div class="main-menu">
+            <nav>
+              <a href="index.html">For Developers</a>
+              <a href="company.html">For Companies</a>
+              <a href="about.html" class="active">About</a>
+              <a href="faq.html">FAQ</a>
+            </nav>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="triangle tr-team">
+        <div class="block-text">TECH RECRUITMENT BY DEVELOPERS FOR DEVELOPERS</div>
+        <p class="header-description">We've seen ourselves how hard it is to recruit technical talent and how much of a pain it is for developers to receive spammy emails from recruiters who have no clue what they're talking about. We're a team of X people from Y nationalities committed to fix this on a global scale.</p>
+      </div>
+      <div class="shape"><img src="image/trian.svg"></div>
+      <div class="content-wrapper">
+
+        <div class="block-white">
+			<h1 class="main-header">Team</h1>
+            <div class="our-team">Developer Relations</div>
+          <div class="team">
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/rachel.png"></div>
+              <div class="team-item-name1">Rachel</div>
+              <div class="team-item-name2">Guerin</div>
+              <div class="team-item-position">Head of Developer
+Relations</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/anna.png"></div>
+              <div class="team-item-name1">Anna</div>
+              <div class="team-item-name2">Tsolakou</div>
+              <div class="team-item-position">Junior Developer Relations</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/vasco.png"></div>
+              <div class="team-item-name1">Vasco</div>
+              <div class="team-item-name2">Ramos</div>
+              <div class="team-item-position">Junior Developer Relations</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/nofoto.png"></div>
+              <div class="team-item-name1">Georgina</div>
+              <div class="team-item-name2">Giannoukou</div>
+              <div class="team-item-position">Junior Developer Relations</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+          </div>
+
+          <div class="our-team">Engineering</div>
+          <div class="team">
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/alex.png"></div>
+              <div class="team-item-name1">Alex</div>
+              <div class="team-item-name2">Guerrieri</div>
+              <div class="team-item-position">Frontend Developer</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/philip.png"></div>
+              <div class="team-item-name1">Philip</div>
+              <div class="team-item-name2">Thomas</div>
+              <div class="team-item-position">Frontend Developer</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/guillermo.png"></div>
+              <div class="team-item-name1">Gullermo</div>
+              <div class="team-item-name2">Soberon</div>
+              <div class="team-item-position">Backend Developer</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/franky.png"></div>
+              <div class="team-item-name1">Franky</div>
+              <div class="team-item-name2">Rodriguez</div>
+              <div class="team-item-position">Backend Developer</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/miguel.png"></div>
+              <div class="team-item-name1">Jose Miguel</div>
+              <div class="team-item-name2">Molina</div>
+              <div class="team-item-position">Frontend Developer</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/daniel.png"></div>
+              <div class="team-item-name1">Daniel</div>
+              <div class="team-item-name2">Ripolles</div>
+              <div class="team-item-position">Backend Developer</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/curro.png"></div>
+              <div class="team-item-name1">Curro</div>
+              <div class="team-item-name2">Rodriguez</div>
+              <div class="team-item-position">DevOps</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/carlos.png"></div>
+              <div class="team-item-name1">Carlos</div>
+              <div class="team-item-name2">Cobo</div>
+              <div class="team-item-position">Backend Developer</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+          </div>
+          <div class="our-team">Customer Operations</div>
+          <div class="team">
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/chiara.png"></div>
+              <div class="team-item-name1">Chiara</div>
+              <div class="team-item-name2">Massironi</div>
+              <div class="team-item-position">Client Relationship Manager</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/thea.png"></div>
+              <div class="team-item-name1">Theodora</div>
+              <div class="team-item-name2">Filip</div>
+              <div class="team-item-position">Marketing</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/cris.png"></div>
+              <div class="team-item-name1">Cristina</div>
+              <div class="team-item-name2">Gutierrez</div>
+              <div class="team-item-position">Photographer &
+Content Editor</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/camille.png"></div>
+              <div class="team-item-name1">Camille</div>
+              <div class="team-item-name2">David</div>
+              <div class="team-item-position">Customer Operations
+Intern</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/nofoto.png"></div>
+              <div class="team-item-name1">Elena</div>
+              <div class="team-item-name2">Grebe</div>
+              <div class="team-item-position">Customer Operations
+Intern</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+          </div>
+
+          <div class="our-team">Product</div>
+          <div class="team">
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/pavel.png"></div>
+              <div class="team-item-name1">Pavel</div>
+              <div class="team-item-name2">Karpov</div>
+              <div class="team-item-position">Lead Designer</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+          </div>
+
+          <div class="our-team">Support</div>
+          <div class="team">
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/marge.png"></div>
+              <div class="team-item-name1">Margarida</div>
+              <div class="team-item-name2">Garcia</div>
+              <div class="team-item-position">Business Intelligence</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/carol.png"></div>
+              <div class="team-item-name1">Carolina</div>
+              <div class="team-item-name2">Blanco</div>
+              <div class="team-item-position">Human Resources</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/laura.png"></div>
+              <div class="team-item-name1">Laura</div>
+              <div class="team-item-name2">Sanchez</div>
+              <div class="team-item-position">Recruiter</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/zaida.png"></div>
+              <div class="team-item-name1">Zaida</div>
+              <div class="team-item-name2">Montes</div>
+              <div class="team-item-position">Office Manager</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+          </div>
+
+          <div class="our-team">Management</div>
+          <div class="team">
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/eiso.png"></div>
+              <div class="team-item-name1">Eiso</div>
+              <div class="team-item-name2">Kant</div>
+              <div class="team-item-position">Co-Founder & Managing
+Director</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/jorge.png"></div>
+              <div class="team-item-name1">Jorge</div>
+              <div class="team-item-name2">Schnura</div>
+              <div class="team-item-position">Co-Founder & VP of Product</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/phil.png"></div>
+              <div class="team-item-name1">Philip</div>
+              <div class="team-item-name2">von Have</div>
+              <div class="team-item-position">Co-Founder & VP Customer Development</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/maximo.png"></div>
+              <div class="team-item-name1">Maximo</div>
+              <div class="team-item-name2">Cuadros</div>
+              <div class="team-item-position">VP of Engineering</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+            <div class="team-item">
+              <div class="team-item-photo"><img src="image/tyba/ivan.png"></div>
+              <div class="team-item-name1">Ivan</div>
+              <div class="team-item-name2">Lopez</div>
+              <div class="team-item-position">VP of Customer Operations</div>
+              <div class="team-item-github"><a href="#">GitHub Profile</a></div>
+            </div>
+          </div>
+          
+          <h1 class="main-header">Company Stack</h1>
+          <div class="stack-container">
+          	<div class="stack-item stack1">
+            	<div class="stack-item-content">
+                	<img src="image/stack/linux.png">
+                    <p>OS supports the apps and services, and Docker infrastructures.</p>
+                </div>
+                <div class="stack-item-name">Operating System</div>
+            </div>
+            <div class="stack-item stack2">
+            	<div class="stack-item-content">
+                	<img src="image/stack/docker.png">
+                    <p>Docker allows you to package an application with all of its dependencies into a standardized unit for software development.</p>
+                </div>
+                <div class="stack-item-content">
+                	<img src="image/stack/etcd.png">
+                    <p>Distributed key value store that provides a reliable way to store data across a cluster of machines.</p>
+                </div>
+                <div class="stack-item-name">OS Level Virtualization</div>
+            </div>
+            <div class="stack-item stack2">
+            	<div class="stack-item-content">
+                	<img src="image/stack/mongodb.png">
+                    <p>MongoDB: Popular NoSQL database. We use it to storage our information about the candidates.</p>
+                </div>
+                <div class="stack-item-content">
+                	<img src="image/stack/elastic.png">
+                    <p>Searching and indexing server based on lucene, used to match the right information about our candidates.</p>
+                </div>
+                <div class="stack-item-name">Databases</div>
+            </div>
+            <div class="stack-item stack1">
+            	<div class="stack-item-content">
+                	<img src="image/stack/go.png">
+                    <p>We use Go as our core language.</p>
+                </div>
+                <div class="stack-item-name">Dev Language</div>
+            </div>
+            <div class="stack-item stack1">
+            	<div class="stack-item-content">
+                	<img src="image/stack/github.png">
+                    <p>Distributed key value store that provides a reliable way to store data across a cluster of machines.</p>
+                </div>
+                <div class="stack-item-name">Storage</div>
+            </div>
+            <div class="stack-item stack2">
+            	<div class="stack-item-content">
+                	<img src="image/stack/react.png">
+                    <p>React.js: JavaScript library to build user interfaces. We use it to build tools for the developer relations team.</p>
+                </div>
+                <div class="stack-item-content">
+                	<img src="image/stack/redux.png">
+                    <p>Redux: JavaScript predictable state container we use to manage the state of our React.js applications.</p>
+                </div>
+                <div class="stack-item-name">Frontend Tools</div>
+            </div>
+            <div class="stack-item stack3">
+            	<div class="stack-item-content">
+                	<img src="image/stack/ansible.png">
+                    <p>Ansible: Automation tool used to deploy our base infrastructure on bare metal machines.</p>
+                </div>
+                <div class="stack-item-content">
+                	<img src="image/stack/circleci.png">
+                    <p>A modern continuous delivery process for our Docker applications and services.</p>
+                </div>
+                <div class="stack-item-content">
+                	<img src="image/stack/dockership.png">
+                    <p>Dockership is a tool for easily deploying Docker containers over the base infrastructures.</p>
+                </div>
+                <div class="stack-item-name">Deployment</div>
+            </div>
+            <div class="stack-item stack1">
+            	<div class="stack-item-content">
+                	<img src="image/stack/prometheus.png">
+                    <p>Prometheus: An open-source service monitoring system and time series database.</p>
+                </div>
+                <div class="stack-item-name">Monitoring</div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          
+          
+      </div>
+
+      <div class="block-gray">
+         <h1 class="main-header" style="padding-top: 40px;">Where we come from</h1>
+         <div class="geodata">
+          <div class="map"><img src="image/map.png"></div>
+          <div class="states">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="state">Spain</td>
+                  <td class="number">13</td>
+                </tr>
+                <tr>
+                  <td class="state">Germany</td>
+                  <td class="number">3</td>
+                </tr>
+                <tr>
+                  <td class="state">Portugal</td>
+                  <td class="number">2</td>
+                </tr>
+                <tr>
+                  <td class="state">Italy</td>
+                  <td class="number">2</td>
+                </tr>
+                <tr>
+                  <td class="state">Greece</td>
+                  <td class="number">2</td>
+                </tr>
+                <tr>
+                  <td class="state">Romania</td>
+                  <td class="number">1</td>
+                </tr>
+                <tr>
+                  <td class="state">USA</td>
+                  <td class="number">1</td>
+                </tr>
+                <tr>
+                  <td class="state">Netherlands</td>
+                  <td class="number">1</td>
+                </tr>
+                <tr>
+                  <td class="state">Russia</td>
+                  <td class="number">1</td>
+                </tr>
+                <tr>
+                  <td class="state">Australia</td>
+                  <td class="number">1</td>
+                </tr>
+                <tr>
+                  <td class="state">France</td>
+                  <td class="number">1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="address">
+          
+          <div class="addresses">
+            <h2>Our Offices</h2>
+            <div class="address-item active-address">
+              <div class="address-item-city">MADRID <span>Spain</span></div>
+              <div class="address-item-street">Raimundo Fernandez Villaverde 45</div>
+              <div class="address-item-link"><a href="#">Map</a></div>
+            </div>
+            <div class="address-item">
+              <div class="address-item-city">LONDON <span>UK</span></div>
+              <div class="address-item-street">WeWork, 22 Upper Ground SE1 9PD</div>
+              <div class="address-item-link"><a href="#">Map</a></div>
+            </div>
+            <div class="address-item">
+              <div class="address-item-city">BERLIN <span>Germany</span></div>
+              <div class="address-item-street">Rheinsberger Str. 76/7, 10115</div>
+              <div class="address-item-link"><a href="#">Map</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="map-tyba"></div>
+      <div class="block-white" style="margin-top:-5px;">
+        <div class="contact-us">
+          <div class="contact-us-item">
+            <div class="contact-us-item-pic"><img src="image/job.png"></div>
+            <div class="contact-us-item-text">
+              <h3>Want to work with us?</h3>
+              <p>Send us your Github or your CV and we will get back to you as soon as possible.</p>
+              <a href="#" class="green">WRITE US</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="contact-us-item">
+            <div class="contact-us-item-pic"><img src="image/press.png"></div>
+            <div class="contact-us-item-text">
+              <h3>Do you want to write about us?</h3>
+              <p>Fell free to drop us a line and ask us about anything you need.</p>
+               <a href="#" class="blue">ASK US</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-wrap">
+          <div class="footer-flag"><img src="image/eu_flag.png" alt="Zimin"></div>
+          <div class="footer-links"><a href="#"><img src="image/email.png" alt="email"></a> <a href="#"><img src="image/github.png" alt="github"></a> <a href="#"><img src="image/twitter.png" alt="twitter"></a> <a href="#"><img src="image/linkedin.png" alt="linkedin"></a> <a href="#"><img src="image/facebook.png" alt="facebook"></a><img src="image/tyba_footer.png" alt="tyba"></div>
+          <div class="footer-info">Product by Tyba &bull; Crafted with love</div>
+          <div class="clear"></div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
