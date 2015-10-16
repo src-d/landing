@@ -217,7 +217,7 @@ html {
 }
 p.header-description {
 	font-size: 18px;
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 30px;
 	color: #dbebf6;
 	width: 70%;
@@ -814,7 +814,7 @@ span.active-q {
 	width: 838px;
 	height: 30px;
 	float: left;
-	/*background: #FFFFFF;*/
+	background: #FFFFFF;
 	/*box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);*/
 	border: 2px solid #D0DCDF;
 	padding: 18px 40px 15px;
@@ -847,8 +847,8 @@ span.active-q {
 	width: 175px;
 	height: 30px;
 	float: right;
-	/*background: #FFFFFF;
-	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);*/
+	background: #FFFFFF;
+	/*box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);*/
 	border: 2px solid #D0DCDF;
 	padding: 19px 40px 14px;
 }
@@ -856,15 +856,15 @@ span.active-q {
 	width: 1114px;
 	height: 160px;
 	padding: 20px 40px;
-	/*background: #FFFFFF;
-	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);*/
+	background: #FFFFFF;
+	/*box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);*/
 	border: 2px solid #D0DCDF;
 	margin-top: 14px;
 	font-weight: 400;
 }
 .form-question textarea {
 	width: 1120px;
-	height: 100px;
+	height: 155px;
 	border: none;
 	font-size: 16px;
 	line-height: 27px;
@@ -872,7 +872,7 @@ span.active-q {
 	font-weight: 600;
     color: #314B5D;
 }
-.form-question a {
+.form-question-button a {
 	display: block;
 	width: 130px;
 	text-decoration:none;
@@ -884,6 +884,7 @@ span.active-q {
 	border-radius: 2px;
 	text-transform: uppercase;
 	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);
+	margin-top:15px;
 }
 .form-position select {
 	background: transparent;
@@ -963,8 +964,8 @@ div.popup-black {
 	width: 508px;
 	height: 30px;
 	float: left;
-	/*background: #FFFFFF;
-	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);*/
+	background: #FFFFFF;
+	/*box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);*/
 	border: 2px solid #D0DCDF;
 	padding: 18px 40px 15px;
 }
@@ -980,8 +981,8 @@ div.popup-black {
 	width: 508px;
 	height: 30px;
 	float: right;
-	/*background: #FFFFFF;
-	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);*/
+	background: #FFFFFF;
+	/*box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);*/
 	border: 2px solid #D0DCDF;
 	padding: 18px 40px 15px;
 }
@@ -1025,10 +1026,10 @@ div.popup-black {
 	border: 2px solid #E6EFF1;
 	border-radius: 4px;
 	margin: 0 40px 0 0;
-	margin-bottom: 80px;
+	margin-bottom: 60px;
 	/*display: inline-block;*/
 	vertical-align: top;
-	height: 270px;
+	height: 160px;
 	float:left;
 }
 .stack1 {
@@ -1046,7 +1047,7 @@ div.popup-black {
 .stack-item-content {
 	text-align: center;
 	display: inline-block;
-	height: 260px;
+	height: 148px;
 	vertical-align: top;
 	margin: 0 auto;
 	margin-top: 20px;
