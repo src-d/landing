@@ -8,21 +8,18 @@
               gotten it right.</p>
 
           <div class="faq-form">
-              <form>
+              <form id="matching-form-{{.}}-form" action="" method="POST" class="matching-form-form">
                   <div class="form-match-name">
-                      <input type="text" placeholder="Github Handle">
+                      <input type="text" class="requires-validation" placeholder="Github Handle" name="handle" required data-validate="^([a-zA-Z0-9_]+)$">
                   </div>
                   <div class="form-match-handle">
-                      <input type="text" placeholder="Email (optional)">
+                      <input type="text" name="email" class="requires-validation" placeholder="Email (optional)" data-validate="^.+@.+\..+$">
                   </div>
                   <div class="clear"></div>
-                  <div class="form-question">
-                      <textarea placeholder="Leave your comments here"></textarea>
-
+                  <div class="form-question requires-validation">
+                      <textarea class="requires-validation" name="comments" placeholder="Leave your comments here" required data-validate="^.+$"></textarea>
                   </div>
-                  <div class="form-question-button">
-                      <a href="index.html" class="blue">SEND</a>
-                  </div>
+                  <button class="form-question-button blue" type="submit">SEND</button>
               </form>
           </div>
       </div>
