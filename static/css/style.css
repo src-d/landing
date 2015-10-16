@@ -26,6 +26,9 @@ html {
 	font-family: 'Open Sans', sans-serif;
 	background: #0B1219;
 }
+* {
+	outline: none;
+}
 .clear {
 	clear: both;
 }
@@ -1126,4 +1129,8 @@ div.popup-black {
 	font-size: 18px;
 	color: #FFFFFF;
 	padding-top: 45px;
+}
+
+.matching-form {
+	display: none;
 }
