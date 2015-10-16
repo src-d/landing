@@ -6,8 +6,8 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 cfieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -18,7 +18,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -138,15 +138,9 @@ html {
 	z-index: 10;
 	margin-bottom: 80px;
 	top:0px;
+	transition: background 500ms linear;
 }
-.header-hide {
-	width: 100%;
-	padding: 10px 0;
-	position: fixed;
-	z-index: 10;
-	margin-bottom: 80px;
-	top:0px;
-	display:none;
+.header-opaque {
 	background: #32526A;
 }
 .headerm-faq {
@@ -974,7 +968,7 @@ div.popup-black {
 	border: 2px solid #D0DCDF;
 	padding: 18px 40px 15px;
 }
-.form-match-name input, 
+.form-match-name input,
 .form-match-handle input {
 	width: 500px;
 	border: none;
