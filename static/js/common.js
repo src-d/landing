@@ -34,9 +34,28 @@ $(function (f) {
     var elem = $(this);
     if (validateForm(elem)) {
       var data = elem.serialize();
-      console.log(data);
+      sendData(data);
       userFilledMatchingForm();
+      showThanksBanner(elem);
     }
+  }
+
+  function sendData(data) {
+    
+  }
+
+  function showThanksBanner(form) {
+    var popup = form.attr('data-popup');
+    var $popup = form.closest('#matching-form-'+ popup +'-popup');
+    var $thanks = $popup.parent().find('#thanks-' + popup);
+
+    $popup.fadeOut(function () {
+      $thanks.fadeIn(function () {
+        setTimeout(function () {
+          $popup.parent().fadeOut();
+        }, 3000);
+      });
+    });
   }
 
   function focusChildren() {
