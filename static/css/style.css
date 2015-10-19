@@ -359,11 +359,18 @@ p.header-description {
 	width: 100%;
 	margin: 0 auto;
 	background: #ffffff;
+	position: relative;
+	height: 380px;
 }
 .testimonial-item {
 	width: 100%;
 	padding: 90px 0;
 	background: #274258;
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 380px !important;
+	box-sizing: border-box;
 }
 .t-item-1 {
 	background-image:url(../image/dev1.jpg) !important;
