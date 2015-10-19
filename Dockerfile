@@ -1,9 +1,4 @@
-FROM debian:wheezy
-
-# Install pygments (for syntax highlighting)
-RUN apt-get -qq update \
-	&& DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends python-pygments \
-	&& rm -rf /var/lib/apt/lists/*
+FROM tyba/base
 
 # Download and install hugo
 ENV HUGO_VERSION 0.14
@@ -18,9 +13,10 @@ RUN tar xzf /usr/local/${HUGO_BINARY}.tar.gz -C /usr/local/ \
 RUN mkdir /var/www
 WORKDIR /var/www
 
+RUN git clone git@github.com:src-d/landing.git .
+
 # Expose default hugo port
-EXPOSE 80
+EXPOSE 1313
 
 # By default, serve site
-ENV HUGO_BASE_URL http://tyba.tech
-CMD hugo server -b ${HUGO_BASE_URL}
+CMD hugo server
