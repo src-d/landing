@@ -713,6 +713,10 @@ p.header-description {
 	color: #669BDA;
 	text-decoration: none;
 }
+.question-item-q p a {
+	color: #799AB2 !important;
+	font-weight: bold;
+}
 .faq-chapters-item-link a:hover {
 	opacity: 0.8;
 }
@@ -1023,8 +1027,7 @@ div.popup-black {
 	float: left;
 }
 .extra-info-text {
-	float: right;
-	width: 740px;
+	width: 100%;
 }
 .extra-info-text p {
 	font-size: 18px;
