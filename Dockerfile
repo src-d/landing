@@ -14,7 +14,7 @@ WORKDIR /tmp/
 RUN git clone git@github.com:src-d/landing.git
 RUN cd landing && make build \
   && mv public/* /var/www
-RUN cp nginx/landing.conf /etc/nginx/sites-enabled/nginx-site.conf
+RUN cp /tmp/landing/nginx/landing.conf /etc/nginx/sites-enabled/nginx-site.conf
 
 # Create working directory
 WORKDIR /var/www
