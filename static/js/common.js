@@ -40,8 +40,26 @@ $(function (f) {
     }
   }
 
+  function submitFaqForm(e) {
+    e.preventDefault();
+
+    var elem = $(this);
+    if (validateForm(elem)) {
+      var data = elem.serialize();
+      sendData(data);
+      showSuccessSection();
+      this.reset();
+    }
+  }
+
+  function showSuccessSection() {
+    f('#faq-form').fadeOut(function () {
+      f('#faq-form-success').fadeIn();
+    });
+  }
+
   function sendData(data) {
-    
+
   }
 
   function showThanksBanner(form) {
@@ -76,7 +94,8 @@ $(function (f) {
     f('.show-elem').click(showElement);
     f('.hide-elem').click(hideElement);
     f('.matching-form-form').submit(submitForm);
-    f('.form-match-name, .form-match-handle, .form-question').click(focusChildren);
+    f('.form-match-name, .form-match-handle, .form-question, .form-name, .form-position').click(focusChildren);
+    f('#faq-form-form').submit(submitFaqForm);
     shouldDisplayBanner();
   }
 

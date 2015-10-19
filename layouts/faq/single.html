@@ -236,30 +236,42 @@
         </div>
         <div class="clear"></div>
     </div>
-    <div class="block-gray">
+    <div class="block-gray" id="faq-form" style="padding-bottom: 20px">
         <h1 class="main-header" style="padding-top: 40px; margin-top: 10px;">DIDN'T FIND
             ANSWER?</h1>
 
         <p class="faq-form-text">No worry. Ask us!</p>
 
         <div class="faq-form">
-            <form>
+            <form id="faq-form-form">
                 <div class="form-name">
-                    <input type="text" placeholder="Your name">
+                    <input type="text" name="name" class="requires-validation" placeholder="Your name" required data-validate="^.+$">
                 </div>
                 <div class="form-position">
-                    <select>
-                        <option>I'm Developer</option>
-                        <option>I'm from Company</option>
+                    <select name="position" required>
+                        <option value="developer">I'm Developer</option>
+                        <option value="company">I'm from Company</option>
                     </select>
                 </div>
                 <div class="clear"></div>
                 <div class="form-question">
-                    <textarea placeholder="Your question"></textarea>
+                    <textarea name="question" placeholder="Your question" required class="requires-validation" data-validate="^.+$"></textarea>
                 </div>
-                <div class="form-question-button">
-                    <a href="faq-ok.html" class="blue">SEND</a>
-                </div>
+                <button type="submit" class="form-question-button blue">SEND</button>
             </form>
         </div>
+      </div>
+      <div class="block-gray" style="margin-top:-80px; padding-bottom: 5px; display: none" id="faq-form-success">
+          <h1 class="main-header" style="padding-top:80px;">SUCCESSFULLY</h1>
+
+          <p class="faq-form-text">Thank you for your mail! We will check the question as soon as possible and return to you with feedback.</p>
+
+          <div class="faq-form">
+              <div class="question-link">
+                  <div class="question-link-buttons">
+                      <a href="#" class="blue show-elem hide-elem" data-elem-show="faq-form" data-elem-hide="faq-form-success">New Question</a>
+                  </div>
+              </div>
+          </div>
+      </div>
 {{ partial "footer.html" . }}
