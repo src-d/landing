@@ -33,8 +33,7 @@ $(function (f) {
 
     var elem = $(this);
     if (validateForm(elem)) {
-      var data = elem.serialize();
-      sendData(data);
+      sendData('Matching answer for sourced.tech', elem);
       userFilledMatchingForm();
       showThanksBanner(elem);
     }
@@ -45,8 +44,7 @@ $(function (f) {
 
     var elem = $(this);
     if (validateForm(elem)) {
-      var data = elem.serialize();
-      sendData(data);
+      sendData('New question for sourced.tech', elem);
       showSuccessSection();
       this.reset();
     }
@@ -58,8 +56,20 @@ $(function (f) {
     });
   }
 
-  function sendData(data) {
+  function sendData(subject, elem) {
+    var values = elem.serializeArray();
+    var data = {};
+    for (var i = 0, len = values.length; i < len; i++) {
+      data[values[i].name] = values[i].value;
+    }
+    data._subject = subject;
 
+    $.ajax({
+      url: 'http://formspree.io/hello@tyba.com',
+      method: 'POST',
+      data: data,
+      dataType: 'json'
+    });
   }
 
   function showThanksBanner(form) {
@@ -85,8 +95,8 @@ $(function (f) {
   }
 
   function shouldDisplayBanner() {
-    if (f.cookie('matching-form') === 'filled') {
-      f('#matching-banner').hide();
+    if (f.cookie('matching-form') !== 'filled' && window.location.hash === '#fromemail') {
+      f('#matching-banner').show();
     }
   }
 

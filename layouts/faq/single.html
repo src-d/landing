@@ -250,7 +250,7 @@
         <div class="faq-form">
             <form id="faq-form-form">
                 <div class="form-name">
-                    <input type="text" name="name" class="requires-validation" placeholder="Your name" required data-validate="^.+$">
+                    <input type="email" name="email" class="requires-validation" placeholder="Your email" required data-validate="^.+@.+\..+$">
                 </div>
                 <div class="form-position">
                     <select name="position" required>
@@ -262,6 +262,7 @@
                 <div class="form-question">
                     <textarea name="question" placeholder="Your question" required class="requires-validation" data-validate="^.+$"></textarea>
                 </div>
+                <input type="text" name="_gotcha" style="display:none" />
                 <button type="submit" class="form-question-button blue">SEND</button>
             </form>
         </div>
