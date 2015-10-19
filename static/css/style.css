@@ -747,6 +747,7 @@ p.header-description {
 	font-size: 24px;
 	color: #314B5D;
 	width: 910px;
+	cursor: pointer;
 }
 span.active-q {
 	color: #669BDA !important;

@@ -90,6 +90,22 @@ $(function (f) {
     }
   }
 
+  function toggleQuestion(e) {
+    e.preventDefault();
+    var elem = f(this);
+    elem.parent().find('p').slideToggle();
+    elem.toggleClass('active-q');
+  }
+
+  function navTo(e) {
+    e.preventDefault();
+
+    var elem = this.getAttribute('data-nav-to');
+    $('html, body').animate({
+      scrollTop: $("#" + elem).offset().top - 80
+    }, 500);
+  }
+
   function init() {
     f('.show-elem').click(showElement);
     f('.hide-elem').click(hideElement);
@@ -97,6 +113,8 @@ $(function (f) {
     f('.form-match-name, .form-match-handle, .form-question, .form-name, .form-position').click(focusChildren);
     f('#faq-form-form').submit(submitFaqForm);
     shouldDisplayBanner();
+    f('span.q').click(toggleQuestion);
+    f('.nav-to').find('a').click(navTo);
   }
 
   init();
