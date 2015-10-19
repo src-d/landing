@@ -23,7 +23,7 @@ $(function (f) {
 
     function findNextIndex(currentIndex, delta) {
         var nextIndex = currentIndex + delta;
-        if (nextIndex < 0) {
+        if (nextIndex < 1) {
             return totalElements;
         }
         if (nextIndex > totalElements) {

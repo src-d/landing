@@ -16,7 +16,7 @@ WORKDIR /var/www
 RUN git clone git@github.com:src-d/landing.git .
 
 # Expose default hugo port
-EXPOSE 1313
+EXPOSE 80
 
 # By default, serve site
-CMD hugo server
+CMD hugo server -b 0.0.0.0:80
