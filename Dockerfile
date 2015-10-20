@@ -11,7 +11,7 @@ RUN tar xzf /usr/local/${HUGO_BINARY}.tar.gz -C /usr/local/ \
 
 WORKDIR /tmp/
 
-RUN git clone git@github.com:src-d/landing.git
+RUN git clone git@github.com:src-d/landing.git && echo $DOCKERSHIP_REV
 RUN cd landing && make build \
   && mv public/* /var/www
 RUN cp /tmp/landing/nginx/landing.conf /etc/nginx/sites-enabled/nginx-site.conf
