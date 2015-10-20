@@ -360,7 +360,7 @@ p.header-description {
 	margin: 0 auto;
 	background: #ffffff;
 	position: relative;
-	height: 380px;
+	height: 360px;
 }
 .testimonial-item {
 	width: 100%;
@@ -369,7 +369,7 @@ p.header-description {
 	position: absolute;
 	left: 0;
 	right: 0;
-	height: 380px !important;
+	height: 360px !important;
 	box-sizing: border-box;
 }
 .candidates .t-item-1 {
