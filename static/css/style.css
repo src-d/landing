@@ -372,23 +372,28 @@ p.header-description {
 	height: 380px !important;
 	box-sizing: border-box;
 }
-.t-item-1 {
+.candidates .t-item-1 {
 	background-image:url(../image/dev1.jpg) !important;
 	background-position-x:center;
 	background-repeat: no-repeat;
 }
-.t-item-2 {
+.candidates .t-item-2 {
 	background-image:url(../image/dev2.jpg) !important;
 	background-position-x:center;
 	background-repeat: no-repeat;
 }
-.t-item-3 {
+.candidates .t-item-3 {
 	background-image:url(../image/dev3.jpg) !important;
 	background-position-x:center;
 	background-repeat: no-repeat;
 }
-.t-item-11 {
+.company .t-item-1 {
 	background-image:url(../image/com1.jpg) !important;
+	background-position-x:center;
+	background-repeat: no-repeat;
+}
+.company .t-item-2 {
+	background-image:url(../image/com2.jpg) !important;
 	background-position-x:center;
 	background-repeat: no-repeat;
 }
