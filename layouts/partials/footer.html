@@ -28,9 +28,12 @@
 <script type="text/javascript">
   jQuery(function (f) {
       var element = f('.header');
-      f(window).scroll(function () {
+      function swapHeader() {
           element[(f(this).scrollTop() > 450 ? 'add' : 'remove') + 'Class']('header-opaque');
-      });
+      }
+      var $window = f(window);
+      $window.scroll(swapHeader);
+      swapHeader.call($window);
   });
 </script>
 <script type="text/javascript" src="/js/common.js"></script>
