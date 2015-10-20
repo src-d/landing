@@ -608,10 +608,8 @@ p.header-description {
 }
 .address-item-link {
 	margin-top: 10px;
-}
-.address-item-link a {
 	font-size: 14px;
-	color: #478CD6;
+	color: #478CD6 !important;
 	text-decoration: none;
 }
 #map-tyba {
