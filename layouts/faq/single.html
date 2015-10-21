@@ -3,27 +3,29 @@
 <div class="faq-content-wrapper">
     <div class="faq">
         <div class="faq-chapters-block">
-            <h4>FAQ SECTIONS</h4>
+            <h4>FAQ Sections</h4>
 
             <div class="faq-chapters">
                 <div class="faq-chapters-item">
                     <h5>For developers</h5>
-
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-introduction">Introduction</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-sourcing">Sourcing</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-matching">Matching</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-process">Process</a></div>
+					<nav>
+                        <div class="faq-chapters-item-link nav-to" title="Introducion"><a href="#" data-nav-to="devs-introduction">Introduction</a></div>
+                        <div class="faq-chapters-item-link nav-to" title="Sourcing"><a href="#" data-nav-to="devs-sourcing">Sourcing</a></div>
+                        <div class="faq-chapters-item-link nav-to" title="Matching"><a href="#" data-nav-to="devs-matching">Matching</a></div>
+                        <div class="faq-chapters-item-link nav-to" title="Process"><a href="#" data-nav-to="devs-process">Process</a></div>
+                    </nav>
                 </div>
             </div>
             <div class="faq-chapters" style="display:none">
                 <div class="faq-chapters-item">
                     <h5>For companies</h5>
-
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-introduction">Introduction</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-sourcing">Sourcing</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-matching">Matching</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-process">Process</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-conditions">Conditions</a></div>
+					<nav>
+                        <div class="faq-chapters-item-link nav-to" title="Introduction"><a href="#" data-nav-to="companies-introduction">Introduction</a></div>
+                        <div class="faq-chapters-item-link nav-to" title="Sourcing"><a href="#" data-nav-to="companies-sourcing">Sourcing</a></div>
+                        <div class="faq-chapters-item-link nav-to" title="Matching"><a href="#" data-nav-to="companies-matching">Matching</a></div>
+                        <div class="faq-chapters-item-link nav-to" title="Process"><a href="#" data-nav-to="companies-process">Process</a></div>
+                        <div class="faq-chapters-item-link nav-to" title="Conditions"><a href="#" data-nav-to="companies-conditions">Conditions</a></div>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -253,8 +255,7 @@
         <div class="clear"></div>
     </div>
     <div class="block-gray" id="faq-form" style="padding-bottom: 20px">
-        <h1 class="main-header" style="padding-top: 40px; margin-top: 10px;">DIDN'T FIND AN
-            ANSWER?</h1>
+        <h2 class="main-header" style="padding-top: 40px; margin-top: 10px;">Didn't find an answer?</h2>
 
         <p class="faq-form-text">No worries. Drop us a line!</p>
 
@@ -274,19 +275,19 @@
                     <textarea name="question" placeholder="Your question" required class="requires-validation" data-validate="^.+$"></textarea>
                 </div>
                 <input type="text" name="_gotcha" style="display:none" />
-                <button type="submit" class="form-question-button blue">SEND</button>
+                <button type="submit" class="form-question-button blue">Send</button>
             </form>
         </div>
       </div>
       <div class="block-gray" style="margin-top:-80px; padding-bottom: 5px; display: none" id="faq-form-success">
-          <h1 class="main-header" style="padding-top:80px;">SUCCESS!</h1>
+          <h2 class="main-header" style="padding-top:80px;">Success!</h2>
 
           <p class="faq-form-text">Thank you for your mail! We will check the question as soon as possible and return to you with feedback.</p>
 
           <div class="faq-form">
               <div class="question-link">
                   <div class="question-link-buttons">
-                      <a href="#" class="blue show-elem hide-elem" data-elem-show="faq-form" data-elem-hide="faq-form-success">New Question</a>
+                      <a href="#" class="blue show-elem hide-elem" data-elem-show="faq-form" data-elem-hide="faq-form-success" title="New Question">New Question</a>
                   </div>
               </div>
           </div>
