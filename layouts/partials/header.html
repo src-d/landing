@@ -4,7 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>source{d}</title>
+    <title>{{PageTitle}} | source{d}</title>
+    <meta name="description" content="{{Description}}">
+    <meta name="twitter:site" content="source{d}">
+    <meta name="twitter:title" content="{{PageTitle}}">
+    <meta name="twitter:description" content="{{Description}}">
+    <meta name="twitter:card" content="{{Description}}">
+    <meta name="og:site_name" content="source{d}">
+    <meta name="og:title" content="{{PageTitle}}">
+    <meta name="og:description" content="{{Description}}">
+    <meta property="og:image" content='{{Logo}}'>
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/mobile.css" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -21,17 +30,13 @@
 <div class="wrapper">
     <div class="{{if eq $section "faq"}}headerm-faq{{else}}header{{end}}">
         <div class="header-wrap">
-            <div class="sourced-logo">
-              <a href="/">
-                <img src="/image/logo.png" alt="logo">
-              </a>
-            </div>
+            <div class="sourced-logo"></div>
             <div class="main-menu">
                 <nav>
-                    <a href="/" {{if eq $section "devs"}}class="active"{{end}}>For Developers</a>
-                    <a href="/company" {{if eq $section "company"}}class="active"{{end}}>For Companies</a>
-                    <a href="/about" {{if eq $section "about"}}class="active"{{end}}>About</a>
-                    <a href="/faq" {{if eq $section "faq"}}class="active"{{end}}>FAQ</a>
+                    <a href="/" {{if eq $section "devs"}}class="active"{{end}} title="For Developers">For Developers</a>
+                    <a href="/company" {{if eq $section "company"}}class="active"{{end}} title="For Companies">For Companies</a>
+                    <a href="/about" {{if eq $section "about"}}class="active"{{end}} title="About">About</a>
+                    <a href="/faq" {{if eq $section "faq"}}class="active"{{end}} title="FAQ">FAQ</a>
                 </nav>
             </div>
             <div class="clear"></div>

@@ -1,141 +1,145 @@
 {{$page := "devs"}}
 {{partial "header.html" $page }}
 <div class="triangle tr-index">
-    <div class="block-text">TECH RECRUITMENT DONE RIGHT</div>
+    <h1 class="block-text">Tech recruitment done right</h1>
     <p class="header-description">source{d} is a recruitment product built by developers for
         developers. We analyze over 600 million code contributions in the open source community
         to match you with the best jobs and contact you only with relevant offers.</p>
 </div>
-<div class="shape"><img src="/image/trian.svg"></div>
+<div class="shape"><img src="/image/trian.svg" alt="triange"></div>
 <div class="content-wrapper">
-    <div class="block-white">
-        <h1 class="main-header">How did we find you?</h1>
-
-        <div class="icon-descr-3">
-
-            <div class="icon-descr-item" id="section-analyse">
-                <div class="icon-descr-item-pic"><img src="/image/mac.png" alt="Analysis"></div>
-                <div class="icon-descr-item-header">Code Analysis</div>
-                <div class="icon-descr-item-text">It all starts in the code. We have analyzed 14 million open source repositories, extracting features along the process.
+	<section>
+        <div class="block-white">
+            <h2 class="main-header">How did we find you?</h2>
+    
+            <div class="icon-descr-3">
+    
+                <div class="icon-descr-item" id="section-analyse">
+                    <div class="icon-descr-item-pic"><img src="/image/mac.png" alt="Analysis"></div>
+                    <div class="icon-descr-item-header">Code Analysis</div>
+                    <div class="icon-descr-item-text">It all starts in the code. We have analyzed 14 million open source repositories, extracting features along the process.
+                    </div>
+                    <div class="icon-descr-item-more">
+                      <a href="#" class="expand-section open-section" data-expand-section="section-analyse" title="More on our Analysis">More on our Analysis</a>
+                      <a href="#" class="expand-section close-section" data-expand-section="section-analyse" style="display:none" title="Close">Close</a>
+                    </div>
                 </div>
-                <div class="icon-descr-item-more">
-                  <a href="#" class="expand-section open-section" data-expand-section="section-analyse">More on our Analysis</a>
-                  <a href="#" class="expand-section close-section" data-expand-section="section-analyse" style="display:none">Close</a>
+    
+                <div class="icon-descr-item" id="section-assessment">
+                    <div class="icon-descr-item-pic"><img src="/image/macbook.png" alt="Matching">
+                    </div>
+                    <div class="icon-descr-item-header">Matching with jobs</div>
+                    <div class="icon-descr-item-text">We automatically match the profiles obtained in our analysis with our open job offers.
+                    </div>
+                    <div class="icon-descr-item-more">
+                      <a href="#" class="expand-section open-section" data-expand-section="section-assessment" title="More on Matching">More on Matching</a>
+                      <a href="#" class="expand-section close-section" data-expand-section="section-assessment" style="display:none" title="Close">Close</a>
+                    </div>
+                </div>
+    
+                <div class="icon-descr-item" id="section-contact">
+                    <div class="icon-descr-item-pic"><img src="/image/contact-dev.png" alt="Contact">
+                    </div>
+                    <div class="icon-descr-item-header">Contact you</div>
+                    <div class="icon-descr-item-text">We send highly relevant job proposals to the suggested profiles and inform them about all the aspects of the position.
+                    </div>
+                    <div class="icon-descr-item-more">
+                      <a href="#" class="expand-section open-section" data-expand-section="section-contact" title="More on our Communication">More on our Communication</a>
+                      <a href="#" class="expand-section close-section" data-expand-section="section-contact" style="display:none" title="Close">Close</a>
+                    </div>
+                </div>
+    
+                <div class="paths">
+                    <img src="/image/path1.png" alt="path1" class="path1">
+                    <img src="/image/path2.png" alt="path2" class="path2">
+                </div>
+    
+                <div class="extra-descr" id="section-analyse-info" style="display:none">
+                    <div class="extra-info-text">
+                        <p>Except for the personal communication with the developers, all processes in source{d} are automatized. We have a Code Analysis tool that extracts different features from the open source code available in GitHub. Our system detects language usage, number of repositories, commits... We also look for any code related to more than 150 common use frameworks.</p>
+    
+                        <p>All these features are processed to get an overview of the professional profile of the people behind the contributions. All our information is centralized and updated every week with more repositories and the feedback from the developers we have already contacted.</p>
+    
+                        <p>source{d} is designed by developers. We designed a recruitment process we would like to be part of. We believe that recruitment can be done right with the public data already available out there, and we are trying our best to create an intelligent, friendly job recommendation service based on facts, and not feelings.</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+    
+                <div class="extra-descr" id="section-assessment-info" style="display:none">
+                    <div class="extra-info-text">
+                        <p>Our matching algorithms use the code features extracted by our code analyzers (such as language and framework usage) to match engineers with our open job offers. The matching also takes into account an estimation of the professional experience, which we model by creating internal ranks for each language and framework we detect.</p>
+    
+    <p>Besides the purely technical information, we also try to enrich our matching using the information publicly available in professional networks such as Linkedin. It is our intention to recommend only the most relevant job offers, and that is why we put lots of efforts in extracting relevant information such as expected roles, salary or relocation preferences.</p>
+    
+    <p>We run our matching algorithm independently for each one of our job offers, which provides us with a list of recommended profiles. Only then we contact the suggested engineers, therefore granting that we only reach people with the right experience and background.</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+    
+                <div class="extra-descr" id="section-contact-info" style="display:none">
+                    <div class="extra-info-text">
+                        <p>Our Developer Relations team will answer any questions you may have. If you are interested in the offer, we will proceed by asking some specific questions about your work experience that directly relates to the offer. </p>
+    
+    <p>Once these questions are answered, we’ll set up a short call through which we will answer any further questions you may have about the offer. Based on the call and your previous experiences, we’ll make a judgement call on your profile. You are able to stop this process at any stage if the offer no longer interests you.</p>
+    
+    <p>Following a successful interview, we write a report summarizing your skills and highlighting your relevant experience for the position. This report is presented to the company. If the company agrees and would like to meet you, we introduce you via email. We maintain contact with you and the company in order to offer assistance if necessary. </p>
+    
+    <p>If the interview is unsuccessful or you no longer find the offer interesting, we ask for your working preferences so that we can find a better offer for you in the future. If at any stage of the process you decide against further contact, we will exclude you from future searches and offers.
+    </p>
+                    </div>
+                    <div class="clear"></div>
                 </div>
             </div>
-
-            <div class="icon-descr-item" id="section-assessment">
-                <div class="icon-descr-item-pic"><img src="/image/macbook.png" alt="Matching">
-                </div>
-                <div class="icon-descr-item-header">Matching with jobs</div>
-                <div class="icon-descr-item-text">We automatically match the profiles obtained in our analysis with our open job offers.
-                </div>
-                <div class="icon-descr-item-more">
-                  <a href="#" class="expand-section open-section" data-expand-section="section-assessment">More on Matching</a>
-                  <a href="#" class="expand-section close-section" data-expand-section="section-assessment" style="display:none">Close</a>
+            <div class="question-link" style="padding-top:30px;">
+                <h2 class="main-header">Still have questions?</h2>
+    
+                <div class="question-link-buttons">
+                    <a href="http://blog.sourced.tech" class="orange" title="Read Our Blog">Read Our Blog</a>
+                    <a href="/faq/" class="blue" title="See Our FAQ">See Our FAQ</a>
                 </div>
             </div>
-
-            <div class="icon-descr-item" id="section-contact">
-                <div class="icon-descr-item-pic"><img src="/image/contact-dev.png" alt="Contact">
-                </div>
-                <div class="icon-descr-item-header">Contact you</div>
-                <div class="icon-descr-item-text">We send highly relevant job proposals to the suggested profiles and inform them about all the aspects of the position.
-                </div>
-                <div class="icon-descr-item-more">
-                  <a href="#" class="expand-section open-section" data-expand-section="section-contact">More on our Communication</a>
-                  <a href="#" class="expand-section close-section" data-expand-section="section-contact" style="display:none">Close</a>
-                </div>
-            </div>
-
-            <div class="paths">
-                <img src="/image/path1.png" class="path1">
-                <img src="/image/path2.png" class="path2">
-            </div>
-
-            <div class="extra-descr" id="section-analyse-info" style="display:none">
-                <div class="extra-info-text">
-                    <p>Except for the personal communication with the developers, all processes in source{d} are automatized. We have a Code Analysis tool that extracts different features from the open source code available in GitHub. Our system detects language usage, number of repositories, commits... We also look for any code related to more than 150 common use frameworks.</p>
-
-                    <p>All these features are processed to get an overview of the professional profile of the people behind the contributions. All our information is centralized and updated every week with more repositories and the feedback from the developers we have already contacted.</p>
-
-                    <p>source{d} is designed by developers. We designed a recruitment process we would like to be part of. We believe that recruitment can be done right with the public data already available out there, and we are trying our best to create an intelligent, friendly job recommendation service based on facts, and not feelings.</p>
-                </div>
+        </div>
+    </section>
+    <section>
+        <div class="testimonial candidates">
+            <div class="arrows">
+                <div class="arrow-left"><img src="/image/arrow_left_test.png" alt="Left"></div>
+                <div class="arrow-right"><img src="/image/arrow_right_test.png" alt="Right"></div>
                 <div class="clear"></div>
             </div>
-
-            <div class="extra-descr" id="section-assessment-info" style="display:none">
-                <div class="extra-info-text">
-                    <p>Our matching algorithms use the code features extracted by our code analyzers (such as language and framework usage) to match engineers with our open job offers. The matching also takes into account an estimation of the professional experience, which we model by creating internal ranks for each language and framework we detect.</p>
-
-<p>Besides the purely technical information, we also try to enrich our matching using the information publicly available in professional networks such as Linkedin. It is our intention to recommend only the most relevant job offers, and that is why we put lots of efforts in extracting relevant information such as expected roles, salary or relocation preferences.</p>
-
-<p>We run our matching algorithm independently for each one of our job offers, which provides us with a list of recommended profiles. Only then we contact the suggested engineers, therefore granting that we only reach people with the right experience and background.</p>
+            <div class="testimonial-item t-item-1 active">
+                <div class="testimonial-content">
+                    <div class="testimonial-content-text">"I enjoyed the communication process,
+                        everything was clear and comfortable to deal with. I was pleasantly
+                        surprised to have been found through GitHub, it's a very hard thing to do."
+                    </div>
+                    <div class="testimonial-content-info">Alex Zimin, Senior iOS Developer at
+                        Uberchord
+                    </div>
                 </div>
-                <div class="clear"></div>
             </div>
-
-            <div class="extra-descr" id="section-contact-info" style="display:none">
-                <div class="extra-info-text">
-                    <p>Our Developer Relations team will answer any questions you may have. If you are interested in the offer, we will proceed by asking some specific questions about your work experience that directly relates to the offer. </p>
-
-<p>Once these questions are answered, we’ll set up a short call through which we will answer any further questions you may have about the offer. Based on the call and your previous experiences, we’ll make a judgement call on your profile. You are able to stop this process at any stage if the offer no longer interests you.</p>
-
-<p>Following a successful interview, we write a report summarizing your skills and highlighting your relevant experience for the position. This report is presented to the company. If the company agrees and would like to meet you, we introduce you via email. We maintain contact with you and the company in order to offer assistance if necessary. </p>
-
-<p>If the interview is unsuccessful or you no longer find the offer interesting, we ask for your working preferences so that we can find a better offer for you in the future. If at any stage of the process you decide against further contact, we will exclude you from future searches and offers.
-</p>
+    
+            <div class="testimonial-item t-item-2">
+                <div class="testimonial-content">
+                    <div class="testimonial-content-text">"My experience with source{d} has
+                        been very pleasant. I've been contacted in the right time, for the right
+                        job, at the right company. The hiring process has been rather fast and I've
+                        been provided with good and reliable information about the job."
+                    </div>
+                    <div class="testimonial-content-info">Tobias Hornberger, Senior PHP Developer at Lovoo</div>
                 </div>
-                <div class="clear"></div>
             </div>
-        </div>
-        <div class="question-link" style="padding-top:30px;">
-            <h1 class="main-header">Still have questions?</h1>
-
-            <div class="question-link-buttons">
-                <a href="http://blog.sourced.tech" class="orange">Read Our Blog</a>
-                <a href="/faq/" class="blue">See Our FAQ</a>
-            </div>
-        </div>
-    </div>
-    <div class="testimonial candidates">
-        <div class="arrows">
-            <div class="arrow-left"><img src="/image/arrow_left_test.png" alt="Left"></div>
-            <div class="arrow-right"><img src="/image/arrow_right_test.png" alt="Right"></div>
-            <div class="clear"></div>
-        </div>
-        <div class="testimonial-item t-item-1 active">
-            <div class="testimonial-content">
-                <div class="testimonial-content-text">"I enjoyed the communication process,
-                    everything was clear and comfortable to deal with. I was pleasantly
-                    surprised to have been found through GitHub, it's a very hard thing to do."
-                </div>
-                <div class="testimonial-content-info">Alex Zimin, Senior iOS Developer at
-                    Uberchord
+            <div class="testimonial-item t-item-3">
+                <div class="testimonial-content">
+                    <div class="testimonial-content-text">"Working with Tyba was great experience.
+                        With their unique approach to candidates matching they helped me to find a
+                        job that absolutely suited my expectations. I'm thankful they opened a new
+                        opportunity for my professional career."
+                    </div>
+                    <div class="testimonial-content-info">Dmitriy Taychenachev, Senior Python Engineer at Skypicker</div>
                 </div>
             </div>
         </div>
-
-        <div class="testimonial-item t-item-2">
-            <div class="testimonial-content">
-                <div class="testimonial-content-text">"My experience with source{d} has
-                    been very pleasant. I've been contacted in the right time, for the right
-                    job, at the right company. The hiring process has been rather fast and I've
-                    been provided with good and reliable information about the job."
-                </div>
-                <div class="testimonial-content-info">Tobias Hornberger, Senior PHP Developer at Lovoo</div>
-            </div>
-        </div>
-        <div class="testimonial-item t-item-3">
-            <div class="testimonial-content">
-                <div class="testimonial-content-text">"Working with Tyba was great experience.
-                    With their unique approach to candidates matching they helped me to find a
-                    job that absolutely suited my expectations. I'm thankful they opened a new
-                    opportunity for my professional career."
-                </div>
-                <div class="testimonial-content-info">Dmitriy Taychenachev, Senior Python Engineer at Skypicker</div>
-            </div>
-        </div>
-    </div>
+    </section>
 
 {{partial "footer.html" }}
