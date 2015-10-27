@@ -98,7 +98,6 @@ html {
 	color:#ffffff;
 	letter-spacing: 1.5px;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.09);
-	text-transform: uppercase;;
 }
 .less576 {
 	display: none;
@@ -162,13 +161,11 @@ html {
 }
 .sourced-logo {
 	width: 200px;
-	height: 32px;
-	padding-top:8px;
 	float: left;
-	background-image: url(../image/logo.png);
-	background-size: 137px;
-	background-repeat: no-repeat;
-	background-position:center;
+}
+.sourced-logo img {
+	width: 136px;
+	margin-top:2px;
 }
 .main-menu {
 	float:right;
