@@ -45,7 +45,7 @@ html {
 }
 .shape {
 	width:100%;
-	margin-top: 490px;
+	margin-top: 556px;
 	position:relative;
 	background: none;
 	margin-bottom:-6px;
@@ -91,7 +91,7 @@ html {
 	width: 760px;
 	height: 100px;
 	margin: 0 auto;
-	margin-top:190px;
+	margin-top:220px;
 	text-align: center;
 	font-size: 32px;
 	font-weight: 400;
@@ -224,6 +224,7 @@ p.header-description {
 	line-height: 30px;
 	color: #dbebf6;
 	width: 70%;
+	max-width: 850px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
@@ -419,6 +420,13 @@ p.header-description {
 	font-size: 16px;
 	color: #C3DAEA;
 	margin-top: 30px;
+	text-align:center;
+}
+.testimonial-content-logo {
+	width: 62px;
+	margin: 0 auto;
+.testimonial-content-logo img {
+	width: 60px;
 	text-align:center;
 }
 .arrows {
