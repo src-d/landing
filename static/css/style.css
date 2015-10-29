@@ -425,6 +425,7 @@ p.header-description {
 .testimonial-content-logo {
 	width: 62px;
 	margin: 0 auto;
+	margin-top: 25px;
 }
 .testimonial-content-logo img {
 	width: 60px;
