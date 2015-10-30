@@ -157,5 +157,12 @@ $(function (f) {
     f('.close-section').click(closeSection);
   }
 
+  function hello() {
+    if(window.console) {
+      console.log("HI THERE! \nIf you are reading this message it probably means you have some interesting skills!\nWant to find a new, exciting job? Write us at talent@sourced.tech with the subject 'My Favorite Opera is Madama Butterfly' and let us help you!");
+    }
+  }
+
   init();
+  hello();
 });
