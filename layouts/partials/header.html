@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Title }} | source{d}</title>
-    <meta name="description" content="{{ .Description }}">
-    <meta name="twitter:site" content="source{d}">
-    <meta name="twitter:title" content="{{ .Title }}">
-    <meta name="twitter:description" content="{{ .Description }}">
+    <meta name="description" content="{{ if eq .Description nil }}{{.Description}}{{else}}source{d} is a tech recruiting product build by our technical team for software engineers. Analyzing code contributions in the open source community, we aim for tech recruitment done right.{{end}}">
     <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@sourced_tyba" />
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ if eq .Description nil }}{{.Description}}{{else}}source{d} is a tech recruiting product build by our technical team for software engineers. Analyzing code contributions in the open source community, we aim for tech recruitment done right.{{end}}">
+    <meta name="twitter:image" content='http://sourced.tech/image/sourced.png'>
     <meta name="og:site_name" content="source{d}">
-    <meta name="og:title" content="{{ .Title }}">
-    <meta name="og:description" content="{{ .Description }}">
-    <meta property="og:image" content='http://sourced.tech/images/sourced.png'>
+    <meta name="og:title" content="{{ .Title }} | source{d}">
+    <meta name="og:description" content="{{ if eq .Description nil }}{{.Description}}{{else}}source{d} is a tech recruiting product build by our technical team for software engineers. Analyzing code contributions in the open source community, we aim for tech recruitment done right.{{end}}">
+    <meta property="og:image" content="http://sourced.tech/image/sourced.png">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/mobile.css" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
