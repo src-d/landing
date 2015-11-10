@@ -403,9 +403,14 @@ p.header-description {
 	background-position: center center;
 	background-repeat: no-repeat;
 }
+.company .t-item-3 {
+	background-image:url(../image/com3.jpg) !important;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
 .testimonial-content {
 	width: 70%;
-	max-width: 600px;
+	max-width: 680px;
 	margin: 0 auto;
 	display:block;
 	vertical-align: top;
