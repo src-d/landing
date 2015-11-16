@@ -408,6 +408,11 @@ p.header-description {
 	background-position: center center;
 	background-repeat: no-repeat;
 }
+.company .t-item-4 {
+	background-image:url(../image/com4.jpg) !important;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
 .testimonial-content {
 	width: 70%;
 	max-width: 680px;
