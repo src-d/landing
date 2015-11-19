@@ -500,7 +500,7 @@ p.header-description {
 	margin: 0 auto;
 }
 .holder {
-	animation: carousel 55s linear infinite;
+	animation: carousel 32s linear infinite;
   	white-space: nowrap;
   	will-change: transform;
 }
