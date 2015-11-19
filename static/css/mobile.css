@@ -62,9 +62,6 @@
 	.our-clients {
 		width: 900px;
 	}
-	/*.our-clients-item {
-		width: 120px;
-	}*/
 	/* FAQ */
 	.faq {
 		width: 940px;
@@ -313,9 +310,6 @@
 		width: 755px;
 		overflow:hidden;
 	}
-	/*.our-clients-item {
-		width: 120px;
-	}*/
 	/* FAQ */
 	.faq {
 		width: 760px;
@@ -674,9 +668,6 @@
 		width: 460px;
 		overflow:hidden;
 	}
-	/*.our-clients-item {
-		width: 140px;
-	}*/
 	/* FAQ */
 	.faq {
 		width: 560px;
@@ -1131,9 +1122,6 @@
 		width: 355px;
 		overflow:hidden;
 	}
-	/*.our-clients-item {
-		width: 32%;
-	}*/
 	/* FAQ */
 	.faq {
 		width: 100%;
@@ -1606,9 +1594,6 @@
 	.our-clients {
 		width: 100%;
 	}
-	/*.our-clients-item {
-		width: 49%;
-	}*/
 	/* FAQ */
 	.faq {
 		width: 100%;
@@ -1726,7 +1711,7 @@
 	    width: 390px;
 	}
 	.states {
-		width: 240px;;
+		width: 240px;
 		font-size: 14px;
 		margin: 0 auto;
 		float: none;

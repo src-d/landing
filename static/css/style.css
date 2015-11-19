@@ -485,6 +485,8 @@ p.header-description {
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 40px;
+	overflow: hidden;
+	box-sizing: border-box;
 }
 .our-clients p {
 	font-size: 32px;
@@ -496,6 +498,23 @@ p.header-description {
 	overflow: hidden;
 	max-width: 920px;
 	margin: 0 auto;
+}
+.holder {
+	animation: carousel 55s linear infinite;
+  	white-space: nowrap;
+  	will-change: transform;
+}
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  
+  99.9999% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 .our-clients-item {
 	width: 150px;
