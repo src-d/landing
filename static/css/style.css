@@ -98,6 +98,7 @@ html {
 	color:#ffffff;
 	letter-spacing: 1.5px;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.09);
+	text-transform:capitalize;
 }
 .less576 {
 	display: none;
