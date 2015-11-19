@@ -493,6 +493,9 @@ p.header-description {
 }
 .our-clients-logo {
 	margin-top: 20px;
+	overflow: hidden;
+	max-width: 920px;
+	margin: 0 auto;
 }
 .our-clients-item {
 	width: 150px;
@@ -1179,4 +1182,7 @@ div.popup-black {
 
 .matching-form {
 	display: none;
+}
+.slick-prev, .slick-arrow {
+	display:none !important;
 }

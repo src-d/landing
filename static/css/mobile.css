@@ -62,9 +62,9 @@
 	.our-clients {
 		width: 900px;
 	}
-	.our-clients-item {
+	/*.our-clients-item {
 		width: 120px;
-	}
+	}*/
 	/* FAQ */
 	.faq {
 		width: 940px;
@@ -309,9 +309,13 @@
 	.our-clients {
 		width: 760px;
 	}
-	.our-clients-item {
-		width: 120px;
+	.our-clients-logo {
+		width: 755px;
+		overflow:hidden;
 	}
+	/*.our-clients-item {
+		width: 120px;
+	}*/
 	/* FAQ */
 	.faq {
 		width: 760px;
@@ -666,9 +670,13 @@
 	.our-clients {
 		width: 540px;
 	}
-	.our-clients-item {
-		width: 140px;
+	.our-clients-logo {
+		width: 460px;
+		overflow:hidden;
 	}
+	/*.our-clients-item {
+		width: 140px;
+	}*/
 	/* FAQ */
 	.faq {
 		width: 560px;
@@ -1119,9 +1127,13 @@
 	.our-clients {
 		width: 100%;
 	}
-	.our-clients-item {
-		width: 32%;
+	.our-clients-logo {
+		width: 355px;
+		overflow:hidden;
 	}
+	/*.our-clients-item {
+		width: 32%;
+	}*/
 	/* FAQ */
 	.faq {
 		width: 100%;
@@ -1594,9 +1606,9 @@
 	.our-clients {
 		width: 100%;
 	}
-	.our-clients-item {
+	/*.our-clients-item {
 		width: 49%;
-	}
+	}*/
 	/* FAQ */
 	.faq {
 		width: 100%;

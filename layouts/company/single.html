@@ -100,7 +100,7 @@
         <div class="our-clients">
             <p>Some of our clients/p>
 
-            <div class="our-clients-logo">
+            <div class="our-clients-logo autoplay responsive">
                 <div class="our-clients-item">
                     <a href="http://www.qubit.com/" target="_blank"><img src="/image/qubit.png" alt="qubit"></a>
                 </div>
@@ -233,4 +233,61 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+		  $('.our-clients-logo').slick({
+			setting-name: setting-value
+		  });
+		});
+	</script>
+    <script type="text/javascript">
+		$('.responsive').slick({
+		  dots: false,
+		  infinite: true,
+		  speed: 300,
+		  slidesToShow: 6,
+		  slidesToScroll: 1,
+		  autoplay: true,
+		  autoplaySpeed: 2000,
+		  responsive: [
+			{
+			  breakpoint: 959,
+			  settings: {
+				slidesToShow: 5,
+				slidesToScroll: 1,
+				infinite: true,
+				dots: false
+			  }
+			},
+			{
+			  breakpoint: 768,
+			  settings: {
+				slidesToShow: 3,
+				slidesToScroll: 1
+			  }
+			},
+			{
+			  breakpoint: 576,
+			  settings: {
+				slidesToShow: 3,
+				slidesToScroll: 1
+			  }
+			},
+			{
+			  breakpoint: 390,
+			  settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			  }
+			},
+			// You can unslick at a given breakpoint now by adding:
+			// settings: "unslick"
+			// instead of a settings object
+		  ]
+		});
+		
+	</script>
     {{partial "footer.html" }}
