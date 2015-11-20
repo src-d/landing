@@ -500,21 +500,7 @@ p.header-description {
 	margin: 0 auto;
 }
 .holder {
-	animation: carousel 32s linear infinite;
-  	white-space: nowrap;
-  	will-change: transform;
-}
-@keyframes carousel {
-  0% {
-    transform: translateX(0);
-  }
-  
-  99.9999% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  white-space: nowrap;
 }
 .our-clients-item {
 	width: 150px;
