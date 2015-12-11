@@ -1191,3 +1191,125 @@ div.popup-black {
 .slick-prev, .slick-arrow {
 	display:none !important;
 }
+/* Modal */
+.hide {
+	display: none;
+}
+.modal-correct {
+	position: fixed;
+	z-index: 14;
+	width: 840px;
+	height: 400px;
+	padding: 40px;
+	background: #ffffff;
+	box-shadow: 0px -8px 10px 0px rgba(0,0,0,0.20);
+	opacity: 0.97;
+	margin-left:-460px;
+	left:50%;
+	margin-top: -240px;
+	top: 50%;
+}
+.modal-form {
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.modal-form h4 {
+	color: #344F64;
+	text-align:center;
+	font-size: 32px;
+	font-weight:300;
+	margin-top: 90px;
+}
+.modal-form p {
+	color: #344F64;
+	text-align:center;
+	font-size: 18px;
+	font-weight:300;
+	margin-top: 15px;
+}
+.modal-header {
+	width:100%;
+	text-align:center;
+	font-size:22px;
+	color:#344F64;
+}
+.modal-correct div.cross {
+	position: relative;
+	z-index: 15;
+	text-align: right;
+	right: 20px;
+	top: 10px;
+	margin-bottom: -20px;
+}
+.modal-correct div.cross img {
+	width: 16px;
+	box-shadow: none;
+
+}
+.gray-bg {
+	background: #EBF2F4;
+}
+.modal-match-name {
+	width: 308px;
+	height: 14px;
+	float: left;
+	background: #FFFFFF;
+	border: 2px solid #D0DCDF;
+	padding: 10px 40px 22px;
+	margin-top:14px;
+}
+.modal-match-name input, 
+.modal-match-handle input {
+	width: 300px;
+	border: none;
+	font-size: 16px;
+	color: #344F64;
+	background:none;
+}
+input[type="text"]:focus, textarea:focus { outline: none; }
+.modal-match-handle {
+	width: 308px;
+	height: 14px;
+	float: right;
+	background: #FFFFFF;
+	border: 2px solid #D0DCDF;
+	padding: 10px 40px 22px;
+	margin-top:14px;
+}
+.modal-question {
+	width: 716px;
+	height: 100px;
+	padding: 20px 40px;
+	background: #FFFFFF;
+	border: 2px solid #D0DCDF;
+	margin-top: 14px;
+	font-weight: 400;
+}
+.modal-question textarea {
+	width:710px;
+	height: 95px;
+	border: none;
+	font-size: 16px;
+	line-height: 27px;
+	background:none;
+	font-weight: 600;
+    color: #314B5D;
+}
+.modal-question-button {
+	text-align:right;
+}
+.modal-question-button a {
+	display: inline-block;
+	width: 130px;
+	text-decoration:none;
+	color: #ffffff;
+	font-weight: 400;
+	font-size: 14px;
+	text-align: center;
+	padding: 12px 0;
+	border-radius: 2px;
+	text-transform: uppercase;
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);
+	margin-top:15px;
+}
