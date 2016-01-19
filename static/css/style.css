@@ -394,6 +394,11 @@ p.header-description {
 	background-position: center center;
 	background-repeat: no-repeat;
 }
+.candidates .t-item-5 {
+	background-image:url(../image/dev5.jpg) !important;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
 .company .t-item-2 {
 	background-image:url(../image/com1.jpg) !important;
 	background-position: center center;
