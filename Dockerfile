@@ -1,22 +1,8 @@
-FROM tyba/nginx
+FROM nginx
 
-# Download and install hugo
-ENV HUGO_VERSION 0.14
-ENV HUGO_BINARY hugo_${HUGO_VERSION}_linux_amd64
+# Adding files
+ADD public /var/www
+ADD nginx/landing.conf /etc/nginx/conf.d/default.conf
 
-ADD https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY}.tar.gz /usr/local/
-RUN tar xzf /usr/local/${HUGO_BINARY}.tar.gz -C /usr/local/ \
-	&& ln -s /usr/local/${HUGO_BINARY}/${HUGO_BINARY} /usr/local/bin/hugo \
-	&& rm /usr/local/${HUGO_BINARY}.tar.gz
-
-WORKDIR /tmp/
-
-RUN git clone git@github.com:src-d/landing.git && echo $DOCKERSHIP_REV
-RUN cd landing && make build \
-  && mv public/* /var/www
-RUN cp /tmp/landing/nginx/landing.conf /etc/nginx/sites-enabled/nginx-site.conf
-
-# Create working directory
+# Define working directory
 WORKDIR /var/www
-
-CMD ["/usr/sbin/nginx"]
