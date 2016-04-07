@@ -1,1 +1,1 @@
-# srcd-landing
+# landing
