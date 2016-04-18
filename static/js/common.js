@@ -65,7 +65,7 @@ $(function (f) {
     data._subject = subject;
 
     $.ajax({
-      url: 'http://formspree.io/hello@tyba.com',
+      url: 'http://formspree.io/talk@sourced.tech',
       method: 'POST',
       data: data,
       dataType: 'json'
