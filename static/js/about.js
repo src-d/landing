@@ -4,7 +4,6 @@ function init() {
     var i = 0;
     var locations = [
       new google.maps.LatLng(40.4222722, -3.6868422),
-      new google.maps.LatLng(51.5080843, -0.1095317),
       new google.maps.LatLng(52.51091, 13.3701303),
     ];
 
