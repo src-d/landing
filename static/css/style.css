@@ -68,19 +68,17 @@ html {
 	background: url(../image/about-page.jpg) no-repeat;
 	background-position: center;
 	width: 100%;
-	height: 600px;
+	height: 650px;
 	position:fixed;
 	top: 0px;
 }
 .tr-com {
 	background: url(../image/com-dark.jpg) no-repeat;
 	background-position: center;
-	height: 650px;
 }
 .tr-index {
 	background: url(../image/index-dark.jpg) no-repeat;
 	background-position: center;
-	height: 650px;
 }
 .block-first {
 	background: transparent;
