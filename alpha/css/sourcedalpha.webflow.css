@@ -26,7 +26,7 @@
 }
 
 .logo {
-  width: 276px;
+  width: 316px;
   margin-top: 50px;
 }
 
@@ -162,6 +162,12 @@
   text-align: center;
 }
 
+.overview.overviewfeature {
+  display: block;
+  width: 700px;
+  margin: 80px auto;
+}
+
 .h3 {
   margin-top: 0px;
   margin-bottom: 46px;
@@ -191,6 +197,12 @@
   font-weight: 600;
 }
 
+.h4.featurecenterh4 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 57px;
+}
+
 .pwhite {
   display: block;
   width: 760px;
@@ -201,6 +213,10 @@
   font-weight: 400;
 }
 
+.pwhite.pwhitefeature {
+  width: 400px;
+}
+
 .buttons {
   display: block;
   width: 443px;
@@ -208,6 +224,10 @@
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+}
+
+.buttons.buttonsoverviewfeature {
+  margin-top: 30px;
 }
 
 .pricing {
@@ -376,7 +396,16 @@
 
 .sourcedright {
   padding: 90px 80px;
+  text-align: left;
+}
+
+.sourcedright.sourcedcenter {
   text-align: center;
+}
+
+.sourcedleft {
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .sourcedteam {
