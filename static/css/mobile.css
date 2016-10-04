@@ -759,6 +759,9 @@
 	.team {
 		width: 560px;
 	}
+	.row .cell {
+		width: 180px;
+	}
 	.team-item {
 		width: 180px;
 		height: 400px;
@@ -1249,6 +1252,11 @@
 	/* Team */
 	.team {
 		width: 100%;
+	}
+	.row .cell {
+		display: block;
+		width: 220px;
+		margin: 0 auto;
 	}
 	.team-item {
 		width: 220px;
@@ -1765,6 +1773,9 @@
 	/* Team */
 	.team {
 		width: 100%;
+	}
+	.row .cell {
+		width: 220px;
 	}
 	.team-item {
 		width: 220px;

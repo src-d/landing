@@ -146,7 +146,7 @@ html {
 }
 .top-msg {
 	font-size: 14px;
-    color: #B5CFE0;
+    color: #FFF;
     font-weight: 600;
     text-transform: none;
     text-decoration: none;
@@ -158,8 +158,10 @@ html {
     margin-top: -10px;
 }
 .top-msg a {
-	color: #ffffff;
+	color: #F5A623;
     text-decoration: none;
+	border-bottom: 1px solid #F5A623 ;
+	padding-bottom: 0.1em;
 }
 .header-opaque {
 	background: #32526A;
@@ -557,6 +559,10 @@ p.header-description {
 	width: 1200px;
 	margin: 0 auto;
 	text-align:center;
+}
+.row .cell {
+	display: inline-block;
+	width: 235px;
 }
 .team-item {
 	width: 235px;
