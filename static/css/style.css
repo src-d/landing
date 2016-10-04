@@ -1133,7 +1133,7 @@ div.popup-black {
 .stack3 {
 	width: 1194px;
 }
-.stack-item:nth-child(2), .stack-item:nth-child(4), .stack-item:nth-child(6) {
+.stack-item:nth-child(2), .stack-item:nth-child(4), .stack-item:nth-child(6), .stack-item:nth-child(8) {
 	margin-right:0px;
 }
 .stack-item-content {
