@@ -144,6 +144,23 @@ html {
 	top:0px;
 	transition: background 500ms linear;
 }
+.top-msg {
+	font-size: 14px;
+    color: #B5CFE0;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #32526A;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    margin-bottom: 6px;
+    text-align: center;
+    margin-top: -10px;
+}
+.top-msg a {
+	color: #ffffff;
+    text-decoration: none;
+}
 .header-opaque {
 	background: #32526A;
 }
@@ -514,6 +531,19 @@ p.header-description {
 .our-clients-item img {
 	width: 100px;
 }
+.custom-logo {
+    height: 100px;
+    position: relative;
+}
+.custom-logo a {    position: absolute;
+    top: 50%;
+    max-width: 95%;
+    transform: translateY(-50%);
+    left: 0;
+    text-align: center;
+    padding: 5px 10px;
+}
+
 /* Team */
 .our-team {
 	width: 100%;
