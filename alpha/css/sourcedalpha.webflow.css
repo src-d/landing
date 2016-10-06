@@ -39,7 +39,7 @@
 }
 
 .introh1 {
-  margin-top: 66px;
+  margin-top: 56px;
   margin-bottom: 0px;
   color: #314b5d;
   font-size: 44px;
@@ -48,8 +48,8 @@
 }
 
 .introh2 {
-  margin-top: 32px;
-  margin-bottom: 54px;
+  margin-top: 22px;
+  margin-bottom: 44px;
   font-size: 17px;
   font-weight: 100;
   text-transform: uppercase;
@@ -64,8 +64,8 @@
   display: block;
   width: 228px;
   height: 72px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 25px;
+  margin-bottom: 25px;
   padding: 0px 0px 0px 41px;
   float: left;
   border-radius: 94px;
@@ -90,6 +90,7 @@
 .buttonslack.buttonslacksmall {
   width: 200px;
   height: 59px;
+  margin-right: 35px;
   padding-left: 37px;
   background-image: url('../images/slackBig.png'), -webkit-linear-gradient(270deg, null, null);
   background-image: url('../images/slackBig.png'), linear-gradient(180deg, null, null);
@@ -104,11 +105,18 @@
   float: none;
 }
 
+.buttonslack.buttonslackbig.buttonslackbigcentered {
+  display: block;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+}
+
 .buttonpricing {
   display: block;
   width: 210px;
   height: 71px;
-  margin-left: 40px;
+  margin-left: 0px;
   float: left;
   border: 3px solid #2477b4;
   border-radius: 94px;
@@ -123,7 +131,7 @@
 .buttonpricing.buttonpricingsmall {
   width: 171px;
   height: 59px;
-  margin-left: 35px;
+  margin-left: 0px;
   font-size: 16px;
   line-height: 51px;
   font-weight: 600;
@@ -254,10 +262,11 @@
   background-image: -webkit-linear-gradient(270deg, #2477b4, #2477b4);
   background-image: linear-gradient(180deg, #2477b4, #2477b4);
   color: #fff;
+  text-align: left;
 }
 
 .testimonials {
-  margin-top: 120px;
+  margin-top: 95px;
   padding-top: 120px;
   padding-bottom: 120px;
   background-image: -webkit-linear-gradient(270deg, #f0f0f0, #f0f0f0);
