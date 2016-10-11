@@ -1,8 +1,7 @@
 .intro {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  position: relative;
+  z-index: 10;
+  display: block;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
@@ -10,12 +9,14 @@
 }
 
 .introleft {
+  z-index: 0;
   height: 100%;
   padding-right: 0px;
   padding-left: 0px;
 }
 
 .introright {
+  z-index: 10000;
   padding-right: 30px;
   padding-left: 50px;
   text-decoration: none;
@@ -35,11 +36,11 @@
   z-index: 1;
   display: block;
   width: 318px;
-  margin-top: 80px;
+  margin-top: 52px;
 }
 
 .introh1 {
-  margin-top: 56px;
+  margin-top: 28px;
   margin-bottom: 0px;
   color: #314b5d;
   font-size: 44px;
@@ -48,8 +49,8 @@
 }
 
 .introh2 {
-  margin-top: 22px;
-  margin-bottom: 44px;
+  margin-top: 26px;
+  margin-bottom: 48px;
   font-size: 17px;
   font-weight: 100;
   text-transform: uppercase;
@@ -83,8 +84,19 @@
 }
 
 .buttonslack:hover {
-  -webkit-transform: perspective(1261px);
-  transform: perspective(1261px);
+  background-image: url('../images/slackBig.png'), -webkit-linear-gradient(270deg, #f7ae35, #f7ae35);
+  background-image: url('../images/slackBig.png'), linear-gradient(180deg, #f7ae35, #f7ae35);
+  background-position: 40px 50%, 0px 0px;
+  background-size: 31px 31px, auto;
+  background-repeat: no-repeat, repeat;
+  box-shadow: inset 0 0 10px 1px #f5a623;
+  -webkit-perspective: 840px;
+  perspective: 840px;
+  -webkit-transform: perspective(1652px);
+  transform: perspective(1652px);
+  -webkit-transform-origin: 58% 50% 0px;
+  -ms-transform-origin: 58% 50% 0px;
+  transform-origin: 58% 50% 0px;
 }
 
 .buttonslack.buttonslacksmall {
@@ -128,6 +140,11 @@
   text-decoration: none;
 }
 
+.buttonpricing:hover {
+  border-color: #568fcb;
+  color: #568fcb;
+}
+
 .buttonpricing.buttonpricingsmall {
   width: 171px;
   height: 59px;
@@ -145,13 +162,25 @@
   color: #51738b;
 }
 
+.buttonpricing.buttonpricingsmall.buttonbottom:hover {
+  border-color: #2477b4;
+  color: #2477b4;
+}
+
 .buttonpricing.buttonpricingsmall.buttonbottom.buttonbottomlong {
   width: 201px;
   margin-right: 35px;
   margin-bottom: 25px;
 }
 
+.buttonpricing.buttonpricingsmall.buttonbottom.buttonbottomlong:hover {
+  border-color: #2477b4;
+  color: #2477b4;
+}
+
 .developer {
+  position: relative;
+  z-index: 10;
   display: block;
   width: 20%;
   max-height: 284px;
@@ -164,20 +193,20 @@
   position: absolute;
   left: 0px;
   top: 0px;
-  z-index: 10;
-  display: inline-block;
+  z-index: 100;
+  display: block;
   width: 100%;
   height: 100%;
   margin-top: 0px;
   background-color: transparent;
-  background-image: -webkit-linear-gradient(32deg, #2477b4, #568fcb), -webkit-linear-gradient(270deg, #568fcb, #568fcb);
-  background-image: linear-gradient(58deg, #2477b4, #568fcb), linear-gradient(180deg, #568fcb, #568fcb);
-  opacity: 0.46;
+  background-image: -webkit-linear-gradient(270deg, rgba(36, 119, 180, .83), rgba(36, 119, 180, .83));
+  background-image: linear-gradient(180deg, rgba(36, 119, 180, .83), rgba(36, 119, 180, .83));
+  opacity: 0.7;
   color: transparent;
 }
 
 .overview {
-  margin-top: 120px;
+  margin-top: 80px;
   margin-bottom: 120px;
   color: #fcaf25;
   font-weight: 600;
@@ -206,6 +235,7 @@
 
 .h4 {
   display: block;
+  max-width: 750px;
   margin: 0px auto 50px;
   color: #314b5d;
   font-size: 47px;
@@ -531,6 +561,10 @@
   text-align: right;
 }
 
+.buttonsmobile {
+  margin-bottom: 90px;
+}
+
 .buttonsfooter {
   display: block;
   width: 411px;
@@ -654,12 +688,66 @@
   text-align: center;
 }
 
+.slack {
+  position: relative;
+  margin-top: -90px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  background-color: transparent;
+}
+
+.slackbackground {
+  position: relative;
+  z-index: 1000;
+  display: block;
+  overflow: visible;
+  width: 862px;
+  height: 550px;
+  margin-top: -80px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 3px none #dae6f5;
+  border-radius: 5px;
+  background-image: url('../images/backgroundSlack.png');
+  background-position: -51% 50%;
+  background-size: 862px;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  box-shadow: 0 2px 45px -7px rgba(36, 119, 180, .5);
+}
+
+.mainanimation {
+  display: block;
+  overflow: hidden;
+  width: 582px;
+  height: 389px;
+  margin-top: 7px;
+  margin-right: 58px;
+  margin-left: 0px;
+  padding-left: 0px;
+  float: right;
+}
+
+.animationimage {
+  position: static;
+  z-index: 0;
+  overflow: visible;
+}
+
 html.w-mod-js *[data-ix="feature1"] {
   display: none;
   opacity: 0;
   -webkit-transform: translate(0px, 450px);
   -ms-transform: translate(0px, 450px);
   transform: translate(0px, 450px);
+}
+
+html.w-mod-js *[data-ix="mainanimation"] {
+  display: none;
+  opacity: 1;
+  -webkit-transform: translate(0px, 391px);
+  -ms-transform: translate(0px, 391px);
+  transform: translate(0px, 391px);
 }
 
 html.w-mod-js *[data-ix="feature-2"] {
@@ -678,29 +766,89 @@ html.w-mod-js *[data-ix="feature-3"] {
   transform: translate(0px, 80px);
 }
 
+html.w-mod-js *[data-ix="photoleft"] {
+  display: block;
+  opacity: 1;
+  -webkit-transform: rotate(-6deg);
+  -ms-transform: rotate(-6deg);
+  transform: rotate(-6deg);
+}
+
+html.w-mod-js *[data-ix="photoright"] {
+  display: block;
+  opacity: 1;
+  -webkit-transform: rotate(6deg);
+  -ms-transform: rotate(6deg);
+  transform: rotate(6deg);
+}
+
 @media (max-width: 991px) {
   .intro {
-    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 0px;
+    margin-left: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
   }
   .introleft {
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
+    background-color: transparent;
   }
   .introright {
-    padding-left: 30px;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0px;
+    padding-left: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
+    text-align: left;
   }
   .body {
     overflow: visible;
@@ -708,17 +856,26 @@ html.w-mod-js *[data-ix="feature-3"] {
   .logo {
     display: block;
     width: 246px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 30px 0px;
     clear: none;
   }
   .introh1 {
+    display: block;
+    width: 85%;
+    max-width: 600px;
     margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
     font-size: 45px;
     line-height: 77px;
   }
   .introh2 {
+    display: block;
+    width: 85%;
+    max-width: 600px;
+    margin-right: auto;
     margin-bottom: 0px;
+    margin-left: auto;
     font-size: 17px;
     font-weight: 300;
   }
@@ -736,6 +893,10 @@ html.w-mod-js *[data-ix="feature-3"] {
     margin-right: auto;
     margin-left: auto;
   }
+  .buttonslack.buttonslackbig.buttonslackbigcentered {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
   .buttonpricing {
     margin-top: 50px;
   }
@@ -750,40 +911,53 @@ html.w-mod-js *[data-ix="feature-3"] {
   }
   .developer {
     width: 10%;
+    opacity: 1;
   }
   .overlay {
-    background-image: -webkit-linear-gradient(32deg, #33536c, #285579), -webkit-linear-gradient(270deg, #33536c, #33536c);
-    background-image: linear-gradient(58deg, #33536c, #285579), linear-gradient(180deg, #33536c, #33536c);
+    position: absolute;
+    display: block;
+    background-image: -webkit-linear-gradient(270deg, rgba(36, 119, 180, .72), rgba(36, 119, 180, .72));
+    background-image: linear-gradient(180deg, rgba(36, 119, 180, .72), rgba(36, 119, 180, .72));
     opacity: 0.76;
   }
   .overview {
     display: block;
     width: 100%;
-    margin-top: 70px;
-    margin-bottom: 70px;
-    padding-right: 30px;
-    padding-left: 30px;
+    margin: 70px auto;
+    padding-right: 0px;
+    padding-left: 0px;
   }
   .h3 {
+    display: block;
+    width: 85%;
+    max-width: 600px;
+    margin-right: auto;
     margin-bottom: 26px;
+    margin-left: auto;
     font-size: 17px;
+    text-align: left;
   }
   .h4 {
+    width: 85%;
+    max-width: 600px;
     margin-bottom: 20px;
     font-size: 35px;
     line-height: 57px;
+    text-align: left;
   }
   .pwhite {
-    width: 100%;
+    width: 85%;
+    max-width: 600px;
     font-size: 19px;
     line-height: 36px;
+    text-align: left;
   }
   .buttons {
     margin-top: 0px;
     padding-top: 50px;
   }
   .pricing {
-    padding: 70px 30px;
+    padding: 70px 0px;
     text-align: center;
   }
   .testimonials {
@@ -792,19 +966,24 @@ html.w-mod-js *[data-ix="feature-3"] {
   }
   .ppricing {
     display: block;
-    width: 100%;
+    width: 85%;
+    max-width: 600px;
+    margin-right: auto;
     margin-bottom: 40px;
+    margin-left: auto;
     padding-right: 0px;
     float: none;
     font-size: 26px;
     line-height: 55px;
-    text-align: center;
+    text-align: left;
   }
   .pricingleft {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    padding-right: 0px;
+    padding-left: 0px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
@@ -851,22 +1030,37 @@ html.w-mod-js *[data-ix="feature-3"] {
     order: 0;
   }
   .pricingrighttitle {
+    display: block;
+    width: 85%;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px;
     -webkit-box-flex: 0;
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
     flex: 0 auto;
-    text-align: center;
+    text-align: left;
   }
   .pricinglist {
+    display: block;
+    width: 85%;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
     line-height: 46px;
+    text-align: left;
   }
   .pricinglistitem {
     margin-bottom: 15px;
-    padding-left: 0px;
-    background-image: none;
+    padding-left: 30px;
+    background-image: url('../images/bullet.png');
+    background-position: 0px 50%;
+    background-size: 8px;
+    background-repeat: no-repeat;
     font-size: 18px;
     line-height: 28px;
-    text-align: center;
+    text-align: left;
   }
   .feature {
     display: -webkit-box;
@@ -929,7 +1123,8 @@ html.w-mod-js *[data-ix="feature-3"] {
   }
   .featuretttle {
     display: block;
-    width: 84%;
+    width: 100%;
+    max-width: 600px;
     margin-right: auto;
     margin-left: auto;
     padding-top: 0px;
@@ -938,10 +1133,15 @@ html.w-mod-js *[data-ix="feature-3"] {
   }
   .featurep {
     display: block;
-    width: 84%;
+    width: 100%;
+    max-width: 600px;
     margin-right: auto;
+    margin-bottom: 40px;
     margin-left: auto;
-    font-weight: 300;
+    font-weight: 400;
+  }
+  .featurep.featurepleft {
+    font-weight: 400;
   }
   .buttonsfeatureright {
     display: block;
@@ -958,14 +1158,18 @@ html.w-mod-js *[data-ix="feature-3"] {
     margin-left: auto;
   }
   .testimonial {
-    width: 100%;
+    width: 85%;
+    max-width: 600px;
     margin-top: 56px;
     margin-bottom: 0px;
     padding-right: 0px;
   }
+  .testimonial.testimonialreverse {
+    margin-top: 30px;
+  }
   .testimonialright {
-    width: 65%;
-    padding-top: 10px;
+    width: 55%;
+    padding-top: 0px;
     padding-left: 40px;
   }
   .testimonialright.testimonialrrightavatar {
@@ -1024,6 +1228,9 @@ html.w-mod-js *[data-ix="feature-3"] {
   .feature2animation {
     display: block;
   }
+  .pwhitespan {
+    text-align: left;
+  }
   .intromobile {
     z-index: 100;
   }
@@ -1039,26 +1246,28 @@ html.w-mod-js *[data-ix="feature-3"] {
     flex-wrap: nowrap;
   }
   .testimonialleftreverse {
-    width: 60%;
-    padding-top: 10px;
+    width: 50%;
+    margin-top: 40px;
+    padding-top: 0px;
     padding-right: 0px;
   }
   .testimonialrightreverse {
-    width: 35%;
+    width: 45%;
+    margin-top: 40px;
     float: right;
   }
   .buttonsmobile {
     display: block;
-    width: 478px;
+    width: 85%;
+    max-width: 600px;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
   }
   .buttonsfooter {
     display: block;
-    width: 408px;
-    margin-right: auto;
-    margin-left: auto;
+    width: 85%;
+    max-width: 600px;
     padding-left: 0px;
   }
   .backgroundfooter {
@@ -1066,74 +1275,254 @@ html.w-mod-js *[data-ix="feature-3"] {
     background-size: cover;
   }
   .footerinfo {
-    padding-right: 30px;
-    padding-left: 30px;
+    padding: 70px 0px;
   }
   .footerp {
+    width: 85%;
+    max-width: 600px;
+    text-align: left;
+  }
+  .logosourced {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .slackbackground {
     width: 100%;
+    max-height: 560px;
+    max-width: 862px;
+    min-height: 560px;
+    margin-top: -50px;
+    background-position: 50% 0px;
+    background-size: cover;
+  }
+  .mainanimation {
+    margin-top: 91px;
+    margin-right: 10px;
+    margin-left: 250px;
+    float: right;
+  }
+  .animationimage {
+    float: none;
+  }
+  .logocontainer {
+    display: block;
+    width: 85%;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+  .developers {
+    position: relative;
   }
 }
 
 @media (max-width: 767px) {
+  .intro {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .introleft {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    -webkit-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
   .introright {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 0px;
+    padding-left: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    -webkit-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
     text-align: left;
   }
   .logo {
-    margin-top: 50px;
+    width: 230px;
+    margin: 25px 0px 20px 0%;
     float: left;
     clear: both;
     text-align: center;
   }
   .introh1 {
+    display: block;
+    width: 85%;
+    max-width: 480px;
     margin-top: 0px;
-    padding-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
     clear: both;
-    font-size: 33px;
-    line-height: 60px;
+    font-size: 31px;
+    line-height: 62px;
     text-align: left;
   }
   .introh2 {
     display: block;
-    width: 100%;
-    margin-top: 20px;
+    width: 85%;
+    max-width: 480px;
+    margin-top: 10px;
     font-size: 17px;
+    text-align: left;
+  }
+  .introh1span {
+    display: inline;
   }
   .buttonslack {
     display: block;
-    margin: 0px 30px 25px 0%;
+    margin: 0px 30px 25px auto;
     float: left;
+  }
+  .buttonslack.buttonslacksmall {
+    display: block;
+    margin-right: 30px;
+    margin-left: auto;
   }
   .buttonslack.buttonslackbig {
     margin-right: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
   }
+  .buttonslack.buttonslackbig.buttonslackbigcentered {
+    margin-left: 0px;
+  }
   .buttonpricing {
     display: block;
     margin-top: 0px;
-    margin-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
     float: left;
   }
   .buttonpricing.buttonpricingsmall {
-    margin-left: 0px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
   }
   .buttonpricing.buttonpricingsmall.buttonbottom.buttonbottomlong {
     margin-bottom: 25px;
   }
+  .developer {
+    position: static;
+    display: inline-block;
+    width: 20%;
+    max-height: auto;
+    max-width: auto;
+    float: left;
+    clear: none;
+  }
+  .overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
   .overview {
+    display: block;
+    width: auto;
+    max-width: none;
     margin-top: 50px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    text-align: center;
   }
   .h3 {
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
     margin-bottom: 26px;
+    margin-left: auto;
     text-align: left;
   }
+  .h3.pricingh3 {
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .h4 {
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
     margin-bottom: 30px;
+    margin-left: auto;
     font-size: 28px;
     line-height: 50px;
     text-align: left;
   }
+  .h4.pricingh4 {
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .pwhite {
+    width: 85%;
+    max-width: 480px;
     font-size: 18px;
     line-height: 35px;
     font-weight: 300;
@@ -1146,19 +1535,31 @@ html.w-mod-js *[data-ix="feature-3"] {
     padding-top: 0px;
   }
   .buttons.buttonpaddingleft {
-    width: 100%;
-    margin-right: 0px;
-    margin-left: 0px;
-    padding-left: 30px;
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px;
   }
   .pricing {
+    width: 100%;
     margin-bottom: 64px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
   .testimonials {
     margin-top: 0px;
+    padding-right: 0px;
     padding-bottom: 50px;
+    padding-left: 0px;
   }
   .ppricing {
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
     font-size: 20px;
     line-height: 36px;
     text-align: left;
@@ -1168,10 +1569,20 @@ html.w-mod-js *[data-ix="feature-3"] {
     padding-left: 0px;
   }
   .pricingrighttitle {
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
     padding-left: 0px;
     text-align: left;
   }
   .pricinglist {
+    display: block;
+    width: 90%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
     text-align: left;
   }
   .pricinglistitem {
@@ -1184,8 +1595,7 @@ html.w-mod-js *[data-ix="feature-3"] {
     text-align: left;
   }
   .feature {
-    padding-top: 0px;
-    padding-bottom: 54px;
+    padding: 0px;
   }
   .feature.featuremiddlemobile {
     padding-top: 0px;
@@ -1194,20 +1604,29 @@ html.w-mod-js *[data-ix="feature-3"] {
     margin-bottom: 0px;
   }
   .featuretttle {
-    width: 100%;
-    margin-right: 0px;
-    margin-left: 0px;
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
     font-size: 28px;
     line-height: 50px;
     text-align: left;
   }
   .featurep {
-    width: 100%;
-    margin-right: 0px;
-    margin-left: 0px;
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-left: auto;
     font-size: 18px;
     line-height: 35px;
+    font-weight: 400;
     text-align: left;
+  }
+  .featurep.featurepleft {
+    width: 85%;
   }
   .buttonsfeatureright {
     width: 100%;
@@ -1225,6 +1644,8 @@ html.w-mod-js *[data-ix="feature-3"] {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    width: 85%;
+    max-width: 480px;
     margin-top: 46px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1266,9 +1687,12 @@ html.w-mod-js *[data-ix="feature-3"] {
     text-align: center;
   }
   .testimonialavatar {
+    display: block;
     width: 180px;
     height: 180px;
+    margin-right: auto;
     margin-bottom: 20px;
+    margin-left: auto;
     border-width: 20px;
     text-align: center;
   }
@@ -1303,35 +1727,143 @@ html.w-mod-js *[data-ix="feature-3"] {
     text-align: center;
   }
   .buttonsmobile {
-    width: 100%;
-    margin-top: 40px;
-    text-align: left;
+    width: 85%;
+    max-width: 480px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    text-align: center;
   }
   .buttonsfooter {
-    width: 100%;
-    margin-right: 0px;
-    margin-left: 0px;
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
   }
   .backgroundfooter {
     min-height: 357px;
   }
+  .footerinfo {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+  }
   .footerp {
+    width: 85%;
+    max-width: 480px;
     font-size: 18px;
     line-height: 34px;
     text-align: left;
   }
   .logosourced {
+    display: block;
     margin-right: 0px;
     margin-left: 0px;
+  }
+  .mainanimation {
+    width: 80%;
+    min-height: 300px;
+  }
+  .logocontainer {
+    display: block;
+    width: 85%;
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .developers {
+    position: relative;
+    width: 100%;
   }
 }
 
 @media (max-width: 479px) {
+  .introleft {
+    position: relative;
+    display: block;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    background-color: transparent;
+  }
+  .introright {
+    position: static;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 0px;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
+  }
+  .introh1 {
+    font-size: 32px;
+    line-height: 59px;
+    font-weight: 300;
+  }
+  .introh2 {
+    font-size: 17px;
+  }
+  .introh1span {
+    display: inline;
+    font-weight: 600;
+  }
+  .buttonpricing.buttonpricingsmall.buttonbottom {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin-right: 0px;
+    margin-left: 0px;
+    float: none;
+  }
+  .buttonpricing.buttonpricingsmall.buttonbottom.buttonbottomlong {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .developer {
+    width: 20%;
+    opacity: 1;
+    -webkit-perspective: 983px;
+    perspective: 983px;
+  }
+  .overlay {
+    left: 0px;
+    top: 0px;
+    display: block;
+    height: 100%;
+  }
+  .pricinglistitem {
+    padding-left: 35px;
+    background-position: 10px 25%;
+  }
+  .featurep {
+    font-weight: 400;
+  }
+  .buttonsfooter {
+    width: 85%;
+    max-width: 480px;
+  }
   .backgroundfooter {
     min-height: 239px;
     background-position: 50% 29%;
     background-size: contain;
     background-attachment: scroll;
+  }
+  .footerslogan {
+    width: 100%;
+    max-width: 340px;
+  }
+  .footerinfo {
+    padding-right: 0px;
+    padding-left: 0px;
   }
   .footerp {
     font-size: 18px;
