@@ -58,7 +58,7 @@ html {
 	padding-top: 1px;
 }
 .faq-content-wrapper {
-	margin-top: 40px;
+	margin-top: 90px;
 	position:relative;
 	background:#ffffff;
 	z-index:5;
@@ -347,8 +347,9 @@ p.header-description {
 	bottom: 300px;
 }
 .question-link a {
+	cursor: pinter;
 	display: inline-block;
-	width: 180px;
+	width: 250px;
 	text-decoration:none;
 	color: #ffffff;
 	font-weight: 400;
@@ -356,7 +357,6 @@ p.header-description {
 	text-align: center;
 	padding: 12px 0;
 	border-radius: 2px;
-	text-transform: uppercase;
 }
 .question-link-buttons {
 	margin-top: 40px;

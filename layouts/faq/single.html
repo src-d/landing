@@ -1,276 +1,283 @@
-{{ $page := "faq" }}
-{{ partial "header.html" . }}
+{{ $page := "faq" }} {{ partial "header.html" . }}
 <div class="faq-content-wrapper">
-    <div class="faq">
-        <div class="faq-chapters-block">
-            <h4>FAQ SECTIONS</h4>
+	<div class="faq">
+		<div class="faq-chapters-block">
+			<h4>FAQ SECTIONS</h4>
 
-            <div class="faq-chapters">
-                <div class="faq-chapters-item">
-                    <h5>For developers</h5>
+			<div class="faq-chapters">
+				<div class="faq-chapters-item">
+					<h5>For developers</h5>
 
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-introduction">Introduction</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-sourcing">Sourcing</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-matching">Matching</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-process">Process</a></div>
-                </div>
-            </div>
-            <div class="faq-chapters" style="display:none">
-                <div class="faq-chapters-item">
-                    <h5>For companies</h5>
+					<div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-introduction">Introduction</a></div>
+					<div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-sourcing">Sourcing</a></div>
+					<div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-matching">Matching</a></div>
+					<div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="devs-process">Process</a></div>
+				</div>
+			</div>
+			<div class="faq-chapters" style="display:none">
+				<div class="faq-chapters-item">
+					<h5>For companies</h5>
 
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-introduction">Introduction</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-sourcing">Sourcing</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-matching">Matching</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-process">Process</a></div>
-                    <div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-conditions">Conditions</a></div>
-                </div>
-            </div>
-        </div>
-        <div class="faq-content">
-            <div class="faq-content-section">
-                <h2>For Developers</h2>
-                <h4 id="devs-introduction">Introduction</h4>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">How are you different from a recruiter?</span>
+					<div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-introduction">Introduction</a></div>
+					<div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-sourcing">Sourcing</a></div>
+					<div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-matching">Matching</a></div>
+					<div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-process">Process</a></div>
+					<div class="faq-chapters-item-link nav-to"><a href="#" data-nav-to="companies-conditions">Conditions</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="faq-content">
+			<div class="faq-content-section">
+				<h2>For Developers</h2>
+				<h4 id="devs-introduction">Introduction</h4>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">How are you different from a recruiter?</span>
 
-                        <p style="display:none">Recruiters spam you with irrelevant offers because they are not able
-                            to understand a developer profile. source{d} has been built by
-                            developers for developers to contact you only with job opportunities
-                            that match your skills and experience.</p>
+						<p style="display:none">Recruiters spam you with irrelevant offers because they are not able to understand a developer profile. source{d} has
+							been built by developers for developers to contact you only with job opportunities that match your skills and experience.</p>
 
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">Will it cost me anything?</span>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">Will it cost me anything?</span>
 
-                        <p style="display:none">No, we don't charge developers a dime.</p>
-                    </div>
-                </div>
+						<p style="display:none">No, we don't charge developers a dime.</p>
+					</div>
+				</div>
 
-                <h4 id="devs-sourcing">Sourcing</h4>
+				<h4 id="devs-sourcing">Sourcing</h4>
 
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">How did you find me?</span>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">How did you find me?</span>
 
-                        <p style="display:none">We crawl open source contributions on GitHub to find out which languages and frameworks you use most. We use this data to try and identify the best developers for our open job offers. If we have contacted you, it's because we believe you are a good match for the position. We are constantly working on improving our algorithms, but sometimes <a href="#criteria">we might be wrong</a>.</p>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">How did you get my email?</span>
+						<p style="display:none">We crawl open source contributions on GitHub to find out which languages and frameworks you use most. We use this data
+							to try and identify the best developers for our open job offers. If we have contacted you, it's because we believe
+							you are a good match for the position. We are constantly working on improving our algorithms, but sometimes <a href="#criteria">we might be wrong</a>.</p>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">How did you get my email?</span>
 
-                        <p style="display:none">Every commit you create includes the user and email you set up in your git config. When you push these commits to GitHub, that information is kept even though it's not directly shown on their website. We download the repositories through the Git protocol, so we can access these email addresses.</p>
+						<p style="display:none">Every commit you create includes the user and email you set up in your git config. When you push these commits to GitHub,
+							that information is kept even though it's not directly shown on their website. We download the repositories through
+							the Git protocol, so we can access these email addresses.</p>
 
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">What do you know about me?</span>
-                        <p style="display:none">We only know the information that you have publicly shared; that is, the name and email you commit with and all your open source code. We try to complete that with your public LinkedIn profile, if possible.</p>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">How can I avoid being found?</span>
-                        <p style="display:none">You can go to your <a href="https://github.com/settings/profile">GitHub profile settings</a> and choose not to show your email address. This will change all your _future_ commits' email address to _yourusername_@users.noreply.github.com. As long as you keep using the same name, we will identify your new commits as belonging to you, and will assume you don't want to be contacted.</p>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">What do you do with my data?</span>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">What do you know about me?</span>
+						<p style="display:none">We only know the information that you have publicly shared; that is, the name and email you commit with and all your
+							open source code. We try to complete that with your public LinkedIn profile, if possible.</p>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">How can I avoid being found?</span>
+						<p style="display:none">You can go to your <a href="https://github.com/settings/profile">GitHub profile settings</a> and choose not to show
+							your email address. This will change all your _future_ commits' email address to _yourusername_@users.noreply.github.com.
+							As long as you keep using the same name, we will identify your new commits as belonging to you, and will assume you
+							don't want to be contacted.</p>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">What do you do with my data?</span>
 
-                        <p style="display:none">We only use it internally for recruitment purposes. We never give it
-                            to our clients nor anyone. We started this because we hate
-                            recruiters who disrespect your inbox as much as you do, but we also
-                            hate companies who use people's data in the wrong way as much as you
-                            do.</p>
+						<p style="display:none">We only use it internally for recruitment purposes. We never give it to our clients nor anyone. We started this because
+							we hate recruiters who disrespect your inbox as much as you do, but we also hate companies who use people's data in
+							the wrong way as much as you do.
+						</p>
 
-                    </div>
-                </div>
+					</div>
+				</div>
 
-                <h4 id="devs-matching">Matching</h4>
+				<h4 id="devs-matching">Matching</h4>
 
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <a name="criteria" />
-                        <span class="q">What criteria do you use in order to match me with an offer?</span>
-                        <p style="display:none">We look at your open source contributions, and try to figure out which languages and frameworks you are most familiar with. Your location is also taken into account if the offer does not allow telecommuting. This is all done automatically.</p>
+				<div class="question-item">
+					<div class="question-item-q">
+						<a name="criteria" />
+						<span class="q">What criteria do you use in order to match me with an offer?</span>
+						<p style="display:none">We look at your open source contributions, and try to figure out which languages and frameworks you are most familiar
+							with. Your location is also taken into account if the offer does not allow telecommuting. This is all done automatically.</p>
 
-                        <p style="display:none">We know that this method is not perfect, and we are working hard on improving it. If we've mismatched you, it means we have a bug to fix, so please don't be too harsh with us, and feel free to drop us a line; we would be more than happy to discuss any other potential offers with you.</p>
-                    </div>
-                </div>
+						<p style="display:none">We know that this method is not perfect, and we are working hard on improving it. If we've mismatched you, it means
+							we have a bug to fix, so please don't be too harsh with us, and feel free to drop us a line; we would be more than
+							happy to discuss any other potential offers with you.</p>
+					</div>
+				</div>
 
-                <h4 id="devs-process">Process</h4>
+				<h4 id="devs-process">Process</h4>
 
-                <div class="question-item" style="display:none">
-                    <div class="question-item-q">
-                        <span class="q">Is it legal for you to contact me?</span>
-                         <p style="display:none">Yes, since we only use public data and don't sell that data to any other parties. We started source{d} because we hated people who abuse the use they make of our data as much as you do and we wanted to do tech recruitment the right way.</p>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">What does the process look like exactly?</span>
+				<div class="question-item" style="display:none">
+					<div class="question-item-q">
+						<span class="q">Is it legal for you to contact me?</span>
+						<p style="display:none">Yes, since we only use public data and don't sell that data to any other parties. We started source{d} because we hated
+							people who abuse the use they make of our data as much as you do and we wanted to do tech recruitment the right way.</p>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">What does the process look like exactly?</span>
 
-                        <p style="display:none">Once we've matched you to one of our offers we contact you to know if
-                            you'd be interested in the offer. If that's the case we're
-                            more than happy to provide as much information as you might need and
-                            we will schedule a phone call to solve any other doubts and have a
-                            quick discussion. Some clients also ask us to do a technical test.
-                            After that, if we still consider you a good fit, we will send your
-                            contact details and a summary of your profile to our client for them
-                            to get in touch with you.</p>
+						<p style="display:none">Once we've matched you to one of our offers we contact you to know if you'd be interested in the offer. If that's the
+							case we're more than happy to provide as much information as you might need and we will schedule a phone call to solve
+							any other doubts and have a quick discussion. Some clients also ask us to do a technical test. After that, if we still
+							consider you a good fit, we will send your contact details and a summary of your profile to our client for them to
+							get in touch with you.</p>
 
-                    </div>
-                </div>
-            </div>
-            <div class="faq-content-section" style="display:none">
-                <h2>For Companies</h2>
-                <h4 id="companies-introduction">Introducing</h4>
+					</div>
+				</div>
+			</div>
+			<div class="faq-content-section" style="display:none">
+				<h2>For Companies</h2>
+				<h4 id="companies-introduction">Introducing</h4>
 
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">What is Tyba?</span>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">What is Tyba?</span>
 
-                        <p style="display:none">Tyba is the company behind source{d}. It was started in 2011 in
-                            Madrid, Spain.</p>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">What is source{d}?</span>
+						<p style="display:none">Tyba is the company behind source{d}. It was started in 2011 in Madrid, Spain.</p>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">What is source{d}?</span>
 
-                        <p style="display:none">source{d} is a product by Tyba that analyzes all open-source
-                            repositories to match developers with job offers that actually match
-                            them.</p>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">What is source{d}?</span>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">Why should I choose you over other recruiters?</span>
-                    </div>
-                </div>
+						<p style="display:none">source{d} is a product by Tyba that analyzes all open-source repositories to match developers with job offers that
+							actually match them.
+						</p>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">What is source{d}?</span>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">Why should I choose you over other recruiters?</span>
+					</div>
+				</div>
 
-                <h4 id="companies-sourcing">Sourcing</h4>
+				<h4 id="companies-sourcing">Sourcing</h4>
 
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">Where do you find developers?</span>
-                        <p style="display:none">
-                          We crawl open source contributions on GitHub to build a database of developers which reflects the languages and frameworks they use most. We then use this data to try to identify the best developers for our open job offers.
-                        </p>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">How big is your database?</span>
-                        <p style="display:none">
-                          At the time this FAQ is being written, we have information on about 14 million repositories, and have identified 5 million developers. This comes from parsing more than 700 million commits. Of course, we keep the database updated with new GitHub data, so these numbers will probably grow with time.
-                        </p>
-                    </div>
-                </div>
-                <h4 id="companies-matching">Matching</h4>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">Where do you find developers?</span>
+						<p style="display:none">
+							We crawl open source contributions on GitHub to build a database of developers which reflects the languages and frameworks
+							they use most. We then use this data to try to identify the best developers for our open job offers.
+						</p>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">How big is your database?</span>
+						<p style="display:none">
+							At the time this FAQ is being written, we have information on about 14 million repositories, and have identified 5 million
+							developers. This comes from parsing more than 700 million commits. Of course, we keep the database updated with new
+							GitHub data, so these numbers will probably grow with time.
+						</p>
+					</div>
+				</div>
+				<h4 id="companies-matching">Matching</h4>
 
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">Why do you use engineers to qualify candidates?</span>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">Can you help us define the roles for our openings?</span>
-                    </div>
-                </div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">Why do you use engineers to qualify candidates?</span>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">Can you help us define the roles for our openings?</span>
+					</div>
+				</div>
 
-                <h4 id="companies-process">Process</h4>
+				<h4 id="companies-process">Process</h4>
 
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">What does the process look like?</span>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">How long does the process take?</span>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">When can I expect to get my first developers?</span>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">Can you support us with the visa and relocation process?</span>
-                    </div>
-                </div>
-                <h4 id="companies-conditions">Conditions</h4>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">What does the process look like?</span>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">How long does the process take?</span>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">When can I expect to get my first developers?</span>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">Can you support us with the visa and relocation process?</span>
+					</div>
+				</div>
+				<h4 id="companies-conditions">Conditions</h4>
 
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">Do you require exclusivity?</span>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">What happens if the person I hire quits?</span>
-                    </div>
-                </div>
-                <div class="question-item">
-                    <div class="question-item-q">
-                        <span class="q">What happens if the person I hire doesn't meet my expectations?</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="block-gray" id="faq-form" style="padding-bottom: 20px">
-        <h1 class="main-header" style="padding-top: 40px; margin-top: 10px;">DIDN'T FIND AN
-            ANSWER?</h1>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">Do you require exclusivity?</span>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">What happens if the person I hire quits?</span>
+					</div>
+				</div>
+				<div class="question-item">
+					<div class="question-item-q">
+						<span class="q">What happens if the person I hire doesn't meet my expectations?</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="block-gray" id="faq-form" style="padding-bottom: 20px">
+		<h1 class="main-header" style="padding-top: 40px; margin-top: 10px;">DIDN'T FIND AN ANSWER?
+		</h1>
 
-        <p class="faq-form-text">No worries. Drop us a line!</p>
+		<p class="faq-form-text">No worries. Drop us a line!</p>
 
-        <div class="faq-form">
-            <form id="faq-form-form">
-                <div class="form-name">
-                    <input type="email" name="email" class="requires-validation" placeholder="Your email" required data-validate="^.+@.+\..+$">
-                </div>
-                <div class="form-position">
-                    <select name="position" required>
+		<div class="faq-form">
+			<form id="faq-form-form">
+				<div class="form-name">
+					<input type="email" name="email" class="requires-validation" placeholder="Your email" required data-validate="^.+@.+\..+$">
+				</div>
+				<div class="form-position">
+					<select name="position" required>
                         <option value="developer">I'm a Developer</option>
                         <option value="company">I'm a Company</option>
                     </select>
-                </div>
-                <div class="clear"></div>
-                <div class="form-question">
-                    <textarea name="question" placeholder="Your question" required class="requires-validation" data-validate="^.+$"></textarea>
-                </div>
-                <input type="text" name="_gotcha" style="display:none" />
-                <button type="submit" class="form-question-button blue">SEND</button>
-            </form>
-        </div>
-      </div>
-      <div class="block-gray" style="margin-top:-80px; padding-bottom: 5px; display: none" id="faq-form-success">
-          <h1 class="main-header" style="padding-top:80px;">SUCCESS!</h1>
+				</div>
+				<div class="clear"></div>
+				<div class="form-question">
+					<textarea name="question" placeholder="Your question" required class="requires-validation" data-validate="^.+$"></textarea>
+				</div>
+				<input type="text" name="_gotcha" style="display:none" />
+				<button type="submit" class="form-question-button blue">SEND</button>
+			</form>
+		</div>
+	</div>
+	<div class="block-gray" style="margin-top:-80px; padding-bottom: 5px; display: none" id="faq-form-success">
+		<h1 class="main-header" style="padding-top:80px;">SUCCESS!</h1>
 
-          <p class="faq-form-text">Thank you for your mail! We will check the question as soon as possible and return to you with feedback.</p>
+		<p class="faq-form-text">Thank you for your mail! We will check the question as soon as possible and return to you with feedback.</p>
 
-          <div class="faq-form">
-              <div class="question-link">
-                  <div class="question-link-buttons">
-                      <a href="#" class="blue show-elem hide-elem" data-elem-show="faq-form" data-elem-hide="faq-form-success">New Question</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-{{ partial "footer.html" . }}
+		<div class="faq-form">
+			<div class="question-link">
+				<div class="question-link-buttons">
+					<a href="#" class="blue show-elem hide-elem" data-elem-show="faq-form" data-elem-hide="faq-form-success">New Question</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{ partial "footer.html" . }}
