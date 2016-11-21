@@ -9,4 +9,4 @@ ADD nginx/landing.conf /etc/nginx/conf.d/default.conf
 # Define working directory
 WORKDIR /var/www
 
-CMD ["api", "-config=/opt/landing-api/prod.yml"]
+# CMD ["api", "-config=/opt/landing-api/prod.yml"]
