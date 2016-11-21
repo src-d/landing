@@ -7,6 +7,6 @@ repos:
           repos: [go-git, beanstool, kmcuda, flamingo, storable, go-siva]
     other:
         - owner: src-d
-          repos: [minhashcuda, kmcuda]
+          repos: [minhashcuda]
         - owner: gitql
           repos: [gitql]
