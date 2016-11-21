@@ -1,0 +1,80 @@
+{{ partial "head.html" . }}
+<body>
+    {{ partial "header.html" . }}
+    
+    <header class="fullWidth">
+        <div class="mainContainer">
+            <h1>Building the first AI that understands code</h1>
+            <p>Lorem ipsum<br />second line</p>
+            <p><a href="">Read about our mission</a></p>
+            <p><a href="">Wondering how we found you? Read more about it</a></p>
+        </div>
+    </header>
+
+    <section class="mainContainer weAreWeWant">
+        <article class="article">
+            <header>
+                <h2>Where we are</h2>
+            </header>
+            <ul>
+                <li>Lorem ipsum<br />second line</li>
+                <li>Lorem ipsum<br />second line<br />third line</li>
+                <li>Lorem ipsum<br />second line<br />third line</li>
+            </ul>
+            <div>
+                <a href="">read more</a>
+            </div>
+        </article>
+        <article class="article">
+            <header>
+                <h2>Where we want to be</h2>
+            </header>
+            <ul>
+                <li>Lorem ipsum<br />second line<br />third line</li>
+                <li>Lorem ipsum<br />second line<br />third line</li>
+                <li>Lorem ipsum<br />second line<br />third line</li>
+            </ul>
+            <div>
+                <a href="">read more</a>
+            </div>
+        </article>
+    </section>
+
+    <section class="fullWidth opaque" id="ourOpenSource">
+        <div class="mainContainer">
+            <header>
+                <h2>We are 100% committed to open source</h2>
+            </header>
+            <p>Lorem ipsum<br />second line</p>
+            <section>
+                <h3>Our top open source projects</h3>
+                <div id="openSourceMain" class="repos"></div>
+            </section>
+            <div><a href="">more</a></div>
+            <section>
+                <h3>Our OpenSourceFriday repos:</h3>
+                <div id="openSourceOther" class="repos"></div>
+            </section>
+        </div>
+    </section>
+
+    <aside id="ourPosts">
+        <div class="mainContainer">
+            <header>
+                <h2>Read more aobout us</h2>
+            </header>
+            <section>
+                <h3>Business posts:</h3>
+                <div id="businessPosts" class="repos"></div>
+            </section>
+            <section>
+                <h3>Technical posts:</h3>
+                <div id="technicalPosts" class="repos"></div>
+            </section>
+        </div>
+    </aside>
+
+  {{ partial "contact-us.html" . }}
+  {{ partial "footer.html" . }}
+</body>
+</html>

@@ -1,0 +1,41 @@
+@import "compass/css3";
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin row () {
+  font-size: 0;
+  & > * {
+        font-size: 18px;
+  }
+}
+
+@mixin genericCol ($col, $sum, $gap: $gutter, $valign: top, $pushRight: 0) {
+
+    border: 1px dashed #CCC;
+
+    $columnWidth: percentage(1/$sum);
+    $relativeWidth: $col * $columnWidth;
+    $relativePaddedWidth: calc(#{$relativeWidth} -  #{$gap} );
+    $relativepushRight: $pushRight * $columnWidth;
+
+    width: 100%;
+    display: inline-block;
+    margin-left: calc((#{$gap} / 2) + #{$relativepushRight});
+    margin-right: $gap / 2;
+    vertical-align: $valign;
+
+    @media only screen and (min-width: $mobileBreakpoint) {
+        width: $relativePaddedWidth;
+    }
+
+    &.fluid { width: $relativePaddedWidth; }
+}
+
+
+@mixin col ($col, $pushRight: 0, $valign: top ) {
+    @include genericCol($col, $columns, $gutter, $valign, $pushRight);
+}

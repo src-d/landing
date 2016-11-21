@@ -1,0 +1,35 @@
+.repo {
+    @include col(4);
+    border: 1px solid #555;
+    font-family: arial;
+    margin-top: 5px;
+    //margin: 5px 4%;
+    //width: 40%;
+    height: 145px;
+    overflow: hidden;
+    display: inline-block;
+    //float: left;
+    .name {
+        span {
+        }
+    }
+
+    p {
+        color: #555;
+    }
+
+    .summary {
+        .stars {
+
+        }
+        .language {
+
+        }
+    }
+}
+
+ #ourOpenSource .repos, 
+ #ourPosts .repos {
+     //text-align: center;
+     overflow: hidden;
+ }

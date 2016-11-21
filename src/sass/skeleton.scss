@@ -1,0 +1,57 @@
+body {
+    background-color: $bgMainColor;
+    font-family: roboto;
+    color: $textColorMain;
+    font-size: $textMain;
+    font-weight: 600;
+}
+
+.fullWidth {
+    width:100%;
+    &.opaque {
+        background-color: $bgLightBlue;
+    }
+}
+
+.mainContainer {
+    width: $pageWidth;
+    margin: 0 auto;
+    padding: 30px 0;
+    border: 1px dashed #AAA;
+}
+
+header {
+    text-align: center;
+}
+
+.code {
+    font-family: hack;
+}
+
+h1, h2, h3, h4, h5, h6, .title {
+    font-family: 'Open Sans';
+}
+
+h1 {
+    font-size: 20px;
+    line-height: 60px;
+    font-size: $textSizeTitle1;
+    color: $textColorTitle;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 60px;
+    font-size: $textSizeTitle2;
+    color: $textColorTitle;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 15px;
+    line-height: 50px;
+    font-size: $textSizeTitle3;
+    color: $textColorTitle;
+    font-weight: 400;
+}

@@ -1,0 +1,15 @@
+configPath: assets/config/
+environment: debug
+githubToken: ac00005fd8d81f536e7eaf8cd870939374bd2f75
+ttl: 10
+allowedHostName: localhost
+pinnedRepos:
+    other:
+        - owner: dpordomingo
+          repos: [Ant]
+        - owner: mvader
+          repos: [go-itergen]
+        - owner: vmarkovtsev
+          repos: [GitHubStars]
+        - owner: mvader
+          repos: [go-bigq, vermittler]
