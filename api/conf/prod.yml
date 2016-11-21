@@ -10,3 +10,5 @@ repos:
           repos: [minhashcuda]
         - owner: gitql
           repos: [gitql]
+        - owner: mvader
+          repos: ['react-categorized-tag-input']
