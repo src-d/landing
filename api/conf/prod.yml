@@ -1,0 +1,7 @@
+addr: ":8080"
+github-token: "***REMOVED***"
+fetcher-page-size: 45
+repos:
+    main:
+        - owner: src-d
+          repos: [go-git, beanstool, kmcuda, flamingo, storable, go-siva]

@@ -1,0 +1,7 @@
+FROM quay.io/srcd/basic:latest
+MAINTAINER source{d}
+
+ADD bin /bin
+ADD conf /opt/landing-api
+
+CMD ["api", "-config=/opt/landing-api/prod.yml"]
