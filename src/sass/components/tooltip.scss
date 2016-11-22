@@ -1,4 +1,4 @@
-.copy-btn {
+.copyBtn {
 	position: relative;
 
 	&:after {
@@ -38,7 +38,7 @@
 		transition: all 200ms ease-in;
 	}
 
-	&.show-tooltip {
+	&.show {
 		&:after {
 			visibility: visible;
 			background: fade-in(#555F66, 0.02);

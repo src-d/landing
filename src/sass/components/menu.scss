@@ -39,9 +39,9 @@
 			}
 		}
 	}
-}
 
-.menu--open {
-	opacity: 1;
-	visibility: visible;
+	&.open {
+		opacity: 1;
+		visibility: visible;
+	}
 }

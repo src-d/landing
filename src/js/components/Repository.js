@@ -9,21 +9,21 @@ export default function Repository({ repo }) {
   return (
     <div className='repo'>
       <a href={repo.URL}>
-        <span className='repo__owner'>{repo.FullName.split('/')[0]}</span>
-        <span className='repo__divider'>/</span>
-        <span className='repo__name'>{repo.Name}</span>
+        <span className='owner'>{repo.FullName.split('/')[0]}</span>
+        <span className='divider'>/</span>
+        <span className='name'>{repo.Name}</span>
       </a>
-      <p className='repo__description'>
+      <p className='description'>
         {repo.Description}
       </p>
-      <div className='repo__data'>
-        <div className='repo__stars'>
+      <div className='data'>
+        <div className='stars'>
           <img src='/img/star.svg' />
           <span>{repo.Stars}</span>
         </div>
 
-        <div className='repo__lang'>
-          <span className='repo__lang__circle' style={{ backgroundColor: languageColors[repo.Lang] }}></span>
+        <div className='lang'>
+          <span className='circle' style={{ backgroundColor: languageColors[repo.Lang] }}></span>
           <span>{repo.Lang}</span>
         </div>
       </div>

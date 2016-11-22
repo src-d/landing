@@ -55,9 +55,9 @@ function Post({ post, first }) {
 	// - Color if new
 	// - Real date
 	return (
-		<div className={'post' + (first ? ' post--new' : '')}>
+		<div className={'post' + (first ? ' new' : '')}>
 			{first ? (
-				<span className='post__new'>NEW</span>
+				<span className='tag'>NEW</span>
 			) : null}
 			<a href={post.link}>{post.title}</a>
 			{first ? (

@@ -1,4 +1,4 @@
-.loading, .loading--error {
+.loading {
 	text-align: center;
 	padding: 1em;
 
@@ -8,6 +8,6 @@
 	}
 }
 
-.loading--error p {
+.loading.error p {
 	margin-top: 1em;
 }

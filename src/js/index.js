@@ -28,7 +28,7 @@ function setupMenu() {
 	const menuToggle = document.getElementById('menu-toggle')
 	const menu = document.getElementById('menu')
 	menuToggle.addEventListener('click', function () {
-		menu.classList.toggle('menu--open')
-		menuToggle.classList.toggle('topbar__toggle--open')
+		menu.classList.toggle('open')
+		menuToggle.classList.toggle('open')
 	})
 }

@@ -1,11 +1,11 @@
 import Clipboard from 'clipboard'
 
 export default function setupClipboard() {
-	const clipboard = new Clipboard('.copy-btn')
+	const clipboard = new Clipboard('.copyBtn')
 
 	clipboard.on('success', e => {
 		window.event.preventDefault()
-		e.trigger.classList.add('show-tooltip');
-		setTimeout(_ => e.trigger.classList.remove('show-tooltip'), 2000)
+		e.trigger.classList.add('show');
+		setTimeout(_ => e.trigger.classList.remove('show'), 2000)
 	})
 }

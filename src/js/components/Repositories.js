@@ -63,9 +63,9 @@ export default class Repositories extends Component {
     }
 
     return (
-      <div className='repositories--other'>
+      <div className='repositories other'>
         <h4>Other cool projects our engineers have made during Open Source Fridays</h4>
-        <div className='repository-list--other'>
+        <div className='repositoryList other'>
           {repos.map((r, i) => <Repository key={i} repo={r} />)}
         </div>
       </div>
@@ -85,13 +85,13 @@ export default class Repositories extends Component {
 
     return (
       <div className='repositories'>
-        <div className='repository-list--main'>
+        <div className='repositoryList main'>
           {repos.map((r, i) => <Repository key={i} repo={r} />)}
         </div>
 
         {this.state.displayOther ? this.renderOther() : null}
 
-        <div className='repositories__more' onClick={_ => this.toggleOther()}>
+        <div className='more' onClick={_ => this.toggleOther()}>
           <span>{this.state.displayOther ? 'Less' : 'More'}</span>
           <img src={this.state.displayOther ? '/img/less.svg' : '/img/more.svg'} />
         </div>

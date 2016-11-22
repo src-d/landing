@@ -11,7 +11,7 @@ export function Loading(props) {
 
 export function LoadingError(props) {
   return (
-    <div className='loading--error'>
+    <div className='loading error'>
       <img src='/img/error.svg' alt="Error" />
       <p>There has been a problem loading the requested data.</p>
     </div>
