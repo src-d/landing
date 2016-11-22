@@ -2,44 +2,98 @@
 
 let path = require('path');
 let webpack = require('webpack');
-let extractTextPlugin = require('extract-text-webpack-plugin');
-
-let extractSCSS = new extractTextPlugin('css/style.css'/*, {allChunks: true}*/);
+let merge = require('webpack-merge');
+let autoprefixer = require('autoprefixer');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let includeCompass = 'includePaths[]=' + path.resolve(__dirname, '../node_modules/compass-mixins/lib');
+let TARGET_ENV = process.env.npm_lifecycle_event === 'build' ? 'production' : 'development';
 
-module.exports = {
-    entry: [
-        __dirname + '/../src/sass/app.scss',
-        __dirname + '/../src/js/main.js',
-    ],
-    output: {
-        path: path.resolve(__dirname, '../public/'),
-        filename: 'js/bundle.js',
-    },
+let common = {
+  entry: [
+    __dirname + '/../src/sass/app.scss',
+    __dirname + '/../src/js/index.js',
+  ],
+
+  output: {
+    path: path.resolve(__dirname, '../static/'),
+    filename: 'js/bundle.js',
+  },
+
+  resolve: {
+    modulesDirectories: ['node_modules'],
+    extensions: ['', '.js', '.jsx']
+  },
+
+  postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
+}
+
+if (TARGET_ENV === 'production') {
+  module.exports = merge(common, {
     devtool: 'source-map',
-    devServer:{
-        contentBase: 'public/'
-    },
+
     module: {
-        loaders: [
-            {
-                test: /.jsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            }, {
-                test: /\.scss$/,
-                loader: extractSCSS.extract('style','css!sass?' + includeCompass)
-            }
-        ]
+      loaders: [
+        {
+          test: /.jsx?$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+          query: {
+            presets: ['es2015', 'react']
+          }
+        }, {
+          test: /\.(eot|ttf|woff|svg|png|gif|jpg|jpeg)$/,
+          loaders: ['file']
+        }, {
+          test: /\.scss$/,
+          loader: ExtractTextPlugin.extract('style-loader', 'css!sass?' + includeCompass, ['css-loader', 'postcss-loader'])
+        }
+      ]
     },
+
     plugins: [
-        extractSCSS,
-        new webpack.ProvidePlugin({
-            Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
-            fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-        })
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.DefinePlugin({
+        'process.env': {
+          'NODE_ENV': JSON.stringify('production')
+        }
+      }),
+      new ExtractTextPlugin('css/style.css', { allChunks: true }),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      })
     ]
-};
+  });
+} else {
+  module.exports = merge(common, {
+    module: {
+      loaders: [
+        {
+          test: /.jsx?$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+          query: {
+            presets: ['es2015', 'react']
+          }
+        }, {
+          test: /\.(eot|ttf|woff|svg|png|gif|jpg|jpeg)$/,
+          loaders: ['file']
+        },
+        {
+          test: /\.scss$/,
+          loader: ExtractTextPlugin.extract('style-loader', 'css!sass?' + includeCompass, ['css-loader', 'postcss-loader'])
+        }
+      ]
+    },
+
+    devtool: 'source-map',
+    devServer: {
+      contentBase: 'static/',
+    },
+
+    plugins: [
+      new ExtractTextPlugin('css/style.css', { allChunks: true }),
+    ],
+  });
+}

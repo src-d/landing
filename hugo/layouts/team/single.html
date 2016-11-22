@@ -1,22 +1,15 @@
 {{ partial "head.html" . }}
+
 <body>
-    {{ partial "header.html" . }}
-  
-    {{ range $teamName, $team := .Params.members }}
-        <h1>{{ $teamName }}</h1>
-        {{ range $k, $member := $team }}
-            {{ $member.name }} {{ $member.surname }} - {{ $member.social }}<br />
-        {{ end }}
-        <hr />
-    {{ end }}
+    {{ partial "header.html" . }} {{ range $teamName, $team := .Params.members }}
+    <h1>{{ $teamName }}</h1>
+    {{ range $k, $member := $team }} {{ $member.name }} {{ $member.surname }} - {{ $member.social }}<br /> {{ end }}
+    <hr /> {{ end }}
 
     <hr />
-    <hr />
-    {{ .Content }}
+    <hr /> {{ .Content }}
 
-    <hr />
-    {{ T "contactUs" }}
-
-  {{ partial "footer.html" . }}
+    <hr /> {{ partial "footer.html" . }}
 </body>
+
 </html>
