@@ -6,7 +6,7 @@ import (
 	"github.com/src-d/landing/api/config"
 	"github.com/src-d/landing/api/github"
 
-	"github.com/gin-gonic/gin"
+	"gopkg.in/gin-gonic/gin.v1"
 )
 
 type Repositories interface {
@@ -47,6 +47,9 @@ func (h *repositories) Main(ctx *gin.Context) {
 		result = append(result, repos...)
 	}
 
+	// BUG: gin won't pass the status with JSON to the cache writer: https://gopkg.in/gin-gonic/gin.v1/pull/625
+	ctx.Writer.WriteHeader(http.StatusOK)
+	ctx.Writer.WriteHeaderNow()
 	ctx.JSON(http.StatusOK, &ReposResponse{Repos: result})
 }
 
@@ -64,5 +67,7 @@ func (h *repositories) Other(ctx *gin.Context) {
 		}
 	}
 
+	ctx.Writer.WriteHeader(http.StatusOK)
+	ctx.Writer.WriteHeaderNow()
 	ctx.JSON(http.StatusOK, &ReposResponse{Repos: result})
 }

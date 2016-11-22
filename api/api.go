@@ -10,10 +10,10 @@ import (
 	"github.com/src-d/landing/api/github"
 	"github.com/src-d/landing/api/handlers"
 
+	"github.com/dpordomingo/go-gingonic-cache"
 	"github.com/dpordomingo/go-gingonic-cache/persistence"
-	"github.com/gin-gonic/contrib/cache"
-	"github.com/gin-gonic/gin"
-	"github.com/tommy351/gin-cors"
+	"gopkg.in/gin-contrib/cors.v1"
+	"gopkg.in/gin-gonic/gin.v1"
 	"gopkg.in/inconshreveable/log15.v2"
 )
 
@@ -32,10 +32,10 @@ func main() {
 	)
 
 	r := gin.Default()
-	r.Use(cors.Middleware(cors.Options{
-		AllowOrigins: []string{"*"},
-		AllowHeaders: []string{"Content-Type"},
-		AllowMethods: []string{"GET"},
+	r.Use(cors.New(cors.Config{
+		AllowAllOrigins: true,
+		AllowHeaders:    []string{"Content-Type"},
+		AllowMethods:    []string{"GET"},
 	}))
 
 	cacheTTL := time.Duration(*ttl)
