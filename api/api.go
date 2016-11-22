@@ -6,9 +6,12 @@ import (
 	"os"
 	"time"
 
+	"gop.kg/src-d/domain@v6/container"
+
 	"github.com/src-d/landing/api/config"
 	"github.com/src-d/landing/api/github"
 	"github.com/src-d/landing/api/handlers"
+	"github.com/src-d/landing/api/services"
 
 	"github.com/dpordomingo/go-gingonic-cache"
 	"github.com/dpordomingo/go-gingonic-cache/persistence"
@@ -46,6 +49,10 @@ func main() {
 	r.NoRoute(func(c *gin.Context) {
 		c.AbortWithStatus(http.StatusNotFound)
 	})
+
+	mailer := services.NewDataMailer(conf)
+	userData := handlers.NewUserData(mailer, container.GetDomainModelsPersonStore())
+	r.POST("/data/:email", userData.Handle)
 
 	checkErr(r.Run(conf.Addr))
 }
