@@ -1,0 +1,47 @@
+.menu {
+	visibility: hidden;
+	opacity: 0;
+	background: rgba(68,83,109,0.94);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: all 300ms ease-in-out;
+
+	ul {
+		text-align: center;
+		margin-top: 7em;
+
+		li {
+			margin: 1em;
+			font-weight: normal;
+			font-size: 1.8em;
+			letter-spacing: 0.8px;
+			line-height: 26px;
+			position: relative;
+
+			&.active:after {
+				display: block;
+				height: 2px;
+				content: " ";
+				background-color: #F4AF45;
+				position: absolute;
+				width: 50px;
+				margin-left: -25px;
+				bottom: -6px;
+				left: 50%;
+			}
+
+			a {
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.menu--open {
+	opacity: 1;
+	visibility: visible;
+}

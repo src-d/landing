@@ -17,8 +17,18 @@ function renderComponent(component, id) {
 }
 
 window.addEventListener('DOMContentLoaded', function () {
+	setupMenu()
 	renderComponent(Repositories, 'repositories')
 	renderComponent(TechPosts, 'tech-posts')
 	renderComponent(BusinessPosts, 'business-posts')
 	setupClipboard()
 })
+
+function setupMenu() {
+	const menuToggle = document.getElementById('menu-toggle')
+	const menu = document.getElementById('menu')
+	menuToggle.addEventListener('click', function () {
+		menu.classList.toggle('menu--open')
+		menuToggle.classList.toggle('topbar__toggle--open')
+	})
+}
