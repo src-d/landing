@@ -1,0 +1,54 @@
+.copy-btn {
+	position: relative;
+
+	&:after {
+		visibility: hidden;
+		background: transparent;
+		border-radius: 3px;
+		bottom: 8px;
+		color: #EFF5FD;
+		content: "Copied to clipboard";
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 12px;
+		letter-spacing: 0.87px;
+		left: 50%;
+		margin-left: -110px;
+		padding: 12px 15px;
+		position: absolute;
+		z-index: 98;
+		width: 220px;
+		text-align: center;
+		pointer-events: none;
+		transition: all 200ms ease-in;
+	}
+
+	&:before {
+		visibility: hidden;
+		border: solid;
+		border-color: transparent;
+		border-width: 8px 10px 0 10px;
+    	bottom: 0;
+		content: " ";
+		margin-left: -10px;
+		left: 50%;
+		position: absolute;
+		z-index: 99;
+		pointer-events: none;
+		transition: all 200ms ease-in;
+	}
+
+	&.show-tooltip {
+		&:after {
+			visibility: visible;
+			background: fade-in(#555F66, 0.02);
+			bottom: 26px;
+		}
+
+		&:before {
+			visibility: visible;
+			border-color: fade-in(#555F66, 0.02) transparent;
+    		bottom: 18px;
+		}
+	}
+}

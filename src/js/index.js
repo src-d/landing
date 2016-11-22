@@ -3,6 +3,7 @@ import 'isomorphic-fetch'
 import ReactDOM from 'react-dom'
 import React from 'react'
 
+import setupClipboard from './clipboard'
 import Repositories from './components/Repositories'
 import { TechPosts, BusinessPosts } from './components/Posts'
 
@@ -19,4 +20,5 @@ window.addEventListener('DOMContentLoaded', function () {
 	renderComponent(Repositories, 'repositories')
 	renderComponent(TechPosts, 'tech-posts')
 	renderComponent(BusinessPosts, 'business-posts')
+	setupClipboard()
 })
