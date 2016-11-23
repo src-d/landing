@@ -21,27 +21,41 @@ Build it:
 npm run build
 ```
 
-Development server:
+Development:
 ===
-At this point, things are different if you are focused in Hugo, or in Webpack:
-* `hugo server` will serve its stuff from /public folder, so everything should be there: js bundles too
-* `webpack-dev-server`, will serve the bundles from memory, so no data is writen into /public 
+There are four `npm run` commands available:
+* **Watchers**, that will generate stuff (and listen for changes in sources), and put it into /public
+    * `npm run hugo-watcher` will handle hugo static files
+    * `npm run webpack-watcher` will put webpack stuff (css/js)
+* **Servers**, that will serve the site (and listen for changes, reloading the page as well)
+    * `npm run hugo-watcher` will serve the /public folder (and will keep /public updated when source changes)
+    * `npm run webpack-server`, will serve the site from memory, so no data is writen into /public 
 
-Accessing the site through hugo:
+Accessing the development servers:
 ---
-Using `hugo server`, there will be live reload when hugo files changes;<br />
-You should build the bundles using `webpack -w` (because using `webpack-dev-server` bundles are served from memory)
+There are many ways to accessing the site using the developent servers.
+The ways to do it depends if you are focused in listening for hugo stuff changes, or webpack (css/js) changes.
+
+
+### using hugo:
+`hugo server`, will serve /public content and reload the page when hugo files changes;<br />
+When hugo server is started, hugo deletes /public folder and create it again, so other stuff should be generated again later
 ```
 npm run hugo-server
 npm run webpack-watcher
 ```
-visit: [http://localhost:8181]()
+visit: [http://localhost:8181](http://localhost:8181)
 
-Accessing the site through webpack:
----
-using `webpack-dev-server` there will be live reload when webpack bundles changes;
+### using webpack:
+There are two alternatives using webpack server:
+
+If you doesn't need listen for hugo changes, you can execute:
 ```
-npm run hugo-server
+npm run build; npm run webpack-server
+```
+If you want to listen for hugo, css and js changes, you should do:
+```
+npm run hugo-watcher
 npm run webpack-server
 ```
-visit: [http://localhost:8282]() or [http://localhost:8282/webpack-dev-server/]()
+visit: [http://localhost:8282](http://localhost:8282); live reload in [http://localhost:8282/webpack-dev-server/](http://localhost:8282/webpack-dev-server/)

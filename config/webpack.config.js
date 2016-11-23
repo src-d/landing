@@ -15,7 +15,7 @@ let baseConf = {
         __dirname + '/../src/js/index.js',
     ],
     output: {
-        path: path.resolve(__dirname, '../static/'),
+        path: path.resolve(__dirname, '../public/'),
         filename: 'js/bundle.js',
     },
     module: {
@@ -68,7 +68,7 @@ let productionConf = {
 let developmentConf = {
     devtool: 'source-map',
     devServer: {
-        contentBase: 'static/',
+        contentBase: 'public/',
     },
     plugins: [
         new extractTextPlugin('css/style.css', { allChunks: true }),
