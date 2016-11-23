@@ -1,16 +1,16 @@
 @import "compass/css3";
 
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 @mixin row () {
-  font-size: 0;
-  & > * {
+    font-size: 0;
+    & > * {
         font-size: 18px;
-  }
+    }
 }
 
 @mixin genericCol ($col, $sum, $gap: $gutter, $valign: top, $pushRight: 0) {
