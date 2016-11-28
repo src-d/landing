@@ -45,13 +45,13 @@ export function loadOtherRepos() {
     return request(apiURL(OTHER_REPOS_URL)).then(resp => resp.Repos)
 }
 
-const BUSINESS_POSTS_URL = '/posts/culture'
+const NON_TECH_POSTS_URL = '/posts/culture'
 const TECH_POSTS_URL = '/posts/technical'
 
 export function loadTechPosts() {
     return request(blogURL(TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
 }
 
-export function loadBusinessPosts() {
-    return request(blogURL(BUSINESS_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
+export function loadNonTechPosts() {
+    return request(blogURL(NON_TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
 }

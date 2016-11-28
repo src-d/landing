@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
 import { Loading, LoadingError } from './Loading'
-import { loadTechPosts, loadBusinessPosts, states } from '../services/api'
+import { loadTechPosts, loadNonTechPosts, states } from '../services/api'
 import { ago, isNewer, TIME_UNITS } from '../services/dates'
 
-const TECH = 'tech'
-const BUSINESS = 'business'
+const TECH = 'technical'
+const NON_TECH = 'culture'
 
 class Posts extends Component {
     constructor(props) {
@@ -17,7 +17,7 @@ class Posts extends Component {
     }
 
     componentWillMount() {
-        const loader = this.props.kind == TECH ? loadTechPosts : loadBusinessPosts
+        const loader = this.props.kind == TECH ? loadTechPosts : loadNonTechPosts
         loader()
             .then(posts => this.setState({ state: states.LOADED, posts }))
             .catch(err => {
@@ -46,8 +46,8 @@ export function TechPosts(props) {
     return <Posts kind={TECH} />
 }
 
-export function BusinessPosts(props) {
-    return <Posts kind={BUSINESS} />
+export function NonTechPosts(props) {
+    return <Posts kind={NON_TECH} />
 }
 
 function Post({ post, first }) {

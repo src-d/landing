@@ -18,7 +18,7 @@ func NewPosts(provider services.PostProvider) *Posts {
 func (p *Posts) Get(c *gin.Context) {
 	kind := c.Param("kind")
 
-	if kind != "business" && kind != "technical" {
+	if kind != "culture" && kind != "technical" {
 		status(c, http.StatusNotFound)
 		return
 	}

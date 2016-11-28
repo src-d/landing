@@ -5,7 +5,7 @@ import React from 'react'
 
 import setupClipboard from './clipboard'
 import Repositories from './components/Repositories'
-import { TechPosts, BusinessPosts } from './components/Posts'
+import { TechPosts, NonTechPosts } from './components/Posts'
 
 polyfill()
 
@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', function () {
     stickyHeader()
     renderComponent(Repositories, 'repositories')
     renderComponent(TechPosts, 'tech-posts')
-    renderComponent(BusinessPosts, 'business-posts')
+    renderComponent(NonTechPosts, 'non-tech-posts')
     setupClipboard()
 })
 
