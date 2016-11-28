@@ -1,15 +1,21 @@
-configPath: assets/config/
-environment: debug
-githubToken: ac00005fd8d81f536e7eaf8cd870939374bd2f75
-ttl: 10
-allowedHostName: localhost
-pinnedRepos:
+addr: ":8080"
+github-token: ***REMOVED***
+feed-base-url: "http://localhost:1313/json/"
+fetcher-page-size: 45
+repos:
+    main:
+        - owner: src-d
+          repos: [go-git, beanstool, kmcuda, flamingo, storable, go-siva]
     other:
-        - owner: dpordomingo
-          repos: [Ant]
+        - owner: src-d
+          repos: [minhashcuda]
+        - owner: gitql
+          repos: [gitql]
         - owner: mvader
-          repos: [go-itergen]
-        - owner: vmarkovtsev
-          repos: [GitHubStars]
-        - owner: mvader
-          repos: [go-bigq, vermittler]
+          repos: ['react-categorized-tag-input']
+mailer:
+    sender:
+        name: "source{d}"
+        address: "hello@sourced.tech"
+    text: "Hello, here is all the data we have about you."
+    sendgrid-api-key: "***REMOVED***"
