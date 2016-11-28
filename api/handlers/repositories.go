@@ -40,6 +40,7 @@ func (h *repositories) Main(ctx *gin.Context) {
 	for _, a := range h.main {
 		repos, err := h.provider.ByOwner(a.Owner, a.Repos)
 		if err != nil {
+			status(ctx, http.StatusInternalServerError)
 			ctx.AbortWithError(http.StatusInternalServerError, err)
 			return
 		}
@@ -48,8 +49,7 @@ func (h *repositories) Main(ctx *gin.Context) {
 	}
 
 	// BUG: gin won't pass the status with JSON to the cache writer: https://gopkg.in/gin-gonic/gin.v1/pull/625
-	ctx.Writer.WriteHeader(http.StatusOK)
-	ctx.Writer.WriteHeaderNow()
+	status(ctx, http.StatusOK)
 	ctx.JSON(http.StatusOK, &ReposResponse{Repos: result})
 }
 
@@ -59,6 +59,7 @@ func (h *repositories) Other(ctx *gin.Context) {
 		for _, name := range a.Repos {
 			repo, err := h.provider.ByOwnerAndName(a.Owner, name)
 			if err != nil {
+				status(ctx, http.StatusInternalServerError)
 				ctx.AbortWithError(http.StatusInternalServerError, err)
 				return
 			}
@@ -67,7 +68,6 @@ func (h *repositories) Other(ctx *gin.Context) {
 		}
 	}
 
-	ctx.Writer.WriteHeader(http.StatusOK)
-	ctx.Writer.WriteHeaderNow()
+	status(ctx, http.StatusOK)
 	ctx.JSON(http.StatusOK, &ReposResponse{Repos: result})
 }

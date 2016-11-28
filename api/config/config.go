@@ -9,6 +9,7 @@ import (
 type Config struct {
 	Addr        string `yaml:"addr"`
 	GithubToken string `yaml:"github-token"`
+	FeedBaseURL string `yaml:"feed-base-url"`
 	PinnedRepos struct {
 		Main  []AllowedRepos `yaml:"main"`
 		Other []AllowedRepos `yaml:"other"`

@@ -46,6 +46,7 @@ func main() {
 	store := persistence.NewInMemoryStore(cacheTTL)
 	r.GET("/repositories/main", cache.CachePage(store, cacheTTL, repositories.Main))
 	r.GET("/repositories/other", cache.CachePage(store, cacheTTL, repositories.Other))
+	r.GET("/posts/:kind", cache.CachePage(store, cacheTTL, handlers.NewPosts(services.NewPostProvider(conf)).Get))
 	r.NoRoute(func(c *gin.Context) {
 		c.AbortWithStatus(http.StatusNotFound)
 	})
