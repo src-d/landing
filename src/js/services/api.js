@@ -15,7 +15,6 @@ export var states = {
 }
 
 const LOCAL_URL = 'http://localhost:8080'
-const LOCAL_BLOG_URL = 'http://localhost:1313'
 const PROD_URL = 'https://sourced.tech/api'
 const BLOG_URL = 'http://blog.sourced.tech'
 
@@ -25,7 +24,7 @@ function apiURL(url) {
 }
 
 function blogURL(url) {
-    const baseURL = window.location.href.indexOf('://localhost') >= 0 ? LOCAL_BLOG_URL : BLOG_URL
+    const baseURL = window.location.href.indexOf('://localhost') >= 0 ? LOCAL_URL : BLOG_URL
     return baseURL + url
 }
 
@@ -46,8 +45,8 @@ export function loadOtherRepos() {
     return request(apiURL(OTHER_REPOS_URL)).then(resp => resp.Repos)
 }
 
-const BUSINESS_POSTS_URL = '/json/business/'
-const TECH_POSTS_URL = '/json/technical/'
+const BUSINESS_POSTS_URL = '/posts/culture'
+const TECH_POSTS_URL = '/posts/technical'
 
 export function loadTechPosts() {
     return request(blogURL(TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
