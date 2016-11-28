@@ -2,20 +2,18 @@ const SECOND = 1000;
 const MINUTE = 60 * SECOND;
 const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
+const WEEK = 7 * DAY;
 const MONTH = 30 * DAY;
 const YEAR = 365 * DAY;
 
-const TIME_UNITS = {
+export const TIME_UNITS = {
     'second': SECOND,
     'minute': MINUTE,
     'hour': HOUR,
     'day': DAY,
+    'week': WEEK,
     'month': MONTH,
     'year': YEAR,
-}
-
-function plural(number, word) {
-    return number + ' ' + (number == 1 ? word : word + 's');
 }
 
 export function ago (strTime) {
@@ -37,3 +35,11 @@ export function ago (strTime) {
 
     return plural(Math.floor(elapsed/TIME_UNITS[str_time]), str_time);
 };
+
+export function isNewer (strTime, interval) {
+    return Date.now() - Date.parse(strTime) < interval
+}
+
+function plural(number, word) {
+    return number + ' ' + (number == 1 ? word : word + 's');
+}

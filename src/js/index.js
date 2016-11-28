@@ -39,12 +39,15 @@ function stickyHeader() {
     let selector = 'topBar';
     let verticalLimit = 425;
     let topBar = document.getElementById(selector);
-    window.addEventListener('scroll', function() {
+    let process = function() {
         let shouldBeColorized = window.pageYOffset > verticalLimit;
         if (shouldBeColorized) {
             topBar.classList.add(className);
         } else if (!shouldBeColorized) {
             topBar.classList.remove(className);
         }
-    });
+    };
+    
+    process();
+    window.addEventListener('scroll', process);
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { Loading, LoadingError } from './Loading'
 import { loadTechPosts, loadBusinessPosts, states } from '../services/api'
-import { ago } from '../services/dates'
+import { ago, isNewer, TIME_UNITS } from '../services/dates'
 
 const TECH = 'tech'
 const BUSINESS = 'business'
@@ -51,12 +51,8 @@ export function BusinessPosts(props) {
 }
 
 function Post({ post, first }) {
-    // TODO: pending until knowing which format date has
-    // - NEW badge
-    // - Color if new
-    // - Real date
     return (
-        <div className={'post' + (first ? ' new' : '')}>
+        <div className={'post' + (first && isNewer(post.date, 2 * TIME_UNITS['week']) ? ' new' : '')}>
             <a href={post.link}>{post.title}</a>
             {first ? (
                 <span className='timeAgo'>Published {ago(post.date)} ago</span>

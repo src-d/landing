@@ -14,6 +14,10 @@
 
 #weAreWeWant {
     @include row();
+    
+    .mainContainer {
+        text-align: left;
+    }
 
     .article {
         @include col(4,1);
@@ -27,7 +31,7 @@
 
             &:before {
                 position: absolute;
-                right: calc(-50% - #{$gutter / 2});
+                right: calc(-50% - #{$gutter});
                 top: 21px;
                 width: 50%;
             }
@@ -80,7 +84,7 @@
         .new > a {
             @include textBig(emphasis);
 
-            $tagWidth: 50px;
+            $tagWidth: 35px;
             $tagSeparation: 10px;
             &:before {
                 @include smallLink(noUnderline alphaCover);
@@ -94,9 +98,11 @@
                 display: inline-block;
                 text-align: center;
                 text-transform: uppercase;
-                line-height: 16px;
                 margin-top: -3px;
-                padding-top: 2px;
+                font-size: 12px;
+                line-height: 14px;
+                padding-top: 1px;
+                padding-bottom: 1px;
             }
         }
 
@@ -109,7 +115,7 @@
             $separatorWidth: 80px;
             & + .post:before {
                 content: ' ';
-                border-bottom: 1px solid $lineColorUnderline;
+                border-bottom: 1px solid $lineColorBlueLight;
                 width: $separatorWidth;
                 height: 1px;
                 position: absolute;
@@ -118,6 +124,10 @@
                 margin-left: -$separatorWidth;
                 display: inline-block;
             }
+        }
+
+        .error > p {
+            @include textSmall;
         }
     }
 }

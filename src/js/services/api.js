@@ -47,7 +47,7 @@ export function loadOtherRepos() {
 }
 
 const BUSINESS_POSTS_URL = '/json/business/'
-const TECH_POSTS_URL = '/json/science/'
+const TECH_POSTS_URL = '/json/technical/'
 
 export function loadTechPosts() {
     return request(blogURL(TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
