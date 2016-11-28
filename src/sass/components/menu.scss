@@ -1,50 +1,70 @@
-.menu {
-    visibility: hidden;
-    opacity: 0;
-    background: rgba(68,83,109,0.94);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: all 300ms ease-in-out;
-    z-index: 9998;
+@media only screen and (max-width: 780px) {
+    .menu {
+        visibility: hidden;
+        opacity: 0;
+        background: rgba(68,83,109,0.94);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: opacity 300ms ease-in-out;
+        z-index: 9998;
 
-    ul {
-        text-align: center;
-        margin-top: 7em;
+        ul {
+            text-align: center;
+            margin-top: 7em;
 
-        li {
-            margin: 1em;
-            font-weight: normal;
-            font-size: 1.8em;
-            letter-spacing: 0.8px;
-            line-height: 26px;
-            position: relative;
-
-            &.active:after {
+            li {
                 display: block;
-                height: 2px;
-                content: " ";
-                background-color: #F4AF45;
-                position: absolute;
-                width: 50px;
-                margin-left: -25px;
-                bottom: -10px;
-                left: 50%;
-            }
+                margin: 1em;
+                font-weight: normal;
+                font-size: 1.8em;
+                letter-spacing: 0.8px;
+                line-height: 26px;
+                position: relative;
 
-            a {
-                color: white;
-                text-decoration: none;
+                &.active:after {
+                    display: block;
+                    height: 2px;
+                    content: " ";
+                    background-color: #F4AF45;
+                    position: absolute;
+                    width: 50px;
+                    margin-left: -25px;
+                    bottom: -10px;
+                    left: 50%;
+                }
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
             }
         }
-    }
 
-    &.open {
-        opacity: 1;
-        visibility: visible;
+        &.open {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }
 
-.menuItems li {float:left}
+@media only screen and (min-width: 781px) {
+    .menu {
+        visibility: visible;
+        opacity: 1;
+
+        ul li {
+            @include smallLink(noUnderline);
+            color: white;
+            margin: 0 25px;
+            line-height: 29px;
+            float: left;
+
+            &.mobile {
+                display: none;
+            }
+        }
+    }
+}

@@ -28,6 +28,7 @@
 
     .toggle {
         visibility: hidden;
+        margin-left: 1em;
         width: 30px;
         height: 24px;
         position: relative;
@@ -100,10 +101,6 @@
         float: right;
         padding: 0;
         margin: 0;
-
-        li {
-            display: inline-block;
-        }
     }
 }
 
@@ -119,21 +116,20 @@
     display: none;
 }
 
-.menuItems {
-    float: right;
-
-    li {
-        @include smallLink(noUnderline);
-        color: white;
-        margin: 0 25px;
-        line-height: 29px;
-    }
-}
-
 .topbar.opaque .menuItems li {
     color: $textColorEmphasisDark;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    .topbar .toggle { visibility: visible }
+@media only screen and (max-width: 780px) {
+    .topbar {
+        .toggle {
+            visibility: visible;
+        }
+
+        .logo {
+            position: fixed;
+            left: 50%;
+            margin-left: -60px;
+        }
+    }
 }
