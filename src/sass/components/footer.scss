@@ -37,13 +37,18 @@ $footeHPadding: 96px;
 
     .copyBtn {
         @include button;
-        @include glow;
-        margin-bottom: 27px;
+        box-shadow: 0px 5px 15px 1px rgba(125,145,177,0.66);
+        margin-bottom: 20px;
+        transition: box-shadow 200ms ease-in;
+
+        &:hover {
+            box-shadow: 0px 5px 15px 1px rgba(125,145,177,1);
+        }
     }
 
     .pgpKey {
         @include textSmall(emphasisDark);
         @include icon(16px, 24px, 7px, '/img/icons/key.svg');
-        margin-bottom:45px;
+        margin-bottom: 45px;
     }
 }

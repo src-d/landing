@@ -32,10 +32,21 @@
     }
 
     .footer {
+        color: white;
         position: absolute;
         bottom: 20px;
         left: 0;
         width: 100%;
         right: 0;
+
+        a {
+          font-weight: bold;
+          border-bottom: 1px solid transparent;
+          transition: all 200ms ease-in;
+
+          &:hover {
+            border-bottom: 1px solid $lineColorUnderline;
+          }
+        }
     }
 }

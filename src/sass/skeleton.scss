@@ -6,7 +6,7 @@ body {
 .fullWidth {
     position: relative;
     width:100%;
-    z-index: 5;
+    z-index: 5;    
     background: $bgMainColor;
 
     &.opaque {
@@ -25,7 +25,6 @@ body {
 .structureContainer {
     width: $pageWidth;
     margin: 0 auto;
-    //border: 1px dashed #AAA;
 }
 
 header {

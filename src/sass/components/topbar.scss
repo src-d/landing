@@ -1,8 +1,11 @@
 .topbar {
     position: fixed;
-    padding: .8em 0;
+    padding: 0em 0;
     background-color: transparent;
     height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .logo {
         @include iconOnly(120px, 29px, '/img/logos/logo-white.svg');
@@ -19,11 +22,12 @@
     }
 
     .wrap {
-        width: 1024px;
+        width: 960px;
         margin: 0 auto;
     }
 
     .toggle {
+        visibility: hidden;
         width: 30px;
         height: 24px;
         position: relative;
@@ -32,6 +36,7 @@
         transition: .5s ease-in-out;
         cursor: pointer;
         z-index: 9999;
+        vertical-align: middle;
 
         span {
             display: block;
@@ -102,27 +107,20 @@
     }
 }
 
-
-
 .topbar {
-        @include transition-property(background-color);
-        @include transition-duration(.6s);
+        transition: background-color 200ms ease-in-out;
         z-index: 10;
         top: 0;
         position:fixed;
         background-color: transparentize($bgMainHeader, 1);
-
-        &.colorized {
-            background-color: transparentize($bgMainHeader, 0.01);
-        }
 }
-.logoContainer {float: left;}
+
 .menu-toggle {
     display: none;
 }
+
 .menuItems {
     float: right;
-    margin-right: 125px;
 
     li {
         @include smallLink(noUnderline);
@@ -130,4 +128,12 @@
         margin: 0 25px;
         line-height: 29px;
     }
+}
+
+.topbar.opaque .menuItems li {
+    color: $textColorEmphasisDark;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .topbar .toggle { visibility: visible }
 }

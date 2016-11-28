@@ -18,7 +18,7 @@ function renderComponent(component, id) {
 
 window.addEventListener('DOMContentLoaded', function () {
     setupMenu()
-    stickyHeader()
+    setupStickyHeader()
     renderComponent(Repositories, 'repositories')
     renderComponent(TechPosts, 'tech-posts')
     renderComponent(NonTechPosts, 'non-tech-posts')
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', function () {
 })
 
 function setupMenu() {
-    const menuToggle = document.getElementById('menu-toggle')
+    const menuToggle = document.getElementById('menuToggle')
     const menu = document.getElementById('menu')
     menuToggle.addEventListener('click', function () {
         menu.classList.toggle('open')
@@ -34,20 +34,16 @@ function setupMenu() {
     })
 }
 
-function stickyHeader() {
-    let className = 'colorized';
-    let selector = 'topBar';
-    let verticalLimit = 425;
-    let topBar = document.getElementById(selector);
-    let process = function() {
-        let shouldBeColorized = window.pageYOffset > verticalLimit;
-        if (shouldBeColorized) {
-            topBar.classList.add(className);
-        } else if (!shouldBeColorized) {
-            topBar.classList.remove(className);
-        }
-    };
-    
-    process();
-    window.addEventListener('scroll', process);
+function setupStickyHeader() {
+    const topBar = document.getElementById('topBar')
+    checkTopbarOpacity(topBar)
+    window.addEventListener('scroll', _ => checkTopbarOpacity(topBar))
+}
+
+function checkTopbarOpacity(topBar) {
+    if (window.pageYOffset > 425) {
+        topBar.classList.add('opaque')
+    } else {
+        topBar.classList.remove('opaque')
+    }
 }

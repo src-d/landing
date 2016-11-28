@@ -1,3 +1,8 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @mixin familyWeight($font, $weight) {
     font-family: $font;
     font-weight: $weight;
@@ -105,15 +110,27 @@
     a,
     .clickable {
         display: inline-block;
-        border-bottom: 1px solid $lineColorUnderline;
+        border-bottom: 1px solid $lineColorUnderlineLightBg;
         padding: 0 3px;
         font-weight: 600;
         text-transform: uppercase;
         cursor: pointer;
+        transition: border-bottom 200ms ease-in-out;
+
+        &:hover {
+            border-bottom: 1px solid $lineColorUnderlineLightBgHovered;
+        }
 
         @each $class in $classes {
             @if ($class == 'noUnderline') {
-                border-bottom: 0;
+                border-bottom: none !important;
+            }
+            @else if ($class == 'alphaCover') {
+                border-bottom: 1px solid $lineColorUnderline;
+
+                &:hover {
+                    border-bottom-color: white;
+                }
             }
         }
     }
