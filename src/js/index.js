@@ -18,6 +18,7 @@ function renderComponent(component, id) {
 
 window.addEventListener('DOMContentLoaded', function () {
     setupMenu()
+    stickyHeader()
     renderComponent(Repositories, 'repositories')
     renderComponent(TechPosts, 'tech-posts')
     renderComponent(BusinessPosts, 'business-posts')
@@ -31,4 +32,19 @@ function setupMenu() {
         menu.classList.toggle('open')
         menuToggle.classList.toggle('open')
     })
+}
+
+function stickyHeader() {
+    let className = 'colorized';
+    let selector = 'topBar';
+    let verticalLimit = 425;
+    let topBar = document.getElementById(selector);
+    window.addEventListener('scroll', function() {
+        let shouldBeColorized = window.pageYOffset > verticalLimit;
+        if (shouldBeColorized) {
+            topBar.classList.add(className);
+        } else if (!shouldBeColorized) {
+            topBar.classList.remove(className);
+        }
+    });
 }

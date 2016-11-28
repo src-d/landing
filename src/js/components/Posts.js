@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { Loading, LoadingError } from './Loading'
 import { loadTechPosts, loadBusinessPosts, states } from '../services/api'
+import { ago } from '../services/dates'
 
 const TECH = 'tech'
 const BUSINESS = 'business'
@@ -56,12 +57,9 @@ function Post({ post, first }) {
     // - Real date
     return (
         <div className={'post' + (first ? ' new' : '')}>
-            {first ? (
-                <span className='tag'>NEW</span>
-            ) : null}
             <a href={post.link}>{post.title}</a>
             {first ? (
-                <span>{post.date}</span>
+                <span className='timeAgo'>Published {ago(post.date)} ago</span>
             ) : null}
         </div>
     )

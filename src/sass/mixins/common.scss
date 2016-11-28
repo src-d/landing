@@ -1,0 +1,46 @@
+@mixin valign {
+    @include translateY(-50%);
+    top: 50%;
+    position: relative;
+    display: block;
+}
+
+@mixin halign($width) {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: $width;
+}
+
+@mixin glow() {
+    @include transition-property(box-shadow);
+    @include transition-duration($shadowSpeed);
+    box-shadow: $shadowOff;
+    
+    &:hover {
+        border-color: $lineColorBorder;
+        box-shadow: $shadow;
+
+    }
+}
+
+@mixin icon($width, $height, $marginRight, $url) {
+    &:before {
+        content: ' ';
+        display: inline-block;
+        width: $width;
+        height: $height;
+        margin-right: $marginRight;
+        background: transparent url($url) no-repeat center ;
+        vertical-align: middle;
+    }
+}
+
+@mixin iconOnly($width, $height, $url) {
+    display: inline-block;
+    vertical-align: middle;
+    width: $width;
+    height: $height;
+    text-indent: -5000px;
+    background: transparent url($url) no-repeat center ;
+}

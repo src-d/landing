@@ -1,9 +1,0 @@
-.weAreWeWant {
-    @include row();
-    .article {
-        @include col(4,1);
-        &+.article {
-            @include col(4,2)
-        }
-    }
-}

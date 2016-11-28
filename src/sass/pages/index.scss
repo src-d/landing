@@ -1,0 +1,123 @@
+.homePage {
+    .mainHeader {
+
+        .mainContainer {
+            height: 500px;
+        }
+    }
+
+    .mainHeader + .fullWidth {
+        margin-top: 500px;
+    }
+
+}
+
+#weAreWeWant {
+    @include row();
+
+    .article {
+        @include col(4,1);
+
+        &.right {
+            @include col(4,2)
+        }
+
+        &.left li {
+            @include icon(9px, 38px, 0, '/img/icons/right-arrow.png');
+
+            &:before {
+                position: absolute;
+                right: calc(-50% - #{$gutter / 2});
+                top: 21px;
+                width: 50%;
+            }
+        }
+    }
+
+    li {
+        position: relative;
+        text-align: left;
+        height: 72px;
+        margin-top: 10px;
+
+        > span {
+            @include valign;
+        }
+
+        & + li {
+            margin-top: 16px;
+        }
+    }
+
+    .link {
+        @include smallLink(emphasis);
+        width: 100%;
+        text-align: center;
+        margin-top: 26px;
+        margin-bottom: 25px;
+    }
+}
+
+#ourPosts {
+    section {
+        @include col(4,1);
+        text-align: left;
+
+        &+section {
+            @include col(4,2)
+        }
+
+        a {
+            @include textBig;
+            position: relative;
+        }
+
+        .timeAgo {
+            @include textSmall(emphasisLight condensed italic);
+            display: block;
+        }
+
+        .new > a {
+            @include textBig(emphasis);
+
+            $tagWidth: 50px;
+            $tagSeparation: 10px;
+            &:before {
+                @include smallLink(noUnderline alphaCover);
+                content: 'new';
+                background-color: $textColorEmphasis;
+                border-radius: $borderRadius;
+                vertical-align: middle;
+                margin-left: -($tagWidth + $tagSeparation);
+                width: $tagWidth;
+                margin-right: $tagSeparation;
+                display: inline-block;
+                text-align: center;
+                text-transform: uppercase;
+                line-height: 16px;
+                margin-top: -3px;
+                padding-top: 2px;
+            }
+        }
+
+        .post {
+            $separatorVerticalSpace: 9px;
+            position: relative;
+            margin-top: $separatorVerticalSpace;
+            padding-top: $separatorVerticalSpace;
+
+            $separatorWidth: 80px;
+            & + .post:before {
+                content: ' ';
+                border-bottom: 1px solid $lineColorUnderline;
+                width: $separatorWidth;
+                height: 1px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -$separatorWidth;
+                display: inline-block;
+            }
+        }
+    }
+}

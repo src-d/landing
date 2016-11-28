@@ -1,10 +1,22 @@
-@import "variables.scss";
 @import "reset.scss";
-@import "./mixins/grid.scss";
-@import "./skeleton.scss";
-@import "./components/repositories.scss";
-@import "./components/index.scss";
-@import "./components/tooltip.scss";
-@import "./components/topbar.scss";
-@import "./components/menu.scss";
-@import "./components/loading.scss";
+
+@import "variables.scss";
+@import "mixins/common.scss";
+@import "mixins/grid.scss";
+
+@import "typefaces.scss";
+@import "skeleton.scss";
+
+@import "components/repositories.scss";
+@import "components/tooltip.scss";
+@import "components/topbar.scss";
+@import "components/footer.scss";
+@import "components/menu.scss";
+@import "components/loading.scss";
+@import "components/mainHeader.scss";
+
+@import "pages/index.scss";
+@import "pages/developers.scss";
+@import "pages/recruitment.scss";
+@import "pages/stack.scss";
+@import "pages/team.scss";

@@ -1,12 +1,11 @@
 .topbar {
+    position: fixed;
     padding: .8em 0;
+    background-color: transparent;
+    height: 56px;
 
     .logo {
-        background: transparent url(/img/logo-white.svg) center center no-repeat;
-        height: 29px;
-        width: 120px;
-        z-index: 9999;
-        display: inline-block;
+        @include iconOnly(120px, 29px, '/img/logos/logo-white.svg');
         margin-left: 2em;
     }
 
@@ -15,7 +14,7 @@
         box-shadow: 0px 0px 10px 0px rgba(88,114,158,0.37);
         
         .logo {
-            background-image: url(/img/logo-blue.svg)
+            background-image: url(/img/logos/logo-blue.svg);
         }
     }
 
@@ -100,5 +99,35 @@
         li {
             display: inline-block;
         }
+    }
+}
+
+
+
+.topbar {
+        @include transition-property(background-color);
+        @include transition-duration(.6s);
+        z-index: 10;
+        top: 0;
+        position:fixed;
+        background-color: transparentize($bgMainHeader, 1);
+
+        &.colorized {
+            background-color: transparentize($bgMainHeader, 0.01);
+        }
+}
+.logoContainer {float: left;}
+.menu-toggle {
+    display: none;
+}
+.menuItems {
+    float: right;
+    margin-right: 125px;
+
+    li {
+        @include smallLink(noUnderline);
+        color: white;
+        margin: 0 25px;
+        line-height: 29px;
     }
 }

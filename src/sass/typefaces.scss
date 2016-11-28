@@ -1,0 +1,131 @@
+@mixin familyWeight($font, $weight) {
+    font-family: $font;
+    font-weight: $weight;
+
+    strong {
+        font-weight: 600;
+    }
+}
+
+@mixin titleFamilyWeight {
+    @include familyWeight($fontTitle, 400);
+}
+
+@mixin textFamilyWeight($weight:400) {
+    @include familyWeight($fontText, $weight);
+}
+
+@mixin mainTitle($classes:false) {
+    @include titleFamilyWeight;
+    font-size: $textSizeTitleMain;
+    color: $textColorTitle;
+    line-height: 70px;
+
+    @each $class in $classes {
+        @if ($class == 'alphaCover') {
+            color: $textColorWhite;
+        }
+    }
+}
+
+@mixin title1 {
+    @include titleFamilyWeight;
+    font-size: $textSizeTitle1;
+    color: $textColorTitle;
+    line-height: 80px;
+}
+
+@mixin title2 {
+    @include titleFamilyWeight;
+    font-size: $textSizeTitle2;
+    color: $textColorGrey;
+    line-height: 55px;
+}
+
+@mixin textBig($classes:false) {
+    @include textFamilyWeight(600);
+    font-size: $textSizeBig;
+    line-height: 29px;
+    color: $textColorMain;
+
+    @each $class in $classes {
+        @if ($class == 'emphasis') {
+            color: $textColorEmphasis;
+        }
+    }
+}
+
+@mixin textMedium($classes:false) {
+    @include textFamilyWeight;
+    font-size: $textSizeMain;
+    line-height: 24px;
+    color: $textColorMain;
+
+    @each $class in $classes {
+        @if ($class == 'alphaCover') {
+            color: $textColorWhiteAlt;
+        }
+    }
+}
+
+@mixin textSmall($classes:false) {
+    @include textFamilyWeight;
+    font-size: $textSizeSmall;
+    line-height: 24px;
+    color: $textColorGrey;
+
+    @each $class in $classes {
+        @if ($class == 'subtitle') {
+            color: $textColorLight;
+        }
+        @else if ($class == 'condensed') {
+            line-height: 18px;
+        }
+        @else if ($class == 'emphasis') {
+            color: $textColorEmphasis;
+        }
+        @else if ($class == 'emphasisLight') {
+            color: $textColorEmphasisLight;
+        }
+        @else if ($class == 'emphasisDark') {
+            color: $textColorEmphasisDark;
+        }
+        @else if ($class == 'alphaCover') {
+            color: $textColorWhite;
+        }
+        @else if ($class == 'italic') {
+            font-style: italic;
+        }
+    }
+}
+
+@mixin smallLink($classes:false) {
+    @include textSmall($classes);
+    
+    a,
+    .clickable {
+        display: inline-block;
+        border-bottom: 1px solid $lineColorUnderline;
+        padding: 0 3px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        @each $class in $classes {
+            @if ($class == 'noUnderline') {
+                border-bottom: 0;
+            }
+        }
+    }
+}
+
+@mixin button() {
+    @include familyWeight($fontCode, 400);
+    font-size: $textSizeTitle2;
+    color: $textColorWhite;
+    line-height: 60px;
+    background: $textColorEmphasisDark;
+    padding: 0 50px;
+    display: inline-block;
+    border-radius: $borderRadius;
+}

@@ -1,35 +1,91 @@
-.repo {
-    @include col(4);
-    border: 1px solid #555;
-    font-family: arial;
-    margin-top: 5px;
-    //margin: 5px 4%;
-    //width: 40%;
-    height: 145px;
-    overflow: hidden;
-    display: inline-block;
-    //float: left;
-    .name {
-        span {
-        }
+$cardPadding: 17px;
+$iconSize: 12px;
+
+#ourOpenSource {
+
+    .subTitle {
+        margin-bottom: -10px;
+    }
+
+    .other .subTitle {
+        margin-top: 27px;
     }
 
     p {
-        color: #555;
+        @include textSmall;
+        @include halign(700px);
+        margin-bottom: 27px;
     }
 
-    .summary {
-        .stars {
+    .link {
+        @include smallLink;
+        margin-top: 27px;
+        text-align: center;
 
-        }
-        .language {
-
+        .clickable {
+            border: 0;
         }
     }
+
+    .repo {
+        @include col(4);
+        @include glow();
+
+        background-color: white;
+        border: 1px solid transparent;
+        border-color: opacify($lineColorBorder, .43);
+        border-radius: $borderRadius;
+        margin-top: $gutter;
+        overflow: hidden;
+        display: inline-block;
+        padding: 11px $cardPadding;
+        height: 114px;
+        position: relative;
+        
+        .fullName {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+
+            .name {
+                font-weight: 600;
+            }
+        }
+
+        .description {
+            @include textSmall(condensed);
+            width: 100%;
+            margin: 6px 0 0;
+            text-align: left;
+            max-height: 36px;
+            overflow: hidden;
+        }
+
+        .data {
+            @include textSmall(condensed);
+            position: absolute;
+            bottom: 7px;
+            left: $cardPadding;
+            .stars,
+            .lang {
+                display: inline-block;
+                span {
+                    margin-left: 10px;
+                }
+            }
+
+            .lang .circle {
+                display: inline-block;
+                height: $iconSize;
+                width: $iconSize;
+                border-radius: $iconSize;
+                margin-top: 2px;
+                top: 1px;
+                position: relative;
+                margin-left: 20px;
+            }
+        }
+    }
+
 }
-
- #ourOpenSource .repos, 
- #ourPosts .repos {
-     //text-align: center;
-     overflow: hidden;
- }

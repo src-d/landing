@@ -1,62 +1,64 @@
 {{ partial "head.html" . }}
 
-<body>
+<body class="homePage">
     {{ partial "header.html" . }}
 
-    <header class="fullWidth">
+    <header class="fullWidth mainHeader">
         <div class="mainContainer">
-            <h1>Building the first AI that understands code</h1>
-            <p>Lorem ipsum<br />second line</p>
-            <p><a href="">Read about our mission</a></p>
-            <p><a href="">Wondering how we found you? Read more about it</a></p>
+            <h1 class="title">Building the first <strong>AI</strong> that <strong>understands code</strong></h1>
+            <p>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse. Labore fugiat nisi.</p>
+            <p class="link"><a href="">Read about our mission</a></p>
+            <p class="footer"><a href="">Wondering how we found you? <strong>Read more</strong> about it</a></p>
         </div>
     </header>
 
-    <section class="mainContainer weAreWeWant">
-        <article class="article">
-            <header>
-                <h2>Where we are</h2>
-            </header>
-            <ul>
-                <li>Lorem ipsum<br />second line</li>
-                <li>Lorem ipsum<br />second line<br />third line</li>
-                <li>Lorem ipsum<br />second line<br />third line</li>
-            </ul>
-            <div>
-                <a href="">read more</a>
-            </div>
-        </article>
-        <article class="article">
-            <header>
-                <h2>Where we want to be</h2>
-            </header>
-            <ul>
-                <li>Lorem ipsum<br />second line<br />third line</li>
-                <li>Lorem ipsum<br />second line<br />third line</li>
-                <li>Lorem ipsum<br />second line<br />third line</li>
-            </ul>
-            <div>
-                <a href="">read more</a>
-            </div>
-        </article>
+    <section class="fullWidth" id="weAreWeWant">
+        <div class="mainContainer">
+            <article class="article left">
+                <header>
+                    <h2>Where we are</h2>
+                </header>
+                <ul>
+                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex.</span></li>
+                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse. Labore fugiat nisi.</span></li>
+                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse.</span></li>
+                </ul>
+                <div class="link">
+                    <a href="">read more</a>
+                </div>
+            </article>
+            <article class="article right">
+                <header>
+                    <h2>Where we want to be</h2>
+                </header>
+                <ul>
+                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse.</span></li>
+                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse. Labore fugiat nisi.</span></li>
+                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse.</span></li>
+                </ul>
+                <div class="link">
+                    <a href="">read more</a>
+                </div>
+            </article>
+        </div>
     </section>
+
 
     <section class="fullWidth opaque" id="ourOpenSource">
         <div class="mainContainer">
             <header>
                 <h2>We are 100% committed to open source</h2>
             </header>
-            <p>Lorem ipsum<br />second line</p>
-
-            <h3>Our top open source projects</h3>
-            <div id='repositories'></div>
+            <p>Velit ex amet sunt ullamco commodo velit ut ex. Deserunt anim id aute ea. Consectetur pariatur fugiat exercitation irure laborum <strong>10% of their work hours</strong>anim do laborum nostrud commodo <strong>Open Source Friday</strong></p>
+            <h3 class="subTitle">Our top open source projects</h3>
+            <div id="repositories" class="fullWidthitories"></div>
         </div>
     </section>
 
-    <aside id="ourPosts">
+    <aside class="fullWidth" id="ourPosts">
         <div class="mainContainer">
             <header>
-                <h2>Read more aobout us</h2>
+                <h2>Read more about us</h2>
             </header>
             <section>
                 <h3>Our journey</h3>

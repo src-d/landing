@@ -1,0 +1,41 @@
+.mainHeader {
+    background-image: url('/img/banner/back.jpg');
+    background-size: cover;
+    position: fixed;
+    top: 0;
+
+    &:before {
+        content:' ';
+        display: block;
+        background-color: transparentize($bgMainHeader, .1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .title {
+        @include mainTitle(alphaCover);
+        margin-top: 150px;
+    }
+
+    p, .footer {
+        @include textMedium(alphaCover);
+        @include halign(500px)
+    }
+
+    .link {
+        @include smallLink(alphaCover);
+        margin-top: 37px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        right: 0;
+    }
+}

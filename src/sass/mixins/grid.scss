@@ -15,7 +15,7 @@
 
 @mixin genericCol ($col, $sum, $gap: $gutter, $valign: top, $pushRight: 0) {
 
-    border: 1px dashed #CCC;
+    //border: 1px dashed #CCC;
 
     $columnWidth: percentage(1/$sum);
     $relativeWidth: $col * $columnWidth;
