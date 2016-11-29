@@ -1,7 +1,7 @@
 ---
 type: team
 classes: ["static"]
-sectionname: team
+section: team
 url: team
 title: Our team
 description: Our team is waiting to help you

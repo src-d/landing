@@ -36,6 +36,7 @@ function setupMenu() {
 
 function setupStickyHeader() {
     const topBar = document.getElementById('topBar')
+    if (topBar.classList.contains("opaque")) { return }
     checkTopbarOpacity(topBar)
     window.addEventListener('scroll', _ => checkTopbarOpacity(topBar))
 }

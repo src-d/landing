@@ -1,4 +1,4 @@
-<nav class="fullWidth topbar" id="topBar">
+<nav class="fullWidth topbar {{ .Params.topbar }}" id="topBar">
     <div class="wrap">
         <div id="menuToggle" class="toggle showMobile">
             <span></span>
@@ -10,10 +10,10 @@
         </a>
         <div class="menu" id="menu">
             <ul>
-                <li class="active mobile"><a href="">Home</a></li>
-                <li><a href="">Recruitment</a></li>
-                <li><a href="">Team</a></li>
-                <li><a href="">Our stack</a></li>
+                <li class="{{ if eq .Params.section "" }}active{{ end }} mobile"><a href="/">Home</a></li>
+                <li {{ if eq .Params.section "recruitment" }}class="active"{{ end }}><a href="/recruitment/" title="Recruitment">Recruitment</a></li>
+                <li {{ if eq .Params.section "team" }}class="active"{{ end }}><a href="/team/" title="Team">Team</a></li>
+                <li {{ if eq .Params.section "stack" }}class="active"{{ end }}><a href="/stack/" title="Our stack">Our stack</a></li>
                 <li><a href="//blog.sourced.tech">Blog</a></li>
             </ul>
         </div>
