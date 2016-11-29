@@ -61,6 +61,18 @@
             margin: 0 25px;
             line-height: 29px;
             float: left;
+            position: relative;
+
+            &.active:after {
+              display: block;
+              height: 2px;
+              content: " ";
+              background-color: #F4AF45;
+              position: absolute;
+              width: 30px;
+              margin-left: -15px;
+              left: 50%;
+            }
 
             &.mobile {
                 display: none;

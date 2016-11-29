@@ -7,88 +7,116 @@ url: stack
 title: Our stack
 description: Our stack
 stack:
-        languages:
+        -
+                id: languages
                 title: Languages we use
                 items:
-                        python:
+                        -
+                                id: python
                                 name: Python
-                                desc: "We use the <b>Python</b> language for machine learning and data science"
-                        golang:
+                                desc: "We use the <strong>Python</strong> language for machine learning and data science"
+                        -
+                                id: golang
                                 name: Go
-                                desc: "We use the <b>Go</b> language for all of our backend applications"
-                        javascript:
+                                desc: "We use the <strong>Go</strong> language for all of our backend applications"
+                        -
+                                id: javascript
                                 name: JavaScript
-                                desc: "We use the <b>JavaScript</b> language for all of our frontend applications"
-        storage:
+                                desc: "We use the <strong>JavaScript</strong> language for all of our frontend applications"
+        -
+                id: storage
                 title: We store our data on
                 items:
-                        mongodb:
+                        -
+                                id: mongodb
                                 name: MongoDB
                                 desc: ""
-                        elastic:
+                        -       
+                                id: elastic
                                 name: Elastic Search
                                 desc: ""
-        code:
+        -
+                id: codehost
                 title: We host our code on
                 items:
-                        github:
+                        -
+                                id: github
                                 name: GitHub
                                 desc: ""
-        deploy:
+        -              
+                id: deploy
                 title: Our deploy pipeline
                 items:
-                        github:
+                        -
+                                id: github
                                 name: GitHub
-                                desc: "We create a tag on <b>GitHub</b> to release a new version"
-                        drone:
+                                desc: "We create a tag on <strong>GitHub</strong> to release a new version"
+                        -
+                                id: drone
                                 name: Drone CI
-                                desc: "<b>DroneCI</b> passes the tests and builds the docker image"
-                        quay:
+                                desc: "<strong>DroneCI</strong> passes the tests and builds the docker image"
+                        -
+                                id: quay
                                 name: "quay.io"
-                                desc: "Generated docker image is uploaded to <b>quay.io</b>"
-                        kubernetes:
+                                desc: "Generated docker image is uploaded to <strong>quay.io</strong>"
+                        -
+                                id: kubernetes
                                 name: Kubernetes
-                                desc: "New version is deployed using <b>kubernetes</b>"
-        infra:
+                                desc: "New version is deployed using <strong>kubernetes</strong>"
+        -
+                id: infra
                 title: "Our infrastructure works with"
                 items:
-                        gcp:
+                        -
+                                id: gcp
                                 name: "Google Cloud Platform"
                                 desc: ""
-                        docker:
+                        -       
+                                id: docker
                                 name: "Docker"
                                 desc: ""
-                        coreos:
+                        -
+                                id: coreos
                                 name: "CoreOS"
                                 desc: ""
-                        etcd:
+                        -
+                                id: etcd
                                 name: "etcd"
                                 desc: ""
-        frontend:
+        -         
+                id: frontend
                 title: "Frontend tools"
                 items:
-                        react:
+                        -
+                                id: react
                                 name: "React.js"
                                 desc: ""
-                        redux:
+                        -
+                                id: redux
                                 name: "Redux"
                                 desc: ""
-                        webpack:
+                        -
+                                id: webpack
                                 name: "Webpack"
                                 desc: ""
-                        mocha:
+                        -        
+                                id: mocha
                                 name: "Mocha"
                                 desc: ""
-        ml:
+        -
+                id: ml
                 title: "Machine learning tools"
                 items:
-                        jupyter:
+                        -
+                                id: jupyter
                                 name: "Jupyter"
                                 desc: ""
-                        tensorflow:
+                        -
+                                id: tensorflow
                                 name: Tensorflow
                                 desc: ""
-                        spark:
+                        -
+                                id: spark
                                 name: Apache Spark
                                 desc: ""
 ---

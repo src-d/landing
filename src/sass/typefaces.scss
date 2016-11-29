@@ -41,9 +41,9 @@
 }
 
 @mixin title2 {
-    @include titleFamilyWeight;
     font-size: $textSizeTitle2;
-    color: $textColorGrey;
+    font-weight: 300;
+    color: $textColorMain;
     line-height: 55px;
 }
 
