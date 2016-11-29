@@ -1,0 +1,12 @@
+#https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
+data:
+    C: "#555555"
+    C++: "#f34b7d"
+    Clojure: "#db5855"
+    Go: "#375eab"
+    HTML: "#e44b23"
+    Java: "#b07219"
+    JavaScript: "#f1e05a"
+    PHP: "#4F5D95"
+    Python: "#3572A5"
+    Ruby: "#701516"
