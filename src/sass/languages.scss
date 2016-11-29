@@ -1,0 +1,27 @@
+$lang-names: 
+  Go
+  JavaScript
+  Cpp
+  Clojure
+  HTML
+  Java
+  PHP
+  Python
+  Ruby;
+$lang-colors: 
+  #375eab // Go
+  #f1e05a // JavaScript
+  #f34b7d // Cpp
+  #db5855 // Clojure
+  #e44b23 // HTML 
+  #b07219 // Java
+  #4F5D95 // PHP
+  #3572A5 // Python
+  #701516; // Ruby
+
+@each $color in $lang-names {
+  $i: index($lang-names, $color);
+  .lang#{$color} {
+    background-color: nth($lang-colors, $i);
+  }
+}
