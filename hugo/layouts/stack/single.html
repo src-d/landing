@@ -7,23 +7,23 @@
         <div class="stack mainContainer">
             <h2>Our stack</h2>
             {{ range $section := .Params.stack }}
-                <div class="stackSection {{ $section.id }}">
-                    <h3>{{ $section.title }}</h3>
+            <div class="stackSection {{ $section.id }}">
+                <h3>{{ $section.title }}</h3>
 
-                    <div class="stackItems">
-                        {{ range $item := $section.items }}
-                            <div class="stackItem">
-                                <div class="itempic"><img src="/img/stack/{{ $item.id }}.svg" alt="{{ $item.name }}" /></div>
-                                {{ if ne $item.desc "" }}
-                                <p>{{ $item.desc | safeHTML }}
-                                {{ end }}
-                            </div>
-                        {{ end }}
+                <div class="stackItems">
+                    {{ range $item := $section.items }}
+                    <div class="stackItem">
+                        <div class="itempic"><img src="/img/stack/{{ $item.id }}.svg" alt="{{ $item.name }}" /></div>
+                        {{ if ne $item.desc "" }}
+                        <p>{{ $item.desc | safeHTML }} {{ end }}
                     </div>
+                    {{ end }}
                 </div>
+            </div>
             {{ end }}
         </div>
     </div>
     {{ partial "footer.html" . }}
 </body>
+
 </html>

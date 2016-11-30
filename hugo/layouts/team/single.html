@@ -1,15 +1,55 @@
 {{ partial "head.html" . }}
 
-<body>
-    {{ partial "header.html" . }} {{ range $teamName, $team := .Params.members }}
-    <h1>{{ $teamName }}</h1>
-    {{ range $k, $member := $team }} {{ $member.name }} {{ $member.surname }} - {{ $member.social }}<br /> {{ end }}
-    <hr /> {{ end }}
+<body class="teamPage">
+    {{ partial "header.html" . }}
 
-    <hr />
-    <hr /> {{ .Content }}
+    <header class="fullWidth mainHeader">
+        <div class="mainContainer">
+            <h1 class="title">Our team</h1>
+            <p>Lorem ipsum dolor sit amet adiscipit constectetur adis elit et lingua eius meditabitur. Lorem ipsum dolor sit
+                amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet.</p>
+        </div>
+    </header>
 
-    <hr /> {{ partial "footer.html" . }}
+    {{ range $t := .Params.teams }}
+    <section class="fullWidth">
+        <div class="mainContainer team">
+            <h2>{{ $t.name }}</h2>
+            <p>{{ $t.headline }}</p>
+
+            <div class="members">
+                {{ range $m := $t.members }}
+                <article class="member">
+                    <div class="card">
+                        <div class="person">
+                            <div class="picture">
+                                <img src="/img/people/{{ $m.picture }}" alt="{{ $m.name }}" />
+                            </div>
+                            <div class="info">
+                                <h3>{{ $m.name }}</h3>
+                                <span class="position">{{ $m.position }}</span> {{ if ne $m.team "" }}
+                                <span class="position">{{ $m.team }}</span> {{ end }}
+                                <blockquote>"{{ $m.quote }}"</blockquote>
+                            </div>
+                        </div>
+                        <div class="social">
+                            {{ if $m.github }}
+                            <a href="{{ $m.github }}" target="_blank" title="GitHub Profile">
+                                <img src="/img/icons/github-team.svg" alt="GitHub" />
+                            </a>
+                            {{ end }} {{ if $m.linkedin }}
+                            <a href="{{ $m.linkedin }}" target="_blank" title="LinkedIn Profile">
+                                <img src="/img/icons/linkedin-team.svg" alt="LinkedIn" />
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }} {{ partial "footer.html" . }}
 </body>
 
 </html>
