@@ -3,6 +3,11 @@ $footeHPadding: 96px;
     overflow: hidden;
     border-top: 1px solid $lineColorBlueLight;
 
+    .logoContainer {
+        display: inline-block;
+        float: left;
+    }
+
     .logo {
         @include iconOnly(120px, 29px, '/img/logos/logo-footer.svg');
         margin-left: $footeHPadding;
