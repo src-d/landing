@@ -30,11 +30,11 @@ window.addEventListener('DOMContentLoaded', function () {
 })
 
 function highlightCode() {
-    let containers = document.getElementsByClassName('js-beautyCode');
-    highlighter.configure({useBR: false});
-    Array.from(containers).map(function(container){
-        container.innerHTML = beautify(container.innerHTML, {indent_size:2});
-        highlighter.highlightBlock(container);
+    let containers = document.getElementsByClassName('js-beautyCode')
+    highlighter.configure({useBR: false})
+    Array.from(containers).map(container => {
+        container.innerHTML = beautify(container.innerHTML, {indent_size:2})
+        highlighter.highlightBlock(container)
     })
 }
 
