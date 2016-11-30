@@ -32,7 +32,7 @@ let baseConf = {
             loaders: ['file']
         },
         {
-            test: /\.scss$/,
+            test: /(?:\.scss|\.css)$/,
             loader: extractTextPlugin.extract(
                 'style-loader',
                 'css!sass?' + includeCompass,

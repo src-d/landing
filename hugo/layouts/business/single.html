@@ -1,0 +1,27 @@
+{{ partial "head.html" . }}
+
+<body class="business">
+    {{ partial "header.html" . }}
+
+    <header class="fullWidth mainHeader">
+        <div class="mainContainer">
+            <h1 class="title">Are you building a team?</h1>
+            <p>Let us find the right candidates for your team.</p>
+        </div>
+    </header>
+
+    <section class="fullWidth">
+        <div class="mainContainer">
+                
+                {{ $contribs := $.Site.Data.developer.contribs.data }}
+                {{ $history := $.Site.Data.developer.history}}
+                {{ $buttons := slice "What you do" "Where you are" "Your cotributions" }}
+                {{ $context := dict "contribs" $contribs "history" $history "buttons" $buttons }}
+                {{ partial "developer.html" $context }}
+
+        </div>
+    </section>
+
+    {{ partial "footer.html" . }}
+</body>
+</html>

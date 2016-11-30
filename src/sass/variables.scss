@@ -24,6 +24,13 @@ $textColorEmphasis: #4285f4;
 $textColorEmphasisLight: #a1b5d6;
 $textColorEmphasisDark: #58729e;
 
+$codeColorBackground: #3D5B70;
+$codeColorDefault: $bgLightBlue;
+$codeColorAttribute: #9CC3F1;
+$codeColorString: #9CC3F1;
+$codeColorLiteral: #F5A623;
+$codeColorNumber: $textColorWhite;
+
 $lineColor: #dee3ec;
     $lineColorLight: #efefef;
     $lineColorUnderline: rgba(255, 255, 255, 0.35);
@@ -39,6 +46,7 @@ $textSizeTitle2: 23px;
 $textSizeBig: 20px;
 $textSizeMain: 18px;
 $textSizeSmall: 14px;
+$textSizeXS: 12px;
 
 $fontTitle: 'Open Sans';
 $fontText: roboto;
@@ -47,4 +55,5 @@ $fontCode: hack;
 $borderRadius: 3px;
 $shadowOff: 0 7px 15px 2px transparentize($lineColorBorder, 1);
 $shadow: 0 7px 15px 2px transparentize($lineColorBorder, 1-0.43);
+$shadowArround: 0 0 15px 2px rgba($lineColorBorder, 1);
 $shadowSpeed: .1s;

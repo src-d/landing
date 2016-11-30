@@ -22,6 +22,6 @@ $lang-colors:
 @each $color in $lang-names {
   $i: index($lang-names, $color);
   .lang#{$color} {
-    background-color: nth($lang-colors, $i);
+    background-color: nth($lang-colors, $i) !important;
   }
 }

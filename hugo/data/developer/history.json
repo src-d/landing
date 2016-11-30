@@ -1,0 +1,28 @@
+{
+    "languages": {
+        "Go": {
+            "aged_bytes": 98739234,
+            "percentile": 0.8976687,
+            "is_relevant": true,
+            "is_auxiliary": false,
+            "first_used_at": "2012-07-12",
+            "last_used_at": "2016-09-20"
+        },
+        "PHP": {
+            "aged_bytes": 4739234,
+            "percentile": 0.674698573,
+            "is_relevant": false,
+            "is_auxiliary": false,
+            "first_used_at": "2010-06-09",
+            "last_used_at": "2014-06-15"
+        },
+        "JavaScript": {
+            "aged_bytes": 2639234,
+            "percentile": 0.454698573,
+            "is_relevant": true,
+            "is_auxiliary": false,
+            "first_used_at": "2009-06-01",
+            "last_used_at": "2016-06-11"
+        }
+    }
+}

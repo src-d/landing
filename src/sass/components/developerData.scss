@@ -1,0 +1,110 @@
+#detailsContainer {
+    text-align: left;
+
+    nav {
+        text-align: center;
+        li {
+            @include textMedium(strong);
+            width: 185px;
+            height: 46px;
+            display: inline-block;
+            border: none;
+            border-radius: $borderRadius;
+            padding: 13px;
+        }
+    }
+
+    .columnsContainer {
+        $detailsHeight: 382px;
+        width: 720px;
+        margin: 33px auto;
+        position: relative;
+
+        .code {
+            width: 330px;
+            height: $detailsHeight;
+            overflow: hidden;
+            border-radius: $borderRadius;
+
+            .JSON {
+                @include code;
+                background: $codeColorBackground;
+                padding: 10px;
+                display: block;
+                
+                .hljs-attr {
+                    @include code(attribute);
+                }
+                
+                .hljs-string {
+                    @include code(string);
+                }
+                
+                .hljs-number {
+                    @include code(number);
+                }
+                
+                .hljs-literal {
+                    @include code(literal);
+                }
+            }
+        }
+
+        .details {
+            width: 367px;
+            height: $detailsHeight;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: none;
+            padding: 23px;
+            box-shadow: $shadowArround;
+            border-radius: $borderRadius;
+
+            .author {
+                vertical-align: middle;
+                margin-bottom: 14px;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    vertical-align: middle;
+                    margin-right: 18px;
+                }
+            }
+        }
+
+        .languages {
+            @include textMedium;
+            
+            .graph {
+                margin: 10px -9px;
+            }
+
+            ul {
+                margin-top: 13px;
+
+                .lang {
+                    @include label(inherit, strong);
+                    padding: 4px 6px;
+                }
+            }
+        }
+
+        .contributions  {
+        }
+    }
+
+    &.item0 section.item0,
+    &.item1 section.item1,
+    &.item2 section.item2 {
+        display: block;
+    }
+
+    &.item0 li.item0,
+    &.item1 li.item1,
+    &.item2 li.item2 {
+        border: 1px solid $lineColor;
+        background-color: $bgLightBlue;
+    }
+}

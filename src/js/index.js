@@ -7,6 +7,9 @@ import setupClipboard from './clipboard'
 import Repositories from './components/Repositories'
 import { TechPosts, NonTechPosts } from './components/Posts'
 
+import beautify from 'js-beautify'
+import highlighter from 'highlight.js'
+
 polyfill()
 
 function renderComponent(component, id) {
@@ -23,7 +26,17 @@ window.addEventListener('DOMContentLoaded', function () {
     renderComponent(TechPosts, 'tech-posts')
     renderComponent(NonTechPosts, 'non-tech-posts')
     setupClipboard()
+    highlightCode()
 })
+
+function highlightCode() {
+    let containers = document.getElementsByClassName('js-beautyCode');
+    highlighter.configure({useBR: false});
+    Array.from(containers).map(function(container){
+        container.innerHTML = beautify(container.innerHTML, {indent_size:2});
+        highlighter.highlightBlock(container);
+    })
+}
 
 function setupMenu() {
     const menuToggle = document.getElementById('menuToggle')

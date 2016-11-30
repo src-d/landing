@@ -1,0 +1,83 @@
+<div id="detailsContainer" class="item0">
+    <nav>
+        <ul>
+            {{ range $k, $v := $.buttons }}
+                <li class="item{{$k}}">{{$v}}</li>
+            {{ end }}
+        </ul>
+    </nav>
+
+    <div class="columnsContainer">
+
+        <section class="details item0 languages">
+            <div>
+                <div class="author">
+                    <img src="/img/icons/dev.svg" />
+                    John Doe
+                </div>
+                <div>Languages</div>
+                <img class="graph" src="/img/pictures/graph.svg" />
+                <div>Ecosystems</div>
+                <ul>
+                    <li class="lang langGo">gin-gonic</li>
+                    <li class="lang langPHP">symphony</li>
+                    <li class="lang langJavaScript">node.js</li>
+                    <li class="lang langJavaScript">react</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="details item1 contributions">
+            <div>
+                <div class="author">
+                    <img src="/img/icons/dev.svg" />
+                    John Doe
+                </div>
+                <div>Contributions</div>
+                <ul>
+                    {{ range $contrib := $.contribs }}
+                    <li class="repo">
+                        <div className='fullName'>
+                            <span className='owner'>{{$contrib.group}}</span>
+                            <span className='divider'>/</span>
+                            <span className='name'>{{$contrib.name}}</span>
+                        </div>
+
+                        <div className='data'>
+                            <div>
+                                {{$contrib.commits}} (last {{$contrib.ago}} ago)
+                            </div>
+
+                            {{ range $lang := $contrib.languages }}
+                                <div className='lang'>
+                                    <span className="circle lang{{$lang}}"></span>
+                                    <span>{{$lang}}</span>
+                                </div>
+                            {{ end }}
+                        </div>
+                    </li>
+                    {{ end }}
+                </ul>
+                340 more commits on other projects
+            </div>
+        </section>
+
+        <section class="details item2 locations">
+            <div>
+                <div class="author">
+                    <img src="/img/icons/dev.svg" />
+                    John Doe
+                </div>
+                <div>Locations</div>
+                <img src="" />
+            </div>
+        </section>
+
+        <aside class="code">
+            <pre><code class="js-beautyCode JSON">
+                {{ $.history | jsonify }}
+            </code></pre>
+        </aside>
+
+    </div>
+</div>

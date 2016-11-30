@@ -1,6 +1,16 @@
 body {
     @include textMedium;
     min-width: $pageWidth;
+
+    .mainHeader {
+        .mainContainer {
+            height: 500px;
+        }
+    }
+
+    .mainHeader + .fullWidth {
+        margin-top: 500px;
+    }
 }
 
 .fullWidth {
@@ -53,4 +63,27 @@ h3 {
 
 h1, h2, h3, h4 {
     text-align: center;
+}
+
+.darkButton {
+    @include button;
+    box-shadow: 0px 5px 15px 1px rgba(125,145,177,0.66);
+    margin-bottom: 20px;
+    transition: box-shadow 200ms ease-in;
+
+    &:hover {
+        box-shadow: 0px 5px 15px 1px rgba(125,145,177,1);
+    }
+}
+
+.emphasysButton {
+    @include textMedium;
+    color: $textColorWhite;
+    width: 282px;
+    background: $textColorEmphasis;
+    padding: 14px 50px;
+    display: block;
+    border-radius: $borderRadius;
+    text-align: center;
+    margin: 15px auto 25px;
 }

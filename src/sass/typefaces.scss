@@ -70,6 +70,9 @@
         @if ($class == 'alphaCover') {
             color: $textColorWhiteAlt;
         }
+        @else if ($class == 'strong') {
+            font-weight: 600;
+        }
     }
 }
 
@@ -100,6 +103,9 @@
         }
         @else if ($class == 'italic') {
             font-style: italic;
+        }
+        @else if ($class == 'strong') {
+            font-weight: 600;
         }
     }
 }
@@ -145,4 +151,42 @@
     padding: 0 50px;
     display: inline-block;
     border-radius: $borderRadius;
+}
+
+@mixin label($background, $classes: false) {
+    @include smallLink(noUnderline alphaCover $classes);
+    background-color: $textColorEmphasis;
+    border-radius: $borderRadius;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: -3px;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+@mixin code($kind:false) {
+    @include familyWeight(hack, 400);
+    font-size: $textSizeXS;
+    line-height: 18px;
+
+    @if ($kind == 'attribute') {
+        color: $codeColorAttribute;
+    }
+    @else if ($kind == 'string') {
+        color: $codeColorString;
+    }
+    @else if ($kind == 'literal') {
+        color: $codeColorLiteral;
+    }
+    @else if ($kind == 'number') {
+        color: $codeColorNumber;
+    }
+    @else {
+        color: $codeColorDefault;
+    }
+
 }
