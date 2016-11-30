@@ -5,7 +5,7 @@ export default function setupClipboard() {
 
     clipboard.on('success', e => {
         window.event.preventDefault()
-        e.trigger.classList.add('show');
+        e.trigger.classList.add('show')
         setTimeout(_ => e.trigger.classList.remove('show'), 2000)
     })
 }

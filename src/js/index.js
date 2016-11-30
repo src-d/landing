@@ -19,7 +19,7 @@ function renderComponent(component, id) {
     }
 }
 
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', _ => {
     setupMenu()
     setupStickyHeader()
     renderComponent(Repositories, 'repositories')
@@ -41,7 +41,7 @@ function highlightCode() {
 function setupMenu() {
     const menuToggle = document.getElementById('menuToggle')
     const menu = document.getElementById('menu')
-    menuToggle.addEventListener('click', function () {
+    menuToggle.addEventListener('click', _ => {
         menu.classList.toggle('open')
         menuToggle.classList.toggle('open')
     })

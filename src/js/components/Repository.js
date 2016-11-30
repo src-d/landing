@@ -11,7 +11,7 @@ const languageColors = {
 }
 
 export default function Repository({ repo }) {
-    let color = languageColors[repo.Lang] || languageColors['default'];
+    let color = languageColors[repo.Lang] || languageColors['default']
     return (
         <a href={repo.URL} className='repo' target='_blank'>
             <div href={repo.URL} className='fullName'>

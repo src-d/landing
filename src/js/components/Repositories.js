@@ -81,7 +81,7 @@ export default class Repositories extends Component {
             return <LoadingError />
         }
 
-        let otherContent = null;
+        let otherContent = null
 
         return (
             <div className='repositories'>
