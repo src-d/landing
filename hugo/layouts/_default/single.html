@@ -1,9 +1,25 @@
+{{ $headerCtx := dict "Params" (dict "topbar" "opaque") }}
 {{ partial "head.html" . }}
 <body>
-  {{ partial "header.html" . }}
-  
-  {{ .Content }}
+  {{ partial "header.html" $headerCtx }}
 
-  {{ partial "footer.html" . }}
+  <section class="fullWidth customPage">
+    <div class="mainContainer">
+      <article>
+        <h2>{{ .Title }}</h2>
+
+        <p class="lastUpdate">
+          Last updated at {{ .Lastmod.Day }}/{{ .Lastmod.Month }}/{{ .Lastmod.Year }}
+        </p>
+        
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </article>
+    </div>
+  </section>
+
+  {{ $footerCtx := dict "Params" (dict "footer" "white") }}
+  {{ partial "footer.html" $footerCtx }}
 </body>
 </html>

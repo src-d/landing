@@ -1,0 +1,38 @@
+.customPage {
+	padding: 4em 0;
+
+	.mainContainer {
+		max-width: 870px;
+	}
+
+	.lastUpdate {
+		text-align: center;
+		padding-bottom: 2em;
+		font-size: $textSizeSmall;
+		color: $textColorLight;
+		font-style: italic;
+	}
+
+	.content {
+		font-family: 'Droid Serif', serif;
+		font-size: $textSizeSmall;
+		text-align: justify;
+		line-height: 1.8em;
+
+		p + p {
+			padding-top: 1.3em;
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.customPage .mainContainer {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 780px) {
+    h2 {
+		line-height: 1.6em !important
+	}
+}

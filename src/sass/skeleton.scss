@@ -1,6 +1,5 @@
 body {
     @include textMedium;
-    min-width: $pageWidth;
 
     .mainHeader {
         .mainContainer {
@@ -86,4 +85,10 @@ h1, h2, h3, h4 {
     border-radius: $borderRadius;
     text-align: center;
     margin: 15px auto 25px;
+}
+
+@media only screen and (max-width: 1024px) {
+	.mainContainer {
+		width: 90%;
+	}
 }

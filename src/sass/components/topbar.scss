@@ -9,7 +9,6 @@
 
     .logo {
         @include iconOnly(120px, 29px, '/img/logos/logo-white.svg');
-        margin-left: 2em;
     }
 
     &.opaque {

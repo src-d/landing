@@ -57,3 +57,20 @@ $footeHPadding: 96px;
         margin-bottom: 45px;
     }
 }
+
+@media only screen and (max-width: 780px) {
+    .footer > .mainContainer {
+        .logoContainer {
+            .logo {
+                margin: 0;
+                width: 90px;
+                height: 24px;
+                background-size: contain;
+            }
+        }
+
+        ul.links {
+            margin: 0;
+        }
+    }
+}
