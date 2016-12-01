@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="results">
-                        {{ range $p := .Params.matching }}
+                        {{ range $p := $.Site.Data.recruitment.matching }}
                         <div class="result{{ if eq $p.match true }} match{{ end }}">
                             <div class="header">
                                 <img src="/img/icons/{{ $p.gender }}.svg" />

@@ -6,7 +6,7 @@
     <div class="fullWidth">
         <div class="stack mainContainer">
             <h2>Our stack</h2>
-            {{ range $section := .Params.stack }}
+            {{ range $section := $.Site.Data.stack.stack }}
             <div class="stackSection {{ $section.id }}">
                 <h3>{{ $section.title }}</h3>
 

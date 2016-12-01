@@ -11,7 +11,7 @@
         </div>
     </header>
 
-    {{ range $t := .Params.teams }}
+    {{ range $t := $.Site.Data.team.teams }}
     <section class="fullWidth">
         <div class="mainContainer team">
             <h2>{{ $t.name }}</h2>
