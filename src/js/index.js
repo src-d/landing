@@ -5,6 +5,7 @@ import React from 'react'
 
 import setupClipboard from './clipboard'
 import Repositories from './components/Repositories'
+import WaitingList from './components/WaitingList'
 import { TechPosts, NonTechPosts } from './components/Posts'
 
 import beautify from 'js-beautify'
@@ -20,20 +21,22 @@ function renderComponent(component, id) {
 }
 
 window.addEventListener('DOMContentLoaded', _ => {
+    highlightCode()
     setupMenu()
     setupStickyHeader()
     renderComponent(Repositories, 'repositories')
     renderComponent(TechPosts, 'tech-posts')
     renderComponent(NonTechPosts, 'non-tech-posts')
     setupClipboard()
-    highlightCode()
+    setupWaitingList()
+    setupTabs()
 })
 
 function highlightCode() {
     let containers = document.getElementsByClassName('js-beautyCode')
-    highlighter.configure({useBR: false})
+    highlighter.configure({ useBR: false })
     Array.from(containers).map(container => {
-        container.innerHTML = beautify(container.innerHTML, {indent_size:2})
+        container.innerHTML = beautify(container.innerHTML, { indent_size: 2 })
         highlighter.highlightBlock(container)
     })
 }
@@ -55,9 +58,36 @@ function setupStickyHeader() {
 }
 
 function checkTopbarOpacity(topBar) {
-    if (window.pageYOffset > 425) {
+    const offset = Number(topBar.getAttribute('data-opaque-after')) || 425
+    if (window.pageYOffset > offset) {
         topBar.classList.add('opaque')
     } else {
         topBar.classList.remove('opaque')
     }
+}
+
+function setupWaitingList() {
+    Array.from(document.querySelectorAll('.showWaitingList')).forEach(elem => {
+        elem.addEventListener('click', renderWaitingList)
+    })
+}
+
+function renderWaitingList() {
+    renderComponent(WaitingList, 'waitingList')
+}
+
+function setupTabs() {
+    Array.from(document.querySelectorAll('ul.tabs')).forEach(elem => {
+        const target = elem.getAttribute('data-target')
+        const targetElems = Array.from(document.querySelectorAll(target))
+        const children = Array.from(elem.children)
+        children.forEach((li, i) => {
+            li.addEventListener('click', e => {
+                children.forEach(el => el.classList.remove('active'))
+                targetElems.forEach(el => el.classList.remove('active'))
+                e.target.classList.add('active')
+                targetElems[i].classList.add('active')
+            })
+        })
+    })
 }

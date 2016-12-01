@@ -1,19 +1,19 @@
 import React from 'react'
 
-export function Loading(props) {
+export function Loading({ text }) {
     return (
         <div className='loading'>
             <img src='/img/icons/loading.svg' alt="Loading" />
-            <p>Loading...</p>
+            <p>{text || 'Loading...'}</p>
         </div>
     )
 }
 
-export function LoadingError(props) {
+export function LoadingError({ text }) {
     return (
         <div className='loading error'>
             <img src='/img/icons/error.svg' alt="Error" />
-            <p>There has been a problem loading the requested data.</p>
+            <p>{text || 'There has been a problem loading the requested data.'}</p>
         </div>
     )
 }

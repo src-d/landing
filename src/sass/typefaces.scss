@@ -1,6 +1,7 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 @mixin familyWeight($font, $weight) {
@@ -21,10 +22,10 @@
 }
 
 @mixin mainTitle($classes:false) {
-    @include titleFamilyWeight;
+    font-weight: 300;
     font-size: $textSizeTitleMain;
     color: $textColorTitle;
-    line-height: 70px;
+    line-height: 1.6em;
 
     @each $class in $classes {
         @if ($class == 'alphaCover') {

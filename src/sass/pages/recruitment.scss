@@ -1,0 +1,300 @@
+.recruitment {
+  .mainHeader {
+    height: 350px;
+    display: flex;
+    align-items: center;
+    background: transparent url(/img/banner/recruitment.jpg) center top no-repeat;
+
+    .mainContainer {
+      height: auto;
+      h1 { margin-top: .5em }
+
+      button {
+        background: $bgBtnBlue;
+        box-shadow: 0px 4px 14px 1px rgba(47,70,87,0.60);
+        border-radius: 3px;
+        color: $textColorWhite;
+        border: none;
+        padding: .9em 4em;
+        font-size: .9em;
+        margin-top: 1.8em;
+        transition: box-shadow 200ms ease-in;
+
+        &:hover {
+          box-shadow: 0px 5px 20px 1px rgba(47,70,87,1);
+        }
+      }
+    }
+  }
+
+  section .mainContainer {
+    width: $pageWidthSmallPages;
+  }
+
+  .mainHeader + section {
+    margin-top: 350px;
+  }
+
+
+  .devData { margin-top: 2em }  
+
+  section h2 {
+    padding-top: 1em;
+    margin-bottom: 0;
+  }
+
+  article {
+    h3 {
+      margin-bottom: .7em;
+    }
+
+    p {
+      font-size: $textSizeSmall;
+      color: $textColorGrey;
+      line-height: 1.6em;
+    }
+  }
+
+  & > section {
+    & + section {
+      border-top: 1px solid $lineColorBlueLight;
+    }
+
+    & > article {
+      & + article {
+        border-top: 1px solid $lineColorBlueLight;
+      }
+    }
+  }
+}
+
+.matching {
+  .searchbar {
+    background: #FFFFFF;
+    border: 1px solid rgba(169,187,217,0.43);
+    box-shadow: 0px 4px 10px 0px rgba(169,187,217,0.43);
+    border-radius: 3px;
+    font-size: 28px;
+    color: $textColorMain;
+    line-height: 37px;
+    padding: .3em .8em;
+    font-weight: 300;
+    display: inline-block;
+    margin: 1.3em 0;
+
+    strong {
+      color: $textColorEmphasisDark;
+      font-weight: normal;
+    }
+  }
+
+  p.stats {
+    clear: both;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    color: $textColorMain;
+  }
+
+  .results {
+    .result {
+      width: 23%;
+      float: left;
+      border: 1px solid $lineColorBlueLight2;
+      border-radius: 3px;
+      color: $textColorMain;
+      background: transparent url(/img/icons/no-match.svg) right top no-repeat;
+
+      &.match {
+        background: transparent url(/img/icons/match.svg) right top no-repeat;
+      }
+
+      .header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: 1px solid $lineColorBlueLight2;
+        padding: .6em;
+
+        p {
+          font-size: 1em;
+          color: $textColorMain;
+          margin-left: .5em;
+        }
+      }
+
+      .skills {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        text-align: left;
+
+        li {
+          font-size: .75em;
+          position: relative;
+
+          .lang {
+            display: inline-block;
+            vertical-align: middle;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+          }
+
+          span {
+            vertical-align: middle;
+          }
+
+          &.match {
+            font-weight: bold;
+            color: $textColorGreen;
+
+            &:after {
+              position: absolute;
+              top: 50%;
+              margin-top: -4px;
+              right: 0;
+              content: " ";
+              display: block;
+              height: 8px;
+              width: 10px;
+              background: transparent url(/img/icons/checkmark.svg) center center no-repeat;
+            }
+          }
+        }
+      }
+
+      .col {
+        flex-grow: 1;
+        padding: .3em .5em;
+      }
+
+      .col + .col {
+        border-left: 1px solid $lineColorBlueLight2;
+      }
+    }
+
+    .result + .result {
+      margin-left: 2%;
+    }
+  }
+}
+
+.steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 1.5em;
+
+  &:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    background-color: $lineColorBlueLight2;
+    height: 2px;
+    width: 76%;
+    left: 12%;
+    top: 67px;
+    z-index: 1;
+  }
+
+  .step {
+    width: 25%;
+    z-index: 6;
+
+    img {
+      padding: 2.5em 0 1.8em 0;
+    }
+
+    h5 {
+      color: $textColorMain;
+    }
+  }
+}
+
+.bubble {
+  border-radius: 3px;
+  font-size: .75em;
+  background: white;
+  padding: 1em;
+  line-height: 1.5em;
+  color: $textColorGrey;
+  border: 1px solid $lineColorBlueLight2;
+  position: relative;
+
+  &:after, &:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 50%;
+    border: solid 6px transparent;
+    border-right: 0;
+    border-left-color: white;
+    margin-top: -6px;
+    right: -6px;
+    z-index: 2;
+  }
+
+  &:after {
+    z-index: 1;
+    border-left-color: $lineColorBlueLight2;
+    right: -7px;
+  }
+}
+
+.benefits {
+  margin-bottom: 1.5em;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .row + .row {
+    margin-top: 1.5em;
+  }
+
+  .benefit {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-left: 1em;
+    }
+  }
+
+  .benefit + .benefit {
+    margin-left: 2em;
+  }
+}
+
+.numbers {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  p {
+    flex-grow: 1;
+    width: 50%;
+    display: block;
+    font-weight: 300;
+    font-size: 1.4em !important;
+    color: $textColorEmphasisDark !important;
+    padding: 0em 3em 1.5em 3em;
+
+    &.big {
+      font-size: 2em !important;
+      padding: 0em .5em 1.5em .5em;
+    }
+  }
+}
+
+.actionCall {
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+
+  h5 {
+    color: $textColorEmphasisDark;
+  }
+}

@@ -2,12 +2,13 @@ $pageWidth: 1024px;
 $mobileBreakpoint: 768px;
 $columns: 12;
 $gutter: 24px;
+$pageWidthSmallPages: 800px;
 
 $bgMainColor: white;
 $bgLightBlue: #f4f7fb;
 $bgMainHeader: rgba(44,109,161,1);
 $bgCardSmall: white;
-
+$bgBtnBlue: #4285F4;
 
 $textColorTitle: #1e2b34;
 $textColorMain: #677680;
@@ -21,6 +22,7 @@ $textColorGreyDetails: #99A9B3;
 $textColorWhite: white;
 $textColorWhiteAlt: #dfe8ef;
 
+$textColorGreen: #70C668;
 $textColorEmphasis: #4285f4;
 $textColorEmphasisLight: #a1b5d6;
 $textColorEmphasisDark: #58729e;
@@ -37,7 +39,9 @@ $lineColor: #dee3ec;
     $lineColorUnderline: rgba(255, 255, 255, 0.35);
     $lineColorUnderlineLightBg: rgba(66, 133, 144, .25);
     $lineColorUnderlineLightBgHovered: rgba(66, 133, 144, .50);
-    $lineColorBlueLight: #e7ecf4;
+    $lineColorBlueLight: #ECF0F5;
+    $lineColorBlueLight2: #DFE6F1;
+    $lineColorRed: #F06B72;
 $lineColorBorder: #bbcbe4;
     $lineColorBorderAlt: #d9e6fc;
     $lineColorGrayTeam: #DCE4F0;

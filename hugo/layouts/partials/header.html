@@ -1,22 +1,22 @@
-<nav class="fullWidth topbar {{ .Params.topbar }}" id="topBar">
+<nav class="fullWidth topbar {{ .Params.topbar }}" id="topBar" {{ if ne .Params.topbaroffset "" }}data-opaque-after="{{ .Params.topbaroffset }}"
+    {{ end }}>
     <div class="wrap">
         <div id="menuToggle" class="toggle showMobile">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <a href="//sourced.tech" alt="source{d}">
+        <a href="/" alt="source{d}">
             <div class="logo"></div>
         </a>
         <div class="menu" id="menu">
             <ul>
-                <li class="{{ if eq .Params.section "" }}active{{ end }} mobile"><a href="/">Home</a></li>
-                <li {{ if eq .Params.section "recruitment" }}class="active"{{ end }}><a href="/recruitment/" title="Recruitment">Recruitment</a></li>
-                <li {{ if eq .Params.section "team" }}class="active"{{ end }}><a href="/team/" title="Team">Team</a></li>
-                <li {{ if eq .Params.section "stack" }}class="active"{{ end }}><a href="/stack/" title="Our stack">Our stack</a></li>
+                <li class="{{ if eq .Params.section " " }}active{{ end }} mobile"><a href="/">Home</a></li>
+                <li {{ if eq .Params.section "recruitment" }}class="active" {{ end }}><a href="/recruitment/" title="Building a team?">Building a team?</a></li>
+                <li {{ if eq .Params.section "team" }}class="active" {{ end }}><a href="/team/" title="Team">Team</a></li>
+                <li {{ if eq .Params.section "stack" }}class="active" {{ end }}><a href="/stack/" title="Our stack">Our stack</a></li>
                 <li><a href="//blog.sourced.tech">Blog</a></li>
             </ul>
         </div>
     </div>
 </nav>
-

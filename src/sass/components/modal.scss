@@ -1,0 +1,62 @@
+.modal {
+    background: rgba(68, 83, 109, 0.94);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+
+	.panel {
+		background: white;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: bottom 700ms ease-in;
+		padding: 1.5em 3em;
+	}
+
+	.close {
+		float: right;
+		font-weight: bold;
+		font-size: .7em;
+		color: $textColorGrey;
+		letter-spacing: 0.59px;
+		text-transform: uppercase;
+		background: transparent;
+		border: none;
+	}
+}
+
+.modal-leave {
+	opacity: 1;
+
+	.panel {
+		bottom: 0;
+		transition: bottom 300ms ease-in;
+	}
+}
+
+.modal-leave.modal-leave-active {
+	opacity: 0.01;
+	transition: opacity 700ms ease-in;
+
+	.panel {bottom: -100% }
+}
+
+.modal-appear, .modal-enter {
+	opacity: 0.01;
+
+	.panel {
+		bottom: -100%;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.modal-appear.modal-appear-active, .modal-enter.modal-enter-active {
+	opacity: 1;
+	transition: opacity 400ms ease-in;
+
+	.panel { bottom: 0 }
+}

@@ -1,38 +1,51 @@
 <div id="detailsContainer" class="item0">
     <nav>
-        <ul>
+        <ul class="tabs" data-target=".details > article">
             {{ range $k, $v := $.buttons }}
-                <li class="item{{$k}}">{{$v}}</li>
+                <li{{ if eq $k 0 }} class="active"{{ end }}>{{$v}}</li>
             {{ end }}
         </ul>
     </nav>
 
     <div class="columnsContainer">
-        <section class="details item0 languages">
-            <div>
+        <aside class="code">
+            <pre><code class="js-beautyCode JSON">
+                {{ $.history | jsonify }}
+            </code></pre>
+        </aside>
+
+        <section class="details languages">
+            <article class="active">
                 <div class="author">
                     <img src="/img/icons/dev.svg" />
                     John Doe
                 </div>
-                <div>Languages</div>
+                <h5>Languages</h5>
                 <img class="graph" src="/img/pictures/graph.svg" />
-                <div>Ecosystems</div>
+                <h5>Ecosystems</h5>
                 <ul>
                     <li class="lang langGo">gin-gonic</li>
                     <li class="lang langPHP">symphony</li>
                     <li class="lang langJavaScript">node.js</li>
                     <li class="lang langJavaScript">react</li>
                 </ul>
-            </div>
-        </section>
+            </article>
 
-        <section class="details item1 contributions">
-            <div>
+            <article>
                 <div class="author">
                     <img src="/img/icons/dev.svg" />
                     John Doe
                 </div>
-                <div>Contributions</div>
+                <h5>Locations</h5>
+                <img src="/img/icons/map.svg" class="map" alt="Map" />
+            </article>
+
+            <article>
+                <div class="author">
+                    <img src="/img/icons/dev.svg" />
+                    John Doe
+                </div>
+                <h5>Contributions</h5>
                 <ul>
                     {{ range $contrib := $.contribs }}
                     <li class="repo">
@@ -58,24 +71,7 @@
                     {{ end }}
                 </ul>
                 340 more commits on other projects
-            </div>
+            </article>
         </section>
-
-        <section class="details item2 locations">
-            <div>
-                <div class="author">
-                    <img src="/img/icons/dev.svg" />
-                    John Doe
-                </div>
-                <div>Locations</div>
-                <img src="" />
-            </div>
-        </section>
-
-        <aside class="code">
-            <pre><code class="js-beautyCode JSON">
-                {{ $.history | jsonify }}
-            </code></pre>
-        </aside>
     </div>
 </div>

@@ -1,10 +1,10 @@
-const SECOND = 1000;
-const MINUTE = 60 * SECOND;
-const HOUR = 60 * MINUTE;
-const DAY = 24 * HOUR;
-const WEEK = 7 * DAY;
-const MONTH = 30 * DAY;
-const YEAR = 365 * DAY;
+const SECOND = 1000
+const MINUTE = 60 * SECOND
+const HOUR = 60 * MINUTE
+const DAY = 24 * HOUR
+const WEEK = 7 * DAY
+const MONTH = 30 * DAY
+const YEAR = 365 * DAY
 
 export const TIME_UNITS = {
     'second': SECOND,
@@ -16,30 +16,30 @@ export const TIME_UNITS = {
     'year': YEAR,
 }
 
-export function ago (strTime) {
-    let elapsed = Date.now() - Date.parse(strTime);
-    let str_time;
+export function ago(strTime) {
+    const elapsed = Date.now() - Date.parse(strTime)
+    let unit
     if (elapsed > TIME_UNITS['year']) {
-        str_time = 'year';
+        unit = 'year'
     } else if (elapsed > TIME_UNITS['month']) {
-        str_time = 'month';
+        unit = 'month'
     } else if (elapsed > TIME_UNITS['day']) {
-        str_time = 'day';
+        unit = 'day'
     } else if (elapsed > TIME_UNITS['hour']) {
-        str_time = 'hour';
+        unit = 'hour'
     } else if (elapsed > TIME_UNITS['minute']) {
-        str_time = 'minute';
+        unit = 'minute'
     } else if (elapsed > TIME_UNITS['second']) {
-        str_time = 'second';
+        unit = 'second'
     }
 
-    return plural(Math.floor(elapsed/TIME_UNITS[str_time]), str_time);
-};
+    return plural(Math.floor(elapsed / TIME_UNITS[unit]), unit)
+}
 
-export function isNewer (strTime, interval) {
+export function isNewer(strTime, interval) {
     return Date.now() - Date.parse(strTime) < interval
 }
 
 function plural(number, word) {
-    return number + ' ' + (number == 1 ? word : word + 's');
+    return number + ' ' + (number == 1 ? word : word + 's')
 }

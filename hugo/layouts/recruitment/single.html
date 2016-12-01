@@ -1,0 +1,179 @@
+{{ partial "head.html" . }}
+
+<body class="recruitment">
+    {{ partial "header.html" . }}
+
+    <header class="fullWidth mainHeader">
+        <div class="mainContainer">
+            <h1 class="title">Are you building a team?</h1>
+            <p>Let us find the right candidates for your team.</p>
+            <button class="showWaitingList">Join the waiting list</button>
+        </div>
+    </header>
+
+    <section class="fullWidth">
+        <h2>This is our process</h2>
+        <article>
+            <div class="mainContainer">
+                <h3>Code analysis</h3>
+                <p>Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit constectetur
+                    adis elit. Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit
+                    furis constectetur adis elit. Lorem ipsum dolor sit. Lorem ipsum dolor sit amet constectetur adis elit.</p>
+
+                <div class="devData">
+                    {{ $contribs := $.Site.Data.developer.contribs.data }}
+                    {{ $history := $.Site.Data.developer.history}}
+                    {{ $buttons := slice "Technologies" "Locations" "Contributions" }}
+                    {{ $context := dict "contribs" $contribs "history" $history "buttons" $buttons }}
+                    {{ partial "developer.html" $context }}
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <div class="mainContainer">
+                <h3>Candidate matching</h3>
+                <p>Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit constectetur
+                    adis elit. Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit
+                    furis constectetur adis elit. Lorem ipsum dolor sit. Lorem ipsum dolor sit amet constectetur adis elit.</p>
+
+                <div class="matching">
+                    <div class="searchbar">
+                        I am looking for <strong>Python</strong> developers who know <strong>Django</strong>
+                    </div>
+
+                    <div class="results">
+                        {{ range $p := .Params.matching }}
+                        <div class="result{{ if eq $p.match true }} match{{ end }}">
+                            <div class="header">
+                                <img src="/img/icons/{{ $p.gender }}.svg" />
+                                <p>{{ $p.name }}</p>
+                            </div>
+
+                            <div class="skills">
+                                <div class="col">
+                                    <ul>
+                                        {{ range $l := $p.languages }}
+                                        <li{{ if eq $l "Python" }} class="match" {{ end }}>
+                                            <div class="lang lang{{ $l }}"></div>
+                                            <span>{{ $l }}</span>
+                                            </li>
+                                            {{ end }}
+                                    </ul>
+                                </div>
+
+                                <div class="col">
+                                    <ul>
+                                        {{ range $f := $p.frameworks }}
+                                        <li{{ if eq $f "Django" }} class="match" {{ end }}>{{ $f }}</li>
+                                            {{ end }}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+
+                    <p class="stats">
+                        Found between <strong>+6.6M developers</strong>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <div class="mainContainer">
+                <h3>We connect you</h3>
+                <p>Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit constectetur
+                    adis elit. Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit
+                    furis constectetur adis elit. Lorem ipsum dolor sit. Lorem ipsum dolor sit amet constectetur adis elit.</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <img src="/img/icons/interview.svg" title="source{d} interview" />
+                        <h5>source{d} interview</h5>
+                        <p>Yada yada something something yada yada something something.</p>
+                    </div>
+
+                    <div class="step">
+                        <img src="/img/icons/report.svg" title="Candidate report" />
+                        <h5>Candidate report</h5>
+                        <p>Yada yada something something yada yada something something.</p>
+                    </div>
+
+                    <div class="step">
+                        <img src="/img/icons/interview.svg" title="Client interview" />
+                        <h5>Client interview</h5>
+                        <p>Yada yada something something yada yada something something.</p>
+                    </div>
+
+                    <div class="step">
+                        <img src="/img/icons/hire-small.svg" title="Hire" />
+                        <h5>Hire</h5>
+                        <p>Yada yada something something yada yada something something.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section class="fullWidth">
+        <h2>Your benefits</h2>
+        <article>
+            <div class="mainContainer">
+                <div class="numbers">
+                    <p class="big">
+                        <strong>+6.6M</strong> developers
+                    </p>
+                    <p>
+                        <strong>1500+</strong> candidates introduced to clients
+                    </p>
+                </div>
+                <div class="benefits">
+                    <div class="row">
+                        <div class="benefit">
+                            <div class="bubble">
+                                Lorem ipsum dolor sit amet adiscipit cons tectetur adis elit. Lorem ipsum dolor sit am et adiscipit constectetur adis elit.
+                            </div>
+                            <img src="/img/icons/man-orange.svg" />
+                        </div>
+
+                        <div class="benefit">
+                            <div class="bubble">
+                                Lorem ipsum dolor sit amet adiscipit cons tectetur adis elit. Lorem ipsum dolor sit am et adiscipit constectetur adis elit.
+                            </div>
+                            <img src="/img/icons/woman-red.svg" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="benefit">
+                            <div class="bubble">
+                                Lorem ipsum dolor sit amet adiscipit cons tectetur adis elit. Lorem ipsum dolor sit am et adiscipit constectetur adis elit.
+                            </div>
+                            <img src="/img/icons/woman-blue.svg" />
+                        </div>
+
+                        <div class="benefit">
+                            <div class="bubble">
+                                Lorem ipsum dolor sit amet adiscipit cons tectetur adis elit. Lorem ipsum dolor sit am et adiscipit constectetur adis elit.
+                            </div>
+                            <img src="/img/icons/man-green.svg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actionCall">
+                    <h5>Looking for the right developer?</h5>
+                    <button class="showWaitingList btnBlue">Join the waiting list</button>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <div id="waitingList"></div>
+
+    {{ partial "footer.html" . }}
+</body>
+
+</html>

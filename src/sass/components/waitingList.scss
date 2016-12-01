@@ -1,0 +1,42 @@
+.waitingList {
+	h2 {
+		clear: both;
+		line-height: 1.5em;
+		padding-top: 1em;
+		padding-bottom: .3em;
+	}
+
+	p {
+		font-size: .8em;
+		text-align: center;
+	}
+
+	form {
+		margin: 1em auto 2em auto;
+		max-width: 350px;
+
+		input {
+			width: 100%;
+			display: block;
+			font-size: 1.1em;
+			padding: .5em;
+			border: none;
+			border-bottom: 2px solid $lineColorBlueLight2;
+			transition: border-bottom-color 200ms ease-in;
+			margin-bottom: .7em;
+
+			&:hover, &:focus {
+				border-bottom-color: $bgBtnBlue;
+			}
+
+			&.invalid {
+				border-bottom-color: $lineColorRed;
+			}
+		}
+
+		button {
+			margin: 2em auto 1em auto;
+			display: block;
+		}
+	}
+}

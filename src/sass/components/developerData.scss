@@ -4,31 +4,44 @@
     nav {
         text-align: center;
         li {
-            @include textMedium(strong);
-            width: 185px;
-            height: 46px;
+            font-size: .8em;
             display: inline-block;
             border: none;
-            border-radius: $borderRadius;
-            padding: 13px;
+            border-radius: 3px;
+            padding: .4em 2em;
+            cursor: pointer;
+
+            &.active {
+                border: 1px solid $lineColor;
+                background-color: $bgLightBlue;
+                font-weight: bold;
+            }
         }
     }
 
     .columnsContainer {
-        $detailsHeight: 382px;
         width: 720px;
-        margin: 33px auto;
+        max-height: 380px;        
+        margin: 2em auto;
         position: relative;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        height: 100%;
 
         .code {
-            width: 330px;
-            height: $detailsHeight;
-            overflow: hidden;
-            border-radius: $borderRadius;
+            width: 47%;
+            margin-right: 1em;
+            overflow-y: auto;
+            background: $codeColorBackground;
+            border-radius: 3px;
+
+            pre, code {
+                height: 100%;
+            }
 
             .JSON {
                 @include code;
-                background: $codeColorBackground;
                 padding: 10px;
                 display: block;
                 
@@ -51,26 +64,34 @@
         }
 
         .details {
-            width: 367px;
-            height: $detailsHeight;
-            position: absolute;
-            right: 0;
-            top: 0;
-            display: none;
-            padding: 23px;
-            box-shadow: $shadowArround;
-            border-radius: $borderRadius;
+            width: 53%;
+            padding: 1em;
+            background: white;
+            box-shadow: 0px 4px 15px 0px rgba(87,114,157,0.25);
+            border-radius: 3px;
+            overflow: hidden;
 
             .author {
                 vertical-align: middle;
-                margin-bottom: 14px;
 
                 img {
-                    width: 50px;
-                    height: 50px;
                     vertical-align: middle;
-                    margin-right: 18px;
+                    height: 50px;
                 }
+            }
+        }
+
+        h5 {
+            padding-top: 1em;
+        }
+
+        article {
+            visibility: hidden;
+            display: none;
+
+            &.active {
+                visibility: visible;
+                display: block;
             }
         }
 
@@ -78,33 +99,40 @@
             @include textMedium;
             
             .graph {
-                margin: 10px -9px;
+                padding-top: .5em;
             }
 
             ul {
-                margin-top: 13px;
+                margin-top: .4em;
 
                 .lang {
                     @include label(inherit, strong);
-                    padding: 4px 6px;
+                    font-size: .6em;
+                    font-weight: bold;
+                    padding: .2em .7em;
+
+                    &.langGo {
+                        background-color: #4285F4 !important;
+                    }
+
+                    &.langPHP {
+                        background-color: #F06B72 !important;
+                    }
+
+                    &.langJavaScript {
+                        background-color: #F4AF45 !important;
+                    }
                 }
             }
         }
 
+        .map {
+            margin-left: -1em;
+            width: 120%;
+            margin-top: 1em;
+        }
+
         .contributions  {
         }
-    }
-
-    &.item0 section.item0,
-    &.item1 section.item1,
-    &.item2 section.item2 {
-        display: block;
-    }
-
-    &.item0 li.item0,
-    &.item1 li.item1,
-    &.item2 li.item2 {
-        border: 1px solid $lineColor;
-        background-color: $bgLightBlue;
     }
 }

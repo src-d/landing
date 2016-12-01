@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="13px" height="20px" viewBox="0 0 13 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
-    <title>arrow_down</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="source{d}" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Stack" sketch:type="MSArtboardGroup" transform="translate(-310.000000, -843.000000)" fill="#E9EDF3">
-            <g id="arrow_down" sketch:type="MSLayerGroup" transform="translate(316.500000, 853.000000) rotate(-90.000000) translate(-316.500000, -853.000000) translate(306.500000, 846.500000)">
-                <path d="M2.34333333,0.38 L10,8.03666667 L17.6566667,0.38 L20,2.72333333 L10,12.7233333 L0,2.72333333 L2.34333333,0.38 Z" id="Shape" sketch:type="MSShapeGroup"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="13" height="20" viewBox="0 0 13 20" xmlns="http://www.w3.org/2000/svg"><title>arrow_down</title><path d="M.38 17.657L8.037 10 .38 2.343 2.723 0l10 10-10 10L.38 17.657z" fill="#E9EDF3" fill-rule="evenodd"/></svg>
