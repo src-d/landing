@@ -23,7 +23,7 @@ $iconSize: 12px;
         text-align: center;
 
         .clickable {
-            border: 0;
+            border: none !important;
         }
     }
 
@@ -33,20 +33,22 @@ $iconSize: 12px;
 
         background-color: white;
         border: 1px solid transparent;
-        border-color: opacify($lineColorBorder, .43);
-        border-radius: $borderRadius;
+        border-color: $lineColorBorderAlt;
+        border-radius: 3px;
         margin-top: $gutter;
         overflow: hidden;
         display: inline-block;
-        padding: 11px $cardPadding;
+        padding: .4em 1em;
         height: 114px;
         position: relative;
         
         .fullName {
+            color: $textColorTitle;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             display: block;
+            text-align: left;
 
             .name {
                 font-weight: 600;
@@ -55,6 +57,7 @@ $iconSize: 12px;
 
         .description {
             @include textSmall(condensed);
+            color: $textColorCardSmall;
             width: 100%;
             margin: 6px 0 0;
             text-align: left;
@@ -65,13 +68,26 @@ $iconSize: 12px;
         .data {
             @include textSmall(condensed);
             position: absolute;
-            bottom: 7px;
+            bottom: .8em;
             left: $cardPadding;
+            display: flex;
+            align-items: center;
+
             .stars,
             .lang {
-                display: inline-block;
+                display: flex;
+                align-items: center;
+
                 span {
-                    margin-left: 10px;
+                    margin-left: .3em;
+                }
+
+                img, span {
+                    line-height: 0;
+                }
+
+                img, .circle {
+                    margin-bottom: 2px;
                 }
             }
 
@@ -80,10 +96,9 @@ $iconSize: 12px;
                 height: $iconSize;
                 width: $iconSize;
                 border-radius: $iconSize;
-                margin-top: 2px;
-                top: 1px;
+                margin-top: .1em;
                 position: relative;
-                margin-left: 20px;
+                margin-left: 1em;
             }
         }
     }

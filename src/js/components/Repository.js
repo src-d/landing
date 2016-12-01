@@ -1,17 +1,15 @@
 import React from 'react'
 
-const languageColors = {
-    'default': '#BBBBBB',
-    'C': '#A8B9CC',
-    'C++': '#669AD3',
-    'Go': '#75CEDE',
-    'JavaScript': '#F0DB4F',
-    'Python': '#8EDA53',
-    'Scala': '#DE322F',
+const languageClass = {
+    'C': 'C',
+    'C++': 'Cpp',
+    'Go': 'Go',
+    'JavaScript': 'JavaScript',
+    'Python': 'Python',
+    'Scala': 'Scala',
 }
 
 export default function Repository({ repo }) {
-    let color = languageColors[repo.Lang] || languageColors['default']
     return (
         <a href={repo.URL} className='repo' target='_blank'>
             <div href={repo.URL} className='fullName'>
@@ -30,7 +28,7 @@ export default function Repository({ repo }) {
                 </div>
 
                 <div className='lang'>
-                    <span className='circle' style={{ backgroundColor: color }}></span>
+                    <span className={'circle lang' + languageClass[repo.Lang] }></span>
                     <span>{repo.Lang}</span>
                 </div>
             </div>

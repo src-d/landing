@@ -1,6 +1,6 @@
 addr: ":8080"
 github-token: "***REMOVED***"
-feed-base-url: "http://blog.sourced.tech/json/
+feed-base-url: "http://blog.sourced.tech/json/"
 fetcher-page-size: 45
 repos:
     main:

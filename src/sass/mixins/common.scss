@@ -13,8 +13,7 @@
 }
 
 @mixin glow() {
-    @include transition-property(box-shadow);
-    @include transition-duration($shadowSpeed);
+    transition: all 200ms ease-in;
     box-shadow: $shadowOff;
     
     &:hover {
