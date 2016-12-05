@@ -79,9 +79,12 @@
             display: block;
         }
 
-        .new > a {
-            @include textBig(emphasis);
+        .posts > .post:first-child a {
+            color: $textColorTitle;
+        }
 
+        .new > a {
+            color: $textColorEmphasis !important;
             $tagWidth: 35px;
             $tagSeparation: 10px;
             &:before {
@@ -127,5 +130,44 @@
         .error > p {
             @include textSmall;
         }
+    }
+}
+
+@media only screen and (max-width: 1005px) {
+    #weAreWeWant {
+        .article.left, .article.right {
+            margin: 0 auto !important;
+            width: 100%;
+            max-width: 500px;
+            display: block;
+
+            li {
+                height: auto;
+                margin: 0;
+                margin-top: 2em;
+                text-align: justify;
+
+                &:before {
+                    display: none;
+                }
+
+                span {
+                    transform: none;
+                    position: static;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #ourOpenSource .repo {
+        margin: 0;
+        margin-top: 1em;
+    }
+
+    #ourPosts section {
+        width: 80% !important;
+        margin: 1rem auto !important;
     }
 }

@@ -3,6 +3,10 @@ $iconSize: 12px;
 
 #ourOpenSource {
 
+    h3 {
+        line-height: 1.6em;
+    }
+
     .subTitle {
         margin-bottom: -10px;
     }
@@ -14,6 +18,8 @@ $iconSize: 12px;
     p {
         @include textSmall;
         @include halign(700px);
+        width: auto;
+        max-width: 700px;
         margin-bottom: 27px;
     }
 

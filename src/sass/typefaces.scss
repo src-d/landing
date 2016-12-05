@@ -147,9 +147,8 @@
     @include familyWeight($fontCode, 400);
     font-size: $textSizeTitle2;
     color: $textColorWhite;
-    line-height: 60px;
     background: $textColorEmphasisDark;
-    padding: 0 50px;
+    padding: .9em 2.5em;
     display: inline-block;
     border-radius: $borderRadius;
 }

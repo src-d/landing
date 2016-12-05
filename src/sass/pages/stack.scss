@@ -91,3 +91,57 @@
 .stackSection.ml .stackItem {
   width: 23%;
 }
+
+@media only screen and (max-width: 900px) {
+  .stack.mainContainer {
+    width: 100%;
+  }
+
+  .stackSection.languages .stackItem {
+    img {
+      height: 100px;
+    }
+  }
+
+  .stackSection {
+    float: none !important;
+    width: 100% !important;
+    border-bottom: 1px solid $lineColorBlueLight;
+    margin-bottom: 2em;
+
+    .stackItems {
+      padding-left: 2em;
+      white-space: nowrap;
+      max-width: 100%;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      padding: 1.5em 2em !important;
+
+      .stackItem {
+        max-width: 210px;
+        width: auto;
+        white-space: normal;
+        vertical-align: top;
+      }
+    }
+
+    &.frontend, &.ml, &.infra {
+      .stackItems {
+        text-align: center;
+
+        .stackItem {
+          vertical-align: middle;
+        }
+
+        .stackItem + .stackItem {
+          margin-left: 3em;
+        }
+      }
+    }
+  }
+
+  .stackSection.ml {
+    border: none;
+    margin-bottom: 0;
+  }
+}

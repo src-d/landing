@@ -42,9 +42,17 @@
                         I am looking for <strong>Python</strong> developers who know <strong>Django</strong>
                     </div>
 
+                    <div class="filters">
+                        <div class="wrap">
+                            <span>I am looking for developers who know</span>
+                            <span class="filter langPython">Python</span>
+                            <span class="filter langPython">Django</span>
+                        </div>
+                    </div>
+
                     <div class="results">
                         {{ range $p := $.Site.Data.recruitment.matching }}
-                        <div class="result{{ if eq $p.match true }} match{{ end }}">
+                        <div class="resultWrap"><div class="result{{ if eq $p.match true }} match{{ end }}">
                             <div class="header">
                                 <img src="/img/icons/{{ $p.gender }}.svg" />
                                 <p>{{ $p.name }}</p>
@@ -70,7 +78,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div></div>
                         {{ end }}
                     </div>
 
@@ -91,26 +99,34 @@
                 <div class="steps">
                     <div class="step">
                         <img src="/img/icons/interview.svg" title="source{d} interview" />
-                        <h5>source{d} interview</h5>
-                        <p>Yada yada something something yada yada something something.</p>
+                        <div>
+                            <h5>source{d} interview</h5>
+                            <p>Yada yada something something yada yada something something.</p>
+                        </div>
                     </div>
 
                     <div class="step">
                         <img src="/img/icons/report.svg" title="Candidate report" />
-                        <h5>Candidate report</h5>
-                        <p>Yada yada something something yada yada something something.</p>
+                        <div>
+                            <h5>Candidate report</h5>
+                            <p>Yada yada something something yada yada something something.</p>
+                        </div>
                     </div>
 
                     <div class="step">
                         <img src="/img/icons/interview.svg" title="Client interview" />
-                        <h5>Client interview</h5>
-                        <p>Yada yada something something yada yada something something.</p>
+                        <div>
+                            <h5>Client interview</h5>
+                            <p>Yada yada something something yada yada something something.</p>
+                        </div>
                     </div>
 
                     <div class="step">
                         <img src="/img/icons/hire-small.svg" title="Hire" />
-                        <h5>Hire</h5>
-                        <p>Yada yada something something yada yada something something.</p>
+                        <div>
+                            <h5>Hire</h5>
+                            <p>Yada yada something something yada yada something something.</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -136,3 +136,54 @@
         }
     }
 }
+
+@media only screen and (max-width: 795px) {
+  #detailsContainer {
+    .code {
+      display: none;
+    }
+
+    nav {
+      li {
+        padding: 0;
+        padding-bottom: .3em;
+
+        &.active {
+          border: none;
+          border-bottom: 2px solid $codeColorLiteral;
+          border-radius: 0;
+          background: none;
+        }
+      }
+
+      li + li {
+        margin-left: 1em;
+      }
+    }
+
+    .columnsContainer {
+      width: 100%;
+
+      .details {
+        width: 90%;
+        max-width: 400px;
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .languages {
+        .graph {
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .author img {
+      padding-right: 1em;
+    }
+  }
+}

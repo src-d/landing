@@ -24,7 +24,10 @@
 
     p, .footer {
         @include textMedium(alphaCover);
-        @include halign(500px)
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        max-width: 500px;
     }
 
     .link {

@@ -8,6 +8,7 @@
         bottom: 8px;
         color: #EFF5FD;
         content: "Copied to clipboard";
+        font-family: Roboto, sans-serif;
         font-weight: bold;
         text-transform: uppercase;
         font-size: 12px;
@@ -42,13 +43,13 @@
         &:after {
             visibility: visible;
             background: fade-in(#555F66, 0.02);
-            bottom: 26px;
+            bottom: 120%;
         }
 
         &:before {
             visibility: visible;
             border-color: fade-in(#555F66, 0.02) transparent;
-            bottom: 18px;
+            bottom: calc(120% - 8px);
         }
     }
 }

@@ -96,9 +96,13 @@
   }
 
   .results {
-    .result {
+    .resultWrap {
       width: 23%;
       float: left;
+    }
+
+    .result {
+      width: 100%;
       border: 1px solid $lineColorBlueLight2;
       border-radius: 3px;
       color: $textColorMain;
@@ -173,7 +177,7 @@
       }
     }
 
-    .result + .result {
+    .resultWrap + .resultWrap {
       margin-left: 2%;
     }
   }
@@ -290,11 +294,204 @@
   }
 }
 
+.filters { display: none }
+
 .actionCall {
   padding-top: 1em;
   padding-bottom: 1.5em;
 
   h5 {
     color: $textColorEmphasisDark;
+  }
+}
+
+@media only screen and (max-width: 825px) {
+  body.recruitment {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .matching {
+    .results {
+      .resultWrap {
+        padding: 1em;
+        width: 49%;
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .recruitment section .mainContainer {
+    width: 90%;
+  }
+
+  .numbers {
+    display: block;
+    margin-bottom: 2em;
+
+    p {
+      width: 100%;
+      line-height: 0;
+      padding: 0;
+
+      &.big {
+        padding: 0;
+      }
+    }
+  }
+
+  .benefits {
+    .row {
+      display: block;
+      max-width: 450px;
+      margin: 0 auto;
+
+      .benefit {
+        width: 100%;
+      }
+
+      .benefit + .benefit {
+        margin-top: 1em;
+        margin-left: 0;
+      }
+    }
+  }
+
+  .recruitment {
+    .bubble {
+      &:after, &:before {
+        border: solid 6px transparent;
+        border-left: 0;
+        border-right-color: white;
+        left: -6px;
+        right: auto;
+      }
+
+      &:after {
+        border-right-color: $lineColorBlueLight2;
+        left: -7px;
+        right: auto;
+      }
+    }
+
+    .benefit {
+      flex-direction: row-reverse;
+
+      img {
+        margin-left: 0;
+        margin-right: 1em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 795px) {
+  .recruitment {
+    .searchbar { display: none }
+
+    .filters {
+      display: block;
+      position: relative;
+
+      &:after {
+        content: " ";
+        position: absolute;
+        display: block;
+        height: 1px;
+        background-color: $lineColorBlueLight;
+        bottom: 0;
+        left: -5%;
+        right: -5%;
+      }
+
+      .wrap {
+        padding: 1.5em;
+        margin-bottom: 1.5em;
+
+        &:after, &:before {
+          content: " ";
+          display: block;
+          position: absolute;
+          border: solid 15px transparent;
+          border-bottom: 0;
+          border-top-color: white;
+          left: 50%;
+          margin-left: -15px;
+          bottom: -13px;
+          z-index: 2;
+        }
+
+        &:after {
+          z-index: 1;
+          border-top-color: $lineColorBlueLight;
+          bottom: -14px;
+        }
+      }
+
+      span:not(.filter) {
+        display: block;
+        font-weight: 300;
+        font-size: 1.3em;
+        padding-bottom: .7em;
+      }
+
+      span.filter {
+        color: white;
+        font-weight: bold;
+        padding: 0 1.5em;
+        border-radius: 3px;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: .7em;
+
+        & + span.filter {
+          margin-left: .6em;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .steps {
+    display: block;
+    margin: 0 auto;
+    max-width: 450px;
+
+    .step {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        margin-right: 2em;
+      }
+
+      & > div {
+        text-align: left;
+      }
+    }
+
+    &:before {
+      width: 2px;
+      height: 76%;
+      left: 23px;
+      top: 60px;
+      z-index: -1;
+    }
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .matching {
+    .results {
+      .resultWrap {
+        width: 80%;
+        float: none;
+        margin: 1em auto !important;
+        padding: 0;
+      }
+    }
   }
 }

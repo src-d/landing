@@ -1,6 +1,8 @@
 import Clipboard from 'clipboard'
 
-export default function setupClipboard() {
+const mobileBreakpoint = 768
+
+function makeClipboard() {
     const clipboard = new Clipboard('.copyBtn')
 
     clipboard.on('success', e => {
@@ -8,4 +10,22 @@ export default function setupClipboard() {
         e.trigger.classList.add('show')
         setTimeout(_ => e.trigger.classList.remove('show'), 2000)
     })
+
+    return clipboard
+}
+
+export default function setupClipboard() {
+    let clipboard
+    
+    function toggleClipboard() {
+        if (window.innerWidth > mobileBreakpoint && !clipboard) {
+            clipboard = makeClipboard()
+        } else if (window.innerWidth <= mobileBreakpoint && clipboard) {
+            clipboard.destroy()
+            clipboard = null
+        }
+    }
+
+    toggleClipboard()
+    window.addEventListener('resize', toggleClipboard)
 }

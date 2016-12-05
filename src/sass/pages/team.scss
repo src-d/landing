@@ -1,15 +1,15 @@
 .teamPage {
     .mainHeader {
-		background-image: url(/img/banner/team.jpg);
-		background-position: center center;
+		    background-image: url(/img/banner/team.jpg);
+		    background-position: center center;
 
-		&:before {
-			background-color: rgba(44, 109, 161, 0.72)
-		}
+	  	  &:before {
+			      background-color: rgba(44, 109, 161, 0.72)
+		    }
 
-		.mainContainer {
-        	height: 500px;
-		}
+		    .mainContainer {
+        	  height: 500px;
+        }
     }
 
     .mainHeader + .fullWidth {
@@ -140,6 +140,26 @@
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.team {
+		.members {
+			.member {
+				width: 49%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.team {
+		.members {
+			.member {
+				width: 100%;
 			}
 		}
 	}
