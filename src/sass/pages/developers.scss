@@ -249,6 +249,8 @@ $timeLineWidth: 4px;
 }
 
 @media only screen and (max-width: 795px) {
+    $pictoSizeResponsive: 60px;
+
     #developerDetails {
         .copyBtn {
             width: 100%;
@@ -267,7 +269,7 @@ $timeLineWidth: 4px;
         text-align: left;
 
         &:before {
-            left: ($pictoSize - $timeLineWidth) / 2
+            left: ($pictoSizeResponsive - $timeLineWidth) / 2
         }
 
         & > .workflow {
@@ -279,7 +281,7 @@ $timeLineWidth: 4px;
 
             .content {
                 transform: none !important;
-                padding-left: $pictoSize + $bubbleMargin;
+                padding-left: $pictoSizeResponsive + $bubbleMargin / 2;
                 width: 100%;
                 text-align: center;
 
@@ -294,6 +296,9 @@ $timeLineWidth: 4px;
                 &:before {
                     left: 0 !important;
                     right: 0 !important;
+                    background-size: $pictoSizeResponsive !important;
+                    width: $pictoSizeResponsive !important;
+                    height: $pictoSizeResponsive !important;
                 }
             }
 
