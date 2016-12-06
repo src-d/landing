@@ -111,6 +111,13 @@
     }
 }
 
+@mixin textXSmall($classes:false) {
+    @include textFamilyWeight;
+    font-size: $textSizeXS;
+    line-height: 18px;
+    color: $textColorGrey;
+}
+
 @mixin smallLink($classes:false) {
     @include textSmall($classes);
     
@@ -169,9 +176,8 @@
 }
 
 @mixin code($kind:false) {
-    @include familyWeight(hack, 400);
-    font-size: $textSizeXS;
-    line-height: 18px;
+    @include textXSmall;
+    font-family: hack;
 
     @if ($kind == 'attribute') {
         color: $codeColorAttribute;

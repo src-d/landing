@@ -1,15 +1,6 @@
 body {
     @include textMedium;
-
-    .mainHeader {
-        .mainContainer {
-            height: 500px;
-        }
-    }
-
-    .mainHeader + .fullWidth {
-        margin-top: 500px;
-    }
+    @include setupHeader(500px, 150px);
 }
 
 .fullWidth {
@@ -80,6 +71,7 @@ h1, h2, h3, h4 {
     color: $textColorWhite;
     width: 282px;
     background: $textColorEmphasis;
+    box-shadow: 0px 5px 15px 1px rgba(125,145,177,0.66);;
     padding: 14px 50px;
     display: block;
     border-radius: $borderRadius;

@@ -21,7 +21,6 @@ function renderComponent(component, id) {
 }
 
 window.addEventListener('DOMContentLoaded', _ => {
-    highlightCode()
     setupMenu()
     setupStickyHeader()
     renderComponent(Repositories, 'repositories')
@@ -29,11 +28,12 @@ window.addEventListener('DOMContentLoaded', _ => {
     renderComponent(NonTechPosts, 'non-tech-posts')
     setupClipboard()
     setupWaitingList()
+    highlightCode()
     setupTabs()
 })
 
 function highlightCode() {
-    let containers = document.getElementsByClassName('js-beautyCode')
+    const containers = document.querySelectorAll('.js-beautyCode')
     highlighter.configure({ useBR: false })
     Array.from(containers).map(container => {
         container.innerHTML = beautify(container.innerHTML, { indent_size: 2 })
@@ -42,8 +42,8 @@ function highlightCode() {
 }
 
 function setupMenu() {
-    const menuToggle = document.getElementById('menuToggle')
-    const menu = document.getElementById('menu')
+    const menuToggle = document.querySelector('#menuToggle')
+    const menu = document.querySelector('#menu')
     menuToggle.addEventListener('click', _ => {
         menu.classList.toggle('open')
         menuToggle.classList.toggle('open')
@@ -51,15 +51,17 @@ function setupMenu() {
 }
 
 function setupStickyHeader() {
-    const topBar = document.getElementById('topBar')
+    const topBar = document.querySelector('#topBar')
+    const topBarHeight = topBar.offsetHeight
+    const headerHeight = document.querySelector('.mainHeader').offsetHeight
+    const turnOpaqueAt = headerHeight - topBarHeight
     if (topBar.classList.contains("opaque")) { return }
     checkTopbarOpacity(topBar)
-    window.addEventListener('scroll', _ => checkTopbarOpacity(topBar))
+    window.addEventListener('scroll', _ => checkTopbarOpacity(topBar, turnOpaqueAt))
 }
 
-function checkTopbarOpacity(topBar) {
-    const offset = Number(topBar.getAttribute('data-opaque-after')) || 425
-    if (window.pageYOffset > offset) {
+function checkTopbarOpacity(topBar, opaqueAtOffset) {
+    if (window.pageYOffset > opaqueAtOffset) {
         topBar.classList.add('opaque')
     } else {
         topBar.classList.remove('opaque')
@@ -77,17 +79,11 @@ function renderWaitingList() {
 }
 
 function setupTabs() {
-    Array.from(document.querySelectorAll('ul.tabs')).forEach(elem => {
-        const target = elem.getAttribute('data-target')
-        const targetElems = Array.from(document.querySelectorAll(target))
-        const children = Array.from(elem.children)
-        children.forEach((li, i) => {
-            li.addEventListener('click', e => {
-                children.forEach(el => el.classList.remove('active'))
-                targetElems.forEach(el => el.classList.remove('active'))
-                e.target.classList.add('active')
-                targetElems[i].classList.add('active')
-            })
+    const detailsContainer = document.querySelector('#detailsContainer')
+    const buttons = detailsContainer.querySelectorAll('nav li')
+    Array.from(buttons).map(button => {
+        button.addEventListener('click', _ => {
+            detailsContainer.className = button.className
         })
     })
 }

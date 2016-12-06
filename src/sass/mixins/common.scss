@@ -42,3 +42,72 @@
     text-indent: -5000px;
     background: transparent url($url) no-repeat center ;
 }
+
+@mixin setupHeader($headerHeight, $titleTopMargin) {
+    .mainHeader .mainContainer {
+        height: $headerHeight;
+
+        .title {
+            margin-top: $titleTopMargin;
+        }
+    }
+
+    .mainHeader + .fullWidth {
+        margin-top: $headerHeight;
+    }
+}
+
+@mixin bubble ($side:left, $width:auto) {
+    border-radius: 3px;
+    font-size: .75em;
+    background: white;
+    padding: 1em;
+    line-height: 1.5em;
+    color: $textColorGrey;
+    border: 1px solid $lineColor;
+    position: relative;
+    width: $width;
+
+    &:after, &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        border: solid 6px transparent;
+        margin-top: -6px;
+        width: 6px;
+        @if ($side == 'right') {
+            border-left-width: 0;
+            border-right-width: 6px;
+            border-left-color: transparent;
+            border-right-color: white;
+            left: -6px;
+            right: initial;
+        }
+        @else {
+            border-left-width: 6px;
+            border-right-width: 0;
+            border-left-color: white;
+            border-right-color: transparent;
+            left: initial;
+            right: -6px;
+        }
+    }
+
+    &:after {
+        z-index: 1;
+        @if ($side == 'right') {
+            border-left-color: transparent;
+            border-right-color: $lineColor;
+            left: -7px;
+            right: initial;
+        }
+        @else {
+            border-left-color: $lineColor;
+            border-right-color: transparent;
+            left: initial;
+            right: -7px;
+        }
+    }
+}

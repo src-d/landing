@@ -217,33 +217,7 @@
 }
 
 .bubble {
-  border-radius: 3px;
-  font-size: .75em;
-  background: white;
-  padding: 1em;
-  line-height: 1.5em;
-  color: $textColorGrey;
-  border: 1px solid $lineColorBlueLight2;
-  position: relative;
-
-  &:after, &:before {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 50%;
-    border: solid 6px transparent;
-    border-right: 0;
-    border-left-color: white;
-    margin-top: -6px;
-    right: -6px;
-    z-index: 2;
-  }
-
-  &:after {
-    z-index: 1;
-    border-left-color: $lineColorBlueLight2;
-    right: -7px;
-  }
+  @include bubble(left);
 }
 
 .benefits {
@@ -359,19 +333,7 @@
 
   .recruitment {
     .bubble {
-      &:after, &:before {
-        border: solid 6px transparent;
-        border-left: 0;
-        border-right-color: white;
-        left: -6px;
-        right: auto;
-      }
-
-      &:after {
-        border-right-color: $lineColorBlueLight2;
-        left: -7px;
-        right: auto;
-      }
+      @include bubble(right)
     }
 
     .benefit {

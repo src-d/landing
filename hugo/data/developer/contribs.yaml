@@ -7,7 +7,7 @@ data:
       - Go
   - group: http-kit
     name: http-kit
-    commits: 1
+    commits: 2
     ago: 2 weeks
     languages:
       - Java
