@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"encoding/json"
+	. "encoding/json"
 	"errors"
 	"net/http"
 	"net/http/httptest"
@@ -67,7 +67,7 @@ func TestUserData(t *testing.T) {
 
 		require.Equal(c.code, w.Code, c.email)
 		var resp UserDataResponse
-		require.Nil(json.Unmarshal(w.Body.Bytes(), &resp), c.email)
+		require.Nil(Unmarshal(w.Body.Bytes(), &resp), c.email)
 		require.Equal(UserDataResponse{c.msg, c.error}, resp, c.email)
 
 		if !c.error {

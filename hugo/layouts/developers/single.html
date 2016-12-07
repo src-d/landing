@@ -46,13 +46,13 @@
                 
                 {{ $contribs := $.Site.Data.developer.contribs.data }}
                 {{ $history := $.Site.Data.developer.history}}
-                {{ $buttons := slice "What you do" "Where you are" "Your cotributions" }}
+                {{ $buttons := slice "What you do" "Where you are" "Your contributions" }}
                 {{ $context := dict "contribs" $contribs "history" $history "buttons" $buttons }}
                 {{ partial "developer.html" $context }}
 
                 <h3>Whant to know the data we have about you?</h3>
                 <div>
-                    <span class="copyBtn emphasysButton">Get your own data</span>
+                    <button class="copyBtn emphasisButton showDeveloperData">Get your own data</button>
                 </div>
             </ul>
         </div>
@@ -101,6 +101,8 @@
             </div>
         </div>
     </aside>
+
+    <div id="developerData"></div>
 
     {{ partial "contact-us.html" . }}
     {{ partial "footer.html" . }}

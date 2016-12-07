@@ -37,23 +37,23 @@ func (h *UserData) Handle(c *gin.Context) {
 	email, err := govalidator.NormalizeEmail(c.Param("email"))
 	if err != nil {
 		c.Error(err)
-		c.JSON(http.StatusBadRequest, NewErrorResponse(ErrInvalidEmail))
+		json(c, http.StatusBadRequest, NewErrorResponse(ErrInvalidEmail))
 		return
 	}
 
 	person, err := h.store.FindOne(h.store.Query().FindByEmail(email))
 	if err == models.ErrNotFound {
-		c.JSON(http.StatusNotFound, NewErrorResponse(ErrEmailDoesNotExist))
+		json(c, http.StatusNotFound, NewErrorResponse(ErrEmailDoesNotExist))
 		return
 	} else if err != nil {
-		c.JSON(http.StatusInternalServerError, NewErrorResponse(ErrInternalError))
+		json(c, http.StatusInternalServerError, NewErrorResponse(ErrInternalError))
 		return
 	}
 
 	if err := h.mailer.Send(email, person); err != nil {
-		c.JSON(http.StatusInternalServerError, NewErrorResponse(ErrInternalError))
+		json(c, http.StatusInternalServerError, NewErrorResponse(ErrInternalError))
 		return
 	}
 
-	c.JSON(http.StatusOK, new(UserDataResponse))
+	json(c, http.StatusOK, new(UserDataResponse))
 }

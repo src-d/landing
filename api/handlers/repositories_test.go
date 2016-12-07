@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"encoding/json"
+	. "encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -66,7 +66,7 @@ func (s *RepositoriesSuite) assertRepos(fn gin.HandlerFunc, expected ...string) 
 
 	s.Equal(http.StatusOK, w.Code)
 	var resp ReposResponse
-	s.Nil(json.Unmarshal(w.Body.Bytes(), &resp))
+	s.Nil(Unmarshal(w.Body.Bytes(), &resp))
 	s.Equal(len(expected), len(resp.Repos), "invalid len")
 	var names []string
 	for _, r := range resp.Repos {

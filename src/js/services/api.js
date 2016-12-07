@@ -55,3 +55,8 @@ export function loadTechPosts() {
 export function loadNonTechPosts() {
     return request(blogURL(NON_TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
 }
+
+export function sendDeveloperData(email) {
+    return fetch(apiURL(`/data/${email}`), {method: 'POST'})
+        .then(resp => resp.json())
+}

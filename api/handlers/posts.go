@@ -19,17 +19,15 @@ func (p *Posts) Get(c *gin.Context) {
 	kind := c.Param("kind")
 
 	if kind != "culture" && kind != "technical" {
-		status(c, http.StatusNotFound)
+		abort(c, http.StatusNotFound, nil)
 		return
 	}
 
 	resp, err := p.provider.Find(kind)
 	if err != nil {
-		status(c, http.StatusInternalServerError)
-		c.AbortWithError(http.StatusInternalServerError, err)
+		abort(c, http.StatusInternalServerError, err)
 		return
 	}
 
-	status(c, http.StatusOK)
-	c.JSON(http.StatusOK, resp)
+	json(c, http.StatusOK, resp)
 }

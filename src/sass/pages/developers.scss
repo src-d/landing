@@ -38,6 +38,7 @@ $timeLineWidth: 4px;
         top: 0;
         bottom: 0;
         left: 50%;
+        margin-left: -1px;
         width: 0;
     }
 
@@ -108,10 +109,6 @@ $timeLineWidth: 4px;
                 display: inline-block;
                 vertical-align: middle;
             }
-
-            .bubble.bubble {
-                @include textMedium(strong);
-            }
         }
 
         &.step1 {
@@ -157,6 +154,10 @@ $timeLineWidth: 4px;
             }
             .bubble{width: 211px !important;}
         }
+
+        .bubble {
+          font-size: 1rem !important;
+        }
     }
 }
 
@@ -187,12 +188,13 @@ $timeLineWidth: 4px;
         transform: translateY(-50%);
 
         & > li {
-            @include textXSmall;
             width: $extraLiWidth;
             height: $extraLiHeight;
             overflow: hidden;
             position: absolute;
             text-align: center;
+            font-family: 'Hack', monospace;
+            font-size: .6rem;
 
             &:before {
                 content: '';

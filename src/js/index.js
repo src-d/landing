@@ -5,7 +5,7 @@ import React from 'react'
 
 import setupClipboard from './clipboard'
 import Repositories from './components/Repositories'
-import WaitingList from './components/WaitingList'
+import DeveloperData from './components/DeveloperData'
 import { TechPosts, NonTechPosts } from './components/Posts'
 
 import beautify from 'js-beautify'
@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', _ => {
     renderComponent(TechPosts, 'tech-posts')
     renderComponent(NonTechPosts, 'non-tech-posts')
     setupClipboard()
-    setupWaitingList()
+    setupDeveloperData()
     highlightCode()
     setupTabs()
 })
@@ -54,10 +54,11 @@ function setupStickyHeader() {
     const topBar = document.querySelector('#topBar')
     const topBarHeight = topBar.offsetHeight
     const headerHeight = document.querySelector('.mainHeader').offsetHeight
-    const turnOpaqueAt = headerHeight - topBarHeight
+    const offset = headerHeight - topBarHeight
     if (topBar.classList.contains("opaque")) { return }
-    checkTopbarOpacity(topBar)
-    window.addEventListener('scroll', _ => checkTopbarOpacity(topBar, turnOpaqueAt))
+
+    checkTopbarOpacity(topBar, offset)
+    window.addEventListener('scroll', _ => checkTopbarOpacity(topBar, offset))
 }
 
 function checkTopbarOpacity(topBar, opaqueAtOffset) {
@@ -68,14 +69,14 @@ function checkTopbarOpacity(topBar, opaqueAtOffset) {
     }
 }
 
-function setupWaitingList() {
-    Array.from(document.querySelectorAll('.showWaitingList')).forEach(elem => {
-        elem.addEventListener('click', renderWaitingList)
+function setupDeveloperData() {
+    Array.from(document.querySelectorAll('.showDeveloperData')).forEach(elem => {
+        elem.addEventListener('click', renderDeveloperData)
     })
 }
 
-function renderWaitingList() {
-    renderComponent(WaitingList, 'waitingList')
+function renderDeveloperData() {
+    renderComponent(DeveloperData, 'developerData')
 }
 
 function setupTabs() {

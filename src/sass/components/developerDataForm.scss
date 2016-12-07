@@ -1,4 +1,4 @@
-.waitingList {
+.developerDataForm {
 	h2 {
 		clear: both;
 		line-height: 1.5em;
@@ -37,6 +37,26 @@
 		button {
 			margin: 2em auto 1em auto;
 			display: block;
+
+      &[disabled] {
+        opacity: .7;
+      }
 		}
 	}
+
+  .error, .success {
+    margin: 1em 0;
+    padding: 1em;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .error {
+    color: $lineColorRed;
+  }
+
+  .success {
+    color: $textColorGreen;
+  }
 }
