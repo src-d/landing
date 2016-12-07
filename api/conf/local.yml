@@ -1,4 +1,5 @@
 addr: ":8080"
+recaptcha-key: 6Le6IQ4UAAAAAJCSOm2AjJvTT-RNywSWsCWqTiii
 github-token: ***REMOVED***
 feed-base-url: "http://localhost:1313/json/"
 fetcher-page-size: 45

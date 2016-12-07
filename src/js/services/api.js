@@ -56,7 +56,11 @@ export function loadNonTechPosts() {
     return request(blogURL(NON_TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
 }
 
-export function sendDeveloperData(email) {
-    return fetch(apiURL(`/data/${email}`), {method: 'POST'})
+export function sendDeveloperData(email, captcha) {
+    return fetch(apiURL("/data"), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, captcha })
+    })
         .then(resp => resp.json())
 }

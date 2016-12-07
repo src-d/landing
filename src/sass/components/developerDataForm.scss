@@ -42,6 +42,10 @@
         opacity: .7;
       }
 		}
+
+    & > div > div {
+      margin: 1em auto 0 auto;
+    }
 	}
 
   .error, .success {

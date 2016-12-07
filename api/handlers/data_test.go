@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"bytes"
 	. "encoding/json"
 	"errors"
 	"net/http"
@@ -16,6 +17,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"gopkg.in/gin-gonic/gin.v1"
 )
+
+func mockVerifier(ip string, code string) bool {
+	return ip == "ok" && code == "ok"
+}
 
 func TestUserData(t *testing.T) {
 	require := require.New(t)
@@ -40,26 +45,40 @@ func TestUserData(t *testing.T) {
 	}()
 
 	cases := []struct {
-		email string
-		code  int
-		error bool
-		msg   string
+		email   string
+		captcha string
+		ip      string
+		code    int
+		error   bool
+		msg     string
 	}{
-		{"notanemail", http.StatusBadRequest, true, ErrInvalidEmail},
-		{"notexists@gmail.com", http.StatusNotFound, true, ErrEmailDoesNotExist},
-		{"doesexist@gmail.com", http.StatusOK, false, ""},
-		{"does.exist@gmail.com", http.StatusOK, false, ""},
-		{"exists.butfails@gmail.com", http.StatusInternalServerError, true, ErrInternalError},
+		{"notanemail", "", "", http.StatusBadRequest, true, ErrInvalidRequest},
+		{"notexists@gmail.com", "", "ok", http.StatusBadRequest, true, ErrInvalidRequest},
+		{"notexists@gmail.com", "ok", "ok", http.StatusNotFound, true, ErrEmailDoesNotExist},
+		{"notexists@gmail.com", "foo", "ok", http.StatusBadRequest, true, ErrInvalidCaptcha},
+		{"notexists@gmail.com", "foo", "foo", http.StatusBadRequest, true, ErrInvalidCaptcha},
+		{"notexists@gmail.com", "ok", "foo", http.StatusBadRequest, true, ErrInvalidCaptcha},
+		{"doesexist@gmail.com", "ok", "ok", http.StatusOK, false, ""},
+		{"does.exist@gmail.com", "ok", "ok", http.StatusOK, false, ""},
+		{"exists.butfails@gmail.com", "ok", "ok", http.StatusInternalServerError, true, ErrInternalError},
 	}
 
 	gin.SetMode(gin.TestMode)
 	mock := new(mailerMock)
 	data := NewUserData(mock, personStore)
+	data.verifyCaptcha = mockVerifier
 	r := gin.New()
-	r.POST("/:email", data.Handle)
+	r.POST("/", data.Handle)
 
 	for _, c := range cases {
-		req, err := http.NewRequest("POST", "http://localhost:3000/"+c.email, nil)
+		data, err := Marshal(&UserDataRequest{
+			Email:   c.email,
+			Captcha: c.captcha,
+		})
+		require.Nil(err, c.email)
+		req, err := http.NewRequest("POST", "http://localhost:3000/", bytes.NewBuffer(data))
+		req.RemoteAddr = c.ip
+		req.Header.Set("X-Forwarded-For", c.ip)
 		require.Nil(err, c.email)
 
 		w := httptest.NewRecorder()

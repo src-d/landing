@@ -1,4 +1,5 @@
 addr: ":8080"
+recaptcha-key: ""
 github-token: "***REMOVED***"
 feed-base-url: "http://blog.sourced.tech/json/"
 fetcher-page-size: 45

@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { states, sendDeveloperData } from '../services/api'
 import Modal from './Modal'
 import { Loading, LoadingError } from './Loading'
+import ReCaptcha from 'react-google-recaptcha'
 
 const notFound = 404
+const siteKey = '6Le6IQ4UAAAAAI-QovDazKaOJesxAnGNpegMTtTU'
 
 export default class DeveloperData extends Component {
     constructor(props) {
@@ -12,6 +14,7 @@ export default class DeveloperData extends Component {
             state: states.LOADED,
             valid: false,
             email: '',
+            captcha: '',
         }
     }
 
@@ -19,13 +22,16 @@ export default class DeveloperData extends Component {
         this.setState({ email, valid: /^.+@.+\..+$/.test(email), error: null })
     }
 
+    onCaptchaChanges(captcha) {
+        this.setState({ captcha })
+    }
+
     onSubmit(e) {
         e.preventDefault()
         this.setState({ state: states.LOADING })
 
-        sendDeveloperData(this.state.email)
+        sendDeveloperData(this.state.email, this.state.captcha)
             .then(resp => {
-                console.log(resp)
                 if (resp.error) {
                     this.setState({
                         state: states.LOAD_ERROR,
@@ -75,7 +81,14 @@ export default class DeveloperData extends Component {
                                 placeholder='Email address'
                                 onChange={e => this.onEmailChange(e.target.value)}
                             />
-                            <button className='btnCopy emphasisButton' type='submit' disabled={!this.state.valid}>Send data</button>
+
+                            <ReCaptcha
+                                ref="recaptcha"
+                                sitekey={siteKey}
+                                onChange={v => this.onCaptchaChanges(v)}
+                            />
+
+                            <button className='btnCopy emphasisButton' type='submit' disabled={!this.state.valid && this.state.captcha.length > 0}>Send data</button>
                         </form>
                     ) : null}
 

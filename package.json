@@ -23,6 +23,7 @@
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.4.1",
     "react-dom": "^15.3.2",
+    "react-google-recaptcha": "^0.5.4",
     "whatwg-fetch": "^2.0.0"
   },
   "devDependencies": {

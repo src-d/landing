@@ -8,6 +8,7 @@ import (
 
 	"gop.kg/src-d/domain@v6/container"
 
+	recaptcha "github.com/dpapathanasiou/go-recaptcha"
 	"github.com/src-d/landing/api/config"
 	"github.com/src-d/landing/api/github"
 	"github.com/src-d/landing/api/handlers"
@@ -52,8 +53,9 @@ func main() {
 	})
 
 	mailer := services.NewDataMailer(conf)
+	recaptcha.Init(conf.RecaptchaKey)
 	userData := handlers.NewUserData(mailer, container.GetDomainModelsPersonStore())
-	r.POST("/data/:email", userData.Handle)
+	r.POST("/data", userData.Handle)
 
 	checkErr(r.Run(conf.Addr))
 }
