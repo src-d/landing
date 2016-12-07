@@ -1,14 +1,10 @@
-FROM nginx
+FROM abiosoft/caddy
+COPY Caddyfile /etc/Caddyfile
+COPY public /var/www/public
+COPY bin /bin/
+COPY production.yaml /etc/
 
-ADD bin /bin
-ADD api/conf /opt/landing-api
-ADD start.sh /start.sh
-RUN chmod +x /start.sh
-# Adding files
-ADD public /var/www
-ADD nginx/landing.conf /etc/nginx/conf.d/default.conf
+COPY supervisord.conf /etc/supervisord.conf
 
-# Define working directory
-WORKDIR /var/www
-
-ENTRYPOINT ["/start.sh"]
+RUN apk update && apk add supervisor
+ENTRYPOINT ["/usr/bin/supervisord"]

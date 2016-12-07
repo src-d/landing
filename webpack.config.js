@@ -6,16 +6,16 @@ let merge = require('webpack-merge');
 let autoprefixer = require('autoprefixer');
 let extractTextPlugin = require('extract-text-webpack-plugin');
 
-let includeCompass = 'includePaths[]=' + path.resolve(__dirname, '../node_modules/compass-mixins/lib');
+let includeCompass = 'includePaths[]=' + path.resolve(__dirname, 'node_modules/compass-mixins/lib');
 let IS_PRODUCTION = process.env.npm_lifecycle_event === 'build';
 
 let baseConf = {
     entry: [
-        __dirname + '/../src/sass/app.scss',
-        __dirname + '/../src/js/index.js',
+        __dirname + '/src/sass/app.scss',
+        __dirname + '/src/js/index.js',
     ],
     output: {
-        path: path.resolve(__dirname, '../public/'),
+        path: path.resolve(__dirname, 'static/'),
         filename: 'js/bundle.js',
     },
     module: {
@@ -68,7 +68,7 @@ let productionConf = {
 let developmentConf = {
     devtool: 'source-map',
     devServer: {
-        contentBase: 'public/',
+        contentBase: 'static/',
     },
     plugins: [
         new extractTextPlugin('css/style.css', { allChunks: true }),

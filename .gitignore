@@ -1,5 +1,10 @@
 .DS_Store
-
+static/css
+static/js
+.ci
+.hugo
+artifacts
+bin
 node_modules/*
 public/*
 npm-debug.log

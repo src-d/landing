@@ -6,16 +6,12 @@ import (
 	"os"
 	"time"
 
-	"gop.kg/src-d/domain@v6/container"
-
-	recaptcha "github.com/dpapathanasiou/go-recaptcha"
+	"github.com/dpordomingo/go-gingonic-cache"
+	"github.com/dpordomingo/go-gingonic-cache/persistence"
 	"github.com/src-d/landing/api/config"
 	"github.com/src-d/landing/api/github"
 	"github.com/src-d/landing/api/handlers"
 	"github.com/src-d/landing/api/services"
-
-	"github.com/dpordomingo/go-gingonic-cache"
-	"github.com/dpordomingo/go-gingonic-cache/persistence"
 	"gopkg.in/gin-contrib/cors.v1"
 	"gopkg.in/gin-gonic/gin.v1"
 	"gopkg.in/inconshreveable/log15.v2"
@@ -51,11 +47,6 @@ func main() {
 	r.NoRoute(func(c *gin.Context) {
 		c.AbortWithStatus(http.StatusNotFound)
 	})
-
-	mailer := services.NewDataMailer(conf)
-	recaptcha.Init(conf.RecaptchaKey)
-	userData := handlers.NewUserData(mailer, container.GetDomainModelsPersonStore())
-	r.POST("/data", userData.Handle)
 
 	checkErr(r.Run(conf.Addr))
 }

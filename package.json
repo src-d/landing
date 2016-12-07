@@ -4,11 +4,11 @@
   "description": "source{d} landing page",
   "main": "./src/js/index.js",
   "scripts": {
-    "build": "hugo --config=config/hugo.config.yaml; webpack --config=config/webpack.config.js",
-    "webpack-server": "webpack-dev-server --config=config/webpack.config.js --port=8282 --watch --debug --verbose --progress --colors",
-    "webpack-watcher": "webpack --config=config/webpack.config.js --watch --debug --verbose --progress --colors",
-    "hugo-server": "hugo server --config=config/hugo.config.yaml --destination=public --port=8181",
-    "hugo-watcher": "hugo --config=config/hugo.config.yaml --watch",
+    "build": "./node_modules/webpack/bin/webpack.js --config=webpack.config.js",
+    "webpack-server": "webpack-dev-server --config=webpack.config.js --port=8282 --watch --debug --verbose --progress --colors",
+    "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors",
+    "hugo-server": "hugo server --config=hugo.config.yaml --destination=public --port=8181",
+    "hugo-watcher": "hugo --config=hugo.config.yaml --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
