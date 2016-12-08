@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/dpordomingo/go-gingonic-cache"
-	"github.com/dpordomingo/go-gingonic-cache/persistence"
+	"github.com/mvader/gin-cache"
+	"github.com/mvader/gin-cache/persistence"
 	"github.com/src-d/landing/api/config"
 	"github.com/src-d/landing/api/github"
 	"github.com/src-d/landing/api/handlers"
