@@ -52,9 +52,7 @@ function setupMenu() {
 
 function setupStickyHeader() {
     const topBar = document.querySelector('#topBar')
-    const topBarHeight = topBar.offsetHeight
-    const headerHeight = document.querySelector('.mainHeader').offsetHeight
-    const offset = headerHeight - topBarHeight
+    const offset = 50
     if (topBar.classList.contains("opaque")) { return }
 
     checkTopbarOpacity(topBar, offset)

@@ -51,10 +51,6 @@
             margin-top: $titleTopMargin;
         }
     }
-
-    .mainHeader + .fullWidth {
-        margin-top: $headerHeight;
-    }
 }
 
 @mixin bubble ($side:left, $width:auto) {
