@@ -19,17 +19,13 @@ import (
 
 var (
 	configFile = flag.String("config", "", "config file path")
-	ttl        = flag.Int("ttl", 3600, "ttl of the cache")
+	ttl        = flag.Duration("ttl", 1*time.Hour, "ttl of the cache")
 )
 
 func main() {
 	flag.Parse()
 	conf, err := config.Load(*configFile)
 	checkErr(err)
-
-	provider := github.NewRepoProvider(
-		github.NewRepoFetcher(conf.GithubToken),
-	)
 
 	r := gin.Default()
 	r.Use(cors.New(cors.Config{
@@ -38,12 +34,18 @@ func main() {
 		AllowMethods:    []string{"GET"},
 	}))
 
-	cacheTTL := time.Duration(*ttl)
+	provider := github.NewRepoProvider(github.NewRepoFetcher(conf.GithubToken))
 	repositories := handlers.NewRepositories(conf, provider)
-	store := persistence.NewInMemoryStore(cacheTTL)
-	r.GET("/repositories/main", cache.CachePage(store, cacheTTL, repositories.Main))
-	r.GET("/repositories/other", cache.CachePage(store, cacheTTL, repositories.Other))
-	r.GET("/posts/:kind", cache.CachePage(store, cacheTTL, handlers.NewPosts(services.NewPostProvider(conf)).Get))
+	store := persistence.NewInMemoryStore(*ttl)
+
+	r.GET("/repositories/main", cache.CachePage(store, *ttl, repositories.Main))
+	r.GET("/repositories/other", cache.CachePage(store, *ttl, repositories.Other))
+	r.GET("/posts/:kind", cache.CachePage(
+		store,
+		*ttl,
+		handlers.NewPosts(services.NewPostProvider(conf)).Get,
+	))
+
 	r.NoRoute(func(c *gin.Context) {
 		c.AbortWithStatus(http.StatusNotFound)
 	})

@@ -1,21 +1,21 @@
 "use strict";
 
-let path = require('path');
-let webpack = require('webpack');
-let merge = require('webpack-merge');
-let autoprefixer = require('autoprefixer');
-let extractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const autoprefixer = require('autoprefixer');
+const extractTextPlugin = require('extract-text-webpack-plugin');
 
-let includeCompass = 'includePaths[]=' + path.resolve(__dirname, 'node_modules/compass-mixins/lib');
-let IS_PRODUCTION = process.env.npm_lifecycle_event === 'build';
+const includeCompass = 'includePaths[]=' + path.resolve(__dirname, 'node_modules/compass-mixins/lib');
+const IS_PRODUCTION = process.env.npm_lifecycle_event === 'build';
 
-let baseConf = {
+const baseConf = {
     entry: [
-        __dirname + '/src/sass/app.scss',
-        __dirname + '/src/js/index.js',
+        './src/sass/app.scss',
+        './src/js/index.js',
     ],
     output: {
-        path: path.resolve(__dirname, 'static/'),
+        path: './static',
         filename: 'js/bundle.js',
     },
     module: {
@@ -48,7 +48,7 @@ let baseConf = {
     postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
 }
 
-let productionConf = {
+const productionConf = {
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.DefinePlugin({
@@ -65,7 +65,7 @@ let productionConf = {
     ]
 }
 
-let developmentConf = {
+const developmentConf = {
     devtool: 'source-map',
     devServer: {
         contentBase: 'static/',

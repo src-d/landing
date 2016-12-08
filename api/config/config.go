@@ -7,29 +7,18 @@ import (
 )
 
 type Config struct {
-	Addr         string `yaml:"addr"`
-	RecaptchaKey string `yaml:"recaptcha-key"`
-	GithubToken  string `yaml:"github-token"`
-	FeedBaseURL  string `yaml:"feed-base-url"`
-	PinnedRepos  struct {
+	Addr        string `yaml:"addr"`
+	GithubToken string `yaml:"github-token"`
+	FeedBaseURL string `yaml:"feed-base-url"`
+	PinnedRepos struct {
 		Main  []AllowedRepos `yaml:"main"`
 		Other []AllowedRepos `yaml:"other"`
 	} `yaml:"repos"`
-	Mailer *MailerData `yaml:"mailer"`
 }
 
 type AllowedRepos struct {
 	Owner string   `yaml:"owner"`
 	Repos []string `yaml:"repos"`
-}
-
-type MailerData struct {
-	Sender struct {
-		Name    string `yaml:"name"`
-		Address string `yaml:"address"`
-	} `yaml:"sender"`
-	Text           string `yaml:"text"`
-	SendGridAPIKey string `yaml:"sendgrid-api-key"`
 }
 
 func Load(file string) (*Config, error) {

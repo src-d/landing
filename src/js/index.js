@@ -80,11 +80,13 @@ function renderDeveloperData() {
 }
 
 function setupTabs() {
-    const detailsContainer = document.querySelector('#detailsContainer')
-    const buttons = detailsContainer.querySelectorAll('nav li')
-    Array.from(buttons).map(button => {
-        button.addEventListener('click', _ => {
-            detailsContainer.className = button.className
+    const container = document.querySelector('#detailsContainer')
+    const tabs = document.querySelector('ul.tabs')
+    if (container && tabs) {
+        Array.from(tabs.children).map(button => {
+            button.addEventListener('click', _ => {
+                container.className = button.className
+            })
         })
-    })
+    }
 }

@@ -1,5 +1,4 @@
 addr: ":8080"
-recaptcha-key: ""
 github-token: "***REMOVED***"
 feed-base-url: "http://blog.sourced.tech/json/"
 fetcher-page-size: 45
@@ -14,9 +13,3 @@ repos:
           repos: [gitql]
         - owner: mvader
           repos: ['react-categorized-tag-input']
-mailer:
-    sender:
-        name: "source{d}"
-        address: "hello@sourced.tech"
-    text: "Hello, here is all the data we have about you."
-    sendgrid-api-key: "***REMOVED***"
