@@ -23,8 +23,10 @@
                 <div class="devData">
                     {{ $contribs := $.Site.Data.developer.contribs.data }}
                     {{ $history := $.Site.Data.developer.history}}
+                    {{ $contributions := $.Site.Data.developer.contributions}}
+                    {{ $locations := $.Site.Data.developer.locations}}
                     {{ $buttons := slice "Technologies" "Locations" "Contributions" }}
-                    {{ $context := dict "contribs" $contribs "history" $history "buttons" $buttons }}
+                    {{ $context := dict "contribs" $contribs "history" $history "contributions" $contributions "locations" $locations "buttons" $buttons }}
                     {{ partial "developer.html" $context }}
                 </div>
             </div>

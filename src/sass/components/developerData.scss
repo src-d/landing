@@ -24,6 +24,10 @@
         align-items: stretch;
         height: 380px;
 
+        .item {
+            display: none;
+        }
+
         .code {
             position: absolute;
             left: 0;
@@ -31,12 +35,9 @@
             width: 47%;
             height: 100%;
             margin-right: 1em;
+            overflow-x: hidden;
             overflow-y: auto;
             background: $codeColorBackground;
-
-            pre, code {
-                height: 100%;
-            }
 
             .JSON {
                 @include code;
@@ -66,7 +67,6 @@
             position: absolute;
             right: 0;
             top: 0;
-            display: none;
             border-radius: $borderRadius;
             width: 367px;
             height: 100%;

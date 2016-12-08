@@ -43,13 +43,13 @@
 
     <section class="fullWidth" id="developerDetails">
         <div class="mainContainer">
-                
                 {{ $contribs := $.Site.Data.developer.contribs.data }}
                 {{ $history := $.Site.Data.developer.history}}
+                {{ $contributions := $.Site.Data.developer.contributions}}
+                {{ $locations := $.Site.Data.developer.locations}}
                 {{ $buttons := slice "What you do" "Where you are" "Your contributions" }}
-                {{ $context := dict "contribs" $contribs "history" $history "buttons" $buttons }}
+                {{ $context := dict "contribs" $contribs "history" $history "contributions" $contributions "locations" $locations "buttons" $buttons }}
                 {{ partial "developer.html" $context }}
-
                 <h3>Whant to know the data we have about you?</h3>
                 <div>
                     <button class="copyBtn emphasisButton showDeveloperData">Get your own data</button>

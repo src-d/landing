@@ -8,8 +8,13 @@
     </nav>
 
     <div class="columnsContainer">
-        <section class="details item0 languages">
-            <div>
+        <section class="item item0 languages">
+            <aside class="code">
+                <pre><code class="js-beautyCode JSON">
+                    {{ $.history | jsonify }}
+                </code></pre>
+            </aside>
+            <div class="details">
                 <div class="author">
                     <img src="/img/icons/dev.svg" />
                     John Doe
@@ -26,8 +31,13 @@
             </div>
         </section>
 
-        <section class="details item1 locations">
-            <div>
+        <section class="item item1 locations">
+            <aside class="code">
+                <pre><code class="js-beautyCode JSON">
+                    {{ $.locations | jsonify }}
+                </code></pre>
+            </aside>
+            <div class="details">
                 <div class="author">
                     <img src="/img/icons/dev.svg" />
                     John Doe
@@ -37,8 +47,13 @@
             </div>
         </section>
 
-        <section class="details item2 contributions">
-            <div>
+        <section class="item item2 contributions">
+            <aside class="code">
+                <pre><code class="js-beautyCode JSON">
+                    {{ $.contributions | jsonify }}
+                </code></pre>
+            </aside>
+            <div class="details">
                 <div class="author">
                     <img src="/img/icons/dev.svg" />
                     John Doe
@@ -72,11 +87,5 @@
                 <div class="footer">340 more commits on other projects</div>
             </div>
         </section>
-
-        <aside class="code">
-            <pre><code class="js-beautyCode JSON">
-                {{ $.history | jsonify }}
-            </code></pre>
-        </aside>
     </div>
 </div>
