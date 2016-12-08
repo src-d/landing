@@ -213,6 +213,7 @@
 
 .bubble {
   @include bubble(left);
+  flex-grow: 1;
 }
 
 .benefits {
@@ -231,6 +232,7 @@
   .benefit {
     display: flex;
     align-items: center;
+    width: 50%;
 
     img {
       margin-left: 1em;
