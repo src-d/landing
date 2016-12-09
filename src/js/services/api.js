@@ -16,15 +16,9 @@ export var states = {
 
 const LOCAL_URL = 'http://localhost:8080'
 const PROD_URL = '/api'
-const BLOG_URL = 'http://blog.sourced.tech'
 
 function apiURL(url) {
     const baseURL = window.location.href.indexOf('://localhost') >= 0 ? LOCAL_URL : PROD_URL
-    return baseURL + url
-}
-
-function blogURL(url) {
-    const baseURL = window.location.href.indexOf('://localhost') >= 0 ? LOCAL_URL : BLOG_URL
     return baseURL + url
 }
 
@@ -49,11 +43,11 @@ const NON_TECH_POSTS_URL = '/posts/culture'
 const TECH_POSTS_URL = '/posts/technical'
 
 export function loadTechPosts() {
-    return request(blogURL(TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
+    return request(apiURL(TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
 }
 
 export function loadNonTechPosts() {
-    return request(blogURL(NON_TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
+    return request(apiURL(NON_TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
 }
 
 export function sendDeveloperData(email, captcha) {

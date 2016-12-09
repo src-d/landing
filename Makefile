@@ -63,7 +63,7 @@ CURL = curl -L
 HUGO = $(HUGO_PATH)/$(HUGO_NAME)/$(HUGO_NAME)
 MKDIR = mkdir -p
 GIT = git
-DOCKER = sudo docker
+DOCKER = docker
 NPM = npm
 CGO_ENABLED=0
 
@@ -79,25 +79,14 @@ hugo-dependencies:
 		$(CURL) https://$(HUGO_URL)/releases/download/v$(HUGO_VERSION)/$(HUGO_URL_NAME).$${ext} -o $${file}; \
 		if [ "$(ARCH)" == "linux" ]; then tar -xvzf $${file}; else unzip $${file}; fi; \
 	fi;
-	@if [[ ! -f $(NPM) ]]; then \
-		curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -; \
-		sudo apt-get install -y nodejs; \
-	fi;
 
 hugo-build: hugo-dependencies
 	$(NPM) install
 	$(NPM) run build
 	$(HUGO) --disableRSS=true --config=hugo.config.yaml
 
-hugo-server: hugo-build
+hugo-server:
 	$(HUGO) server -D -w --config=hugo.config.yaml
-
-
-hugo-docker-push: hugo-build
-	echo $(DOCKER) login -u "$(DOCKER_USERNAME)" -p "$(DOCKER_PASSWORD)" $(DOCKER_REGISTRY)
-	$(DOCKER) build -q -t $(DOCKER_ORG)/${PROJECT} -f $(BASE_PATH)/Dockerfile .
-	$(DOCKER) tag $(DOCKER_ORG)/${PROJECT} $(DOCKER_ORG)/${PROJECT}:$(TAG)
-	echo $(DOCKER) push $(DOCKER_ORG)/${PROJECT}:$(TAG)
 
 hugo-clean:
 	rm -rf $(HUGO_PATH)
