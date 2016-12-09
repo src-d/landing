@@ -9,7 +9,7 @@
       height: auto;
       h1 { margin-top: .5em }
 
-      button {
+      .showWaitingList {
         background: $bgBtnBlue;
         box-shadow: 0px 4px 14px 1px rgba(47,70,87,0.60);
         border-radius: 3px;
@@ -25,6 +25,10 @@
         }
       }
     }
+  }
+
+  .showWaitingList {
+        display: inline-block;
   }
 
   section .mainContainer {
@@ -429,6 +433,7 @@
 
       & > div {
         text-align: left;
+        flex-grow: 1;
       }
     }
 
