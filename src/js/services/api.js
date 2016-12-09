@@ -15,7 +15,7 @@ export var states = {
 }
 
 const LOCAL_URL = 'http://localhost:8080'
-const PROD_URL = 'https://sourced.tech/api'
+const PROD_URL = '/api'
 const BLOG_URL = 'http://blog.sourced.tech'
 
 function apiURL(url) {
