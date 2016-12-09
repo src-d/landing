@@ -79,6 +79,10 @@ hugo-dependencies:
 		$(CURL) https://$(HUGO_URL)/releases/download/v$(HUGO_VERSION)/$(HUGO_URL_NAME).$${ext} -o $${file}; \
 		if [ "$(ARCH)" == "linux" ]; then tar -xvzf $${file}; else unzip $${file}; fi; \
 	fi;
+	@if [[ ! -f $(NPM) ]]; then \
+		curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -; \
+		sudo apt-get install -y nodejs; \
+	fi;
 
 hugo-build: hugo-dependencies
 	$(NPM) install
