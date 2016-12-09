@@ -33,15 +33,19 @@ $iconSize: 12px;
         }
     }
 
-    .repo {
-        @include col(4);
-        @include glow();
+    .repositoryList {
+        overflow: hidden;
+    }
 
+    .repo {
+        @include glow();
+        width: calc(#{percentage(1/3)} - #{$gutter});
+        margin: $gutter / 2;
+        float: left;
         background-color: white;
         border: 1px solid transparent;
         border-color: $lineColorBorderAlt;
         border-radius: 3px;
-        margin-top: $gutter;
         overflow: hidden;
         display: inline-block;
         padding: .5em .7em;
@@ -63,12 +67,11 @@ $iconSize: 12px;
 
         .description {
             @include textSmall(condensed);
+            @include multilineEllipsis(2, 36px, block);
             color: $textColorCardSmall;
             width: 100%;
             margin: 6px 0 0;
             text-align: left;
-            max-height: 36px;
-            overflow: hidden;
         }
 
         .data {
@@ -109,4 +112,12 @@ $iconSize: 12px;
         }
     }
 
+}
+
+@media only screen and (max-width: $mobileBreakpoint) {
+    #ourOpenSource .repo {
+        margin: 0;
+        margin-top: 1em;
+        width: 100%;
+    }
 }

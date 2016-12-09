@@ -22,8 +22,8 @@
     }
 }
 
-@mixin icon($width, $height, $marginRight, $url) {
-    &:before {
+@mixin icon($width, $height, $marginRight, $url, $pseudo: before) {
+    &:#{$pseudo} {
         content: ' ';
         display: inline-block;
         width: $width;
@@ -106,4 +106,13 @@
             right: -7px;
         }
     }
+}
+
+@mixin multilineEllipsis($lines, $maxHeight, $fallback:block) {
+    max-height: $maxHeight;
+    overflow: hidden;
+    display: $fallback;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
 }

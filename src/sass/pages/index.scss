@@ -1,25 +1,21 @@
-#weAreWeWant {
-    @include row();
-    
+#weAreWeWant {    
     .mainContainer {
         text-align: left;
+        display: flex;
     }
 
     .article {
-        @include col(4,1);
-
-        &.right {
-            @include col(4,2)
-        }
+        display: inline-block;
+        width: 50%;
+        flex-grow: 1;
 
         &.left li {
             @include icon(9px, 38px, 0, '/img/icons/right-arrow.png');
 
             &:before {
+                @include valign;
                 position: absolute;
-                right: calc(-50% - #{$gutter});
-                top: 21px;
-                width: 50%;
+                right: #{-9px / 2};
             }
         }
     }
@@ -32,6 +28,7 @@
 
         > span {
             @include valign;
+            margin: 0 percentage(1 / $columns * 2);
         }
 
         & + li {
@@ -49,12 +46,20 @@
 }
 
 #ourPosts {
+    margin-bottom: 1em;
+
+    .columns {
+        display: flex;
+    }
+
     section {
-        @include col(4,1);
+        flex-grow: 1;
+        width: 50%;
         text-align: left;
 
-        &+section {
-            @include col(4,2)
+        .title,
+        .postColumn {
+            margin: 0 percentage(1 / $columns * 2);
         }
 
         a {
@@ -112,11 +117,17 @@
 
 @media only screen and (max-width: 1005px) {
     #weAreWeWant {
-        .article.left, .article.right {
+        .mainContainer {
+            display: block;
+        }
+
+        .article.left,
+        .article.right {
             margin: 0 auto !important;
             width: 100%;
             max-width: 500px;
             display: block;
+            height: auto;
 
             li {
                 height: auto;
@@ -131,20 +142,37 @@
                 span {
                     transform: none;
                     position: static;
+                    margin: 0;
                 }
+            }
+        }
+    }
+
+
+    #ourPosts {
+        .columns {
+            display: block;
+        }
+
+        section {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+
+            & + section {
+                margin-top: 2em;
+            }
+
+            .title,
+            .postColumn {
+                margin: 0;
             }
         }
     }
 }
 
-@media only screen and (max-width: 768px) {
-    #ourOpenSource .repo {
-        margin: 0;
-        margin-top: 1em;
-    }
-
+@media only screen and (max-width: $mobileBreakpoint) {
     #ourPosts section {
-        width: 80% !important;
         margin: 1rem auto !important;
     }
 }

@@ -68,3 +68,11 @@ button, input {
     outline: none;
     font-family: Roboto, sans-serif;
 }
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
