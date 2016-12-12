@@ -8,3 +8,4 @@ bin
 node_modules/*
 public/*
 npm-debug.log
+Makefile.main
