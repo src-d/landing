@@ -9,7 +9,7 @@
         <h2>{{ .Title }}</h2>
 
         <p class="lastUpdate">
-          Last updated at {{ .Lastmod.Day }}/{{ .Lastmod.Month }}/{{ .Lastmod.Year }}
+            Last updated at {{ .Lastmod.Format "02/01/2006" }}
         </p>
         
         <div class="content">

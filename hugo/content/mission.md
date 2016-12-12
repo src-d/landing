@@ -1,6 +1,7 @@
 ---
 classes: ["static"]
 url: mission
+lastmod: 2016-12-12
 title: Lorem ipsum dolor sit amet adiscipit constectetur adis elit
 description: Lorem ipsum dolor sit amet adiscipit constectetur adis elit
 ---

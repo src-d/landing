@@ -2,6 +2,7 @@
 classes: ["static"]
 url: manifesto
 title: Our manifesto
+lastmod: 2016-12-12
 description: The source{d} manifesto talks about our set of beliefs, principles and intentions as we move forward.
 ---
 

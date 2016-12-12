@@ -2,6 +2,7 @@
 classes: ["static"]
 url: goals
 title: Our Goals
+lastmod: 2016-12-12
 description: PLACEHOLDER
 ---
 
