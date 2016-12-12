@@ -4,9 +4,9 @@ classes: ["static"]
 section: stack
 topbar: opaque
 url: stack
-title: Our stack
+title: Stack
 footer: white
-description: Our stack
+description: Stack
 ---
 
 Content goes here

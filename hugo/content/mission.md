@@ -1,6 +1,6 @@
 ---
 classes: ["static"]
-url: custom
+url: mission
 title: Lorem ipsum dolor sit amet adiscipit constectetur adis elit
 description: Lorem ipsum dolor sit amet adiscipit constectetur adis elit
 ---

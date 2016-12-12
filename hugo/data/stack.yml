@@ -42,7 +42,7 @@ stack:
         name: Kubernetes
         desc: "New version is deployed using <strong>kubernetes</strong>"
   - id: infra
-    title: "Our infrastructure works with"
+    title: "Our infrastructure runs on"
     items:
       - id: gcp
         name: "Google Cloud Platform"

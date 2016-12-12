@@ -4,7 +4,7 @@ classes: ["static"]
 section: team
 url: team
 title: Our team
-description: Our team is waiting to help you
+description: Join a team commited to our mission
 ---
 
 Content goes Here

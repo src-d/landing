@@ -1,80 +1,18 @@
-{{ partial "head.html" . }}
+{{ partial "header_placeholder.html" . }}
 
-<body class="homePage">
-    {{ partial "header.html" . }}
+<div class="wrap">
+<header>
+    <img src="/image/logo.png" alt="source{d}" class="logo" />
+</header>
 
-    <header class="fullWidth mainHeader">
-        <div class="mainContainer">
-            <h1 class="title">Building the first <strong>AI</strong> that <strong>understands code</strong></h1>
-            <p>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse. Labore fugiat nisi.</p>
-            <p class="link"><a href="/custom/">Read about our mission</a></p>
-            <p class="footer">Wondering how we found you? <a href="/developers/" title="Read more about how we found you">Read more</a> about it</p>
-        </div>
-    </header>
+<section>
+    <h1>Looking for <strong>source{d}</strong>?</h1>
 
-    <section class="fullWidth" id="weAreWeWant">
-        <div class="mainContainer">
-            <article class="article left">
-                <header>
-                    <h2>Where we are</h2>
-                </header>
-                <ul>
-                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex.</span></li>
-                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse. Labore fugiat nisi.</span></li>
-                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse.</span></li>
-                </ul>
-                <div class="link">
-                    <a href="#">read more</a>
-                </div>
-            </article>
-            <article class="article right">
-                <header>
-                    <h2>Where we want to be</h2>
-                </header>
-                <ul>
-                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse.</span></li>
-                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse. Labore fugiat nisi.</span></li>
-                    <li><span>Proident veniam elit do nostrud quis laboris consequat culpa ex occaecat esse.</span></li>
-                </ul>
-                <div class="link">
-                    <a href="#">read more</a>
-                </div>
-            </article>
-        </div>
-    </section>
+    <p>We are currently working on our new website, soon to launch.</p>
+    <p>Meanwhile, you can check interesting things we've been working on, on <a href="https://blog.sourced.tech" title="source{d} blog">our blog</a>.</p>
+    <p>Get in touch at <code>hello@sourced.tech</code></p>
+</section>
 
+</div>
 
-    <section class="fullWidth opaque" id="ourOpenSource">
-        <div class="mainContainer">
-            <header>
-                <h2>We are 100% committed to open source</h2>
-            </header>
-            <p>Velit ex amet sunt ullamco commodo velit ut ex. Deserunt anim id aute ea. Consectetur pariatur fugiat exercitation irure laborum <strong>10% of their work hours</strong>anim do laborum nostrud commodo <strong>Open Source Friday</strong></p>
-            <h3 class="subTitle">Our top open source projects</h3>
-            <div id="repositories" class="fullWidthitories"></div>
-        </div>
-    </section>
-
-    <aside class="fullWidth" id="ourPosts">
-        <div class="mainContainer">
-            <header>
-                <h2>Read more about us</h2>
-            </header>
-            <div class="columns">
-                <section>
-                    <h3 class="title">Our journey</h3>
-                    <div class="postColumn" id="non-tech-posts"></div>
-                </section>
-                <section>
-                    <h3 class="title">Technical posts</h3>
-                    <div class="postColumn" id="tech-posts"></div>
-                </section>
-            </div>
-        </div>
-    </aside>
-
-    {{ partial "contact-us.html" . }}
-    {{ partial "footer.html" . }}
-</body>
-
-</html>
+{{ partial "footer_placeholder.html" . }}
