@@ -168,25 +168,3 @@
     padding-top: 1px;
     padding-bottom: 1px;
 }
-
-@mixin code($kind:false) {
-    @include textXSmall;
-    font-family: hack;
-
-    @if ($kind == 'attribute') {
-        color: $codeColorAttribute;
-    }
-    @else if ($kind == 'string') {
-        color: $codeColorString;
-    }
-    @else if ($kind == 'literal') {
-        color: $codeColorLiteral;
-    }
-    @else if ($kind == 'number') {
-        color: $codeColorNumber;
-    }
-    @else {
-        color: $codeColorDefault;
-    }
-
-}

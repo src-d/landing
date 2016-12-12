@@ -26,18 +26,7 @@ window.addEventListener('DOMContentLoaded', _ => {
     renderComponent(TechPosts, 'tech-posts')
     renderComponent(NonTechPosts, 'non-tech-posts')
     setupClipboard()
-    highlightCode()
-    setupTabs()
 })
-
-function highlightCode() {
-    const containers = document.querySelectorAll('.js-beautyCode')
-    highlighter.configure({ useBR: false })
-    Array.from(containers).map(container => {
-        container.innerHTML = beautify(container.innerHTML, { indent_size: 2 })
-        highlighter.highlightBlock(container)
-    })
-}
 
 function setupMenu() {
     const menuToggle = document.querySelector('#menuToggle')
@@ -62,27 +51,5 @@ function checkTopbarOpacity(topBar, opaqueAtOffset) {
         topBar.classList.add('opaque')
     } else {
         topBar.classList.remove('opaque')
-    }
-}
-
-function setupDeveloperData() {
-    Array.from(document.querySelectorAll('.showDeveloperData')).forEach(elem => {
-        elem.addEventListener('click', renderDeveloperData)
-    })
-}
-
-function renderDeveloperData() {
-    renderComponent(DeveloperData, 'developerData')
-}
-
-function setupTabs() {
-    const container = document.querySelector('#detailsContainer')
-    const tabs = document.querySelector('ul.tabs')
-    if (container && tabs) {
-        Array.from(tabs.children).map(button => {
-            button.addEventListener('click', _ => {
-                container.className = button.className
-            })
-        })
     }
 }
