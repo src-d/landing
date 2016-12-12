@@ -5,7 +5,6 @@ import React from 'react'
 
 import setupClipboard from './clipboard'
 import Repositories from './components/Repositories'
-import DeveloperData from './components/DeveloperData'
 import { TechPosts, NonTechPosts } from './components/Posts'
 
 import beautify from 'js-beautify'
@@ -27,7 +26,6 @@ window.addEventListener('DOMContentLoaded', _ => {
     renderComponent(TechPosts, 'tech-posts')
     renderComponent(NonTechPosts, 'non-tech-posts')
     setupClipboard()
-    setupDeveloperData()
     highlightCode()
     setupTabs()
 })
