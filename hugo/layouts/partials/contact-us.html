@@ -6,7 +6,10 @@
         <div>
             <a class="copyBtn darkButton" href="mailto:hello@sourced.tech" data-clipboard-text="hello@sourced.tech">hello@sourced.tech</a>
             <br />
-            <!-- <a class="pgpKey" href="#">Looking for our PGP key?</a> -->
+
+            {{ if ne .Site.Params.pgpLink "" }}
+                <a class="pgpKey" href="{{ .Site.Params.pgpLink }}" target="_blank">Looking for our PGP key?</a>
+            {{end}}
         </div>
     </div>
 </aside>

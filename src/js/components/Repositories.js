@@ -9,7 +9,6 @@ export default class Repositories extends Component {
         super(props)
 
         this.state = {
-            displayOther: false,
             main: {
                 state: states.LOADING,
                 repos: [],
@@ -50,10 +49,6 @@ export default class Repositories extends Component {
         })
     }
 
-    toggleOther() {
-        this.setState({ displayOther: !this.state.displayOther })
-    }
-
     renderOther() {
         const { state, repos } = this.state.other
         if (state === states.LOADING) {
@@ -64,7 +59,7 @@ export default class Repositories extends Component {
 
         return (
             <div className='repositories other'>
-                <h3 className='subTitle'>Other cool projects our engineers have made during Open Source Fridays</h3>
+                <h3 className='subTitle'>Cool projects our engineers have developed during Open Source Fridays</h3>
                 <div className='repositoryList other'>
                     {repos.map((r, i) => <Repository key={i} repo={r} />)}
                 </div>
@@ -89,12 +84,7 @@ export default class Repositories extends Component {
                     {repos.map((r, i) => <Repository key={i} repo={r} />)}
                 </div>
 
-                {this.state.displayOther ? this.renderOther() : null}
-
-                <div className='link more' onClick={_ => this.toggleOther()}>
-                    <span className='clickable'>{this.state.displayOther ? 'Less' : 'More'}</span>
-                    <img src={this.state.displayOther ? '/img/icons/less.svg' : '/img/icons/more.svg'} />
-                </div>
+                { this.renderOther() }
             </div>
         )
     }

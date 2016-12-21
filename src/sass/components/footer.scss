@@ -19,6 +19,7 @@ $footeHPadding: 96px;
     .links {
         float: right;
         margin-right: $footeHPadding;
+        color: $textColorCorporative;
 
         & > li {
             display: inline-block;
@@ -29,13 +30,18 @@ $footeHPadding: 96px;
         }
 
         .github > a {
-            @include iconOnly(20px, 20px, '/img/icons/github.svg');
+            @include fontIcon('github', 20px, 20px, 20px);
             margin-left: 25px;
             margin-right: 18px;
         }
 
         .twitter > a {
-            @include iconOnly(20px, 20px, '/img/icons/twitter.svg');
+            @include fontIcon('twitter', 20px, 20px, 20px);
+            margin-right: 18px;
+        }
+
+        .linkedin > a {
+            @include fontIcon('linkedin', 20px, 20px, 20px);
         }
     }
 }
