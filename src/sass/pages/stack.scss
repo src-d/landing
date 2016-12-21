@@ -16,6 +16,10 @@
           margin-top: 1em;
           line-height: 1.5em;
         }
+
+        .itempic img {
+            max-height: 100px;
+        }
       }
 
       .stackItem + .stackItem {

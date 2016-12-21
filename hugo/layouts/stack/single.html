@@ -13,9 +13,11 @@
                 <div class="stackItems">
                     {{ range $item := $section.items }}
                     <div class="stackItem">
-                        <div class="itempic"><img src="/img/stack/{{ $item.id }}.svg" alt="{{ $item.name }}" /></div>
-                        {{ if ne $item.desc "" }}
-                        <p>{{ $item.desc | safeHTML }} {{ end }}
+                        <a href="{{ $item.url }}" target="_blank">
+                            <div class="itempic"><img src="/img/stack/{{ $item.id }}.svg" alt="{{ $item.name }}" /></div>
+                            {{ if ne $item.desc "" }}
+                            <p>{{ $item.desc | safeHTML }} {{ end }}
+                        </a>
                     </div>
                     {{ end }}
                 </div>
