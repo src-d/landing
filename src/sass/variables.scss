@@ -16,8 +16,6 @@ $textColorCorporative: #33526c;
 $textColorGrey: #8690a1;
 $textColorLight: #aeb7c5;
 $textColorGreyDetails: #99A9B3;
-
-    $textColorCardSmall: #8c9ebc;
     $textColorLinkBlack: #555F66;
 
 $textColorWhite: white;
@@ -55,9 +53,9 @@ $textSizeMain: 18px;
 $textSizeSmall: 14px;
 $textSizeXS: 12px;
 
-$fontTitle: 'Open Sans';
-$fontText: roboto;
-$fontCode: hack;
+$fontTitle: 'Lato', sans-serif;
+$fontText: roboto, sans-serif;
+$fontCode: hack, sans-serif;
 
 $borderRadius: 3px;
 $shadowOff: 0 7px 15px 2px transparentize($lineColorBorder, 1);

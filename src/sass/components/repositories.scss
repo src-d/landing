@@ -68,7 +68,6 @@ $iconSize: 12px;
         .description {
             @include textSmall(condensed);
             @include multilineEllipsis(2, 36px, block);
-            color: $textColorCardSmall;
             width: 100%;
             margin: 6px 0 0;
             text-align: left;

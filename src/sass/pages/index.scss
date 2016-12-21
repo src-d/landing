@@ -64,20 +64,17 @@
 
         a {
             @include textBig;
+            font-size: $textSizeMain;
+            color: $textColorTitle;
             position: relative;
         }
 
         .timeAgo {
-            @include textSmall(emphasisLight condensed italic);
+            @include textSmall(condensed);
             display: block;
         }
 
-        .posts > .post:first-child a {
-            color: $textColorTitle;
-        }
-
         .new > a {
-            color: $textColorEmphasis !important;
             $tagWidth: 35px;
             $tagSeparation: 10px;
             &:before {
