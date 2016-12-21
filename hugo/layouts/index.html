@@ -1,18 +1,81 @@
-{{ partial "header_placeholder.html" . }}
+{{ partial "head.html" . }}
 
-<div class="wrap">
-<header>
-    <img src="/image/logo.png" alt="source{d}" class="logo" />
-</header>
+<body class="homePage">
+    {{ partial "header.html" . }}
 
-<section>
-    <h1>Looking for <strong>source{d}</strong>?</h1>
+    <header class="fullWidth mainHeader">
+        <div class="mainContainer">
+            <h1 class="title">Building the first <strong>AI</strong> that <strong>understands code</strong></h1>
+            <p>...</p>
+            <p class="link">READ OUR <a href="http://blog.sourced.tech/sourced_future/">MASTER PLAN</a></p>
+        </div>
+    </header>
 
-    <p>We are currently working on our new website, soon to launch.</p>
-    <p>Meanwhile, you can check interesting things we've been working on, on <a href="https://blog.sourced.tech" title="source{d} blog">our blog</a>.</p>
-    <p>Get in touch at <code>hello@sourced.tech</code></p>
-</section>
+    <section class="fullWidth" id="weAreWeWant">
+        <div class="mainContainer">
+            <article class="article left">
+                <header>
+                    <h2>Where we are today</h2>
+                </header>
+                <ul>
+                    <li><span>Placeholder: talk about all repos/devs mapping.</span></li>
+                    <li><span>Placeholder: talk about analysis & clustering.</span></li>
+                    <li><span>Placeholder: talk about real-time, fork/branch, something else.</span></li>
+                </ul>
+                <div class="link">
+                    <a href="#">Read more</a>
+                </div>
+            </article>
+            <article class="article right">
+                <header>
+                    <h2>Where we plan to be</h2>
+                </header>
+                <ul>
+                    <li><span>Placeholder: talk about people/teams/projects/etc matching.</span></li>
+                    <li><span>Placeholder: talk about enterprise proj/cyborg coding aid.</span></li>
+                    <li><span>Placeholder: talk about self coding AI.</span></li>
+                </ul>
+                <div class="link">
+                    <a href="#">Read more</a>
+                </div>
+            </article>
+        </div>
+    </section>
 
-</div>
 
-{{ partial "footer_placeholder.html" . }}
+    <section class="fullWidth opaque" id="ourOpenSource">
+        <div class="mainContainer">
+            <header>
+                <h2>Committed to open source and its community</h2>
+            </header>
+            <p>At <strong>source{d}</strong> we believe that sharing and contributing is essential to create the future world we want to live in.
+            Our engineers deditcate at least <strong>10% of their working hours towards any open source projects</strong> of their choosing. 
+            We take it seriously and have a dedicated day every two weeks, called <strong>Open Source Friday</strong></p>
+            <h3 class="subTitle">Our Open Source Projects</h3>
+            <div id="repositories" class="fullWidthitories"></div>
+        </div>
+    </section>
+
+    <aside class="fullWidth" id="ourPosts">
+        <div class="mainContainer">
+            <header>
+                <h2>Sharing our journey and work with the world</h2>
+            </header>
+            <div class="columns">
+                <section>
+                    <h3 class="title">Our journey</h3>
+                    <div class="postColumn" id="non-tech-posts"></div>
+                </section>
+                <section>
+                    <h3 class="title">Technical posts</h3>
+                    <div class="postColumn" id="tech-posts"></div>
+                </section>
+            </div>
+        </div>
+    </aside>
+
+    {{ partial "contact-us.html" . }}
+    {{ partial "footer.html" . }}
+</body>
+
+</html>
