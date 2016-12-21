@@ -162,9 +162,9 @@
     border-radius: $borderRadius;
 }
 
-@mixin label($background, $classes: false) {
+@mixin label($background: $textColorEmphasis, $classes: false) {
     @include smallLink(noUnderline alphaCover $classes);
-    background-color: $textColorEmphasis;
+    background-color: $background;
     border-radius: $borderRadius;
     vertical-align: middle;
     display: inline-block;
