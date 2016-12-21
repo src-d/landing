@@ -43,9 +43,25 @@ const NON_TECH_POSTS_URL = '/posts/culture'
 const TECH_POSTS_URL = '/posts/technical'
 
 export function loadTechPosts() {
-    return request(apiURL(TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
+    return request(apiURL(TECH_POSTS_URL)).then(resp => fixPosts(resp.Posts.slice(0,3)))
 }
 
 export function loadNonTechPosts() {
-    return request(apiURL(NON_TECH_POSTS_URL)).then(resp => resp.Posts.slice(0,3))
+    return request(apiURL(NON_TECH_POSTS_URL)).then(resp => fixPosts(resp.Posts.slice(0,3)))
+}
+
+function fixPosts(posts) {
+    return posts.map(post => fixPost(post))
+}
+
+function fixPost(post) {
+    if (!post.link) {
+        return post;
+    }
+
+    if (post.link.indexOf('//') !== 0 && post.link.indexOf('http') !== 0 ) {
+        post.link = 'http://blog.sourced.tech' + post.link
+    }
+
+    return post;
 }
