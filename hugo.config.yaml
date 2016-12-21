@@ -41,7 +41,7 @@ params:
     favicon: "/img/logos/favicon.png"
     favicon96: "/img/logos/favicon96.png"
     pgpLink: ""
-    headerImageUrl: "/img/banner/back.jpg"
+    headerImageUrl: "/img/banner/back-1.jpg"
     social:
         twitter: "sourced"
         github: "src-d"
