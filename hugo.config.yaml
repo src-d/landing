@@ -35,9 +35,12 @@ taxonomies:
 
 params:
     author: source{d}
-    description: "Building the first AI that understands code"
+    description: "source{d} aims to understand developers through their code. We analyze contributions from more than 7 million developers in the open source community."
     copyright: Copyright (c) 2016 source{d}
     location: "Madrid"
+    favicon: "/img/logos/favicon.png"
+    favicon96: "/img/logos/favicon96.png"
+    pgpLink: ""
     social:
         twitter: "sourced"
         github: "src-d"

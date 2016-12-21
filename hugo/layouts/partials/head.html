@@ -5,17 +5,35 @@
     <meta name="author" content="{{ with .Params.author }}{{ . }}{{ else }}{{.Site.Params.author}}{{ end }}">
     <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}/img/logos/favicon.png">
-    <link rel="apple-touch-icon" type="image/x-icon" href="{{ .Site.BaseURL }}/img/logos/favicon96.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}/{{.Site.Params.favicon}}">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{{ .Site.BaseURL }}/{{.Site.Params.favicon96}}">
+    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}/{{.Site.Params.favicon96}}" />
 
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, user-scalable=yes">
 
-    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700|Lato:300,400,700|Open+Sans:300,400,700|Roboto:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
 
-    <link href='/css/style.css' rel='stylesheet' type='text/css'>
+    <link href="/css/style.css?v={{ .Now.Unix }}" rel="stylesheet" type="text/css">
+
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+     ga('create', 'UA-69608223-1', 'auto');
+     ga('send', 'pageview');
+    </script>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@srcd_" />
+    <meta name="twitter:title" content="{{.Site.Params.author}}">
+    <meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}/{{.Site.Params.favicon96}}">
+    <meta name="og:site_name" content="{{.Site.Params.author}}">
+    <meta name="og:title" content="{{.Site.Params.author}}">
+    <meta name="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}/{{.Site.Params.favicon96}}">
 </head>
