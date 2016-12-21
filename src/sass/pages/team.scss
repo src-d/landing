@@ -1,16 +1,5 @@
-.teamPage {
-    .mainHeader {
-		    background-image: url(/img/banner/team.jpg);
-		    background-position: center center;
-
-	  	  &:before {
-			      background-color: rgba(44, 109, 161, 0.72)
-		    }
-
-		    .mainContainer {
-        	  height: 500px;
-        }
-    }
+.teamPage  .mainHeader  .mainContainer {
+    height: 500px;
 }
 
 .team {

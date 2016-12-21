@@ -3,7 +3,9 @@
 <body class="homePage">
     {{ partial "header.html" . }}
 
-    <header class="fullWidth mainHeader">
+    <header class="fullWidth mainHeader" 
+        style="background-image: url('{{ with .Params.headerImageUrl }}{{ . }}{{ else }}{{ .Site.Params.headerImageUrl }}{{ end }}');"
+    >
         <div class="mainContainer">
             <h1 class="title">Building the first <strong>AI</strong> that <strong>understands code</strong></h1>
             <p>...</p>

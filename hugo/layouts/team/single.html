@@ -3,7 +3,9 @@
 <body class="teamPage">
     {{ partial "header.html" . }}
 
-    <header class="fullWidth mainHeader">
+    <header class="fullWidth mainHeader" 
+        style="background-image: url('{{ with .Params.headerimageurl }}{{ . }}{{ else }}{{ .Site.Params.headerImageUrl }}{{ end }}');"
+    >
         <div class="mainContainer">
             <h1 class="title">Our team</h1>
             <p>At source{d} we are all engineers, developers and hackers ourselves. We go as far as to train and encourage all 
