@@ -6,13 +6,11 @@ teams:
           name: Vadim Markovtsev
           position: Lead Machine Learning Engineer 
           team: Machine Learning Team
-          linkedin: https://linkedin.com/in/vadim-markovtsev-76a1739
           github: https://github.com/vmarkovtsev
         - picture: santiago.jpg
           name: Santiago Mola
           position: Lead Software Engineer 
           team: Data Retrieval Team
-          linkedin: https://linkedin.com/in/santiagomola
           github: https://github.com/smola
         - picture: alberto.png
           name: Alberto Cortés
@@ -23,7 +21,6 @@ teams:
           name: Antonio Navarro
           position: Senior Software Engineer 
           team: Data Retrieval Team
-          linkedin: https://linkedin.com/in/ajnavarro
           github: https://github.com/ajnavarro
         - picture: miguel.png
           name: Miguel Molina
@@ -34,7 +31,6 @@ teams:
           name: David Pordomingo
           position: Software Engineer 
           team: Web Team
-          linkedin: https://linkedin.com/in/dpordomingo
           github: https://github.com/dpordomingo
         - picture: sergio.png
           name: Sergio Arbeo
@@ -46,7 +42,6 @@ teams:
           position: DevOps Engineer
           team: Infrastructure Team
           github: https://github.com/smeruelo
-          linkedin: https://www.linkedin.com/in/smeruelo
     - name: Product & Data Intelligence
       headline: Translating our vision into amazing products & making smarter decisions with hard data
       members:
@@ -72,14 +67,14 @@ teams:
           name: Francesco Rizzo
           position: Lead Developer Relations
           linkedin: https://www.linkedin.com/in/francesco-rizzo-58558932/
+        - picture: georgina.png
+          name: Georgina Giannokou
+          position: Lead Developer Relations
+          linkedin: https://es.linkedin.com/in/georginagiannoukou
         - picture: anna.png
           name: Anna Tsolakou
           position: Senior Developer Relations
           linkedin: https://www.linkedin.com/in/tsolakouanna
-        - picture: georgina.png
-          name: Georgina Giannokou
-          position: Senior Developer Relations
-          linkedin: https://es.linkedin.com/in/georginagiannoukou
         - picture: pablo.png
           name: Pablo Heras
           position: Senior Developer Relations
@@ -90,16 +85,8 @@ teams:
           linkedin: https://linkedin.com/in/petros-koklas-6445576b
         - picture: daniel.jpg
           name: Daniel López
-          position: Developer Relations
+          position: Senior Developer Relations
           linkedin: https://linkedin.com/in/daniellopezl
-        - picture: goncalo.png
-          name: Gonçalo Vicente
-          position: Developer Relations
-          linkedin: https://linkedin.com/in/gonvicente
-        - picture: joy.jpg
-          name: Joy Cierrea
-          position: Developer Relations Intern
-          linkedin: https://linkedin.com/in/joy-cierrea-archer-75612387
         - picture: matei.png
           name: Matei Radu
           position: Developer Relations
@@ -109,7 +96,7 @@ teams:
           position: Developer Relations Intern
           linkedin: https://es.linkedin.com/in/c%C3%A9cile-nolan-4a87156b
     - name: Management
-      headline: Providing the destination, the planning and the leadership to get there
+      headline: Providing direction, the planning and the leadership to get there
       members:
         - picture: eiso.png
           name: Eiso Kant
