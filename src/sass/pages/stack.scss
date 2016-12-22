@@ -10,6 +10,7 @@
 
       .stackItem {
         display: inline-block;
+        vertical-align: top;
 
         p {
           font-size: .7em;
@@ -17,8 +18,14 @@
           line-height: 1.5em;
         }
 
-        .itempic img {
-            max-height: 100px;
+        .itempic {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+
+            img {
+                max-height: 100px;
+            }
         }
       }
 
@@ -43,13 +50,13 @@
     align-items: center;
 
     .stackItem + .stackItem {
-      margin-left: 3em;
+      margin-left: 1em;
     }
   }
 }
 
 .stackSection.codehost {
-  width: 44%;
+  width: 35%;
   float: right;
 }
 
@@ -84,8 +91,16 @@
   }
 }
 
-.stackSection.infra .stackItem + .stackItem {
-  margin-left: 5em !important;
+.stackSection.infra .stackItem {
+  width: 20%;
+
+  & + .stackItem {
+    margin-left: 1em !important;
+
+    img {
+      max-width: 100%;
+    }
+  }
 }
 
 .stackSection.frontend .stackItem {
