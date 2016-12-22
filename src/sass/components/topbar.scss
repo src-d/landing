@@ -107,7 +107,7 @@
     }
 
     &.opaque .toggle span {
-        background-color: #A9B1B7;
+        background-color: $textColorLight;
     }
 
     .toggle.open span {

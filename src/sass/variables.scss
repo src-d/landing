@@ -4,15 +4,17 @@ $columns: 12;
 $gutter: 24px;
 $pageWidthSmallPages: 800px;
 
+$corporativeColor: #33526c;
+
 $bgMainColor: white;
 $bgLightBlue: #f4f7fb;
-$bgMainHeader: rgba(44,109,161,1);
+$bgMainHeader: $corporativeColor;
 $bgCardSmall: white;
 $bgBtnBlue: #4285F4;
 
 $textColorTitle: #1e2b34;
 $textColorMain: #677680;
-$textColorCorporative: #33526c;
+$textColorCorporative: $corporativeColor;
 $textColorGrey: #8690a1;
 $textColorLight: #aeb7c5;
 $textColorGreyDetails: #99A9B3;
@@ -44,6 +46,7 @@ $lineColor: #dee3ec;
 $lineColorBorder: #bbcbe4;
     $lineColorBorderAlt: #d9e6fc;
     $lineColorGrayTeam: #DCE4F0;
+$activeColor: #F4AF45;
 
 $textSizeTitleMain: 30px;
 $textSizeTitle1: 28px;
@@ -62,3 +65,5 @@ $shadowOff: 0 7px 15px 2px transparentize($lineColorBorder, 1);
 $shadow: 0 7px 15px 2px transparentize($lineColorBorder, 1-0.43);
 $shadowArround: 0 0 15px 2px rgba($lineColorBorder, 1);
 $shadowSpeed: .1s;
+
+$linearGradient: linear-gradient(90deg, #FFFFFF 0%, $textColorEmphasisLight 49%, #FFFFFF 100%)
