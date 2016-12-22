@@ -114,9 +114,15 @@ $iconSize: 12px;
 }
 
 @media only screen and (max-width: $mobileBreakpoint) {
-    #ourOpenSource .repo {
-        margin: 0;
-        margin-top: 1em;
-        width: 100%;
+    #ourOpenSource {
+        p.description {
+            margin-top: 30px;
+        }
+
+        .repo {
+            margin: 0;
+            margin-top: 1em;
+            width: 100%;
+        }
     }
 }
