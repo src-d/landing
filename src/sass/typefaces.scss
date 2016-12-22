@@ -123,6 +123,12 @@
 @mixin smallLink($classes:false) {
     @include textSmall($classes);
     
+    @each $class in $classes {
+        @if ($class == 'bigSize') {
+            font-size: $textSizeMain;
+        }
+    }
+
     a,
     .clickable {
         display: inline-block;

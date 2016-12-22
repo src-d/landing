@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 <head>
-    <title>{{ with .Title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+    <title>{{ if ne .Title .Site.Title }}{{ .Site.Title }} - {{ end }}{{ with .Title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}</title>
     <meta name="author" content="{{ with .Params.author }}{{ . }}{{ else }}{{.Site.Params.author}}{{ end }}">
     <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 

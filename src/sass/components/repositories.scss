@@ -16,7 +16,7 @@ $iconSize: 12px;
     }
 
     p {
-        @include textSmall;
+        @include textMedium;
         @include halign(700px);
         width: auto;
         max-width: 700px;

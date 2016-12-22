@@ -9,7 +9,7 @@
         width: 50%;
         flex-grow: 1;
 
-        &.left li {
+        &.left.showRelations li {
             @include icon(9px, 38px, 0, '/img/icons/right-arrow.png');
 
             &:before {

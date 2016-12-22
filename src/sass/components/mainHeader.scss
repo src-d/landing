@@ -31,7 +31,7 @@
     }
 
     .link {
-        @include smallLink(alphaCover);
+        @include smallLink(alphaCover bigSize);
         margin-top: 37px;
     }
 
