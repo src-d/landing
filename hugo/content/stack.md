@@ -2,11 +2,11 @@
 type: stack
 classes: ["static"]
 section: stack
-topbar: opaque
 url: stack
 title: Stack
 footer: white
 description: Stack
+headerImageUrl: /img/banner/back-2.jpg
 ---
 
 Content goes here

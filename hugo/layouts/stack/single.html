@@ -3,6 +3,15 @@
 <body>
     {{ partial "header.html" . }}
 
+    <header class="fullWidth mainHeader"
+        style="background-image: url('{{ with .Params.headerimageurl }}{{ . }}{{ else }}{{ .Site.Params.headerImageUrl }}{{ end }}');"
+    >
+        <div class="mainContainer">
+            <h1 class="title">Our stack</h1>
+            <p>At source{d} we use awesome tools to do awesome things.</p>
+        </div>
+    </header>
+
     <div class="fullWidth">
         <div class="stack mainContainer">
             <h2>Our stack</h2>
