@@ -53,7 +53,7 @@ export function NonTechPosts(props) {
 function Post({ post, first }) {
     return (
         <div className={'post' + (first && isNewer(post.date, 2 * TIME_UNITS['week']) ? ' new' : '')}>
-            <a href={post.link}>{post.title}</a>
+            <a href={post.link} target="_blank">{post.title}</a>
             {first ? (
                 <span className='timeAgo'>Published {ago(post.date)} ago</span>
             ) : null}
