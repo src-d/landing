@@ -5,7 +5,7 @@ section: stack
 url: stack
 title: Stack
 footer: white
-description: Stack
+description: This is our stack tools
 headerImageUrl: /img/banner/back-2.jpg
 ---
 

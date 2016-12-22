@@ -33,7 +33,7 @@ stack:
         desc: "We host our code at <strong>Github</strong>, under the src-d organization; we have some private repos there and many public ones"
         url: "https://github.com"
   - id: deploy
-    title: Our deploy pipeline
+    title: Our deployment pipeline
     items:
       - id: github
         name: GitHub
