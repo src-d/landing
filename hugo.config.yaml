@@ -40,7 +40,7 @@ params:
     location: "Madrid"
     favicon: "/img/logos/favicon.png"
     favicon96: "/img/logos/favicon96.png"
-    pgpLink: ""
+    pgpLink: "https://keybase.io/sourced"
     headerImageUrl: "/img/banner/back-1.jpg"
     social:
         twitter: "sourced"
