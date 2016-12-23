@@ -1,6 +1,6 @@
 body {
     @include textMedium;
-    @include setupHeader(500px, 150px);
+    @include setupHeader(400px);
 }
 
 .fullWidth {

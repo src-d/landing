@@ -2,14 +2,14 @@ stack:
   - id: languages
     title: Languages we use
     items:
-      - id: python
-        name: Python
-        desc: "We use the <strong>Python</strong> language for machine learning and data science"
-        url: "https://www.python.org"
       - id: golang
         name: Go
         desc: "We use the <strong>Go</strong> language for all of our backend applications"
         url: "https://golang.org/"
+      - id: python
+        name: Python
+        desc: "We use the <strong>Python</strong> language for machine learning and data science"
+        url: "https://www.python.org"
       - id: javascript
         name: JavaScript
         desc: "We use the <strong>JavaScript</strong> language for all of our frontend applications"
@@ -21,10 +21,6 @@ stack:
         name: MongoDB
         desc: "Most of our data is stored in <strong>MongoDB</strong>, a document database"
         url: "https://www.mongodb.com"
-      - id: postgresql
-        name: PostgreSQL
-        desc: "When we need to store relational data, we use <strong>PostgreSQL</strong>"
-        url: "https://www.postgresql.org/"
   - id: codehost
     title: We host our code on
     items:

@@ -25,17 +25,17 @@ teams:
         - picture: miguel.png
           name: Miguel Molina
           position: Senior Software Engineer 
-          team: Web Team
+          team: Platform Team
           github: https://github.com/mvader
         - picture: david.png
           name: David Pordomingo
           position: Software Engineer 
-          team: Web Team
+          team: Platform Team
           github: https://github.com/dpordomingo
         - picture: sergio.png
           name: Sergio Arbeo
           position: Senior Software Engineer 
-          team: Web Team
+          team: Platform Team
           github: https://github.com/serabe
         - picture: placeholder/new-woman.png
           name: Sonia Meruelo

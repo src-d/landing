@@ -43,12 +43,19 @@
     background: transparent url($url) no-repeat center ;
 }
 
-@mixin setupHeader($headerHeight, $titleTopMargin) {
+@mixin setupHeader($headerHeight) {
     .mainHeader .mainContainer {
         height: $headerHeight;
 
-        .title {
-            margin-top: $titleTopMargin;
+        .description {
+            margin-top: 100px;
+
+            @media only screen and (min-width: $mobileBreakpoint) {
+                @include translateY(-50%);
+                margin-top: 10px !important;
+                position: relative;
+                top: 50%;
+            }
         }
     }
 }
