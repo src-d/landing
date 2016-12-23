@@ -6,5 +6,3 @@ url: temporal
 title: source{d}
 description: source{d}
 ---
-
-Content goes Here

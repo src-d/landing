@@ -8,5 +8,3 @@ footer: white
 description: This is our stack tools
 headerImageUrl: /img/banner/back-2.jpg
 ---
-
-Content goes here

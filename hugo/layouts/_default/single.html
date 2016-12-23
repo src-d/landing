@@ -8,9 +8,11 @@
       <article>
         <h2>{{ .Title }}</h2>
 
-        <p class="lastUpdate">
-            Last updated at {{ .Lastmod.Format "02/01/2006" }}
-        </p>
+        {{ if ne (.Lastmod.Format "02/01/2006") (dateFormat "02/01/2006" "0001-01-01") }}
+          <p class="lastUpdate">
+              Last updated at {{ .Lastmod.Format "02/01/2006" }}
+          </p>
+        {{ end }}
         
         <div class="content">
           {{ .Content }}
