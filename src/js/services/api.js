@@ -16,10 +16,11 @@ export var states = {
 
 const LOCAL_URL = 'http://localhost:8080'
 const PROD_URL = '/api'
+const PROD_FORCED_URL = null //'http://sourced.tech/api'
 
 function apiURL(url) {
     const baseURL = window.location.href.indexOf('://localhost') >= 0 ? LOCAL_URL : PROD_URL
-    return baseURL + url
+    return (PROD_FORCED_URL || baseURL) + url
 }
 
 function request(url) {
