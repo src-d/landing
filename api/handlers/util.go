@@ -16,6 +16,7 @@ func json(c *gin.Context, code int, resp interface{}) {
 func abort(c *gin.Context, code int, err error) {
 	status(c, code)
 	if err != nil {
+		c.String(code, err.Error())
 		c.AbortWithError(code, err)
 	} else {
 		c.AbortWithStatus(code)
