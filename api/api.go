@@ -45,6 +45,11 @@ func main() {
 		*ttl,
 		handlers.NewPosts(services.NewPostProvider(conf)).Get,
 	))
+	r.GET("/positions", cache.CachePage(
+		store,
+		*ttl,
+		handlers.NewPositions(services.NewPositionsProvider(conf)).Get,
+	))
 
 	r.NoRoute(func(c *gin.Context) {
 		c.AbortWithStatus(http.StatusNotFound)
