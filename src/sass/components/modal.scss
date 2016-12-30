@@ -1,0 +1,70 @@
+$maxWidth: 760px;
+
+.SourcedModalPortal > div {
+    opacity: 0;
+
+    &.SourcedModalOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: $overlayBackground;
+        z-index: 100;
+        transition: opacity 200ms ease-in-out;
+
+        &[class*='after-open'] {
+            opacity: 1 !important;
+        }
+
+        &[class*='before-close'] {
+            opacity: 0 !important;
+        }
+    }
+}
+
+.SourcedModalContent {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    bottom: 10%;
+    right: 10%;
+    overflow: hidden;
+    border: 1px solid $lineColorBorderAlt;
+    border-radius: $borderRadius;
+    box-shadow: $overlayShadow;
+    background:$bgMainColor;
+    max-width: $maxWidth;
+    margin: 0 auto;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    #closeModal {
+        @include fontIcon(close, 20px, 40px, 40px);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: $corporativeColor;
+        opacity: .8;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.ReactModal__Body--open {
+    overflow: hidden;
+}
+
+@media only screen and (max-width: $mobileBreakpoint) {
+    .SourcedModalContent {
+        left: 5%;
+        right: 5%;
+    }
+}
