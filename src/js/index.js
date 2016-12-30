@@ -7,9 +7,6 @@ import setupClipboard from './clipboard'
 import Repositories from './components/Repositories'
 import { TechPosts, NonTechPosts } from './components/Posts'
 
-import beautify from 'js-beautify'
-import highlighter from 'highlight.js'
-
 polyfill()
 
 function renderComponent(component, id) {
