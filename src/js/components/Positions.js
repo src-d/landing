@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { Loading, LoadingError } from './Loading'
 import { states, loadPositions } from '../services/api'
+import SrcdModal from './Modal'
 
 const ALL_TEAMS = 'All'
 
@@ -15,14 +16,22 @@ export default class PositionsContainer extends Component {
             }
         }
 
+        let viewDetails = function(url) {
+            return () => {
+                this.setState({modalUrl: url})
+            }
+        }
+
         this.state = {
             state: states.LOADING,
             positions: [],
             teams: [],
-            filterTeam: null
+            filterTeam: null,
+            modalUrl: null,
         }
 
         this.teamHandler = teamHandler.bind(this)
+        this.viewDetails = viewDetails.bind(this)
     }
 
     componentWillMount() {
@@ -51,7 +60,8 @@ export default class PositionsContainer extends Component {
         return (
             <div>
                 <Teams teams={teams} handler={this.teamHandler} active={filterTeam} />
-                <Positions positions={positions} filterTeam={filterTeam} />
+                <Positions positions={positions} filterTeam={filterTeam} handler={this.viewDetails} />
+                <SrcdModal modalUrl={this.state.modalUrl} isOpen={false} handler={this.viewDetails}></SrcdModal>
             </div>
         )
     }
@@ -61,6 +71,7 @@ class Positions extends Component {
     constructor(props) {
         super(props)
         this.positions = props.positions
+        this.handler = props.handler
     }
 
     isVisible(position) {
@@ -82,6 +93,7 @@ class Positions extends Component {
                             data={position}
                             enabled={this.isVisible(position)}
                             unique={this.isUnique()}
+                            handler={this.handler}
                         />)}
                     )
                 }
@@ -90,14 +102,11 @@ class Positions extends Component {
     }
 }
 
-function Position({data, enabled, unique}) {
+function Position({data, enabled, unique, handler}) {
     return (
-        <div
-            className={'job ' + (unique ? 'unique' : '')}
-            style={{display:enabled ? 'inline-block' : 'none'}}
-        >
+        <div className={getClass('job', unique ? 'unique' : '', enabled ? 'show' : 'hide')}>
             <h3 className="title">
-                <a href={data.url} target="_blank">{data.title}</a>
+                <span onClick={handler(data.url)}>{data.title}</span>
             </h3>
             <p className="tags">
                 <span className="tag">{data.team}</span>
@@ -105,7 +114,9 @@ function Position({data, enabled, unique}) {
                 <span className="tag">{data.commitment}</span>
             </p>
             <p className="description">{data.summary}</p>
-            <div className="link"><a href={data.url} target="_blank">Learn more</a></div>
+            <div className="link" onClick={handler(data.url)}>
+                <span className="clickable">Learn more</span>
+            </div>
         </div>
     )
 }
@@ -152,4 +163,8 @@ function Team({name, enabled, handler }) {
             {name}
         </span>
     )
+}
+
+function getClass() {
+    return Array.from(arguments).join(' ')
 }
