@@ -6,6 +6,7 @@ import React from 'react'
 import setupClipboard from './clipboard'
 import RepositoriesContainer from './components/Repositories'
 import BlogPostsContainer from './components/Posts'
+import PositionsContainer from './components/Positions'
 
 polyfill()
 
@@ -21,6 +22,7 @@ window.addEventListener('DOMContentLoaded', _ => {
     setupStickyHeader()
     renderComponent(RepositoriesContainer, 'ourOpenSourceContainer')
     renderComponent(BlogPostsContainer, 'ourPostsContainer')
+    renderComponent(PositionsContainer, 'offersPanel')
     setupClipboard()
 })
 

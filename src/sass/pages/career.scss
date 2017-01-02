@@ -1,0 +1,93 @@
+#offersPanel {
+    text-align: left;
+
+    .teamList {
+        margin: 10px 0 0;
+        text-align: center;
+
+        .btn {
+            @include textSmall();
+            display: inline-block;
+            margin: 0 5px;
+            padding: 5px 15px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: $borderRadius;
+
+            &.selected {
+                @include textSmall();
+                cursor: default;
+                background: $bgLightBlue;
+                border-color: $lineColorBorderAlt;
+            }
+        }
+    }
+
+    .offerList {
+        margin-top: 30px;
+    }
+
+    .job {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        padding: 0px 30px 40px;
+
+        &.unique {
+            width: 70%;
+            margin: 0 auto;
+            display: block !important;
+        }
+
+        .title {
+            text-align: left;
+        }
+
+        .tags {
+            margin-top: -10px;
+
+            .tag {
+                @include textSmall(condensed);
+
+                & + .tag:before {
+                    content: ' · ';
+                }
+            }
+        }
+
+        .description {
+            margin: 10px 0 20px;
+        }
+
+        .link {
+            @include smallLink(emphasis);
+        }
+
+        &.hide {
+            display: none;
+        }
+
+        &.show {
+            animation-duration: .3s;
+            animation-name: hide;
+            animation-fill-mode: forwards;
+            animation-direction: reverse;
+        }
+    }
+}
+
+@media only screen and (max-width: $wideScreenBreakpoint) {
+    #offersPanel .job {
+        width: 90%;
+    }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
