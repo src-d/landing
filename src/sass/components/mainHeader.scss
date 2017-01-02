@@ -53,10 +53,3 @@
         }
     }
 }
-
-@media only screen and (max-width: $mobileBreakpoint) {
-    .mainHeader > .mainContainer {
-        height: auto !important;
-        padding-bottom: 100px;
-    }
-}

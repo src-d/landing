@@ -112,7 +112,7 @@
     }
 }
 
-@media only screen and (max-width: 1005px) {
+@media only screen and (max-width: $wideScreenBreakpoint) {
     #weAreWeWant {
         .mainContainer {
             display: block;

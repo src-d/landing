@@ -56,7 +56,7 @@ $footeHPadding: 96px;
     }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: $wideScreenBreakpoint) {
     .footer > .mainContainer {
         .logoContainer {
             .logo {
@@ -74,20 +74,5 @@ $footeHPadding: 96px;
 
     .fullWidth.contact > .mainContainer .copyBtn {
         font-size: 1.1em;
-    }
-}@media only screen and (max-width: 780px) {
-    .footer > .mainContainer {
-        .logoContainer {
-            .logo {
-                margin: 0;
-                width: 90px;
-                height: 24px;
-                background-size: contain;
-            }
-        }
-
-        ul.links {
-            margin: 0;
-        }
     }
 }

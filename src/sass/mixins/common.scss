@@ -47,14 +47,22 @@
     .mainHeader .mainContainer {
         height: $headerHeight;
 
-        .description {
-            margin-top: 100px;
+        @media only screen and (max-width: $mobileBreakpoint) {
+            height: auto !important;
+        }
 
-            @media only screen and (min-width: $mobileBreakpoint) {
-                @include translateY(-50%);
-                margin-top: 10px !important;
+        .description {
+            @include translateY(-50%);
+            margin-top: 10px;
+            position: relative;
+            top: 50%;
+
+            @media only screen and (max-width: $mobileBreakpoint) {
+                @include translateY(0);
+                margin-top: 100px;
+                margin-bottom: 100px;
                 position: relative;
-                top: 50%;
+                top: 0;
             }
         }
     }

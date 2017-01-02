@@ -137,7 +137,7 @@
     color: $textColorEmphasisDark;
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: $mobileBreakpoint) {
     .topbar {
         .toggle {
             visibility: visible;

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: $mobileBreakpoint) {
     .menu {
         visibility: hidden;
         opacity: 0;
@@ -50,7 +50,7 @@
     }
 }
 
-@media only screen and (min-width: 781px) {
+@media only screen and (min-width: $mobileBreakpoint + 1) {
     .menu {
         visibility: visible;
         opacity: 1;
