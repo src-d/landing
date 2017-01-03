@@ -88,7 +88,7 @@ func toPositionsResponse(input leverResponse) *PositionsResponse {
 			Location:    leverPosition.Categories.Location,
 			Commitment:  leverPosition.Categories.Commitment,
 			Description: leverPosition.Description,
-			Summary:     getSummary(leverPosition.Description, summaryMaxLength),
+			Summary:     getSummary(leverPosition.DescriptionPlain, summaryMaxLength),
 		})
 	}
 

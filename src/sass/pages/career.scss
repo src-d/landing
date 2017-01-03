@@ -1,6 +1,16 @@
 #offersPanel {
     text-align: left;
 
+    .link {
+        @include smallLink(emphasis);
+        display: inline-block;
+        margin-top: 10px;
+
+        .clickable {
+            padding: 0;
+        }
+    }
+
     .teamList {
         margin: 10px 0 0;
         text-align: center;
@@ -25,6 +35,19 @@
 
     .offerList {
         margin-top: 30px;
+        text-align: left;
+        position: relative;
+
+        &:after {
+            content: ' ';
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            border-left: 1px dashed #ECF0F5;
+            margin-bottom: 40px;
+        }
     }
 
     .job {
@@ -42,6 +65,8 @@
         .title {
             text-align: left;
             cursor: pointer;
+            line-height: 30px;
+            margin-bottom: 10px;
         }
 
         .tags {
@@ -60,10 +85,6 @@
             margin: 10px 0 20px;
         }
 
-        .link {
-            @include smallLink(emphasis);
-        }
-
         &.hide {
             display: none;
         }
@@ -75,11 +96,75 @@
             animation-direction: reverse;
         }
     }
+
+    .positionFullDescription {
+        text-align: left;
+        max-width: 90%;
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .title {
+                display: inline-block;
+                flex-grow: 1;
+
+                &,
+                .positionTitle {
+                    text-align: left;
+                    padding-right: 20px;
+                }
+
+                .tag + .tag:before {
+                    content: ' · ';
+                }
+            }
+        }
+
+        .content {
+            .description {
+                margin: 40px 0;
+
+                ul {
+                    margin: 10px 0;
+
+                    li {
+                        list-style-type: disc;
+                        margin: 5px 0 0 20px;
+                    }
+                }
+
+                p {
+                    margin-top: 30px;
+                }
+            }
+        }
+
+        .darkButton.secondary {
+            font-size: $textSizeMain;
+            margin-bottom: 0;
+            padding: 10px 20px;
+        }
+    }
+
+    .applyFrame {
+        width: 100%;
+        height: 1950px;
+        margin-top: 20px;
+
+        @media only screen and (max-width: 800px) {
+            height: 2600px;
+        }
+    }
 }
 
-@media only screen and (max-width: $wideScreenBreakpoint) {
+@media only screen and (max-width: $mobileBreakpoint) {
     #offersPanel .job {
+        display: block;
         width: 90%;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 
@@ -91,4 +176,26 @@
   100% {
     opacity: 0;
   }
+}
+
+//TODO: DELETE THIS TESTING CODE !!!!
+.todoContents {
+    display:inline-block;
+    padding-left: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    &:before {
+        content:' ( '
+    }
+    &:after {
+        content:' )'
+    }
+}
+.todoApply {
+    display: block;
+    margin-top: 5px;
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+    cursor: pointer;
 }

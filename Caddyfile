@@ -3,6 +3,10 @@
 	log stdout
 	gzip
 
+	rewrite /careers {
+		to /careers/index.html
+	}
+
 	ext .html
 	errors {
 		log stderr
