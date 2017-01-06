@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 
 import setupClipboard from './clipboard'
-import Repositories from './components/Repositories'
-import { TechPosts, NonTechPosts } from './components/Posts'
+import RepositoriesContainer from './components/Repositories'
+import BlogPostsContainer from './components/Posts'
 
 polyfill()
 
@@ -19,9 +19,8 @@ function renderComponent(component, id) {
 window.addEventListener('DOMContentLoaded', _ => {
     setupMenu()
     setupStickyHeader()
-    renderComponent(Repositories, 'repositories')
-    renderComponent(TechPosts, 'tech-posts')
-    renderComponent(NonTechPosts, 'non-tech-posts')
+    renderComponent(RepositoriesContainer, 'ourOpenSourceContainer')
+    renderComponent(BlogPostsContainer, 'ourPostsContainer')
     setupClipboard()
 })
 

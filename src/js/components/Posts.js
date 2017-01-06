@@ -7,6 +7,54 @@ import { ago, isNewer, TIME_UNITS } from '../services/dates'
 const TECH = 'technical'
 const NON_TECH = 'culture'
 
+export default class BlogPostsContainer extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            ['error_' + TECH]: false,
+            ['error_' + NON_TECH]: false
+        }
+
+        this.notifyError = (which) => {
+            console.warn('Error found in Post section "' + which +'"')
+            this.setState({['error_' + which]: true})
+        }
+    }
+
+
+    render() {
+        if (this.state['error_' + TECH] && this.state['error_' + NON_TECH]) {
+            console.warn('BlogPost section hided')
+            return null
+        }
+
+        return (
+            <aside className="fullWidth" id="ourPosts">
+                <div className="mainContainer">
+                    <header>
+                        <h2>Sharing our journey and work with the world</h2>
+                    </header>
+                    <div className="columns">
+                        <section>
+                            <h3 className="title">Our journey</h3>
+                            <div className="postColumn" id="non-tech-posts">
+                                <Posts kind={TECH} errorHandler={this.notifyError} />
+                            </div>
+                        </section>
+                        <section>
+                            <h3 className="title">Technical posts</h3>
+                            <div className="postColumn" id="tech-posts">
+                                <Posts kind={NON_TECH} errorHandler={this.notifyError} />
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </aside>
+        )
+    }
+}
+
 class Posts extends Component {
     constructor(props) {
         super(props)
@@ -23,6 +71,7 @@ class Posts extends Component {
             .catch(err => {
                 console.error(err)
                 this.setState({ state: states.ERROR })
+                this.props.errorHandler(this.props.kind)
             })
     }
 
@@ -40,14 +89,6 @@ class Posts extends Component {
             </div>
         )
     }
-}
-
-export function TechPosts(props) {
-    return <Posts kind={TECH} />
-}
-
-export function NonTechPosts(props) {
-    return <Posts kind={NON_TECH} />
 }
 
 function Post({ post, first }) {
