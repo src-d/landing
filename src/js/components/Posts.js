@@ -39,13 +39,13 @@ export default class BlogPostsContainer extends Component {
                         <section>
                             <h3 className="title">Our journey</h3>
                             <div className="postColumn" id="non-tech-posts">
-                                <Posts kind={TECH} errorHandler={this.notifyError} />
+                                <Posts kind={NON_TECH} errorHandler={this.notifyError} />
                             </div>
                         </section>
                         <section>
                             <h3 className="title">Technical posts</h3>
                             <div className="postColumn" id="tech-posts">
-                                <Posts kind={NON_TECH} errorHandler={this.notifyError} />
+                                <Posts kind={TECH} errorHandler={this.notifyError} />
                             </div>
                         </section>
                     </div>
