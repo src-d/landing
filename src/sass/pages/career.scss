@@ -120,6 +120,11 @@
                     content: ' · ';
                 }
             }
+
+            .back {
+                display: inline-block;
+                margin-right: 20px;
+            }
         }
 
         .content {
@@ -176,26 +181,4 @@
   100% {
     opacity: 0;
   }
-}
-
-//TODO: DELETE THIS TESTING CODE !!!!
-.todoContents {
-    display:inline-block;
-    padding-left: 30px;
-    font-size: 14px;
-    cursor: pointer;
-    &:before {
-        content:' ( '
-    }
-    &:after {
-        content:' )'
-    }
-}
-.todoApply {
-    display: block;
-    margin-top: 5px;
-    position: absolute;
-    right: 0;
-    font-size: 16px;
-    cursor: pointer;
 }

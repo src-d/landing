@@ -4,13 +4,11 @@ import { useScroll } from 'react-router-scroll';
 
 import { Loading, LoadingError } from './Loading'
 import { states, loadPositions } from '../services/api'
-import Modal from './Modal'
 
 const ALL_TEAMS = 'All'
 const CAREER_BASE_URL = '/careers'
 const CAREER_POSITION_DESCRIPTION = CAREER_BASE_URL + '/:positionId'
-const CAREER_POSITION_APPLY = CAREER_BASE_URL + '/:positionId/apply'
-const APPLY_FRAME_URL = 'https://jobs.lever.co/sourced/:positionId/apply'
+const CAREER_POSITION_EXTERNAL_APPLY = 'https://jobs.lever.co/sourced/:positionId/apply'
 
 export default function PositionsRouter() {
     return (
@@ -18,7 +16,6 @@ export default function PositionsRouter() {
             <Route path={CAREER_BASE_URL} component={PositionsMain}>
                 <IndexRoute component={PositionListContainer} />
                 <Route path=":positionId" component={PositionDescriptionContainer} />
-                <Route path=":positionId/apply" component={PositionApplyContainer} />
             </Route>
         </Router>
     )
@@ -70,11 +67,9 @@ class PositionListContainer extends Component {
 
         this.state = {
             filterTeam: null,
-            modalUrl: null,
         }
 
         this.teamHandler = teamName => () => this.setState({filterTeam: teamName})
-        this.viewDetails = url => () => this.setState({modalUrl: url})
     }
 
     render() {
@@ -88,8 +83,7 @@ class PositionListContainer extends Component {
             <div className="stack mainContainer">
                 <h2>Our Job Opportunities</h2>
                 <Teams teams={this.props.positions.teams} handler={this.teamHandler} active={this.state.filterTeam} />
-                <Positions positions={this.props.positions.positions} filterTeam={this.state.filterTeam} handler={this.viewDetails} />
-                <Modal modalUrl={this.state.modalUrl} isOpen={false} handler={this.viewDetails}></Modal>
+                <Positions positions={this.props.positions.positions} filterTeam={this.state.filterTeam} />
             </div>
         )
     }
@@ -99,7 +93,6 @@ class Positions extends Component {
     constructor(props) {
         super(props)
         this.positions = props.positions
-        this.handler = props.handler
     }
 
     isVisible(position) {
@@ -121,7 +114,6 @@ class Positions extends Component {
                             data={position}
                             enabled={this.isVisible(position)}
                             unique={this.isUnique()}
-                            handler={this.handler}
                         />)}
                     )
                 }
@@ -130,7 +122,7 @@ class Positions extends Component {
     }
 }
 
-function Position({data, enabled, unique, handler}) {
+function Position({data, enabled, unique}) {
     return (
         <div className={getClass('job', unique ? 'unique' : '', enabled ? 'show' : 'hide')}>
             <Link to={getPositionUrl(CAREER_POSITION_DESCRIPTION, data.id)}>
@@ -145,11 +137,6 @@ function Position({data, enabled, unique, handler}) {
                     <span className="clickable">Learn more</span>
                 </div>
             </Link>
-            {/* TODO: DELETE THIS TESTING CODE !!!! */}
-            <div className="todoContents">
-                <span onClick={handler(data.url)}>popup</span>
-                &nbsp;· <a href={'https://jobs.lever.co/sourced/' + data.id} target="_blank">lever</a>
-            </div>
         </div>
     )
 }
@@ -222,24 +209,23 @@ class PositionDescriptionContainer extends Component {
                         </p>
                     </header>
                     <aside className="apply">
-                        <Link
-                            to={getPositionUrl(CAREER_POSITION_APPLY, this.props.params.positionId)}
-                            className="darkButton secondary"
+                        <Link to={getPositionUrl(CAREER_BASE_URL)} className="back">
+                            &lt; back
+                        </Link>
+                        <a href={getPositionUrl(CAREER_POSITION_EXTERNAL_APPLY, data.id)}
+                            className="darkButton secondary" target="_blank"
                         >
                             Apply <span className="desktopOnly">for this job</span>
-                        </Link>
-                        {/* TODO: DELETE THIS TESTING CODE !!!! */}
-                        <a href={'https://jobs.lever.co/sourced/' + data.id + '/apply'} target="_blank" className="todoApply">apply at lever</a>
+                        </a>
                     </aside>
                 </div>
                 <div className="content">
                     <div className="description" dangerouslySetInnerHTML={{__html: data.description}}></div>
-                    <Link
-                        to={getPositionUrl(CAREER_POSITION_APPLY, this.props.params.positionId)}
-                        className="darkButton secondary"
+                    <a href={getPositionUrl(CAREER_POSITION_EXTERNAL_APPLY, data.id)}
+                        className="darkButton secondary" target="_blank"
                     >
                         Apply for this job
-                    </Link>
+                    </a>
                 </div>
 
             </div>
@@ -247,22 +233,6 @@ class PositionDescriptionContainer extends Component {
     }
 }
 
-class PositionApplyContainer extends Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render(){
-        return (
-            <div className="stack mainContainer fullWidth">
-                <iframe
-                    src={getPositionUrl(APPLY_FRAME_URL, this.props.params.positionId)}
-                    className="applyFrame"
-                ></iframe>
-            </div>
-        )
-    }
-}
 
 function getClass() {
     return Array.from(arguments).join(' ')
