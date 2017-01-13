@@ -37,7 +37,7 @@ teams:
           position: Senior Software Engineer 
           team: Platform Team
           github: https://github.com/serabe
-        - picture: placeholder/new-woman.png
+        - picture: sonia.png
           name: Sonia Meruelo
           position: DevOps Engineer
           team: Infrastructure Team
