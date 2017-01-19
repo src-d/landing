@@ -6,16 +6,17 @@ import { Loading, LoadingError } from './Loading'
 import { states, loadPositions } from '../services/api'
 
 const ALL_TEAMS = 'All'
-const CAREER_BASE_URL = '/careers'
-const CAREER_POSITION_DESCRIPTION = CAREER_BASE_URL + '/:positionId'
-const CAREER_POSITION_EXTERNAL_APPLY = 'https://jobs.lever.co/sourced/:positionId/apply'
+const BASE_URL = '/careers'
+const POSITION_DESC_PATH = ':name/:positionShortId'
+const POSITION_DESC_URL = BASE_URL + '/' + POSITION_DESC_PATH
+const POSITION_APPLY_URL = 'https://jobs.lever.co/sourced/:positionId/apply'
 
 export default function PositionsRouter() {
     return (
         <Router history={browserHistory} render={applyRouterMiddleware(useScroll(() => [0, 300]))}>
-            <Route path={CAREER_BASE_URL} component={PositionsMain}>
+            <Route path={BASE_URL} component={PositionsMain}>
                 <IndexRoute component={PositionListContainer} />
-                <Route path=":positionId" component={PositionDescriptionContainer} />
+                <Route path={POSITION_DESC_PATH} component={PositionDescriptionContainer} />
             </Route>
         </Router>
     )
@@ -81,7 +82,7 @@ class PositionListContainer extends Component {
 
         return (
             <div className="stack mainContainer">
-                <h2>Our Job Opportunities</h2>
+                <h2>Current Openings</h2>
                 <Teams teams={this.props.positions.teams} handler={this.teamHandler} active={this.state.filterTeam} />
                 <Positions positions={this.props.positions.positions} filterTeam={this.state.filterTeam} />
             </div>
@@ -125,7 +126,7 @@ class Positions extends Component {
 function Position({data, enabled, unique}) {
     return (
         <div className={getClass('job', unique ? 'unique' : '', enabled ? 'show' : 'hide')}>
-            <Link to={getPositionUrl(CAREER_POSITION_DESCRIPTION, data.id)}>
+            <Link to={getPositionUrl(data)}>
                 <h3 className="title">{data.title}
                 </h3>
                 <p className="tags">
@@ -134,7 +135,7 @@ function Position({data, enabled, unique}) {
                     <span className="tag">{data.commitment}</span>
                 </p>
                 <div className="link">
-                    <span className="clickable">Learn more</span>
+                    <span className="clickable">view & apply</span>
                 </div>
             </Link>
         </div>
@@ -191,7 +192,7 @@ class PositionDescriptionContainer extends Component {
     }
 
     render(){
-        let data = findPosition(this.props.positions.positions, this.props.params.positionId)
+        let data = findPosition(this.props.positions.positions, this.props.params.positionShortId)
 
         if (!data) {
             return null
@@ -202,29 +203,30 @@ class PositionDescriptionContainer extends Component {
                 <div className="header">
                     <header className="title">
                         <h2 className="positionTitle">{data.title}</h2>
-                        <p className="tags">
+                        <div className="tags">
                             <span className="tag">{data.team}</span>
                             <span className="tag">{data.location}</span>
                             <span className="tag">{data.commitment}</span>
-                        </p>
+
+                            <aside className="apply">
+                                <Link to={BASE_URL} className="back">
+                                    See all positions
+                                </Link>
+                                <a href={getApplyUrl(data)}
+                                    className="darkButton secondary" target="_blank"
+                                >
+                                    Apply <span className="desktopOnly">for position</span>
+                                </a>
+                            </aside>
+                        </div>
                     </header>
-                    <aside className="apply">
-                        <Link to={getPositionUrl(CAREER_BASE_URL)} className="back">
-                            &lt; back
-                        </Link>
-                        <a href={getPositionUrl(CAREER_POSITION_EXTERNAL_APPLY, data.id)}
-                            className="darkButton secondary" target="_blank"
-                        >
-                            Apply <span className="desktopOnly">for this job</span>
-                        </a>
-                    </aside>
                 </div>
                 <div className="content">
                     <div className="description" dangerouslySetInnerHTML={{__html: data.description}}></div>
-                    <a href={getPositionUrl(CAREER_POSITION_EXTERNAL_APPLY, data.id)}
+                    <a href={getApplyUrl(data)}
                         className="darkButton secondary" target="_blank"
                     >
-                        Apply for this job
+                        Apply for position
                     </a>
                 </div>
 
@@ -238,10 +240,32 @@ function getClass() {
     return Array.from(arguments).join(' ')
 }
 
-function getPositionUrl(formatString, positionId) {
-    return formatString.replace(':positionId', positionId)
+function getPositionUrl(position) {
+    return POSITION_DESC_URL
+        .replace(':name', slugify(position.title))
+        .replace(':positionShortId', getFirstGroup(position.id))
 }
 
-function findPosition(positions, positionId) {
-    return positions.filter(position => position.id===positionId).pop()
+function getApplyUrl(position) {
+    return POSITION_APPLY_URL.replace(':positionId', position.id)
+}
+
+function findPosition(positions, positionShortId) {
+    return positions.filter(position => getFirstGroup(position.id)===positionShortId).pop()
+}
+
+function slugify(input) {
+    return input
+        .toString()
+        .trim()
+        .toLowerCase()
+        .replace(/&/g, '-and-')
+        .replace(/[\W_]/g, '-')
+        .replace(/-{2,}/g, '-')
+        .replace(/(^-|-$)/g, '');
+}
+
+function getFirstGroup(uuid) {
+    let candidate = uuid.split('-').shift()
+    return candidate.length === 8 ? candidate : uuid
 }

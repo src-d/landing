@@ -116,14 +116,26 @@
                     padding-right: 20px;
                 }
 
-                .tag + .tag:before {
-                    content: ' · ';
+                .tag {
+                    display: inline-block;
+                    padding: 10px 0;
+
+                    & + .tag:before {
+                        content: '·';
+                        display: inline-block;
+                        padding: 0 5px;
+                    }
                 }
             }
 
-            .back {
-                display: inline-block;
-                margin-right: 20px;
+            .apply {
+                float: right;
+                text-align: right;
+
+                .back {
+                    display: inline-block;
+                    padding: 10px 20px 10px 30px;
+                }
             }
         }
 
@@ -152,24 +164,35 @@
             padding: 10px 20px;
         }
     }
-
-    .applyFrame {
-        width: 100%;
-        height: 1950px;
-        margin-top: 20px;
-
-        @media only screen and (max-width: 800px) {
-            height: 2600px;
-        }
-    }
 }
 
 @media only screen and (max-width: $mobileBreakpoint) {
-    #offersPanel .job {
-        display: block;
-        width: 90%;
-        margin-right: auto;
-        margin-left: auto;
+    #offersPanel {
+        .offerList:after {
+            display: none;
+        }
+
+        .job {
+            display: block;
+            width: 90%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .positionFullDescription .header .apply {
+            margin-top: 30px;
+            float: none;
+            text-align: left;
+
+            .darkButton.secondary{
+                float: left;
+            }
+
+            .back {
+                padding-left: 15px;
+                padding-right: 10px;
+            }
+        }
     }
 }
 
