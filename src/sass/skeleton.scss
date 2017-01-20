@@ -15,16 +15,16 @@ body {
 }
 
 .mainContainer {
-    @extend .structureContainer;
+    width: $pageWidth;
+    margin: 0 auto;
     padding: 27px 0;
     z-index: 2;
     position: relative;
     text-align: center;
-}
 
-.structureContainer {
-    width: $pageWidth;
-    margin: 0 auto;
+    &.fullWidth {
+        width: 100%;
+    }
 }
 
 header {
@@ -45,10 +45,6 @@ h2, h4 {
 
 h3 {
     @include title2;
-}
-
-.mobileOnly {
-    display: none;
 }
 
 h1, h2, h3, h4 {
@@ -84,4 +80,8 @@ h1, h2, h3, h4 {
 	.mainContainer {
 		width: 90%;
 	}
+
+    .desktopOnly {
+        display: none;
+    }
 }

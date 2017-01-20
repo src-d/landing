@@ -57,12 +57,19 @@ function fixPosts(posts) {
 
 function fixPost(post) {
     if (!post.link) {
-        return post;
+        return post
     }
 
     if (post.link.indexOf('//') !== 0 && post.link.indexOf('http') !== 0 ) {
         post.link = 'http://blog.sourced.tech' + post.link
     }
 
-    return post;
+    return post
+}
+
+const POSITIONS_URL = '/positions'
+
+export function loadPositions() {
+    let url = apiURL(POSITIONS_URL)
+    return request(url).then(resp => resp)
 }

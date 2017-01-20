@@ -94,6 +94,8 @@
         position: absolute;
         top: 0;
         left: 0;
+        line-height: $height;
+        text-align: center;
 
         @if ($name == 'linkedin') {
             content: '\f08c';
@@ -104,6 +106,9 @@
         }
         @else if ($name == 'twitter') {
             content: '\f099';
+        }
+        @else if ($name == 'close') {
+            content: "\f00d";
         }
     }
 

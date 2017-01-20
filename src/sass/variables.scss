@@ -1,6 +1,6 @@
 $pageWidth: 1024px;
 $mobileBreakpoint: 768px;
-$wideScreenBreakpoint: 1024px;
+$wideScreenBreakpoint: $pageWidth;
 $columns: 12;
 $gutter: 24px;
 $pageWidthSmallPages: 800px;
@@ -67,4 +67,7 @@ $shadow: 0 7px 15px 2px transparentize($lineColorBorder, 1-0.43);
 $shadowArround: 0 0 15px 2px rgba($lineColorBorder, 1);
 $shadowSpeed: .1s;
 
-$linearGradient: linear-gradient(90deg, #FFFFFF 0%, $textColorEmphasisLight 49%, #FFFFFF 100%)
+$linearGradient: linear-gradient(90deg, #FFFFFF 0%, $textColorEmphasisLight 49%, #FFFFFF 100%);
+
+$overlayBackground: transparentize($corporativeColor,.1);
+$overlayShadow: 0 0 15px 2px shade($corporativeColor, 40%);
