@@ -1,28 +1,12 @@
 import React, { Component } from 'react'
-import { Router, Route, IndexRoute, Link, browserHistory, applyRouterMiddleware } from 'react-router'
-import { useScroll } from 'react-router-scroll';
 
 import { Loading, LoadingError } from './Loading'
 import { states, loadPositions } from '../services/api'
 
 const ALL_TEAMS = 'All'
-const BASE_URL = '/careers'
-const POSITION_DESC_PATH = ':name/:positionShortId'
-const POSITION_DESC_URL = BASE_URL + '/' + POSITION_DESC_PATH
-const POSITION_APPLY_URL = 'https://jobs.lever.co/sourced/:positionId/apply'
+const POSITION_URL = 'https://jobs.lever.co/sourced/:positionId'
 
-export default function PositionsRouter() {
-    return (
-        <Router history={browserHistory} render={applyRouterMiddleware(useScroll(() => [0, 300]))}>
-            <Route path={BASE_URL} component={PositionsMain}>
-                <IndexRoute component={PositionListContainer} />
-                <Route path={POSITION_DESC_PATH} component={PositionDescriptionContainer} />
-            </Route>
-        </Router>
-    )
-}
-
-class PositionsMain extends Component {
+export default class PositionsMain extends Component {
     constructor(props) {
         super(props)
 
@@ -48,16 +32,9 @@ class PositionsMain extends Component {
             })
     }
 
-    children() {
-        return React.Children.map(
-            this.props.children,
-            child => React.cloneElement(child, this.state)
-        )
-    }
-
     render () {
         return (
-            <div>{this.children()}</div>
+            <div><PositionListContainer status={this.state.status} positions={this.state.positions} /></div>
         )
     }
 }
@@ -126,7 +103,7 @@ class Positions extends Component {
 function Position({data, enabled, unique}) {
     return (
         <div className={getClass('job', unique ? 'unique' : '', enabled ? 'show' : 'hide')}>
-            <Link to={getPositionUrl(data)}>
+            <a href={getPositionExternalUrl(data)} target="_blank">
                 <h3 className="title">{data.title}
                 </h3>
                 <p className="tags">
@@ -137,7 +114,7 @@ function Position({data, enabled, unique}) {
                 <div className="link">
                     <span className="clickable">view & apply</span>
                 </div>
-            </Link>
+            </a>
         </div>
     )
 }
@@ -186,86 +163,10 @@ function Team({name, enabled, handler }) {
     )
 }
 
-class PositionDescriptionContainer extends Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render(){
-        let data = findPosition(this.props.positions.positions, this.props.params.positionShortId)
-
-        if (!data) {
-            return null
-        }
-
-        return (
-            <div className="stack mainContainer positionFullDescription">
-                <div className="header">
-                    <header className="title">
-                        <h2 className="positionTitle">{data.title}</h2>
-                        <div className="tags">
-                            <span className="tag">{data.team}</span>
-                            <span className="tag">{data.location}</span>
-                            <span className="tag">{data.commitment}</span>
-
-                            <aside className="apply">
-                                <Link to={BASE_URL} className="back">
-                                    See all positions
-                                </Link>
-                                <a href={getApplyUrl(data)}
-                                    className="darkButton secondary" target="_blank"
-                                >
-                                    Apply <span className="desktopOnly">for position</span>
-                                </a>
-                            </aside>
-                        </div>
-                    </header>
-                </div>
-                <div className="content">
-                    <div className="description" dangerouslySetInnerHTML={{__html: data.description}}></div>
-                    <a href={getApplyUrl(data)}
-                        className="darkButton secondary" target="_blank"
-                    >
-                        Apply for position
-                    </a>
-                </div>
-
-            </div>
-        )
-    }
-}
-
-
 function getClass() {
     return Array.from(arguments).join(' ')
 }
 
-function getPositionUrl(position) {
-    return POSITION_DESC_URL
-        .replace(':name', slugify(position.title))
-        .replace(':positionShortId', getFirstGroup(position.id))
-}
-
-function getApplyUrl(position) {
-    return POSITION_APPLY_URL.replace(':positionId', position.id)
-}
-
-function findPosition(positions, positionShortId) {
-    return positions.filter(position => getFirstGroup(position.id)===positionShortId).pop()
-}
-
-function slugify(input) {
-    return input
-        .toString()
-        .trim()
-        .toLowerCase()
-        .replace(/&/g, '-and-')
-        .replace(/[\W_]/g, '-')
-        .replace(/-{2,}/g, '-')
-        .replace(/(^-|-$)/g, '');
-}
-
-function getFirstGroup(uuid) {
-    let candidate = uuid.split('-').shift()
-    return candidate.length === 8 ? candidate : uuid
+function getPositionExternalUrl(position) {
+    return POSITION_URL.replace(':positionId', position.id)
 }
