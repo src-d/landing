@@ -90,3 +90,24 @@
 		}
 	}
 }
+
+.zoom {
+    .picture {
+        overflow: hidden;
+        margin-bottom: 10px !important;
+        height: 200px;
+
+        & > img {
+            @include translateX(-50%);
+            height: 200%;
+            max-height: none !important;
+            margin-top: -20px;
+            position: absolute;
+            left: 50%;
+        }
+
+        &:after {
+            bottom: 0 !important;
+        }
+    }
+}
