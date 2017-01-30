@@ -6,7 +6,7 @@ fetcher-page-size: 45
 repos:
     main:
         - owner: src-d
-          repos: [go-git, beanstool, kmcuda, flamingo, storable, go-siva]
+          repos: [go-git, beanstool, kmcuda, flamingo, hercules, go-siva]
     other:
         - owner: src-d
           repos: [minhashcuda]
