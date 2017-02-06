@@ -11,6 +11,12 @@ $footeHPadding: 96px;
         float: left;
     }
 
+    .copyright {
+        @include textSmall(condensed);
+        display: inline-block;
+        margin: 0 auto;
+    }
+
     .logo {
         @include iconOnly(120px, 29px, '/img/logos/logo-footer.svg');
         margin-left: $footeHPadding;
