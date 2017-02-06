@@ -4,37 +4,37 @@ teams:
       members:
         - picture: vadim.jpg
           name: Vadim Markovtsev
-          position: Lead Machine Learning Engineer 
+          position: Lead Machine Learning Engineer
           team: Machine Learning Team
           github: https://github.com/vmarkovtsev
         - picture: santiago.jpg
           name: Santiago Mola
-          position: Lead Software Engineer 
+          position: Lead Software Engineer
           team: Data Retrieval Team
           github: https://github.com/smola
         - picture: alberto.png
           name: Alberto Cortés
-          position: Software Engineer 
+          position: Software Engineer
           team: Data Retrieval Team
           github: https://github.com/alcortesm
         - picture: antonio.png
           name: Antonio Navarro
-          position: Senior Software Engineer 
+          position: Senior Software Engineer
           team: Data Retrieval Team
           github: https://github.com/ajnavarro
         - picture: miguel.png
           name: Miguel Molina
-          position: Senior Software Engineer 
+          position: Senior Software Engineer
           team: Platform Team
           github: https://github.com/mvader
         - picture: david.png
           name: David Pordomingo
-          position: Software Engineer 
+          position: Software Engineer
           team: Platform Team
           github: https://github.com/dpordomingo
         - picture: sergio.png
           name: Sergio Arbeo
-          position: Senior Software Engineer 
+          position: Senior Software Engineer
           team: Platform Team
           github: https://github.com/serabe
         - picture: sonia.png
@@ -42,6 +42,16 @@ teams:
           position: DevOps Engineer
           team: Infrastructure Team
           github: https://github.com/smeruelo
+        - picture: placeholder/new-man.png
+          name: David Paz
+          position: Software Engineering Intern
+          team: Data Retrieval Team
+          github: https://github.com/dpaz
+        - picture: placeholder/new-man.png
+          name: Manuel Carmona
+          position: Software Engineering Intern
+          team: Data Retrieval Team
+          github: https://github.com/mcarmonaa
     - name: Product & Data Intelligence
       headline: Translating our vision into amazing products & making smarter decisions with hard data
       members:
@@ -49,6 +59,10 @@ teams:
           name: Marcelo Novaes
           position: Product Manager & Data Intelligence Lead
           linkedin: https://linkedin.com/in/mnovaes
+        - picture: placeholder/new-woman.png
+          name: Fernanda Gomes
+          position: Data Intelligence Analyst
+          linkedin: https://www.linkedin.com/in/fernandaagomes/
     - name: Operations
       headline: Taking care of the team at source{d} and finding great people to join us
       members:
