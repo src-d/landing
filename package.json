@@ -4,12 +4,13 @@
   "description": "source{d} landing page",
   "main": "./src/js/index.js",
   "scripts": {
-    "build": "webpack --config=webpack.config.js",
-    "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors",
-    "hugo-server": "hugo server --config=hugo.config.yaml --destination=public --port=8181 --watch --disableRSS=true",
-    "hugo-build": "hugo --config=hugo.config.yaml --destination=public --disableRSS=true",
     "api-run": "go run api/api.go --config production.yaml",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config=webpack.config.js",
+    "hugo-build": "hugo --config=hugo.config.yaml --destination=public --disableRSS=true",
+    "hugo-server": "hugo server --config=hugo.config.yaml --destination=public --port=8181 --watch --disableRSS=true",
+    "serve": "concurrently --kill-others \"npm run webpack-watcher\" \"npm run hugo-server\" \"npm run api-run\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "babel-preset-es2015": "^6.18",
     "babel-preset-react": "^6.16",
     "compass-mixins": "^0.12.10",
+    "concurrently": "^3.1.0",
     "css-loader": "^0.25.0",
     "exports-loader": "^0.6.3",
     "extract-text-webpack-plugin": "^1.0.1",
