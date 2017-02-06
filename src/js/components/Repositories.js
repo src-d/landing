@@ -31,7 +31,7 @@ export default class RepositoriesContainer extends Component {
                     <header>
                         <h2>Committed to open source and its community</h2>
                     </header>
-                    <p className="description">At <strong>sourced</strong> we believe that sharing and contributing is essential to create the future world we want to live in.
+                    <p className="description">At <strong>{"source{d}"}</strong> we believe that sharing and contributing is essential to create the future world we want to live in.
                     Our engineers dedicate at least <strong>10% of their working hours towards any open source projects</strong> of their choosing.
                     We take it seriously and have a dedicated day every two weeks, called <strong>Open Source Friday.</strong></p>
                     <h3 className="subTitle">Our Open Source Projects</h3>
