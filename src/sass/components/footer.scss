@@ -6,9 +6,20 @@ $footeHPadding: 96px;
     overflow: hidden;
     border-top: 1px solid $lineColorBlueLight;
 
+    .footer-item {
+        vertical-align: bottom;
+    }
+
     .logoContainer {
         display: inline-block;
         float: left;
+        margin-top: -3px; // Make it look align with the rest of the footer.
+    }
+
+    .copyright {
+        @include textSmall(condensed);
+        display: inline-block;
+        margin: inherit auto;
     }
 
     .logo {

@@ -1,14 +1,17 @@
 <footer class="fullWidth footer{{if ne .Params.footer "white"}} opaque{{end}}">
     <div class="mainContainer">
-        <div class="logoContainer">
+        <div class="logoContainer footer-item">
             <a href="//sourced.tech" class="logo">source{d}</a>
         </div>
-        <ul class="links">
+        <ul class="links footer-item">
             <!-- <li class="sitemap"><a href="#">Sitemap</a></li> //-->
             <li class="github"><a href="https://github.com/src-d" target="_blank">GitHub</a></li>
             <li class="twitter"><a href="https://twitter.com/srcd_" target="_blank">Twitter</a></li>
             <li class="linkedin"><a href="https://www.linkedin.com/company/10284920" target="_blank">Linkedin</a></li>
         </ul>
+        <div class="copyright footer-item">
+            © 2015–{{ .Now.Format "2006" }} Sourced Technologies S.L.
+        </div>
     </div>
 </footer>
 
