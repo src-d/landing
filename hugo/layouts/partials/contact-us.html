@@ -1,10 +1,15 @@
+{{ $email := .Params.contactemail | default .Site.Params.defaultemail }}
 <aside class="fullWidth opaque contact">
     <div class="mainContainer">
         <header>
             <h4>Get in touch with us</h4>
         </header>
         <div>
-            <a class="copyBtn darkButton" href="mailto:hello@sourced.tech" data-clipboard-text="hello@sourced.tech">hello@sourced.tech</a>
+            <a class="copyBtn darkButton"
+               href="mailto:{{ $email }}"
+               data-clipboard-text="{{ $email }}">
+                {{ $email }}
+            </a>
             <br />
 
             {{ if ne .Site.Params.pgpLink "" }}
