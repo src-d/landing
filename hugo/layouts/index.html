@@ -3,7 +3,7 @@
 <body class="homePage">
     {{ partial "header.html" . }}
 
-    <header class="fullWidth mainHeader" 
+    <header class="fullWidth mainHeader"
         style="background-image: url('{{ with .Params.headerImageUrl }}{{ . }}{{ else }}{{ .Site.Params.headerImageUrl }}{{ end }}');"
     >
         <div class="mainContainer">
@@ -13,7 +13,7 @@
                 <p class="link">READ OUR <a href="/manifesto">MANIFESTO</a> AND <a href="http://blog.sourced.tech/post/our-roadmap/" target="_blank">ROADMAP</a></p>
             </div>
         </div>
-    </header> 
+    </header>
 
     <section class="fullWidth" id="weAreWeWant">
         <div class="mainContainer">
