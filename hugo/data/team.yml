@@ -64,12 +64,8 @@ teams:
           position: Data Intelligence Analyst
           linkedin: https://www.linkedin.com/in/fernandaagomes/
     - name: Operations
-      headline: Taking care of the team at source{d} and finding great people to join us
+      headline: Taking care of the team at source{d}
       members:
-        - picture: ula.png
-          name: Ula Iwanska
-          position: Talent Manager
-          linkedin: https://es.linkedin.com/in/ulaiwanska
         - picture: esther.jpg
           name: Esther García
           position: Office Manager
