@@ -2,6 +2,20 @@
     .mainContainer {
         text-align: left;
         display: flex;
+        position: relative;
+
+        &::after {
+          content: " ";
+          background: transparent url(/img/icons/icon-slider-arrow-right-grey.svg) center center no-repeat;
+          width: 2rem;
+          height: 5rem;
+          background-size: contain;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -1rem;
+          margin-top: -2.5rem;
+        }
     }
 
     .article {
@@ -116,6 +130,10 @@
     #weAreWeWant {
         .mainContainer {
             display: block;
+
+            &::after {
+              display: none;
+            }
         }
 
         .article.left,
