@@ -1,6 +1,8 @@
 package github
 
 import (
+	"context"
+
 	"github.com/google/go-github/github"
 	"golang.org/x/oauth2"
 )
@@ -12,6 +14,6 @@ func NewRepoFetcher(token string) RepoFetcher {
 }
 
 type RepoFetcher interface {
-	List(owner string, opts *github.RepositoryListOptions) ([]*github.Repository, *github.Response, error)
-	Get(owner, repo string) (*github.Repository, *github.Response, error)
+	List(ctx context.Context, owner string, opts *github.RepositoryListOptions) ([]*github.Repository, *github.Response, error)
+	Get(ctx context.Context, owner, repo string) (*github.Repository, *github.Response, error)
 }

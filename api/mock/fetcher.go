@@ -1,6 +1,7 @@
 package mock
 
 import (
+	"context"
 	"math"
 
 	"github.com/google/go-github/github"
@@ -35,7 +36,7 @@ func (r *RepoFetcherMock) Reset() {
 	r.stats = make(map[string]int)
 }
 
-func (r *RepoFetcherMock) Get(owner, repo string) (*github.Repository, *github.Response, error) {
+func (r *RepoFetcherMock) Get(_ context.Context, owner, repo string) (*github.Repository, *github.Response, error) {
 	for _, repoName := range r.data[owner] {
 		if repoName == repo {
 			return &github.Repository{Owner: &github.User{Name: &owner}, Name: &repo}, &github.Response{}, nil
@@ -45,7 +46,7 @@ func (r *RepoFetcherMock) Get(owner, repo string) (*github.Repository, *github.R
 	return nil, nil, nil
 }
 
-func (r *RepoFetcherMock) List(owner string, opts *github.RepositoryListOptions) ([]*github.Repository, *github.Response, error) {
+func (r *RepoFetcherMock) List(_ context.Context, owner string, opts *github.RepositoryListOptions) ([]*github.Repository, *github.Response, error) {
 	r.stats[owner]++
 	repos := r.data[owner]
 	lastPage := int(math.Ceil(float64(len(repos) / opts.PerPage)))
