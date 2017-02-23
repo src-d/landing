@@ -1,6 +1,10 @@
 package github
 
-import "github.com/google/go-github/github"
+import (
+	"context"
+
+	"github.com/google/go-github/github"
+)
 
 type Repository struct {
 	URL         string
@@ -48,7 +52,7 @@ func NewRepoProvider(f RepoFetcher) RepoProvider {
 }
 
 func (g *repoProvider) ByOwnerAndName(owner, repo string) (*Repository, error) {
-	r, _, err := g.fetcher.Get(owner, repo)
+	r, _, err := g.fetcher.Get(context.Background(), owner, repo)
 	if err != nil {
 		return nil, err
 	}
@@ -69,7 +73,7 @@ func (g *repoProvider) ByOwner(owner string, allowed []string) ([]*Repository, e
 	}
 
 	for {
-		repos, resp, err := g.fetcher.List(owner, &opts)
+		repos, resp, err := g.fetcher.List(context.Background(), owner, &opts)
 		if err != nil {
 			return nil, err
 		}
