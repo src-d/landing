@@ -1,6 +1,6 @@
 teams:
     - name: Engineering
-      headline: The core of everything we do, from the beginning to end; writing great software
+      headline: The core of everything we do, from the beginning to the end; writing great software
       members:
         - picture: vadim.jpg
           name: Vadim Markovtsev
