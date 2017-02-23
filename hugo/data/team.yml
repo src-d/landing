@@ -78,10 +78,6 @@ teams:
     - name: Developer Relations
       headline: To truly understand developers you have to be a developer yourself
       members:
-        - picture: francesco.png
-          name: Francesco Rizzo
-          position: Lead Developer Relations
-          linkedin: https://www.linkedin.com/in/francesco-rizzo-58558932/
         - picture: georgina.png
           name: Georgina Giannokou
           position: Lead Developer Relations
@@ -98,18 +94,10 @@ teams:
           name: Petros Koklas
           position: Senior Developer Relations
           linkedin: https://linkedin.com/in/petros-koklas-6445576b
-        - picture: daniel.jpg
-          name: Daniel López
-          position: Senior Developer Relations
-          linkedin: https://linkedin.com/in/daniellopezl
         - picture: matei.png
           name: Matei Radu
           position: Developer Relations
           linkedin: https://it.linkedin.com/in/mateibogdanradu
-        - picture: cecile.png
-          name: Cécile Nolan
-          position: Developer Relations Intern
-          linkedin: https://es.linkedin.com/in/c%C3%A9cile-nolan-4a87156b
     - name: Management
       headline: Providing direction, the planning and the leadership to get there
       members:
