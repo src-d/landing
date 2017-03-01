@@ -35,10 +35,10 @@ Deployment:
 
 [Staging landing](http://104.155.102.255:8090/)
 
-1. In [rancher.srcd.host](rancher.srcd.host), click on application landing and then on
+1. In [rancher.srcd.host](http://rancher.srcd.host), click on application landing and then on
    landing-validation service.
 2. Push a new tag with the new RC (make sure it follows the versioning number)
-   and wait for [drone.srcd.host](drone.srcd.host) to finish the build.
+   and wait for [drone.srcd.host](http://drone.srcd.host) to finish the build.
 3. In landing-validation, look for a menu option for upgrading. Then, add the
    new image from quay.io (it is in the drone log or you must just change the
    tag version, first option is safer). Really make sure the URL contains the
