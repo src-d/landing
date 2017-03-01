@@ -22,6 +22,21 @@ teams:
           position: Senior Software Engineer
           team: Data Retrieval Team
           github: https://github.com/ajnavarro
+        - picture: placeholder/new-man.png
+          name: David Paz
+          position: Software Engineering Intern
+          team: Data Retrieval Team
+          github: https://github.com/dpaz
+        - picture: placeholder/new-man.png
+          name: Manuel Carmona
+          position: Software Engineering Intern
+          team: Data Retrieval Team
+          github: https://github.com/mcarmonaa
+        - picture: placeholder/new-man.png
+          name: Juanjo Álvarez
+          position: Senior Software Engineer
+          team: Data Retrieval Team
+          github: https://github.com/juanjux
         - picture: miguel.png
           name: Miguel Molina
           position: Senior Software Engineer
@@ -42,21 +57,6 @@ teams:
           position: DevOps Engineer
           team: Infrastructure Team
           github: https://github.com/smeruelo
-        - picture: placeholder/new-man.png
-          name: David Paz
-          position: Software Engineering Intern
-          team: Data Retrieval Team
-          github: https://github.com/dpaz
-        - picture: placeholder/new-man.png
-          name: Manuel Carmona
-          position: Software Engineering Intern
-          team: Data Retrieval Team
-          github: https://github.com/mcarmonaa
-        - picture: placeholder/new-man.png
-          name: Juanjo Álvarez
-          position: Senior Software Engineer
-          team: Data Retrieval Team
-          github: https://github.com/juanjux
     - name: Product & Data Intelligence
       headline: Translating our vision into amazing products & making smarter decisions with hard data
       members:
