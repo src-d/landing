@@ -27,3 +27,35 @@ To start the landing API, run:
 * `npm run api-run`
 
 visit: [http://localhost:8181](http://localhost:8080)
+
+Deployment:
+==========
+
+### Staging
+
+[Staging landing](http://104.155.102.255:8090/)
+
+1. In [rancher.srcd.host](http://rancher.srcd.host), click on application landing and then on
+   landing-validation service.
+2. Push a new tag with the new RC (make sure it follows the versioning number)
+   and wait for [drone.srcd.host](http://drone.srcd.host) to finish the build.
+3. In landing-validation, look for a menu option for upgrading. Then, add the
+   new image from quay.io (it is in the drone log or you must just change the
+   tag version, first option is safer). Really make sure the URL contains the
+   new tag in it.
+4. Select upgrade. Leave the old container for a back in case we need to
+   rollback.
+5. Be happy, you have deployed it :)
+
+### Production
+
+[Production landing](http://sourced.tech/)
+
+1. Take instructions for staging and `s/landing-validation/landing/`.
+2. Leave the old version for a while longer than in staging.
+3. Be happier, your changes are out there.
+
+### Super-little-suggestions of the day
+
+* Visit the landing (home and careers right away) to assure people is hitting
+  a cached version and don't need to wait.
