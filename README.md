@@ -49,6 +49,8 @@ Deployment:
 
 ### Production
 
+[Production landing](http://sourced.tech/)
+
 1. Take instructions for staging and `s/landing-validation/landing/`.
 2. Leave the old version for a while longer than in staging.
 3. Be happier, your changes are out there.
