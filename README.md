@@ -15,11 +15,8 @@ If you want to build the project separatelly, you can replace the last command w
 
 Development:
 ===
-There is two watchers available to generate all the stuff (that should be run separately):
-* `npm run webpack-watcher`, compiles webpack stuff (css/js) into `/static` folder
-* `npm run hugo-server`, serves the `/public` folder after compiling it (as `npm run hugo-build` does)
-
-visit: [http://localhost:8181](http://localhost:8181)
+1. Run `npm run serve`. This runs everything you need to get the site working.
+2. Visit: [http://localhost:8181](http://localhost:8181)
 
 API:
 ===
