@@ -22,7 +22,7 @@ teams:
           position: Senior Software Engineer
           team: Data Retrieval Team
           github: https://github.com/ajnavarro
-        - picture: placeholder/new-man.png
+        - picture: david-paz.png
           name: David Paz
           position: Software Engineering Intern
           team: Data Retrieval Team
@@ -32,7 +32,7 @@ teams:
           position: Software Engineering Intern
           team: Data Retrieval Team
           github: https://github.com/mcarmonaa
-        - picture: placeholder/new-man.png
+        - picture: juanjo.png
           name: Juanjo Álvarez
           position: Senior Software Engineer
           team: Data Retrieval Team
@@ -64,7 +64,7 @@ teams:
           name: Marcelo Novaes
           position: Product Manager & Data Intelligence Lead
           linkedin: https://linkedin.com/in/mnovaes
-        - picture: placeholder/new-woman.png
+        - picture: fernanda.png
           name: Fernanda Gomes
           position: Data Intelligence Analyst
           linkedin: https://www.linkedin.com/in/fernandaagomes/
