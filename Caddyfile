@@ -4,9 +4,11 @@
 	gzip
 
 	ext .html
-	errors {
-		log stderr
+	errors /tmp/caddy-server-errors.log {
 		404 404.html
+		rotate_size 50
+		rotate_age  90
+		rotate_keep 20
 	}
 
     proxy /api 127.0.0.1:8080 {
