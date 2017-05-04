@@ -7,7 +7,8 @@ import (
 	"github.com/src-d/landing/api/config"
 	"github.com/src-d/landing/api/github"
 	"github.com/src-d/landing/api/services"
-	"gopkg.in/gin-gonic/gin.v1"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Repositories interface {

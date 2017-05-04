@@ -9,8 +9,9 @@ import (
 	"github.com/src-d/landing/api/config"
 	"github.com/src-d/landing/api/github"
 	"github.com/src-d/landing/api/mock"
+
+	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/suite"
-	"gopkg.in/gin-gonic/gin.v1"
 )
 
 type RepositoriesSuite struct {

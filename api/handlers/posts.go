@@ -5,7 +5,8 @@ import (
 	"net/http"
 
 	"github.com/src-d/landing/api/services"
-	"gopkg.in/gin-gonic/gin.v1"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Posts struct {
