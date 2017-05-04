@@ -78,22 +78,10 @@ teams:
     - name: Developer Relations
       headline: To truly understand developers you have to be a developer yourself
       members:
-        - picture: georgina.png
-          name: Georgina Giannokou
-          position: Lead Developer Relations
-          linkedin: https://es.linkedin.com/in/georginagiannoukou
         - picture: anna.png
           name: Anna Tsolakou
           position: Senior Developer Relations
           linkedin: https://www.linkedin.com/in/tsolakouanna
-        - picture: pablo.png
-          name: Pablo Heras
-          position: Senior Developer Relations
-          linkedin: https://es.linkedin.com/in/pabloherascampa/en
-        - picture: matei.png
-          name: Matei Radu
-          position: Developer Relations
-          linkedin: https://it.linkedin.com/in/mateibogdanradu
     - name: Management
       headline: Providing direction, the planning and the leadership to get there
       members:
