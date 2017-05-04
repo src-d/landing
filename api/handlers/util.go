@@ -1,6 +1,6 @@
 package handlers
 
-import "gopkg.in/gin-gonic/gin.v1"
+import "github.com/gin-gonic/gin"
 
 // FIXME: gin won't pass the status with JSON to the cache writer: https://gopkg.in/gin-gonic/gin.v1/pull/625
 func status(c *gin.Context, status int) {

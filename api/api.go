@@ -6,6 +6,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/gin-gonic/gin"
 	"github.com/mvader/gin-cache"
 	"github.com/mvader/gin-cache/persistence"
 	"github.com/src-d/landing/api/config"
@@ -13,7 +14,6 @@ import (
 	"github.com/src-d/landing/api/handlers"
 	"github.com/src-d/landing/api/services"
 	"gopkg.in/gin-contrib/cors.v1"
-	"gopkg.in/gin-gonic/gin.v1"
 	"gopkg.in/inconshreveable/log15.v2"
 )
 

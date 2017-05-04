@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/gin-gonic/gin"
 	"github.com/src-d/landing/api/services"
-	"gopkg.in/gin-gonic/gin.v1"
 )
 
 type Posts struct {
