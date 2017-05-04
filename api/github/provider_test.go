@@ -3,9 +3,9 @@ package github
 import (
 	"testing"
 
-	"github.com/google/go-github/github"
 	"github.com/src-d/landing/api/mock"
 
+	"github.com/google/go-github/github"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 )

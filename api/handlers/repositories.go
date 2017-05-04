@@ -4,10 +4,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/gin-gonic/gin"
 	"github.com/src-d/landing/api/config"
 	"github.com/src-d/landing/api/github"
 	"github.com/src-d/landing/api/services"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Repositories interface {
