@@ -69,6 +69,11 @@ CGO_ENABLED=0
 
 export CGO_ENABLED
 
+## List all receipes
+list:
+	@grep '^##' Makefile -A 1
+
+## Update hugo dependencies
 hugo-dependencies:
 	@if [[ ! -f $(HUGO) ]]; then \
 		$(MKDIR) $(HUGO_PATH); \
@@ -80,13 +85,20 @@ hugo-dependencies:
 		if [ "$(ARCH)" == "linux" ]; then tar -xvzf $${file}; else unzip $${file}; fi; \
 	fi;
 
+## Build hugo project 
 hugo-build: hugo-dependencies
 	$(NPM) install
 	$(NPM) run build
 	$(HUGO) --disableRSS=true --config=hugo.config.yaml
 
+## Run hugo server
 hugo-server:
 	$(HUGO) server -D -w --config=hugo.config.yaml
 
+## Deletes the hugo folder
 hugo-clean:
 	rm -rf $(HUGO_PATH)
+
+## Deletes the hugo folder
+landing-local-serve:
+	$(NPM) run serve
