@@ -1,26 +1,8 @@
 <footer class="fullWidth footer{{if ne .Params.footer "white"}} opaque{{end}}">
     <div class="mainContainer">
         <div class="footerLinkGroup">
-            <div class="footerLinks">
-                <h5>Company</h5>
-                <ul>
-                    <li><a href="http://sourced.tech/" title="About Us">About Us</a></li>
-                    <li><a href="http://sourced.tech/manifesto" title="Manifesto">Manifesto</a></li>
-                    <li><a href="http://blog.sourced.tech/post/our-roadmap" title="Roadmap">Roadmap</a></li>
-                    <li><a href="http://sourced.tech/team" title="Team">Team</a> / <a href="http://sourced.tech/stack" title="Stack">Stack</a></li>
-                    <li><a href="http://sourced.tech/careers" title="Careers">Careers</a></li>
-                </ul>
-            </div>
-
-            <div class="footerLinks">
-                <h5>Community</h5>
-                <ul>
-                    <li><a href="http://talks.sourced.tech" title="Tech Talks">Tech Talks</a></li>
-                    <li><a href="https://github.com/src-d" title="Open Source">Open Source</a></li>
-                    <li><a href="https://data.world/vmarkovtsev/" title="Open Data">Open Data</a></li>
-                    <li><a href="http://blog.sourced.tech" title="Blog">Blog</a></li>
-                </ul>
-            </div>
+            {{ partial "footer_links.html" (dict "title" "Company" "items" $.Site.Data.footer.company) }}
+            {{ partial "footer_links.html" (dict "title" "Community" "items" $.Site.Data.footer.community) }}
         </div>
 
         <div class="footerCopyright">
@@ -29,24 +11,21 @@
         </div>
 
         <div class="footerLinkGroup rightLinks">
-            <div class="footerLinks">
-                <h5>Networks</h5>
-                <ul>
-                    <li><a href="https://twitter.com/srcd_" https://twitter.com/srcd_title="Twitter">Twitter</a></li>
-                    <li><a href="https://github.com/src-d" title="GitHub">GitHub</a></li>
-                    <li><a href="https://medium.com/source-d" title="Medium">Medium</a></li>
-                    <li><a href="https://angel.co/source-d" title="AngelList">AngelList</a></li>
-                    <li><a href="https://www.linkedin.com/company-beta/10284920/" title="LinkedIn">LinkedIn</a></li>
-                </ul>
-            </div>
+            {{ partial "footer_links.html" (dict "title" "Networks" "items" $.Site.Data.footer.networks) }}
 
             <div class="footerLinks">
                 <h5>Contact</h5>
-                <p>Claudio Coello 16, 2ºIzq</p>
-                <p>28001 &mdash; Madrid, Spain</p>
+                {{ range $addr := $.Site.Data.footer.contact.address }}
+                    <p>{{ $addr }}</p>
+                {{ end }}
                 <ul>
-                    <li><a href="mailto:hello@sourced.tech" title="hello@sourced.tech">hello@sourced.tech</a></li>
-                    <li><a href="mailto:talent@sourced.tech" title="talent@sourced.tech">talent@sourced.tech</a></li>
+                    {{ range $m := $.Site.Data.footer.contact.mails }}
+                        <li>
+                            <a href="mailto:{{ $m }}" title="Contact {{ $m }}">
+                                {{ $m }}
+                            </a>
+                        </li>
+                    {{ end }}
                 </ul>
             </div>
         </div>

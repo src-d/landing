@@ -1,0 +1,22 @@
+<div class="footerLinks">
+    <h5>{{ $.title }}</h5>
+    <ul>
+        {{ range $item := $.items }}
+            {{ if $item.multi }}
+                <li>
+                    {{ range $it := first 1 $item.items }}
+                        <a href="{{ $it.url }}" title="{{ $it.title }}">{{ $it.title }}</a>
+                    {{ end }}
+                    {{ range $it := after 1 $item.items }}
+                        / 
+                        <a href="{{ $it.url }}" title="{{ $it.title }}">{{ $it.title }}</a>
+                    {{ end }}
+                </li>
+            {{ else }}
+                <li>
+                    <a href="{{ $item.url }}" title="{{ $item.title }}">{{ $item.title }}</a>
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</div>
