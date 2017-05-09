@@ -4,86 +4,74 @@ $footeHPadding: 96px;
 }
 .footer > .mainContainer {
     overflow: hidden;
+    padding-top: 5em;
+    padding-bottom: 5em;
     border-top: 1px solid $lineColorBlueLight;
+    display: flex;
+    align-items: center;
 
-    .footer-item {
-        vertical-align: bottom;
+    .footerLinkGroup, 
+    .footerCopyright {
+      flex-grow: 1;
     }
 
-    .logoContainer {
+    .footerLinkGroup {
+      vertical-align: top;
+      float: left;
+      width: 25%;
+      font-size: .75em;
+      text-align: left;
+      position: relative;
+
+      .footerLinks {
+        padding: .5em;
+        vertical-align: top;
+        width: 60%;
         display: inline-block;
-        float: left;
-        margin-top: -3px; // Make it look align with the rest of the footer.
-    }
 
-    .copyright {
-        @include textSmall(condensed);
-        display: inline-block;
-        margin: inherit auto;
-    }
+        h5 {
+          font-weight: bold;
+          font-size: 1.05em;
+          padding-bottom: .5em;
+        }
 
-    .logo {
-        @include iconOnly(120px, 29px, '/img/logos/logo-footer.svg');
-        margin-left: $footeHPadding;
-    }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
 
-    .links {
+      .footerLinks + .footerLinks {
+        width: 30%;
+      }
+
+      &.rightLinks {
+        text-align: right;
         float: right;
-        margin-right: $footeHPadding;
-        color: $textColorCorporative;
 
-        & > li {
-            display: inline-block;
+        .footerLinks {
+          width: 25%;
         }
 
-        .sitemap {
-            @include smallLink(noUnderline emphasisDark);
+        .footerLinks + .footerLinks {
+          width: 60%;
         }
-
-        .github > a {
-            @include fontIcon('github', 20px, 20px, 20px);
-            margin-left: 25px;
-            margin-right: 18px;
-        }
-
-        .twitter > a {
-            @include fontIcon('twitter', 20px, 20px, 20px);
-            margin-right: 18px;
-        }
-
-        .linkedin > a {
-            @include fontIcon('linkedin', 20px, 20px, 20px);
-        }
-    }
-}
-
-.fullWidth.contact > .mainContainer{
-    padding-bottom: 45px;
-
-    .pgpKey {
-        @include textSmall(emphasisDark);
-        @include icon(16px, 24px, 7px, '/img/icons/key.svg');
-        margin-bottom: 45px;
-    }
-}
-
-@media only screen and (max-width: $wideScreenBreakpoint) {
-    .footer > .mainContainer {
-        .logoContainer {
-            .logo {
-                margin: 0;
-                width: 90px;
-                height: 24px;
-                background-size: contain;
-            }
-        }
-
-        ul.links {
-            margin: 0;
-        }
+      }
     }
 
-    .fullWidth.contact > .mainContainer .copyBtn {
-        font-size: 1.1em;
+    .footerCopyright {
+      float: left;
+      width: 33%;
+      text-align: center;
+      font-size: .9em;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .logo {
+          @include iconOnly(120px, 29px, '/img/logos/logo-blue.svg');
+          opacity: .6;
+          margin-top: 2em;
+          margin-bottom: 4em;
+      }
     }
 }

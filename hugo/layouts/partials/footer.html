@@ -1,16 +1,54 @@
 <footer class="fullWidth footer{{if ne .Params.footer "white"}} opaque{{end}}">
     <div class="mainContainer">
-        <div class="logoContainer footer-item">
-            <a href="//sourced.tech" class="logo">source{d}</a>
+        <div class="footerLinkGroup">
+            <div class="footerLinks">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="http://sourced.tech/" title="About Us">About Us</a></li>
+                    <li><a href="http://sourced.tech/manifesto" title="Manifesto">Manifesto</a></li>
+                    <li><a href="http://blog.sourced.tech/post/our-roadmap" title="Roadmap">Roadmap</a></li>
+                    <li><a href="http://sourced.tech/team" title="Team">Team</a> / <a href="http://sourced.tech/stack" title="Stack">Stack</a></li>
+                    <li><a href="http://sourced.tech/careers" title="Careers">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footerLinks">
+                <h5>Community</h5>
+                <ul>
+                    <li><a href="http://talks.sourced.tech" title="Tech Talks">Tech Talks</a></li>
+                    <li><a href="https://github.com/src-d" title="Open Source">Open Source</a></li>
+                    <li><a href="https://data.world/vmarkovtsev/" title="Open Data">Open Data</a></li>
+                    <li><a href="http://blog.sourced.tech" title="Blog">Blog</a></li>
+                </ul>
+            </div>
         </div>
-        <ul class="links footer-item">
-            <!-- <li class="sitemap"><a href="#">Sitemap</a></li> //-->
-            <li class="github"><a href="https://github.com/src-d" target="_blank">GitHub</a></li>
-            <li class="twitter"><a href="https://twitter.com/srcd_" target="_blank">Twitter</a></li>
-            <li class="linkedin"><a href="https://www.linkedin.com/company/10284920" target="_blank">Linkedin</a></li>
-        </ul>
-        <div class="copyright footer-item">
-            © 2015–{{ .Now.Format "2006" }} Sourced Technologies S.L.
+
+        <div class="footerCopyright">
+            <a href="//sourced.tech" class="logo">source{d}</a>
+            <p>&copy; 2015-{{ .Now.Format "2006" }} Sourced Technologies S.L.</p>
+        </div>
+
+        <div class="footerLinkGroup rightLinks">
+            <div class="footerLinks">
+                <h5>Networks</h5>
+                <ul>
+                    <li><a href="https://twitter.com/srcd_" https://twitter.com/srcd_title="Twitter">Twitter</a></li>
+                    <li><a href="https://github.com/src-d" title="GitHub">GitHub</a></li>
+                    <li><a href="https://medium.com/source-d" title="Medium">Medium</a></li>
+                    <li><a href="https://angel.co/source-d" title="AngelList">AngelList</a></li>
+                    <li><a href="https://www.linkedin.com/company-beta/10284920/" title="LinkedIn">LinkedIn</a></li>
+                </ul>
+            </div>
+
+            <div class="footerLinks">
+                <h5>Contact</h5>
+                <p>Claudio Coello 16, 2ºIzq</p>
+                <p>28001 &mdash; Madrid, Spain</p>
+                <ul>
+                    <li><a href="mailto:hello@sourced.tech" title="hello@sourced.tech">hello@sourced.tech</a></li>
+                    <li><a href="mailto:talent@sourced.tech" title="talent@sourced.tech">talent@sourced.tech</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </footer>
