@@ -3,6 +3,7 @@ import 'isomorphic-fetch'
 import ReactDOM from 'react-dom'
 import React from 'react'
 
+import './highlight.pack'
 import setupClipboard from './clipboard'
 import RepositoriesContainer from './components/Repositories'
 import BlogPostsContainer from './components/Posts'
@@ -20,6 +21,8 @@ function renderComponent(component, id) {
 window.addEventListener('DOMContentLoaded', _ => {
     setupMenu()
     setupStickyHeader()
+    setupSlider()
+    hljs.initHighlightingOnLoad()
     renderComponent(RepositoriesContainer, 'ourOpenSourceContainer')
     renderComponent(BlogPostsContainer, 'ourPostsContainer')
     renderComponent(PositionsMain, 'offersPanel')
@@ -50,4 +53,13 @@ function checkTopbarOpacity(topBar, opaqueAtOffset) {
     } else {
         topBar.classList.remove('opaque')
     }
+}
+
+function setupSlider() {
+  $('.projects').slick({
+    infinite: true,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 8000,
+  });
 }

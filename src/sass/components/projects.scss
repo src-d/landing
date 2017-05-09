@@ -1,0 +1,72 @@
+.projects {
+  text-align: left;
+
+  .hljs {
+    background-color: #203242;
+  }
+
+  .project {
+    margin: 0 1em;
+
+    .projectCode {
+      width: 48%;
+      float: left;
+
+      code {
+        font-size: .8em;
+        line-height: 1.4em;
+        font-family: 'Hack', monospace;
+        border-radius: 3px;
+      }
+    }
+
+    .projectInfo {
+      font-size: .9em;
+      width: 48%;
+      float: right;
+
+      ul {
+        margin-left: 1em;
+        list-style: disc;
+        line-height: 1.8em;
+        padding-top: 1em;
+      }
+
+      .projectLinks {
+        margin-top: 1em;
+        text-align: center;
+        a {
+          font-weight: bold;
+        }
+
+        a + a {
+          margin-left: 2em;
+        }
+      }
+    }
+
+    &:after {
+      content: " ";
+      clear: both;
+      display: block;
+    }
+  }
+
+  .slick-dots li button:before {
+    font-size: 10px;
+  }
+  
+  .slick-prev:before, .slick-next:before {
+    color: rgba(0,0,0,.5);
+  }
+}
+
+@media only screen and (max-width: $mobileBreakpoint) {
+  .projects .project {
+    .projectInfo,
+    .projectCode {
+      float: none;
+      width: 100%;
+    }
+  }
+}

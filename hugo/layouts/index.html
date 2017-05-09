@@ -15,41 +15,11 @@
         </div>
     </header>
 
-    <section class="fullWidth" id="weAreWeWant">
+    <section class="fullWidth" id="projects">
         <div class="mainContainer">
-            <article class="article left">
-                <header>
-                    <h2>Where we are</h2>
-                </header>
-                <ul>
-                    <li><span>Implemented most git features in our open source go-git.</span></li>
-                    <li><span>Fetched and analyzed every git repository on GitHub, BitBucket, self-hosted cgit</span></li>
-                    <li><span>Built the world's fastest WeightedMinHash and k-means clustering implementations.</span></li>
-                    <li><span>Trained neural networks to extract relevant features from code.</span></li>
-                    <li><span>Show that RNNs with memory can learn from projects, and its limitations.</span></li>
-                    <li><span>Trained neural networks on natural language use.</span></li>
-                </ul>
-            </article>
-            <article class="article right">
-                <header>
-                    <h2>What is next</h2>
-                </header>
-                <ul>
-                    <li><span>Reaching full feature parity on go-git with libgit2.</span></li>
-                    <li><span>Fetching and processing any change to public git repos close to real-time.</span></span></li>
-                    <li><span>Extending TensorFlow with new loss functions and apply to code style.</span></li>
-                    <li><span>Finalizing our first trained models on all 6.6M developers.</span></li>
-                    <li><span>Moving infrastructure to 1.4PB storage, GPU-running bare metal servers.</span></li>
-                    <li><span>Launching a platform where developers find the right teams and projects to join.</span></li>
-                </ul>
-            </article>
+            {{ partial "projects.html" . }}
         </div>
     </section>
-
-
-    <section id="ourOpenSourceContainer"></section>
-
-    <aside id="ourPostsContainer"></aside>
 
     {{ partial "contact-us.html" . }}
     {{ partial "footer.html" . }}
