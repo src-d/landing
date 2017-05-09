@@ -6,7 +6,7 @@ projects:
       - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
       - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
       - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-    code: projects/lipsum.go
+    code: lipsum.go
     docs: https://godoc.org/gopkg.in/src-d/go-kallax.v1
     usage: https://github.com/src-d/go-kallax
   - title: Lorem ipsum
@@ -16,7 +16,7 @@ projects:
       - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
       - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
       - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-    code: projects/lipsum.go
+    code: lipsum.go
     docs: https://godoc.org/gopkg.in/src-d/go-kallax.v1
     usage: https://github.com/src-d/go-kallax
   - title: Lorem ipsum
@@ -26,6 +26,6 @@ projects:
       - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
       - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
       - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-    code: projects/lipsum.go
+    code: lipsum.go
     docs: https://godoc.org/gopkg.in/src-d/go-kallax.v1
     usage: https://github.com/src-d/go-kallax
