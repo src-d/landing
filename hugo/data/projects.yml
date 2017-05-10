@@ -1,0 +1,34 @@
+projects:
+  - title: Lorem ipsum
+    desc: Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+    bulletpoints:
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+    code: lipsum.go
+    language: go
+    docs: https://godoc.org/gopkg.in/src-d/go-kallax.v1
+    usage: https://github.com/src-d/go-kallax
+  - title: Lorem ipsum
+    desc: Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+    bulletpoints:
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+    code: lipsum.go
+    language: go
+    docs: https://godoc.org/gopkg.in/src-d/go-kallax.v1
+    usage: https://github.com/src-d/go-kallax
+  - title: Lorem ipsum
+    desc: Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+    bulletpoints:
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
+    code: lipsum.go
+    language: go
+    docs: https://godoc.org/gopkg.in/src-d/go-kallax.v1
+    usage: https://github.com/src-d/go-kallax
