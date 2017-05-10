@@ -12,9 +12,10 @@
         float: right;
         width: 28%;
 
-        h2 {
+        .title {
             text-align: left;
             line-height: 1.5em;
+            margin-top: -.3em;
         }
 
         p {
@@ -39,24 +40,27 @@
 
             img {
                 max-width: 100%;
+                order: 2;
             }
 
             p {
-                padding: 1em 0;
+                order: 1;
+                margin: 0 0 1em;
             }
 
             & + .testimonial {
-                margin-left: 1.5em;
+                margin-left: 1em;
             }
 
-            &:nth-child(odd) {
+            &:nth-child(even) {
                 p {
-                    order: 1;
-                    padding-top: 0;
+                    order: 2;
+                    margin-top: 1em;
+                    margin-bottom: 1em;
                 }
 
                 img {
-                    order: 2;
+                    order: 1;
                 }
             }
         }
