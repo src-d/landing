@@ -2,8 +2,8 @@
     <h5>{{ $.title }}</h5>
     <ul>
         {{ range $item := $.items }}
-            {{ if $item.multi }}
-                <li>
+            <li>
+                {{ if $item.multi }}
                     {{ range $it := first 1 $item.items }}
                         <a href="{{ $it.url }}" title="{{ $it.title }}">{{ $it.title }}</a>
                     {{ end }}
@@ -11,12 +11,10 @@
                         / 
                         <a href="{{ $it.url }}" title="{{ $it.title }}">{{ $it.title }}</a>
                     {{ end }}
-                </li>
-            {{ else }}
-                <li>
+                {{ else }}
                     <a href="{{ $item.url }}" title="{{ $item.title }}">{{ $item.title }}</a>
-                </li>
-            {{ end }}
+                {{ end }}
+            </li>
         {{ end }}
     </ul>
 </div>
