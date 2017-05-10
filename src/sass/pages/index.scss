@@ -93,6 +93,25 @@
                     padding: 15px;
                     text-align: center;
                     border: 0;
+
+                    .joinUs {
+                        margin-left: 10px;
+                    }
+
+                    .wait {
+                        display: none;
+                    }
+
+                    &.loading {
+                        .fa,
+                        .joinUs {
+                            display: none;
+                        }
+
+                        .wait {
+                            display: block;
+                        }
+                    }
                 }
 
                 .error {

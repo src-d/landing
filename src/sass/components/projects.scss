@@ -1,12 +1,16 @@
 .projects {
   text-align: left;
 
+  @media only screen and (max-width: $mobileBreakpoint) {
+    margin-top: 60px;
+  }
+
   .hljs {
     background-color: #203242;
   }
 
   .project {
-    margin: 0 1em;
+    margin: 0 1em 50px;
 
     .projectCode {
       width: 48%;
@@ -50,6 +54,10 @@
       clear: both;
       display: block;
     }
+  }
+
+  .slick-dots {
+    bottom: 20px;
   }
 
   .slick-dots li button:before {

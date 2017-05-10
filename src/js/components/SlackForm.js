@@ -9,6 +9,7 @@ export default class SlackForm extends React.Component {
     super(props)
     this.state = {
       title: '',
+      endpoint: '',
       email: '',
       loading: false,
     };
@@ -62,16 +63,11 @@ export default class SlackForm extends React.Component {
           : null}
 
         <button type='submit' 
-          className='send' 
+          className={this.state.loading ? 'send loading' : 'send'}
           disabled={this.state.loading || !emailRegex.test(this.state.email)}>
-          {
-            this.state.loading
-              ? 'Please wait...'
-              : [
-                <i className='fa fa-slack fa-6' aria-hidden={true}></i>,
-                'Join us on Slack',
-              ]
-          }
+          <i className='fa fa-slack fa-6' aria-hidden={true}></i>
+          <span className='joinUs'>Join us on Slack</span>
+          <span className='wait'>Please wait...</span>
         </button>
       </form>
     )
