@@ -13,8 +13,8 @@ import (
 
 	"github.com/erizocosmico/gin-cache"
 	"github.com/erizocosmico/gin-cache/persistence"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"gopkg.in/gin-contrib/cors.v1"
 	"gopkg.in/inconshreveable/log15.v2"
 )
 
@@ -32,7 +32,7 @@ func main() {
 	r.Use(cors.New(cors.Config{
 		AllowAllOrigins: true,
 		AllowHeaders:    []string{"Content-Type"},
-		AllowMethods:    []string{"GET"},
+		AllowMethods:    []string{"GET", "POST"},
 	}))
 
 	provider := github.NewRepoProvider(github.NewRepoFetcher(conf.GithubToken))
@@ -51,6 +51,7 @@ func main() {
 		*ttl,
 		handlers.NewPositions(services.NewPositionsProvider(conf)).Get,
 	))
+	r.POST("/invite", handlers.SlackInvite(conf))
 
 	r.NoRoute(func(c *gin.Context) {
 		c.AbortWithStatus(http.StatusNotFound)

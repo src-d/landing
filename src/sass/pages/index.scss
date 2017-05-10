@@ -79,7 +79,7 @@
 
                 .email,
                 .send {
-                    @include familyWeight($fontCode, 400);
+                    @include familyWeight($fontText, 400);
                     width: 100%;
                     font-size: $textSizeMain;
                     padding: 10px;
@@ -93,6 +93,15 @@
                     padding: 15px;
                     text-align: center;
                     border: 0;
+                }
+
+                .error {
+                  font-size: .8em;
+                  padding: .5em;
+                  margin-top: 1.5em;
+                  border-radius: 3px;
+                  background: $bgErrRed;
+                  color: white;
                 }
             }
 
