@@ -21,7 +21,7 @@
     </div>
   </section>
 
-  {{ $footerCtx := dict "Params" (dict "footer" "white") }}
+  {{ $footerCtx := dict "Params" (dict "footer" "white") "Site" $.Site }}
   {{ partial "footer.html" $footerCtx }}
 </body>
 </html>
