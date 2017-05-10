@@ -1,0 +1,23 @@
+{{ $testimonials := $.Site.Data.testimonials }}
+
+<div class="testimonials mainContainer">
+    <div class="testimonialsInfo">
+        <h2>{{ $testimonials.title }}</h2>
+        <p>{{ $testimonials.desc }}</p>
+
+        <div class="testimonialsLinks">
+            <a href="{{ $testimonials.link.url }}" title="{{ $testimonials.link.title }}">
+                {{ $testimonials.link.title }} &rsaquo;
+            </a>
+        </div>
+    </div>
+
+    <div class="testimonialsContent">
+        {{ range $t := $testimonials.testimonials }}
+            <div class="testimonial">
+                <img src="{{ $t.image }}" alt="{{ $t.title }}" />
+                <p>{{ $t.text }}</p>
+            </div>
+        {{ end }}
+    </div>
+</div>
