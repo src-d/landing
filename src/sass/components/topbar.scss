@@ -2,13 +2,15 @@
     position: fixed;
     padding: 0em 0;
     background-color: transparent;
-    height: 56px;
+    height: $topbarHeight;
     display: flex;
     align-items: center;
     justify-content: center;
 
     .logo {
         @include iconOnly(120px, 29px, '/img/logos/logo-white.svg');
+        position: absolute;
+        left: 12px;
     }
 
     &:before {
@@ -39,8 +41,10 @@
     }
 
     .wrap {
-        width: 960px;
+        width: $pageWidth;
         margin: 0 auto;
+        position: relative;
+        padding: 0 12px;
     }
 
     .toggle {

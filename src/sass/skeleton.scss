@@ -80,6 +80,15 @@ b {
     margin: 15px auto 25px;
 }
 
+.links {
+    margin-top: 20px;
+
+    a,
+    .link {
+        display: block;
+    }
+}
+
 @media only screen and (max-width: $wideScreenBreakpoint) {
 	.mainContainer {
 		width: 90%;

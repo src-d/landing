@@ -1,4 +1,5 @@
 {{ partial "head.html" . }}
+{{ $home := $.Site.Data.home }}
 
 <body class="homePage">
     {{ partial "header.html" . }}
@@ -7,20 +8,40 @@
         style="background-image: url('{{ with .Params.headerImageUrl }}{{ . }}{{ else }}{{ .Site.Params.headerImageUrl }}{{ end }}');"
     >
         <div class="mainContainer">
-            <div class="description">
-                <h1 class="title">Building the first <strong>AI</strong> that <strong>understands code</strong></h1>
-                <p>We apply neural networks to source code from over 17 million software repositories and 6.6 million developers worldwide</p>
-                <p class="link">READ OUR <a href="/manifesto">MANIFESTO</a> AND <a href="http://blog.sourced.tech/post/our-roadmap/" target="_blank">ROADMAP</a></p>
+            <div class="content description">
+                <article class="mainTitle">
+                    <h1 class="title">{{ $home.hero.title }}</h1>
+                    <p class="subtitle">{{ $home.hero.desc }}</p>
+                    <p class="links">
+                        {{ range $link := $home.hero.links }}
+                            {{ if ne $link.url "#" }}
+                                <a href="{{ $link.url }}" {{ if $link.newTab }}target="_blank"{{ end }}>{{ $link.text }}</a>
+                            {{ end }}
+                        {{ end }}
+                    </p>
+                </article>
+                <aside class="slackForm" id="joinUsOnSlack">
+                    <h3 class="title">Want to join the revolution? Join us on Slack today</h3>
+                    <input type="email" name="email" id="email" placeholder="your@email.com" class="email" />
+                    <submit class="send">
+                        <i class="fa fa-slack fa-6" aria-hidden="true"></i>
+                        Join us on Slack
+                    </submit>
+                </aside>
             </div>
         </div>
     </header>
 
+    <section class="fullWidth" id="ourStack">
+        {{ partial "our-stack.html" . }}
+    </section>
+
     <section class="fullWidth" id="projects">
-        <div class="mainContainer">
+         <div class="mainContainer">
             {{ partial "projects.html" . }}
         </div>
     </section>
-    
+
     <section class="fullWidth" id="testimonials">
         {{ partial "testimonials.html" . }}
     </section>
