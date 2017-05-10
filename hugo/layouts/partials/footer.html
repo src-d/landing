@@ -1,5 +1,9 @@
 <footer class="fullWidth footer{{if ne .Params.footer "white"}} opaque{{end}}">
     <div class="mainContainer">
+        <div class="footerCopyright mobile">
+            <a href="/" title="source{d}" class="logo">source{d}</a>
+        </div>
+
         <div class="footerLinkGroup">
             {{ partial "footer_links.html" (dict "title" "Company" "items" $.Site.Data.footer.company) }}
             {{ partial "footer_links.html" (dict "title" "Community" "items" $.Site.Data.footer.community) }}
@@ -28,6 +32,10 @@
                     {{ end }}
                 </ul>
             </div>
+        </div>
+
+        <div class="footerCopyright mobile">
+            <p>&copy; 2015-{{ .Now.Format "2006" }} Sourced Technologies S.L.</p>
         </div>
     </div>
 </footer>
