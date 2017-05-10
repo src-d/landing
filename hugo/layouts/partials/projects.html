@@ -18,7 +18,7 @@
 
             <div class="projectCode">
                 <pre>
-                    <code class="go">{{ readFile (print "hugo/data/code/" $p.code) }}</code>
+                    <code class="{{ $p.language }}">{{ readFile (print "hugo/data/code/" $p.code) }}</code>
                 </pre>
             </div>
         </div>
