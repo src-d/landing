@@ -1,0 +1,42 @@
+company:
+  - title: About Us
+    url: http://sourced.tech
+  - title: Manifesto
+    url: http://sourced.tech/manifesto
+  - title: Roadmap
+    url: http://blog.sourced.tech/post/our-roadmap
+  - multi: true
+    items:
+      - title: Team
+        url: http://sourced.tech/team
+      - title: Stack
+        url: http://sourced.tech/stack
+  - title: Careers
+    url: http://sourced.tech/careers
+community:
+  - title: Tech Talks 
+    url: http://talks.sourced.tech
+  - title: Open Source
+    url: https://github.com/src-d
+  - title: Open Data
+    url: https://data.world/source-d
+  - title: Blog
+    url: http://blog.sourced.tech
+networks:
+  - title: Twitter
+    url: https://twitter.com/srcd_
+  - title: GitHub
+    url: https://github.com/src-d
+  - title: Medium
+    url: https://medium.com/source-d
+  - title: AngelList
+    url: https://angel.co/source-d
+  - title: LinkedIn
+    url: https://www.linkedin.com/company-beta/10284920/
+contact:
+  address:
+    - "Claudio Coello 16, 2º Izq"
+    - "28001 - Madrid, Spain"
+  mails:
+    - hello@sourced.tech
+    - talent@sourced.tech
