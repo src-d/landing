@@ -117,12 +117,6 @@
     .toggle.open span {
         background-color: white !important
     }
-
-    .menu {
-        float: right;
-        padding: 0;
-        margin: 0;
-    }
 }
 
 .topbar {
@@ -135,10 +129,6 @@
 
 .menu-toggle {
     display: none;
-}
-
-.topbar.opaque .menu li {
-    color: $textColorEmphasisDark;
 }
 
 @media only screen and (max-width: $mobileBreakpoint) {

@@ -1,5 +1,84 @@
-@media only screen and (max-width: $mobileBreakpoint) {
+.topbar {
+    &.opaque .menu li {
+        color: $textColorEmphasisDark;
+
+        &:nth-child(n+3):before {
+            border-left: 1px solid $corporativeColor;
+        }
+    }
+
     .menu {
+        visibility: visible;
+        opacity: 1;
+        float: right;
+
+        ul li {
+            @include smallLink(noUnderline);
+            position: relative;
+            float: left;
+            padding: 0 8px;
+            margin: 0;
+            color: $textColorWhite;
+            line-height: 29px;
+
+            &:nth-child(n+2):before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                display: inline-block;
+                width: 1px;
+                height: 13px;
+                border-left: 1px solid $textColorWhite;
+            }
+
+            &:last-child {
+                margin-right: 0;
+
+                a {
+                    padding-right: 0;
+                }
+            }
+
+            &.active:after {
+                display: block;
+                height: 2px;
+                content: " ";
+                background-color: $activeColor;
+                position: absolute;
+                width: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &.mobile {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .topbar .menu ul li {
+        &:first-child {
+            display: none;
+        }
+
+        &:nth-child(2):before {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .topbar .menu ul li {
+        padding: 0 5px;
+    }
+}
+
+@media only screen and (max-width: $mobileBreakpoint) {
+    .topbar .menu {
         visibility: hidden;
         opacity: 0;
         background: rgba(68, 83, 109, 0.94);
@@ -16,8 +95,9 @@
             margin-top: 7em;
 
             li {
+                float: none;
                 display: block;
-                margin: 1em;
+                margin: 1.5em;
                 font-weight: normal;
                 font-size: 1.8em;
                 letter-spacing: 0.8px;
@@ -31,13 +111,23 @@
                     background-color: $activeColor;
                     position: absolute;
                     width: 50px;
-                    margin-left: -25px;
                     bottom: -10px;
-                    left: 50%;
                 }
 
+                &:first-child {
+                    display: block;
+                }
+
+                &:nth-child(n+2):before {
+                    display: none;
+                }
+
+                &:last-child {
+                    margin-right: 1.5em;
+                }
+                
                 a {
-                    color: white;
+                    color: $textColorWhite;
                     text-decoration: none;
                 }
             }
@@ -46,37 +136,6 @@
         &.open {
             opacity: 1;
             visibility: visible;
-        }
-    }
-}
-
-@media only screen and (min-width: $mobileBreakpoint + 1) {
-    .menu {
-        visibility: visible;
-        opacity: 1;
-
-        ul li {
-            @include smallLink(noUnderline);
-            color: white;
-            margin: 0 25px;
-            line-height: 29px;
-            float: left;
-            position: relative;
-
-            &.active:after {
-              display: block;
-              height: 2px;
-              content: " ";
-              background-color: $activeColor;
-              position: absolute;
-              width: 30px;
-              margin-left: -15px;
-              left: 50%;
-            }
-
-            &.mobile {
-                display: none;
-            }
         }
     }
 }
