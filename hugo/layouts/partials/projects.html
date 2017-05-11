@@ -17,6 +17,16 @@
             </div>
 
             <div class="projectCode">
+                <div class="projectCodeHeader">
+                    <div class="projectCodeHeaderActions">
+                        <span class="red"></span>
+                        <span class="green"></span>
+                        <span class="yellow"></span>
+                    </div>
+
+                    <h3>{{ $p.code }}</h3>
+                </div>
+
                 <pre>
                     <code class="{{ $p.language }}">{{ readFile (print "hugo/data/code/" $p.code) }}</code>
                 </pre>

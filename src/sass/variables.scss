@@ -63,6 +63,10 @@ $fontTitle: 'Lato', sans-serif;
 $fontText: Roboto, sans-serif;
 $fontCode: hack, sans-serif;
 
+$codeWindowYellow: #e9cc59;
+$codeWindowRed: $bgErrRed;
+$codeWindowGreen: #77bf42;
+
 $borderRadius: 3px;
 $shadowOff: 0 7px 15px 2px transparentize($lineColorBorder, 1);
 $shadow: 0 7px 15px 2px transparentize($lineColorBorder, 1-0.43);
