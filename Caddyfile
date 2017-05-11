@@ -19,7 +19,7 @@
         header_upstream X-Forwarded-Proto {scheme}
     }
 
-    proxy /slackin 127.0.0.1:3000 {
+    proxy /slackin slackin:3000 {
         without /slackin
         header_upstream Host {host}
         header_upstream X-Real-IP {remote}
