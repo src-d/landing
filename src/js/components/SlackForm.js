@@ -24,16 +24,18 @@ export default class SlackForm extends React.Component {
 
   invite(e) {
     e.preventDefault()
-    this.setState({ loading: true, errMessage: '' })
+    this.setState({ loading: true, success: false, errMessage: '' })
 
     inviteToSlack(this.state.endpoint, this.state.email)
-      .then(({ redirectUrl, msg }) => {
-        if (redirectUrl) {
-          window.location.href = redirectUrl;
+      .then(resp => {
+        if (resp.status === 200) {
+          this.setState({ loading: false, email: '', success: true })
         } else {
-          this.setState({
-            loading: false,
-            errMessage: msg || 'Server error',
+          resp.json().then(resp => {
+            this.setState({
+              loading: false,
+              errMessage: resp.msg || 'Server error',
+            })
           })
         }
       })
@@ -61,6 +63,10 @@ export default class SlackForm extends React.Component {
         {this.state.errMessage 
           ? <div className='error'>{this.state.errMessage}</div> 
           : null}
+
+        {this.state.success 
+            ? <div className='success'>Success! Check your email!</div>
+            : null}
 
         <button type='submit' 
           className={this.state.loading ? 'send loading' : 'send'}
