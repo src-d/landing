@@ -2,7 +2,7 @@
 
 <div class="testimonials mainContainer">
     <div class="testimonialsInfo">
-        <h2>{{ $testimonials.title }}</h2>
+        <h2 class="title">{{ $testimonials.title }}</h2>
         <p>{{ $testimonials.desc }}</p>
 
         <div class="testimonialsLinks">
@@ -15,8 +15,8 @@
     <div class="testimonialsContent">
         {{ range $t := $testimonials.testimonials }}
             <div class="testimonial">
-                <img src="{{ $t.image }}" alt="{{ $t.title }}" />
                 <p>{{ $t.text }}</p>
+                <img src="{{ $t.image }}" alt="{{ $t.title }}" />
             </div>
         {{ end }}
     </div>

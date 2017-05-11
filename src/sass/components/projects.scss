@@ -1,3 +1,6 @@
+$codePanelHeight: 550px;
+$codePanelHeightMobile: 330px;
+
 .projects {
   text-align: left;
 
@@ -17,10 +20,12 @@
       float: left;
 
       code {
+        padding: 1em;
         font-size: .8em;
         line-height: 1.4em;
         font-family: 'Hack', monospace;
         border-radius: 3px;
+        height: $codePanelHeight;
       }
     }
 
@@ -63,9 +68,26 @@
   .slick-dots li button:before {
     font-size: 10px;
   }
-  
-  .slick-prev:before, .slick-next:before {
+
+  .slick-prev,
+  .slick-next {
+    top: $codePanelHeight / 2 + 25px;
+    height: 60px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
     color: rgba(0,0,0,.5);
+    font-size: 60px;
+    font-family: FontAwesome;
+  }
+
+  .slick-prev:before{
+    content: '\f104';
+  }
+
+  .slick-next:before {
+    content: '\f105';
   }
 }
 
@@ -75,6 +97,14 @@
     .projectCode {
       float: none;
       width: 100%;
+
+      h2 {
+        margin-bottom: 30px;
+      }
+
+      code {
+        height: $codePanelHeightMobile;
+      }
     }
   }
 }

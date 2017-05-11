@@ -90,9 +90,10 @@ b {
 }
 
 @media only screen and (max-width: $wideScreenBreakpoint) {
-	.mainContainer {
-		width: 90%;
-	}
+    .mainContainer,
+    body .topbar > .wrap {
+        width: 90%;
+    }
 
     .desktopOnly {
         display: none;
