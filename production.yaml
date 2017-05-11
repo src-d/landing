@@ -4,7 +4,7 @@ feed-base-url: "http://blog.sourced.tech/json/"
 positions-base-url: "https://api.lever.co/v0/postings/sourced?mode=json"
 fetcher-page-size: 45
 slack-channel: ""
-slackin-url: "http://sourced.tech/slackin/invite"
+slackin-url: "http://104.155.102.255:8090/slackin/invite"
 repos:
     main:
         - owner: src-d
