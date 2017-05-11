@@ -20,7 +20,10 @@
                         {{ end }}
                     </p>
                 </article>
-                <aside id="joinUsOnSlack"></aside>
+                <aside id="joinUsOnSlack"
+                    data-title="{{ $home.hero.slackin.title }}"
+                    data-endpoint="{{ $home.hero.slackin.endpoint }}"
+                ></aside>
             </div>
         </div>
     </header>

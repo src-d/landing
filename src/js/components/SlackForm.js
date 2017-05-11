@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import { inviteToSlack } from '../services/api' 
 
 const emailRegex = /^.+@.+\..+$/
@@ -7,16 +8,24 @@ export default class SlackForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      title: '',
       email: '',
       loading: false,
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      title: ReactDOM.findDOMNode(this).parentNode.dataset.title,
+      endpoint: ReactDOM.findDOMNode(this).parentNode.dataset.endpoint,
+    });
   }
 
   invite(e) {
     e.preventDefault()
     this.setState({ loading: true, errMessage: '' })
 
-    inviteToSlack(this.state.email)
+    inviteToSlack(this.state.endpoint, this.state.email)
       .then(({ redirectUrl, msg }) => {
         if (redirectUrl) {
           window.location.href = redirectUrl;
@@ -40,7 +49,7 @@ export default class SlackForm extends React.Component {
     return (
       <form className='slackForm' 
         onSubmit={e => this.invite(e)}>
-        <h3 className='title'>Want to join the revolution? Join us on Slack today</h3>
+        <h3 className='title'>{this.state.title}</h3>
         <input type='email' 
           placeholder='your@email.com' 
           disabled={this.state.loading}
