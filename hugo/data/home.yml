@@ -1,6 +1,6 @@
-hero: 
+hero:
   title: We make machine learning on source code possible
-  desc: Duis veniam occaecat ut dolore velit enim exercitation pariatur nisi dolore qui consectetur irure.
+  desc: source{d} is building the open-source components to enable deep learning on top of source code. We believe that the next revolution in programming comes from teaching machines to understand and write code.
 
   links:
     - text: Read our roadmap
@@ -13,3 +13,15 @@ hero:
   slackin:
     title: Want to join the revolution? Join us on Slack today
     endpoint: /invite
+
+projectsCarousel:
+  display: false
+
+testimonials:
+  display: false
+
+ourPosts:
+  display: true
+
+contactUs:
+  display: true

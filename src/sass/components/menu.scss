@@ -1,10 +1,6 @@
 .topbar {
     &.opaque .menu li {
         color: $textColorEmphasisDark;
-
-        &:nth-child(n+3):before {
-            border-left: 1px solid $corporativeColor;
-        }
     }
 
     .menu {
@@ -16,7 +12,7 @@
             @include smallLink(noUnderline);
             position: relative;
             float: left;
-            padding: 0 8px;
+            padding: 0 15px;
             margin: 0;
             color: $textColorWhite;
             line-height: 29px;
@@ -30,7 +26,6 @@
                 display: inline-block;
                 width: 1px;
                 height: 13px;
-                border-left: 1px solid $textColorWhite;
             }
 
             &:last-child {
@@ -56,6 +51,12 @@
                 display: none;
             }
         }
+    }
+}
+
+@media only screen and (max-width: $pageWidth) {
+    .topbar .menu ul li {
+        padding: 0 8px;
     }
 }
 

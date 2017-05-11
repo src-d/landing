@@ -2,13 +2,7 @@
     text-align: left;
 
     .link {
-        @include smallLink(emphasis);
-        display: inline-block;
-        margin-top: 10px;
-
-        .clickable {
-            padding: 0;
-        }
+        @include uppercaseLinks;
     }
 
     .teamList {
