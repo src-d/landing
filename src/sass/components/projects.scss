@@ -93,6 +93,8 @@ $codePanelHeightMobile: 330px;
       }
 
       .projectLinks {
+        @include uppercaseLinks;
+
         margin-top: 1em;
         text-align: center;
         a {
@@ -133,7 +135,7 @@ $codePanelHeightMobile: 330px;
     font-family: FontAwesome;
   }
 
-  .slick-prev:before{
+  .slick-prev:before {
     content: '\f104';
   }
 

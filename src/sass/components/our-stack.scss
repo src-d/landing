@@ -8,6 +8,7 @@
     }
 
     .links {
+        @include uppercaseLinks;
         margin-top: 10px;
     }
 
@@ -26,6 +27,14 @@
             bottom: 46%;
             left: 50%;
             transform: translate(-50%, 30%);
+
+            @media only screen and (max-width: 350px) {
+                bottom: 42%;
+
+                img {
+                    transform: scale(0.8);
+                }
+            }
         }
 
         svg > ellipse {
@@ -73,9 +82,9 @@
                 }
 
                 &#p2 {
-                    top: 50%;
-                    right: 0;
-                    transform: translateY(-90%);
+                    top: 38%;
+                    right: 13%;
+                    transform: translate(50%, -50%);
                 }
 
                 &#p4 {
@@ -101,9 +110,9 @@
                 }
 
                 &#p10 {
-                    top: 50%;
-                    left: 0;
-                    transform: translateY(-90%);
+                    top: 38%;
+                    left: 13%;
+                    transform: translate(-50%, -50%);
                 }
             }
         }

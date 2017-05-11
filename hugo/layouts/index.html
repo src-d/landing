@@ -12,10 +12,10 @@
                 <article class="mainTitle">
                     <h1 class="title">{{ $home.hero.title }}</h1>
                     <p class="subtitle">{{ $home.hero.desc }}</p>
-                    <p class="links">
+                    <p class="link links">
                         {{ range $link := $home.hero.links }}
                             {{ if ne $link.url "#" }}
-                                <a href="{{ $link.url }}" {{ if $link.newTab }}target="_blank"{{ end }}>{{ $link.text }}</a>
+                                <a href="{{ $link.url }}" {{ if $link.newTab }}target="_blank"{{ end }}>READ OUR {{ $link.text }}</a>
                             {{ end }}
                         {{ end }}
                     </p>
@@ -32,15 +32,27 @@
         {{ partial "our-stack.html" . }}
     </section>
 
-    <section class="fullWidth" id="projects">
-         <div class="mainContainer">
-            {{ partial "projects.html" . }}
-        </div>
-    </section>
+    {{ if $home.projectsCarousel.display }}
+        <section class="fullWidth" id="projects">
+            <div class="mainContainer">
+                {{ partial "projects.html" . }}
+            </div>
+        </section>
+    {{ end }}
 
-    <section class="fullWidth" id="testimonials">
-        {{ partial "testimonials.html" . }}
-    </section>
+    {{ if $home.testimonials.display }}
+        <section class="fullWidth" id="testimonials">
+            {{ partial "testimonials.html" . }}
+        </section>
+    {{ end }}
+
+    {{ if $home.ourPosts.display }}
+        <aside id="ourPostsContainer"></aside>
+    {{ end }}
+
+    {{ if $home.contactUs.display }}
+        {{ partial "contact-us.html" . }}
+    {{ end }}
 
     {{ partial "footer.html" . }}
 </body>

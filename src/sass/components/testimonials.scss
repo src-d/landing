@@ -22,8 +22,12 @@
             padding: 2em 0;
         }
 
-        a {
-            font-weight: bold;
+        .testimonialsLinks {
+            @include uppercaseLinks;
+
+            a {
+                font-weight: bold;
+            }
         }
     }
 
@@ -92,6 +96,9 @@
 
     .testimonialsContent {
       display: block;
+      max-width: 350px;
+      margin-left: auto;
+      margin-right: auto;
 
       .testimonial {
         display: block;

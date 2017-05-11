@@ -182,3 +182,13 @@
     padding-top: 1px;
     padding-bottom: 1px;
 }
+
+@mixin uppercaseLinks() {
+    @include smallLink(emphasis);
+    display: inline-block;
+    margin-top: 10px;
+
+    .clickable {
+        padding: 0;
+    }
+}
