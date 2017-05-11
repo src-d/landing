@@ -1,0 +1,15 @@
+hero: 
+  title: We make machine learning on source code possible
+  desc: Duis veniam occaecat ut dolore velit enim exercitation pariatur nisi dolore qui consectetur irure.
+
+  links:
+    - text: Read our roadmap
+      url: http://blog.sourced.tech/post/our-roadmap
+      newTab: false
+    - text: Read our manifesto
+      url: /manifesto
+      newTab: false
+
+  slackin:
+    title: Want to join the revolution? Join us on Slack today
+    endpoint: /invite

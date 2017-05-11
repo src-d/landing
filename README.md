@@ -15,15 +15,15 @@ If you want to build the project separatelly, you can replace the last command w
 
 Development:
 ===
-1. Run `npm run serve`. This runs everything you need to get the site working.
-2. Visit: [http://localhost:8181](http://localhost:8181)
+```
+make landing-local-serve
+```
+This runs everything you need to get the site working at [http://localhost:8181](http://localhost:8181)
 
-API:
-===
-To start the landing API, run:
-* `npm run api-run`
-
-visit: [http://localhost:8181](http://localhost:8080)
+If you want to build the project separatelly, you can replace the last command with these two:
+* `npm run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
+* `npm run webpack-watcher` To start webpack watcher, that will rebuild the assets when you change its sources
+* `npm run hugo-server` To serve the landing locally using hugo server
 
 Deployment:
 ==========

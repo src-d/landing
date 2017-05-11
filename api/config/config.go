@@ -11,6 +11,8 @@ type Config struct {
 	GithubToken      string `yaml:"github-token"`
 	FeedBaseURL      string `yaml:"feed-base-url"`
 	PositionsBaseURL string `yaml:"positions-base-url"`
+	SlackChannel     string `yaml:"slack-channel"`
+	SlackinURL       string `yaml:"slackin-url"`
 	PinnedRepos      struct {
 		Main  []AllowedRepos `yaml:"main"`
 		Other []AllowedRepos `yaml:"other"`

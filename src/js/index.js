@@ -11,6 +11,7 @@ import setupClipboard from './clipboard'
 import RepositoriesContainer from './components/Repositories'
 import BlogPostsContainer from './components/Posts'
 import PositionsMain from './components/Positions'
+import SlackForm from './components/SlackForm'
 
 polyfill()
 
@@ -29,6 +30,7 @@ window.addEventListener('DOMContentLoaded', _ => {
     renderComponent(RepositoriesContainer, 'ourOpenSourceContainer')
     renderComponent(BlogPostsContainer, 'ourPostsContainer')
     renderComponent(PositionsMain, 'offersPanel')
+    renderComponent(SlackForm, 'joinUsOnSlack')
     setupClipboard()
 })
 

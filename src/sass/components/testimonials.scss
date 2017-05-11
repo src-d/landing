@@ -80,6 +80,7 @@
 @media all and (max-width: $mobileBreakpoint) {
   .testimonials {
     text-align: center;
+    padding-top: 0;
 
     .testimonialsInfo h2 {
       text-align: center;

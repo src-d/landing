@@ -4,6 +4,7 @@ $wideScreenBreakpoint: $pageWidth;
 $columns: 12;
 $gutter: 24px;
 $pageWidthSmallPages: 800px;
+$topbarHeight: 56px;
 
 $corporativeColor: #33526c;
 
@@ -12,6 +13,7 @@ $bgLightBlue: #f4f7fb;
 $bgMainHeader: $corporativeColor;
 $bgCardSmall: white;
 $bgBtnBlue: #4285F4;
+$bgErrRed: #db5855;
 
 $textColorTitle: #1e2b34;
 $textColorMain: #677680;
@@ -58,7 +60,7 @@ $textSizeSmall: 16px;
 $textSizeXS: 12px;
 
 $fontTitle: 'Lato', sans-serif;
-$fontText: roboto, sans-serif;
+$fontText: Roboto, sans-serif;
 $fontCode: hack, sans-serif;
 
 $borderRadius: 3px;

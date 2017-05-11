@@ -1,0 +1,39 @@
+title: A complete stack for machine learning on code, all open source
+desc: Duis veniam occaecat ut dolore velit enim exercitation pariatur nisi dolore qui consectetur irure.
+
+links:
+  - text: Check out our GitHub
+    url: https://github.com/src-d
+    newTab: true
+  - text: Learn how to contribute
+    url: "#"
+    newTab: true
+
+graph:
+  title: source{d}
+  items: # Do not create new ones !
+    p0:
+      url: "#"
+      imgSrc: /img/icons/stack/ml-models.svg
+      title: Machine learning models
+      text: ML Models
+    p2:
+      url: "#"
+      imgSrc: /img/icons/stack/showcases.svg
+      title: 
+      text: Showcases
+    p4:
+      url: https://www.github.com/src-d
+      imgSrc: /img/icons/stack/ai-tools.svg
+      title: 
+      text: AI tools
+    p8:
+      url: https://www.github.com/src-d
+      imgSrc: /img/icons/stack/libraries.svg
+      title: 
+      text: Libraries
+    p10:
+      url: https://data.world/source-d
+      imgSrc: /img/icons/stack/datasets.svg
+      title: 
+      text: Data sets
