@@ -72,48 +72,48 @@
 }
 
 @media all and (max-width: 900px) {
-  .testimonials {
-    .testimonialsInfo,
-    .testimonialsContent {
-      width: 100%;
-      float: none;
-    }
+    .testimonials {
+        .testimonialsInfo,
+        .testimonialsContent {
+            width: 100%;
+            float: none;
+        }
 
-    .testimonialsInfo {
-      margin-bottom: 1.5em;
+        .testimonialsInfo {
+            margin-bottom: 1.5em;
+        }
     }
-  }
 }
 
 @media all and (max-width: $mobileBreakpoint) {
-  .testimonials {
-    text-align: center;
-    padding-top: 0;
-
-    .testimonialsInfo h2 {
-      text-align: center;
-    }
-
-    .testimonialsContent {
-      display: block;
-      max-width: 350px;
-      margin-left: auto;
-      margin-right: auto;
-
-      .testimonial {
-        display: block;
+    .testimonials {
         text-align: center;
+        padding-top: 0;
 
-        & + .testimonial {
-          margin-left: 0;
+        .testimonialsInfo h2 {
+            text-align: center;
         }
 
-        &:nth-child(odd) {
-          p {
-            padding: 1.5em 0;
-          }
+        .testimonialsContent {
+            display: block;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+
+            .testimonial {
+                display: block;
+                text-align: center;
+
+                & + .testimonial {
+                    margin-left: 0;
+                }
+
+                &:nth-child(odd) {
+                    p {
+                        padding: 1.5em 0;
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

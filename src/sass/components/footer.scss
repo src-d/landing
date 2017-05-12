@@ -12,144 +12,144 @@ $footeHPadding: 96px;
 
     .footerLinkGroup, 
     .footerCopyright {
-      flex-grow: 1;
+        flex-grow: 1;
     }
 
     .footerLinkGroup {
-      vertical-align: top;
-      float: left;
-      width: 25%;
-      font-size: .75em;
-      text-align: left;
-      position: relative;
-
-      .footerLinks {
-        padding: .5em;
         vertical-align: top;
-        width: 60%;
-        display: inline-block;
+        float: left;
+        width: 25%;
+        font-size: .75em;
+        text-align: left;
+        position: relative;
 
-        h5 {
-          font-weight: bold;
-          font-size: 1.05em;
-          padding-bottom: .5em;
-        }
+        .footerLinks {
+            padding: .5em;
+            vertical-align: top;
+            width: 60%;
+            display: inline-block;
 
-        a:hover {
-          text-decoration: underline;
-        }
+            h5 {
+                font-weight: bold;
+                font-size: 1.05em;
+                padding-bottom: .5em;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
       }
 
       .footerLinks + .footerLinks {
-        width: 30%;
+          width: 30%;
       }
 
       &.rightLinks {
-        text-align: right;
-        float: right;
+          text-align: right;
+          float: right;
 
-        .footerLinks {
-          width: 25%;
-        }
+          .footerLinks {
+              width: 25%;
+          }
 
-        .footerLinks + .footerLinks {
-          width: 60%;
-        }
+          .footerLinks + .footerLinks {
+              width: 60%;
+          }
       }
     }
 
     .footerCopyright {
-      float: left;
-      width: 33%;
-      text-align: center;
-      font-size: .9em;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
+        float: left;
+        width: 33%;
+        text-align: center;
+        font-size: .9em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
 
-      &.mobile {
-        display: none;
-      }
+        &.mobile {
+            display: none;
+        }
 
-      .logo {
-          @include iconOnly(120px, 29px, '/img/logos/logo-blue.svg');
-          opacity: .6;
-          margin-top: 2em;
-          margin-bottom: 4em;
-      }
+        .logo {
+            @include iconOnly(120px, 29px, '/img/logos/logo-blue.svg');
+            opacity: .6;
+            margin-top: 2em;
+            margin-bottom: 4em;
+        }
     }
 }
 
 @media all and (max-width: 935px) {
-  .footer > .mainContainer {
-    display: block;
-    padding-top: 3em;
-
-    .footerLinkGroup,
-    .footerLinkGroup.rightLinks {
-      width: 49%;
-      margin-bottom: 4em;
-    }
-
-    .footerCopyright {
-      display: none;
-
-      &.mobile { 
-        width: 100%;
-        float: none;
+    .footer > .mainContainer {
         display: block;
+        padding-top: 3em;
 
-        &:before {
-          content: " ";
-          display: block;
-          clear: both;
+        .footerLinkGroup,
+        .footerLinkGroup.rightLinks {
+            width: 49%;
+            margin-bottom: 4em;
         }
-      }
+
+        .footerCopyright {
+            display: none;
+
+            &.mobile { 
+                width: 100%;
+                float: none;
+                display: block;
+
+                &:before {
+                content: " ";
+                display: block;
+                clear: both;
+                }
+            }
+        }
     }
-  }
 }
 
 @media all and (max-width: 700px) {
-  .footer > .mainContainer {
-    .footerLinkGroup,
-    .footerLinkGroup.rightLinks {
-      width: 70%;
-      margin-left: auto;
-      margin-right: auto;
-      float: none;
-      text-align: left;
+    .footer > .mainContainer {
+        .footerLinkGroup,
+        .footerLinkGroup.rightLinks {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            float: none;
+            text-align: left;
 
-      .footerLinks,
-      .footerLinks + .footerLinks {
-        width: 49%;
-      }
+            .footerLinks,
+            .footerLinks + .footerLinks {
+                width: 49%;
+            }
 
-      .footerLinks + .footerLinks {
-        text-align: right;
-      }
+            .footerLinks + .footerLinks {
+                text-align: right;
+            }
+        }
     }
-  }
 }
 
 @media all and (max-width: 500px) {
-  .footer > .mainContainer {
-    .footerLinkGroup,
-    .footerLinkGroup.rightLinks {
-      width: 100%;
-      max-width: 200px;
-      margin: 0 auto;
+    .footer > .mainContainer {
+        .footerLinkGroup,
+        .footerLinkGroup.rightLinks {
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
 
-      &.rightLinks {
-        margin-bottom: 1em;
-      }
+            &.rightLinks {
+                margin-bottom: 1em;
+            }
 
-      .footerLinks, 
-      .footerLinks + .footerLinks {
-        font-size: 1.1em;
-        text-align: left;
-        float: none;
-        width: 100%;
-      }
+            .footerLinks, 
+            .footerLinks + .footerLinks {
+                font-size: 1.1em;
+                text-align: left;
+                float: none;
+                width: 100%;
+            }
+        }
     }
-  }
 }
