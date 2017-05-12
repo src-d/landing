@@ -1,24 +1,6 @@
-.homePage {
-    @include setupHeader(510px);
-
-    .sectionTitle {
-        line-height: 30px;
-        text-align: left;
-        margin-bottom: 30px;
-    }
-
-    .mainContainer {
-        padding: 0 12px;
-        margin-top: 70px;
-        text-align: left;
-
-        @media only screen and (max-width: $mobileBreakpoint) {
-            margin-top: 40px;
-        }
-    }
-
+body.homePage {
     .mainHeader {
-        margin-bottom: 100px;
+        margin-bottom: 70px;
 
         @media only screen and (max-width: $mobileBreakpoint) {
             margin-bottom: 0;
@@ -26,7 +8,19 @@
 
         .mainContainer {
             margin-top: 0;
-            padding-top: $topbarHeight;
+            padding: ($topbarHeight + 70px) 12px 80px;
+            text-align: left;
+            height: auto;
+
+            @media only screen and (max-width: $mobileBreakpoint) {
+                padding-top: $topbarHeight + 20px;
+                padding-bottom: 30px;
+            }
+
+            .description {
+                transform: initial;
+                margin: 0 auto;
+            }
         }
 
         .content {
@@ -61,7 +55,8 @@
                 .links > a,
                 .links > .link {
                     color: $textColorWhiteAlt;
-                    border-color: $textColorWhiteAlt;
+                    border: 0;
+                    text-transform: uppercase;
                 }
             }
 
@@ -194,6 +189,12 @@
         }
     }
 
+    .sectionTitle {
+        line-height: 30px;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
     .links {
         overflow: hidden;
         margin-top: 20px;
@@ -218,7 +219,15 @@
 
     .contact .mainContainer {
         text-align: center;
-        margin-top: 40px;
+        padding-bottom: 70px;
+
+        @media only screen and (max-width: 420px) {
+            .copyBtn {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
     }
 
     .footer .mainContainer {
@@ -234,8 +243,17 @@
 
 #ourPosts {
     background: $bgLightBlue;
+    margin-top: 60px;
     margin-bottom: 1em;
-    padding: 0px 0 40px;
+
+    @media only screen and (max-width: $mobileBreakpoint) {
+        margin-top: 0;
+    }
+
+    .mainContainer {
+        padding-top: 40px;
+        padding-bottom: 70px;
+    }
 
     .columns {
         display: flex;

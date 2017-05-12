@@ -3,10 +3,10 @@ hero:
   desc: source{d} is building the open-source components to enable deep learning on top of source code. We believe that the next revolution in programming comes from teaching machines to understand and write code.
 
   links:
-    - text: Read our roadmap
+    - text: roadmap
       url: http://blog.sourced.tech/post/our-roadmap
       newTab: false
-    - text: Read our manifesto
+    - text: manifesto
       url: /manifesto
       newTab: false
 

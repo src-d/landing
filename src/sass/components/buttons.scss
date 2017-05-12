@@ -14,8 +14,8 @@
       box-shadow: 0px 5px 20px 1px rgba(88, 114, 158, 0.50);
     }
 
-	&[disabled] {
-		opacity: .7;
-		pointer-events: none;
-	}
+  &[disabled] {
+      opacity: .7;
+      pointer-events: none;
+  }
 }

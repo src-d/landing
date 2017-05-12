@@ -2,163 +2,165 @@ $codePanelHeight: 400px;
 $codePanelHeightMobile: 330px;
 
 .projects {
-  text-align: left;
+    text-align: left;
+    margin-top: 50px;
 
-  @media only screen and (max-width: $mobileBreakpoint) {
-    margin-top: 60px;
-  }
-
-  .hljs {
-    background-color: #203242;
-  }
-
-  .project {
-    margin: 0 1em 50px;
-
-    .projectCode {
-      position: relative;
-      width: 48%;
-      float: left;
-      padding: 0 .2em .2em .2em;
-      background: $bgLightBlue;
-      border: 1px solid darken($bgLightBlue, 5%);
-      border-radius: 3px;
-
-      .projectCodeHeader {
-        padding: .3em;
-
-        .projectCodeHeaderActions {
-          position: absolute;
-          left: .5em;
-
-          span {
-            width: .7em;
-            height: .7em;
-            border-radius: 50%;
-            display: inline-block;
-
-            & + span {
-              margin-left: .3em;
-            }
-
-            &.red {
-              background-color: $codeWindowRed;
-              border: 1px solid darken($codeWindowRed, 9%);
-            }
-
-            &.green {
-              background-color: $codeWindowGreen;
-              border: 1px solid darken($codeWindowGreen, 7%);
-            }
-
-            &.yellow {
-              background-color: $codeWindowYellow;
-              border: 1px solid darken($codeWindowYellow, 9%);
-            }
-          }
-        }
-
-        h3 {
-          font-family: $fontCode;
-          font-size: .8em;
-          line-height: 1.5em;
-        }
-      }
-
-      pre {
-        line-height: 0;
-      }
-
-      code {
-        padding: 1em;
-        font-size: .8em;
-        line-height: 1.4em;
-        font-family: 'Hack', monospace;
-        border-radius: 3px;
-        height: $codePanelHeight;
-        overflow-y: auto;
-      }
+    @media only screen and (max-width: $mobileBreakpoint) {
+        margin-top: 0;
     }
 
-    .projectInfo {
-      font-size: .9em;
-      width: 48%;
-      float: right;
-
-      ul {
-        margin-left: 1em;
-        list-style: disc;
-        line-height: 1.8em;
-        padding-top: 1em;
-      }
-
-      .projectLinks {
-        @include uppercaseLinks;
-
-        margin-top: 1em;
-        text-align: center;
-        a {
-          font-weight: bold;
-        }
-
-        a + a {
-          margin-left: 2em;
-        }
-      }
+    .hljs {
+        background-color: #203242;
     }
 
-    &:after {
-      content: " ";
-      clear: both;
-      display: block;
+    .project {
+        margin: 0 1em 50px;
+
+        .projectCode {
+            position: relative;
+            width: 48%;
+            float: left;
+            padding: 0 .2em .2em .2em;
+            background: $bgLightBlue;
+            border: 1px solid darken($bgLightBlue, 5%);
+            border-radius: 3px;
+
+            .projectCodeHeader {
+                padding: .3em;
+
+                .projectCodeHeaderActions {
+                    position: absolute;
+                    left: .5em;
+
+                    span {
+                        width: .7em;
+                        height: .7em;
+                        border-radius: 50%;
+                        display: inline-block;
+
+                        & + span {
+                            margin-left: .3em;
+                        }
+
+                        &.red {
+                            background-color: $codeWindowRed;
+                            border: 1px solid darken($codeWindowRed, 9%);
+                        }
+
+                        &.green {
+                            background-color: $codeWindowGreen;
+                            border: 1px solid darken($codeWindowGreen, 7%);
+                        }
+
+                        &.yellow {
+                            background-color: $codeWindowYellow;
+                            border: 1px solid darken($codeWindowYellow, 9%);
+                        }
+                    }
+                }
+
+                h3 {
+                    font-family: $fontCode;
+                    font-size: .8em;
+                    line-height: 1.5em;
+                }
+            }
+
+            pre {
+                line-height: 0;
+            }
+
+            code {
+                padding: 1em;
+                font-size: .8em;
+                line-height: 1.4em;
+                font-family: 'Hack', monospace;
+                border-radius: 3px;
+                height: $codePanelHeight;
+                overflow-y: auto;
+            }
+        }
+
+        .projectInfo {
+            font-size: .9em;
+            width: 48%;
+            float: right;
+
+            ul {
+                margin-left: 1em;
+                list-style: disc;
+                line-height: 1.8em;
+                padding-top: 1em;
+            }
+
+            .projectLinks {
+                @include uppercaseLinks;
+
+                margin-top: 1em;
+                text-align: center;
+
+                a {
+                    font-weight: bold;
+                }
+
+                a + a {
+                margin-left: 2em;
+                }
+            }
+        }
+
+        &:after {
+            content: " ";
+            clear: both;
+            display: block;
+        }
     }
-  }
 
-  .slick-dots {
-    bottom: 20px;
-  }
+    .slick-dots {
+        bottom: 20px;
+    }
 
-  .slick-dots li button:before {
-    font-size: 10px;
-  }
+    .slick-dots li button:before {
+        font-size: 10px;
+    }
 
-  .slick-prev,
-  .slick-next {
-    top: $codePanelHeight / 2 + 25px;
-    height: 60px;
-  }
+    .slick-prev,
+    .slick-next {
+        top: $codePanelHeight / 2 + 25px;
+        height: 60px;
+    }
 
-  .slick-prev:before,
-  .slick-next:before {
-    color: rgba(0,0,0,.5);
-    font-size: 60px;
-    font-family: FontAwesome;
-  }
+    .slick-prev:before,
+    .slick-next:before {
+        color: rgba(0,0,0,.5);
+        font-size: 60px;
+        font-family: FontAwesome;
+    }
 
-  .slick-prev:before {
-    content: '\f104';
-  }
+    .slick-prev:before {
+        content: '\f104';
+    }
 
-  .slick-next:before {
-    content: '\f105';
-  }
+    .slick-next:before {
+        content: '\f105';
+    }
 }
 
 @media only screen and (max-width: $mobileBreakpoint) {
-  .projects .project {
-    .projectInfo,
-    .projectCode {
-      float: none;
-      width: 100%;
-      margin-top: 2.5em;
+    .projects .project {
+        .projectInfo,
+        .projectCode {
+            float: none;
+            width: 100%;
+            margin-top: 2.5em;
 
-      h2 {
-        margin-bottom: 30px;
-      }
+            h2 {
+                margin-bottom: 30px;
+            }
 
-      code {
-        height: $codePanelHeightMobile;
-      }
+            code {
+                height: $codePanelHeightMobile;
+            }
+        }
     }
-  }
 }

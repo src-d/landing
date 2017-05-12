@@ -1,28 +1,28 @@
 @import "compass/css3";
 
-@import "reset.scss";
+@import "reset";
 
-@import "variables.scss";
-@import "languages.scss";
-@import "mixins/common.scss";
+@import "variables";
+@import "languages";
+@import "mixins/common";
 
-@import "typefaces.scss";
-@import "skeleton.scss";
+@import "typefaces";
+@import "skeleton";
 
-@import "components/buttons.scss";
-@import "components/repositories.scss";
-@import "components/tooltip.scss";
-@import "components/topbar.scss";
-@import "components/footer.scss";
-@import "components/menu.scss";
-@import "components/loading.scss";
-@import "components/mainHeader.scss";
-@import "components/projects.scss";
-@import "components/testimonials.scss";
-@import "components/our-stack.scss";
+@import "components/buttons";
+@import "components/repositories";
+@import "components/tooltip";
+@import "components/topbar";
+@import "components/footer";
+@import "components/menu";
+@import "components/loading";
+@import "components/mainHeader";
+@import "components/projects";
+@import "components/testimonials";
+@import "components/our-stack";
 
-@import "pages/index.scss";
-@import "pages/stack.scss";
-@import "pages/team.scss";
-@import "pages/custom.scss";
-@import "pages/career.scss";
+@import "pages/index";
+@import "pages/stack";
+@import "pages/team";
+@import "pages/custom";
+@import "pages/career";
