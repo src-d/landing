@@ -8,11 +8,11 @@ slackin-url: "http://slackin:3000/invite"
 repos:
     main:
         - owner: src-d
-          repos: [go-git, beanstool, kmcuda, flamingo, hercules, go-siva]
+          repos: [go-git, kmcuda, proteus, minhashcuda, go-kallax, wmd-relax]
     other:
-        - owner: src-d
-          repos: [minhashcuda]
-        - owner: gitql
-          repos: [gitql]
-        - owner: erizocosmico
-          repos: ['react-categorized-tag-input']
+        - owner: sqle
+          repos: [gitquery]
+        - owner: hashicorp
+          repos: [terraform]
+        - owner: tensorflow
+          repos: [models]
