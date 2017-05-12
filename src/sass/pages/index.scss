@@ -80,20 +80,18 @@ body.homePage {
                     padding: .9em;
                     margin-top: 30px;
                     text-align: left;
+                    color: $textColorWhite;
                 }
 
                 .send {
                     @include button();
                     background: $codeColorLiteral;
-                    color: $textColorWhite;
                     padding: 15px;
                     font-family: $fontText;
                     font-weight: bold;
                     font-size: 18px;
                     border: 0;
-
                     text-align: center;
-                    color: white;
 
                     .joinUs {
                         margin-left: 10px;
