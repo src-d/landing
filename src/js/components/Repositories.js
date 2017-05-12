@@ -26,15 +26,12 @@ export default class RepositoriesContainer extends Component {
         }
 
         return (
-            <section className="fullWidth opaque" id="ourOpenSource">
+            <section className="fullWidth" id="ourOpenSource">
                 <div className="mainContainer">
                     <header>
                         <h2>Committed to open source and its community</h2>
                     </header>
-                    <p className="description">At <strong>{"source{d}"}</strong> we believe that sharing and contributing is essential to create the future world we want to live in.
-                    Our engineers dedicate at least <strong>10% of their working hours towards any open source projects</strong> of their choosing.
-                    We take it seriously and have a dedicated day every two weeks, called <strong>Open Source Friday.</strong></p>
-                    <h3 className="subTitle">Our Open Source Projects</h3>
+                    <h3 className="subTitle">Open Source Projects</h3>
                     <div id="repositories" className="fullWidthitories">
                         <Repositories errorHandler={this.notifyError} />
                     </div>
@@ -100,7 +97,7 @@ class Repositories extends Component {
 
         return (
             <div className='repositories other'>
-                <h3 className='subTitle'>Cool projects our engineers have developed during Open Source Fridays</h3>
+                <h3 className='subTitle'>Projects our engineers have contributed to during Open Source Fridays</h3>
                 <div className='repositoryList other'>
                     {repos.map((r, i) => <Repository key={i} repo={r} />)}
                 </div>

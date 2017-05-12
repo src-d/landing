@@ -53,6 +53,10 @@
         <aside id="ourPostsContainer"></aside>
     {{ end }}
 
+    {{ if $home.osfProjects.display }}
+        <section id="ourOpenSourceContainer"></section>
+    {{ end }}
+
     {{ if $home.contactUs.display }}
         {{ partial "contact-us.html" . }}
     {{ end }}

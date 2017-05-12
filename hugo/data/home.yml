@@ -11,7 +11,7 @@ hero:
       newTab: false
 
   slackin:
-    title: Want to join the revolution? Join us on Slack today
+    title: Join us on Slack today
     endpoint: /invite
 
 projectsCarousel:
@@ -19,6 +19,9 @@ projectsCarousel:
 
 testimonials:
   display: false
+
+osfProjects:
+  display: true
 
 ourPosts:
   display: true
