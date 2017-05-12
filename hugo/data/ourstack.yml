@@ -1,10 +1,10 @@
-title: A complete stack for machine learning on code, all open source
-desc:
+title: Everything we release is open-source
+desc: We are working on releasing pre-processed data sets from our +60 million repository pipeline, pre-trained models, the code behind our entire pipeline, high level libraries and showcase implementations.
 
 links:
   - text: Check out our GitHub
     url: https://github.com/src-d
-    newTab: true
+    newTab: true    
   - text: Learn how to contribute
     url: "#"
     newTab: true
