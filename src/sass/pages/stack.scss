@@ -1,162 +1,162 @@
 .stackSection {
-  padding-bottom: 1em;
-
-  .stackItems {
-    text-align: center;
-    padding: 1.5em 0;
-
-    .stackItem {
-      display: inline-block;
-      vertical-align: top;
-
-      p {
-        font-size: .7em;
-        margin-top: 1em;
-        line-height: 1.5em;
-      }
-
-      .itempic {
-          height: 100px;
-          display: flex;
-          justify-content: center;
-
-          img {
-              max-height: 100px;
-          }
-      }
-    }
-
-    .stackItem + .stackItem {
-      margin-left: 1.5em;
-    }
-  }
-}
-
-.stackSection.languages .stackItem {
-  width: 24%;
-}
-
-.stackSection.storage {
-  width: 55%;
-  float: left;
-
-  .stackItems {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .stackItem + .stackItem {
-      margin-left: 1em;
-    }
-  }
-}
-
-.stackSection.codehost {
-  width: 35%;
-  float: right;
-}
-
-.stackSection.deploy {
-  clear: both;
-
-  .stackItem {
-    width: 18%;
-    position: relative;
-
-    .itempic {
-      height: 100px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-  }
-
-  .stackItem + .stackItem {
-    margin-left: 3em !important;
-
-    &:before {
-      content: " ";
-      position: absolute;
-      display: block;
-      background: transparent url(/img/icons/arrow-stack.svg) center center no-repeat;
-      width: 13px;
-      height: 20px;
-      top: 40px;
-      left: -1.7em;
-    }
-  }
-}
-
-.stackSection.infra .stackItem {
-  width: 20%;
-
-  & + .stackItem {
-    margin-left: 1em !important;
-
-    img {
-      max-width: 100%;
-    }
-  }
-}
-
-.stackSection.frontend .stackItem {
-  width: 18%;
-}
-
-.stackSection.ml .stackItem {
-  width: 23%;
-}
-
-@media only screen and (max-width: 900px) {
-  .stack.mainContainer {
-    width: 100%;
-  }
-
-  .stackSection.languages .stackItem {
-    img {
-      height: 100px;
-    }
-  }
-
-  .stackSection {
-    float: none !important;
-    width: 100% !important;
-    border-bottom: 1px solid $lineColorBlueLight;
-    margin-bottom: 2em;
+    padding-bottom: 1em;
 
     .stackItems {
-      padding-left: 2em;
-      white-space: nowrap;
-      max-width: 100%;
-      overflow-x: scroll;
-      -webkit-overflow-scrolling: touch;
-      padding: 1.5em 2em !important;
-
-      .stackItem {
-        max-width: 210px;
-        width: auto;
-        white-space: normal;
-        vertical-align: top;
-      }
-    }
-
-    &.frontend, &.ml, &.infra {
-      .stackItems {
         text-align: center;
+        padding: 1.5em 0;
 
         .stackItem {
-          vertical-align: middle;
+            display: inline-block;
+            vertical-align: top;
+
+            p {
+                font-size: .7em;
+                margin-top: 1em;
+                line-height: 1.5em;
+            }
+
+            .itempic {
+                height: 100px;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    max-height: 100px;
+                }
+            }
         }
 
         .stackItem + .stackItem {
-          margin-left: 3em;
+            margin-left: 1.5em;
         }
-      }
     }
-  }
+}
 
-  .stackSection.ml {
-    border: none;
-    margin-bottom: 0;
-  }
+.stackSection.languages .stackItem {
+    width: 24%;
+}
+
+.stackSection.storage {
+    width: 55%;
+    float: left;
+
+    .stackItems {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .stackItem + .stackItem {
+            margin-left: 1em;
+        }
+    }
+}
+
+.stackSection.codehost {
+    width: 35%;
+    float: right;
+}
+
+.stackSection.deploy {
+    clear: both;
+
+    .stackItem {
+        width: 18%;
+        position: relative;
+
+        .itempic {
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .stackItem + .stackItem {
+        margin-left: 3em !important;
+
+        &:before {
+            content: " ";
+            position: absolute;
+            display: block;
+            background: transparent url(/img/icons/arrow-stack.svg) center center no-repeat;
+            width: 13px;
+            height: 20px;
+            top: 40px;
+            left: -1.7em;
+        }
+    }
+}
+
+.stackSection.infra .stackItem {
+    width: 20%;
+
+    & + .stackItem {
+        margin-left: 1em !important;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.stackSection.frontend .stackItem {
+    width: 18%;
+}
+
+.stackSection.ml .stackItem {
+    width: 23%;
+}
+
+@media only screen and (max-width: 900px) {
+    .stack.mainContainer {
+        width: 100%;
+    }
+
+    .stackSection.languages .stackItem {
+        img {
+            height: 100px;
+        }
+    }
+
+    .stackSection {
+        float: none !important;
+        width: 100% !important;
+        border-bottom: 1px solid $lineColorBlueLight;
+        margin-bottom: 2em;
+
+        .stackItems {
+            padding-left: 2em;
+            white-space: nowrap;
+            max-width: 100%;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            padding: 1.5em 2em !important;
+
+            .stackItem {
+                max-width: 210px;
+                width: auto;
+                white-space: normal;
+                vertical-align: top;
+            }
+        }
+
+        &.frontend, &.ml, &.infra {
+            .stackItems {
+                text-align: center;
+
+                .stackItem {
+                    vertical-align: middle;
+                }
+
+                .stackItem + .stackItem {
+                    margin-left: 3em;
+                }
+            }
+        }
+    }
+
+    .stackSection.ml {
+        border: none;
+        margin-bottom: 0;
+    }
 }

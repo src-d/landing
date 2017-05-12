@@ -1,4 +1,5 @@
 {{ partial "head.html" . }}
+{{ $home := $.Site.Data.home }}
 
 <body class="homePage">
     {{ partial "header.html" . }}
@@ -7,51 +8,59 @@
         style="background-image: url('{{ with .Params.headerImageUrl }}{{ . }}{{ else }}{{ .Site.Params.headerImageUrl }}{{ end }}');"
     >
         <div class="mainContainer">
-            <div class="description">
-                <h1 class="title">Building the first <strong>AI</strong> that <strong>understands code</strong></h1>
-                <p>We apply neural networks to source code from over 17 million software repositories and 6.6 million developers worldwide</p>
-                <p class="link">READ OUR <a href="/manifesto">MANIFESTO</a> AND <a href="http://blog.sourced.tech/post/our-roadmap/" target="_blank">ROADMAP</a></p>
+            <div class="content description">
+                <article class="mainTitle">
+                    <h1 class="title">{{ $home.hero.title }}</h1>
+                    <p class="subtitle">{{ $home.hero.desc }}</p>
+                    <p class="links">
+                        {{ range $link := $home.hero.links }}
+                            {{ if ne $link.url "#" }}
+                                <span class="link">
+                                    read our
+                                    <a href="{{ $link.url }}" {{ if $link.newTab }}target="_blank"{{ end }}>{{ $link.text }}</a>
+                                </span>
+                            {{ end }}
+                        {{ end }}
+                    </p>
+                </article>
+                <aside id="joinUsOnSlack"
+                    data-title="{{ $home.hero.slackin.title }}"
+                    data-endpoint="{{ $home.hero.slackin.endpoint }}"
+                ></aside>
             </div>
         </div>
     </header>
 
-    <section class="fullWidth" id="weAreWeWant">
-        <div class="mainContainer">
-            <article class="article left">
-                <header>
-                    <h2>Where we are</h2>
-                </header>
-                <ul>
-                    <li><span>Implemented most git features in our open source go-git.</span></li>
-                    <li><span>Fetched and analyzed every git repository on GitHub, BitBucket, self-hosted cgit</span></li>
-                    <li><span>Built the world's fastest WeightedMinHash and k-means clustering implementations.</span></li>
-                    <li><span>Trained neural networks to extract relevant features from code.</span></li>
-                    <li><span>Show that RNNs with memory can learn from projects, and its limitations.</span></li>
-                    <li><span>Trained neural networks on natural language use.</span></li>
-                </ul>
-            </article>
-            <article class="article right">
-                <header>
-                    <h2>What is next</h2>
-                </header>
-                <ul>
-                    <li><span>Reaching full feature parity on go-git with libgit2.</span></li>
-                    <li><span>Fetching and processing any change to public git repos close to real-time.</span></span></li>
-                    <li><span>Extending TensorFlow with new loss functions and apply to code style.</span></li>
-                    <li><span>Finalizing our first trained models on all 6.6M developers.</span></li>
-                    <li><span>Moving infrastructure to 1.4PB storage, GPU-running bare metal servers.</span></li>
-                    <li><span>Launching a platform where developers find the right teams and projects to join.</span></li>
-                </ul>
-            </article>
-        </div>
+    <section class="fullWidth" id="ourStack">
+        {{ partial "our-stack.html" . }}
     </section>
 
+    {{ if $home.projectsCarousel.display }}
+        <section class="fullWidth" id="projects">
+            <div class="mainContainer">
+                {{ partial "projects.html" . }}
+            </div>
+        </section>
+    {{ end }}
 
-    <section id="ourOpenSourceContainer"></section>
+    {{ if $home.testimonials.display }}
+        <section class="fullWidth" id="testimonials">
+            {{ partial "testimonials.html" . }}
+        </section>
+    {{ end }}
 
-    <aside id="ourPostsContainer"></aside>
+    {{ if $home.osfProjects.display }}
+        <section id="ourOpenSourceContainer"></section>
+    {{ end }}
 
-    {{ partial "contact-us.html" . }}
+    {{ if $home.ourPosts.display }}
+        <aside id="ourPostsContainer"></aside>
+    {{ end }}
+
+    {{ if $home.contactUs.display }}
+        {{ partial "contact-us.html" . }}
+    {{ end }}
+
     {{ partial "footer.html" . }}
 </body>
 

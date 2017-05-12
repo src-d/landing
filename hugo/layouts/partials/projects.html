@@ -1,0 +1,36 @@
+<div class="projects">
+    {{ range $p := $.Site.Data.projects.projects }}
+        <div class="project">
+            <div class="projectInfo">
+                <h2>{{$p.title}}</h2>
+                <p>{{$p.desc}}</p>
+                <ul>
+                    {{ range $b := $p.bulletpoints }}
+                    <li>{{ $b }}</li>
+                    {{ end }}
+                </ul>
+
+                <div class="projectLinks">
+                    <a href="{{ $p.docs }}" target="_blank" title="Documentation">Documentation &rsaquo;</a>
+                    <a href="{{ $p.usage }}" target="_blank" title="Get started">Get started &rsaquo;</a>
+                </div>
+            </div>
+
+            <div class="projectCode">
+                <div class="projectCodeHeader">
+                    <div class="projectCodeHeaderActions">
+                        <span class="red"></span>
+                        <span class="green"></span>
+                        <span class="yellow"></span>
+                    </div>
+
+                    <h3>{{ $p.code }}</h3>
+                </div>
+
+                <pre>
+                    <code class="{{ $p.language }}">{{ readFile (print "hugo/data/code/" $p.code) }}</code>
+                </pre>
+            </div>
+        </div>
+    {{ end }}
+</div>

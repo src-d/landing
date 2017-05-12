@@ -4,86 +4,152 @@ $footeHPadding: 96px;
 }
 .footer > .mainContainer {
     overflow: hidden;
+    padding-top: 5em;
+    padding-bottom: 5em;
     border-top: 1px solid $lineColorBlueLight;
+    display: flex;
+    align-items: center;
 
-    .footer-item {
-        vertical-align: bottom;
+    .footerLinkGroup, 
+    .footerCopyright {
+        flex-grow: 1;
     }
 
-    .logoContainer {
-        display: inline-block;
+    .footerLinkGroup {
+        vertical-align: top;
         float: left;
-        margin-top: -3px; // Make it look align with the rest of the footer.
-    }
+        width: 25%;
+        font-size: .75em;
+        text-align: left;
+        position: relative;
 
-    .copyright {
-        @include textSmall(condensed);
-        display: inline-block;
-        margin: inherit auto;
-    }
-
-    .logo {
-        @include iconOnly(120px, 29px, '/img/logos/logo-footer.svg');
-        margin-left: $footeHPadding;
-    }
-
-    .links {
-        float: right;
-        margin-right: $footeHPadding;
-        color: $textColorCorporative;
-
-        & > li {
+        .footerLinks {
+            padding: .5em;
+            vertical-align: top;
+            width: 60%;
             display: inline-block;
+
+            h5 {
+                font-weight: bold;
+                font-size: 1.05em;
+                padding-bottom: .5em;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+      }
+
+      .footerLinks + .footerLinks {
+          width: 30%;
+      }
+
+      &.rightLinks {
+          text-align: right;
+          float: right;
+
+          .footerLinks {
+              width: 25%;
+          }
+
+          .footerLinks + .footerLinks {
+              width: 60%;
+          }
+      }
+    }
+
+    .footerCopyright {
+        float: left;
+        width: 33%;
+        text-align: center;
+        font-size: .9em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        &.mobile {
+            display: none;
         }
 
-        .sitemap {
-            @include smallLink(noUnderline emphasisDark);
-        }
-
-        .github > a {
-            @include fontIcon('github', 20px, 20px, 20px);
-            margin-left: 25px;
-            margin-right: 18px;
-        }
-
-        .twitter > a {
-            @include fontIcon('twitter', 20px, 20px, 20px);
-            margin-right: 18px;
-        }
-
-        .linkedin > a {
-            @include fontIcon('linkedin', 20px, 20px, 20px);
+        .logo {
+            @include iconOnly(120px, 29px, '/img/logos/logo-blue.svg');
+            opacity: .6;
+            margin-top: 2em;
+            margin-bottom: 4em;
         }
     }
 }
 
-.fullWidth.contact > .mainContainer{
-    padding-bottom: 45px;
-
-    .pgpKey {
-        @include textSmall(emphasisDark);
-        @include icon(16px, 24px, 7px, '/img/icons/key.svg');
-        margin-bottom: 45px;
-    }
-}
-
-@media only screen and (max-width: $wideScreenBreakpoint) {
+@media all and (max-width: 935px) {
     .footer > .mainContainer {
-        .logoContainer {
-            .logo {
-                margin: 0;
-                width: 90px;
-                height: 24px;
-                background-size: contain;
+        display: block;
+        padding-top: 3em;
+
+        .footerLinkGroup,
+        .footerLinkGroup.rightLinks {
+            width: 49%;
+            margin-bottom: 4em;
+        }
+
+        .footerCopyright {
+            display: none;
+
+            &.mobile { 
+                width: 100%;
+                float: none;
+                display: block;
+
+                &:before {
+                content: " ";
+                display: block;
+                clear: both;
+                }
             }
         }
+    }
+}
 
-        ul.links {
-            margin: 0;
+@media all and (max-width: 700px) {
+    .footer > .mainContainer {
+        .footerLinkGroup,
+        .footerLinkGroup.rightLinks {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            float: none;
+            text-align: left;
+
+            .footerLinks,
+            .footerLinks + .footerLinks {
+                width: 49%;
+            }
+
+            .footerLinks + .footerLinks {
+                text-align: right;
+            }
         }
     }
+}
 
-    .fullWidth.contact > .mainContainer .copyBtn {
-        font-size: 1.1em;
+@media all and (max-width: 500px) {
+    .footer > .mainContainer {
+        .footerLinkGroup,
+        .footerLinkGroup.rightLinks {
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+
+            &.rightLinks {
+                margin-bottom: 1em;
+            }
+
+            .footerLinks, 
+            .footerLinks + .footerLinks {
+                font-size: 1.1em;
+                text-align: left;
+                float: none;
+                width: 100%;
+            }
+        }
     }
 }

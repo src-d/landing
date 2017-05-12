@@ -1,66 +1,256 @@
-#weAreWeWant {    
-    .mainContainer {
-        text-align: left;
-        display: flex;
-        position: relative;
+body.homePage {
+    .mainHeader {
+        margin-bottom: 70px;
 
-        &::after {
-          content: " ";
-          background: transparent url(/img/icons/icon-slider-arrow-right-grey.svg) center center no-repeat;
-          width: 2rem;
-          height: 5rem;
-          background-size: contain;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          margin-left: -1rem;
-          margin-top: -2.5rem;
+        @media only screen and (max-width: $mobileBreakpoint) {
+            margin-bottom: 0;
         }
-    }
 
-    .article {
-        display: inline-block;
-        width: 50%;
-        flex-grow: 1;
+        .mainContainer {
+            margin-top: 0;
+            padding: ($topbarHeight + 70px) 12px 80px;
+            text-align: left;
+            height: auto;
 
-        &.left.showRelations li {
-            @include icon(9px, 38px, 0, '/img/icons/right-arrow.png');
+            @media only screen and (max-width: $mobileBreakpoint) {
+                padding-top: $topbarHeight + 20px;
+                padding-bottom: 30px;
+            }
 
-            &:before {
-                @include valign;
-                position: absolute;
-                right: #{-9px / 2};
+            .description {
+                transform: initial;
+                margin: 0 auto;
+            }
+        }
+
+        .content {
+            $formWidth: 300px;
+            overflow: hidden;
+
+            .mainTitle {
+                float: left;
+                margin-right: - $formWidth - 1;
+                width: 100%;
+                padding-right: $formWidth + 40px;
+
+                .title,
+                .subtitle,
+                .links {
+                    text-align: left;
+                    max-width: none;
+                    max-width: 540px;
+                    padding-right: 30px;
+                    margin-left: 0;
+                }
+
+                .title {
+                    font-size: 40px;
+                    line-height: 50px;
+                }
+
+                .subtitle {
+                    margin-top: 30px;
+                }
+
+                .links > a,
+                .links > .link {
+                    color: $textColorWhiteAlt;
+                    border: 0;
+                    text-transform: uppercase;
+                }
+            }
+
+            .slackForm {
+                float: right;
+                width: $formWidth;
+                text-align: left;
+
+                .title {
+                    line-height: 30px;
+                    text-align: left;
+                    color: $textColorWhiteAlt;
+                    font-size: $textSizeTitle2;
+                }
+
+                .email,
+                .send {
+                    @include familyWeight($fontText, 400);
+                    width: 100%;
+                    font-size: $textSizeMain;
+                    padding: .9em;
+                    margin-top: 30px;
+                    text-align: left;
+                    color: $textColorWhite;
+                }
+
+                .send {
+                    @include button();
+                    background: $codeColorLiteral;
+                    padding: 15px;
+                    font-family: $fontText;
+                    font-weight: bold;
+                    font-size: 18px;
+                    border: 0;
+                    text-align: center;
+
+                    .joinUs {
+                        margin-left: 10px;
+                    }
+
+                    .wait {
+                        display: none;
+                    }
+
+                    &.loading {
+                        .fa,
+                        .joinUs {
+                            display: none;
+                        }
+
+                        .wait {
+                            display: block;
+                        }
+                    }
+                }
+
+                .email {
+                    background: rgba(255, 255, 255, 0.1);
+                    border-color: rgba(238, 238, 238, 0.1);
+
+                    &::-webkit-input-placeholder {
+                        color: rgba(255,255,255,0.5);
+                    }
+
+                    &:-ms-input-placeholder {
+                        color: rgba(255,255,255,0.5);
+                    }
+
+                    &::-moz-placeholder {
+                        color: rgba(255,255,255,0.5);
+                        opacity: 1;
+                    }
+                }
+
+                .error, .success {
+                  font-size: .8em;
+                  padding: .5em;
+                  margin-top: 1.5em;
+                  border-radius: 3px;
+                  color: white;
+                }
+
+                .error {
+                  background: $bgErrRed;
+                }
+
+                .success {
+                  background: $textColorGreen;
+                }
+            }
+
+            @media only screen and (max-width: 825px) {
+                .mainTitle {
+                    padding-right: $formWidth;
+                }
+
+            }
+
+            @media only screen and (max-width: $mobileBreakpoint) {
+                &.description {
+                    margin: 20px auto;
+
+                    .mainTitle {
+                        float: none;
+                        padding-right: 0;
+                        text-align: center;
+                        margin-bottom: 40px;
+
+                        .title,
+                        .subtitle,
+                        .links {
+                            text-align: center;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        .links {
+                            display: inline-block;
+                        }
+                    }
+
+                    .slackForm {
+                        float: none;
+                        margin: 40px auto 40px;
+                    }
+                }
             }
         }
     }
 
-    li {
-        position: relative;
+    .sectionTitle {
+        line-height: 30px;
         text-align: left;
-        height: 60px;
-        margin-top: 10px;
+        margin-bottom: 30px;
+    }
 
-        > span {
-            @include valign;
-            margin: 0 percentage(1 / $columns * 2);
-        }
+    .links {
+        overflow: hidden;
+        margin-top: 20px;
 
-        & + li {
-            margin-top: 16px;
+        & > {
+            a,
+            .link {
+                float: left;
+                clear: both;
+                line-height: 20px;
+                border-bottom: 1px solid $corporativeColor;
+                color: $corporativeColor;
+                margin-top: 20px;
+
+                &:after {
+                    content: '\203A';
+                    margin-left: 5px;
+                }
+            }
         }
     }
 
-    .link {
-        @include smallLink(emphasis);
-        width: 100%;
+    .contact .mainContainer {
         text-align: center;
-        margin-top: 26px;
-        margin-bottom: 25px;
+        padding-bottom: 70px;
+
+        @media only screen and (max-width: 420px) {
+            .copyBtn {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    .footer .mainContainer {
+        padding-top: 5em;
+        padding-bottom: 5em;
+
+        @media only screen and (max-width: $mobileBreakpoint) {
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
     }
 }
 
 #ourPosts {
+    margin-top: 60px;
     margin-bottom: 1em;
+
+    @media only screen and (max-width: $mobileBreakpoint) {
+        margin-top: 0;
+    }
+
+    .mainContainer {
+        padding-top: 40px;
+        padding-bottom: 70px;
+    }
 
     .columns {
         display: flex;
@@ -127,47 +317,6 @@
 }
 
 @media only screen and (max-width: $wideScreenBreakpoint) {
-    #weAreWeWant {
-        .mainContainer {
-            display: block;
-
-            &::after {
-              display: none;
-            }
-        }
-
-        .article.left,
-        .article.right {
-            margin: 0 auto !important;
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            height: auto;
-
-            li {
-                height: auto;
-                margin: 0;
-                margin-top: 2em;
-                text-align: justify;
-
-                &:before {
-                    display: none;
-                }
-
-                span {
-                    transform: none;
-                    position: static;
-                    margin: 0;
-                }
-            }
-        }
-
-        .article.right {
-            margin-top: 30px !important;
-        }
-    }
-
-
     #ourPosts {
         .columns {
             display: block;

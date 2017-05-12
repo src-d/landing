@@ -1,0 +1,17 @@
+testimonials:
+  - image: http://placehold.it/350x200
+    title: Lorem ipsum dolor sit amet
+    text: "Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit constectetur adis elit."
+  - image: http://placehold.it/350x200
+    title: Lorem ipsum dolor sit amet
+    text: "Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit constectetur adis elit."
+  - image: http://placehold.it/350x200
+    title: Lorem ipsum dolor sit amet
+    text: "Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit constectetur adis elit."
+
+title: "Trusted by developers all over the world"
+desc: "Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit constectetur adis elit lorem ipsum. Lorem ipsum dolor sit amet adiscipit"
+
+link:
+  title: "Join us on Slack"
+  url: "#joinUsOnSlack"

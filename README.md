@@ -65,7 +65,7 @@ docker rename landing-PROD landing-PROD-old
 Stop the current container -> Landing is DOWN -> run the new container -> Landing is UP
 ```
 docker stop landing-PROD-old
-docker run -d -p 80:8090 -p 8080:8080 --name landing-PROD quay.io/srcd/landing:${TAG_NAME}
+docker run --restart always -d -p 80:8090 -p 8080:8080 --name landing-PROD --link landing-SLACKIN:slackin quay.io/srcd/landing:${TAG_NAME}
 ```
 
 If you run `docker ps` you will see that the running container has a new image, matching the just downloaded image.
@@ -88,10 +88,24 @@ TAG_NAME='v1.3.4-rc1'
 docker pull quay.io/srcd/landing:${TAG_NAME}
 docker stop landing-STAGING
 docker rm landing-STAGING
-docker run -d -p 8090:8090 --name landing-STAGING quay.io/srcd/landing:${TAG_NAME}
+docker run --restart always -d -p 8090:8090 --name landing-STAGING --link landing-SLACKIN:slackin quay.io/srcd/landing:${TAG_NAME}
 ```
 
 Be aware of not affecting the production container ;)
+
+## Slackin
+
+Slacking can be deployed with the following commands:
+
+```
+sudo su
+docker pull quay.io/srcd/landing:slackin
+docker stop landing-SLACKIN
+docker rm landing-SLACKIN
+docker run --restart always -d -p 3000:3000 --name landing-SLACKIN quay.io/srcd/landing:slackin
+```
+
+**NOTE:** the slacking image is not build on every tag due to a `drone-docker` bug. Since this is not suposed to changed very often, just build and push manually to `quay.io/srcd/landing:slackin`.
 
 Troubleshooting:
 ==========

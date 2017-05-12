@@ -1,35 +1,35 @@
 $lang-names:
-  Elm
-  Haskell
-  Swift
-  Elixir 
-  Go
-  JavaScript
-  Cpp
-  Clojure
-  HTML
-  Java
-  PHP
-  Python
-  Ruby;
+    Elm
+    Haskell
+    Swift
+    Elixir 
+    Go
+    JavaScript
+    Cpp
+    Clojure
+    HTML
+    Java
+    PHP
+    Python
+    Ruby;
 $lang-colors: 
-  #60B5CC // Elm
-  #29b544 // Haskell
-  #ffac45 // Swift
-  #6e4a7e // Elixir
-  #375eab // Go
-  #f1e05a // JavaScript
-  #f34b7d // Cpp
-  #db5855 // Clojure
-  #e44b23 // HTML 
-  #b07219 // Java
-  #4F5D95 // PHP
-  #3572A5 // Python
-  #701516; // Ruby
+    #60B5CC // Elm
+    #29b544 // Haskell
+    #ffac45 // Swift
+    #6e4a7e // Elixir
+    #375eab // Go
+    #f1e05a // JavaScript
+    #f34b7d // Cpp
+    #db5855 // Clojure
+    #e44b23 // HTML 
+    #b07219 // Java
+    #4F5D95 // PHP
+    #3572A5 // Python
+    #701516; // Ruby
 
 @each $color in $lang-names {
-  $i: index($lang-names, $color);
-  .lang#{$color} {
-    background-color: nth($lang-colors, $i) !important;
-  }
+    $i: index($lang-names, $color);
+    .lang#{$color} {
+        background-color: nth($lang-colors, $i) !important;
+    }
 }

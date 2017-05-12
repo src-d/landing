@@ -1,0 +1,30 @@
+hero:
+  title: We are building the technology stack for AI on code
+  desc: source{d} is building the open-source components to enable deep learning on top of source code. We believe that the next step in programming comes from teaching machines to understand and write code.
+
+  links:
+    - text: roadmap
+      url: http://blog.sourced.tech/post/our-roadmap
+      newTab: false
+    - text: manifesto
+      url: /manifesto
+      newTab: false
+
+  slackin:
+    title: Join us on Slack today
+    endpoint: /invite
+
+projectsCarousel:
+  display: false
+
+testimonials:
+  display: false
+
+osfProjects:
+  display: true
+
+ourPosts:
+  display: true
+
+contactUs:
+  display: true
