@@ -1,6 +1,6 @@
 hero:
-  title: We make machine learning on source code possible
-  desc: source{d} is building the open-source components to enable deep learning on top of source code. We believe that the next revolution in programming comes from teaching machines to understand and write code.
+  title: We are building the technology stack for AI on code
+  desc: source{d} is building the open-source components to enable deep learning on top of source code. We believe that the next step in programming comes from teaching machines to understand and write code.
 
   links:
     - text: roadmap
