@@ -26,7 +26,7 @@ export default class RepositoriesContainer extends Component {
         }
 
         return (
-            <section className="fullWidth" id="ourOpenSource">
+            <section className="opaque fullWidth" id="ourOpenSource">
                 <div className="mainContainer">
                     <header>
                         <h2>Committed to open source and its community</h2>
