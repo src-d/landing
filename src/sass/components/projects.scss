@@ -3,9 +3,10 @@ $codePanelHeightMobile: 330px;
 
 .projects {
     text-align: left;
+    margin-top: 50px;
 
     @media only screen and (max-width: $mobileBreakpoint) {
-        margin-top: 60px;
+        margin-top: 0;
     }
 
     .hljs {
