@@ -49,12 +49,12 @@
         </section>
     {{ end }}
 
-    {{ if $home.ourPosts.display }}
-        <aside id="ourPostsContainer"></aside>
-    {{ end }}
-
     {{ if $home.osfProjects.display }}
         <section id="ourOpenSourceContainer"></section>
+    {{ end }}
+
+    {{ if $home.ourPosts.display }}
+        <aside id="ourPostsContainer"></aside>
     {{ end }}
 
     {{ if $home.contactUs.display }}

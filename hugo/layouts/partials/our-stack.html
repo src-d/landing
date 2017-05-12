@@ -13,7 +13,7 @@
         </p>
     </article>
     <figure>
-        <svg class="background" width="540" height="370"><ellipse cx="50%" cy="54%" rx="40%" ry="44%" /></svg>
+        <svg class="background" width="540" height="300"><ellipse cx="50%" cy="54%" rx="40%" ry="44%" /></svg>
         <ul>
             {{ range $key, $item := $ourStack.graph.items }}
                 <li id="{{ $key }}">
@@ -32,6 +32,5 @@
                 </li>
             {{ end }}
         </ul>
-        <span class="title"><img src="{{ $ourStack.graph.imgSrc }}"></span>
     </figure>
 </div>
