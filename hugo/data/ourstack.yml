@@ -4,7 +4,7 @@ desc: We are working on releasing pre-processed data sets from our +60 million r
 links:
   - text: Check out our GitHub
     url: https://github.com/src-d
-    newTab: true    
+    newTab: true
   - text: Learn how to contribute
     url: "#"
     newTab: true
@@ -20,20 +20,20 @@ graph:
     p2:
       url: "#"
       imgSrc: /img/icons/stack/showcases.svg
-      title: 
+      title:
       text: Showcases
     p4:
-      url: https://www.github.com/src-d
+      url: https://github.com/search?q=topic%3Amachine-learning+org%3Asrc-d+fork%3Atrue
       imgSrc: /img/icons/stack/ai-tools.svg
-      title: 
+      title:
       text: AI tools
     p8:
       url: https://www.github.com/src-d
       imgSrc: /img/icons/stack/libraries.svg
-      title: 
+      title:
       text: Libraries
     p10:
       url: https://data.world/source-d
       imgSrc: /img/icons/stack/datasets.svg
-      title: 
+      title:
       text: Data sets
