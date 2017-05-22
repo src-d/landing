@@ -6,7 +6,6 @@ const merge = require('webpack-merge');
 const autoprefixer = require('autoprefixer');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 
-const includeCompass = 'includePaths[]=' + path.resolve(__dirname, 'node_modules/compass-mixins/lib');
 const IS_PRODUCTION = process.env.npm_lifecycle_event === 'build';
 
 const baseConf = {
@@ -35,7 +34,7 @@ const baseConf = {
             test: /(?:\.scss|\.css)$/,
             loader: extractTextPlugin.extract(
                 'style-loader',
-                'css!sass?' + includeCompass,
+                'css!sass?',
                 ['css-loader', 'postcss-loader']
             )
         }

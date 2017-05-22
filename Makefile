@@ -69,11 +69,11 @@ CGO_ENABLED=0
 
 export CGO_ENABLED
 
-## List all receipes
+## Lists all recipes
 list:
 	@grep '^##' Makefile -A 1
 
-## Update hugo dependencies
+## Updates hugo dependencies
 hugo-dependencies:
 	@if [[ ! -f $(HUGO) ]]; then \
 		$(MKDIR) $(HUGO_PATH); \
@@ -85,20 +85,27 @@ hugo-dependencies:
 		if [ "$(ARCH)" == "linux" ]; then tar -xvzf $${file}; else unzip $${file}; fi; \
 	fi;
 
-## Build hugo project 
-hugo-build: hugo-dependencies
+# Prepares npm
+npm-dependencies:
 	$(NPM) install
 	$(NPM) run build
-	$(HUGO) --disableRSS=true --config=hugo.config.yaml
 
-## Run hugo server
+## Builds hugo project 
+hugo-build: import-commons 
+	$(HUGO) --config=hugo.config.yaml
+
+## Runs hugo server
 hugo-server:
-	$(HUGO) server -D -w --config=hugo.config.yaml
+	$(HUGO) server --config=hugo.config.yaml --watch --buildDrafts
 
-## Deletes the hugo folder
+## Cleans and run a new hugo server with webpack watcher enabled
+landing-local-serve: npm-dependencies hugo-dependencies
+	$(NPM) run serve
+
+# Deletes the hugo folder
 hugo-clean:
 	rm -rf $(HUGO_PATH)
 
-## Deletes the hugo folder
-landing-local-serve:
-	$(NPM) run serve
+# Exports the common parts of the landing
+export-landing-commons:
+	tar -cf landing-common.tar src/js/behaviours/menu.js src/sass/shared static/img/logos static/fonts hugo/data/footer.yml hugo/layouts/partials/footer_links.html hugo/layouts/partials/footer.html hugo/layouts/partials/head.html hugo/layouts/partials/header.html hugo.config.yaml

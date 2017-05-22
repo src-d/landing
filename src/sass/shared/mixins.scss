@@ -113,3 +113,18 @@
     }
 
 }
+
+@mixin translate($x, $y) {
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+}
+
+@mixin translateX($x) {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@mixin translateY($y) {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

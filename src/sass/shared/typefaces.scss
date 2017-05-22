@@ -131,17 +131,9 @@
 
     a,
     .clickable {
-        display: inline-block;
-        border-bottom: 1px solid $lineColorUnderlineLightBg;
-        padding: 0 3px;
-        font-weight: 600;
+        @include linkStyle(false, $classes);
         text-transform: uppercase;
-        cursor: pointer;
-        transition: border-bottom 200ms ease-in-out;
-
-        &:hover {
-            border-bottom: 1px solid $lineColorUnderlineLightBgHovered;
-        }
+        display: inline-block;
 
         @each $class in $classes {
             @if ($class == 'noUnderline') {
@@ -190,5 +182,26 @@
 
     .clickable {
         padding: 0;
+    }
+}
+
+@mixin linkStyle($arrow: false, $classes: false) {
+    @include textSmall($classes);
+    border-bottom: 1px solid $lineColorUnderlineLightBg;
+    padding: 0 3px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-bottom 200ms ease-in-out;
+
+    &.active,
+    &:hover {
+        border-bottom: 1px solid $lineColorUnderlineLightBgHovered;
+    }
+
+    @if ($arrow) {
+        &:after {
+            content: '\203A';
+            margin-left: 5px;
+        }
     }
 }
