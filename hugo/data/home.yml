@@ -1,6 +1,6 @@
 hero:
-  title: We are building the technology stack for AI on code
-  desc: source{d} is building the open-source components to enable deep learning on top of source code. We believe that the next step in programming comes from teaching machines to understand and write code.
+  title: Building the technological stack for AI on code
+  desc: source{d} is building the open-source components that enable machine learning on source code. We believe that the next step in programming comes from teaching machines to understand and write code.
 
   links:
     - text: roadmap
@@ -11,7 +11,7 @@ hero:
       newTab: false
 
   slackin:
-    title: Join us on Slack today
+    title: Join the community on Slack
     endpoint: /invite
 
 projectsCarousel:
