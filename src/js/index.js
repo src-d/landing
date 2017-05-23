@@ -12,6 +12,7 @@ import RepositoriesContainer from './components/Repositories'
 import BlogPostsContainer from './components/Posts'
 import PositionsMain from './components/Positions'
 import SlackForm from './components/SlackForm'
+import setupMenu from './behaviours/menu'
 
 polyfill()
 
@@ -33,15 +34,6 @@ window.addEventListener('DOMContentLoaded', _ => {
     renderComponent(SlackForm, 'joinUsOnSlack')
     setupClipboard()
 })
-
-function setupMenu() {
-    const menuToggle = document.querySelector('#menuToggle')
-    const menu = document.querySelector('#menu')
-    menuToggle.addEventListener('click', _ => {
-        menu.classList.toggle('open')
-        menuToggle.classList.toggle('open')
-    })
-}
 
 function setupStickyHeader() {
     const topBar = document.querySelector('#topBar')

@@ -1,20 +1,8 @@
-@import "compass/css3";
-
-@import "reset";
-
-@import "variables";
-@import "languages";
-@import "mixins/common";
-
-@import "typefaces";
-@import "skeleton";
+@import "shared/app";
 
 @import "components/buttons";
 @import "components/repositories";
 @import "components/tooltip";
-@import "components/topbar";
-@import "components/footer";
-@import "components/menu";
 @import "components/loading";
 @import "components/mainHeader";
 @import "components/projects";
