@@ -73,6 +73,7 @@ body.homePage {
                 }
 
                 .email,
+                .success,
                 .send {
                     @include familyWeight($fontText, 400);
                     width: 100%;
@@ -83,7 +84,8 @@ body.homePage {
                     color: $textColorWhite;
                 }
 
-                .send {
+                .send,
+                .success {
                     @include button();
                     background: $codeColorLiteral;
                     padding: 15px;
@@ -92,6 +94,10 @@ body.homePage {
                     font-size: 18px;
                     border: 0;
                     text-align: center;
+
+                    &.invalid {
+                      opacity: 0.75;
+                    }
 
                     .joinUs {
                         margin-left: 10px;
@@ -131,20 +137,23 @@ body.homePage {
                     }
                 }
 
-                .error, .success {
-                  font-size: .8em;
-                  padding: .5em;
-                  margin-top: 1.5em;
-                  border-radius: 3px;
-                  color: white;
-                }
-
                 .error {
                   background: $bgErrRed;
+                  margin-top: $gutter;
                 }
 
                 .success {
-                  background: $textColorGreen;
+                  background: $bgSuccessGreen;
+                }
+
+                .error,
+                .success {
+                  color: white;
+                  text-align: center;
+                  border-radius: $borderRadius;
+                  padding: 15px;
+                  border: 0;
+                  line-height: normal;
                 }
             }
 

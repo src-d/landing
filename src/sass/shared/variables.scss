@@ -7,13 +7,15 @@ $pageWidthSmallPages: 800px;
 $topbarHeight: 56px;
 
 $corporativeColor: #33526c;
+$corporativeGreen: #64ce62;
 
 $bgMainColor: white;
 $bgLightBlue: #f4f7fb;
 $bgMainHeader: $corporativeColor;
 $bgCardSmall: white;
 $bgBtnBlue: #4285F4;
-$bgErrRed: #db5855;
+$bgErrRed: #ff4623;
+$bgSuccessGreen: $corporativeGreen;
 $bgCodeWindow: #203242;
 
 $textColorTitle: #1e2b34;
@@ -27,7 +29,6 @@ $textColorGreyDetails: #99A9B3;
 $textColorWhite: white;
 $textColorWhiteAlt: #dfe8ef;
 
-$textColorGreen: #70C668;
 $textColorEmphasis: $textColorCorporative;
 $textColorEmphasisLight: #a1b5d6;
 $textColorEmphasisDark: $textColorCorporative;
