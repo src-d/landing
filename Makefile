@@ -91,7 +91,7 @@ npm-dependencies:
 	$(NPM) run build
 
 ## Builds hugo project 
-hugo-build: import-commons 
+hugo-build: npm-dependencies hugo-dependencies
 	$(HUGO) --config=hugo.config.yaml
 
 ## Runs hugo server
