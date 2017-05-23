@@ -1,9 +1,22 @@
 $codePanelHeight: 400px;
 $codePanelHeightMobile: 330px;
 
+#projects {
+    overflow: hidden;
+
+    .slick-slider {
+        margin-bottom: 0;
+    }
+
+    @media only screen and (max-width: $mobileBreakpoint) {
+        .mainContainer {
+            padding-top: $verticalSpace - 50px;
+        }
+    }
+}
+
 .projects {
     text-align: left;
-    margin-top: 50px;
 
     @media only screen and (max-width: $mobileBreakpoint) {
         margin-top: 0;

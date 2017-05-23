@@ -1,20 +1,23 @@
 body.homePage {
-    .mainHeader {
-        margin-bottom: 70px;
+    .mainContainer {
+        padding-top: $verticalSpace;
+        padding-bottom: $verticalSpace;
+    }
 
+    .mainHeader {
         @media only screen and (max-width: $mobileBreakpoint) {
             margin-bottom: 0;
         }
 
         .mainContainer {
             margin-top: 0;
-            padding: ($topbarHeight + 70px) 12px 80px;
+            padding: ($topbarHeight + $verticalSpace) $midGutter $verticalSpace;
             text-align: left;
             height: auto;
 
             @media only screen and (max-width: $mobileBreakpoint) {
-                padding-top: $topbarHeight + 20px;
-                padding-bottom: 30px;
+                padding-top: $topbarHeight + $verticalSpace;
+                padding-bottom: $verticalSpace;
             }
 
             .description {
@@ -38,9 +41,13 @@ body.homePage {
                 .links {
                     text-align: left;
                     max-width: none;
-                    max-width: 540px;
+                    max-width: 600px;
                     padding-right: 30px;
                     margin-left: 0;
+
+                    @media only screen and (max-width: $mobileBreakpoint) {
+                        padding-right: 0;
+                    }
                 }
 
                 .title {
@@ -54,7 +61,7 @@ body.homePage {
 
                 .links > a,
                 .links > .link {
-                    color: $textColorWhiteAlt;
+                    color: $textColorWhite;
                     border: 0;
                     text-transform: uppercase;
                 }
@@ -68,7 +75,7 @@ body.homePage {
                 .title {
                     line-height: 30px;
                     text-align: left;
-                    color: $textColorWhiteAlt;
+                    color: $textColorWhite;
                     font-size: $textSizeTitle2;
                 }
 
@@ -82,6 +89,7 @@ body.homePage {
                     margin-top: 30px;
                     text-align: left;
                     color: $textColorWhite;
+                    border-radius: 3px;
                 }
 
                 .send,
@@ -121,7 +129,7 @@ body.homePage {
 
                 .email {
                     background: rgba(255, 255, 255, 0.1);
-                    border-color: rgba(238, 238, 238, 0.1);
+                    border-color: transparent;
 
                     &::-webkit-input-placeholder {
                         color: rgba(255,255,255,0.5);
@@ -166,8 +174,6 @@ body.homePage {
 
             @media only screen and (max-width: $mobileBreakpoint) {
                 &.description {
-                    margin: 20px auto;
-
                     .mainTitle {
                         float: none;
                         padding-right: 0;
@@ -189,7 +195,7 @@ body.homePage {
 
                     .slackForm {
                         float: none;
-                        margin: 40px auto 40px;
+                        margin: 40px auto 0;
                     }
                 }
             }
@@ -223,42 +229,21 @@ body.homePage {
             }
         }
     }
-
-    .contact .mainContainer {
-        text-align: center;
-        padding-bottom: 70px;
-
-        @media only screen and (max-width: 420px) {
-            .copyBtn {
-                width: 100%;
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-    }
-
-    .footer .mainContainer {
-        padding-top: 5em;
-        padding-bottom: 5em;
-
-        @media only screen and (max-width: $mobileBreakpoint) {
-            padding-top: 2em;
-            padding-bottom: 2em;
-        }
-    }
 }
 
 #ourPosts {
-    margin-top: 60px;
-    margin-bottom: 1em;
-
     @media only screen and (max-width: $mobileBreakpoint) {
         margin-top: 0;
     }
 
     .mainContainer {
-        padding-top: 40px;
-        padding-bottom: 70px;
+        padding-top: $verticalSpace - 30px;
+        padding-bottom: $verticalSpace;
+
+        @media only screen and (max-width: $mobileBreakpoint) {
+            padding-top: $verticalSpace - 10px;
+            //padding-bottom: $verticalSpace;
+        }
     }
 
     .columns {
@@ -351,6 +336,10 @@ body.homePage {
 @media only screen and (max-width: $mobileBreakpoint) {
     #ourPosts section {
         margin: 1rem auto !important;
+
+        & + section{
+            margin-bottom: 0 !important;
+        }
     }
 }
 

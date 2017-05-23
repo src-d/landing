@@ -1,10 +1,12 @@
 $pageWidth: 1024px;
-$mobileBreakpoint: 768px;
-$wideScreenBreakpoint: $pageWidth;
 $columns: 12;
 $gutter: 24px;
+$midGutter: $gutter / 2;
 $pageWidthSmallPages: 800px;
 $topbarHeight: 56px;
+$verticalSpace: 75px;
+$mobileBreakpoint: 768px;
+$wideScreenBreakpoint: $pageWidth + 2 * $midGutter;
 
 $corporativeColor: #33526c;
 $corporativeGreen: #64ce62;

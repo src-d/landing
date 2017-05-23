@@ -29,7 +29,7 @@
             }
 
             &:last-child {
-                margin-right: 0;
+                padding-right: 0;
 
                 a {
                     padding-right: 0;
@@ -49,6 +49,11 @@
 
             &.mobile {
                 display: none;
+            }
+
+            a,
+            .clickable {
+                color: inherit;
             }
         }
     }
@@ -98,7 +103,7 @@
             li {
                 float: none;
                 display: block;
-                margin: 1.5em;
+                margin: .7em auto;
                 font-weight: normal;
                 font-size: 1.8em;
                 letter-spacing: 0.8px;
@@ -117,6 +122,7 @@
 
                 &:first-child {
                     display: block;
+                    padding-left: 0;
                 }
 
                 &:nth-child(n+2):before {
@@ -124,7 +130,7 @@
                 }
 
                 &:last-child {
-                    margin-right: 1.5em;
+                    padding-left: 0;
                 }
                 
                 a {

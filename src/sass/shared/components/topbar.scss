@@ -10,7 +10,7 @@
     .logo {
         @include iconOnly(120px, 29px, '/img/logos/logo-white.svg');
         position: absolute;
-        left: 12px;
+        left: $midGutter;
     }
 
     &:before {
@@ -44,7 +44,7 @@
         width: $pageWidth;
         margin: 0 auto;
         position: relative;
-        padding: 0 12px;
+        padding: 0 $midGutter;
     }
 
     .toggle {

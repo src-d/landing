@@ -125,6 +125,10 @@
         }
     }
 
+    @media only screen and (max-width: $mobileBreakpoint) {
+        padding-top: $verticalSpace - 10px;
+    }
+
     @media only screen and (max-width: 730px) {
         .article.left {
             float: none;
