@@ -1,11 +1,27 @@
 $footeHPadding: 96px;
+
 .footer {
     z-index: 3;
 }
+
+body aside.contact .mainContainer {
+    text-align: center;
+    padding-top: $verticalSpace - 30px;
+    padding-bottom: $verticalSpace;
+
+    @media only screen and (max-width: 420px) {
+        .copyBtn {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
 .footer > .mainContainer {
     overflow: hidden;
-    padding-top: 5em;
-    padding-bottom: 5em;
+    padding-top: $verticalSpace;
+    padding-bottom: $verticalSpace;
     border-top: 1px solid $lineColorBlueLight;
     display: flex;
     align-items: center;
@@ -81,9 +97,9 @@ $footeHPadding: 96px;
 }
 
 @media all and (max-width: 935px) {
-    .footer > .mainContainer {
+    body footer.footer > .mainContainer {
         display: block;
-        padding-top: 3em;
+        padding-top: $verticalSpace - 35px;
 
         .footerLinkGroup,
         .footerLinkGroup.rightLinks {
@@ -110,7 +126,7 @@ $footeHPadding: 96px;
 }
 
 @media all and (max-width: 700px) {
-    .footer > .mainContainer {
+    body footer.footer > .mainContainer {
         .footerLinkGroup,
         .footerLinkGroup.rightLinks {
             width: 70%;
@@ -132,7 +148,7 @@ $footeHPadding: 96px;
 }
 
 @media all and (max-width: 500px) {
-    .footer > .mainContainer {
+    body footer.footer > .mainContainer {
         .footerLinkGroup,
         .footerLinkGroup.rightLinks {
             width: 100%;

@@ -32,6 +32,7 @@
     @each $class in $classes {
         @if ($class == 'alphaCover') {
             color: $textColorWhite;
+            font-weight: 700;
         }
     }
 }
@@ -71,7 +72,7 @@
 
     @each $class in $classes {
         @if ($class == 'alphaCover') {
-            color: $textColorWhiteAlt;
+            color: $textColorWhite;
         }
         @else if ($class == 'strong') {
             font-weight: 600;

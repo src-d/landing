@@ -17,7 +17,7 @@ body {
 .mainContainer {
     width: $pageWidth;
     margin: 0 auto;
-    padding: 27px 0;
+    padding: 27px $midGutter;
     z-index: 2;
     position: relative;
     text-align: center;
