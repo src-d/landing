@@ -1,18 +1,18 @@
 company:
   - title: About Us
-    url: http://sourced.tech
+    url: //sourced.tech
   - title: Manifesto
-    url: http://sourced.tech/manifesto
+    url: //sourced.tech/manifesto
   - title: Roadmap
     url: http://blog.sourced.tech/post/our-roadmap
   - multi: true
     items:
       - title: Team
-        url: http://sourced.tech/team
+        url: //sourced.tech/team
       - title: Stack
-        url: http://sourced.tech/stack
+        url: //sourced.tech/stack
   - title: Careers
-    url: http://sourced.tech/careers
+    url: //sourced.tech/careers
 community:
   - title: Tech Talks 
     url: http://talks.sourced.tech
