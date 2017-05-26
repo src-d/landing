@@ -108,4 +108,8 @@ hugo-clean:
 
 # Exports the common parts of the landing
 export-landing-commons:
-	tar -cf landing-common.tar src/js/behaviours/menu.js src/sass/shared static/img/logos static/fonts hugo/data/footer.yml hugo/layouts/partials/footer_links.html hugo/layouts/partials/footer.html hugo/layouts/partials/head.html hugo/layouts/partials/header.html hugo.config.yaml
+	@if [[ -z "$(target)" ]]; then \
+		echo "**error 'target' is undefined. STOP"; \
+		exit 1; \
+	fi;
+	tar -cf $(target) src/js/behaviours/menu.js src/sass/shared static/img/logos static/fonts hugo/data/footer.yml hugo/layouts/partials/footer_links.html hugo/layouts/partials/footer.html hugo/layouts/partials/head.html hugo/layouts/partials/header.html hugo.config.yaml
