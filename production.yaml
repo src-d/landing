@@ -1,5 +1,4 @@
 addr: ":8080"
-github-token: "**REMOVED**"
 feed-base-url: "http://blog.sourced.tech/json/"
 positions-base-url: "https://api.lever.co/v0/postings/sourced?mode=json"
 fetcher-page-size: 45

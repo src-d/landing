@@ -19,8 +19,9 @@ import (
 )
 
 var (
-	configFile = flag.String("config", "", "config file path")
-	ttl        = flag.Duration("ttl", 1*time.Hour, "ttl of the cache")
+	configFile  = flag.String("config", "", "config file path")
+	ttl         = flag.Duration("ttl", 1*time.Hour, "ttl of the cache")
+	githubToken = os.Getenv("GITHUB_TOKEN")
 )
 
 func main() {
@@ -35,7 +36,7 @@ func main() {
 		AllowMethods:    []string{"GET", "POST"},
 	}))
 
-	provider := github.NewRepoProvider(github.NewRepoFetcher(conf.GithubToken))
+	provider := github.NewRepoProvider(github.NewRepoFetcher(githubToken))
 	repositories := handlers.NewRepositories(conf, provider)
 	store := persistence.NewInMemoryStore(*ttl)
 
