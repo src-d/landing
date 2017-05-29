@@ -1,7 +1,7 @@
 # Config
 PROJECT = landing
 COMMANDS = api
-CODECOV_TOKEN = c3fba21a-5c15-4e6a-994e-ed0238303be3
+CODECOV_TOKEN ?= 
 DOCKERFILES ?=
 
 HUGO_VERSION := 0.17
@@ -13,7 +13,7 @@ DOCKER_PASSWORD ?=
 
 # Including devops Makefile
 MAKEFILE = Makefile.main
-DEVOPS_REPOSITORY = https://github.com/src-d/devops.git
+DEVOPS_REPOSITORY ?= 
 DEVOPS_FOLDER = .devops
 CI_FOLDER = .ci
 
