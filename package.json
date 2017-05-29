@@ -6,9 +6,7 @@
   "scripts": {
     "api-run": "go run api/api.go --config production.yaml",
     "build": "webpack --config=webpack.config.js",
-    "hugo-build": "hugo --config=hugo.config.yaml --destination=public --disableRSS=true",
-    "hugo-server": "hugo server --config=hugo.config.yaml --destination=public --port=8181 --watch --disableRSS=true",
-    "serve": "concurrently --kill-others \"npm run webpack-watcher\" \"npm run hugo-server\" \"npm run api-run\"",
+    "serve": "concurrently --kill-others \"npm run webpack-watcher\" \"make hugo-server\" \"npm run api-run\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors"
   },

@@ -11,7 +11,7 @@ make hugo-build
 ```
 If you want to build the project separatelly, you can replace the last command with these two:
 * `npm run build` To compile webpack stuff into `/static` folder
-* `npm run hugo-build` To compile hugo stuff from `/content/layouts/static/data` folders into `/public` folder
+* `make hugo-build` To compile hugo stuff from `/content/layouts/static/data` folders into `/public` folder
 
 Development:
 ===
@@ -23,3 +23,4 @@ This runs everything you need to get the site working at [http://localhost:8181]
 If you want to build the project separatelly, you can replace the last command with these two:
 * `npm run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
 * `npm run webpack-watcher` To start webpack watcher, that will rebuild the assets when you change its sources
+* `make hugo-server` To serve the landing locally using hugo server

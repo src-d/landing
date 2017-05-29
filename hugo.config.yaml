@@ -18,8 +18,9 @@ paginatePath: "page"
 
 googleAnalytics: ""
 
-disableRSS: true
-disableSitemap: true
+disableKinds:
+    - RSS
+    - Sitemap
 enableRobotsTXT: true
 enableEmoji: false
 
