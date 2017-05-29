@@ -1,7 +1,6 @@
 FROM node:6.10-alpine
 
-ENV PORT 3000
-ENV SLACK_API_TOKEN ***REMOVED***
+ENV PORT 3000 
 ENV SLACK_SUBDOMAIN sourced-community
 
 RUN mkdir -p /srv
