@@ -1,62 +1,82 @@
 teams:
     - name: Engineering
       headline: The core of everything we do, from the beginning to the end; writing great software
-      members:
-        - picture: vadim.jpg
-          name: Vadim Markovtsev
-          position: Lead Machine Learning Engineer
-          team: Machine Learning Team
-          github: https://github.com/vmarkovtsev
-        - picture: santiago.jpg
-          name: Santiago Mola
-          position: Lead Software Engineer
-          team: Data Retrieval Team
-          github: https://github.com/smola
-        - picture: alberto.png
-          name: Alberto Cortés
-          position: Software Engineer
-          team: Data Retrieval Team
-          github: https://github.com/alcortesm
-        - picture: antonio.png
-          name: Antonio Navarro
-          position: Senior Software Engineer
-          team: Data Retrieval Team
-          github: https://github.com/ajnavarro
-        - picture: david-paz.png
-          name: David Paz
-          position: Software Engineering Intern
-          team: Data Retrieval Team
-          github: https://github.com/dpaz
-        - picture: placeholder/new-man.png
-          name: Manuel Carmona
-          position: Software Engineering Intern
-          team: Data Retrieval Team
-          github: https://github.com/mcarmonaa
-        - picture: juanjo.png
-          name: Juanjo Álvarez
-          position: Senior Software Engineer
-          team: Data Retrieval Team
-          github: https://github.com/juanjux
-        - picture: miguel.png
-          name: Miguel Molina
-          position: Senior Software Engineer
-          team: Platform Team
-          github: https://github.com/erizocosmico
-        - picture: david.png
-          name: David Pordomingo
-          position: Software Engineer
-          team: Platform Team
-          github: https://github.com/dpordomingo
-        - picture: sergio.png
-          name: Sergio Arbeo
-          position: Senior Software Engineer
-          team: Platform Team
-          github: https://github.com/serabe
-        - picture: sonia.png
-          name: Sonia Meruelo
-          position: DevOps Engineer
-          team: Infrastructure Team
-          github: https://github.com/smeruelo
+      subteams:
+        - teamName: Data Retrieval Team
+          members:
+          - picture: santiago.jpg
+            name: Santiago Mola
+            position: Lead Software Engineer
+            github: https://github.com/smola
+          - picture: placeholder/new-man.png
+            name: Alexander Bezzubov
+            position: Senior Software Engineer
+            github: https://github.com/bzz
+          - picture: antonio.png
+            name: Antonio Navarro
+            position: Senior Software Engineer
+            github: https://github.com/ajnavarro
+          - picture: alberto.png
+            name: Alberto Cortés
+            position: Software Engineer
+            github: https://github.com/alcortesm
+
+        - teamName: Infrastructure Team
+          members:
+          - picture: sonia.png
+            name: Sonia Meruelo
+            position: DevOps Engineer
+            github: https://github.com/smeruelo
+
+        - teamName: Language Analysis Team
+          members:
+          - picture: alfredo.png
+            name: Alfredo Beaumont
+            position: Senior Software Engineer
+            github: https://github.com/abeaumont
+          - picture: juanjo.png
+            name: Juanjo Álvarez
+            position: Senior Software Engineer
+            github: https://github.com/juanjux
+          - picture: manuel.png
+            name: Manuel Carmona
+            position: Junior Software Engineer
+            github: https://github.com/mcarmonaa
+          - picture: david-paz.png
+            name: David Paz
+            position: Software Engineering Intern
+            github: https://github.com/dpaz
+
+        - teamName: Machine Learning Team
+          members:
+          - picture: vadim.jpg
+            name: Vadim Markovtsev
+            position: Lead Software Engineer
+            github: https://github.com/vmarkovtsev
+          - picture: egor.png
+            name: Egor Bulychev
+            position: Senior Software Engineer
+            github: https://github.com/EgorBu
+          - picture: waren.png
+            name: Waren Long
+            position: Software Engineering Intern
+            github: https://github.com/warenlg
+
+        - teamName: Platform Team
+          members:
+          - picture: sergio.png
+            name: Sergio Arbeo
+            position: Lead Software Engineer
+            github: https://github.com/serabe
+          - picture: miguel.png
+            name: Miguel Molina
+            position: Senior Software Engineer
+            github: https://github.com/erizocosmico
+          - picture: david.png
+            name: David Pordomingo
+            position: Software Engineer
+            github: https://github.com/dpordomingo
+
     - name: Product & Data Intelligence
       headline: Translating our vision into amazing products & making smarter decisions with hard data
       members:
@@ -97,10 +117,6 @@ teams:
           name: Máximo Cuadros
           position: VP of Engineering
           github: https://github.com/mcuadros
-        - picture: philip.png
-          name: Philip von Have
-          position: Co-Founder & VP of Customer Operations Germany
-          linkedin: https://de.linkedin.com/pub/philip-von-have/20/46a/29b
         - picture: marge.png
           name: Margarida García
           position: VP of Developer Relations
