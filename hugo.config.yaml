@@ -1,4 +1,4 @@
-baseurl: "http://sourced.tech"
+baseurl: "//sourced.tech"
 title: "source{d}"
 
 contentdir:   "hugo/content"
@@ -18,8 +18,9 @@ paginatePath: "page"
 
 googleAnalytics: ""
 
-disableRSS: true
-disableSitemap: true
+disableKinds:
+    - RSS
+    - Sitemap
 enableRobotsTXT: true
 enableEmoji: false
 
@@ -36,7 +37,6 @@ taxonomies:
 params:
     author: source{d}
     description: "source{d} aims to understand developers through their code. We analyze contributions from more than 7 million developers in the open source community."
-    copyright: Copyright (c) 2016 source{d}
     defaultemail: "hello@sourced.tech"
     location: "Madrid"
     favicon: "/img/logos/favicon.png"

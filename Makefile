@@ -4,7 +4,7 @@ COMMANDS = api
 CODECOV_TOKEN ?= 
 DOCKERFILES ?=
 
-HUGO_VERSION := 0.17
+HUGO_VERSION := 0.21
 HUGO_BINARY = hugo_$(HUGO_VERSION)_linux_amd64
 
 DOCKER_REGISTRY ?= quay.io
@@ -55,12 +55,12 @@ endif
 BASE_PATH := $(shell pwd)
 HUGO_PATH := $(BASE_PATH)/.hugo
 HUGO_URL = github.com/spf13/hugo
-HUGO_NAME := hugo_$(HUGO_VERSION)_$(ARCH)_$(OS)
+HUGO_NAME := hugo
 HUGO_URL_NAME := hugo_$(HUGO_VERSION)_$(URL_ARCH)-$(URL_OS)
 
 # Tools
 CURL = curl -L
-HUGO = $(HUGO_PATH)/$(HUGO_NAME)/$(HUGO_NAME)
+HUGO = $(HUGO_PATH)/$(HUGO_NAME)
 MKDIR = mkdir -p
 GIT = git
 DOCKER = docker
@@ -73,7 +73,7 @@ export CGO_ENABLED
 list:
 	@grep '^##' Makefile -A 1
 
-## Updates hugo dependencies
+# Updates hugo dependencies
 hugo-dependencies:
 	@if [[ ! -f $(HUGO) ]]; then \
 		$(MKDIR) $(HUGO_PATH); \
@@ -92,14 +92,14 @@ npm-dependencies:
 
 ## Builds hugo project 
 hugo-build: npm-dependencies hugo-dependencies
-	$(HUGO) --config=hugo.config.yaml
+	$(HUGO) --config=hugo.config.yaml --destination=public
 
-## Runs hugo server
+# Runs hugo server
 hugo-server:
-	$(HUGO) server --config=hugo.config.yaml --watch --buildDrafts
+	$(HUGO) server --config=hugo.config.yaml --destination=public --port=8181 --watch --buildDrafts
 
 ## Cleans and run a new hugo server with webpack watcher enabled
-landing-local-serve: npm-dependencies hugo-dependencies
+landing-local-serve: hugo-clean npm-dependencies hugo-dependencies
 	$(NPM) run serve
 
 # Deletes the hugo folder
