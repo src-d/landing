@@ -3,6 +3,7 @@ PROJECT = landing
 COMMANDS = api
 CODECOV_TOKEN ?= 
 DOCKERFILES ?=
+DESTINATION ?= public
 
 HUGO_VERSION := 0.21
 HUGO_BINARY = hugo_$(HUGO_VERSION)_linux_amd64
@@ -66,6 +67,8 @@ GIT = git
 DOCKER = docker
 NPM = npm
 CGO_ENABLED=0
+REMOVE = rm -rf
+COMPRESS = tar -cf
 
 export CGO_ENABLED
 
@@ -92,7 +95,7 @@ npm-dependencies:
 
 ## Builds hugo project 
 hugo-build: npm-dependencies hugo-dependencies
-	$(HUGO) --config=hugo.config.yaml --destination=public
+	$(HUGO) --config=hugo.config.yaml --destination=$(DESTINATION)
 
 # Runs hugo server
 hugo-server:
@@ -104,12 +107,17 @@ landing-local-serve: hugo-clean npm-dependencies hugo-dependencies
 
 # Deletes the hugo folder
 hugo-clean:
-	rm -rf $(HUGO_PATH)
+	$(REMOVE) $(HUGO_PATH)
 
 # Exports the common parts of the landing
+exportable_files = "src/js/behaviours/menu.js src/sass/shared static/img/logos static/fonts hugo/data/footer.yml hugo/layouts/partials/footer_links.html hugo/layouts/partials/footer.html hugo/layouts/partials/head.html hugo/layouts/partials/header.html hugo.config.yaml"
+file_list_name ?= .filelist
 export-landing-commons:
 	@if [[ -z "$(target)" ]]; then \
 		echo "**error 'target' is undefined. STOP"; \
 		exit 1; \
 	fi;
-	tar -cf $(target) src/js/behaviours/menu.js src/sass/shared static/img/logos static/fonts hugo/data/footer.yml hugo/layouts/partials/footer_links.html hugo/layouts/partials/footer.html hugo/layouts/partials/head.html hugo/layouts/partials/header.html hugo.config.yaml
+	@echo $(exportable_files) | sed -e "s/ /\n/g" > $(file_list_name)
+	@tar_command="$(COMPRESS) $(target) "$(exportable_files)" $(file_list_name)"; \
+		`$$tar_command`;
+	$(REMOVE) $(file_list_name)
