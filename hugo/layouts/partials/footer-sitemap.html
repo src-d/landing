@@ -1,0 +1,33 @@
+<footer>
+    <h5>Contact</h5>
+    {{ range $addr := $.Site.Data.footer.contact.address }}
+        <p>{{ $addr }}</p>
+    {{ end }}
+    <ul>
+        {{ range $m := $.Site.Data.footer.contact.mails }}
+            <li>
+                <a href="mailto:{{ $m }}" title="Contact {{ $m }}">
+                    {{ $m }}
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+
+    <div>
+        <div>
+            <a href="{{ $.Site.BaseURL }}" title="source{d}" class="logo">
+                source{d}
+            </a>
+        </div>
+
+        <div>
+            {{ partial "footer-sitemap-links.html" (dict "title" "Company" "items" $.Site.Data.footer.company) }}
+
+            {{ partial "footer-sitemap-links.html" (dict "title" "Community" "items" $.Site.Data.footer.community) }}
+            
+            {{ partial "footer-sitemap-links.html" (dict "title" "Networks" "items" $.Site.Data.footer.networks) }}
+        </div>
+    </div>
+</footer>
+
+<script src="/js/bundle.js"></script>

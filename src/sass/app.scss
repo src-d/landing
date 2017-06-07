@@ -1,16 +1,12 @@
 @import "shared/app";
 
 @import "components/buttons";
-@import "components/repositories";
-@import "components/tooltip";
 @import "components/loading";
-@import "components/mainHeader";
-@import "components/projects";
-@import "components/testimonials";
-@import "components/our-stack";
+@import "components/tooltip";
 
+@import "pages/career";
+@import "pages/custom";
 @import "pages/index";
+@import "pages/projects";
 @import "pages/stack";
 @import "pages/team";
-@import "pages/custom";
-@import "pages/career";

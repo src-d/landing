@@ -11,20 +11,21 @@ hero:
       newTab: false
 
   slackin:
-    title: Join the community on Slack
+    title: Join the community
+    desc: Ipsum exercitation magna excepteur dolor.
     endpoint: /invite
 
 projectsCarousel:
-  display: false
+  display: true
+
+ourCategories:
+  display: true
+
+ourRoadmap:
+  display: true
 
 testimonials:
-  display: false
-
-osfProjects:
   display: true
 
 ourPosts:
-  display: true
-
-contactUs:
   display: true

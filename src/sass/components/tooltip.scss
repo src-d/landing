@@ -42,13 +42,13 @@
     &.show {
         &:after {
             visibility: visible;
-            background: fade-in($textColorLinkBlack, 0.02);
+            background: fade-in(#555F66, 0.02);
             bottom: 120%;
         }
 
         &:before {
             visibility: visible;
-            border-color: fade-in($textColorLinkBlack, 0.02) transparent;
+            border-color: fade-in(#555F66, 0.02) transparent;
             bottom: calc(120% - 8px);
         }
     }

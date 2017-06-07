@@ -31,37 +31,29 @@
         </div>
     </header>
 
-    <section class="fullWidth" id="ourStack">
-        {{ partial "our-stack.html" . }}
-    </section>
-
     {{ if $home.projectsCarousel.display }}
-        <section class="fullWidth" id="projects">
-            <div class="mainContainer">
-                {{ partial "projects.html" . }}
-            </div>
-        </section>
+        {{ partial "index-carousel.html" . }}
+    {{ end }}
+
+    {{ if $home.ourCategories.display }}
+        {{ partial "index-categories.html" . }}
+    {{ end }}
+
+    {{ if $home.ourRoadmap.display }}
+        {{ partial "index-roadmap.html" . }}
     {{ end }}
 
     {{ if $home.testimonials.display }}
-        <section class="fullWidth" id="testimonials">
-            {{ partial "testimonials.html" . }}
-        </section>
-    {{ end }}
-
-    {{ if $home.osfProjects.display }}
-        <section id="ourOpenSourceContainer"></section>
+        {{ partial "index-testimonials.html" . }}
     {{ end }}
 
     {{ if $home.ourPosts.display }}
-        <aside id="ourPostsContainer"></aside>
+        {{ partial "index-blog.html" . }}
     {{ end }}
 
-    {{ if $home.contactUs.display }}
-        {{ partial "contact-us.html" . }}
-    {{ end }}
-
-    {{ partial "footer.html" . }}
+    {{ partial "footer-slack.html" . }}
+    {{ partial "footer-contact-us.html" . }}
+    {{ partial "footer-sitemap.html" . }}
 </body>
 
 </html>

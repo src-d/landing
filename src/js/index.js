@@ -6,9 +6,7 @@ import React from 'react'
 import $ from 'jquery'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
-import 'slick-carousel'
 import setupClipboard from './clipboard'
-import RepositoriesContainer from './components/Repositories'
 import BlogPostsContainer from './components/Posts'
 import PositionsMain from './components/Positions'
 import SlackForm from './components/SlackForm'
@@ -26,9 +24,7 @@ function renderComponent(component, id) {
 window.addEventListener('DOMContentLoaded', _ => {
     setupMenu()
     setupStickyHeader()
-    setupSlider()
     hljs.initHighlightingOnLoad()
-    renderComponent(RepositoriesContainer, 'ourOpenSourceContainer')
     renderComponent(BlogPostsContainer, 'ourPostsContainer')
     renderComponent(PositionsMain, 'offersPanel')
     renderComponent(SlackForm, 'joinUsOnSlack')
@@ -50,13 +46,4 @@ function checkTopbarOpacity(topBar, opaqueAtOffset) {
     } else {
         topBar.classList.remove('opaque')
     }
-}
-
-function setupSlider() {
-  $('.projects').slick({
-    infinite: true,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 8000,
-  });
 }

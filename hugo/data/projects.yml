@@ -1,32 +1,16 @@
 projects:
   - title: Lorem ipsum
     desc: Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-    bulletpoints:
-      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
     code: lipsum.go
     language: go
-    docs: https://godoc.org/gopkg.in/src-d/go-kallax.v1
-    usage: https://github.com/src-d/go-kallax
+    link: https://github.com/src-d/go-kallax
   - title: Lorem ipsum
     desc: Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-    bulletpoints:
-      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
     code: lipsum.go
     language: go
-    docs: https://godoc.org/gopkg.in/src-d/go-kallax.v1
-    usage: https://github.com/src-d/go-kallax
+    link: https://github.com/src-d/go-kallax
   - title: Really ugly code
     desc: Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Id veniam ex labore est magna eiusmod pariatur nulla et. Consectetur officia consectetur consectetur qui duis excepteur. Dolore ex cillum sint velit ipsum ipsum nulla id. Occaecat quis cupidatat labore incididunt est dolor quis consectetur dolor sit quis elit. Ad proident sint non culpa consectetur officia eu officia exercitation.
-    bulletpoints:
-      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-      - Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
     code: ugly.js
     language: js
-    docs: https://godoc.org/gopkg.in/src-d/go-kallax.v1
-    usage: https://github.com/src-d/go-kallax
+    link: https://github.com/src-d/go-kallax
