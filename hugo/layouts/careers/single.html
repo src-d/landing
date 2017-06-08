@@ -3,8 +3,8 @@
 <body>
     {{ partial "header.html" . }}
 
-    <header class="fullWidth mainHeader"
-        style="background-image: url('{{ with .Params.headerimageurl }}{{ . }}{{ else }}{{ .Site.Params.headerImageUrl }}{{ end }}');"
+    <header
+        style="background-image: url('{{ default .Site.Params.headerImageUrl .Params.headerImageUrl }}');"
     >
         <div class="mainContainer">
             <div class="description">
@@ -18,8 +18,8 @@
         <div id="offersPanel"></div>
     </div>
 
-    {{ partial "contact-us.html" . }}
-    {{ partial "footer.html" . }}
+    {{ partial "footer/contact-us.html" . }}
+    {{ partial "footer/sitemap.html" . }}
 
 </body>
 

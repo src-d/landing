@@ -1,0 +1,15 @@
+{{ $testimonials := $.Site.Data.home.testimonials }}
+
+<h1>What developers say</h1>
+{{ range $t := $testimonials.testimonials }}
+    <div>
+        <img src="{{ $t.image }}" alt="{{ $t.name }}" />
+        <p>{{ $t.text }}</p>
+        <p>
+            {{ $t.name }}
+            <a href="https://twitter.com/{{ $t.handler }}" target="_blank">
+                @{{ $t.handler }}
+            </a>
+        </p>
+    </div>
+{{ end }}

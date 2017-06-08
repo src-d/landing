@@ -1,0 +1,37 @@
+hero:
+  title: Building the technological stack for AI on code
+  desc: source{d} is building the open-source components that enable machine learning on source code. We believe that the next step in programming comes from teaching machines to understand and write code.
+
+  links:
+    - text: roadmap
+      url: http://blog.sourced.tech/post/our-roadmap
+      newTab: false
+    - text: manifesto
+      url: /manifesto
+      newTab: false
+
+  slackin:
+    title: Join the community
+    desc: Ipsum exercitation magna excepteur dolor.
+    endpoint: /invite
+    messages:
+      success: "Success! Check your email!"
+      button: "Join us on Slack"
+      wait: "Please wait..."
+      serverError: "Error! Submit again."
+      fetchError: "Server error"
+
+projectsCarousel:
+  display: true
+
+ourCategories:
+  display: true
+
+ourRoadmap:
+  display: true
+
+testimonials:
+  display: true
+
+ourPosts:
+  display: true

@@ -1,0 +1,10 @@
+<h1>Our roadmap</h1>
+{{ range $r := $.Site.Data.home.roadmap.roadmap }}
+    <p>
+        {{ $r }}
+    </p>
+{{ end }}
+<p>Eiso Kant</p>
+<p>Co-Founder & Ceo</p>
+
+{{ partial "home/our-links.html" . }}

@@ -1,0 +1,20 @@
+<div>
+    <h5>{{ $.title }}</h5>
+    <ul>
+        {{ range $item := $.items }}
+            <li>
+                {{ if $item.multi }}
+                    {{ range $it := first 1 $item.items }}
+                        <a href="{{ $it.url }}" title="{{ $it.title }}">{{ $it.title }}</a>
+                    {{ end }}
+                    {{ range $it := after 1 $item.items }}
+                        / 
+                        <a href="{{ $it.url }}" title="{{ $it.title }}">{{ $it.title }}</a>
+                    {{ end }}
+                {{ else }}
+                    <a href="{{ $item.url }}" title="{{ $item.title }}">{{ $item.title }}</a>
+                {{ end }}
+            </li>
+        {{ end }}
+    </ul>
+</div>

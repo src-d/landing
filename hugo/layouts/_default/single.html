@@ -1,27 +1,27 @@
 {{ $headerCtx := dict "Params" (dict "topbar" "opaque") }}
 {{ partial "head.html" . }}
 <body>
-  {{ partial "header.html" $headerCtx }}
+    {{ partial "header.html" $headerCtx }}
 
-  <section class="fullWidth customPage">
-    <div class="mainContainer">
-      <article>
-        <h2>{{ .Title }}</h2>
+    <section class="fullWidth customPage">
+        <div class="mainContainer">
+            <article>
+                <h2>{{ .Title }}</h2>
 
-        {{ if ne (.Lastmod.Format "02/01/2006") (dateFormat "02/01/2006" "0001-01-01") }}
-          <p class="lastUpdate">
-              Last updated at {{ .Lastmod.Format "02/01/2006" }}
-          </p>
-        {{ end }}
-        
-        <div class="content">
-          {{ .Content }}
+                {{ if ne (.Lastmod.Format "02/01/2006") (dateFormat "02/01/2006" "0001-01-01") }}
+                    <p class="lastUpdate">
+                        Last updated at {{ .Lastmod.Format "02/01/2006" }}
+                    </p>
+                {{ end }}
+                
+                <div class="content">
+                    {{ .Content }}
+                </div>
+            </article>
         </div>
-      </article>
-    </div>
-  </section>
+    </section>
 
-  {{ $footerCtx := dict "Params" (dict "footer" "white") "Site" $.Site }}
-  {{ partial "footer.html" $footerCtx }}
+    {{ $footerCtx := dict "Params" (dict "footer" "white") "Site" $.Site }}
+    {{ partial "footer/sitemap.html" . }}
 </body>
 </html>
