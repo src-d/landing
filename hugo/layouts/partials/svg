@@ -1,1 +1,1 @@
-{{ readFile (printf "static/img/icons/%s.svg" .) | safeHTML }}
+<span class="{{ print "svg-icon--%s" . }}">{{ readFile (printf "static/img/icons/%s.svg" .) | safeHTML }}</span>

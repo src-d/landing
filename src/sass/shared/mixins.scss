@@ -20,3 +20,9 @@
     color: $color-links-darkbg-hover;
   }
 }
+
+@mixin svg-color($icon, $color) {
+  .svg-icon--#{$icon} path {
+    fill: $color;
+  }
+}
