@@ -1,10 +1,17 @@
-<h1>Our roadmap</h1>
-{{ range $r := $.Site.Data.home.roadmap.roadmap }}
-    <p>
-        {{ $r }}
-    </p>
-{{ end }}
-<p>Eiso Kant</p>
-<p>Co-Founder & Ceo</p>
+<div class="roadmap"> 
+    <h1>Our roadmap</h1>
+    {{ range $r := .roadmap }}
+        <p>{{ $r }}</p>
+    {{ end }}
+    <p>Eiso Kant</p>
+    <p>Co-Founder &amp; Ceo</p>
 
-{{ partial "home/our-links.html" . }}
+    <div class="roadmap__links">
+        <a href="{{ .links.roadmap.url }}" class="btn-pill btn-pill--white-outline" title="{{ .links.roadmap.text }}">
+            {{ .links.roadmap.text }}
+        </a>
+        <a href="{{ .links.manifesto.url }}" class="btn-pill btn-pill-white-outline" title="{{ .links.manifesto.text }}">
+            {{ .links.manifesto.text }}
+        </a>
+    </div>
+</div>
