@@ -1,3 +1,36 @@
+// Colors
+$color-dark-blue: #33526c;
+$color-light-blue: #1b78b7;
+$color-pale-blue: #dae4e4;
+$color-dark-grey: #adb6bf;
+$color-medium-grey: #e6e9ec;
+$color-pale-grey: #ecf0f1;
+$color-white: white;
+
+$color-links: $color-light-blue;
+$color-links-hover: $color-dark-blue;
+$color-links-darkbg: $color-white;
+$color-links-darkbg-hover: $color-pale-grey;
+
+// Text sizes
+$font-size-body: 20px;
+$font-size-menu: 24px;
+$font-size-submenu: 21px;
+$font-size-card-titles: 21px;
+$font-size-title-big: 48px;
+$font-size-title-medium: 30px;
+$font-size-title-small: 24px;
+$font-size-footer-titles: 21px;
+$font-size-footer-text: 16px;
+
+// Font families
+$font-roboto: 'Roboto', sans-serif;
+$font-source-sans-pro: 'Source Sans Pro', sans-serif;
+$font-source-code: 'Hack', 'monaco', monospace;
+$font-default: $font-source-sans-pro;
+$font-titles: $font-roboto;
+
+// Grid settings
 $column-size: 90px;
 $gutter-size: 30px;
 $num-columns: 10;
