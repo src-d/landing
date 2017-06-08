@@ -5,19 +5,27 @@ $color-pale-blue: #dae4e4;
 $color-dark-grey: #adb6bf;
 $color-medium-grey: #e6e9ec;
 $color-pale-grey: #ecf0f1;
+$color-white: white;
+
+$color-links: $color-light-blue;
+$color-links-hover: $color-dark-blue;
+$color-links-darkbg: $color-white;
+$color-links-darkbg-hover: $color-pale-grey;
 
 // Text sizes
-$text-size-body: 20px;
-$text-size-menu: 24px;
-$text-size-submenu: 21px;
-$text-size-card-titles: 21px;
-$text-size-h1: 48px;
-$text-size-h2: 30px;
-$text-size-h3: 24px;
-$text-size-footer-titles: 21px;
-$text-size-footer-text: 16px;
+$font-size-body: 20px;
+$font-size-menu: 24px;
+$font-size-submenu: 21px;
+$font-size-card-titles: 21px;
+$font-size-h1: 48px;
+$font-size-h2: 30px;
+$font-size-h3: 24px;
+$font-size-footer-titles: 21px;
+$font-size-footer-text: 16px;
 
 // Font families
 $font-roboto: 'Roboto', sans-serif;
 $font-source-sans-pro: 'Source Sans Pro', sans-serif;
 $font-source-code: 'Hack', 'monaco', monospace;
+$font-default: $font-source-sans-pro;
+$font-titles: $font-roboto;

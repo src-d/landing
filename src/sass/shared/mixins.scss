@@ -1,0 +1,22 @@
+@mixin link() {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@mixin link-light-bg() {
+  @include link;
+  color: $color-links;
+
+  &:hover {
+    color: $color-links-hover;
+  }
+}
+
+@mixin link-dark-bg() {
+  @include link;
+  color: $color-links-darkbg;
+
+  &:hover {
+    color: $color-links-darkbg-hover;
+  }
+}

@@ -5,19 +5,3 @@
   font-weight: normal;
   font-style: normal;
 }
-
-@mixin link-light-bg() {
-  color: $color-light-blue;
-
-  &:hover {
-    color: $color-dark-blue;
-  }
-}
-
-@mixin link-dark-bg() {
-  color: white;
-
-  &:hover {
-    color: $color-pale-blue;
-  }
-}
