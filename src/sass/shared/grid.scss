@@ -1,0 +1,32 @@
+@mixin columns($num) {
+  float: left;
+  margin-left: $gutter-size;
+  @include width($num);
+}
+
+@mixin width($num) {
+  width: ($column-size * $num) + ($gutter-size * ($num - 1));
+}
+
+@mixin offset($num) {
+  margin-left: ($column-size * $num) + ($gutter-size * $num) !important;
+}
+
+@mixin row() {
+  width: 100%;
+
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  > *:first-child {
+    margin-left: 0 !important;
+  }
+}
+
+@mixin container() {
+  margin: 0 auto;
+  width: ($num-columns * $column-size) + (($num-columns - 1) * $gutter-size);
+}

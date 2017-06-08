@@ -29,3 +29,8 @@ $font-source-sans-pro: 'Source Sans Pro', sans-serif;
 $font-source-code: 'Hack', 'monaco', monospace;
 $font-default: $font-source-sans-pro;
 $font-titles: $font-roboto;
+
+// Grid settings
+$column-size: 90px;
+$gutter-size: 30px;
+$num-columns: 10;
