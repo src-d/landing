@@ -1,4 +1,4 @@
-projects:
+showcases:
   - title: Lorem ipsum
     desc: Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
     code: lipsum.go

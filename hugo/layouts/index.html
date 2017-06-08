@@ -1,59 +1,55 @@
 {{ partial "head.html" . }}
-{{ $home := $.Site.Data.home }}
+{{ $home := $.Site.Data.home.home }}
 
 <body class="homePage">
     {{ partial "header.html" . }}
 
-    <header class="fullWidth mainHeader"
-        style="background-image: url('{{ with .Params.headerImageUrl }}{{ . }}{{ else }}{{ .Site.Params.headerImageUrl }}{{ end }}');"
+    <header
+        style="background-image: url('{{ default .Site.Params.headerImageUrl .Params.headerImageUrl }}');"
     >
-        <div class="mainContainer">
-            <div class="content description">
-                <article class="mainTitle">
-                    <h1 class="title">{{ $home.hero.title }}</h1>
-                    <p class="subtitle">{{ $home.hero.desc }}</p>
-                    <p class="links">
-                        {{ range $link := $home.hero.links }}
-                            {{ if ne $link.url "#" }}
-                                <span class="link">
-                                    read our
-                                    <a href="{{ $link.url }}" {{ if $link.newTab }}target="_blank"{{ end }}>{{ $link.text }}</a>
-                                </span>
-                            {{ end }}
-                        {{ end }}
-                    </p>
+            <div>
+                <article>
+                    <h1>{{ $home.hero.title }}</h1>
+                    <p>{{ $home.hero.desc }}</p>
+                    {{ partial "home/our-links.html" . }}
                 </article>
                 <aside id="joinUsOnSlack"
                     data-title="{{ $home.hero.slackin.title }}"
+                    data-desc="{{ $home.hero.slackin.desc }}"
                     data-endpoint="{{ $home.hero.slackin.endpoint }}"
+                    data-success="{{ $home.hero.slackin.messages.success }}"
+                    data-button="{{ $home.hero.slackin.messages.button }}"
+                    data-wait="{{ $home.hero.slackin.messages.wait }}"
+                    data-server-error="{{ $home.hero.slackin.messages.serverError }}"
+                    data-fetch-error="{{ $home.hero.slackin.messages.fetchError }}"
                 ></aside>
             </div>
-        </div>
     </header>
 
+<hr />
     {{ if $home.projectsCarousel.display }}
-        {{ partial "index-carousel.html" . }}
+        {{ partial "home/showcases.html" . }}
     {{ end }}
-
+<hr />
     {{ if $home.ourCategories.display }}
-        {{ partial "index-categories.html" . }}
+        {{ partial "home/categories.html" . }}
     {{ end }}
-
+<hr />
     {{ if $home.ourRoadmap.display }}
-        {{ partial "index-roadmap.html" . }}
+        {{ partial "home/roadmap.html" . }}
     {{ end }}
-
+<hr />
     {{ if $home.testimonials.display }}
-        {{ partial "index-testimonials.html" . }}
+        {{ partial "home/testimonials.html" . }}
     {{ end }}
-
+<hr />
     {{ if $home.ourPosts.display }}
-        {{ partial "index-blog.html" . }}
+        {{ partial "home/blog.html" . }}
     {{ end }}
-
-    {{ partial "footer-slack.html" . }}
-    {{ partial "footer-contact-us.html" . }}
-    {{ partial "footer-sitemap.html" . }}
+<hr />
+    {{ partial "footer/slack.html" . }}
+    {{ partial "footer/contact-us.html" . }}
+    {{ partial "footer/sitemap.html" . }}
 </body>
 
 </html>

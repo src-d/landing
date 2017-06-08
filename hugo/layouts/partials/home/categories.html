@@ -1,0 +1,8 @@
+<h1>Projects</h1>
+{{ range $c := $.Site.Data.categories.categories }}
+    <div>
+        <h2>{{$c.name}}</h2>
+        <p>{{$c.desc}}</p>
+        <a href="{{ $c.link }}">view</a>
+    </div>
+{{ end }}

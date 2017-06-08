@@ -1,0 +1,13 @@
+testimonials:
+  - name: Pepe
+    image: http://placehold.it/100x100
+    handler: pepe
+    text: "Dolor sit amet adiscipit constectetur adis elit."
+  - name: Juan
+    image: http://placehold.it/100x100
+    handler: juan
+    text: "Lorem ipsum dolor sit amet adiscipit constectetur."
+  - name: Lucas
+    image: http://placehold.it/100x100
+    handler: lucas
+    text: "Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Lorem ipsum dolor sit amet adiscipit constectetur adis elit."

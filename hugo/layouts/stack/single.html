@@ -3,8 +3,8 @@
 <body>
     {{ partial "header.html" . }}
 
-    <header class="fullWidth mainHeader"
-        style="background-image: url('{{ with .Params.headerimageurl }}{{ . }}{{ else }}{{ .Site.Params.headerImageUrl }}{{ end }}');"
+    <header
+        style="background-image: url('{{ default .Site.Params.headerImageUrl .Params.headerImageUrl }}');"
     >
         <div class="mainContainer">
             <div class="description">
@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    {{ partial "footer-sitemap.html" . }}
+    {{ partial "footer/sitemap.html" . }}
 </body>
 
 </html>

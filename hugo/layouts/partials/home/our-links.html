@@ -1,0 +1,10 @@
+<p>
+    {{ $home := $.Site.Data.home.home }}
+    {{ range where $home.hero.links "url" "ne" "#"  }}
+        <a href="{{ .url }}"
+            {{ if .newTab }}target="_blank"{{ end }}
+        >
+            our {{ .text }}
+        </a>
+    {{ end }}
+</p>

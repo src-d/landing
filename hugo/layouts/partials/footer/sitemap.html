@@ -21,11 +21,11 @@
         </div>
 
         <div>
-            {{ partial "footer-sitemap-links.html" (dict "title" "Company" "items" $.Site.Data.footer.company) }}
+            {{ partial "footer/sitemap-links.html" (dict "title" "Company" "items" $.Site.Data.footer.company) }}
 
-            {{ partial "footer-sitemap-links.html" (dict "title" "Community" "items" $.Site.Data.footer.community) }}
+            {{ partial "footer/sitemap-links.html" (dict "title" "Community" "items" $.Site.Data.footer.community) }}
             
-            {{ partial "footer-sitemap-links.html" (dict "title" "Networks" "items" $.Site.Data.footer.networks) }}
+            {{ partial "footer/sitemap-links.html" (dict "title" "Networks" "items" $.Site.Data.footer.networks) }}
         </div>
     </div>
 </footer>

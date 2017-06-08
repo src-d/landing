@@ -1,0 +1,15 @@
+<h1>Showcases</h1>
+{{ range $p := $.Site.Data.home.showcases.showcases }}
+    <div>
+        <h2>{{$p.title}}</h2>
+        <p>{{$p.desc}}</p>
+        <a href="{{ $p.link }}" target="_blank">check this project</a>
+    </div>
+{{ end }}
+<div>
+    {{ range $p := $.Site.Data.index.showcases.showcases }}
+            <pre>
+                <code class="{{ $p.language }}">{{ readFile (print "hugo/data/code/" $p.code) }}</code>
+            </pre>
+    {{ end }}
+</div>
