@@ -7,11 +7,6 @@
     <p>Co-Founder &amp; Ceo</p>
 
     <div class="roadmap__links">
-        <a href="{{ .links.roadmap.url }}" class="btn-pill btn-pill--white-outline" title="{{ .links.roadmap.text }}">
-            {{ .links.roadmap.text }}
-        </a>
-        <a href="{{ .links.manifesto.url }}" class="btn-pill btn-pill-white-outline" title="{{ .links.manifesto.text }}">
-            {{ .links.manifesto.text }}
-        </a>
+        {{ partial "home/our-links.html" . }}
     </div>
 </div>

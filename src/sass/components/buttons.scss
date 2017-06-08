@@ -8,16 +8,24 @@
   border-radius: 45px;
   padding: 0 $padding-pill-button-sides;
 
+  &:hover {
+    color: $color-pill-button-hover-text;
+    background-color: $color-pill-button-hover-bg;
+    border-color: $color-pill-button-hover-bg;
+    box-shadow: 0 0 1px 5px $color-pill-button-hover-shadow;
+    color: $color-pill-button-hover-text;
+  }
+
   &--white {
     border-color: $color-pill-button-white-border;
     color: $color-pill-button-white-text;
-  }
 
-  &--white-filled {
-    color: $color-pill-button-white-filled-text;
-    background-color: $color-pill-button-white-filled-bg;
-    border-color: $color-pill-button-white-filled-bg;
-    box-shadow: 0 0 1px 5px $color-pill-button-white-filled-shadow;
-    color: $color-pill-button-white-filled-text;
+    &:hover {
+      color: $color-pill-button-white-hover-text;
+      background-color: $color-pill-button-white-hover-bg;
+      border-color: $color-pill-button-white-hover-bg;
+      box-shadow: 0 0 1px 5px $color-pill-button-white-hover-shadow;
+      color: $color-pill-button-white-hover-text;
+    }
   }
 }

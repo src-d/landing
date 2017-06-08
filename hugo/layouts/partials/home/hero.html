@@ -4,12 +4,7 @@
             <h1>{{ .title }}</h1>
             <p>{{ .desc }}</p>
             <div class="home-hero__info__links">
-                <a href="{{ .links.roadmap.url }}" class="btn-pill btn-pill--white-filled" title="{{ .links.roadmap.text }}">
-                    {{ .links.roadmap.text }}
-                </a>
-                <a href="{{ .links.manifesto.url }}" class="btn-pill btn-pill--white" title="{{ .links.manifesto.text }}">
-                    {{ .links.manifesto.text }}
-                </a>
+                {{ partial "home/our-links.html" . }}
             </div>
         </div>
 
