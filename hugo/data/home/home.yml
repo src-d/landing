@@ -1,21 +1,21 @@
-title: "building the technological stack for AI on code"
+title: "Building the technological stack for AI on code"
 desc: "source{d} is building the open-source components that enable machine learning on source code. We believe that the next step in programming comes from teaching machines to understand and write code."
 links:
   roadmap:
     url: http://blog.sourced.tech/post/our-roadmap
-    text: our roadmap
+    text: Our roadmap
   manifesto:
     url: http://sourced.tech/manifesto
-    text: our manifesto
+    text: Our manifesto
 
 slack:
-  title: "join the comminity"
-  desc: "we'd be thrilled to have you on our slack"
+  title: "Join the comminity"
+  desc: "We'd be thrilled to have you on our slack"
   endpoint: "/invite"
   msgs:
     success: Success! Check your email!
-    button: join us on slack
-    wait: please wait...
+    button: Join us on slack
+    wait: Please wait...
     server_error: Error! submit again.
     fetch_error: Server error
 
