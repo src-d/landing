@@ -1,3 +1,11 @@
+@mixin clearfix() {
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
 @mixin columns($num) {
   float: left;
   margin-left: $gutter-size;
@@ -14,12 +22,7 @@
 
 @mixin row() {
   width: 100%;
-
-  &:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
+  @include clearfix;
 
   > *:first-child {
     margin-left: 0 !important;
