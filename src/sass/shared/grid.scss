@@ -1,19 +1,15 @@
-$columnSize: 90px;
-$gutterSize: 30px;
-$numColumns: 10;
-
 @mixin columns($num) {
   float: left;
-  margin-left: $gutterSize;
+  margin-left: $gutter-size;
   @include width($num);
 }
 
 @mixin width($num) {
-  width: ($columnSize * $num) + ($gutterSize * ($num - 1));
+  width: ($column-size * $num) + ($gutter-size * ($num - 1));
 }
 
 @mixin offset($num) {
-  margin-left: ($columnSize * $num) + ($gutterSize * $num) !important;
+  margin-left: ($column-size * $num) + ($gutter-size * $num) !important;
 }
 
 @mixin row() {
@@ -32,5 +28,5 @@ $numColumns: 10;
 
 @mixin container() {
   margin: 0 auto;
-  width: ($numColumns * $columnSize) + (($numColumns - 1) * $gutterSize);
+  width: ($num-columns * $column-size) + (($num-columns - 1) * $gutter-size);
 }
