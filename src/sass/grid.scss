@@ -1,0 +1,36 @@
+$columnSize: 90px;
+$gutterSize: 30px;
+$numColumns: 10;
+
+@mixin columns($num) {
+  float: left;
+  margin-left: $gutterSize;
+  @include width($num);
+}
+
+@mixin width($num) {
+  width: ($columnSize * $num) + ($gutterSize * ($num - 1));
+}
+
+@mixin offset($num) {
+  margin-left: ($columnSize * $num) + ($gutterSize * $num) !important;
+}
+
+@mixin row() {
+  width: 100%;
+
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  > *:first-child {
+    margin-left: 0 !important;
+  }
+}
+
+@mixin container() {
+  margin: 0 auto;
+  width: ($numColumns * $columnSize) + (($numColumns - 1) * $gutterSize);
+}
