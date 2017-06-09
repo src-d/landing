@@ -8,11 +8,11 @@
 
         <div class="showcases__project">
             {{ range $s := .showcases }}
-            <div>
-                <p>{{ $s.desc }}</p>
+                <div>
+                    <p>{{ $s.desc }}</p>
 
-                <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill">check this project</a>
-            </div>
+                    <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill">check this project</a>
+                </div>
             {{ end }}
         </div>
     </div>
@@ -26,7 +26,9 @@
         </div>
 
         <div id="showcase-code" class="showcases__terminal__code">
-        <pre><code class="{{ $s.language }}">{{ readFile (print "hugo/data/code/" $s.code) }}</code></pre>
+            <pre><code class="{{ $s.language }}">
+                {{- readFile (print "hugo/data/code/" $s.code) -}}
+            </code></pre>
         </div>
     </div>
     {{ end }}
@@ -35,11 +37,11 @@
 <script>
     window.showcases = [
         {{ range $s := .showcases }}
-        {
-            title: "{{ $s.title }}",
-            language: "{{ $s.language }}",
-            code: "{{ readFile (print "hugo/data/code/" $s.code) }}",
-        },
+            {
+                title: "{{ $s.title }}",
+                language: "{{ $s.language }}",
+                code: "{{ readFile (print "hugo/data/code/" $s.code) }}",
+            },
         {{ end }}
     ];
 </script>
