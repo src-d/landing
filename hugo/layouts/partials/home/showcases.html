@@ -1,4 +1,4 @@
-<div class="showcases">
+<section class="showcases">
     <div class="showcases__info">
         <h1>Showcases</h1>
         
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    {{ range $s := (first 1 .showcases) }}
+    {{ range $s := first 1 .showcases }}
     <div class="showcases__terminal">
         <div class="showcases__terminal__header">
             <div></div>
@@ -30,7 +30,7 @@
         </div>
     </div>
     {{ end }}
-</div>
+</section>
 
 <script>
     window.showcases = [
