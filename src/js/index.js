@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', _ => {
     hljs.initHighlightingOnLoad()
     renderComponent(BlogPostsContainer, 'ourPostsContainer')
     renderComponent(PositionsMain, 'offersPanel')
-    renderComponent(SlackForm, 'joinUsOnSlack')
+    renderComponent(SlackForm, 'slack-join')
     setupClipboard()
 })
 

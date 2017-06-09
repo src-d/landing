@@ -1,0 +1,22 @@
+<header class="home-hero">
+    <div class="home-hero__wrap">
+        <div class="home-hero__info">
+            <h1>{{ .title }}</h1>
+            <p>{{ .desc }}</p>
+            <div class="home-hero__info__links">
+                {{ partial "home/our-links.html" . }}
+            </div>
+        </div>
+
+        <div class="home-hero__slack" id="slack-join"
+            data-title="{{ .slack.title }}"
+            data-desc="{{ .slack.desc }}"
+            data-endpoint="{{ .slack.endpoint }}"
+            data-success="{{ .slack.msgs.success }}"
+            data-button="{{ .slack.msgs.button }}"
+            data-wait="{{ .slack.msgs.wait }}"
+            data-server-error="{{ .slack.msgs.server_error }}"
+            data-fetch-error="{{ .slack.msgs.fetch_error }}"
+        ></div>
+    </div>
+</header>

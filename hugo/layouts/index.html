@@ -4,49 +4,29 @@
 <body class="homePage">
     {{ partial "header.html" . }}
 
-    <header
-        style="background-image: url('{{ default .Site.Params.headerImageUrl .Params.headerImageUrl }}');"
-    >
-            <div>
-                <article>
-                    <h1>{{ $home.hero.title }}</h1>
-                    <p>{{ $home.hero.desc }}</p>
-                    {{ partial "home/our-links.html" . }}
-                </article>
-                <aside id="joinUsOnSlack"
-                    data-title="{{ $home.hero.slackin.title }}"
-                    data-desc="{{ $home.hero.slackin.desc }}"
-                    data-endpoint="{{ $home.hero.slackin.endpoint }}"
-                    data-success="{{ $home.hero.slackin.messages.success }}"
-                    data-button="{{ $home.hero.slackin.messages.button }}"
-                    data-wait="{{ $home.hero.slackin.messages.wait }}"
-                    data-server-error="{{ $home.hero.slackin.messages.serverError }}"
-                    data-fetch-error="{{ $home.hero.slackin.messages.fetchError }}"
-                ></aside>
-            </div>
-    </header>
+    {{ partial "home/hero.html" $home }}
 
-<hr />
-    {{ if $home.projectsCarousel.display }}
+
+    {{ if $home.projects_carousel.display }}
         {{ partial "home/showcases.html" . }}
     {{ end }}
-<hr />
-    {{ if $home.ourCategories.display }}
+
+    {{ if $home.our_categories.display }}
         {{ partial "home/categories.html" . }}
     {{ end }}
-<hr />
-    {{ if $home.ourRoadmap.display }}
-        {{ partial "home/roadmap.html" . }}
+
+    {{ if $home.our_roadmap.display }}
+        {{ partial "home/roadmap.html" $home }}
     {{ end }}
-<hr />
+
     {{ if $home.testimonials.display }}
         {{ partial "home/testimonials.html" . }}
     {{ end }}
-<hr />
-    {{ if $home.ourPosts.display }}
+
+    {{ if $home.our_posts.display }}
         {{ partial "home/blog.html" . }}
     {{ end }}
-<hr />
+
     {{ partial "footer/slack.html" . }}
     {{ partial "footer/contact-us.html" . }}
     {{ partial "footer/sitemap.html" . }}

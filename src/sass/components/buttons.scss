@@ -1,0 +1,32 @@
+.btn-pill {
+  display: inline-block;
+  text-decoration: none;
+  line-height: $height-pill-buttons;
+  font-size: $font-size-pill-button;
+  border: 2px solid $color-pill-button-border;
+  color: $color-pill-button-text;
+  border-radius: 45px;
+  padding: 0 $padding-pill-button-sides;
+  text-transform: lowercase;
+
+  &:hover {
+    color: $color-pill-button-hover-text;
+    background-color: $color-pill-button-hover-bg;
+    border-color: $color-pill-button-hover-bg;
+    box-shadow: 0 0 1px 5px $color-pill-button-hover-shadow;
+    color: $color-pill-button-hover-text;
+  }
+
+  &--white {
+    border-color: $color-pill-button-white-border;
+    color: $color-pill-button-white-text;
+
+    &:hover {
+      color: $color-pill-button-white-hover-text;
+      background-color: $color-pill-button-white-hover-bg;
+      border-color: $color-pill-button-white-hover-bg;
+      box-shadow: 0 0 1px 5px $color-pill-button-white-hover-shadow;
+      color: $color-pill-button-white-hover-text;
+    }
+  }
+}

@@ -12,6 +12,23 @@ $color-links-hover: $color-dark-blue;
 $color-links-darkbg: $color-white;
 $color-links-darkbg-hover: $color-pale-grey;
 
+$color-hero-bg: $color-dark-blue;
+$color-hero-text: $color-white;
+
+$color-slack-form-bg: $color-white;
+
+$color-pill-button-text: $color-light-blue;
+$color-pill-button-border: $color-light-blue;
+$color-pill-button-hover-text: $color-white;
+$color-pill-button-hover-bg: $color-light-blue;
+$color-pill-button-hover-shadow: rgba(201,216,225,1);
+$color-pill-button-white-border: $color-white;
+$color-pill-button-white-text: $color-white;
+$color-pill-button-white-hover-text: $color-dark-blue;
+$color-pill-button-white-hover-bg: $color-white;
+$color-pill-button-white-hover-shadow: rgba(60,118,159,1);
+
+
 // Text sizes
 $font-size-body: 20px;
 $font-size-menu: 24px;
@@ -22,6 +39,7 @@ $font-size-title-medium: 30px;
 $font-size-title-small: 24px;
 $font-size-footer-titles: 21px;
 $font-size-footer-text: 16px;
+$font-size-pill-button: 21px;
 
 // Font families
 $font-roboto: 'Roboto', sans-serif;
@@ -34,3 +52,16 @@ $font-titles: $font-roboto;
 $column-size: 90px;
 $gutter-size: 30px;
 $num-columns: 10;
+
+// Paddings and margins
+$padding-slack-form: 30px;
+
+$margin-hero-desc-vertical: 30px;
+$padding-hero-vertical: $column-size;
+
+$padding-pill-button-sides: 60px;
+
+// Heights and widths
+$height-pill-buttons: 45px;
+
+$size-button-spacing: $gutter-size / 2;

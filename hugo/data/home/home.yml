@@ -1,37 +1,39 @@
-hero:
-  title: Building the technological stack for AI on code
-  desc: source{d} is building the open-source components that enable machine learning on source code. We believe that the next step in programming comes from teaching machines to understand and write code.
+title: "Building the technological stack for AI on code"
+desc: "source{d} is building the open-source components that enable machine learning on source code. We believe that the next step in programming comes from teaching machines to understand and write code."
+links:
+  roadmap:
+    url: http://blog.sourced.tech/post/our-roadmap
+    text: Our roadmap
+  manifesto:
+    url: http://sourced.tech/manifesto
+    text: Our manifesto
 
-  links:
-    - text: roadmap
-      url: http://blog.sourced.tech/post/our-roadmap
-      newTab: false
-    - text: manifesto
-      url: /manifesto
-      newTab: false
+slack:
+  title: "Join the comminity"
+  desc: "We'd be thrilled to have you on our slack"
+  endpoint: "/invite"
+  msgs:
+    success: Success! Check your email!
+    button: Join us on slack
+    wait: Please wait...
+    server_error: Error! submit again.
+    fetch_error: Server error
 
-  slackin:
-    title: Join the community
-    desc: Ipsum exercitation magna excepteur dolor.
-    endpoint: /invite
-    messages:
-      success: "Success! Check your email!"
-      button: "Join us on Slack"
-      wait: "Please wait..."
-      serverError: "Error! Submit again."
-      fetchError: "Server error"
+roadmap:
+  - Ad id nulla consectetur occaecat duis est pariatur. Sunt anim id cillum aliqua enim id ea sit sunt voluptate dolor labore mollit. Excepteur nulla qui minim voluptate ea. Eu ullamco consectetur voluptate amet commodo mollit esse cillum ullamco.
+  - Ad id nulla consectetur occaecat duis est pariatur. Sunt anim id cillum aliqua enim id ea sit sunt voluptate dolor labore mollit. Excepteur nulla qui minim voluptate ea. Eu ullamco consectetur voluptate amet commodo mollit esse cillum ullamco.
 
-projectsCarousel:
+projects_carousel:
   display: true
 
-ourCategories:
+our_categories:
   display: true
 
-ourRoadmap:
+our_roadmap:
   display: true
 
 testimonials:
   display: true
 
-ourPosts:
+our_posts:
   display: true

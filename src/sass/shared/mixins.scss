@@ -21,6 +21,24 @@
   }
 }
 
+@mixin corporate-gradient() {
+  background: $color-dark-blue;
+  background: -webkit-linear-gradient(left, $color-dark-blue, $color-light-blue);
+  background: -o-linear-gradient(right, $color-dark-blue, $color-light-blue);
+  background: -moz-linear-gradient(right, $color-dark-blue, $color-light-blue);
+  background: linear-gradient(to right, $color-dark-blue, $color-light-blue);
+}
+
+@mixin card-shadow() {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
+}
+
+@mixin title-big() {
+  font-size: $font-size-title-big;
+  line-height: 1.2em;
+  text-transform: lowercase;
+}
+
 @mixin svg-color($icon, $color) {
   .svg-icon--#{$icon} path {
     fill: $color;

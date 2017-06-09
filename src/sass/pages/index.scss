@@ -1,0 +1,37 @@
+.home-hero {
+  @include corporate-gradient;
+  color: $color-hero-text;
+  padding: $padding-hero-vertical 0;
+
+  &__wrap {
+    @include row;
+    @include container;
+  }
+
+  &__info {
+    @include columns(5);
+
+    h1 {
+      @include title-big;
+    }
+
+    p {
+      margin: $margin-hero-desc-vertical 0;
+    }
+
+    &__links {
+      a + a {
+        margin-left: $size-button-spacing;
+      }
+    }
+  }
+
+  &__slack {
+    @include columns(4);
+    @include offset(1);
+    @include card-shadow;
+    background-color: $color-slack-form-bg;
+    padding: $padding-slack-form;
+    border-radius: 3px;
+  }
+}
