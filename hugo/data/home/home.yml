@@ -19,10 +19,6 @@ slack:
     server_error: Error! submit again.
     fetch_error: Server error
 
-roadmap:
-  - Ad id nulla consectetur occaecat duis est pariatur. Sunt anim id cillum aliqua enim id ea sit sunt voluptate dolor labore mollit. Excepteur nulla qui minim voluptate ea. Eu ullamco consectetur voluptate amet commodo mollit esse cillum ullamco.
-  - Ad id nulla consectetur occaecat duis est pariatur. Sunt anim id cillum aliqua enim id ea sit sunt voluptate dolor labore mollit. Excepteur nulla qui minim voluptate ea. Eu ullamco consectetur voluptate amet commodo mollit esse cillum ullamco.
-
 showcases:
   display: true
 
@@ -30,7 +26,11 @@ projects:
   display: true
 
 roadmap:
+  ceo_picture: https://avatars2.githubusercontent.com/u/1247608?v=3
   display: true
+  content:
+    - Ad id nulla consectetur occaecat duis est pariatur. Sunt anim id cillum aliqua enim id ea sit sunt voluptate dolor labore mollit. Excepteur nulla qui minim voluptate ea. Eu ullamco consectetur voluptate amet commodo mollit esse cillum ullamco.
+    - Ad id nulla consectetur occaecat duis est pariatur. Sunt anim id cillum aliqua enim id ea sit sunt voluptate dolor labore mollit. Excepteur nulla qui minim voluptate ea. Eu ullamco consectetur voluptate amet commodo mollit esse cillum ullamco.
 
 testimonials:
   display: true

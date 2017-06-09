@@ -154,3 +154,54 @@
     }
   }
 }
+
+.roadmap {
+  @include corporate-gradient;
+  padding: $padding-roadmap-vertical 0;
+
+  & > article {
+    @include row;
+    @include container;
+  }
+
+  &__photo {
+    @include columns(2);
+    padding-top: $padding-roadmap-photo-top;
+    text-align: right;
+
+    img {
+      width: $size-roadmap-photo;
+      border-radius: 50%;
+    }
+  }
+
+  &__content {
+    @include columns(8);
+    color: $color-roadmap-text;
+
+    h1 {
+      @include white-title-big;
+    }
+
+    & > p {
+      padding: $padding-roadmap-paragraph-vertical 0;
+    }
+  }
+
+  &__signature {
+    text-align: center;
+    padding: $padding-roadmap-signature 0;
+
+    &__name {
+      font-family: $font-handwritten;
+      font-size: $font-size-signature;
+      padding-bottom: $padding-roadmap-signature-name-bottom;
+    }
+  }
+
+  &__links {
+    a + a {
+      margin-left: $size-button-spacing;
+    }
+  }
+}

@@ -67,12 +67,18 @@
 
 @mixin default-title-big() {
   @include title-big;
-  color: $color-title-big;
   @include title-pill($color-title-big-pill, $width-title-big-pill, $height-title-big-pill, $size-title-big-pill-spacing);
+  color: $color-title-big;
+}
+
+@mixin white-title-big() {
+  @include title-big;
+  @include title-pill($color-white, $width-title-big-pill, $height-title-big-pill, $size-title-big-pill-spacing);
+  color: $color-white;
 }
 
 @mixin default-title-medium() {
   @include title($font-size-title-medium);
-  color: $color-title-medium;
   @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-medium-pill-spacing);
+  color: $color-title-medium;
 }
