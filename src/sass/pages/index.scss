@@ -1,7 +1,7 @@
 .home-hero {
   @include corporate-gradient;
   color: $color-hero-text;
-  padding: $padding-hero-vertical 0;
+  padding: $padding-section-vertical 0;
 
   &__wrap {
     @include row;
@@ -33,5 +33,124 @@
     background-color: $color-slack-form-bg;
     padding: $padding-slack-form;
     border-radius: 3px;
+  }
+}
+
+.showcases {
+  @include row;
+  @include container;
+  padding: $padding-section-vertical 0;
+
+  &__project {
+    padding-bottom: $padding-showcases-project-bottom;
+  }
+
+  &__info {
+    @include columns(4);
+
+    h1 {
+      @include default-title-big;
+    }
+
+    h2 {
+      @include default-title-medium;
+      margin-top: $margin-showcases-title-medium-top;
+    }
+
+    p {
+      padding: $padding-showcases-desc-vertical 0;
+    }
+
+    .slick-arrow {
+      display: none;
+    }
+
+    .slick-slide,
+    .slick-slide * {
+      outline: none;
+
+      // this is a hack so the shadow of the pills can be displayed inside slick
+      // since slick needs an overflow: hidden and the pill shadow is cut
+      .btn-pill {
+        margin-bottom: 5px;
+        margin-left: 5px;
+      }
+    }
+
+    .slick-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      li {
+        height: $size-showcases-dot;
+        width: $size-showcases-dot;
+        border: $size-showcases-dot-border solid $color-showcases-dot-border;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0;
+
+        button:before {
+          display: none;
+        }
+
+        &.slick-active {
+          background-color: $color-showcases-dot;
+          border: none;
+        }
+      }
+
+      li + li {
+        margin-left: $size-showcases-dot-spacing;
+      }
+    }
+  }
+
+  &__terminal {
+    @include columns(6);
+    border-radius: 5px;
+    overflow: hidden;
+
+    &__header {
+      background-color: $color-terminal-header-bg;
+      padding: $padding-terminal-header-vertical $padding-terminal-header-horizontal;
+
+      div {
+        height: $size-terminal-header-btn;
+        width: $size-terminal-header-btn;
+        background-color: $color-terminal-header-btn-bg;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      div + div {
+        margin-left: $size-terminal-header-btn-spacing;
+      }
+    }
+
+    &__code {
+      overflow: auto;
+
+      pre {
+        background: $color-terminal-code-bg;
+        font-family: $font-source-code;
+        font-size: $font-size-terminal-source-code;
+        line-height: 1.25em;
+        padding: 1em;
+        color: $color-terminal-text;
+
+        .hljs-keyword {
+          color: $color-terminal-keyword;
+        }
+
+        .hljs-built_in, .hljs-params {
+          color: $color-terminal-special;
+        }
+
+        .hljs-string, .hljs-number {
+          color: $color-terminal-literals;
+        }
+      }
+    }
   }
 }

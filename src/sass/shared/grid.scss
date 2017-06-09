@@ -13,11 +13,19 @@
 }
 
 @mixin width($num) {
-  width: ($column-size * $num) + ($gutter-size * ($num - 1));
+  width: grid-size($num);
+}
+
+@function grid-size($num) {
+  @return ($column-size * $num) + ($gutter-size * ($num - 1));
+}
+
+@function grid-offset-size($num) {
+  @return ($column-size * $num) + ($gutter-size * $num - 1);
 }
 
 @mixin offset($num) {
-  margin-left: ($column-size * $num) + ($gutter-size * $num) !important;
+  margin-left: grid-offset-size($num);
 }
 
 @mixin row() {

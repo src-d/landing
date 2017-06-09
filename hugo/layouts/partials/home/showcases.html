@@ -1,15 +1,45 @@
-<h1>Showcases</h1>
-{{ range $p := $.Site.Data.home.showcases.showcases }}
-    <div>
-        <h2>{{$p.title}}</h2>
-        <p>{{$p.desc}}</p>
-        <a href="{{ $p.link }}" target="_blank">check this project</a>
+<div class="showcases">
+    <div class="showcases__info">
+        <h1>Showcases</h1>
+        
+        {{ range $s := first 1 .showcases }}
+        <h2 id="showcase-title">{{ $s.title }}</h2>
+        {{ end }}
+
+        <div class="showcases__project">
+            {{ range $s := .showcases }}
+            <div>
+                <p>{{ $s.desc }}</p>
+
+                <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill">check this project</a>
+            </div>
+            {{ end }}
+        </div>
     </div>
-{{ end }}
-<div>
-    {{ range $p := $.Site.Data.index.showcases.showcases }}
-            <pre>
-                <code class="{{ $p.language }}">{{ readFile (print "hugo/data/code/" $p.code) }}</code>
-            </pre>
+
+    {{ range $s := (first 1 .showcases) }}
+    <div class="showcases__terminal">
+        <div class="showcases__terminal__header">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div id="showcase-code" class="showcases__terminal__code">
+        <pre><code class="{{ $s.language }}">{{ readFile (print "hugo/data/code/" $s.code) }}</code></pre>
+        </div>
+    </div>
     {{ end }}
 </div>
+
+<script>
+    window.showcases = [
+        {{ range $s := .showcases }}
+        {
+            title: "{{ $s.title }}",
+            language: "{{ $s.language }}",
+            code: "{{ readFile (print "hugo/data/code/" $s.code) }}",
+        },
+        {{ end }}
+    ];
+</script>

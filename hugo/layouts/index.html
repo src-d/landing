@@ -1,21 +1,21 @@
 {{ partial "head.html" . }}
 {{ $home := $.Site.Data.home.home }}
+{{ $showcases := $.Site.Data.home.showcases }}
 
 <body class="homePage">
     {{ partial "header.html" . }}
 
     {{ partial "home/hero.html" $home }}
 
-
-    {{ if $home.projects_carousel.display }}
-        {{ partial "home/showcases.html" . }}
+    {{ if $home.showcases.display }}
+        {{ partial "home/showcases.html" $showcases }}
     {{ end }}
 
-    {{ if $home.our_categories.display }}
+    {{ if $home.projects.display }}
         {{ partial "home/categories.html" . }}
     {{ end }}
 
-    {{ if $home.our_roadmap.display }}
+    {{ if $home.roadmap.display }}
         {{ partial "home/roadmap.html" $home }}
     {{ end }}
 
@@ -23,7 +23,7 @@
         {{ partial "home/testimonials.html" . }}
     {{ end }}
 
-    {{ if $home.our_posts.display }}
+    {{ if $home.posts.display }}
         {{ partial "home/blog.html" . }}
     {{ end }}
 
