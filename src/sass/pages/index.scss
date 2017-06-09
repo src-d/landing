@@ -1,7 +1,7 @@
 .home-hero {
   @include corporate-gradient;
   color: $color-hero-text;
-  padding: $padding-section-vertical 0;
+  padding: ($padding-hero-vertical + $height-topbar) 0 $padding-hero-vertical 0;
 
   &__wrap {
     @include row;

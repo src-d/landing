@@ -1,30 +1,47 @@
-<nav class="fullWidth topbar {{ .Params.topbar }}" id="topBar">
+{{ $categories := $.Site.Data.categories.categories.contents }}
+
+<nav class="topbar" id="topbar">
     <div>
-        <a href="{{ .Site.BaseURL }}" alt="source{d}">
-            <div class="logo"></div>
+        <a href="{{ "/" | absURL }}" alt="source{d}">
+            <div class="logo"><img src="{{ "/img/logos/source-logo-white.svg" | absURL }}" alt="source{d}" /></div>
         </a>
-        <div class="menu" id="menu">
+        <div class="topbar__menu" id="menu">
             <ul>
                 <li {{ if eq .URL "/" }}class="active"{{ end }} title="homepage">
-                    <a href="{{ .Site.BaseURL }}">home</a>
+                    <a href="{{ "/" | absURL }}" title="Home">Home</a>
                 </li>
                 <li {{ if eq .URL "projects" }}class="active"{{ end }}>
-                    <a href="{{ .Site.BaseURL }}/projects" title="Projects">projects</a>
+                    <a href="{{ "/projects" | absURL}}" class="topbar__menu--projects" id="submenu-toggle" title="Projects">
+                        <span>Projects</span>
+                        {{ partial "svg" "go-arrow-nocircle" }}
+                    </a>
+
+                    <ul class="topbar__submenu" id="submenu">
+                        {{ range $k := $.Site.Data.categories.categories.order }}
+                            {{ $section := (index $categories $k) }}
+                            <li {{ if eq (default $.Site.Data.project.category "") $k }}class="active"{{end}}>
+                                <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}">
+                                    {{ partial "svg" $k }}
+                                    <span>{{ $section.name }}</span>
+                                </a>
+                            </li>
+                        {{ end }}
+                    </ul>
                 </li>
                 <li>
-                    <a href="http://talks.sourced.tech" target="_blank" title="Our community">talks</a>
+                    <a href="http://talks.sourced.tech" target="_blank" title="Talks">Talks</a>
                 </li>
                 <li>
-                    <a href="https://blog.sourced.tech">blog</a>
+                    <a href="https://blog.sourced.tech" title="Blog">Blog</a>
                 </li>
                 <li {{ if eq .URL "stack" }}class="active"{{ end }}>
-                    <a href="{{ .Site.BaseURL }}/stack" title="Our stack">stack</a>
+                    <a href="{{ "/stack" | absURL }}" title="Our stack">Stack</a>
                 </li>
                 <li {{ if eq .URL "team" }}class="active" {{ end }}>
-                    <a href="{{ .Site.BaseURL }}/team" title="Team">team</a>
+                    <a href="{{ "/team" | absURL }}" title="Team">Team</a>
                 </li>
                 <li {{ if eq .URL "careers" }}class="active" {{ end }}>
-                    <a href="{{ .Site.BaseURL }}/careers" title="Our Job Opportunities">careers</a>
+                    <a href="{{ "/careers" | absURL }}" title="Our Job Opportunities">Careers</a>
                 </li>
             </ul>
         </div>

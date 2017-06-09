@@ -7,6 +7,8 @@ $color-medium-grey: #e6e9ec;
 $color-pale-grey: #ecf0f1;
 $color-white: white;
 
+$color-text-default: black;
+
 $color-links: $color-light-blue;
 $color-links-hover: $color-dark-blue;
 $color-links-darkbg: $color-white;
@@ -34,15 +36,23 @@ $color-pill-button-white-hover-text: $color-dark-blue;
 $color-pill-button-white-hover-bg: $color-white;
 $color-pill-button-white-hover-shadow: rgba(60,118,159,1);
 
-$color-terminal-bg: #2D4861;
-$color-terminal-header-bg: $color-medium-grey;
-$color-terminal-header-btn-bg: $color-dark-grey;
-$color-terminal-code-bg: #33526C;
+$color-topbar-bg: $color-dark-blue;
+$color-topbar-menu-item: $color-white;
+$color-topbar-menu-item-active-bg: rgba(0, 0, 0, .2);
+$color-topbar-submenu-bg: $color-white;
+$color-topbar-submenu-icon-bg: $color-dark-grey;
+$color-topbar-submenu-hover-bg: #e9eeef;
+$color-topbar-submenu-hover-border: $color-dark-blue;
+$color-topbar-submenu-hover: #5b92be;
 
 $color-terminal-text: #B7BFC7;
 $color-terminal-keyword: #C3D31B;
 $color-terminal-special: #e66cd7;
 $color-terminal-literals: #3EB1D0;
+$color-terminal-bg: #2D4861;
+$color-terminal-header-bg: $color-medium-grey;
+$color-terminal-header-btn-bg: $color-dark-grey;
+$color-terminal-code-bg: #33526C;
 
 $color-showcases-dot: $color-light-blue;
 $color-showcases-dot-border: $color-light-blue;
@@ -86,6 +96,14 @@ $margin-showcases-title-medium-top: $gutter-size / 4;
 $padding-showcases-desc-vertical: $gutter-size;
 $padding-showcases-project-bottom: $gutter-size;
 
+$padding-topbar-vertical: 15px;
+$padding-topbar-menu-vertical-spacing: $gutter-size / 3;
+$padding-topbar-menu-horizontal-spacing: $gutter-size / 2;
+$padding-topbar-submenu-item: $gutter-size / 4;
+
+$margin-topbar-submenu-arrow-right: $padding-topbar-menu-horizontal-spacing + 8px;
+$margin-topbar-menu-spacing: $gutter-size / 4;
+
 // Heights and widths
 $height-pill-buttons: 45px;
 
@@ -104,3 +122,10 @@ $size-terminal-header-btn-spacing: $gutter-size / 4;
 $size-showcases-dot: 15px;
 $size-showcases-dot-spacing: 10px;
 $size-showcases-dot-border: 3px;
+
+$height-topbar: 75px;
+$height-topbar-logo: 45px;
+
+$size-button-spacing: $gutter-size / 2;
+
+$width-topbar-submenu-border-size: 5px;
