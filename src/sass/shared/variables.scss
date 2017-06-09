@@ -15,6 +15,12 @@ $color-links-darkbg-hover: $color-pale-grey;
 $color-hero-bg: $color-dark-blue;
 $color-hero-text: $color-white;
 
+$color-title-big: $color-light-blue;
+$color-title-big-pill: $color-light-blue;
+
+$color-title-medium: $color-dark-blue;
+$color-title-medium-pill: #ADB6BF;
+
 $color-slack-form-bg: $color-white;
 
 $color-pill-button-text: $color-light-blue;
@@ -28,7 +34,18 @@ $color-pill-button-white-hover-text: $color-dark-blue;
 $color-pill-button-white-hover-bg: $color-white;
 $color-pill-button-white-hover-shadow: rgba(60,118,159,1);
 
+$color-terminal-bg: #2D4861;
+$color-terminal-header-bg: $color-medium-grey;
+$color-terminal-header-btn-bg: $color-dark-grey;
+$color-terminal-code-bg: #33526C;
 
+$color-terminal-text: #B7BFC7;
+$color-terminal-keyword: #C3D31B;
+$color-terminal-special: #e66cd7;
+$color-terminal-literals: #3EB1D0;
+
+$color-showcases-dot: $color-light-blue;
+$color-showcases-dot-border: $color-light-blue;
 // Text sizes
 $font-size-body: 20px;
 $font-size-menu: 24px;
@@ -40,6 +57,7 @@ $font-size-title-small: 24px;
 $font-size-footer-titles: 21px;
 $font-size-footer-text: 16px;
 $font-size-pill-button: 21px;
+$font-size-terminal-source-code: 14px;
 
 // Font families
 $font-roboto: 'Roboto', sans-serif;
@@ -57,11 +75,32 @@ $num-columns: 10;
 $padding-slack-form: 30px;
 
 $margin-hero-desc-vertical: 30px;
-$padding-hero-vertical: $column-size;
+$padding-section-vertical: $column-size;
 
 $padding-pill-button-sides: 60px;
+
+$padding-terminal-header-vertical: $gutter-size / 3;
+$padding-terminal-header-horizontal: $gutter-size / 2;
+
+$margin-showcases-title-medium-top: $gutter-size / 4;
+$padding-showcases-desc-vertical: $gutter-size;
+$padding-showcases-project-bottom: $gutter-size;
 
 // Heights and widths
 $height-pill-buttons: 45px;
 
+$height-title-big-pill: 15px;
+$width-title-big-pill: 90px;
+$size-title-big-pill-spacing: 15px;
+$height-title-medium-pill: 15px;
+$width-title-medium-pill: 30px;
+$size-title-medium-pill-spacing: 15px;
+
 $size-button-spacing: $gutter-size / 2;
+
+$size-terminal-header-btn: $gutter-size / 2;
+$size-terminal-header-btn-spacing: $gutter-size / 4;
+
+$size-showcases-dot: 15px;
+$size-showcases-dot-spacing: 10px;
+$size-showcases-dot-border: 3px;

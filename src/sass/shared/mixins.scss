@@ -33,14 +33,46 @@
   box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
 }
 
-@mixin title-big() {
-  font-size: $font-size-title-big;
+@mixin title($size) {
+  font-size: $size; 
   line-height: 1.2em;
   text-transform: lowercase;
+}
+
+@mixin title-big() {
+  @include title($font-size-title-big);
 }
 
 @mixin svg-color($icon, $color) {
   .svg-icon--#{$icon} path {
     fill: $color;
   }
+}
+
+@mixin title-pill($color, $width, $height, $spacing) {
+  position: relative;
+  
+  &:before {
+    position: absolute;
+    content: " ";
+    display: block;
+    border-radius: 45px;
+    height: $height;
+    width: $width;
+    left: -($width + $spacing);
+    top: calc(50% - #{$height / 2});
+    background-color: $color;
+  }
+}
+
+@mixin default-title-big() {
+  @include title-big;
+  color: $color-title-big;
+  @include title-pill($color-title-big-pill, $width-title-big-pill, $height-title-big-pill, $size-title-big-pill-spacing);
+}
+
+@mixin default-title-medium() {
+  @include title($font-size-title-medium);
+  color: $color-title-medium;
+  @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-medium-pill-spacing);
 }
