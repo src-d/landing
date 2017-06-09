@@ -38,3 +38,9 @@
   line-height: 1.2em;
   text-transform: lowercase;
 }
+
+@mixin svg-color($icon, $color) {
+  .svg-icon--#{$icon} path {
+    fill: $color;
+  }
+}
