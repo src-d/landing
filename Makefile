@@ -1,7 +1,7 @@
 # Config
 PROJECT = landing
 COMMANDS = api
-CODECOV_TOKEN ?= 
+CODECOV_TOKEN ?=
 DOCKERFILES ?=
 DESTINATION ?= public
 
@@ -14,14 +14,11 @@ DOCKER_PASSWORD ?=
 
 # Including devops Makefile
 MAKEFILE = Makefile.main
-DEVOPS_REPOSITORY ?= 
-DEVOPS_FOLDER = .devops
+CI_REPOSITORY = https://github.com/src-d/ci.git
 CI_FOLDER = .ci
 
 $(MAKEFILE):
-	@git clone --quiet $(DEVOPS_REPOSITORY) $(DEVOPS_FOLDER); \
-	cp -r $(DEVOPS_FOLDER)/ci .ci; \
-	rm -rf $(DEVOPS_FOLDER); \
+	@git clone --quiet $(CI_REPOSITORY) $(CI_FOLDER); \
 	cp $(CI_FOLDER)/$(MAKEFILE) .;
 
 -include $(MAKEFILE)
@@ -40,7 +37,7 @@ else
     endif
     ifeq ($(UNAME_S),Darwin)
 			ARCH = darwin
-			URL_ARCH = MacOS
+			URL_ARCH = macOS
     endif
 endif
 
@@ -81,11 +78,11 @@ hugo-dependencies:
 	@if [[ ! -f $(HUGO) ]]; then \
 		$(MKDIR) $(HUGO_PATH); \
 		cd $(HUGO_PATH); \
-		ext="zip"; \
-		if [ "$(ARCH)" == "linux" ]; then ext="tar.gz"; fi; \
+		ext="tar.gz"; \
+		if [ "$(ARCH)" == "windows" ]; then ext="zip"; fi; \
 		file="hugo.$${ext}"; \
 		$(CURL) https://$(HUGO_URL)/releases/download/v$(HUGO_VERSION)/$(HUGO_URL_NAME).$${ext} -o $${file}; \
-		if [ "$(ARCH)" == "linux" ]; then tar -xvzf $${file}; else unzip $${file}; fi; \
+		if [ "$(ARCH)" == "windows" ]; then unzip $${file}; else tar -xvzf $${file}; fi; \
 	fi;
 
 # Prepares npm
@@ -93,7 +90,7 @@ npm-dependencies:
 	$(NPM) install
 	$(NPM) run build
 
-## Builds hugo project 
+## Builds hugo project
 hugo-build: npm-dependencies hugo-dependencies
 	$(HUGO) --config=hugo.config.yaml --destination=$(DESTINATION)
 
