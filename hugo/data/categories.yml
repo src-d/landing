@@ -1,19 +1,27 @@
 categories:
-  datasets:
-    name: datasets
-    desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
-  models:
-    name: models
-    desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
-  retrieval:
-    name: data retrieval tools
-    desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
-  languages:
-    name: language analysis tools
-    desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
-  science:
-    name: machine learning tools
-    desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
-  demos:
-    name: demos
-    desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+  order:
+    - datasets
+    - models
+    - retrieval
+    - languages
+    - science
+    - demos
+  contents:
+    datasets:
+      name: datasets
+      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+    models:
+      name: models
+      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+    retrieval:
+      name: data retrieval tools
+      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+    languages:
+      name: language analysis tools
+      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+    science:
+      name: machine learning tools
+      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+    demos:
+      name: demos
+      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
