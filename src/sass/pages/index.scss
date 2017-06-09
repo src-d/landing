@@ -12,21 +12,14 @@
     @include columns(5);
 
     h1 {
-      font-size: $font-size-title-big;
-      text-transform: lowercase;
-      line-height: 1.2em;
+      @include title-big;
     }
 
     p {
       margin: $margin-hero-desc-vertical 0;
-      line-height: 1.3em;
     }
 
     &__links {
-      a {
-        text-transform: lowercase;
-      }
-
       a + a {
         margin-left: $size-button-spacing;
       }

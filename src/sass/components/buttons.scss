@@ -7,6 +7,7 @@
   color: $color-pill-button-text;
   border-radius: 45px;
   padding: 0 $padding-pill-button-sides;
+  text-transform: lowercase;
 
   &:hover {
     color: $color-pill-button-hover-text;
