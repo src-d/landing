@@ -1,0 +1,15 @@
+language: go
+
+go:
+  - 1.8.x
+  - tip
+
+install:
+  - . $HOME/.nvm/nvm.sh
+  - nvm install 8
+  - nvm use 8
+  - go get -u -v -t ./api/...
+
+script:
+  - go test ./api/...
+  - make hugo-build
