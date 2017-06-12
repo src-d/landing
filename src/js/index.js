@@ -10,7 +10,6 @@ import setupClipboard from './clipboard'
 import BlogPostsContainer from './components/Posts'
 import PositionsMain from './components/Positions'
 import SlackForm from './components/SlackForm'
-import setupMenu from './behaviours/menu'
 
 polyfill()
 
@@ -22,9 +21,8 @@ function renderComponent(component, id) {
 }
 
 window.addEventListener('DOMContentLoaded', _ => {
-  setupMenu()
   setupStickyHeader()
-  setupShowcases()
+  hljs.initHighlightingOnLoad()
   renderComponent(BlogPostsContainer, 'ourPostsContainer')
   renderComponent(PositionsMain, 'offersPanel')
   renderComponent(SlackForm, 'slack-join')
@@ -32,7 +30,7 @@ window.addEventListener('DOMContentLoaded', _ => {
 })
 
 function setupStickyHeader() {
-    const topBar = document.querySelector('#topBar')
+    const topBar = document.querySelector('#topbar')
     const offset = 50
     if (topBar.classList.contains("opaque")) { return }
 

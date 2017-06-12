@@ -34,7 +34,7 @@
 }
 
 @mixin title($size) {
-  font-size: $size; 
+  font-size: $size;
   line-height: 1.2em;
   text-transform: lowercase;
 }
@@ -44,14 +44,14 @@
 }
 
 @mixin svg-color($icon, $color) {
-  .svg-icon--#{$icon} path {
+  .svg-icon--#{$icon} {
     fill: $color;
   }
 }
 
 @mixin title-pill($color, $width, $height, $spacing) {
   position: relative;
-  
+
   &:before {
     position: absolute;
     content: " ";
