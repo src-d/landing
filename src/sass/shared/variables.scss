@@ -45,6 +45,8 @@ $color-topbar-submenu-hover-bg: #e9eeef;
 $color-topbar-submenu-hover-border: $color-dark-blue;
 $color-topbar-submenu-hover: #5b92be;
 
+$color-roadmap-text: $color-white;
+
 $color-terminal-text: #B7BFC7;
 $color-terminal-keyword: #C3D31B;
 $color-terminal-special: #e66cd7;
@@ -56,6 +58,7 @@ $color-terminal-code-bg: #33526C;
 
 $color-showcases-dot: $color-light-blue;
 $color-showcases-dot-border: $color-light-blue;
+
 // Text sizes
 $font-size-body: 20px;
 $font-size-menu: 24px;
@@ -68,13 +71,16 @@ $font-size-footer-titles: 21px;
 $font-size-footer-text: 16px;
 $font-size-pill-button: 21px;
 $font-size-terminal-source-code: 14px;
+$font-size-signature: 48px;
 
 // Font families
 $font-roboto: 'Roboto', sans-serif;
 $font-source-sans-pro: 'Source Sans Pro', sans-serif;
 $font-source-code: 'Hack', 'monaco', monospace;
+$font-caveat: 'Caveat', cursive;
 $font-default: $font-source-sans-pro;
 $font-titles: $font-roboto;
+$font-handwritten: $font-caveat;
 
 // Grid settings
 $column-size: 90px;
@@ -85,6 +91,7 @@ $num-columns: 10;
 $padding-slack-form: 30px;
 
 $margin-hero-desc-vertical: 30px;
+$padding-hero-vertical: 90px;
 $padding-section-vertical: $column-size;
 
 $padding-pill-button-sides: 60px;
@@ -103,6 +110,11 @@ $padding-topbar-submenu-item: $gutter-size / 4;
 
 $margin-topbar-submenu-arrow-right: $padding-topbar-menu-horizontal-spacing + 8px;
 $margin-topbar-menu-spacing: $gutter-size / 4;
+$padding-roadmap-vertical: $gutter-size;
+$padding-roadmap-paragraph-vertical: $gutter-size / 2;
+$padding-roadmap-photo-top: $padding-roadmap-paragraph-vertical + $font-size-title-big + ($gutter-size / 2);
+$padding-roadmap-signature: $gutter-size * 1.4;
+$padding-roadmap-signature-name-bottom: $gutter-size / 2;
 
 // Heights and widths
 $height-pill-buttons: 45px;
@@ -129,3 +141,5 @@ $height-topbar-logo: 45px;
 $size-button-spacing: $gutter-size / 2;
 
 $width-topbar-submenu-border-size: 5px;
+
+$size-roadmap-photo: 180px;
