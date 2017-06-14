@@ -16,9 +16,9 @@
       }
 
       &.pgp-key {
+        @include svg-color("key", $color-footer-pgp-key-icon);
         font-size: $font-size-footer-text;
         color: $color-footer-text;
-        @include svg-color("key", $color-footer-pgp-key-icon);
 
         & > * {
           vertical-align: middle;

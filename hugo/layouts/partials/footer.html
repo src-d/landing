@@ -1,6 +1,6 @@
-{{ partial "footer/slack.html" . }}
-
 <footer class="footer">
-  {{ partial "footer/contact-us.html" . }}
-  {{ partial "footer/sitemap.html" . }}
+    {{ if default $.Params.include_footer_email true }}
+        {{ partial "footer/contact-us.html" . }}
+    {{ end }}
+    {{ partial "footer/sitemap.html" . }}
 </footer>
