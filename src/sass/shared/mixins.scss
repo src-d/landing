@@ -82,3 +82,49 @@
   @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-medium-pill-spacing);
   color: $color-title-medium;
 }
+
+@mixin transition($properties: all, $time: $main-transition-time, $effect: $main-transition-effect) {
+    $values: null;
+    @each $property in $properties {
+      $values: append($values, $property $time $effect, comma);
+    }
+
+    transition: $values;
+}
+
+@mixin pillStyle($type: blue) {
+    @include transition(background-color color border-color box-shadow);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 45px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: lowercase;
+
+    @if $type == blue {
+        color: $color-pill-button-main;
+        border-color: $color-pill-button-main;
+    } @else {
+        color: $color-pill-button-white-main;
+        border-color: $color-pill-button-white-main;
+    }
+
+    &:hover {
+      @include pillStyleHover($type)
+    }
+}
+
+@mixin pillStyleHover($type: blue) {
+    @if $type == blue {
+        color: $color-pill-button-hover-main;
+        background-color: $color-pill-button-hover-bg;
+        border-color: $color-pill-button-hover-bg;
+        box-shadow: $color-pill-button-hover-box-shadow;
+    } @else {
+        color: $color-pill-button-white-hover-main;
+        background-color: $color-pill-button-white-hover-bg;
+        border-color: $color-pill-button-white-hover-bg;
+        box-shadow: $color-pill-button-white-hover-box-shadow;
+    }
+}
