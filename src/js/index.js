@@ -16,7 +16,7 @@ polyfill()
 function renderComponent(component, id) {
     const elem = document.getElementById(id)
     if (elem) {
-        ReactDOM.render(React.createElement(component), elem)
+        ReactDOM.render(React.createElement(component, elem.dataset), elem)
     }
 }
 

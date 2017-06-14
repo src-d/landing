@@ -8,39 +8,18 @@ export default class SlackForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      title: '',
-      desc: '',
-      endpoint: '',
       email: '',
       loading: false,
       hasTyped: false,
       success: false,
       errMessage: '',
-      successText: '',
-      button: '',
-      wait: '',
-      serverError: '',
-      fetchError: '',
     };
-  }
-
-  componentDidMount() {
-    this.setState({
-      title: ReactDOM.findDOMNode(this).parentNode.dataset.title,
-      desc: ReactDOM.findDOMNode(this).parentNode.dataset.desc,
-      successText: ReactDOM.findDOMNode(this).parentNode.dataset.success,
-      button: ReactDOM.findDOMNode(this).parentNode.dataset.button,
-      wait: ReactDOM.findDOMNode(this).parentNode.dataset.wait,
-      serverError: ReactDOM.findDOMNode(this).parentNode.dataset.serverError,
-      fetchError: ReactDOM.findDOMNode(this).parentNode.dataset.fetchError,
-      endpoint: ReactDOM.findDOMNode(this).parentNode.dataset.endpoint,
-    });
   }
 
   invite(e) {
     e.preventDefault()
     this.setState({ loading: true, success: false, errMessage: '' })
-    inviteToSlack(this.state.endpoint, this.state.email)
+    inviteToSlack(this.props.endpoint, this.state.email)
       .then(resp => {
         if (resp.status === 200) {
           this.setState({ loading: false, success: true, errMessage: '' });
@@ -55,7 +34,7 @@ export default class SlackForm extends React.Component {
         console.error(err)
         this.setState({
           loading: false,
-          errMessage: this.state.fetchError,
+          errMessage: this.props.fetchError,
         })
       })
   }
@@ -94,8 +73,8 @@ export default class SlackForm extends React.Component {
     return (
       <form className='slackForm'
         onSubmit={e => this.invite(e)}>
-        <h3 className='title'>{this.state.title}</h3>
-        <p className='desc'>{this.state.desc}</p>
+        <h3 className='title'>{this.props.title}</h3>
+        <p className='desc'>{this.props.desc}</p>
         <input type='email'
           placeholder='your@email.com'
           disabled={this.state.loading || this.state.success}
@@ -104,8 +83,8 @@ export default class SlackForm extends React.Component {
           onChange={e => this.setState({ hasTyped: true, email: e.target.value })} />
 
         {this.state.success
-            ? <div className='success'>{this.state.successText}</div>
-            : this.submitButton(this.state.button, this.state.wait)}
+            ? <div className='success'>{this.props.success}</div>
+            : this.submitButton(this.props.button, this.props.wait)}
 
         {this.state.errMessage
           ? <div className='error'>{this.state.errMessage}</div>
