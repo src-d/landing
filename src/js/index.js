@@ -22,7 +22,7 @@ function renderComponent(component, id) {
 
 window.addEventListener('DOMContentLoaded', _ => {
   setupStickyHeader()
-  hljs.initHighlightingOnLoad()
+  setupShowcases()
   renderComponent(BlogPostsContainer, 'ourPostsContainer')
   renderComponent(PositionsMain, 'offersPanel')
   renderComponent(SlackForm, 'slack-join')
