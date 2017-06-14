@@ -263,6 +263,12 @@
 
     .testimonial {
       @include row;
+      display: none;
+
+      &:first-child,
+      &:nth-child(2) {
+        display: block;
+      }
 
       & + .testimonial {
         margin-top: $gutter-size;

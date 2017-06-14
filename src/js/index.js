@@ -10,7 +10,6 @@ import setupClipboard from './clipboard'
 import BlogPostsContainer from './components/Posts'
 import PositionsMain from './components/Positions'
 import SlackForm from './components/SlackForm'
-import Testimonials from './components/Testimonials'
 
 polyfill()
 
@@ -43,10 +42,7 @@ window.addEventListener('DOMContentLoaded', _ => {
   renderBlogCategories('.blog__category', 'blog-container')
   renderComponent(PositionsMain, 'offersPanel')
   renderComponent(SlackForm, 'slack-join')
-  renderComponent(Testimonials, 'testimonials', {
-    testimonials: window.testimonials,
-    num: 2,
-  })
+  setupTestimonials()
   setupClipboard()
 })
 
@@ -95,5 +91,20 @@ function setupShowcases() {
 function highlightCode(code) {
   if (code.children.length >= 0) {
     hljs.highlightBlock(code.children[0])
+  }
+}
+
+function setupTestimonials() {
+  const testimonials = document.getElementById('testimonials')
+  const children = Array.from(testimonials.children)
+  shuffle(children)
+  testimonials.innerHTML = ''
+  children.forEach(c => testimonials.appendChild(c))
+}
+
+function shuffle(arr) {
+  for (let i = arr.length; i > 0; i--) {
+    const j = Math.floor(Math.random() * i);
+    [arr[i - 1], arr[j]] = [arr[j], arr[i - 1]];
   }
 }
