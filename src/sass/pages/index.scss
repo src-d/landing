@@ -2,10 +2,22 @@
   @include corporate-gradient;
   color: $color-hero-text;
   padding: ($padding-hero-vertical + $height-topbar) 0 $padding-hero-vertical 0;
+  overflow: hidden;
 
   &__wrap {
     @include row;
     @include container;
+    position: relative;
+
+    .code-pills-left {
+      position: absolute;
+      right: 100%;
+    }
+
+    .code-pills-right {
+      position: absolute;
+      left: 100%;
+    }
   }
 
   &__info {
@@ -158,10 +170,18 @@
 .roadmap {
   @include corporate-gradient;
   padding: $padding-roadmap-vertical 0;
+  overflow: hidden;
 
-  & > article {
+  & article,
+  & > div {
     @include row;
     @include container;
+    position: relative;
+  }
+
+  .code-pills-left {
+    position: absolute;
+    right: 95%;
   }
 
   &__photo {
