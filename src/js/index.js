@@ -6,7 +6,6 @@ import React from 'react'
 import $ from 'jquery'
 import 'slick-carousel'
 import hljs from 'highlight.js'
-import setupClipboard from './clipboard'
 import BlogPostsContainer from './components/Posts'
 import PositionsMain from './components/Positions'
 import SlackForm from './components/SlackForm'
@@ -26,7 +25,6 @@ window.addEventListener('DOMContentLoaded', _ => {
   renderComponent(BlogPostsContainer, 'ourPostsContainer')
   renderComponent(PositionsMain, 'offersPanel')
   renderComponent(SlackForm, 'slack-join')
-  setupClipboard()
 })
 
 function setupStickyHeader() {
