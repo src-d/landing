@@ -95,11 +95,17 @@ function highlightCode(code) {
 }
 
 function setupTestimonials() {
+  const classes = ['testimonial_left', 'testimonial_right']
   const testimonials = document.getElementById('testimonials')
   const children = Array.from(testimonials.children)
+
+  testimonials.classList.remove('testimonial-list_unsorted')
+  classes.forEach((className, i) => children[i].classList.remove(className))
+
   shuffle(children)
-  testimonials.innerHTML = ''
-  children.forEach(c => testimonials.appendChild(c))
+
+  classes.forEach((className, i) => children[i].classList.add(className))
+  testimonials.classList.add('testimonial-list_sorted')
 }
 
 function shuffle(arr) {
