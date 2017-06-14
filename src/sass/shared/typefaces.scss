@@ -6,26 +6,26 @@
   font-style: normal;
 }
 
-@mixin titleSmall() {
+@mixin title-small() {
     font-family: $font-titles;
     font-size: $font-size-title-xsmall;
     line-height: 1.2em;
     color: $color-light-blue;
 }
 
-@mixin textNormal() {
+@mixin text-normal() {
     font-family: $font-default;
     font-size: $font-size-small;
     color: $color-light-grey;
 }
 
-@mixin textSmall() {
+@mixin text-small() {
     font-family: $font-titles;
     font-size: $font-size-xsmall;
     color: $color-dark-grey;
 }
 
-@mixin textXSmall() {
+@mixin text-x-small() {
     font-family: $font-titles;
     font-size: $font-size-xxsmall;
     color: $color-dark-grey;

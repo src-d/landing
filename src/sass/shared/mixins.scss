@@ -21,20 +21,17 @@
   }
 }
 
-@mixin corporate-gradient() {
-  background: $color-dark-blue;
-  background: -webkit-linear-gradient(left, $color-dark-blue, $color-light-blue);
-  background: -o-linear-gradient(right, $color-dark-blue, $color-light-blue);
-  background: -moz-linear-gradient(right, $color-dark-blue, $color-light-blue);
-  background: linear-gradient(to right, $color-dark-blue, $color-light-blue);
+@mixin corporate-gradient($left: $color-dark-blue, $right: $color-light-blue) {
+  background: $left;
+  background: linear-gradient(to right, $left, $right);
 }
 
 @mixin card-shadow($hover-effect: false) {
-    box-shadow: $main-box-shadow;
+    box-shadow: $shadow-main;
 
     @if $hover-effect {
         &:hover {
-            box-shadow: $main-hover-box-shadow;
+            box-shadow: $shadow-main-hover;
         }
     }
 }
@@ -90,7 +87,7 @@
   margin-top: $margin-showcases-title-medium-top;
 }
 
-@mixin transition($properties: all, $time: $main-transition-time, $effect: $main-transition-effect) {
+@mixin transition($properties: all, $time: $transition-main-time, $effect: $transition-main-effect) {
     $values: null;
     @each $property in $properties {
       $values: append($values, $property $time $effect, comma);
@@ -99,7 +96,7 @@
     transition: $values;
 }
 
-@mixin pillStyle($type: blue) {
+@mixin pill-style($type: blue) {
     @include transition(background-color color border-color box-shadow);
     border-width: 2px;
     border-style: solid;
@@ -118,20 +115,20 @@
     }
 
     &:hover {
-      @include pillStyleHover($type)
+      @include pill-style-hover($type)
     }
 }
 
-@mixin pillStyleHover($type: blue) {
+@mixin pill-style-hover($type: blue) {
     @if $type == blue {
         color: $color-pill-button-hover-main;
         background-color: $color-pill-button-hover-bg;
         border-color: $color-pill-button-hover-bg;
-        box-shadow: $color-pill-button-hover-box-shadow;
+        box-shadow: $shadow-color-pill-button-hover;
     } @else {
         color: $color-pill-button-white-hover-main;
         background-color: $color-pill-button-white-hover-bg;
         border-color: $color-pill-button-white-hover-bg;
-        box-shadow: $color-pill-button-white-hover-box-shadow;
+        box-shadow: $shadow-color-pill-button-white-hover;
     }
 }

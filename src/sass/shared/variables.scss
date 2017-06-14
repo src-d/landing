@@ -113,6 +113,8 @@ $padding-topbar-menu-vertical-spacing: $gutter-size / 3;
 $padding-topbar-menu-horizontal-spacing: $gutter-size / 2;
 $padding-topbar-submenu-item: $gutter-size / 4;
 
+$padding-card: $gutter-size / 2;
+
 $margin-topbar-submenu-arrow-right: $padding-topbar-menu-horizontal-spacing + 8px;
 $margin-topbar-menu-spacing: $gutter-size / 4;
 $padding-roadmap-vertical: $gutter-size;
@@ -149,15 +151,22 @@ $width-topbar-submenu-border-size: 5px;
 
 $size-roadmap-photo: 180px;
 
+$size-card-top-border: 7px;
+$size-card-arrow: $gutter-size;
+$size-card-srcd-logo: 45px;
+$size-card-proy-logo: 45px;
+$size-card-author-image: 60px;
+$size-card-image-height: 100px;
+
 // Radius
-$main-border-radius: 5px;
+$border-radius-main: 5px;
 
 // Shadows
-$main-box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
-$main-hover-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .2);
-$color-pill-button-hover-box-shadow: 0 0 1px 5px rgba(201, 216, 225, 1);
-$color-pill-button-white-hover-box-shadow: 0 0 1px 5px rgba(60, 118, 159, 1);
+$shadow-main: 3px 3px 5px rgba(0, 0, 0, .1);
+$shadow-main-hover: 3px 3px 5px 0 rgba(0, 0, 0, .2);
+$shadow-color-pill-button-hover: 0 0 1px 5px rgba(201, 216, 225, 1);
+$shadow-color-pill-button-white-hover: 0 0 1px 5px rgba(60, 118, 159, 1);
 
 // Transitions
-$main-transition-time: .3s;
-$main-transition-effect: ease-in;
+$transition-main-time: .3s;
+$transition-main-effect: ease-in;

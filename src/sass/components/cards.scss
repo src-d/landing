@@ -1,0 +1,126 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__element {
+        @include transition(box-shadow);
+        @include card-shadow(true);
+        flex-grow: 1;
+        flex-basis: calc(100% / 3 - #{$gutter-size});
+        position: relative;
+        float: left;
+        background: $color-white;
+        border-radius: 0 0 $border-radius-main $border-radius-main;
+        margin-left: $gutter-size;
+        margin-top: $gutter-size;
+
+        &_blog {
+            padding-bottom: $size-card-author-image + $padding-card;
+
+            header > figure {
+                @include corporate-gradient(#36536C, #2377B6);
+            }
+        }
+
+        &:nth-child(3n-2) {
+            margin-left: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        figure {
+            position: relative;
+            height: $size-card-image-height;
+            background: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            svg {
+                width: $size-card-proy-logo;
+                height: $size-card-proy-logo;
+
+                path,
+                circle {
+                    fill: white;
+                }
+            }
+
+            .cards__element__img {
+                width: 100%;
+                height: $size-card-image-height - $size-card-top-border;
+                background-color: white;
+                position: absolute;
+                top: $size-card-top-border;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .cards__element__img_default {
+                background-color: #b8c9d3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & > img {
+                    height: $size-card-srcd-logo;
+                    opacity: .6;
+                }
+            }
+        }
+
+        h1 {
+            @include title-small;
+            padding: $padding-card;
+            text-transform: capitalize;
+        }
+
+        p {
+            @include text-normal;
+            padding: 0 $padding-card $padding-card;
+        }
+
+        footer {
+            position: absolute;
+            bottom: $padding-card;
+            left: $padding-card;
+            right: $size-card-arrow + $padding-card;
+
+            img {
+                float: left;
+                width: $size-card-author-image;
+                border-radius: 50%
+            }
+
+            address {
+                @include text-small();
+                float: left;
+                margin-left: 5px;
+
+                time {
+                    @include text-x-small();
+                }
+            }
+        }
+
+        &:after {
+            @include pill-style(blue);
+            content: "\f105";
+            width: $size-card-arrow;
+            height: $size-card-arrow;
+            position: absolute;
+            bottom: $padding-card;
+            right: $padding-card;
+            font-family: $font-icons;
+            line-height: $size-card-arrow - 4px;
+            padding-left: 2px;
+        }
+
+        &:hover:after {
+            @include pill-style-hover(blue);
+        }
+    }
+}

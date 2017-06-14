@@ -1,2 +1,13 @@
-<h1>Blog</h1>
-<aside id="ourPostsContainer"></aside>
+<section class="blog band band_grey" id="blog-container">
+    <div class="band__container">
+        <h1>Blog</h1>
+        {{ range $c := .categories }}
+            <div
+                class="blog__category"
+                data-name="{{ $c.category }}"
+                data-title="{{ $c.title }}"
+                data-more-text="{{ $c.more_text }}"
+            ></div>
+        {{ end }}
+    </div>
+</section>

@@ -9,19 +9,29 @@ categories:
   contents:
     datasets:
       name: datasets
-      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+      colors: {left: "#003ca1", right: "#656afa"}
+      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure.
     models:
       name: models
+      colors: {left: "#e4415a", right: "#ff6d4c"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
     retrieval:
       name: data retrieval tools
-      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+      colors: {left: "#317d19", right: "#4ecc7b"}
+      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla.
     languages:
       name: language analysis tools
-      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+      colors: {left: "#c2732a", right: "#f18406"}
+      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id
     science:
       name: machine learning tools
-      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+      colors: {left: "#832fcc", right: "#c05cea"}
+      desc: Fugiat aliqua Lorem officia fugiat qui
     demos:
       name: demos
+      colors: {left: "#ffba34", right: "#fff444"}
+      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+    other:
+      name: other
+      colors: {left: "#00b3ed", right: "#aaedf4"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
