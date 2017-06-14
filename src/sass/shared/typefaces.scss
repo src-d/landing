@@ -5,3 +5,28 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@mixin titleSmall() {
+    font-family: $font-titles;
+    font-size: $font-size-title-xsmall;
+    line-height: 1.2em;
+    color: $color-light-blue;
+}
+
+@mixin textNormal() {
+    font-family: $font-default;
+    font-size: $font-size-small;
+    color: $color-light-grey;
+}
+
+@mixin textSmall() {
+    font-family: $font-titles;
+    font-size: $font-size-xsmall;
+    color: $color-dark-grey;
+}
+
+@mixin textXSmall() {
+    font-family: $font-titles;
+    font-size: $font-size-xxsmall;
+    color: $color-dark-grey;
+}

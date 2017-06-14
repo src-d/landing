@@ -29,8 +29,14 @@
   background: linear-gradient(to right, $color-dark-blue, $color-light-blue);
 }
 
-@mixin card-shadow() {
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
+@mixin card-shadow($hover-effect: false) {
+    box-shadow: $main-box-shadow;
+
+    @if $hover-effect {
+        &:hover {
+            box-shadow: $main-hover-box-shadow;
+        }
+    }
 }
 
 @mixin title($size) {
@@ -81,6 +87,7 @@
   @include title($font-size-title-medium);
   @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-medium-pill-spacing);
   color: $color-title-medium;
+  margin-top: $margin-showcases-title-medium-top;
 }
 
 @mixin transition($properties: all, $time: $main-transition-time, $effect: $main-transition-effect) {
