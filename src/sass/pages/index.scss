@@ -66,7 +66,6 @@
 
     h2 {
       @include default-title-medium;
-      margin-top: $margin-showcases-title-medium-top;
     }
 
     p {
@@ -224,4 +223,26 @@
       margin-left: $size-button-spacing;
     }
   }
+}
+
+.blog {
+    display: none;
+
+    .btn-pill {
+        margin: $gutter-size auto 0;
+    }
+
+    &__category {
+        h2 {
+            @include default-title-medium();
+        }
+
+        & + & {
+            margin-top: 75px;
+        }
+
+        &__wrapper {
+            text-align: center;
+        }
+    }
 }

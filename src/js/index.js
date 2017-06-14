@@ -20,10 +20,26 @@ function renderComponent(component, id) {
     }
 }
 
+function renderBlogCategories(selector, containerId) {
+  const enableBlogContainer = () => {
+    document.getElementById(containerId).style.display = 'block';
+  }
+
+  const categories = Array.from(document.querySelectorAll(selector))
+  categories.forEach(category => {
+    const props = {
+      onSuccess: enableBlogContainer,
+      category: category.dataset,
+    }
+    const component = React.createElement(BlogPostsContainer, props);
+    ReactDOM.render(component, category)
+  })
+}
+
 window.addEventListener('DOMContentLoaded', _ => {
   setupStickyHeader()
   setupShowcases()
-  renderComponent(BlogPostsContainer, 'ourPostsContainer')
+  renderBlogCategories('.blog__category', 'blog-container')
   renderComponent(PositionsMain, 'offersPanel')
   renderComponent(SlackForm, 'slack-join')
   setupClipboard()

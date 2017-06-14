@@ -12,7 +12,7 @@
     {{ end }}
 
     {{ if $home.projects.display }}
-        {{ partial "home/categories.html" . }}
+        {{ partial "home/projects.html" $.Site.Data.categories }}
     {{ end }}
 
     {{ if $home.roadmap.display }}
@@ -23,8 +23,8 @@
         {{ partial "home/testimonials.html" . }}
     {{ end }}
 
-    {{ if $home.posts.display }}
-        {{ partial "home/blog.html" . }}
+    {{ if $home.blog.display }}
+        {{ partial "home/blog.html" $.Site.Data.home.home.blog }}
     {{ end }}
 
     {{ partial "footer/slack.html" . }}
