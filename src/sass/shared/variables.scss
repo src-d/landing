@@ -45,6 +45,8 @@ $color-topbar-submenu-hover-bg: #e9eeef;
 $color-topbar-submenu-hover-border: $color-dark-blue;
 $color-topbar-submenu-hover: #5b92be;
 
+$color-secondary-nav-bg: rgba(0, 0, 0, .3);
+
 $color-roadmap-text: $color-white;
 
 $color-terminal-text: #B7BFC7;
@@ -72,6 +74,7 @@ $font-size-footer-text: 16px;
 $font-size-pill-button: 21px;
 $font-size-terminal-source-code: 14px;
 $font-size-signature: 48px;
+$font-size-secondary-nav-item: 21px;
 
 // Font families
 $font-roboto: 'Roboto', sans-serif;
@@ -80,6 +83,7 @@ $font-source-code: 'Hack', 'monaco', monospace;
 $font-caveat: 'Caveat', cursive;
 $font-default: $font-source-sans-pro;
 $font-titles: $font-roboto;
+$font-menus: $font-roboto;
 $font-handwritten: $font-caveat;
 
 // Grid settings
@@ -107,6 +111,7 @@ $padding-topbar-vertical: 15px;
 $padding-topbar-menu-vertical-spacing: $gutter-size / 3;
 $padding-topbar-menu-horizontal-spacing: $gutter-size / 2;
 $padding-topbar-submenu-item: $gutter-size / 4;
+$padding-secondary-nav-item: 10px;
 
 $margin-topbar-submenu-arrow-right: $padding-topbar-menu-horizontal-spacing + 8px;
 $margin-topbar-menu-spacing: $gutter-size / 4;
@@ -137,9 +142,12 @@ $size-showcases-dot-border: 3px;
 
 $height-topbar: 75px;
 $height-topbar-logo: 45px;
+$height-secondary-nav: 60px;
 
 $size-button-spacing: $gutter-size / 2;
 
 $width-topbar-submenu-border-size: 5px;
 
 $size-roadmap-photo: 180px;
+
+$size-secondary-nav-item-spacing: $gutter-size / 2;
