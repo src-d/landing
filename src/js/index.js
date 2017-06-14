@@ -10,13 +10,14 @@ import setupClipboard from './clipboard'
 import BlogPostsContainer from './components/Posts'
 import PositionsMain from './components/Positions'
 import SlackForm from './components/SlackForm'
+import Testimonials from './components/Testimonials'
 
 polyfill()
 
-function renderComponent(component, id) {
+function renderComponent(component, id, props = {}) {
     const elem = document.getElementById(id)
     if (elem) {
-        ReactDOM.render(React.createElement(component, elem.dataset), elem)
+        ReactDOM.render(React.createElement(component, props), elem)
     }
 }
 
@@ -42,6 +43,10 @@ window.addEventListener('DOMContentLoaded', _ => {
   renderBlogCategories('.blog__category', 'blog-container')
   renderComponent(PositionsMain, 'offersPanel')
   renderComponent(SlackForm, 'slack-join')
+  renderComponent(Testimonials, 'testimonials', {
+    testimonials: window.testimonials,
+    num: 2,
+  })
   setupClipboard()
 })
 

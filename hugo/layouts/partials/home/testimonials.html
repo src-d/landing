@@ -1,15 +1,18 @@
-{{ $testimonials := $.Site.Data.home.testimonials }}
-
-<h1>What developers say</h1>
-{{ range $t := $testimonials.testimonials }}
-    <div>
-        <img src="{{ $t.image }}" alt="{{ $t.name }}" />
-        <p>{{ $t.text }}</p>
-        <p>
-            {{ $t.name }}
-            <a href="https://twitter.com/{{ $t.handler }}" target="_blank">
-                @{{ $t.handler }}
-            </a>
-        </p>
-    </div>
-{{ end }}
+<section class="testimonials">
+    <h1>What developers say</h1>
+    
+    <div id="testimonials"></div>
+    <script type="text/javascript">
+        window.testimonials = [
+            {{ range $.Site.Data.home.testimonials.testimonials }}
+                {
+                    text: "{{ .text }}",
+                    avatar: "{{ .avatar }}",
+                    url: "{{ .url }}",
+                    name: "{{ .name }}",
+                    nickname: "{{ .nickname }}",
+                },
+            {{ end }}
+        ];
+    </script>
+</section>
