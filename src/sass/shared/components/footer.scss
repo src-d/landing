@@ -1,0 +1,81 @@
+.footer {
+  @include corporate-gradient;
+  padding: ($padding-section-vertical / 2) 0;
+
+  &__contact {
+    text-align: center;
+    margin-bottom: $gutter-size;
+
+    a {
+      display: block;
+      text-decoration: none;
+
+      &.contact-email {
+        font-size: $font-size-footer-email;
+        color: $color-footer-email;
+      }
+
+      &.pgp-key {
+        font-size: $font-size-footer-text;
+        color: $color-footer-text;
+        @include svg-color("key", $color-footer-pgp-key-icon);
+
+        & > * {
+          vertical-align: middle;
+          display: inline-block;
+        }
+
+        span + span {
+          padding-left: $gutter-size / 5;
+          // svg icon has a weird size, so aligning the two items in the middle
+          // does not make a very pleasant centering
+          margin-top: -5px;
+        }
+      }
+    }
+  }
+
+  &__sitemap {
+    @include row;
+    @include container;
+    font-size: $font-size-footer-section;
+    color: $color-footer-text;
+
+    a {
+      @include link-dark-bg;
+      color: $color-footer-text;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-footer-links-hover;
+      }
+    }
+
+    &__addresses {
+      @include columns(2);
+      
+      p {
+        font-style: italic;
+      }
+
+      &__emails {
+        margin-top: $gutter-size;
+      }
+    }
+
+    &__links {
+      @include columns(2);
+
+      h5 {
+        @include title-pill($color-footer-titles-pill, $width-title-footer-pill, $height-title-footer-pill, $size-title-footer-pill-spacing);
+        font-size: $font-size-footer-titles;
+        color: $color-footer-titles;
+        text-transform: lowercase;
+      }
+
+      ul {
+        margin-top: $size-title-footer-spacing;
+      }
+    }
+  }
+}
