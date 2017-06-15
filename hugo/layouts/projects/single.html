@@ -2,13 +2,14 @@
 {{ $headerCtx := dict "ctx" . "secondary_nav" "projects/nav.html" }}
 {{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 {{ $projects := $.Site.Data.projects }}
+{{ $blog := $.Site.Data.blog }}
 
 <body class="projects-page">
     {{ partial "header.html" $headerCtx }}
     {{ partial "projects/hero.html" $projects }}
 
     {{ if $projects.posts.display }}
-        {{ $postsCtx := dict "title" "technical posts" "categories" $projects.posts.categories }}
+        {{ $postsCtx := dict "title" "technical posts" "categories" (slice $blog.categories.technical) }}
         {{ partial "posts.html" $postsCtx }}
     {{ end }}
 

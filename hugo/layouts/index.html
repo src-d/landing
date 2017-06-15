@@ -26,8 +26,8 @@
     {{ end }}
 
     {{ if $home.blog.display }}
-        {{ $blog := $.Site.Data.home.home.blog }}
-        {{ $postsCtx := dict "categories" $blog.categories "show_subtitle" true "title" "Blog" }}
+        {{ $blog := $.Site.Data.blog.categories }}
+        {{ $postsCtx := dict "categories" (slice $blog.culture $blog.technical) "show_subtitle" true "title" "Blog" }}
         {{ partial "posts.html" $postsCtx }}
     {{ end }}
 

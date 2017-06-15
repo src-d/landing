@@ -37,10 +37,3 @@ testimonials:
 
 blog:
   display: true
-  categories:
-    - category: culture
-      title: Our journey
-      more_text: Read all posts
-    - category: technical
-      title: Technical posts
-      more_text: Read all posts
