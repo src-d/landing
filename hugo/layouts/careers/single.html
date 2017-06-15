@@ -1,7 +1,8 @@
 {{ partial "head.html" . }}
+{{ $headerCtx := dict "ctx" . }}
 
 <body>
-    {{ partial "header.html" . }}
+    {{ partial "header.html" $headerCtx }}
 
     <header
         style="background-image: url('{{ default .Site.Params.headerImageUrl .Params.headerImageUrl }}');"

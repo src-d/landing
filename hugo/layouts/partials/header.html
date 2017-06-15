@@ -1,49 +1,67 @@
-{{ $categories := $.Site.Data.categories.categories.contents }}
+{{ $ctx := .ctx }}
+{{ $categories := $ctx.Site.Data.categories.categories.contents }}
+{{ $project := $ctx.Site.Data.project }}
+{{ $category := default "" $ctx.Site.Data.project.category }}
 
-<nav class="topbar" id="topbar">
-    <div>
-        <a href="{{ "/" | absURL }}" alt="source{d}">
-            <div class="logo"><img src="{{ "/img/logos/source-logo-white.svg" | absURL }}" alt="source{d}" /></div>
-        </a>
-        <div class="topbar__menu" id="menu">
-            <ul>
-                <li {{ if eq .URL "/" }}class="active"{{ end }} title="homepage">
-                    <a href="{{ "/" | absURL }}" title="Home">Home</a>
-                </li>
-                <li {{ if eq .URL "projects" }}class="active"{{ end }}>
-                    <a href="{{ "/projects" | absURL}}" class="topbar__menu--projects" id="submenu-toggle" title="Projects">
-                        <span>Projects</span>
-                        {{ partial "svg" "go-arrow-nocircle" }}
-                    </a>
+<div class="nav">
+    <nav class="topbar" id="topbar">
+        <div>
+            <a href="{{ "/" | absURL }}" alt="source{d}">
+                <div class="logo"><img src="{{ "/img/logos/source-logo-white.svg" | absURL }}" alt="source{d}" /></div>
+            </a>
+            <div class="topbar__menu" id="menu">
+                <ul>
+                    <li {{ if eq $ctx.URL "/" }}class="active"{{ end }} title="homepage">
+                        <a href="{{ "/" | absURL }}" title="Home">Home</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "projects" }}class="active"{{ end }}>
+                        <a href="{{ "/projects" | absURL}}" class="topbar__menu--projects" id="submenu-toggle" title="Projects">
+                            <span>Projects</span>
+                            {{ partial "svg" "go-arrow-nocircle" }}
+                        </a>
 
-                    <ul class="topbar__submenu" id="submenu">
-                        {{ range $k := $.Site.Data.categories.categories.order }}
-                            {{ $section := (index $categories $k) }}
-                            <li {{ if eq (default $.Site.Data.project.category "") $k }}class="active"{{end}}>
-                                <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}">
-                                    {{ partial "svg" $k }}
-                                    <span>{{ $section.name }}</span>
-                                </a>
-                            </li>
-                        {{ end }}
-                    </ul>
-                </li>
-                <li>
-                    <a href="http://talks.sourced.tech" target="_blank" title="Talks">Talks</a>
-                </li>
-                <li>
-                    <a href="https://blog.sourced.tech" title="Blog">Blog</a>
-                </li>
-                <li {{ if eq .URL "stack" }}class="active"{{ end }}>
-                    <a href="{{ "/stack" | absURL }}" title="Our stack">Stack</a>
-                </li>
-                <li {{ if eq .URL "team" }}class="active" {{ end }}>
-                    <a href="{{ "/team" | absURL }}" title="Team">Team</a>
-                </li>
-                <li {{ if eq .URL "careers" }}class="active" {{ end }}>
-                    <a href="{{ "/careers" | absURL }}" title="Our Job Opportunities">Careers</a>
-                </li>
-            </ul>
+                        <ul class="topbar__submenu" id="submenu">
+                            {{ range $k := $ctx.Site.Data.categories.categories.order }}
+                                {{ $section := (index $categories $k) }}
+                                <li {{ if eq $category $k }}class="active"{{end}}>
+                                    <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}">
+                                        {{ partial "svg" $k }}
+                                        <span>{{ $section.name }}</span>
+                                    </a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="http://talks.sourced.tech" target="_blank" title="Talks">Talks</a>
+                    </li>
+                    <li>
+                        <a href="https://blog.sourced.tech" title="Blog">Blog</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "stack" }}class="active"{{ end }}>
+                        <a href="{{ "/stack" | absURL }}" title="Our stack">Stack</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "team" }}class="active" {{ end }}>
+                        <a href="{{ "/team" | absURL }}" title="Team">Team</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "careers" }}class="active" {{ end }}>
+                        <a href="{{ "/careers" | absURL }}" title="Our Job Opportunities">Careers</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
+    {{ $secondary_nav := default "" .secondary_nav }}
+    {{ if or (ne $category "") (ne $secondary_nav "") }}
+        <nav class="secondary-topbar">
+            <div>
+                {{ if ne $category "" }}
+                    {{ partial "project_nav.html" . }}
+                {{ else }}
+                    {{ partial $secondary_nav . }}
+                {{ end }}
+            </div>
+        </nav>
+    {{ end }}
+</div>

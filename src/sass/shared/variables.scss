@@ -46,6 +46,8 @@ $color-topbar-submenu-hover-bg: #e9eeef;
 $color-topbar-submenu-hover-border: $color-dark-blue;
 $color-topbar-submenu-hover: #5b92be;
 
+$color-secondary-nav-bg: rgba(0, 0, 0, .3);
+
 $color-roadmap-text: $color-white;
 
 $color-terminal-text: #B7BFC7;
@@ -85,6 +87,7 @@ $font-size-xsmall: 16px;
 $font-size-xxsmall: 14px;
 $font-size-footer-titles: 21px;
 $font-size-footer-text: $font-size-xsmall;
+$font-size-secondary-nav-item: 21px;
 $font-size-testimonial-usernames: 18px;
 
 // Font families
@@ -95,6 +98,7 @@ $font-caveat: 'Caveat', cursive;
 $font-icons: 'FontAwesome';
 $font-default: $font-source-sans-pro;
 $font-titles: $font-roboto;
+$font-menus: $font-roboto;
 $font-handwritten: $font-caveat;
 
 // Grid settings
@@ -122,6 +126,7 @@ $padding-topbar-vertical: 15px;
 $padding-topbar-menu-vertical-spacing: $gutter-size / 3;
 $padding-topbar-menu-horizontal-spacing: $gutter-size / 2;
 $padding-topbar-submenu-item: $gutter-size / 4;
+$padding-secondary-nav-item: 10px;
 
 $padding-card: $gutter-size / 2;
 
@@ -159,6 +164,7 @@ $size-showcases-dot-border: 3px;
 
 $height-topbar: 75px;
 $height-topbar-logo: 45px;
+$height-secondary-nav: 60px;
 
 $size-button-spacing: $gutter-size / 2;
 
@@ -166,6 +172,7 @@ $width-topbar-submenu-border-size: 5px;
 
 $size-roadmap-photo: 180px;
 
+$size-secondary-nav-item-spacing: $gutter-size / 2;
 $size-card-top-border: 7px;
 $size-card-arrow: $gutter-size;
 $size-card-srcd-logo: 45px;

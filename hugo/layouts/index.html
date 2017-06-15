@@ -1,9 +1,10 @@
 {{ partial "head.html" . }}
 {{ $home := $.Site.Data.home.home }}
 {{ $showcases := $.Site.Data.home.showcases }}
+{{ $headerCtx := dict "ctx" . }}
 
 <body class="homePage">
-    {{ partial "header.html" . }}
+    {{ partial "header.html" $headerCtx }}
 
     {{ partial "home/hero.html" $home }}
 

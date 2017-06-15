@@ -42,11 +42,7 @@
             svg {
                 width: $size-card-proy-logo;
                 height: $size-card-proy-logo;
-
-                path,
-                circle {
-                    fill: white;
-                }
+                fill: white;
             }
 
             .cards__element__img {

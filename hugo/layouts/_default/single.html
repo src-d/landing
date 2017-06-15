@@ -1,5 +1,6 @@
-{{ $headerCtx := dict "Params" (dict "topbar" "opaque") }}
 {{ partial "head.html" . }}
+{{ $headerCtx := dict "ctx" . }}
+
 <body>
     {{ partial "header.html" $headerCtx }}
 

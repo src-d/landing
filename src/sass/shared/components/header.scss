@@ -1,10 +1,13 @@
-.topbar {
-  height: $height-topbar;
+.nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
+}
+
+.topbar {
+  height: $height-topbar;
 
   &.opaque {
     background-color: $color-topbar-bg;
@@ -37,7 +40,7 @@
         }
 
         a {
-          font-family: $font-titles;
+          font-family: $font-menus;
           text-transform: lowercase;
           color: $color-topbar-menu-item;
           font-size: $font-size-menu;
@@ -132,5 +135,36 @@
 
   &__menu ul li:hover ul.topbar__submenu {
     display: block;
+  }
+}
+
+.secondary-topbar {
+  background: $color-secondary-nav-bg;
+  height: $height-secondary-nav;
+
+  & > div {
+    @include row;
+    @include container;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    @include link-dark-bg;
+    text-decoration: none;
+  }
+
+  ul {
+    li {
+      display: inline-block;
+      padding: $padding-secondary-nav-item;
+      font-size: $font-size-secondary-nav-item;
+      font-family: $font-menus;
+    }
+
+    li + li {
+      margin-left: $size-secondary-nav-item-spacing;
+    }
   }
 }
