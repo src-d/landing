@@ -1,20 +1,12 @@
 {{ $email := .Params.contactemail | default .Site.Params.defaultemail }}
-<aside class="fullWidth opaque contact">
-    <div class="mainContainer">
-        <header>
-            <h4>Get in touch with us</h4>
-        </header>
-        <div>
-            <a class="copyBtn darkButton"
-               href="mailto:{{ $email }}"
-               data-clipboard-text="{{ $email }}">
-                {{ $email }}
-            </a>
-            <br />
 
-            {{ if ne .Site.Params.pgpLink "" }}
-                <a class="pgpKey" href="{{ .Site.Params.pgpLink }}" target="_blank">Looking for our PGP key?</a>
-            {{end}}
-        </div>
-    </div>
-</aside>
+<div class="footer__contact">
+    <a class="contact-email" href="mailto:{{ $email }}">{{ $email }}</a>
+
+    {{ if ne .Site.Params.pgpLink "" }}
+    <a class="pgp-key" href="{{ .Site.Params.pgpLink }}" target="_blank">
+        {{ partial "svg" "key" }} 
+        <span>Looking for our PGP key?</span>
+    </a>
+    {{end}}
+</div>

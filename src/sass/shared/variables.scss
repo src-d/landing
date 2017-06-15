@@ -62,6 +62,13 @@ $color-terminal-code-bg: #33526C;
 $color-showcases-dot: $color-light-blue;
 $color-showcases-dot-border: $color-light-blue;
 
+$color-footer-text: $color-pale-grey;
+$color-footer-links-hover: $color-pale-blue;
+$color-footer-titles: $color-white;
+$color-footer-titles-pill: rgba(255, 255, 255, .1);
+$color-footer-email: $color-white;
+$color-footer-pgp-key-icon: rgba(255, 255, 255, .3);
+
 // Text sizes
 $font-size-body: 20px;
 $font-size-menu: 24px;
@@ -69,15 +76,17 @@ $font-size-submenu: 21px;
 $font-size-title-big: 48px;
 $font-size-title-medium: 30px;
 $font-size-title-small: 24px;
+$font-size-pill-button: 21px;
+$font-size-terminal-source-code: 14px;
+$font-size-signature: 48px;
+$font-size-footer-section: 16px;
+$font-size-footer-email: 24px;
 $font-size-title-xsmall: 21px;
 $font-size-small: 18px;
 $font-size-xsmall: 16px;
 $font-size-xxsmall: 14px;
 $font-size-footer-titles: 21px;
 $font-size-footer-text: $font-size-xsmall;
-$font-size-pill-button: 21px;
-$font-size-terminal-source-code: 14px;
-$font-size-signature: 48px;
 $font-size-secondary-nav-item: 21px;
 $font-size-testimonial-usernames: 18px;
 
@@ -138,6 +147,11 @@ $size-title-big-pill-spacing: 15px;
 $height-title-medium-pill: 15px;
 $width-title-medium-pill: 30px;
 $size-title-medium-pill-spacing: 15px;
+
+$height-title-footer-pill: 15px;
+$width-title-footer-pill: 30px;
+$size-title-footer-pill-spacing: 7px;
+$size-title-footer-spacing: $gutter-size / 3 - 1px;
 
 $size-button-spacing: $gutter-size / 2;
 

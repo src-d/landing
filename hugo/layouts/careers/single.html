@@ -1,5 +1,6 @@
 {{ partial "head.html" . }}
 {{ $headerCtx := dict "ctx" . }}
+{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 
 <body>
     {{ partial "header.html" $headerCtx }}
@@ -19,9 +20,7 @@
         <div id="offersPanel"></div>
     </div>
 
-    {{ partial "footer/contact-us.html" . }}
-    {{ partial "footer/sitemap.html" . }}
-
+    {{ partial "footer.html" $footerCtx }}
 </body>
 
 </html>

@@ -5,14 +5,25 @@ company:
     url: //sourced.tech/manifesto
   - title: Roadmap
     url: http://blog.sourced.tech/post/our-roadmap
-  - multi: true
-    items:
-      - title: Team
-        url: //sourced.tech/team
-      - title: Stack
-        url: //sourced.tech/stack
+  - title: Team
+    url: //sourced.tech/team
+  - title: Stack
+    url: //sourced.tech/stack
   - title: Careers
     url: //sourced.tech/careers
+projects:
+  - title: Datasets
+    url: "//sourced.tech/projects/#datasets"
+  - title: Models
+    url: "//sourced.tech/projects/#models"
+  - title: Data Retrieval Tools
+    url: "//sourced.tech/projects/#retrieval"
+  - title: Language Analysis Tools
+    url: "//sourced.tech/projects/#languages"
+  - title: Machine Learning Tools
+    url: "//sourced.tech/projects/#science"
+  - title: Demos
+    url: "//sourced.tech/projects/#demos"
 community:
   - title: Tech Talks 
     url: http://talks.sourced.tech
@@ -34,6 +45,7 @@ networks:
   - title: LinkedIn
     url: https://www.linkedin.com/company-beta/10284920/
 contact:
+  company_name: "Sourced Technologies, S.L."
   address:
     - "Claudio Coello 16, 2º Izq"
     - "28001 - Madrid, Spain"

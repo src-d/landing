@@ -2,8 +2,9 @@
 {{ $home := $.Site.Data.home.home }}
 {{ $showcases := $.Site.Data.home.showcases }}
 {{ $headerCtx := dict "ctx" . }}
+{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 
-<body class="homePage">
+<body class="home-page">
     {{ partial "header.html" $headerCtx }}
 
     {{ partial "home/hero.html" $home }}
@@ -28,9 +29,7 @@
         {{ partial "home/blog.html" $.Site.Data.home.home.blog }}
     {{ end }}
 
-    {{ partial "footer/slack.html" . }}
-    {{ partial "footer/contact-us.html" . }}
-    {{ partial "footer/sitemap.html" . }}
+    {{ partial "footer.html" $footerCtx }}
 </body>
 
 </html>

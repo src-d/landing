@@ -1,5 +1,6 @@
 {{ partial "head.html" . }}
 {{ $headerCtx := dict "ctx" . }}
+{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 
 <body class="teamPage zoom">
     {{ partial "header.html" $headerCtx }}
@@ -34,8 +35,7 @@
     </section>
     {{ end }}
 
-    {{ partial "footer/contact-us.html" . }}
-    {{ partial "footer/sitemap.html" . }}
+    {{ partial "footer.html" $footerCtx }}
 </body>
 
 </html>

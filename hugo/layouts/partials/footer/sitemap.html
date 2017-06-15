@@ -1,33 +1,31 @@
-<footer>
-    <h5>Contact</h5>
-    {{ range $addr := $.Site.Data.footer.contact.address }}
-        <p>{{ $addr }}</p>
-    {{ end }}
-    <ul>
-        {{ range $m := $.Site.Data.footer.contact.mails }}
-            <li>
-                <a href="mailto:{{ $m }}" title="Contact {{ $m }}">
-                    {{ $m }}
-                </a>
-            </li>
+{{ $footer := $.Site.Data.footer }}
+
+<section class="footer__sitemap">
+    <div class="footer__sitemap__addresses">
+        <div class="logo"><img src="{{ "/img/logos/source-logo-white.svg" | absURL }}" alt="source{d}" /></div>
+        <p>{{ $footer.contact.company_name }}</p>
+        {{ range $addr := $footer.contact.address }}
+            <p>{{ $addr }}</p>
         {{ end }}
-    </ul>
 
-    <div>
-        <div>
-            <a href="{{ $.Site.BaseURL }}" title="source{d}" class="logo">
-                source{d}
-            </a>
-        </div>
-
-        <div>
-            {{ partial "footer/sitemap-links.html" (dict "title" "Company" "items" $.Site.Data.footer.company) }}
-
-            {{ partial "footer/sitemap-links.html" (dict "title" "Community" "items" $.Site.Data.footer.community) }}
-            
-            {{ partial "footer/sitemap-links.html" (dict "title" "Networks" "items" $.Site.Data.footer.networks) }}
-        </div>
+        <ul class="footer__sitemap__addresses__emails">
+            {{ range $m := $footer.contact.mails }}
+                <li>
+                    <a href="mailto:{{ $m }}" title="Contact {{ $m }}">
+                        {{ $m }}
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
     </div>
-</footer>
+
+    {{ partial "footer/sitemap-links.html" (dict "title" "Company" "items" $footer.company) }}
+
+    {{ partial "footer/sitemap-links.html" (dict "title" "Projects" "items" $footer.projects) }}
+
+    {{ partial "footer/sitemap-links.html" (dict "title" "Community" "items" $footer.community) }}
+    
+    {{ partial "footer/sitemap-links.html" (dict "title" "Networks" "items" $footer.networks) }}
+</section>
 
 <script src="/js/bundle.js"></script>

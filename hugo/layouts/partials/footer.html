@@ -1,0 +1,11 @@
+{{ $ctx := $.ctx }}
+{{ if default false $.include_slack }}
+    {{ partial "footer/slack.html" $ctx }}
+{{ end }}
+
+<footer class="footer">
+    {{ if default false $.include_email }}
+        {{ partial "footer/contact-us.html" $ctx }}
+    {{ end }}
+    {{ partial "footer/sitemap.html" $ctx }}
+</footer>
