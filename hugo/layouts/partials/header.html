@@ -54,14 +54,14 @@
 
     {{ $secondary_nav := default "" .secondary_nav }}
     {{ if or (ne $category "") (ne $secondary_nav "") }}
-    <nav class="secondary-topbar">
-        <div>
-            {{ if ne $category "" }}
-                {{ partial "project_nav.html" . }}
-            {{ else }}
-                {{ partial $secondary_nav . }}
-            {{ end }}
-        </div>
-    </nav>
+        <nav class="secondary-topbar">
+            <div>
+                {{ if ne $category "" }}
+                    {{ partial "project_nav.html" . }}
+                {{ else }}
+                    {{ partial $secondary_nav . }}
+                {{ end }}
+            </div>
+        </nav>
     {{ end }}
 </div>
