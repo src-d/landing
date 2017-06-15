@@ -21,10 +21,13 @@ type postProvider struct {
 }
 
 type Post struct {
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	Date        string `json:"date"`
-	Link        string `json:"link"`
+	Title        string `json:"title"`
+	Description  string `json:"description"`
+	Date         string `json:"date"`
+	Link         string `json:"link"`
+	Author       string `json:"author"`
+	AuthorAvatar string `json:"author_avatar"`
+	Image        string `json:"featured_image"`
 }
 
 type PostsResponse struct {

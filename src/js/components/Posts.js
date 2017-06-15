@@ -1,103 +1,84 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom';
 
-import { Loading, LoadingError } from './Loading'
-import { loadTechPosts, loadNonTechPosts, states } from '../services/api'
+import { loadPosts, states, blogUrl } from '../services/api'
 import { ago, isNewer, TIME_UNITS } from '../services/dates'
 
-const TECH = 'technical'
-const NON_TECH = 'culture'
-
 export default class BlogPostsContainer extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props)
 
-        this.state = {
-            ['error_' + TECH]: false,
-            ['error_' + NON_TECH]: false
-        }
+    this.state = {
+      posts: [],
+      title: null,
+      moreUrl: null,
+      moreText: null,
+    }
+  }
 
-        this.notifyError = (which) => {
-            console.warn('Error found in Post section "' + which +'"')
-            this.setState({['error_' + which]: true})
-        }
+  componentDidMount() {
+    loadPosts(this.props.category.name)
+      .then(posts => this.setState({ posts }))
+      .then(this.props.onSuccess)
+  }
+
+  render() {
+    const {posts} = this.state
+    const {title, name, moreText} = this.props.category;
+    if (posts.length == 0) {
+      return <div></div>
     }
 
-
-    render() {
-        if (this.state['error_' + TECH] && this.state['error_' + NON_TECH]) {
-            console.warn('BlogPost section hided')
-            return null
-        }
-
-        return (
-            <aside className="fullWidth" id="ourPosts">
-                <div className="mainContainer">
-                    <header>
-                        <h2>Sharing our journey and work with the world</h2>
-                    </header>
-                    <div className="columns">
-                        <section>
-                            <h3 className="title">Our journey</h3>
-                            <div className="postColumn" id="non-tech-posts">
-                                <Posts kind={NON_TECH} errorHandler={this.notifyError} />
-                            </div>
-                        </section>
-                        <section>
-                            <h3 className="title">Technical posts</h3>
-                            <div className="postColumn" id="tech-posts">
-                                <Posts kind={TECH} errorHandler={this.notifyError} />
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </aside>
-        )
-    }
-}
-
-class Posts extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            state: states.LOADING,
-            posts: []
-        }
-    }
-
-    componentWillMount() {
-        const loader = this.props.kind == TECH ? loadTechPosts : loadNonTechPosts
-        loader()
-            .then(posts => this.setState({ state: states.LOADED, posts }))
-            .catch(err => {
-                console.error(err)
-                this.setState({ state: states.ERROR })
-                this.props.errorHandler(this.props.kind)
-            })
-    }
-
-    render() {
-        const { state, posts } = this.state
-        if (state === states.LOADING) {
-            return <Loading />
-        } else if (state === states.ERROR) {
-            return <LoadingError />
-        }
-
-        return (
-            <div className='posts'>
-                {posts.map((p, i) => <Post key={i} first={i === 0} post={p} />)}
-            </div>
-        )
-    }
+    return (
+      <div>
+          <h2>{title}</h2>
+          <div className="cards">
+              {posts.map((p, i) => <Post key={i} first={i === 0} post={p} />)}
+          </div>
+          <div className="blog__category__wrapper">
+              <a href={blogUrl('categories/' + name)} target="_blank" className="btn-pill">
+                  {moreText}
+              </a>
+          </div>
+      </div>
+    )
+  }
 }
 
 function Post({ post, first }) {
+  return (
+    <article className="cards__element cards__element_blog">
+        <a href={post.link} target="_blank">
+            <header>
+                <figure>
+                    <CardHeaderImage url={post.featured_image} />
+                </figure>
+                <h1>{post.title}</h1>
+            </header>
+            <footer>
+                <img src={post.author_avatar} />
+                <address>
+                    <div>by <span className="cards__element__link">{post.author}</span></div>
+                    <time dateTime={post.date}>{ago(post.date)}</time>
+                </address>
+            </footer>
+        </a>
+    </article>
+  )
+}
+
+function CardHeaderImage({url}) {
+  if (Boolean(url)) {
     return (
-        <div className={'post' + (first && isNewer(post.date, 2 * TIME_UNITS['week']) ? ' new' : '')}>
-            <a href={post.link} target="_blank">{post.title}</a>
-            {first ? (
-                <span className='timeAgo'>Published {ago(post.date)} ago</span>
-            ) : null}
-        </div>
+      <div className="cards__element__img"
+        style={{backgroundImage: 'url(' + url + ')'}}
+      />
     )
+  } else {
+      return (
+        <div className="cards__element__img  cards__element__img_default">
+            <img src="/img/logos/logo-blue.svg" />
+        </div>
+      )
+  }
 }
