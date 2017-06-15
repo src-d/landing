@@ -1,0 +1,11 @@
+<article class="cards__element cards__element_category">
+    <a href="{{ .link }}">
+        <header>
+            <figure style="background: linear-gradient(to right, {{ default "#36536C" .gradient.left }}, {{ default "#2377B6" .gradient.right }});">
+                {{ partial "svg" .icon }}
+            </figure>
+            <h1>{{ .title }}</h1>
+        </header>
+        <p>{{ .content }}</p>
+    </a>
+</article>
