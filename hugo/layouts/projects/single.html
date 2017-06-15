@@ -5,20 +5,7 @@
 
 <body class="projects-page">
     {{ partial "header.html" $headerCtx }}
-    <section class="projects-hero">
-        <div>
-            <div class="projects-hero__intro">
-                <h1>{{ $projects.title }}</h1>
-                <p>{{ $projects.desc }}</p>
-            </div>
-
-            <figure class="projects-hero__picture">
-                <img src="{{ "img/header/alan-turing.png" | absURL }}" />
-            </figure>
-
-            <img class="code-pills-left" src="{{ "img/bgs/codepills-bg-1.png" | absURL }}" />
-        </div>
-    </section>
+    {{ partial "projects/hero.html" $projects }}
 
     {{ partial "footer.html" $footerCtx }}
 </body>
