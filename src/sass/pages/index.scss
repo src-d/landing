@@ -2,10 +2,22 @@
   @include corporate-gradient;
   color: $color-hero-text;
   padding: ($padding-hero-vertical + $height-topbar) 0 $padding-hero-vertical 0;
+  overflow: hidden;
 
   &__wrap {
     @include row;
     @include container;
+    position: relative;
+
+    .code-pills-left {
+      position: absolute;
+      right: 100%;
+    }
+
+    .code-pills-right {
+      position: absolute;
+      left: 100%;
+    }
   }
 
   &__info {
@@ -54,7 +66,6 @@
 
     h2 {
       @include default-title-medium;
-      margin-top: $margin-showcases-title-medium-top;
     }
 
     p {
@@ -158,10 +169,18 @@
 .roadmap {
   @include corporate-gradient;
   padding: $padding-roadmap-vertical 0;
+  overflow: hidden;
 
-  & > article {
+  & article,
+  & > div {
     @include row;
     @include container;
+    position: relative;
+  }
+
+  .code-pills-left {
+    position: absolute;
+    right: 95%;
   }
 
   &__photo {
@@ -202,6 +221,98 @@
   &__links {
     a + a {
       margin-left: $size-button-spacing;
+    }
+  }
+}
+
+.blog {
+    display: none;
+
+    .btn-pill {
+        margin: $gutter-size auto 0;
+    }
+
+    &__category {
+        h2 {
+            @include default-title-medium();
+        }
+
+        & + & {
+            margin-top: 75px;
+        }
+
+        &__wrapper {
+            text-align: center;
+        }
+    }
+}
+
+.testimonials {
+  @include row;
+  @include container;
+  padding: $padding-section-vertical 0;
+
+  h1 {
+    @include default-title-big;
+  }
+
+  .testimonial-list {
+    @include columns(8);
+    @include offset(1);
+    margin-top: $column-size;
+
+    .testimonial {
+      @include row;
+      display: none;
+
+      &:first-child,
+      &:nth-child(2) {
+        display: block;
+      }
+
+      & + .testimonial {
+        margin-top: $gutter-size;
+      }
+
+      &__avatar {
+        @include columns(1);
+
+        img {
+          max-width: 100%;
+          border-radius: 50%;
+          margin-left: -($gutter-size / 2);
+        }
+      }
+
+      blockquote {
+        @include columns(7);
+
+        a {
+          @include link-light-bg;
+        }
+
+        cite {
+          font-size: $font-size-testimonial-usernames;
+          display: block;
+          padding-top: $gutter-size / 2;
+        }
+      }
+
+      &:nth-child(even) {
+        .testimonial__avatar {
+          float: right;
+
+          img {
+            margin-left: $gutter-size / 2;
+          }
+        }
+
+        blockquote {
+          margin-left: 0;
+          margin-right: $gutter-size;
+          text-align: right;
+        }
+      }
     }
   }
 }

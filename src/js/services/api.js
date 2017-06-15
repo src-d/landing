@@ -17,6 +17,7 @@ export var states = {
 const LOCAL_URL = 'http://localhost:8080'
 const PROD_URL = '/api'
 const PROD_FORCED_URL = null //'http://sourced.tech/api'
+const BLOG_URL = '//blog.sourced.tech'
 
 function apiURL(url) {
     const baseURL = window.location.href.indexOf('://localhost') >= 0 ? LOCAL_URL : PROD_URL
@@ -40,31 +41,20 @@ export function loadOtherRepos() {
     return request(apiURL(OTHER_REPOS_URL)).then(resp => resp.Repos)
 }
 
-const NON_TECH_POSTS_URL = '/posts/culture'
-const TECH_POSTS_URL = '/posts/technical'
-
-export function loadTechPosts() {
-    return request(apiURL(TECH_POSTS_URL)).then(resp => fixPosts(resp.Posts.slice(0,3)))
+export function loadPosts(category) {
+    return request(apiURL('/posts/' + category))
+        .then(resp => {
+            const posts = resp.Posts.slice(0,3)
+            return posts.length > 0 ? posts : Promise.reject(new Error('empty response'))
+        })
 }
 
-export function loadNonTechPosts() {
-    return request(apiURL(NON_TECH_POSTS_URL)).then(resp => fixPosts(resp.Posts.slice(0,3)))
-}
+export function blogUrl(path) {
+  if (path.indexOf('//') === 0 || path.indexOf('http') === 0 ) {
+    return path
+  }
 
-function fixPosts(posts) {
-    return posts.map(post => fixPost(post))
-}
-
-function fixPost(post) {
-    if (!post.link) {
-        return post
-    }
-
-    if (post.link.indexOf('//') !== 0 && post.link.indexOf('http') !== 0 ) {
-        post.link = 'http://blog.sourced.tech' + post.link
-    }
-
-    return post
+  return BLOG_URL + '/' + path.trim('/');
 }
 
 const POSITIONS_URL = '/positions'

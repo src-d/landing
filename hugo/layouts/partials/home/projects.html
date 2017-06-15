@@ -1,0 +1,18 @@
+<section class="projects band band_grey">
+    <div class="band__container">
+        <h1>Projects</h1>
+        <div class="cards">
+            {{ range $categoryName := .categories.order }}
+                {{ $category := index $.categories.contents $categoryName }}
+
+                {{ $title := $category.name }}
+                {{ $content := $category.desc }}
+                {{ $link := printf "/projects#%s" $category.name }}
+                {{ $gradient := $category.colors }}
+                {{ $context := dict "title" $title "icon" $categoryName "content" $content "link" $link "gradient" $gradient }}
+
+                {{ partial "card.html" $context }}
+            {{ end }}
+        </div>
+    </div>
+</section>
