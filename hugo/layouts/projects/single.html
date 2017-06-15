@@ -1,11 +1,11 @@
 {{ partial "head.html" . }}
 {{ $headerCtx := dict "ctx" . "secondary_nav" "projects/nav.html" }}
 {{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
+{{ $projects := $.Site.Data.projects }}
 
 <body class="projects-page">
     {{ partial "header.html" $headerCtx }}
-    <section class="projects-hero">
-    </section>
+    {{ partial "projects/hero.html" $projects }}
 
     {{ partial "footer.html" $footerCtx }}
 </body>
