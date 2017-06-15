@@ -13,19 +13,36 @@ import SlackForm from './components/SlackForm'
 
 polyfill()
 
-function renderComponent(component, id) {
+function renderComponent(component, id, props = {}) {
     const elem = document.getElementById(id)
     if (elem) {
-        ReactDOM.render(React.createElement(component), elem)
+        ReactDOM.render(React.createElement(component, props), elem)
     }
+}
+
+function renderBlogCategories(selector, containerId) {
+  const enableBlogContainer = () => {
+    document.getElementById(containerId).style.display = 'block';
+  }
+
+  const categories = Array.from(document.querySelectorAll(selector))
+  categories.forEach(category => {
+    const props = {
+      onSuccess: enableBlogContainer,
+      category: category.dataset,
+    }
+    const component = React.createElement(BlogPostsContainer, props);
+    ReactDOM.render(component, category)
+  })
 }
 
 window.addEventListener('DOMContentLoaded', _ => {
   setupStickyHeader()
-  hljs.initHighlightingOnLoad()
-  renderComponent(BlogPostsContainer, 'ourPostsContainer')
+  setupShowcases()
+  renderBlogCategories('.blog__category', 'blog-container')
   renderComponent(PositionsMain, 'offersPanel')
   renderComponent(SlackForm, 'slack-join')
+  setupTestimonials()
   setupClipboard()
 })
 
@@ -74,5 +91,20 @@ function setupShowcases() {
 function highlightCode(code) {
   if (code.children.length >= 0) {
     hljs.highlightBlock(code.children[0])
+  }
+}
+
+function setupTestimonials() {
+  const testimonials = document.getElementById('testimonials')
+  const children = Array.from(testimonials.children)
+  shuffle(children)
+  testimonials.innerHTML = ''
+  children.forEach(c => testimonials.appendChild(c))
+}
+
+function shuffle(arr) {
+  for (let i = arr.length; i > 0; i--) {
+    const j = Math.floor(Math.random() * i);
+    [arr[i - 1], arr[j]] = [arr[j], arr[i - 1]];
   }
 }

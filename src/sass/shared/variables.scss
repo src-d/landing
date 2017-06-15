@@ -5,6 +5,8 @@ $color-pale-blue: #dae4e4;
 $color-dark-grey: #adb6bf;
 $color-medium-grey: #e6e9ec;
 $color-pale-grey: #ecf0f1;
+$color-light-greysh: #EBF0F1;
+$color-light-grey: #737373;
 $color-white: white;
 
 $color-text-default: black;
@@ -13,6 +15,8 @@ $color-links: $color-light-blue;
 $color-links-hover: $color-dark-blue;
 $color-links-darkbg: $color-white;
 $color-links-darkbg-hover: $color-pale-grey;
+
+$color-main-bg: $color-light-greysh;
 
 $color-hero-bg: $color-dark-blue;
 $color-hero-text: $color-white;
@@ -25,16 +29,13 @@ $color-title-medium-pill: #ADB6BF;
 
 $color-slack-form-bg: $color-white;
 
-$color-pill-button-text: $color-light-blue;
-$color-pill-button-border: $color-light-blue;
-$color-pill-button-hover-text: $color-white;
-$color-pill-button-hover-bg: $color-light-blue;
-$color-pill-button-hover-shadow: rgba(201,216,225,1);
-$color-pill-button-white-border: $color-white;
-$color-pill-button-white-text: $color-white;
-$color-pill-button-white-hover-text: $color-dark-blue;
-$color-pill-button-white-hover-bg: $color-white;
-$color-pill-button-white-hover-shadow: rgba(60,118,159,1);
+$color-pill-button-main: $color-light-blue;
+$color-pill-button-hover-main: $color-white;
+$color-pill-button-hover-bg: $color-pill-button-main;
+
+$color-pill-button-white-main: $color-white;
+$color-pill-button-white-hover-main: $color-dark-blue;
+$color-pill-button-white-hover-bg: $color-pill-button-white-main;
 
 $color-topbar-bg: $color-dark-blue;
 $color-topbar-menu-item: $color-white;
@@ -70,23 +71,28 @@ $color-footer-pgp-key-icon: rgba(255, 255, 255, .3);
 $font-size-body: 20px;
 $font-size-menu: 24px;
 $font-size-submenu: 21px;
-$font-size-card-titles: 21px;
 $font-size-title-big: 48px;
 $font-size-title-medium: 30px;
 $font-size-title-small: 24px;
-$font-size-footer-text: 16px;
 $font-size-pill-button: 21px;
 $font-size-terminal-source-code: 14px;
 $font-size-signature: 48px;
 $font-size-footer-section: 16px;
-$font-size-footer-titles: 21px;
 $font-size-footer-email: 24px;
+$font-size-title-xsmall: 21px;
+$font-size-small: 18px;
+$font-size-xsmall: 16px;
+$font-size-xxsmall: 14px;
+$font-size-footer-titles: 21px;
+$font-size-footer-text: $font-size-xsmall;
+$font-size-testimonial-usernames: 18px;
 
 // Font families
 $font-roboto: 'Roboto', sans-serif;
 $font-source-sans-pro: 'Source Sans Pro', sans-serif;
 $font-source-code: 'Hack', 'monaco', monospace;
 $font-caveat: 'Caveat', cursive;
+$font-icons: 'FontAwesome';
 $font-default: $font-source-sans-pro;
 $font-titles: $font-roboto;
 $font-handwritten: $font-caveat;
@@ -116,6 +122,8 @@ $padding-topbar-vertical: 15px;
 $padding-topbar-menu-vertical-spacing: $gutter-size / 3;
 $padding-topbar-menu-horizontal-spacing: $gutter-size / 2;
 $padding-topbar-submenu-item: $gutter-size / 4;
+
+$padding-card: $gutter-size / 2;
 
 $margin-topbar-submenu-arrow-right: $padding-topbar-menu-horizontal-spacing + 8px;
 $margin-topbar-menu-spacing: $gutter-size / 4;
@@ -157,3 +165,23 @@ $size-button-spacing: $gutter-size / 2;
 $width-topbar-submenu-border-size: 5px;
 
 $size-roadmap-photo: 180px;
+
+$size-card-top-border: 7px;
+$size-card-arrow: $gutter-size;
+$size-card-srcd-logo: 45px;
+$size-card-proy-logo: 45px;
+$size-card-author-image: 60px;
+$size-card-image-height: 100px;
+
+// Radius
+$border-radius-main: 5px;
+
+// Shadows
+$shadow-main: 3px 3px 5px rgba(0, 0, 0, .1);
+$shadow-main-hover: 3px 3px 5px 0 rgba(0, 0, 0, .2);
+$shadow-color-pill-button-hover: 0 0 1px 5px rgba(201, 216, 225, 1);
+$shadow-color-pill-button-white-hover: 0 0 1px 5px rgba(60, 118, 159, 1);
+
+// Transitions
+$transition-main-time: .3s;
+$transition-main-effect: ease-in;

@@ -7,3 +7,26 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-titles;
 }
+
+.band {
+    padding: 90px 0 90px;
+    width: 100%;
+
+    &_grey {
+        background: $color-main-bg;
+    }
+
+    &__container {
+        @include container();
+
+        & > {
+            h1 {
+                @include default-title-big();
+            }
+
+            h2 {
+                @include default-title-medium();
+            }
+        }
+    }
+}
