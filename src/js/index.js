@@ -65,6 +65,10 @@ function setupShowcases() {
   const showcase = $('.showcases__project')
   const code = document.getElementById('showcase-code')
   const title = document.getElementById('showcase-title')
+  if (!code) {
+    return;
+  }
+
   showcase.slick({
     dots: true,
     infinite: true,
@@ -94,6 +98,10 @@ function highlightCode(code) {
 
 function setupTestimonials() {
   const testimonials = document.getElementById('testimonials')
+  if (!testimonials) {
+    return;
+  }
+
   const children = Array.from(testimonials.children)
   shuffle(children)
   testimonials.innerHTML = ''
