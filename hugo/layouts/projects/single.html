@@ -1,14 +1,15 @@
 {{ partial "head.html" . }}
 {{ $headerCtx := dict "ctx" . "secondary_nav" "projects/nav.html" }}
 {{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
+{{ $projects := $.Site.Data.projects }}
 
 <body class="projects-page">
     {{ partial "header.html" $headerCtx }}
     <section class="projects-hero">
         <div>
             <div class="projects-hero__intro">
-                <h1>projects</h1>
-                <p>source{d} is building the open-source components that enable matchine learning on source code. We believe that the next step in programming comes from teaching machines to understand and write code.</p>
+                <h1>{{ $projects.title }}</h1>
+                <p>{{ $projects.desc }}</p>
             </div>
 
             <figure class="projects-hero__picture">

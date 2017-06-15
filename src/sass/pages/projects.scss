@@ -1,5 +1,4 @@
 .projects-hero {
-  // FIXME: this is just a placeholder until there's something in this page
   @include corporate-gradient;
   padding: ($padding-hero-vertical + $height-topbar + $height-secondary-nav) 0 0 0;
   overflow: hidden;
@@ -34,10 +33,11 @@
   &__picture {
     @include columns(5);
     margin-top: -$gutter-size;
-    text-align: center;
 
     img {
       max-width: 80%;
+      display: block;
+      margin: 0 auto;
     }
   }
 }
