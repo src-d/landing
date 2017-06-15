@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import { loadPosts, states, blogUrl } from '../services/api'
 import { ago, isNewer, TIME_UNITS } from '../services/dates'
 
+const POST_TITLE_MAX_LENGTH = 70
+
 export default class BlogPostsContainer extends Component {
   constructor(props) {
     super(props)
@@ -53,7 +55,7 @@ function Post({ post, first }) {
                 <figure>
                     <CardHeaderImage url={post.featured_image} />
                 </figure>
-                <h1>{post.title}</h1>
+                <h1>{ellipsis(post.title+post.title, POST_TITLE_MAX_LENGTH)}</h1>
             </header>
             <footer>
                 <img src={post.author_avatar} />
@@ -81,4 +83,23 @@ function CardHeaderImage({url}) {
         </div>
       )
   }
+}
+
+function ellipsis(text, maxLenght) {
+  if (text.length <= maxLenght) {
+    return text;
+  }
+
+  let cutterPosition = text.indexOf(' ', maxLenght - 1)
+  if (cutterPosition == -1) {
+    return text;
+  }
+
+  const lastChar = text[cutterPosition - 1]
+  const removedFromTheEndChars = '.,'
+  if (removedFromTheEndChars.indexOf(lastChar) > -1) {
+    cutterPosition--
+  }
+
+  return text.slice(0, cutterPosition) + '\u2026';
 }

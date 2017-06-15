@@ -76,7 +76,7 @@
 
         p {
             @include text-normal;
-            padding: 0 $padding-card $padding-card;
+            padding: 0 $padding-card ($size-card-arrow + 2 * $padding-card);
         }
 
         footer {
