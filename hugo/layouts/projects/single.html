@@ -7,6 +7,10 @@
     {{ partial "header.html" $headerCtx }}
     {{ partial "projects/hero.html" $projects }}
 
+    {{ if $projects.posts.display }}
+        {{ partial "projects/blog.html" $projects.posts }}
+    {{ end }}
+
     {{ partial "footer.html" $footerCtx }}
 </body>
 </html>

@@ -31,7 +31,7 @@ export default class BlogPostsContainer extends Component {
 
     return (
       <div>
-          <h2>{title}</h2>
+          {title ? <h2>{title}</h2> : null}
           <div className="cards">
               {posts.map((p, i) => <Post key={i} first={i === 0} post={p} />)}
           </div>

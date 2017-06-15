@@ -41,3 +41,11 @@
     }
   }
 }
+
+.blog {
+  display: none;
+
+  &__title {
+    @include default-title-big;
+  }
+}
