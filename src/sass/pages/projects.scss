@@ -1,5 +1,43 @@
 .projects-hero {
   // FIXME: this is just a placeholder until there's something in this page
   @include corporate-gradient;
-  height: 600px;
+  padding: ($padding-hero-vertical + $height-topbar + $height-secondary-nav) 0 0 0;
+  overflow: hidden;
+
+  & > div {
+    @include row;
+    @include container;
+    position: relative;
+
+    .code-pills-left {
+      position: absolute;
+      // this position is so that the code pills match with the position of the
+      // pill in the title
+      right: 90%;
+      top: -69px;
+    }
+  }
+
+  &__intro {
+    @include columns(5);
+    color: $color-hero-text;
+
+    h1 {
+      @include white-title-big;
+    }
+
+    p {
+      margin: $margin-hero-desc-vertical 0;
+    }
+  }
+
+  &__picture {
+    @include columns(5);
+    margin-top: -$gutter-size;
+    text-align: center;
+
+    img {
+      max-width: 80%;
+    }
+  }
 }

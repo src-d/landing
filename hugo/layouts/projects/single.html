@@ -5,6 +5,18 @@
 <body class="projects-page">
     {{ partial "header.html" $headerCtx }}
     <section class="projects-hero">
+        <div>
+            <div class="projects-hero__intro">
+                <h1>projects</h1>
+                <p>source{d} is building the open-source components that enable matchine learning on source code. We believe that the next step in programming comes from teaching machines to understand and write code.</p>
+            </div>
+
+            <figure class="projects-hero__picture">
+                <img src="{{ "img/header/alan-turing.png" | absURL }}" />
+            </figure>
+
+            <img class="code-pills-left" src="{{ "img/bgs/codepills-bg-1.png" | absURL }}" />
+        </div>
     </section>
 
     {{ partial "footer.html" $footerCtx }}
