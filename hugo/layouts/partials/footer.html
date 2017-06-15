@@ -1,10 +1,11 @@
-{{ if default true $.Params.include_footer_slack }}
-    {{ partial "footer/slack.html" . }}
+{{ $ctx := $.ctx }}
+{{ if default false $.include_slack }}
+    {{ partial "footer/slack.html" $ctx }}
 {{ end }}
 
 <footer class="footer">
-    {{ if default true $.Params.include_footer_email }}
-        {{ partial "footer/contact-us.html" . }}
+    {{ if default false $.include_email }}
+        {{ partial "footer/contact-us.html" $ctx }}
     {{ end }}
-    {{ partial "footer/sitemap.html" . }}
+    {{ partial "footer/sitemap.html" $ctx }}
 </footer>

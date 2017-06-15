@@ -1,5 +1,6 @@
 {{ partial "head.html" . }}
 {{ $headerCtx := dict "ctx" . }}
+{{ $footerCtx := dict "ctx" . }}
 
 <body>
     {{ partial "header.html" $headerCtx }}
@@ -22,7 +23,6 @@
         </div>
     </section>
 
-    {{ $footerCtx := dict "Params" (dict "footer" "white") "Site" $.Site }}
-    {{ partial "footer/sitemap.html" . }}
+    {{ partial "footer.html" $footerCtx }}
 </body>
 </html>
