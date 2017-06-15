@@ -15,7 +15,6 @@
     "url": "git+ssh://git@github.com/src-d/landing.git"
   },
   "dependencies": {
-    "clipboard": "^1.5.15",
     "es6-promise": "^4.0.5",
     "highlight.js": "^9.11.0",
     "react": "^15.3.2",
