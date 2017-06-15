@@ -26,7 +26,9 @@
     {{ end }}
 
     {{ if $home.blog.display }}
-        {{ partial "home/blog.html" $.Site.Data.home.home.blog }}
+        {{ $blog := $.Site.Data.home.home.blog }}
+        {{ $postsCtx := dict "categories" $blog.categories "show_subtitle" true "title" "Blog" }}
+        {{ partial "posts.html" $postsCtx }}
     {{ end }}
 
     {{ partial "footer.html" $footerCtx }}

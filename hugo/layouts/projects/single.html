@@ -8,7 +8,8 @@
     {{ partial "projects/hero.html" $projects }}
 
     {{ if $projects.posts.display }}
-        {{ partial "projects/blog.html" $projects.posts }}
+        {{ $postsCtx := dict "title" "technical posts" "categories" $projects.posts.categories }}
+        {{ partial "posts.html" $postsCtx }}
     {{ end }}
 
     {{ partial "footer.html" $footerCtx }}

@@ -1,11 +1,13 @@
 <section class="blog band band_grey" id="blog-container">
     <div class="band__container">
-        {{ range .categories }}
-            <h1 class="blog__title">{{ .title }}</h1>
+        <h1 class="blog__title">{{ $.title }}</h1>
+        {{ range $.categories }}
             <div
                 class="blog__category"
                 data-name="{{ .category }}"
-                data-title=""
+                {{ if $.show_subtitle }}
+                    data-title="{{ .title }}"
+                {{ end }}
                 data-more-text="{{ .more_text }}"
             ></div>
         {{ end }}
