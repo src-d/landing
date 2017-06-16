@@ -5,7 +5,7 @@
     {{ range $k := $ctx.Site.Data.categories.categories.order }}
         {{ $section := (index $categories $k) }}
         <li>
-            <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}">
+            <a href="#{{ $k }}" title="{{ $section.name }}">
                 {{ $section.name }}
             </a>
         </li>

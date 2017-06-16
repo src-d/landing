@@ -18,6 +18,15 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.anchor {
+    position: absolute;
+    height: 140px;
+    top: -140px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+}
+
 .band {
     padding: 90px 0 90px;
     width: 100%;
