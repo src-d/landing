@@ -1,6 +1,7 @@
 .btn-pill {
   @include pill-style(blue);
-  line-height: $height-pill-buttons;
+  line-height: $height-pill-buttons - 2 * $border-width-pills;
+  background-color: transparent;
   font-size: $font-size-pill-button;
   padding: 0 $padding-pill-button-sides;
 
