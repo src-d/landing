@@ -4,8 +4,8 @@
         <img class="code-pills-right" src="{{ "img/bgs/codepills-bg-4.png" | absURL }}" />
 
         <div class="home-hero__info">
-            <h1>{{ .title }}</h1>
-            <p>{{ .desc }}</p>
+            <h1>{{ .title | safeHTML }}</h1>
+            <p>{{ .desc | safeHTML }}</p>
             <div class="home-hero__info__links">
                 {{ partial "home/our-links.html" . }}
             </div>
