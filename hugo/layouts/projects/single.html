@@ -8,6 +8,9 @@
     {{ partial "header.html" $headerCtx }}
     {{ partial "projects/hero.html" $projects }}
 
+    {{ $categories := $.Site.Data.categories }}
+    {{ partial "projects/projects.html" $categories }}
+
     {{ if $projects.posts.display }}
         {{ $postsCtx := dict "title" "technical posts" "categories" (slice $blog.categories.technical) }}
         {{ partial "posts.html" $postsCtx }}

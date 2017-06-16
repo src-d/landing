@@ -51,12 +51,14 @@ function Post({ post, first }) {
   return (
     <article className="cards__element cards__element_blog">
         <a href={post.link} target="_blank">
-            <header>
-                <figure>
-                    <CardHeaderImage url={post.featured_image} />
-                </figure>
-                <h1>{ellipsis(post.title+post.title, POST_TITLE_MAX_LENGTH)}</h1>
-            </header>
+            <section>
+                <header>
+                    <figure>
+                        <CardHeaderImage url={post.featured_image} />
+                    </figure>
+                    <h1>{ellipsis(post.title+post.title, POST_TITLE_MAX_LENGTH)}</h1>
+                </header>
+            </section>
             <footer>
                 <img src={post.author_avatar} />
                 <address>

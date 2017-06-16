@@ -1,3 +1,4 @@
+no_data_message: Whe are preparing some amazing projects, but it's a bit too early yet to show them. Join our slack and keep posted on them.
 categories:
   order:
     - datasets
@@ -12,22 +13,72 @@ categories:
       name: datasets
       colors: {left: "#003ca1", right: "#656afa"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure.
+      items:
+        - name: Github repositories languages distribution
+          url: http://google.es
+          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+          created_at: 2017-04-19
+          zip_size: 600 MB
+          raw_size: 1.4 GB
+        - name: Github Source Code Names
+          url: http://google.es
+          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure.
+          created_at: 2017-02-01
+          zip_size: 200 MB
     models:
       name: models
       colors: {left: "#e4415a", right: "#ff6d4c"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+      items:
+        - name: Model Fancy Name
+          url: http://google.es
+          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur.
+        - name: Another Model Fancy Name
+          url: http://google.es
+          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore.
+          created_at: 2016-12-25
+        - name: The best model ever seen over the world
+          url: http://google.es
+          desc: But with a short name :(
     retrieval:
       name: data retrieval tools
       colors: {left: "#317d19", right: "#4ecc7b"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla.
+      items:
+        - name: go-git
+          url: https://github.com/src-d/go-git
+          desc: A highly extensible Git implementation in pure Go.
+        - name: borges
+          url: https://github.com/src-d/borges
+        - name: rovers
+          url: https://github.com/src-d/rovers
+          desc: Tools for retrieving different external services
     languages:
       name: language analysis tools
       colors: {left: "#c2732a", right: "#f18406"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id
+      items:
+        - name: Babelfish
+          url: https://github.com/bblfsh
+          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore irure.
+          logo: projects/bblfsh
     science:
       name: machine learning tools
       colors: {left: "#832fcc", right: "#c05cea"}
       desc: Fugiat aliqua Lorem officia fugiat qui
+      items:
+        - name: Name of project
+          url: https://go-git.sourced.tech
+          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore irure.
+        - name: Name of project
+          url: https://github.com/src-d/go-git
+          desc: Fugiat aliqua Lorem officia fugiat qui laboris.
+        - name: Name of project
+          url: https://github.com/src-d/go-git
+          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo.
+        - name: Name of project
+          url: https://github.com/src-d/go-git
+          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore irure.
     demos:
       name: demos
       colors: {left: "#ffba34", right: "#fff444"}
@@ -36,3 +87,13 @@ categories:
       name: other
       colors: {left: "#00b3ed", right: "#aaedf4"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+      items:
+        - name: Kallax
+          url: https://github.com/src-d/go-kallax
+          desc: Kallax is a PostgreSQL typesafe ORM for the Go language.
+        - name: Proteus
+          url: https://github.com/src-d/proteus
+          desc: Generate .proto files from Go source code.
+        - name: docsrv
+          url: https://docsrv.sourced.tech
+          desc: docsrv is an app to serve versioned documentation for GitHub projects on demand
