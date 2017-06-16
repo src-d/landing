@@ -16,6 +16,7 @@ $color-links-hover: $color-dark-blue;
 $color-links-darkbg: $color-white;
 $color-links-darkbg-hover: $color-pale-grey;
 
+$color-clear-bg: $color-white;
 $color-main-bg: $color-light-greysh;
 
 $color-hero-bg: $color-dark-blue;
@@ -69,6 +70,11 @@ $color-footer-titles-pill: rgba(255, 255, 255, .1);
 $color-footer-email: $color-white;
 $color-footer-pgp-key-icon: rgba(255, 255, 255, .3);
 
+$color-projects-icon: $color-terminal-text;
+
+$color-card-background: $color-clear-bg;
+$color-card-project-title: $color-dark-blue;
+
 // Text sizes
 $font-size-body: 20px;
 $font-size-menu: 24px;
@@ -85,10 +91,20 @@ $font-size-title-xsmall: 21px;
 $font-size-small: 18px;
 $font-size-xsmall: 16px;
 $font-size-xxsmall: 14px;
+$font-size-micro: 12px;
 $font-size-footer-titles: 21px;
 $font-size-footer-text: $font-size-xsmall;
 $font-size-secondary-nav-item: 21px;
 $font-size-testimonial-usernames: 18px;
+
+// Line Height
+$line-height-condensed: 1em;
+$line-height-small: 1.2em;
+$line-height-projects-title: 30px;
+
+// Font weight
+$font-weight-bold: bold;
+$font-weight-card-em: $font-weight-bold;
 
 // Font families
 $font-roboto: 'Roboto', sans-serif;
@@ -129,6 +145,8 @@ $padding-topbar-submenu-item: $gutter-size / 4;
 $padding-secondary-nav-item: 10px;
 
 $padding-card: $gutter-size / 2;
+
+$padding-projects-title: 10px;
 
 $margin-topbar-submenu-arrow-right: $padding-topbar-menu-horizontal-spacing + 8px;
 $margin-topbar-menu-spacing: $gutter-size / 4;
@@ -174,12 +192,25 @@ $width-topbar-submenu-border-size: 5px;
 $size-roadmap-photo: 180px;
 
 $size-secondary-nav-item-spacing: $gutter-size / 2;
+
 $size-card-top-border: 7px;
 $size-card-arrow: $gutter-size;
 $size-card-srcd-logo: 45px;
 $size-card-proy-logo: 45px;
 $size-card-author-image: 60px;
 $size-card-image-height: 100px;
+
+$size-project-card-height: 75px;
+$size-project-card-icon: 30px;
+
+$size-projects-title-icon: 45px;
+
+$size-codepills-raw-height: 11px;
+$size-codepills-raw-width: 15px;
+$size-dodepill-raw-vertical-correction: 4px / 2;
+$size-codepills-project-height: 30px;
+$size-codepills-project-width: $size-codepills-raw-width * $size-codepills-project-height / $size-codepills-raw-height;
+$size-dodepill-project-vertical-correction: $size-codepills-project-height * $size-dodepill-raw-vertical-correction / $size-codepills-raw-height;
 
 // Radius
 $border-radius-main: 5px;
