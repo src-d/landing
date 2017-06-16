@@ -109,7 +109,7 @@
             }
 
             address {
-                @include text-small();
+                @include text-small;
                 flex-grow: 1;
                 margin-left: 10px;
 
@@ -119,7 +119,7 @@
                     }
 
                     time {
-                        @include text-x-small();
+                        @include text-x-small;
                     }
                 }
             }
@@ -190,7 +190,7 @@
         }
 
         footer {
-            @include text-x-small();
+            @include text-x-small;
             justify-content: space-between;
             height: auto;
 
@@ -218,7 +218,7 @@
             }
 
             time {
-                @include text-micro();
+                @include text-micro;
                 align-self: flex-end;
                 font-style: italic;
                 text-transform: uppercase;
