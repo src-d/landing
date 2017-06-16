@@ -2,7 +2,7 @@
     <div class="band__container">
         <h1>Projects</h1>
         <div class="cards">
-            {{ range $categoryName := .categories.order }}
+            {{ range $categoryName := first 6 .categories.order }}
                 {{ $category := index $.categories.contents $categoryName }}
 
                 {{ $title := $category.name }}
