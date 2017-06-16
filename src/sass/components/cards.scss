@@ -97,10 +97,10 @@
             @include valign-flex-center;
             bottom: $padding-card;
             height: $size-card-author-image;
+            min-height: $size-card-arrow;
             width: 100%;
             margin: 0 $size-card-arrow + 2 * $padding-card $padding-card $padding-card;
             align-self: flex-end;
-            min-height: $size-card-arrow;
 
             img {
                 flex-grow: 0;
