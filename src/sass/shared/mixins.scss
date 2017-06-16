@@ -52,8 +52,8 @@
   }
 }
 
-@mixin svg-icon($name, $width, $height) {
-    &:before {
+@mixin svg-icon($name, $width, $height, $method: before) {
+    &:#{$method} {
         content: '';
         background: transparent url('/img/icons/' + $name + '.svg');
         background-size: cover;

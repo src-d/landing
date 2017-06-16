@@ -141,6 +141,15 @@
         &:hover:after {
             @include pill-style-hover(blue);
         }
+
+        &_external-link {
+            @include svg-icon(github-outlined, $size-card-arrow, $size-card-arrow, after);
+
+            &:after {
+                content: '';
+                border: none;
+            }
+        }
     }
 
     &_projects {

@@ -46,7 +46,7 @@ categories:
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla.
       items:
         - name: go-git
-          url: https://github.com/src-d/go-git
+          url: https://go-git.sourced.tech
           desc: A highly extensible Git implementation in pure Go.
         - name: borges
           url: https://github.com/src-d/borges
@@ -68,16 +68,16 @@ categories:
       desc: Fugiat aliqua Lorem officia fugiat qui
       items:
         - name: Name of project
-          url: https://go-git.sourced.tech
+          url: https://github.com/src-d
           desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore irure.
         - name: Name of project
-          url: https://github.com/src-d/go-git
+          url: https://github.com/src-d
           desc: Fugiat aliqua Lorem officia fugiat qui laboris.
         - name: Name of project
-          url: https://github.com/src-d/go-git
+          url: https://github.com/src-d
           desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo.
         - name: Name of project
-          url: https://github.com/src-d/go-git
+          url: https://github.com/src-d
           desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore irure.
     demos:
       name: demos

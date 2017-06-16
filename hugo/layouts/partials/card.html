@@ -1,5 +1,7 @@
-<article class="cards__element {{ if or .zip .raw .date }}cards__element_with-footer{{ end }}">
-    <a href="{{ .link }}">
+{{ $isExternalLink := eq 0 ((findRE "(sourced.tech|^/)" .link ) | len) }}
+
+<article class="cards__element {{ if or .zip .raw .date }}cards__element_with-footer{{ end }} {{ if $isExternalLink }}cards__element_external-link{{ end }}">
+    <a href="{{ .link }}" {{ if $isExternalLink }}target="_blank"{{ end }}>
         <section>
             <header style="background: linear-gradient(to right, {{ default "#36536C" .gradient.left }}, {{ default "#2377B6" .gradient.right }});">
                 <figure>
