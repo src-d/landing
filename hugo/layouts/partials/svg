@@ -1,1 +1,17 @@
-<span class="{{ printf "svg-icon--%s" . }}">{{ readFile (printf "static/img/icons/%s.svg" .) | safeHTML }}</span>
+{{ if isset . "name" }}
+    {{ $name := $.name }}
+    {{ $colorStyle := (printf "style=\"fill:%s;\"" $.color) }}
+    {{ $classInherit := "svg-icon_inherited-fill" }}
+    {{ $classModifier := printf "svg-icon--%s" $name }}
+    <span class="svg-icon {{ $classModifier }} {{ $classInherit }}" {{ $colorStyle | safeHTMLAttr }}>
+        {{- readFile (printf "static/img/icons/%s.svg" $name) | safeHTML -}}
+    </span>
+{{ else }}
+    {{ $name := . }}
+    {{ $colorStyle := "" }}
+    {{ $classInherit := "" }}
+    {{ $classModifier := printf "svg-icon--%s" $name }}
+    <span class="svg-icon {{ $classModifier }} {{ $classInherit }}" {{ $colorStyle | safeHTMLAttr }}>
+        {{- readFile (printf "static/img/icons/%s.svg" $name) | safeHTML -}}
+    </span>
+{{ end }}

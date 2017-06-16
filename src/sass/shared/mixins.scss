@@ -52,6 +52,18 @@
   }
 }
 
+@mixin svg-icon($name, $width, $height) {
+    &:before {
+        content: '';
+        background: transparent url('/img/icons/' + $name + '.svg');
+        background-size: cover;
+        display: inline-block;
+        width: $width;
+        height: $height;
+        vertical-align: middle;
+    }
+}
+
 @mixin title-pill($color, $width, $height, $spacing) {
   position: relative;
 
@@ -130,5 +142,14 @@
         background-color: $color-pill-button-white-hover-bg;
         border-color: $color-pill-button-white-hover-bg;
         box-shadow: $shadow-color-pill-button-white-hover;
+    }
+}
+
+@mixin valign-flex-center($horizontalAlign: false) {
+    display: flex;
+    align-items: center;
+
+    @if $horizontalAlign {
+        justify-content: center;
     }
 }

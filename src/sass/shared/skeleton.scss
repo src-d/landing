@@ -8,12 +8,23 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font-titles;
 }
 
+.svg-icon {
+    svg {
+        display: block;
+    }
+
+    &_inherited-fill svg {
+        fill: inherit !important;
+    }
+}
+
 .band {
     padding: 90px 0 90px;
     width: 100%;
 
     &_grey {
         background: $color-main-bg;
+        border: 1px solid transparent;
     }
 
     &__container {

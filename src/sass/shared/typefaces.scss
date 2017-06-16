@@ -30,3 +30,9 @@
     font-size: $font-size-xxsmall;
     color: $color-dark-grey;
 }
+
+@mixin text-micro() {
+    font-family: $font-titles;
+    font-size: $font-size-micro;
+    color: $color-dark-grey;
+}
