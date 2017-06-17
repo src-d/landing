@@ -125,30 +125,37 @@
             }
         }
 
-        &:after {
+        .link-icon .svg-icon {
             @include pill-style(blue);
-            content: "\f105";
+            stroke: $color-pill-button-main;
+            stroke-width: 0px;
+            fill: $color-pill-button-main;
+            border: none;
             width: $size-card-arrow;
             height: $size-card-arrow;
             position: absolute;
             bottom: $padding-card;
             right: $padding-card;
-            font-family: $font-icons;
-            line-height: $size-card-arrow - 4px;
-            padding-left: 2px;
-        }
 
-        &:hover:after {
-            @include pill-style-hover(blue);
-        }
-
-        &_external-link {
-            @include svg-icon(github-outlined, $size-card-arrow, $size-card-arrow, after);
-
-            &:after {
-                content: '';
-                border: none;
+            svg {
+                overflow: visible;
             }
+        }
+
+        &:hover {
+            .link-icon .svg-icon {
+                @include pill-style-hover(blue);
+                fill: $color-pill-button-hover-main;
+            }
+
+            &_external-link .link-icon .svg-icon {
+                fill: $color-pill-button-hover-main;
+            }
+        }
+
+        &_external-link .link-icon .svg-icon {
+            stroke-width: 1.1px;
+            fill: $color-pill-button-white-main;
         }
     }
 

@@ -109,7 +109,7 @@
 }
 
 @mixin pill-style($type: blue) {
-    @include transition(background-color color border-color box-shadow);
+    @include transition(background-color color border-color box-shadow fill);
     border-width: $border-width-pills;
     border-style: solid;
     border-radius: 45px;

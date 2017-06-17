@@ -34,5 +34,13 @@
                 {{ end }}
             </footer>
         {{ end }}
+
+        <div class="link-icon">
+            {{ if $isExternalLink }}
+                {{ partial "svg" "github-filled" }}
+            {{ else }}
+                {{ partial "svg" "go-arrow" }}
+            {{ end }}
+        </div>
     </a>
 </article>
