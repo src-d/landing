@@ -42,7 +42,9 @@
             width: 100%;
 
             figure {
-                @include valign-flex-center(true);
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 position: relative;
                 height: $size-card-image-height;
 
@@ -53,7 +55,9 @@
                 }
 
                 .cards__element__img {
-                    @include valign-flex-center(true);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     width: 100%;
                     height: $size-card-image-height - $size-card-top-border;
                     background-color: $color-card-background;
@@ -94,7 +98,8 @@
         }
 
         footer {
-            @include valign-flex-center;
+            display: flex;
+            align-items: center;
             bottom: $padding-card;
             height: $size-card-author-image;
             min-height: $size-card-arrow;
@@ -174,7 +179,7 @@
                 .svg-icon {
                     &.svg-icon_inherited-fill svg {
                         position: relative;
-                        top: $size-dodepill-project-vertical-correction;
+                        top: $size-codepill-project-vertical-correction;
                         height: $size-codepills-project-height;
                         width: $size-codepills-project-width;
                     }
@@ -188,7 +193,8 @@
             }
 
             h1 {
-                @include valign-flex-center;
+                display: flex;
+                align-items: center;
                 margin-top: 7px;
                 flex-grow: 1;
                 padding-left: 0;
@@ -206,7 +212,7 @@
                 line-height: $size-project-card-icon;
 
                 .size {
-                    font-weight: $font-weight-card-em;
+                    font-weight: bold;
                     line-height: $size-project-card-icon;
 
                     &:before {

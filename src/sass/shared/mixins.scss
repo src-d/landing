@@ -144,12 +144,3 @@
         box-shadow: $shadow-color-pill-button-white-hover;
     }
 }
-
-@mixin valign-flex-center($horizontalAlign: false) {
-    display: flex;
-    align-items: center;
-
-    @if $horizontalAlign {
-        justify-content: center;
-    }
-}
