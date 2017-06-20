@@ -8,7 +8,8 @@
     "build": "webpack --config=webpack.config.js",
     "serve": "concurrently --kill-others \"npm run webpack-watcher\" \"make hugo-server\" \"npm run api-run\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors"
+    "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors",
+    "svg-clean": "svgo --input=static/img/icons; svgo --input=static/img/icons/codepills; svgo --input=static/img/icons/projects"
   },
   "repository": {
     "type": "git",

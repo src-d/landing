@@ -51,12 +51,14 @@ function Post({ post, first }) {
   return (
     <article className="cards__element cards__element_blog">
         <a href={post.link} target="_blank">
-            <header>
-                <figure>
-                    <CardHeaderImage url={post.featured_image} />
-                </figure>
-                <h1>{ellipsis(post.title+post.title, POST_TITLE_MAX_LENGTH)}</h1>
-            </header>
+            <section>
+                <header>
+                    <figure>
+                        <CardHeaderImage url={post.featured_image} />
+                    </figure>
+                    <h1>{ellipsis(post.title+post.title, POST_TITLE_MAX_LENGTH)}</h1>
+                </header>
+            </section>
             <footer>
                 <img src={post.author_avatar} />
                 <address>
@@ -64,6 +66,7 @@ function Post({ post, first }) {
                     <time dateTime={post.date}>{ago(post.date)}</time>
                 </address>
             </footer>
+            <LinkIcon />
         </a>
     </article>
   )
@@ -83,6 +86,14 @@ function CardHeaderImage({url}) {
         </div>
       )
   }
+}
+
+function LinkIcon() {
+    return (
+        <div className="link-icon">
+            <span className="svg-icon svg-icon--go-arrow "><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="405.945 282.64 30 30"><path d="M420.945 312.593c8.244 0 14.952-6.708 14.952-14.952 0-8.245-6.708-14.952-14.952-14.952-8.245 0-14.952 6.708-14.952 14.952-.001 8.244 6.707 14.952 14.952 14.952zm0-28.797c7.634 0 13.845 6.21 13.845 13.845 0 7.634-6.211 13.845-13.845 13.845s-13.845-6.211-13.845-13.845c0-7.635 6.21-13.845 13.845-13.845z"></path><path d="M418.813 303.846a.552.552 0 0 0 .783 0l5.814-5.814a.552.552 0 0 0 0-.783l-5.814-5.814a.553.553 0 0 0-.784 0 .554.554 0 0 0 0 .783l5.423 5.423-5.423 5.424a.55.55 0 0 0 .001.781z"></path></svg></span>
+        </div>
+    )
 }
 
 function ellipsis(text, maxLenght) {

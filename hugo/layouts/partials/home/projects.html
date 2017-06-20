@@ -1,8 +1,8 @@
 <section class="projects band band_grey">
     <div class="band__container">
         <h1>Projects</h1>
-        <div class="cards">
-            {{ range $categoryName := .categories.order }}
+        <div class="cards cards_categories">
+            {{ range $categoryName := first 6 .categories.order }}
                 {{ $category := index $.categories.contents $categoryName }}
 
                 {{ $title := $category.name }}

@@ -5,19 +5,19 @@
     &__element {
         @include transition(box-shadow);
         @include card-shadow(true);
+        display: flex;
         flex-grow: 1;
         flex-basis: calc(100% / 3 - #{$gutter-size});
         position: relative;
         float: left;
-        background: $color-white;
+        background: $color-card-background;
         border-radius: 0 0 $border-radius-main $border-radius-main;
         margin-left: $gutter-size;
         margin-top: $gutter-size;
+        max-width: calc((100% - 2 * #{$gutter-size}) / 3);
 
         &_blog {
-            padding-bottom: $size-card-author-image + $padding-card;
-
-            header > figure {
+            header {
                 @include corporate-gradient(#36536C, #2377B6);
             }
         }
@@ -26,44 +26,54 @@
             margin-left: 0;
         }
 
-        a {
-            text-decoration: none;
+        section {
+            width: 100%;
         }
 
-        figure {
-            position: relative;
-            height: $size-card-image-height;
-            background: blue;
+        a {
+            text-decoration: none;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            flex-wrap: wrap;
+            width: 100%;
+        }
 
-            svg {
-                width: $size-card-proy-logo;
-                height: $size-card-proy-logo;
-                fill: white;
-            }
+        header {
+            align-self: flex-start;
+            width: 100%;
 
-            .cards__element__img {
-                width: 100%;
-                height: $size-card-image-height - $size-card-top-border;
-                background-color: white;
-                position: absolute;
-                top: $size-card-top-border;
-                background-size: cover;
-                background-position: center;
-            }
-
-            .cards__element__img_default {
-                background-color: #b8c9d3;
+            figure {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                position: relative;
+                height: $size-card-image-height;
 
-                & > img {
-                    height: $size-card-srcd-logo;
-                    opacity: .6;
+                svg {
+                    width: $size-card-proy-logo;
+                    height: $size-card-proy-logo;
+                    fill: $color-white;
+                }
+
+                .cards__element__img {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: $size-card-image-height - $size-card-top-border;
+                    background-color: $color-card-background;
+                    position: absolute;
+                    top: $size-card-top-border;
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                .cards__element__img_default {
+                    background-color: #b8c9d3;
+
+                    & > img {
+                        height: $size-card-srcd-logo;
+                        opacity: .6;
+                    }
                 }
             }
         }
@@ -72,51 +82,161 @@
             @include title-small;
             padding: $padding-card;
             text-transform: capitalize;
+            background: $color-card-background;
         }
 
         p {
             @include text-normal;
-            padding: 0 $padding-card ($size-card-arrow + 2 * $padding-card);
+            line-height: $line-height-small;
+            padding: 0 $padding-card $size-card-arrow + 2 * $padding-card;
+        }
+
+        &_with-footer {
+            p {
+                padding-bottom: $padding-card;
+            }
         }
 
         footer {
-            position: absolute;
+            display: flex;
+            align-items: center;
             bottom: $padding-card;
-            left: $padding-card;
-            right: $size-card-arrow + $padding-card;
+            height: $size-card-author-image;
+            min-height: $size-card-arrow;
+            width: 100%;
+            margin: 0 $size-card-arrow + 2 * $padding-card $padding-card $padding-card;
+            align-self: flex-end;
 
             img {
-                float: left;
+                flex-grow: 0;
                 width: $size-card-author-image;
-                border-radius: 50%
+                border-radius: 50%;
             }
 
             address {
-                @include text-small();
-                float: left;
-                margin-left: 5px;
+                @include text-small;
+                flex-grow: 1;
+                margin-left: 10px;
 
-                time {
-                    @include text-x-small();
+                & > {
+                    div {
+                        line-height: $line-height-condensed;
+                    }
+
+                    time {
+                        @include text-x-small;
+                    }
                 }
             }
         }
 
-        &:after {
+        .link-icon .svg-icon {
             @include pill-style(blue);
-            content: "\f105";
+            stroke: $color-pill-button-main;
+            stroke-width: 0px;
+            fill: $color-pill-button-main;
+            border: none;
             width: $size-card-arrow;
             height: $size-card-arrow;
             position: absolute;
             bottom: $padding-card;
             right: $padding-card;
-            font-family: $font-icons;
-            line-height: $size-card-arrow - 4px;
-            padding-left: 2px;
+
+            svg {
+                overflow: visible;
+            }
         }
 
-        &:hover:after {
-            @include pill-style-hover(blue);
+        &:hover {
+            .link-icon .svg-icon {
+                @include pill-style-hover(blue);
+                fill: $color-pill-button-hover-main;
+            }
+
+            &_external-link .link-icon .svg-icon {
+                fill: $color-pill-button-hover-main;
+            }
+        }
+
+        &_external-link .link-icon .svg-icon {
+            stroke-width: 1.1px;
+            fill: $color-pill-button-white-main;
+        }
+    }
+
+    &_projects {
+        header {
+            display: flex;
+            height: $size-project-card-height;
+
+            figure {
+                background: $color-card-background;
+                padding: 0 10px 0 15px;
+                margin-top: 7px;
+                height: auto;
+                flex-grow: 0;
+
+                .svg-icon {
+                    &.svg-icon_inherited-fill svg {
+                        position: relative;
+                        top: $size-codepill-project-vertical-correction;
+                        height: $size-codepills-project-height;
+                        width: $size-codepills-project-width;
+                    }
+
+                    svg {
+                        z-index: 2;
+                        max-height: $size-codepills-project-height;
+                        width: auto;
+                    }
+                }
+            }
+
+            h1 {
+                display: flex;
+                align-items: center;
+                margin-top: 7px;
+                flex-grow: 1;
+                padding-left: 0;
+                color: $color-card-project-title;
+            }
+        }
+
+        footer {
+            @include text-x-small;
+            justify-content: space-between;
+            height: auto;
+
+            div {
+                color: $color-card-project-title;
+                line-height: $size-project-card-icon;
+
+                .size {
+                    font-weight: bold;
+                    line-height: $size-project-card-icon;
+
+                    &:before {
+                        margin-top: -4px;
+                        margin-right: 3px;
+                    }
+
+                    &_zip {
+                        @include svg-icon('size-download', $size-project-card-icon, $size-project-card-icon);
+                    }
+
+                    &_raw {
+                        @include svg-icon('size-uncompressed', $size-project-card-icon, $size-project-card-icon);
+                    }
+                }
+            }
+
+            time {
+                @include text-micro;
+                align-self: flex-end;
+                font-style: italic;
+                text-transform: uppercase;
+                margin-top: -5px;
+            }
         }
     }
 }
