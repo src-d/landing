@@ -1,8 +1,26 @@
 language: go
 
 go:
-  - 1.8.x
-  - tip
+  - 1.8
+
+sudo: required
+
+services:
+  - docker
+
+cache:
+  directories:
+    - node_modules
+
+env:
+  global:
+    - DOCKER_REGISTRY: quay.io
+    - DOCKER_ORG: quay.io/srcd
+
+matrix:
+  allow_failures:
+    - go: tip
+  fast_finish: true
 
 install:
   - . $HOME/.nvm/nvm.sh
@@ -13,3 +31,19 @@ install:
 script:
   - go test ./api/...
   - make hugo-build
+
+before_deploy:
+  - make packages
+  - make package-hugo-generated
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file_glob: true
+  file: build/*.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
+
+after_deploy:
+  - make docker-push
