@@ -125,7 +125,7 @@ $margin-hero-desc-vertical: 30px;
 $padding-hero-vertical: 90px;
 $padding-section-vertical: $column-size;
 
-$padding-pill-button-sides: 60px;
+$padding-pill-button-sides: 25px; //$height-pill-buttons / 2;
 
 $padding-terminal-header-vertical: $gutter-size / 3;
 $padding-terminal-header-horizontal: $gutter-size / 2;
@@ -210,6 +210,7 @@ $size-codepill-project-vertical-correction: $size-codepills-project-height * $si
 
 // Radius
 $border-radius-main: 5px;
+$border-radius-pill-style: $height-pill-buttons / 2;
 
 // Shadows
 $shadow-main: 3px 3px 5px rgba(0, 0, 0, .1);
