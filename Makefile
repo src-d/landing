@@ -2,15 +2,10 @@
 PROJECT = landing
 COMMANDS = api
 CODECOV_TOKEN ?=
-DOCKERFILES ?=
 DESTINATION ?= public
 
 HUGO_VERSION := 0.21
 HUGO_BINARY = hugo_$(HUGO_VERSION)_linux_amd64
-
-DOCKER_REGISTRY ?= quay.io
-DOCKER_USERNAME ?=
-DOCKER_PASSWORD ?=
 
 # Including devops Makefile
 MAKEFILE = Makefile.main
@@ -55,17 +50,20 @@ HUGO_PATH := $(BASE_PATH)/.hugo
 HUGO_URL = github.com/spf13/hugo
 HUGO_NAME := hugo
 HUGO_URL_NAME := hugo_$(HUGO_VERSION)_$(URL_ARCH)-$(URL_OS)
+WORKDIR := $(PWD)
+BUILD_PATH := $(WORKDIR)/build
+LANDING_ARTIFACT := landing_$(TAG).tar.gz
 
 # Tools
 CURL = curl -L
 HUGO = $(HUGO_PATH)/$(HUGO_NAME)
 MKDIR = mkdir -p
 GIT = git
-DOCKER = docker
 NPM = npm
 CGO_ENABLED=0
 REMOVE = rm -rf
 COMPRESS = tar -cf
+TAR = tar -zcvf
 
 export CGO_ENABLED
 
@@ -118,3 +116,7 @@ export-landing-commons:
 	@tar_command="$(COMPRESS) $(target) "$(exportable_files)" $(file_list_name)"; \
 		`$$tar_command`;
 	$(REMOVE) $(file_list_name)
+
+# Packages the landing artifact in the build directory
+package-hugo-generated:
+	$(TAR) $(BUILD_PATH)/$(LANDING_ARTIFACT) public
