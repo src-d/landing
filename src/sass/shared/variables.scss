@@ -9,6 +9,15 @@ $color-light-greysh: #EBF0F1;
 $color-light-grey: #737373;
 $color-white: white;
 
+$color-pill-button-main: $color-light-blue;
+$color-pill-button-hover-main: $color-white;
+$color-pill-button-hover-bg: $color-pill-button-main;
+
+$color-pill-button-white-main: $color-white;
+$color-pill-button-white-hover-main: $color-dark-blue;
+$color-pill-button-white-hover-bg: $color-pill-button-white-main;
+
+
 $color-text-default: black;
 
 $color-links: $color-light-blue;
@@ -29,14 +38,13 @@ $color-title-medium: $color-dark-blue;
 $color-title-medium-pill: #ADB6BF;
 
 $color-slack-form-bg: $color-white;
-
-$color-pill-button-main: $color-light-blue;
-$color-pill-button-hover-main: $color-white;
-$color-pill-button-hover-bg: $color-pill-button-main;
-
-$color-pill-button-white-main: $color-white;
-$color-pill-button-white-hover-main: $color-dark-blue;
-$color-pill-button-white-hover-bg: $color-pill-button-white-main;
+$color-slack-form-description: $color-dark-blue;
+$color-slack-form-input-placeholder: $color-dark-grey;
+$color-slack-form-input-border: $color-dark-grey;
+$color-slack-form-body-normal-bg: rgba(0,0,0,0.2);
+$color-slack-form-body-success-bg: change-color(#64e200, $alpha: 0.55);
+$color-slack-form-body-error-bg: change-color(#ff1500, $alpha: 0.55);
+$color-slack-form-message-icon: $color-pill-button-white-hover-bg;
 
 $color-topbar-bg: $color-dark-blue;
 $color-topbar-menu-item: $color-white;
@@ -119,7 +127,10 @@ $gutter-size: 30px;
 $num-columns: 10;
 
 // Paddings and margins
-$padding-slack-form: 30px;
+$padding-slack-form: 0;
+$margin-bottom-slack-form-input: 15px;
+$margin-bottom-slack-form-submit-button: 15px;
+$margin-bottom-slack-form-message: 15px;
 
 $margin-hero-desc-vertical: 30px;
 $padding-hero-vertical: 90px;
@@ -168,6 +179,10 @@ $width-title-footer-pill: 30px;
 $size-title-footer-pill-spacing: 7px;
 $size-title-footer-spacing: $gutter-size / 3 - 1px;
 
+$height-slack-form-logo: 110px;
+$height-slack-form-input: 45px;
+$height-slack-form-message: 30px;
+
 $size-button-spacing: $gutter-size / 2;
 
 $size-terminal-header-btn: $gutter-size / 2;
@@ -208,9 +223,12 @@ $size-codepills-project-height: 30px;
 $size-codepills-project-width: $size-codepills-raw-width * $size-codepills-project-height / $size-codepills-raw-height;
 $size-codepill-project-vertical-correction: $size-codepills-project-height * $size-codepill-raw-vertical-correction / $size-codepills-raw-height;
 
+$tall-line-height: 1.2em;
+
 // Radius
 $border-radius-main: 5px;
 $border-radius-pill-style: $height-pill-buttons / 2;
+
 
 // Shadows
 $shadow-main: 3px 3px 5px rgba(0, 0, 0, .1);

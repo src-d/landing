@@ -42,9 +42,10 @@
     @include columns(4);
     @include offset(1);
     @include card-shadow;
-    background-color: $color-slack-form-bg;
-    padding: $padding-slack-form;
+    background-color: transparent;
     border-radius: 3px;
+    padding: $padding-slack-form;
+    position: relative;
   }
 }
 

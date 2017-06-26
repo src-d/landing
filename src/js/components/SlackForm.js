@@ -9,37 +9,42 @@ export default class SlackForm extends React.Component {
     super(props)
     this.state = {
       email: '',
-      loading: false,
-      hasTyped: false,
-      success: false,
       errMessage: '',
+      hasTyped: false,
+      loading: false,
+      success: false,
     };
   }
 
   invite(e) {
     e.preventDefault()
-    this.setState({ loading: true, success: false, errMessage: '' })
-    inviteToSlack(this.props.endpoint, this.state.email)
-      .then(resp => {
-        if (resp.status === 200) {
-          this.setState({ loading: false, success: true, errMessage: '' });
-        } else {
+
+    if (!this.state.hasTyped) {
+      this.input.focus();
+    } else {
+      this.setState({ loading: true, success: false, errMessage: '' })
+      inviteToSlack(this.props.endpoint, this.state.email)
+        .then(resp => {
+          if (resp.status === 200) {
+            this.setState({ loading: false, success: true, errMessage: '' });
+          } else {
+            this.setState({
+              loading: false,
+              errMessage: this.state.serverError,
+            });
+          }
+        })
+        .catch(err => {
+          console.error(err)
           this.setState({
             loading: false,
-            errMessage: this.state.serverError,
-          });
-        }
-      })
-      .catch(err => {
-        console.error(err)
-        this.setState({
-          loading: false,
-          errMessage: this.props.fetchError,
-        })
-      })
+            errMessage: this.props.fetchError,
+          })
+        });
+    }
   }
 
-  buttonClasses() {
+  get buttonClasses() {
     const classes = ['send'];
 
     if (this .state.hasTyped && !this.hasValidEmail()) {
@@ -57,39 +62,82 @@ export default class SlackForm extends React.Component {
     return emailRegex.test(this.state.email);
   }
 
-  submitButton(buttonMessage, waitMessage) {
-    return (
-        <button type='submit'
-          className={this.buttonClasses()}
-          disabled={this.state.loading || !this.hasValidEmail()}>
-          <i className='fa fa-slack fa-6' aria-hidden={true}></i>
-          <span className='joinUs'>{buttonMessage}</span>
-          <span className='wait'>{waitMessage}</span>
-        </button>
-    );
+  get responseMessage() {
+    if (this.state.success) {
+      return this.props.success;
+    }
+
+    if (this.state.errMessage !== '') {
+      return this.state.errMessage;
+    }
+
+    return "";
+  }
+
+  get bodyClasses() {
+    let classes = ['slackForm__body'];
+
+    if (this.state.success) {
+      classes.push('slackForm__body_success');
+    }
+
+    if (this.state.errMessage !== '') {
+      classes.push('slackForm__body_error');
+    }
+
+    return classes.join(' ');
+  }
+
+  get messageClasses() {
+    let classes = ['slackForm__message'];
+
+    if (this.state.success) {
+      classes.push('slackForm__message_success');
+    }
+
+    if (this.state.errMessage !== '') {
+      classes.push('slackForm__message_error');
+    }
+
+    return classes.join(' ');
+  }
+
+  get isButtonDisabled() {
+    if (this.state.hasTyped) {
+      return this.state.loading || this.state.success || !this.hasValidEmail();
+    }
+
+    return false;
   }
 
   render() {
     return (
       <form className='slackForm'
         onSubmit={e => this.invite(e)}>
-        <h3 className='title'>{this.props.title}</h3>
-        <p className='desc'>{this.props.desc}</p>
-        <input type='email'
-          placeholder='your@email.com'
-          disabled={this.state.loading || this.state.success}
-          className='email'
-          value={this.state.email}
-          onChange={e => this.setState({ hasTyped: true, email: e.target.value })} />
 
-        {this.state.success
-            ? <div className='success'>{this.props.success}</div>
-            : this.submitButton(this.props.button, this.props.wait)}
+        <header className="slackForm__header">
+          <img className="slackForm__logo" src={ this.props.logo } alt="Join us un Slack" />
+          <h2 className="slackForm__title">{ this.props.title }</h2>
+          <p className="slackForm__description">{ this.props.desc }</p>
+        </header>
 
-        {this.state.errMessage
-          ? <div className='error'>{this.state.errMessage}</div>
-          : null}
+        <div className={ this.bodyClasses }>
+          <label className="slackForm__label">
+            { this.props.placeholder }
+          </label>
+          <input className="slackForm__input"
+                 disabled= { this.state.loading || this.state.success }
+                 placeholder={ this.props.placeholder }
+                 onChange={e => this.setState({ hasTyped: true, email: e.target.value })}
+                 ref={(input) => this.input = input }
+                 type="text" />
+          <button disabled={ this.isButtonDisabled }
+                  className="slackForm__submit btn-pill btn-pill--white">
+            { this.props.button }
+          </button>
 
+          <p className={ this.messageClasses }>{ this.responseMessage }</p>
+        </div>
       </form>
     )
   }

@@ -1,0 +1,103 @@
+.slackForm {
+  background-color: transparent;
+
+  &__header {
+    padding: 15px 30px 0;
+    background-color: $color-slack-form-bg;
+    border-radius: 5px 5px 0 0;
+    color: $color-slack-form-description;
+    text-align: center;
+    text-transform: lowercase;
+    margin-bottom: ($height-slack-form-input / 2 ) +
+                    $margin-bottom-slack-form-input +
+                    $height-pill-buttons +
+                    $margin-bottom-slack-form-submit-button +
+                    $height-slack-form-message +
+                    $margin-bottom-slack-form-message;
+  }
+
+  &__logo {
+    margin: auto;
+    height: $height-slack-form-logo;
+  }
+
+  &__title {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: $color-light-blue;
+    font-family: $font-titles;
+    font-size: 36px;
+    line-height: $tall-line-height;
+  }
+
+  &__description {
+    color: $color-dark-blue;
+    font-family: $font-titles;
+    font-size: $font-size-title-small;
+    padding-bottom: 60px;
+  }
+
+  &__body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $color-slack-form-body-normal-bg;
+    border-radius: 0 0 5px 5px;
+
+    &_success {
+      background-color: $color-slack-form-body-success-bg;
+    }
+
+    &_error {
+      background-color: $color-slack-form-body-error-bg;
+    }
+  }
+
+  &__label {
+      @include sr-only();
+  }
+
+  &__input {
+    @include input(white);
+    display: block;
+    margin: -($height-slack-form-input / 2) auto $margin-bottom-slack-form-input auto;
+    width: calc(100% - 60px);
+  }
+
+  &__submit {
+    display: block;
+    margin: 0 auto $margin-bottom-slack-form-submit-button;
+    width: 240px;
+  }
+
+  &__message {
+    height: $height-slack-form-message;
+    margin: 0 auto $margin-bottom-slack-form-message;
+    text-align: center;
+
+    &_hidden {
+      visibility: hidden;
+    }
+
+    &_success {
+      @include svg-icon("message-icon-success", 30px, 30px) {
+        border-radius: 50%;
+        border-style: solid;
+        border-color: $color-pill-button-white-main;
+        border-width:  $border-width-pills;
+        margin-right: 10px;
+      }
+    }
+
+    &_error {
+      @include svg-icon("message-icon-error-face", 30px, 30px) {
+        border-radius: 50%;
+        border-style: solid;
+        border-color: $color-pill-button-white-main;
+        border-width:  $border-width-pills;
+        margin-right: 10px;
+      }
+    }
+  }
+}
