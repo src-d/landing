@@ -260,19 +260,13 @@
     @include columns(8);
     @include offset(1);
     margin-top: $column-size;
+    display: flex;
+    flex-wrap: wrap;
 
     .testimonial {
       @include row;
       display: none;
-
-      &:first-child,
-      &:nth-child(2) {
-        display: block;
-      }
-
-      & + .testimonial {
-        margin-top: $gutter-size;
-      }
+      order: 5;
 
       &__avatar {
         @include columns(1);
@@ -297,21 +291,40 @@
           padding-top: $gutter-size / 2;
         }
       }
+    }
 
-      &:nth-child(even) {
-        .testimonial__avatar {
-          float: right;
+    &_sorted .testimonial {
+      &.testimonial_left {
+        order: 1;
+      }
 
-          img {
-            margin-left: $gutter-size / 2;
-          }
+      &.testimonial_right {
+        order: 2;
+      }
+    }
+
+    &_sorted .testimonial_left,
+    &_sorted .testimonial_right,
+    &_unsorted .testimonial:nth-child(-n+2) {
+      display: block;
+    }
+
+    &_sorted .testimonial_right,
+    &_unsorted .testimonial:nth-child(2) {
+      margin-top: $gutter-size;
+
+      .testimonial__avatar {
+        float: right;
+
+        img {
+          margin-left: $gutter-size / 2;
         }
+      }
 
-        blockquote {
-          margin-left: 0;
-          margin-right: $gutter-size;
-          text-align: right;
-        }
+      blockquote {
+        margin-left: 0;
+        margin-right: $gutter-size;
+        text-align: right;
       }
     }
   }
