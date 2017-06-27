@@ -26,7 +26,7 @@
     margin-bottom: $margin-bottom-slack-form-title;
     color: $color-light-blue;
     font-family: $font-titles;
-    font-size: 36px;
+    font-size: $font-size-slack-form-title;
     line-height: $tall-line-height;
   }
 
@@ -68,7 +68,7 @@
   &__submit {
     display: block;
     margin: 0 auto $margin-bottom-slack-form-submit-button;
-    width: 240px;
+    width: $width-slack-form-submit;
   }
 
   &__message {
@@ -85,8 +85,8 @@
         border-radius: 50%;
         border-style: solid;
         border-color: $color-pill-button-white-main;
-        border-width:  $border-width-pills;
-        margin-right: 10px;
+        border-width: $border-width-pills;
+        margin-right: $margin-right-slack-form-message-icon;
       }
     }
 
@@ -96,7 +96,7 @@
         border-style: solid;
         border-color: $color-pill-button-white-main;
         border-width:  $border-width-pills;
-        margin-right: 10px;
+        margin-right: $margin-right-slack-form-message-icon;
       }
     }
   }
