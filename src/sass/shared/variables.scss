@@ -109,6 +109,7 @@ $font-size-slack-form-title: 36px;
 // Line Height
 $line-height-condensed: 1em;
 $line-height-small: 1.2em;
+$line-height-tall: 1.2em;
 $line-height-projects-title: 30px;
 
 // Font families
@@ -232,8 +233,6 @@ $size-codepill-raw-vertical-correction: 4px / 2;
 $size-codepills-project-height: 30px;
 $size-codepills-project-width: $size-codepills-raw-width * $size-codepills-project-height / $size-codepills-raw-height;
 $size-codepill-project-vertical-correction: $size-codepills-project-height * $size-codepill-raw-vertical-correction / $size-codepills-raw-height;
-
-$line-height-tall: 1.2em;
 
 // Radius
 $border-radius-main: 5px;
