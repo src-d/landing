@@ -9,6 +9,15 @@ $color-light-greysh: #EBF0F1;
 $color-light-grey: #737373;
 $color-white: white;
 
+$color-pill-button-main: $color-light-blue;
+$color-pill-button-hover-main: $color-white;
+$color-pill-button-hover-bg: $color-pill-button-main;
+
+$color-pill-button-white-main: $color-white;
+$color-pill-button-white-hover-main: $color-dark-blue;
+$color-pill-button-white-hover-bg: $color-pill-button-white-main;
+
+
 $color-text-default: black;
 
 $color-links: $color-light-blue;
@@ -29,14 +38,13 @@ $color-title-medium: $color-dark-blue;
 $color-title-medium-pill: #ADB6BF;
 
 $color-slack-form-bg: $color-white;
-
-$color-pill-button-main: $color-light-blue;
-$color-pill-button-hover-main: $color-white;
-$color-pill-button-hover-bg: $color-pill-button-main;
-
-$color-pill-button-white-main: $color-white;
-$color-pill-button-white-hover-main: $color-dark-blue;
-$color-pill-button-white-hover-bg: $color-pill-button-white-main;
+$color-slack-form-description: $color-dark-blue;
+$color-slack-form-input-placeholder: $color-dark-grey;
+$color-slack-form-input-border: $color-dark-grey;
+$color-slack-form-body-normal-bg: rgba(0,0,0,0.2);
+$color-slack-form-body-success-bg: change-color(#64e200, $alpha: 0.55);
+$color-slack-form-body-error-bg: change-color(#ff1500, $alpha: 0.55);
+$color-slack-form-message-icon: $color-pill-button-white-hover-bg;
 
 $color-topbar-bg: $color-dark-blue;
 $color-topbar-menu-item: $color-white;
@@ -96,10 +104,12 @@ $font-size-footer-titles: 21px;
 $font-size-footer-text: $font-size-xsmall;
 $font-size-secondary-nav-item: 21px;
 $font-size-testimonial-usernames: 18px;
+$font-size-slack-form-title: 36px;
 
 // Line Height
 $line-height-condensed: 1em;
 $line-height-small: 1.2em;
+$line-height-tall: 1.2em;
 $line-height-projects-title: 30px;
 
 // Font families
@@ -119,7 +129,18 @@ $gutter-size: 30px;
 $num-columns: 10;
 
 // Paddings and margins
-$padding-slack-form: 30px;
+$padding-slack-form: 0;
+$margin-bottom-slack-form-input: 15px;
+$margin-bottom-slack-form-submit-button: 15px;
+$margin-bottom-slack-form-message: 15px;
+$padding-top-slack-form-header: 15px;
+$padding-lateral-slack-form: 2 * $padding-top-slack-form-header;
+$padding-lateral-slack-form-header: 2 * $padding-top-slack-form-header;
+$margin-bottom-slack-form-logo: 20px;
+$margin-bottom-slack-form-title: 15px;
+$padding-lateral-input: 15px;
+$margin-right-slack-form-message-icon: 10px;
+$padding-bottom-slack-form-description: 60px;
 
 $margin-hero-desc-vertical: 30px;
 $padding-hero-vertical: 90px;
@@ -168,6 +189,11 @@ $width-title-footer-pill: 30px;
 $size-title-footer-pill-spacing: 7px;
 $size-title-footer-spacing: $gutter-size / 3 - 1px;
 
+$height-slack-form-logo: 110px;
+$height-slack-form-input: 45px;
+$height-slack-form-message: 30px;
+$width-slack-form-submit: 240px;
+
 $size-button-spacing: $gutter-size / 2;
 
 $size-terminal-header-btn: $gutter-size / 2;
@@ -211,6 +237,7 @@ $size-codepill-project-vertical-correction: $size-codepills-project-height * $si
 // Radius
 $border-radius-main: 5px;
 $border-radius-pill-style: $height-pill-buttons / 2;
+$border-radius-input: $height-slack-form-input / 2;
 
 // Shadows
 $shadow-main: 3px 3px 5px rgba(0, 0, 0, .1);

@@ -3,6 +3,17 @@
   cursor: pointer;
 }
 
+@mixin sr-only() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 @mixin link-light-bg() {
   @include link;
   color: $color-links;
@@ -38,7 +49,7 @@
 
 @mixin title($size) {
   font-size: $size;
-  line-height: 1.2em;
+  line-height: $line-height-tall;
   text-transform: lowercase;
 }
 
@@ -61,6 +72,8 @@
         width: $width;
         height: $height;
         vertical-align: middle;
+
+        @content;
     }
 }
 
@@ -77,6 +90,20 @@
     left: -($width + $spacing);
     top: calc(50% - #{$height / 2});
     background-color: $color;
+  }
+}
+
+@mixin input($background-color: $color-medium-grey) {
+  height: $height-slack-form-input;
+  border-radius: $border-radius-input;
+  background-color: $background-color;
+  border: $border-width-pills solid $color-slack-form-input-border;
+  font-size: $font-size-body;
+  font-family: $font-default;
+  padding: 0 $padding-lateral-input;
+
+  &::placeholder {
+    color: $color-slack-form-input-placeholder;
   }
 }
 
