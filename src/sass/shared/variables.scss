@@ -137,6 +137,7 @@ $padding-lateral-slack-form: 2 * $padding-top-slack-form-header;
 $padding-lateral-slack-form-header: 2 * $padding-top-slack-form-header;
 $margin-bottom-slack-form-logo: 20px;
 $margin-bottom-slack-form-title: 15px;
+$padding-lateral-input: 15px;
 $margin-right-slack-form-message-icon: 10px;
 $padding-bottom-slack-form-description: 60px;
 
@@ -232,12 +233,12 @@ $size-codepills-project-height: 30px;
 $size-codepills-project-width: $size-codepills-raw-width * $size-codepills-project-height / $size-codepills-raw-height;
 $size-codepill-project-vertical-correction: $size-codepills-project-height * $size-codepill-raw-vertical-correction / $size-codepills-raw-height;
 
-$tall-line-height: 1.2em;
+$line-height-tall: 1.2em;
 
 // Radius
 $border-radius-main: 5px;
 $border-radius-pill-style: $height-pill-buttons / 2;
-
+$border-radius-input: $height-slack-form-input / 2;
 
 // Shadows
 $shadow-main: 3px 3px 5px rgba(0, 0, 0, .1);

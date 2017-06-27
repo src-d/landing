@@ -49,7 +49,7 @@
 
 @mixin title($size) {
   font-size: $size;
-  line-height: 1.2em;
+  line-height: $line-height-tall;
   text-transform: lowercase;
 }
 
@@ -95,12 +95,12 @@
 
 @mixin input($background-color: $color-medium-grey) {
   height: $height-slack-form-input;
-  border-radius: 25px;
+  border-radius: $border-radius-input;
   background-color: $background-color;
-  border: 2px solid $color-slack-form-input-border;
+  border: $border-width-pills solid $color-slack-form-input-border;
   font-size: $font-size-body;
   font-family: $font-default;
-  padding: 0 15px;
+  padding: 0 $padding-lateral-input;
 
   &::placeholder {
     color: $color-slack-form-input-placeholder;
