@@ -1,8 +1,5 @@
 <header class="home-hero">
     <div class="home-hero__wrap">
-        <img class="code-pills-left" src="{{ "img/bgs/codepills-bg-1.png" | absURL }}" />
-        <img class="code-pills-right" src="{{ "img/bgs/codepills-bg-4.png" | absURL }}" />
-
         <div class="home-hero__info">
             <h1>{{ .title | safeHTML }}</h1>
             <p>{{ .desc | safeHTML }}</p>
@@ -24,5 +21,7 @@
              data-title="{{ .slack.title }}"
              data-wait="{{ .slack.msgs.wait }}"
         ></div>
+        <img class="code-pills-left" src="{{ "img/bgs/codepills-bg-1.png" | absURL }}" />
+        <img class="code-pills-right" src="{{ "img/bgs/codepills-bg-4.png" | absURL }}" />
     </div>
 </header>
