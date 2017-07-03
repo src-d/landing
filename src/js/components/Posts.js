@@ -56,7 +56,7 @@ function Post({ post, first }) {
                     <figure>
                         <CardHeaderImage url={post.featured_image} />
                     </figure>
-                    <h1>{ellipsis(post.title+post.title, POST_TITLE_MAX_LENGTH)}</h1>
+                    <h1>{ellipsis(post.title, POST_TITLE_MAX_LENGTH)}</h1>
                 </header>
             </section>
             <footer>
