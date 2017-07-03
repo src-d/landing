@@ -1,13 +1,13 @@
-<section class="showcases">
-    <div class="showcases__info">
-        <h1>Showcases</h1>
+<section class="examples">
+    <div class="examples__info">
+        <h1>{{ .title }}</h1>
         
-        {{ range $s := first 1 .showcases }}
-        <h2 id="showcase-title">{{ $s.title }}</h2>
+        {{ range $s := first 1 .examples }}
+        <h2 id="example-title">{{ $s.title }}</h2>
         {{ end }}
 
-        <div class="showcases__project">
-            {{ range $s := .showcases }}
+        <div class="examples__project">
+            {{ range $s := .examples }}
                 <div>
                     <p>{{ $s.desc }}</p>
 
@@ -17,15 +17,15 @@
         </div>
     </div>
 
-    {{ range $s := first 1 .showcases }}
-    <div class="showcases__terminal">
-        <div class="showcases__terminal__header">
+    {{ range $s := first 1 .examples }}
+    <div class="examples__terminal">
+        <div class="examples__terminal__header">
             <div></div>
             <div></div>
             <div></div>
         </div>
 
-        <div id="showcase-code" class="showcases__terminal__code">
+        <div id="example-code" class="examples__terminal__code">
             <pre><code class="{{ $s.language }}">
                 {{- readFile (print "hugo/data/code/" $s.code) -}}
             </code></pre>
@@ -35,8 +35,8 @@
 </section>
 
 <script>
-    window.showcases = [
-        {{ range $s := .showcases }}
+    window.examples = [
+        {{ range $s := .examples }}
             {
                 title: "{{ $s.title }}",
                 language: "{{ $s.language }}",

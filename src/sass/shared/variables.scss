@@ -68,8 +68,8 @@ $color-terminal-header-bg: $color-medium-grey;
 $color-terminal-header-btn-bg: $color-dark-grey;
 $color-terminal-code-bg: #33526C;
 
-$color-showcases-dot: $color-light-blue;
-$color-showcases-dot-border: $color-light-blue;
+$color-examples-dot: $color-light-blue;
+$color-examples-dot-border: $color-light-blue;
 
 $color-footer-text: $color-pale-grey;
 $color-footer-links-hover: $color-pale-blue;
@@ -151,9 +151,9 @@ $padding-pill-button-sides: 25px; //$height-pill-buttons / 2;
 $padding-terminal-header-vertical: $gutter-size / 3;
 $padding-terminal-header-horizontal: $gutter-size / 2;
 
-$margin-showcases-title-medium-top: $gutter-size / 4;
-$padding-showcases-desc-vertical: $gutter-size;
-$padding-showcases-project-bottom: $gutter-size;
+$margin-examples-title-medium-top: $gutter-size / 4;
+$padding-examples-desc-vertical: $gutter-size;
+$padding-examples-project-bottom: $gutter-size;
 
 $padding-topbar-vertical: 15px;
 $padding-topbar-menu-vertical-spacing: $gutter-size / 3;
@@ -199,9 +199,9 @@ $size-button-spacing: $gutter-size / 2;
 $size-terminal-header-btn: $gutter-size / 2;
 $size-terminal-header-btn-spacing: $gutter-size / 4;
 
-$size-showcases-dot: 15px;
-$size-showcases-dot-spacing: 10px;
-$size-showcases-dot-border: 3px;
+$size-examples-dot: 15px;
+$size-examples-dot-spacing: 10px;
+$size-examples-dot-border: 3px;
 
 $height-topbar: 75px;
 $height-topbar-logo: 45px;

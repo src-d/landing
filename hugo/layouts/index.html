@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
 {{ $home := $.Site.Data.home.home }}
-{{ $showcases := $.Site.Data.home.showcases }}
+{{ $examples := $.Site.Data.home.examples }}
 {{ $categories := $.Site.Data.categories }}
 {{ $headerCtx := dict "ctx" . }}
 {{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
@@ -10,8 +10,8 @@
 
     {{ partial "home/hero.html" $home }}
 
-    {{ if $home.showcases.display }}
-        {{ partial "home/showcases.html" $showcases }}
+    {{ if $home.examples.display }}
+        {{ partial "home/examples.html" $examples }}
     {{ end }}
 
     {{ if $home.projects.display }}

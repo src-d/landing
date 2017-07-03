@@ -20,7 +20,7 @@ slack:
     server_error: Error! submit again.
     fetch_error: Server error
 
-showcases:
+examples:
   display: true
 
 projects:
