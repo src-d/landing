@@ -49,13 +49,13 @@
   }
 }
 
-.showcases {
+.examples {
   @include row;
   @include container;
   padding: $padding-section-vertical 0;
 
   &__project {
-    padding-bottom: $padding-showcases-project-bottom;
+    padding-bottom: $padding-examples-project-bottom;
   }
 
   &__info {
@@ -70,7 +70,7 @@
     }
 
     p {
-      padding: $padding-showcases-desc-vertical 0;
+      padding: $padding-examples-desc-vertical 0;
     }
 
     .slick-arrow {
@@ -95,9 +95,9 @@
       justify-content: center;
 
       li {
-        height: $size-showcases-dot;
-        width: $size-showcases-dot;
-        border: $size-showcases-dot-border solid $color-showcases-dot-border;
+        height: $size-examples-dot;
+        width: $size-examples-dot;
+        border: $size-examples-dot-border solid $color-examples-dot-border;
         border-radius: 50%;
         padding: 0;
         margin: 0;
@@ -107,13 +107,13 @@
         }
 
         &.slick-active {
-          background-color: $color-showcases-dot;
+          background-color: $color-examples-dot;
           border: none;
         }
       }
 
       li + li {
-        margin-left: $size-showcases-dot-spacing;
+        margin-left: $size-examples-dot-spacing;
       }
     }
   }

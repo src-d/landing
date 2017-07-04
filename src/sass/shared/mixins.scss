@@ -123,7 +123,7 @@
   @include title($font-size-title-medium);
   @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-medium-pill-spacing);
   color: $color-title-medium;
-  margin-top: $margin-showcases-title-medium-top;
+  margin-top: $margin-examples-title-medium-top;
 }
 
 @mixin transition($properties: all, $time: $transition-main-time, $effect: $transition-main-effect) {

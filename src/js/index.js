@@ -37,7 +37,7 @@ function renderBlogCategories(selector, containerId) {
 
 window.addEventListener('DOMContentLoaded', _ => {
   setupStickyHeader()
-  setupShowcases()
+  setupExamples()
   renderBlogCategories('.blog__category', 'blog-container')
   renderComponent(PositionsMain, 'offersPanel')
   renderComponent(SlackForm, 'slack-join')
@@ -61,15 +61,15 @@ function checkTopbarOpacity(topBar, opaqueAtOffset) {
     }
 }
 
-function setupShowcases() {
-  const showcase = $('.showcases__project')
-  const code = document.getElementById('showcase-code')
-  const title = document.getElementById('showcase-title')
+function setupExamples() {
+  const example = $('.examples__project')
+  const code = document.getElementById('example-code')
+  const title = document.getElementById('example-title')
   if (!code) {
     return;
   }
 
-  showcase.slick({
+  example.slick({
     dots: true,
     infinite: true,
     speed: 0,
@@ -80,8 +80,8 @@ function setupShowcases() {
 
   highlightCode(code)
 
-  showcase.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
-    const project = window.showcases[nextSlide >= window.showcases.length ? 0 : nextSlide]
+  example.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
+    const project = window.examples[nextSlide >= window.examples.length ? 0 : nextSlide]
     title.innerText = project.title
     code.innerHTML = `
     <pre><code class="${project.language}">${project.code}</code></pre>
