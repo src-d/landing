@@ -9,11 +9,11 @@
     text-align: center;
     text-transform: lowercase;
     margin-bottom: ($height-slack-form-input / 2 ) +
-                    $margin-bottom-slack-form-input +
-                    $height-pill-buttons +
-                    $margin-bottom-slack-form-submit-button +
-                    $height-slack-form-message +
-                    $margin-bottom-slack-form-message;
+    $margin-bottom-slack-form-input +
+    $height-pill-buttons +
+    $margin-bottom-slack-form-submit-button +
+    $height-slack-form-message +
+    $margin-bottom-slack-form-message;
   }
 
   &__logo {
@@ -55,7 +55,7 @@
   }
 
   &__label {
-      @include sr-only();
+    @include sr-only();
   }
 
   &__input {
@@ -97,6 +97,54 @@
         border-color: $color-pill-button-white-main;
         border-width:  $border-width-pills;
         margin-right: $margin-right-slack-form-message-icon;
+      }
+    }
+  }
+
+  &--horizontal {
+      padding: 15px 0;
+
+    .slackForm {
+
+      &__header {
+        background-color: transparent;
+        position: static;
+        display: inline;
+      }
+
+      &__logo {
+        @include columns(1);
+        margin-bottom: 0;
+        margin-left: 0;
+        display: inline;
+        height: 90px;
+      }
+
+      &__title {
+        @include columns(3);
+        margin: 0 auto;
+        height: 90px;
+        line-height: 90px;
+      }
+
+      &__description {
+        display: none;
+      }
+
+      &__body {
+        position: static;
+        display: inline;
+      }
+
+      &__input {
+        @include columns(3);
+        display: inline;
+        margin-top: (120px - 45px - 15px) / 2;
+      }
+
+      &__submit {
+        @include columns(3);
+        display: inline;
       }
     }
   }

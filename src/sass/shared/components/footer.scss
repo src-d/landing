@@ -1,6 +1,19 @@
 .footer {
   @include corporate-gradient;
-  padding: ($padding-section-vertical / 2) 0;
+  padding-top: ($padding-section-vertical / 2);
+
+  &__slack {
+    @include row;
+    margin-top: -($padding-section-vertical / 2);
+    background-color: rgba(0, 0, 0, .3);
+    height: 120px;
+
+    .slack-form__wrap {
+      @include container;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
 
   &__contact {
     text-align: center;
@@ -53,7 +66,7 @@
 
     &__addresses {
       @include columns(2);
-      
+
       p {
         font-style: italic;
       }

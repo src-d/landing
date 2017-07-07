@@ -44,6 +44,10 @@ export default class SlackForm extends React.Component {
     }
   }
 
+  get horizontal() {
+    return ['true', 'horizontal'].includes(this.props.horizontal);
+  }
+
   get buttonClasses() {
     const classes = ['send'];
 
@@ -110,15 +114,35 @@ export default class SlackForm extends React.Component {
     return false;
   }
 
+  get descriptionParagraph() {
+    if (this.props.desc && this.props.desc !== "") {
+          return (<p className="slackForm__description">{ this.props.desc }</p>)
+    }
+
+    return null;
+  }
+
+  get formClasses() {
+    const classes = ['slackForm'];
+
+    if (this.horizontal) {
+      classes.push('slackForm--horizontal');
+    } else {
+      classes.push('slackForm--vertical');
+    }
+
+    return classes.join(' ');
+  }
+
   render() {
     return (
-      <form className='slackForm'
+      <form className={ this.formClasses }
         onSubmit={e => this.invite(e)}>
 
         <header className="slackForm__header">
           <img className="slackForm__logo" src={ this.props.logo } alt="Join us un Slack" />
           <h2 className="slackForm__title">{ this.props.title }</h2>
-          <p className="slackForm__description">{ this.props.desc }</p>
+          { this.descriptionParagraph }
         </header>
 
         <div className={ this.bodyClasses }>

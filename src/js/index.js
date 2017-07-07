@@ -41,6 +41,7 @@ window.addEventListener('DOMContentLoaded', _ => {
   renderBlogCategories('.blog__category', 'blog-container')
   renderComponent(PositionsMain, 'offersPanel')
   renderComponent(SlackForm, 'slack-join')
+  renderComponent(SlackForm, 'horizontal-slack-join')
   setupTestimonials()
 })
 
