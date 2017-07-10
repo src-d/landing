@@ -5,16 +5,13 @@
     &__element {
         @include transition(box-shadow);
         @include card-shadow(true);
-        display: flex;
-        flex-grow: 1;
-        flex-basis: calc(100% / 3 - #{$gutter-size});
+        @include columns(4);
         position: relative;
         float: left;
         background: $color-card-background;
         border-radius: 0 0 $border-radius-main $border-radius-main;
         margin-left: $gutter-size;
         margin-top: $gutter-size;
-        max-width: calc((100% - 2 * #{$gutter-size}) / 3);
 
         &_blog {
             header {
