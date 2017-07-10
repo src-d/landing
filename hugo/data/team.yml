@@ -1,3 +1,5 @@
+title: team
+desc: At source{d} we are all engineers, developers and hackers ourselves. We go as far as to train and encourage all non-technical roles to also become developers.<br /></br>Interested in our people and want to become part of our team? Check more <a href="/careers">on careers</a>.
 teams:
     - name: Engineering
       headline: The core of everything we do, from the beginning to the end; writing great software
@@ -16,13 +18,13 @@ teams:
             name: Antonio Navarro
             position: Senior Software Engineer
             github: https://github.com/ajnavarro
-          - picture: alberto.png
-            name: Alberto Cortés
-            position: Software Engineer
-            github: https://github.com/alcortesm
 
         - teamName: Infrastructure Team
           members:
+          - picture: placeholder/new-man.png
+            name: Rafael Porres
+            position: DevOps Senior Engineer
+            github: https://github.com/rporres
           - picture: sonia.png
             name: Sonia Meruelo
             position: DevOps Engineer
@@ -57,6 +59,14 @@ teams:
             name: Egor Bulychev
             position: Senior Software Engineer
             github: https://github.com/EgorBu
+          - picture: placeholder/new-man.png
+            name: __NEW_GUY__
+            position: Software Engineering Intern
+            github: https://github.com/__NEW_GUY_GH__
+          - picture: placeholder/new-man.png
+            name: __NEW_GUY__
+            position: Software Engineering Intern
+            github: https://github.com/__NEW_GUY_GH__
           - picture: waren.png
             name: Waren Long
             position: Software Engineering Intern
@@ -95,13 +105,6 @@ teams:
           name: Esther García
           position: Office Manager
           linkedin: https://www.linkedin.com/in/esther-garc%C3%ADa-mart%C3%ADn-0331692b
-    - name: Developer Relations
-      headline: To truly understand developers you have to be a developer yourself
-      members:
-        - picture: anna.png
-          name: Anna Tsolakou
-          position: Senior Developer Relations
-          linkedin: https://www.linkedin.com/in/tsolakouanna
     - name: Management
       headline: Providing direction, the planning and the leadership to get there
       members:
@@ -117,7 +120,3 @@ teams:
           name: Máximo Cuadros
           position: VP of Engineering
           github: https://github.com/mcuadros
-        - picture: marge.png
-          name: Margarida García
-          position: VP of Developer Relations
-          linkedin: https://es.linkedin.com/in/margaridagarcialopes
