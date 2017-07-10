@@ -12,7 +12,7 @@ export default class SlackForm extends React.Component {
       errMessage: '',
       hasTyped: false,
       loading: false,
-      success: false,
+      success: false
     };
   }
 
@@ -30,7 +30,7 @@ export default class SlackForm extends React.Component {
           } else {
             this.setState({
               loading: false,
-              errMessage: this.state.serverError,
+              errMessage: this.state.serverError
             });
           }
         })
@@ -38,10 +38,14 @@ export default class SlackForm extends React.Component {
           console.error(err);
           this.setState({
             loading: false,
-            errMessage: this.props.fetchError,
+            errMessage: this.props.fetchError
           });
         });
     }
+  }
+
+  get horizontal() {
+    return ['true', 'horizontal'].includes(this.props.horizontal);
   }
 
   get buttonClasses() {
@@ -110,9 +114,33 @@ export default class SlackForm extends React.Component {
     return false;
   }
 
+  get descriptionParagraph() {
+    if (this.props.desc && this.props.desc !== '') {
+      return (
+        <p className="slackForm__description">
+          {this.props.desc}
+        </p>
+      );
+    }
+
+    return null;
+  }
+
+  get formClasses() {
+    const classes = ['slackForm'];
+
+    if (this.horizontal) {
+      classes.push('slackForm--horizontal');
+    } else {
+      classes.push('slackForm--vertical');
+    }
+
+    return classes.join(' ');
+  }
+
   render() {
     return (
-      <form className="slackForm" onSubmit={e => this.invite(e)}>
+      <form className={this.formClasses} onSubmit={e => this.invite(e)}>
         <header className="slackForm__header">
           <img
             className="slackForm__logo"
@@ -122,9 +150,7 @@ export default class SlackForm extends React.Component {
           <h2 className="slackForm__title">
             {this.props.title}
           </h2>
-          <p className="slackForm__description">
-            {this.props.desc}
-          </p>
+          {this.descriptionParagraph}
         </header>
 
         <div className={this.bodyClasses}>

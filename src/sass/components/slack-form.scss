@@ -9,11 +9,11 @@
     text-align: center;
     text-transform: lowercase;
     margin-bottom: ($height-slack-form-input / 2 ) +
-                    $margin-bottom-slack-form-input +
-                    $height-pill-buttons +
-                    $margin-bottom-slack-form-submit-button +
-                    $height-slack-form-message +
-                    $margin-bottom-slack-form-message;
+    $margin-bottom-slack-form-input +
+    $height-pill-buttons +
+    $margin-bottom-slack-form-submit-button +
+    $height-slack-form-message +
+    $margin-bottom-slack-form-message;
   }
 
   &__logo {
@@ -55,7 +55,7 @@
   }
 
   &__label {
-      @include sr-only();
+    @include sr-only();
   }
 
   &__input {
@@ -97,6 +97,62 @@
         border-color: $color-pill-button-white-main;
         border-width:  $border-width-pills;
         margin-right: $margin-right-slack-form-message-icon;
+      }
+    }
+  }
+
+  &--horizontal {
+    height: 100%;
+
+    .slackForm {
+      &__header {
+        background-color: transparent;
+        position: static;
+        display: inline;
+      }
+
+      &__header {
+        width: 0;
+        height: 0;
+        padding: 0;
+      }
+
+      &__logo {
+        @include columns(2);
+        margin-bottom: 0;
+        margin-left: 0;
+        display: inline;
+        height: $size-footer-slack-logo;
+        margin-top: ($size-footer-slack-band - $size-footer-slack-logo) / 2;
+      }
+
+      &__title {
+        @include columns(3);
+        margin: 0 auto;
+        line-height: $size-footer-slack-band;
+        font-size: $font-size-footer-slack-band-title;
+        color: $color-footer-slack-band-title;
+      }
+
+      &__description {
+        display: none;
+      }
+
+      &__body {
+        position: static;
+        display: inline;
+      }
+
+      &__input {
+        @include columns(4);
+        display: inline;
+        margin-top: ($size-footer-slack-band - $size-footer-slack-input) / 2;
+      }
+
+      &__submit {
+        @include columns(3);
+        display: inline;
+        margin-top: ($size-footer-slack-band - $size-footer-slack-input) / 2;
       }
     }
   }

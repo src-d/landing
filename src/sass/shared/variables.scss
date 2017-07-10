@@ -78,6 +78,7 @@ $color-footer-titles-pill: rgba(255, 255, 255, .1);
 $color-footer-email: $color-white;
 $color-footer-pgp-key-icon: rgba(255, 255, 255, .3);
 $color-footer-social-icon-bg: rgba(255, 255, 255, .1);
+$color-footer-slack-band-title: white;
 
 $color-projects-icon: $color-terminal-text;
 
@@ -95,6 +96,7 @@ $font-size-pill-button: 21px;
 $font-size-terminal-source-code: 14px;
 $font-size-signature: 48px;
 $font-size-footer-section: 16px;
+$font-size-footer-slack-band-title: 24px;
 $font-size-footer-email: 24px;
 $font-size-title-xsmall: 21px;
 $font-size-small: 18px;
@@ -245,6 +247,10 @@ $size-codepill-project-vertical-correction: $size-codepills-project-height * $si
 $size-footer-social-icon-spacing: 15px;
 $size-footer-social-icon: 45px;
 $size-footer-social-icon-image: 30px;
+$size-footer-slack-band: 120px;
+$size-footer-slack-logo: 90px;
+$size-footer-slack-input: 45px;
+$size-footer-slack-button: 45px;
 
 // Radius
 $border-radius-main: 5px;
