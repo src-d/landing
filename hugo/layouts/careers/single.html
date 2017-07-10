@@ -1,9 +1,12 @@
 {{ partial "head.html" . }}
+{{ $careers := $.Site.Data.careers }}
 {{ $headerCtx := dict "ctx" . }}
+{{ $heroCtx := dict "ctx" . "data" $careers }}
 {{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 
-<body>
+<body class="stack-page">
     {{ partial "header.html" $headerCtx }}
+    {{ partial "hero.html" $heroCtx }}
 
     <header
         style="background-image: url('{{ default .Site.Params.headerImageUrl .Params.headerImageUrl }}');"

@@ -1,14 +1,13 @@
 {{ $imageName := default .ctx.Site.Params.headerimagename .ctx.Params.headerimagename }}
 {{ $imageUrl := (printf "img/header/%s.png" $imageName) | absURL }}
-
-<header class="projects-hero">
-    <div class="projects-hero__wrap">
-        <div class="projects-hero__info">
+<header class="hero">
+    <div class="hero__wrap">
+        <div class="hero__info">
             <h1>{{ .data.title }}</h1>
             <p>{{ .data.desc | safeHTML }}</p>
         </div>
 
-        <figure class="projects-hero__picture">
+        <figure class="hero__picture">
             <img src="{{ $imageUrl | safeURL }}" />
         </figure>
 
