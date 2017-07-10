@@ -201,7 +201,7 @@
   overflow: hidden;
   color: $color-roadmap-text;
 
-  & > div {
+  & > article {
     @include row;
     @include container;
     position: relative;
@@ -315,7 +315,7 @@
 
       &__avatar {
         @include columns(1);
-        margin-top: $gutter-size / 2;
+        margin-top: $padding-roadmap-paragraph-vertical;
 
         img {
           max-width: 100%;

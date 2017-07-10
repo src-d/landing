@@ -1,5 +1,5 @@
 <section class="roadmap">
-    <div>
+    <article>
         <img class="code-pills-left" src="{{ "img/bgs/codepills-bg-3.png" | absURL }}" />
 
         <h1>Our roadmap</h1>
@@ -7,9 +7,9 @@
             <p>{{ $r }}</p>
         {{ end }}
 
-        <div class="roadmap__footer">
+        <footer class="roadmap__footer">
             <div class="roadmap__signature">
-                <img class="roadmap__signature__photo" src="{{ .roadmap.ceo_picture | relURL }}" alt="Eiso Kant" />
+                <img class="roadmap__signature__photo" src="{{ .roadmap.ceo_picture | relURL }}" alt="" />
                 <div class="roadmap__signature__title">
                     <span class="roadmap__signature__name">Eiso Kant</span>
                     <span>Co-Founder &amp; Ceo</span>
@@ -19,6 +19,6 @@
             <div class="roadmap__links">
                 {{ partial "home/our-links.html" . }}
             </div>
-        </div>
-    </div>
+        </footer>
+    </article>
 </section>

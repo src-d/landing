@@ -115,7 +115,7 @@ export default class SlackForm extends React.Component {
   }
 
   get descriptionParagraph() {
-    if (this.props.desc && this.props.desc !== '') {
+    if (this.props.desc) {
       return (
         <p className="slackForm__description">
           {this.props.desc}

@@ -4,7 +4,7 @@
   &__slack {
     @include row;
     margin-top: -($padding-section-vertical / 2);
-    background-color: rgba(0, 0, 0, .3);
+    background-color: $color-footer-slack-band-bg;
     height: $size-footer-slack-band;
 
     .slack-form__wrap {

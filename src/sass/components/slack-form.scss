@@ -9,11 +9,11 @@
     text-align: center;
     text-transform: lowercase;
     margin-bottom: ($height-slack-form-input / 2 ) +
-    $margin-bottom-slack-form-input +
-    $height-pill-buttons +
-    $margin-bottom-slack-form-submit-button +
-    $height-slack-form-message +
-    $margin-bottom-slack-form-message;
+      $margin-bottom-slack-form-input +
+      $height-pill-buttons +
+      $margin-bottom-slack-form-submit-button +
+      $height-slack-form-message +
+      $margin-bottom-slack-form-message;
   }
 
   &__logo {
