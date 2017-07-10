@@ -5,5 +5,6 @@ section: team
 url: team
 title: Our team
 description: Join a team commited to our mission
-headerImageUrl: /img/hero/team.jpg
+headerImageName: ada-lovelace
+contactemail: talent@sourced.tech
 ---
