@@ -48,6 +48,10 @@ teams:
             name: David Paz
             position: Software Engineering Intern
             github: https://github.com/dpaz
+          - picture: placeholder/new-man.png
+            name: Manu Mtz-Almeida
+            position: Software Engineering Intern
+            github: https://github.com/manucorporat
 
         - teamName: Machine Learning Team
           members:
@@ -60,13 +64,13 @@ teams:
             position: Senior Software Engineer
             github: https://github.com/EgorBu
           - picture: placeholder/new-man.png
-            name: __NEW_GUY__
+            name: Konstantin
             position: Software Engineering Intern
-            github: https://github.com/__NEW_GUY_GH__
+            github: https://github.com/zurk
           - picture: placeholder/new-man.png
-            name: __NEW_GUY__
+            name: Timofei Semenov
             position: Software Engineering Intern
-            github: https://github.com/__NEW_GUY_GH__
+            github: https://github.com/fineguy
           - picture: waren.png
             name: Waren Long
             position: Software Engineering Intern
