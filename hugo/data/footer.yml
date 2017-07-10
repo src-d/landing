@@ -25,7 +25,7 @@ projects:
   - title: Demos
     url: "//sourced.tech/projects/#demos"
 community:
-  - title: Tech Talks 
+  - title: Tech Talks
     url: http://talks.sourced.tech
   - title: Open Source
     url: https://github.com/src-d
@@ -36,19 +36,23 @@ community:
 networks:
   - title: Twitter
     url: https://twitter.com/srcd_
+    image: img/icons/social/twitter.png
   - title: GitHub
     url: https://github.com/src-d
+    image: img/icons/social/github.svg
   - title: Medium
     url: https://medium.com/source-d
+    image: img/icons/social/medium.png
   - title: AngelList
     url: https://angel.co/source-d
+    image: img/icons/social/angellist.png
   - title: LinkedIn
     url: https://www.linkedin.com/company-beta/10284920/
+    image: img/icons/social/linkedin.svg
 contact:
-  company_name: "Sourced Technologies, S.L."
   address:
-    - "Claudio Coello 16, 2º Izq"
-    - "28001 - Madrid, Spain"
+    - "Madrid, Spain"
+    - "San Francisco, USA"
   mails:
     - hello@sourced.tech
     - talent@sourced.tech

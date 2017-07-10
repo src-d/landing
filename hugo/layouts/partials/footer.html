@@ -8,4 +8,16 @@
         {{ partial "footer/contact-us.html" $ctx }}
     {{ end }}
     {{ partial "footer/sitemap.html" $ctx }}
+
+    <div class="footer__social">
+        <ul>
+            {{ range $ctx.Site.Data.footer.networks }}
+                <li>
+                    <a href="{{ .url }}" target="_blank" title="source{d} on {{ .title }}">
+                        <img src="{{ .image | absURL }}" alt="source{d} on {{.title}}" />
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
 </footer>

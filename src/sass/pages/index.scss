@@ -54,10 +54,6 @@
   @include container;
   padding: $padding-section-vertical 0;
 
-  &__project {
-    padding-bottom: $padding-examples-project-bottom;
-  }
-
   &__info {
     @include columns(4);
 
@@ -73,10 +69,6 @@
       padding: $padding-examples-desc-vertical 0;
     }
 
-    .slick-arrow {
-      display: none;
-    }
-
     .slick-slide,
     .slick-slide * {
       outline: none;
@@ -89,31 +81,67 @@
       }
     }
 
-    .slick-dots {
+    &__navigation {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      li {
-        height: $size-examples-dot;
-        width: $size-examples-dot;
-        border: $size-examples-dot-border solid $color-examples-dot-border;
-        border-radius: 50%;
-        padding: 0;
-        margin: 0;
+      .slick-arrow {
+        position: static;
+        display: inline-block;
+        height: $height-examples-arrow;
+        width: $width-examples-arrow;
+        transform: none;
+        margin: 0 $size-examples-arrow-spacing;
+      }
 
-        button:before {
-          display: none;
-        }
+      .slick-prev {
+        background: url(/img/icons/arrow-left.svg);
 
-        &.slick-active {
-          background-color: $color-examples-dot;
-          border: none;
+        &:before {
+          content: "";
         }
       }
 
-      li + li {
-        margin-left: $size-examples-dot-spacing;
+      .slick-next {
+        background: url(/img/icons/arrow-right.svg);
+        order: 3;
+
+        &:before {
+          content: "";
+        }
+      }
+
+      .slick-dots {
+        width: auto;
+        position: static;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+          height: $size-examples-dot;
+          width: $size-examples-dot;
+          border: $size-examples-dot-border solid $color-examples-dot-border;
+          border-radius: 50%;
+          padding: 0;
+          margin: 0;
+
+          button:before {
+            display: none;
+          }
+
+          &.slick-active {
+            background-color: $color-examples-dot;
+            border: none;
+          }
+        }
+
+        li + li {
+          margin-left: $size-examples-dot-spacing;
+        }
       }
     }
   }
@@ -170,48 +198,54 @@
 
 .roadmap {
   @include corporate-gradient;
-  padding: $padding-roadmap-vertical 0;
   overflow: hidden;
+  color: $color-roadmap-text;
 
-  & article,
   & > div {
     @include row;
     @include container;
     position: relative;
+    padding: $padding-section-vertical 0;
   }
 
   .code-pills-left {
     position: absolute;
-    right: 95%;
+    right: 100.7%;
+    top: 6.5%;
   }
 
-  &__photo {
-    @include columns(2);
-    padding-top: $padding-roadmap-photo-top;
-    text-align: right;
-
-    img {
-      width: $size-roadmap-photo;
-      border-radius: 50%;
-    }
+  h1 {
+    @include white-title-big;
+    padding-bottom: $padding-roadmap-paragraph-vertical;
   }
 
-  &__content {
-    @include columns(10);
-    color: $color-roadmap-text;
+  p {
+    padding: $padding-roadmap-paragraph-vertical 0;
+    font-size: $font-size-body;
+  }
 
-    h1 {
-      @include white-title-big;
-    }
-
-    & > p {
-      padding: $padding-roadmap-paragraph-vertical 0;
-    }
+  &__footer {
+    @include row;
+    display: flex;
+    align-items: center;
   }
 
   &__signature {
-    text-align: center;
+    @include columns(5);
     padding: $padding-roadmap-signature 0;
+    display: flex;
+    align-items: center;
+
+    &__photo {
+      width: $size-roadmap-photo;
+      border-radius: 50%;
+      margin-right: $size-roadmap-photo-spacing;
+    }
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+    }
 
     &__name {
       font-family: $font-handwritten;
@@ -221,6 +255,9 @@
   }
 
   &__links {
+    @include columns(7);
+    text-align: right;
+
     a + a {
       margin-left: $size-button-spacing;
     }
@@ -261,7 +298,7 @@
   .testimonial-list {
     @include columns(10);
     @include offset(1);
-    margin-top: $column-size;
+    margin-top: $gutter-size;
 
     .testimonial {
       @include row;
@@ -278,6 +315,7 @@
 
       &__avatar {
         @include columns(1);
+        margin-top: $gutter-size / 2;
 
         img {
           max-width: 100%;
@@ -289,6 +327,12 @@
       blockquote {
         @include columns(9);
 
+        .svg-icon svg {
+          display: inline;
+          width: 15px;
+          fill: lightgray;
+        }
+
         a {
           @include link-light-bg;
         }
@@ -297,22 +341,6 @@
           font-size: $font-size-testimonial-usernames;
           display: block;
           padding-top: $gutter-size / 2;
-        }
-      }
-
-      &:nth-child(even) {
-        .testimonial__avatar {
-          float: right;
-
-          img {
-            margin-left: $gutter-size / 2;
-          }
-        }
-
-        blockquote {
-          margin-left: 0;
-          margin-right: $gutter-size;
-          text-align: right;
         }
       }
     }

@@ -8,7 +8,7 @@
                 </div>
 
                 <blockquote>
-                    <p>{{ .text | safeHTML }}</p>
+                    <p>{{ partial "svg" "quotes" }}{{ .text | safeHTML }}{{ partial "svg" "quotes" }}</p>
                     <cite>
                         <a href="{{ .url }}">
                             {{ if and (ne .name "") (ne .name .nickname) }}

@@ -77,6 +77,7 @@ $color-footer-titles: $color-white;
 $color-footer-titles-pill: rgba(255, 255, 255, .1);
 $color-footer-email: $color-white;
 $color-footer-pgp-key-icon: rgba(255, 255, 255, .3);
+$color-footer-social-icon-bg: rgba(255, 255, 255, .1);
 
 $color-projects-icon: $color-terminal-text;
 
@@ -170,8 +171,11 @@ $margin-topbar-menu-spacing: $gutter-size / 4;
 $padding-roadmap-vertical: $gutter-size;
 $padding-roadmap-paragraph-vertical: $gutter-size / 2;
 $padding-roadmap-photo-top: $padding-roadmap-paragraph-vertical + $font-size-title-big + ($gutter-size / 2);
-$padding-roadmap-signature: $gutter-size * 1.4;
+$padding-roadmap-signature: $gutter-size / 2;
 $padding-roadmap-signature-name-bottom: $gutter-size / 2;
+
+$padding-footer-contact-vertical: 45px;
+$padding-footer-social-vertical: 45px;
 
 // Heights and widths
 $height-pill-buttons: 45px;
@@ -202,6 +206,9 @@ $size-terminal-header-btn-spacing: $gutter-size / 4;
 $size-examples-dot: 15px;
 $size-examples-dot-spacing: 10px;
 $size-examples-dot-border: 3px;
+$width-examples-arrow: 20px;
+$height-examples-arrow: 30px;
+$size-examples-arrow-spacing: 10px;
 
 $height-topbar: 75px;
 $height-topbar-logo: 45px;
@@ -212,6 +219,7 @@ $size-button-spacing: $gutter-size / 2;
 $width-topbar-submenu-border-size: 5px;
 
 $size-roadmap-photo: 180px;
+$size-roadmap-photo-spacing: $gutter-size;
 
 $size-secondary-nav-item-spacing: $gutter-size / 2;
 
@@ -233,6 +241,10 @@ $size-codepill-raw-vertical-correction: 4px / 2;
 $size-codepills-project-height: 30px;
 $size-codepills-project-width: $size-codepills-raw-width * $size-codepills-project-height / $size-codepills-raw-height;
 $size-codepill-project-vertical-correction: $size-codepills-project-height * $size-codepill-raw-vertical-correction / $size-codepills-raw-height;
+
+$size-footer-social-icon-spacing: 15px;
+$size-footer-social-icon: 45px;
+$size-footer-social-icon-image: 30px;
 
 // Radius
 $border-radius-main: 5px;
