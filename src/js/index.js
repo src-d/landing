@@ -105,7 +105,7 @@ function setupTestimonials() {
   const children = Array.from(testimonials.children)
   shuffle(children)
   testimonials.innerHTML = ''
-  children.forEach(c => testimonials.appendChild(c))
+  children.slice(0, 2).forEach(c => testimonials.appendChild(c))
 }
 
 function shuffle(arr) {
