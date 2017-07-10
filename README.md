@@ -10,17 +10,17 @@ You need also [npm installed](https://docs.npmjs.com/getting-started/installing-
 make hugo-build
 ```
 If you want to build the project separatelly, you can replace the last command with these two:
-* `npm run build` To compile webpack stuff into `/static` folder
+* `yarn run build` To compile webpack stuff into `/static` folder
 * `make hugo-build` To compile hugo stuff from `/content/layouts/static/data` folders into `/public` folder
 
 Development:
 ===
 ```
-make landing-local-serve
+make serve
 ```
 This runs everything you need to get the site working at [http://localhost:8181](http://localhost:8181)
 
 If you want to build the project separatelly, you can replace the last command with these two:
-* `npm run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
-* `npm run webpack-watcher` To start webpack watcher, that will rebuild the assets when you change its sources
+* `yarn run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
+* `yarn run webpack-watcher` To start webpack watcher, that will rebuild the assets when you change its sources
 * `make hugo-server` To serve the landing locally using hugo server

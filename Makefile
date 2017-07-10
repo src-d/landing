@@ -59,7 +59,7 @@ CURL = curl -L
 HUGO = $(HUGO_PATH)/$(HUGO_NAME)
 MKDIR = mkdir -p
 GIT = git
-NPM = npm
+YARN = yarn
 CGO_ENABLED=0
 REMOVE = rm -rf
 COMPRESS = tar -cf
@@ -83,13 +83,13 @@ hugo-dependencies:
 		if [ "$(ARCH)" == "windows" ]; then unzip $${file}; else tar -xvzf $${file}; fi; \
 	fi;
 
-# Prepares npm
-npm-dependencies:
-	$(NPM) install
-	$(NPM) run build
+# Prepares yarn
+js-dependencies:
+	$(YARN) install
+	$(YARN) run build
 
 ## Builds hugo project
-hugo-build: npm-dependencies hugo-dependencies
+hugo-build: js-dependencies hugo-dependencies
 	$(HUGO) --config=hugo.config.yaml --destination=$(DESTINATION)
 
 # Runs hugo server
@@ -97,8 +97,8 @@ hugo-server:
 	$(HUGO) server --config=hugo.config.yaml --destination=public --port=8181 --watch --buildDrafts
 
 ## Cleans and run a new hugo server with webpack watcher enabled
-landing-local-serve: hugo-clean npm-dependencies hugo-dependencies
-	$(NPM) run serve
+serve: hugo-clean js-dependencies hugo-dependencies
+	$(YARN) run serve
 
 # Deletes the hugo folder
 hugo-clean:
