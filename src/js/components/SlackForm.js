@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { inviteToSlack } from '../services/api'
+import { inviteToSlack } from '../services/api';
 
-const emailRegex = /^.+@.+\..+$/
+const emailRegex = /^.+@.+\..+$/;
 
 export default class SlackForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       email: '',
       errMessage: '',
@@ -17,12 +17,12 @@ export default class SlackForm extends React.Component {
   }
 
   invite(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!this.state.hasTyped) {
       this.input.focus();
     } else {
-      this.setState({ loading: true, success: false, errMessage: '' })
+      this.setState({ loading: true, success: false, errMessage: '' });
       inviteToSlack(this.props.endpoint, this.state.email)
         .then(resp => {
           if (resp.status === 200) {
@@ -35,11 +35,11 @@ export default class SlackForm extends React.Component {
           }
         })
         .catch(err => {
-          console.error(err)
+          console.error(err);
           this.setState({
             loading: false,
             errMessage: this.props.fetchError,
-          })
+          });
         });
     }
   }
@@ -47,7 +47,7 @@ export default class SlackForm extends React.Component {
   get buttonClasses() {
     const classes = ['send'];
 
-    if (this .state.hasTyped && !this.hasValidEmail()) {
+    if (this.state.hasTyped && !this.hasValidEmail()) {
       classes.push('invalid');
     }
 
@@ -71,7 +71,7 @@ export default class SlackForm extends React.Component {
       return this.state.errMessage;
     }
 
-    return "";
+    return '';
   }
 
   get bodyClasses() {
@@ -112,33 +112,46 @@ export default class SlackForm extends React.Component {
 
   render() {
     return (
-      <form className='slackForm'
-        onSubmit={e => this.invite(e)}>
-
+      <form className="slackForm" onSubmit={e => this.invite(e)}>
         <header className="slackForm__header">
-          <img className="slackForm__logo" src={ this.props.logo } alt="Join us un Slack" />
-          <h2 className="slackForm__title">{ this.props.title }</h2>
-          <p className="slackForm__description">{ this.props.desc }</p>
+          <img
+            className="slackForm__logo"
+            src={this.props.logo}
+            alt="Join us un Slack"
+          />
+          <h2 className="slackForm__title">
+            {this.props.title}
+          </h2>
+          <p className="slackForm__description">
+            {this.props.desc}
+          </p>
         </header>
 
-        <div className={ this.bodyClasses }>
+        <div className={this.bodyClasses}>
           <label className="slackForm__label">
-            { this.props.placeholder }
+            {this.props.placeholder}
           </label>
-          <input className="slackForm__input"
-                 disabled= { this.state.loading || this.state.success }
-                 placeholder={ this.props.placeholder }
-                 onChange={e => this.setState({ hasTyped: true, email: e.target.value })}
-                 ref={(input) => this.input = input }
-                 type="text" />
-          <button disabled={ this.isButtonDisabled }
-                  className="slackForm__submit btn-pill btn-pill--white">
-            { this.props.button }
+          <input
+            className="slackForm__input"
+            disabled={this.state.loading || this.state.success}
+            placeholder={this.props.placeholder}
+            onChange={e =>
+              this.setState({ hasTyped: true, email: e.target.value })}
+            ref={input => (this.input = input)}
+            type="text"
+          />
+          <button
+            disabled={this.isButtonDisabled}
+            className="slackForm__submit btn-pill btn-pill--white"
+          >
+            {this.props.button}
           </button>
 
-          <p className={ this.messageClasses }>{ this.responseMessage }</p>
+          <p className={this.messageClasses}>
+            {this.responseMessage}
+          </p>
         </div>
       </form>
-    )
+    );
   }
 }
