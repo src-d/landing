@@ -1,12 +1,13 @@
 {{ partial "head.html" . }}
-{{ $headerCtx := dict "ctx" . "secondary_nav" "projects/nav.html" }}
-{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 {{ $projects := $.Site.Data.projects }}
+{{ $headerCtx := dict "ctx" . "secondary_nav" "projects/nav.html" }}
+{{ $heroCtx := dict "ctx" . "data" $projects }}
+{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 {{ $blog := $.Site.Data.blog }}
 
 <body class="projects-page">
     {{ partial "header.html" $headerCtx }}
-    {{ partial "projects/hero.html" $projects }}
+    {{ partial "hero.html" $heroCtx }}
 
     {{ $categories := $.Site.Data.categories }}
     {{ partial "projects/projects.html" $categories }}

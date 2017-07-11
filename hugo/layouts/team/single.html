@@ -1,41 +1,35 @@
 {{ partial "head.html" . }}
+{{ $team := $.Site.Data.team }}
 {{ $headerCtx := dict "ctx" . }}
+{{ $heroCtx := dict "ctx" . "data" $team }}
 {{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 
-<body class="teamPage zoom">
+<body class="team-page">
     {{ partial "header.html" $headerCtx }}
+    {{ partial "hero.html" $heroCtx }}
 
-    <header
-        style="background-image: url('{{ default .Site.Params.headerImageUrl .Params.headerImageUrl }}');"
-    >
-        <div class="mainContainer">
-            <div class="description">
-                <h1 class="title">Our team</h1>
-                <p>At source{d} we are all engineers, developers and hackers ourselves. We go as far as to train and encourage all non-technical roles to also become developers.</p>
-            </div>
-        </div>
-    </header>
+    <section class="band band_grey">
+        <div class="band__container">
+            {{ range $t := $team.teams }}
+                <h1>
+                    <span class="title">{{ $t.name }}</span>
+                </h1>
 
-    {{ range $t := $.Site.Data.team.teams }}
-    <section class="fullWidth">
-        <div class="mainContainer team">
-            <h2>{{ $t.name }}</h2>
-            <p>{{ $t.headline }}</p>
+                <p>{{ $t.headline }}</p>
 
-            <div class="members">
-                {{ if default false $t.subteams }}
-                    {{ range $subteam := $t.subteams }}
-                        {{ partial "team-members.html" $subteam }}
+                <div class="members">
+                    {{ if default false $t.subteams }}
+                        {{ range $subteam := $t.subteams }}
+                            {{ partial "team-members.html" $subteam }}
+                        {{ end }}
+                    {{ else }}
+                        {{ partial "team-members.html" $t }}
                     {{ end }}
-                {{ else }}
-                    {{ partial "team-members.html" $t }}
-                {{ end }}
-            </div>
+                </div>
+            {{ end }}
         </div>
     </section>
-    {{ end }}
 
     {{ partial "footer.html" $footerCtx }}
 </body>
-
 </html>

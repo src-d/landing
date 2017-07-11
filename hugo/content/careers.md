@@ -3,8 +3,8 @@ type: careers
 classes: ["static"]
 section: careers
 url: careers
-title: Careers
+title: Job opportunities
 description: Our Job Opportunities. Exceptional missions require exceptional people
-headerImageUrl: /img/hero/hero-careers.jpg
+headerImageName: dennis-ritchie
 contactemail: talent@sourced.tech
 ---
