@@ -1,2 +1,27 @@
 title: Job opportunities
 desc: Exceptional missions require exceptional people. If you want to help us to pave the future road to apply machine learning on source code, check where you fit the best below.
+positions:
+  title: current openings
+notice:
+  title: global talent
+  desc: We at source{d} believe that amazing talent should not be constrained by physical barriers. We have a multinational and multicultural team that shares our culture of openness and excellence and our passion for programming. Our team will do their best to help you get a visa and get settle down. Have you looked for the role you think you fit better and could not find it? Want to do something different? Drop us a line as we are eager to hear from you.
+gallery:
+  title: our offices
+  images:
+    - img/careers/placeholder.jpg
+    - img/careers/placeholder.jpg
+    - img/careers/placeholder.jpg
+    - img/careers/placeholder.jpg
+    - img/careers/placeholder.jpg
+benefits:
+  title: perks and benefits
+  desc: We want everyone to feel at home working with us—well, sometimes you will be actually working from home! We are proud of our culture and we work hard to make sure every employee loves what they do. You may find more about our culture in our open company guide and check some of the perks and benefits we provide
+  items:
+    - Our people dedicate 10% of their work time to Open Source Days, where they can contribute to any open source project they want.
+    - Our team will help during the whole visa process for you and your family.
+    - Spacious nice physical office, close to public transit and to the amazing Retiro park.
+    - Our kitchen is full of supplies, from beer and sodas to juicy fresh fruit.
+    - We buy you any books that can help you at work.
+    - Flexible hours and possibility of remote work.
+    - Video games (old and new!), Virtual Reality kit.
+    - We brew our own <a href="https://github.com/src-d/homebrew" target="_blank">open source craft beer</a>!
