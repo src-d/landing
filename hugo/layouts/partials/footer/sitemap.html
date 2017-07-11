@@ -3,7 +3,6 @@
 <section class="footer__sitemap">
     <div class="footer__sitemap__addresses">
         <div class="logo"><img src="{{ "/img/logos/source-logo-white.svg" | absURL }}" alt="source{d}" /></div>
-        <p>{{ $footer.contact.company_name }}</p>
         {{ range $addr := $footer.contact.address }}
             <p>{{ $addr }}</p>
         {{ end }}

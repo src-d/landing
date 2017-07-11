@@ -1,10 +1,27 @@
 .footer {
   @include corporate-gradient;
-  padding: ($padding-section-vertical / 2) 0;
+
+  &__slack {
+    @include row;
+    margin-top: -($padding-section-vertical / 2);
+    background-color: $color-footer-slack-band-bg;
+    height: $size-footer-slack-band;
+
+    .slack-form__wrap {
+      @include container;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      height: 100%;
+    }
+
+    .slack-form__root {
+      height: 100%;
+    }
+  }
 
   &__contact {
     text-align: center;
-    margin-bottom: $gutter-size;
+    padding: $padding-footer-contact-vertical 0;
 
     a {
       display: block;
@@ -52,7 +69,7 @@
     }
 
     &__addresses {
-      @include columns(2);
+      @include columns(3);
 
       p {
         font-style: italic;
@@ -64,8 +81,7 @@
     }
 
     &__links {
-      @include columns(2);
-      @include offset(1);
+      @include columns(3);
 
       h5 {
         @include title-pill($color-footer-titles-pill, $width-title-footer-pill, $height-title-footer-pill, $size-title-footer-pill-spacing);
@@ -76,6 +92,36 @@
 
       ul {
         margin-top: $size-title-footer-spacing;
+      }
+    }
+  }
+
+  &__social {
+    padding: $padding-footer-social-vertical 0;
+    text-align: center;
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+
+        & + li {
+          margin-left: $size-footer-social-icon-spacing;
+        }
+
+        a {
+          display: inline-block;
+          width: $size-footer-social-icon;
+          height: $size-footer-social-icon;
+          border-radius: 50%;
+          background-color: $color-footer-social-icon-bg;
+
+          img {
+            height: $size-footer-social-icon-image;
+            margin-top: ($size-footer-social-icon - $size-footer-social-icon-image) / 2;
+          }
+        }
       }
     }
   }

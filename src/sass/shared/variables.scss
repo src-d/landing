@@ -77,6 +77,13 @@ $color-footer-titles: $color-white;
 $color-footer-titles-pill: rgba(255, 255, 255, .1);
 $color-footer-email: $color-white;
 $color-footer-pgp-key-icon: rgba(255, 255, 255, .3);
+$color-footer-social-icon-bg: rgba(255, 255, 255, .1);
+$color-footer-slack-band-title: white;
+$color-footer-slack-band-bg: rgba(0, 0, 0, .3);
+$color-footer-slack-band-error-bg: #ed1c24;
+$color-footer-slack-band-error-border: #9e0039;
+$color-footer-slack-band-success-bg: #64b300;
+$color-footer-slack-band-success-border: #197b30;
 
 $color-projects-icon: $color-terminal-text;
 
@@ -94,6 +101,7 @@ $font-size-pill-button: 21px;
 $font-size-terminal-source-code: 14px;
 $font-size-signature: 48px;
 $font-size-footer-section: 16px;
+$font-size-footer-slack-band-title: 24px;
 $font-size-footer-email: 24px;
 $font-size-title-xsmall: 21px;
 $font-size-small: 18px;
@@ -105,6 +113,7 @@ $font-size-footer-text: $font-size-xsmall;
 $font-size-secondary-nav-item: 21px;
 $font-size-testimonial-usernames: 18px;
 $font-size-slack-form-title: 36px;
+$font-size-slack-band-message: 16px;
 
 // Line Height
 $line-height-condensed: 1em;
@@ -170,12 +179,16 @@ $margin-topbar-menu-spacing: $gutter-size / 4;
 $padding-roadmap-vertical: $gutter-size;
 $padding-roadmap-paragraph-vertical: $gutter-size / 2;
 $padding-roadmap-photo-top: $padding-roadmap-paragraph-vertical + $font-size-title-big + ($gutter-size / 2);
-$padding-roadmap-signature: $gutter-size * 1.4;
+$padding-roadmap-signature: $gutter-size / 2;
 $padding-roadmap-signature-name-bottom: $gutter-size / 2;
+
+$padding-footer-contact-vertical: 45px;
+$padding-footer-social-vertical: 45px;
 
 // Heights and widths
 $height-pill-buttons: 45px;
 $border-width-pills: 2px;
+$width-footer-slack-band-message-icon-border: 2px;
 
 $height-title-big-pill: 15px;
 $width-title-big-pill: 90px;
@@ -192,6 +205,7 @@ $size-title-footer-spacing: $gutter-size / 3 - 1px;
 $height-slack-form-logo: 110px;
 $height-slack-form-input: 45px;
 $height-slack-form-message: 30px;
+$height-slack-form-horizontal-message: 20px;
 $width-slack-form-submit: 240px;
 
 $size-button-spacing: $gutter-size / 2;
@@ -202,16 +216,22 @@ $size-terminal-header-btn-spacing: $gutter-size / 4;
 $size-examples-dot: 15px;
 $size-examples-dot-spacing: 10px;
 $size-examples-dot-border: 3px;
+$width-examples-arrow: 20px;
+$height-examples-arrow: 30px;
+$size-examples-arrow-spacing: 10px;
 
 $height-topbar: 75px;
 $height-topbar-logo: 45px;
 $height-secondary-nav: 60px;
 
+$width-testimonials-avatar: 90px;
+
 $size-button-spacing: $gutter-size / 2;
 
 $width-topbar-submenu-border-size: 5px;
 
-$size-roadmap-photo: 180px;
+$size-roadmap-photo: 90px;
+$size-roadmap-photo-spacing: $gutter-size;
 
 $size-secondary-nav-item-spacing: $gutter-size / 2;
 
@@ -233,6 +253,16 @@ $size-codepill-raw-vertical-correction: 4px / 2;
 $size-codepills-project-height: 30px;
 $size-codepills-project-width: $size-codepills-raw-width * $size-codepills-project-height / $size-codepills-raw-height;
 $size-codepill-project-vertical-correction: $size-codepills-project-height * $size-codepill-raw-vertical-correction / $size-codepills-raw-height;
+
+$size-footer-social-icon-spacing: 15px;
+$size-footer-social-icon: 45px;
+$size-footer-social-icon-image: 30px;
+$size-footer-slack-band: 120px;
+$size-footer-slack-logo: 90px;
+$size-footer-slack-input: 45px;
+$size-footer-slack-button: 45px;
+$size-footer-slack-band-right-distance: 30px;
+$size-footer-slack-band-bottom-distance: -10px;
 
 $height-hero-info: 465px;
 

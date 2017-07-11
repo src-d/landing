@@ -44,6 +44,7 @@ window.addEventListener('DOMContentLoaded', _ => {
   renderBlogCategories('.blog__category', 'blog-container');
   renderComponent(PositionsMain, 'offersPanel');
   renderComponent(SlackForm, 'slack-join');
+  renderComponent(SlackForm, 'horizontal-slack-join');
   setupTestimonials();
 });
 
@@ -80,7 +81,9 @@ function setupExamples() {
     speed: 0,
     fade: true,
     swipe: false,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    appendArrows: '.examples__info__navigation',
+    appendDots: '.examples__info__navigation'
   });
 
   highlightCode(code);
