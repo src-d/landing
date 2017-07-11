@@ -1,19 +1,17 @@
-{{ $slack := $.Site.Data.Home }}
-
 <div class="footer__slack">
     <div class="slack-form__wrap">
         <div class="slack-form__root"
              id="horizontal-slack-join"
-             data-button="Join us{{ $slack.msgs.button }}"
-             data-endpoint="{{ $slack.endpoint }}"
-             data-fetch-error="{{ $slack.msgs.fetch_error }}"
+             data-button="{{ .msgs.button }}"
+             data-endpoint="{{ .endpoint }}"
+             data-fetch-error="{{ .msgs.fetch_error }}"
              data-horizontal="horizontal"
              data-logo="{{ "/img/icons/slack-enter-color.svg" | relURL }}"
-             data-placeholder="Your email{{ $slack.placeholder }}"
-             data-server-error="{{ $slack.msgs.server_error }}"
-             data-success="{{ $slack.msgs.success }}"
-             data-title="Join the community{{ $slack.title }}"
-             data-wait="{{ $slack.msgs.wait }}"
+             data-placeholder="{{ .placeholder }}"
+             data-server-error="{{ .msgs.server_error }}"
+             data-success="{{ .msgs.success }}"
+             data-title="{{ .title }}"
+             data-wait="{{ .msgs.wait }}"
              >
         </div>
     </div>

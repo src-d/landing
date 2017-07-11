@@ -80,6 +80,10 @@ $color-footer-pgp-key-icon: rgba(255, 255, 255, .3);
 $color-footer-social-icon-bg: rgba(255, 255, 255, .1);
 $color-footer-slack-band-title: white;
 $color-footer-slack-band-bg: rgba(0, 0, 0, .3);
+$color-footer-slack-band-error-bg: #ed1c24;
+$color-footer-slack-band-error-border: #9e0039;
+$color-footer-slack-band-success-bg: #64b300;
+$color-footer-slack-band-success-border: #197b30;
 
 $color-projects-icon: $color-terminal-text;
 
@@ -109,6 +113,7 @@ $font-size-footer-text: $font-size-xsmall;
 $font-size-secondary-nav-item: 21px;
 $font-size-testimonial-usernames: 18px;
 $font-size-slack-form-title: 36px;
+$font-size-slack-band-message: 16px;
 
 // Line Height
 $line-height-condensed: 1em;
@@ -183,6 +188,7 @@ $padding-footer-social-vertical: 45px;
 // Heights and widths
 $height-pill-buttons: 45px;
 $border-width-pills: 2px;
+$width-footer-slack-band-message-icon-border: 2px;
 
 $height-title-big-pill: 15px;
 $width-title-big-pill: 90px;
@@ -199,6 +205,7 @@ $size-title-footer-spacing: $gutter-size / 3 - 1px;
 $height-slack-form-logo: 110px;
 $height-slack-form-input: 45px;
 $height-slack-form-message: 30px;
+$height-slack-form-horizontal-message: 20px;
 $width-slack-form-submit: 240px;
 
 $size-button-spacing: $gutter-size / 2;
@@ -221,7 +228,7 @@ $size-button-spacing: $gutter-size / 2;
 
 $width-topbar-submenu-border-size: 5px;
 
-$size-roadmap-photo: 180px;
+$size-roadmap-photo: 90px;
 $size-roadmap-photo-spacing: $gutter-size;
 
 $size-secondary-nav-item-spacing: $gutter-size / 2;
@@ -252,6 +259,8 @@ $size-footer-slack-band: 120px;
 $size-footer-slack-logo: 90px;
 $size-footer-slack-input: 45px;
 $size-footer-slack-button: 45px;
+$size-footer-slack-band-right-distance: 30px;
+$size-footer-slack-band-bottom-distance: -10px;
 
 // Radius
 $border-radius-main: 5px;

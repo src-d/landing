@@ -30,7 +30,7 @@ export default class SlackForm extends React.Component {
           } else {
             this.setState({
               loading: false,
-              errMessage: this.state.serverError
+              errMessage: this.props.serverError
             });
           }
         })

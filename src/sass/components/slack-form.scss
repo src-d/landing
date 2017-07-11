@@ -103,6 +103,7 @@
 
   &--horizontal {
     height: 100%;
+    position: relative;
 
     .slackForm {
       &__header {
@@ -153,6 +154,47 @@
         @include columns(3);
         display: inline;
         margin-top: ($size-footer-slack-band - $size-footer-slack-input) / 2;
+      }
+
+      &__message {
+        @include columns(3);
+        position: absolute;
+        right: $size-footer-slack-band-right-distance;
+        bottom: $size-footer-slack-band-bottom-distance;
+        text-align: center;
+        color: white;
+        font-size: $font-size-slack-band-message;
+
+        &:before {
+          height: $height-slack-form-horizontal-message !important;
+          width: $height-slack-form-horizontal-message !important;
+        }
+
+        &_hidden {
+          visibility: hidden;
+        }
+
+        &_success {
+          @include svg-icon("message-icon-success", 30px, 30px) {
+            border-radius: 50%;
+            border-style: solid;
+            border-color: $color-footer-slack-band-success-border;
+            border-width:  $width-footer-slack-band-message-icon-border;
+            background-color: $color-footer-slack-band-success-bg;
+            margin-right: $margin-right-slack-form-message-icon;
+          }
+        }
+
+        &_error {
+          @include svg-icon("message-icon-error-face", 30px, 30px) {
+            border-radius: 50%;
+            border-style: solid;
+            border-color: $color-footer-slack-band-error-border;
+            border-width:  $width-footer-slack-band-message-icon-border;
+            background-color: $color-footer-slack-band-error-bg;
+            margin-right: $margin-right-slack-form-message-icon;
+          }
+        }
       }
     }
   }
