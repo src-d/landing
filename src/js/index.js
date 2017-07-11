@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', _ => {
   setupStickyHeader();
   setupExamples();
   renderBlogCategories('.blog__category', 'blog-container');
-  renderComponent(PositionsMain, 'offersPanel');
+  renderComponent(PositionsMain, 'offers');
   renderComponent(SlackForm, 'slack-join');
   renderComponent(SlackForm, 'horizontal-slack-join');
   setupTestimonials();

@@ -20,21 +20,8 @@
     padding-top: 0px;
 
     .band__container > h1 {
-        text-align: center;
-        position: relative;
         margin-bottom: -10px;
         margin-top: 50px;
-
-        &:before {
-            display: none;
-        }
-
-        span.title {
-            position: relative;
-            z-index: 1;
-            background: $color-main-bg;
-            padding: 0 $padding-projects-title;
-        }
 
         .svg-icon {
             svg {
@@ -43,16 +30,6 @@
                 height: $size-projects-title-icon;
                 width: $size-projects-title-icon;
                 margin: 0 auto;
-            }
-
-            &:before {
-                content: '';
-                display: block;
-                border-bottom: 1px solid $color-projects-icon;
-                position: absolute;
-                top: $size-projects-title-icon + $line-height-projects-title;
-                left: 0;
-                right: 0;
             }
         }
     }

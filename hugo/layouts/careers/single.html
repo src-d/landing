@@ -4,23 +4,24 @@
 {{ $heroCtx := dict "ctx" . "data" $careers }}
 {{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 
-<body class="stack-page">
+<body class="careers-page">
     {{ partial "header.html" $headerCtx }}
     {{ partial "hero.html" $heroCtx }}
 
     <section class="band band_grey">
         <div class="band__container">
-            <h1>
+            <h1 class="striked">
                 <span class="title">{{ $careers.positions.title }}</span>
             </h1>
-            <div id="offersPanel"></div>
 
-            <h1>
+            <div id="offers"></div>
+
+            <h1 class="striked">
                 <span class="title">{{ $careers.notice.title }}</span>
             </h1>
             <p>{{ $careers.notice.desc }}</p>
 
-            <h1>
+            <h1 class="striked">
                 <span class="title">{{ $careers.gallery.title }}</span>
             </h1>
             {{ range $src := $careers.gallery.images }}
@@ -29,15 +30,14 @@
                 </ul>
             {{ end }}
 
-            <h1>
-                <span class="benefits">{{ $careers.benefits.title }}</span>
+            <h1 class="striked">
+                <span class="title">{{ $careers.benefits.title }}</span>
             </h1>
             {{ range $item := $careers.benefits.items }}
                 <ul>
                     <li>{{ $item | safeHTML }}</li></li>
                 </ul>
             {{ end }}
-
         </div>
     </section>
 
