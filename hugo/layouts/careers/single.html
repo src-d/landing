@@ -8,22 +8,39 @@
     {{ partial "header.html" $headerCtx }}
     {{ partial "hero.html" $heroCtx }}
 
-    <header
-        style="background-image: url('{{ default .Site.Params.headerImageUrl .Params.headerImageUrl }}');"
-    >
-        <div class="mainContainer">
-            <div class="description">
-                <h1 class="title">Our Job Opportunities</h1>
-                <p>Exceptional missions require exceptional people</p>
-            </div>
-        </div>
-    </header>
+    <section class="band band_grey">
+        <div class="band__container">
+            <h1>
+                <span class="title">{{ $careers.positions.title }}</span>
+            </h1>
+            <div id="offersPanel"></div>
 
-    <div class="fullWidth">
-        <div id="offersPanel"></div>
-    </div>
+            <h1>
+                <span class="title">{{ $careers.notice.title }}</span>
+            </h1>
+            <p>{{ $careers.notice.desc }}</p>
+
+            <h1>
+                <span class="title">{{ $careers.gallery.title }}</span>
+            </h1>
+            {{ range $src := $careers.gallery.images }}
+                <ul>
+                    <li><img src="{{ $src | absURL }}" alt=""></li>
+                </ul>
+            {{ end }}
+
+            <h1>
+                <span class="benefits">{{ $careers.benefits.title }}</span>
+            </h1>
+            {{ range $item := $careers.benefits.items }}
+                <ul>
+                    <li>{{ $item | safeHTML }}</li></li>
+                </ul>
+            {{ end }}
+
+        </div>
+    </section>
 
     {{ partial "footer.html" $footerCtx }}
 </body>
-
 </html>
