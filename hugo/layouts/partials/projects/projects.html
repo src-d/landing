@@ -4,7 +4,7 @@
             {{ $category := index $.categories.contents $categoryName }}
             {{ $title := $category.name }}
             {{ $gradient := $category.colors }}
-            <h1>
+            <h1 class="striked">
                 {{ partial "svg" $categoryName }}
                 <span class="title">{{ $title }}</span>
                 <span id="{{ $categoryName }}" class="anchor"></span>

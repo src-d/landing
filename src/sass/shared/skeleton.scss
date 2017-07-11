@@ -37,16 +37,35 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &__container {
-        @include container();
+        @include container;
 
-        & > {
-            h1 {
-                @include default-title-big();
-            }
+        & > h1 {
+            @include default-title-big;
 
-            h2 {
-                @include default-title-medium();
+            &.striked {
+                text-align: center;
+                position: relative;
+
+                &:before {
+                    height: 1px;
+                    width: 100%;
+                    left: 0;
+                    top: 100%;
+                    margin-top: $size-striked-title-pull-top;
+                    background-color: $color-striked-title-line;
+                }
+
+                span.title {
+                    position: relative;
+                    z-index: 1;
+                    background: $color-main-bg;
+                    padding: 0 $padding-projects-title;
+                }
             }
+        }
+
+        & > h2 {
+            @include default-title-medium;
         }
     }
 }
