@@ -273,7 +273,7 @@
 
     &__category {
         h2 {
-            @include default-title-medium();
+            @include default-title-medium;
         }
 
         & + & {
@@ -306,7 +306,7 @@
 
       &:first-child,
       &:nth-child(2) {
-        display: block;
+        display: flex;
       }
 
       & + .testimonial {
@@ -314,18 +314,19 @@
       }
 
       &__avatar {
-        @include columns(1);
+        width: $width-testimonials-avatar;
         margin-top: $padding-roadmap-paragraph-vertical;
+        margin-left: $gutter-size;
 
         img {
           max-width: 100%;
           border-radius: 50%;
-          margin-left: -($gutter-size / 2);
+          margin-left: -$gutter-size;
         }
       }
 
       blockquote {
-        @include columns(9);
+        width: 100%;
 
         .svg-icon svg {
           display: inline;
