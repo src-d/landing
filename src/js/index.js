@@ -12,8 +12,12 @@ import SlackForm from './components/SlackForm';
 
 polyfill();
 
-function renderComponent(component, id, props = {}) {
-  const elem = document.getElementById(id);
+function renderComponent(component, target, props = {}) {
+  let elem = target;
+  if (typeof target === 'string') {
+    elem = document.getElementById(target);
+  }
+
   if (elem) {
     ReactDOM.render(
       React.createElement(component, Object.assign({}, props, elem.dataset)),
@@ -44,9 +48,16 @@ window.addEventListener('DOMContentLoaded', _ => {
   renderBlogCategories('.blog__category', 'blog-container');
   renderComponent(PositionsMain, 'offers');
   renderComponent(SlackForm, 'slack-join');
-  renderComponent(SlackForm, 'horizontal-slack-join');
+  renderHorizontalSlackForms();
   setupTestimonials();
 });
+
+function renderHorizontalSlackForms() {
+  const elems = document.querySelectorAll('.horizontal-slack-join');
+  Array.from(elems).forEach(form => {
+    renderComponent(SlackForm, form);
+  });
+}
 
 function setupStickyHeader() {
   const topBar = document.querySelector('#topbar');

@@ -2,7 +2,7 @@
 
 <footer class="footer">
     {{ if default true $.include_slack }}
-        {{ partial "footer/slack.html" $ctx.Site.Data.home.home.slack }}
+        {{ partial "footer/slack.html" $ctx.Site.Data.slack }}
     {{ end }}
 
     {{ if default false $.include_email }}

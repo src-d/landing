@@ -22,6 +22,7 @@
     .band__container > h1 {
         margin-bottom: -10px;
         margin-top: 50px;
+        position: relative;
 
         .svg-icon {
             svg {
@@ -29,14 +30,43 @@
                 display: block;
                 height: $size-projects-title-icon;
                 width: $size-projects-title-icon;
-                margin: 0 auto;
+                margin: 0 auto $size-projects-title-icon-spacing auto;
             }
         }
     }
 
     .cards_projects_no-data {
         max-width: 400px;
-        margin: 50px auto 10px;
+        margin: $gutter-size auto;
         text-align: center;
+    }
+
+    .slack-form__root {
+        margin: 0 auto;
+        .slackForm {
+            &__title {
+                display: none;
+            }
+
+            &__logo {
+                width: auto;
+                margin-top: 0;
+            }
+
+            &__input,
+            &__submit {
+                margin-top: ($size-footer-slack-logo - $height-pill-buttons) / 2;
+            }
+
+            &__submit {
+               @include pill-style(blue);
+            }
+
+            &__message {
+                right: 0;
+                bottom: -$gutter-size;
+                color: $color-text-default;
+            }
+        }
     }
 }
