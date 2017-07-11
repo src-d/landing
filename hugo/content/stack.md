@@ -3,7 +3,7 @@ type: stack
 classes: ["static"]
 section: stack
 url: stack
-title: Stack
+title: Tech stack
 description: This is our stack tools
-headerImageUrl: /img/hero/back-2.jpg
+headerImageName: dennis-ritchie
 ---

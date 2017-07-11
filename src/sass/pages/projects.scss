@@ -1,57 +1,19 @@
-.projects-hero {
-  @include corporate-gradient;
-  padding: ($padding-hero-vertical + $height-topbar + $height-secondary-nav) 0 0 0;
-  overflow: hidden;
-
-  &__wrap {
-    @include row;
-    @include container;
-    position: relative;
-
-    .code-pills-left {
-      position: absolute;
-      // this position is so that the code pills match with the position of the
-      // pill in the title
-      right: 90%;
-      top: -69px;
-    }
-  }
-
-  &__info {
-    @include columns(5);
-    color: $color-hero-text;
-
-    h1 {
-      @include white-title-big;
-    }
-
-    p {
-      margin: $margin-hero-desc-vertical 0;
-    }
-  }
-
-  &__picture {
-    @include columns(5);
-    margin-top: -$gutter-size;
-
-    img {
-      max-width: 80%;
-      display: block;
-      margin: 0 auto;
-    }
-  }
-}
-
 .blog {
-  display: none;
+    display: none;
 
-  &__title {
-    @include default-title-big;
-  }
+    &__title {
+        @include default-title-big;
+    }
 }
 
-.projects-page .band_grey {
-    padding-top: 0px;
+.projects-page {
+    .hero__picture img {
+        width: 85%;
+    }
+
+    .band_grey {
+        padding-top: 0px;
+    }
 }
 
 .projects.band_grey {

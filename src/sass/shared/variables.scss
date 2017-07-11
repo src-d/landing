@@ -234,6 +234,8 @@ $size-codepills-project-height: 30px;
 $size-codepills-project-width: $size-codepills-raw-width * $size-codepills-project-height / $size-codepills-raw-height;
 $size-codepill-project-vertical-correction: $size-codepills-project-height * $size-codepill-raw-vertical-correction / $size-codepills-raw-height;
 
+$height-hero-info: 465px;
+
 // Radius
 $border-radius-main: 5px;
 $border-radius-pill-style: $height-pill-buttons / 2;
