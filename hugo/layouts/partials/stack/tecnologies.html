@@ -1,0 +1,18 @@
+{{ range $i, $item := $.group.items }}
+    <article class="circle-list__section__group__item">
+        {{ if and (default false $.group.pipeline) (ne $i 0) }}
+            {{ partial "svg" "arrow" }}
+        {{ end }}
+        <a href="{{ $item.url }}" target="_blank">
+            <figure>
+                <img src="/img/stack/{{ $item.id }}.png" alt="Logo of {{ $item.name }}" />
+            </figure>
+            <div class="circle-list__section__group__item__info">
+                <h2>{{ $item.name }}</h2>
+                <span class="circle-list__section__group__item__info__subtitle">
+                    {{ $item.desc | safeHTML }}
+                </span>
+            </div>
+        </a>
+    </article>
+{{ end }}
