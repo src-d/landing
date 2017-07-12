@@ -19,37 +19,8 @@
     }
   }
 
-  &__contact {
-    text-align: center;
-    padding: $padding-footer-contact-vertical 0;
-
-    a {
-      display: block;
-      text-decoration: none;
-
-      &.contact-email {
-        font-size: $font-size-footer-email;
-        color: $color-footer-email;
-      }
-
-      &.pgp-key {
-        @include svg-color("key", $color-footer-pgp-key-icon);
-        font-size: $font-size-footer-text;
-        color: $color-footer-text;
-
-        & > * {
-          vertical-align: middle;
-          display: inline-block;
-        }
-
-        span + span {
-          padding-left: $gutter-size / 5;
-          // svg icon has a weird size, so aligning the two items in the middle
-          // does not make a very pleasant centering
-          margin-top: -5px;
-        }
-      }
-    }
+  .contact-us {
+      padding: $padding-footer-contact-vertical 0;
   }
 
   &__sitemap {

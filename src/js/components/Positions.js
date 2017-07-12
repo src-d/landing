@@ -6,16 +6,17 @@ import { states, loadPositions } from '../services/api';
 const ALL_TEAMS = 'All';
 const POSITION_URL = 'https://jobs.lever.co/sourced/:positionId';
 
-export default class PositionsMain extends Component {
+export default class PositionsPanel extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       status: states.LOADING,
+      filterBy: ALL_TEAMS,
       positions: {
         positions: [],
-        teams: [],
-      },
+        teams: []
+      }
     };
   }
 
@@ -24,7 +25,7 @@ export default class PositionsMain extends Component {
       .then(positions => {
         this.setState({
           status: states.LOADED,
-          positions: positions,
+          positions: positions
         });
       })
       .catch(err => {
@@ -33,174 +34,100 @@ export default class PositionsMain extends Component {
       });
   }
 
-  render() {
-    return (
-      <div>
-        <PositionListContainer
-          status={this.state.status}
-          positions={this.state.positions}
-        />
-      </div>
-    );
-  }
-}
-
-class PositionListContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      filterTeam: null,
-    };
-
-    this.teamHandler = teamName => () =>
-      this.setState({ filterTeam: teamName });
+  onTeamSelected(team) {
+    this.setState({ filterBy: team });
   }
 
   render() {
-    if (this.props.status === states.LOADING) {
+    const { status, positions: { positions, teams }, filterBy } = this.state;
+    if (status === states.LOADING) {
       return <Loading />;
-    } else if (this.props.status === states.ERROR) {
+    } else if (status === states.ERROR) {
       return <LoadingError />;
     }
 
     return (
-      <div className="stack mainContainer">
-        <h2>Current Openings</h2>
-        <Teams
-          teams={this.props.positions.teams}
-          handler={this.teamHandler}
-          active={this.state.filterTeam}
+      <div className="positions">
+        <TeamSelector
+          teams={teams}
+          onTeamSelected={team => this.onTeamSelected(team)}
+          active={filterBy}
         />
-        <Positions
-          positions={this.props.positions.positions}
-          filterTeam={this.state.filterTeam}
-        />
+        <Positions positions={positions} filterBy={filterBy} />
       </div>
     );
   }
 }
 
-class Positions extends Component {
-  constructor(props) {
-    super(props);
-    this.positions = props.positions;
-  }
+function Positions({ positions, filterBy }) {
+  const positionList = positions.filter(
+    p => p.team === filterBy || filterBy === ALL_TEAMS
+  );
 
-  isVisible(position) {
-    return (
-      !this.props.filterTeam ||
-      this.props.filterTeam === ALL_TEAMS ||
-      this.props.filterTeam === position.team
-    );
-  }
-
-  isUnique() {
-    return this.positions.length === 1;
-  }
-
-  render() {
-    return (
-      <div className="offerList">
-        {this.positions.map((position, i) => {
-          return (
-            <Position
-              key={i}
-              data={position}
-              enabled={this.isVisible(position)}
-              unique={this.isUnique()}
-            />
-          );
-        })}
-      </div>
-    );
-  }
-}
-
-function Position({ data, enabled, unique }) {
   return (
-    <div
-      className={getClass(
-        'job',
-        unique ? 'unique' : '',
-        enabled ? 'show' : 'hide',
-      )}
-    >
+    <div className="positions__list cards">
+      {positionList.map((position, i) => <Position key={i} data={position} />)}
+    </div>
+  );
+}
+
+function Position({ data }) {
+  return (
+    <div className="positions__job cards__element">
       <a href={getPositionExternalUrl(data)} target="_blank">
-        <h3 className="title">
-          {data.title}
-        </h3>
-        <p className="tags">
-          <span className="tag">
-            {data.team}
-          </span>
-          <span className="tag">
-            {data.location}
-          </span>
-          <span className="tag">
-            {data.commitment}
-          </span>
-        </p>
-        <div className="link">
-          <span className="clickable">view & apply</span>
-        </div>
+        <section>
+          <header className="positions__job__header">
+            <figure>
+              <img
+                src={`/img/icons/teams/${data.team.toLowerCase()}.svg`}
+                alt=""
+              />
+            </figure>
+            <h1>
+              {data.title}
+            </h1>
+          </header>
+        </section>
+        <footer className="positions__job__footer">
+          <ul className="positions__job__features">
+            {['team', 'location', 'commitment'].map((feature, i) =>
+              <li
+                key={i}
+                className={`positions__job__feature positions__job__feature_${feature}`}
+              >
+                {data[feature]}
+              </li>
+            )}
+          </ul>
+          <div className="positions__job__actions">
+            <button className="positions__job__apply">view & apply</button>
+          </div>
+        </footer>
       </a>
     </div>
   );
 }
 
-class Teams extends Component {
-  constructor(props) {
-    super(props);
-    this.teams = props.teams;
-    this.handler = props.handler;
-    if (this.teams.length > 1) {
-      this.teams = [ALL_TEAMS].concat(this.teams);
-    }
+function TeamSelector({ teams, active, onTeamSelected }) {
+  if (teams.length <= 1) {
+    return null;
   }
 
-  isEnabled(teamName) {
-    return (
-      (teamName === ALL_TEAMS && !this.props.active) ||
-      this.props.active === teamName
-    );
-  }
-
-  render() {
-    if (this.teams.length < 2) {
-      return null;
-    }
-
-    return (
-      <div className="teamList">
-        {this.teams.map((team, i) => {
-          return (
-            <Team
-              key={i}
-              name={team}
-              enabled={this.isEnabled(team)}
-              handler={this.handler}
-            />
-          );
-        })}
-      </div>
-    );
-  }
-}
-
-function Team({ name, enabled, handler }) {
   return (
-    <span
-      className={'btn ' + (enabled ? 'selected' : '')}
-      onClick={handler(name)}
-    >
-      {name}
-    </span>
+    <div className="positions__teams">
+      {[ALL_TEAMS].concat(teams).map((team, i) =>
+        <button
+          className={`positions__teams__team ${team === active
+            ? 'positions__teams__team_active'
+            : ''}`}
+          key={i}
+          onClick={() => onTeamSelected(team)}
+        >
+          {team}
+        </button>
+      )}
+    </div>
   );
-}
-
-function getClass() {
-  return Array.from(arguments).join(' ');
 }
 
 function getPositionExternalUrl(position) {

@@ -18,6 +18,7 @@
   "dependencies": {
     "es6-promise": "^4.0.5",
     "highlight.js": "^9.11.0",
+    "lightbox2": "^2.9.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "slick-carousel": "1.6.0",

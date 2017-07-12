@@ -1,11 +1,11 @@
 {{ $email := .Params.contactemail | default .Site.Params.defaultemail }}
 
-<div class="footer__contact">
+<div class="contact-us">
     <a class="contact-email" href="mailto:{{ $email }}">{{ $email }}</a>
 
     {{ if ne .Site.Params.pgpLink "" }}
     <a class="pgp-key" href="{{ .Site.Params.pgpLink }}" target="_blank">
-        {{ partial "svg" "key" }} 
+        {{ partial "svg" "key" }}
         <span>Looking for our PGP key?</span>
     </a>
     {{end}}
