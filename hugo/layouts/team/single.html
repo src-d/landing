@@ -8,27 +8,31 @@
     {{ partial "header.html" $headerCtx }}
     {{ partial "hero.html" $heroCtx }}
 
-    <section class="band band_grey">
-        <div class="band__container">
-            {{ range $t := $team.teams }}
-                <h1>
-                    <span class="title">{{ $t.name }}</span>
-                </h1>
+    <div class="circle-list">
+        {{ range $t := $team.teams }}
+            <section class="band band_grey band_condensed circle-list__section circle-list__section_4">
+                <div class="band__container">
+                    <h1 class="striked">
+                        <span class="title">{{ $t.name }}</span>
+                    </h1>
 
-                <p>{{ $t.headline }}</p>
-
-                <div class="members">
-                    {{ if default false $t.subteams }}
-                        {{ range $subteam := $t.subteams }}
-                            {{ partial "team-members.html" $subteam }}
-                        {{ end }}
-                    {{ else }}
-                        {{ partial "team-members.html" $t }}
+                    {{ if $t.headline }}
+                        <p>{{ $t.headline }}</p>
                     {{ end }}
+
+                    <div class="circle-list__section__group">
+                        {{ if default false $t.subteams }}
+                            {{ range $subteam := $t.subteams }}
+                                {{ partial "team/members.html" (dict "ctx" . "group" $subteam "scratch" $.Scratch) }}
+                            {{ end }}
+                        {{ else }}
+                            {{ partial "team/members.html" (dict "ctx" . "group" $t "scratch" $.Scratch) }}
+                        {{ end }}
+                    </div>
                 </div>
-            {{ end }}
-        </div>
-    </section>
+            </section>
+        {{ end }}
+    </div>
 
     {{ partial "footer.html" $footerCtx }}
 </body>
