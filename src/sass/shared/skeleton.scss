@@ -78,3 +78,46 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 }
+
+.contact-us {
+    text-align: center;
+
+    a {
+      display: block;
+      text-decoration: none;
+
+      &.contact-email {
+        font-size: $font-size-contact-email;
+        color: $color-contact-email-light;
+      }
+
+      &.pgp-key {
+        @include svg-color("key", $color-contact-pgp-key-icon-light);
+        font-size: $font-size-contact-text;
+        color: $color-contact-text-light;
+
+        & > * {
+          vertical-align: middle;
+          display: inline-block;
+        }
+
+        span + span {
+          padding-left: $gutter-size / 5;
+          // svg icon has a weird size, so aligning the two items in the middle
+          // does not make a very pleasant centering
+          margin-top: -5px;
+        }
+      }
+    }
+
+    &_dark {
+        a.contact-email {
+            color: $color-contact-email-dark;
+        }
+
+        a.pgp-key {
+            @include svg-color("key", $color-contact-pgp-key-icon-dark);
+            color: $color-contact-text-dark;
+        }
+    }
+}

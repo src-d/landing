@@ -9,36 +9,61 @@
     {{ partial "hero.html" $heroCtx }}
 
     <section class="band band_grey band_condensed">
-        <div class="band__container">
+        <article class="band__container offers">
             <h1 class="striked">
                 <span class="title">{{ $careers.positions.title }}</span>
             </h1>
 
-            <div id="offers"></div>
+            <div id="offers" class="offers__list"></div>
+        </article>
 
+        <article class="band__container">
             <h1 class="striked">
                 <span class="title">{{ $careers.notice.title }}</span>
             </h1>
-            <p>{{ $careers.notice.desc }}</p>
 
+            <div class="text-section">
+                <p>{{ $careers.notice.desc }}</p>
+
+                <div class="contact-us_dark">
+                    {{ partial "contact-us.html" $ }}
+                </div>
+            </div>
+        </article>
+
+        <article class="band__container">
             <h1 class="striked">
                 <span class="title">{{ $careers.gallery.title }}</span>
             </h1>
-            {{ range $src := $careers.gallery.images }}
-                <ul>
-                    <li><img src="{{ $src | absURL }}" alt=""></li>
-                </ul>
-            {{ end }}
 
+            <div class="hq-gallery">
+                <ul>
+                    {{ range $src := $careers.gallery.images }}
+                        <li class="hq-gallery__item">
+                            <img src="{{ $src | absURL }}" alt="">
+
+                            <a href="{{ $src | absURL }}"class="hq-gallery__item__trigger" data-lightbox="hq" data-title="source{d} headquarters, Madrid">
+                                {{ partial "svg" "zoom-open" }}
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </article>
+
+        <article class="band__container">
             <h1 class="striked">
                 <span class="title">{{ $careers.benefits.title }}</span>
             </h1>
-            {{ range $item := $careers.benefits.items }}
+            <div class="text-section">
+                <p>{{ $careers.benefits.desc }}:</p>
                 <ul>
-                    <li>{{ $item | safeHTML }}</li></li>
+                    {{ range $item := $careers.benefits.items }}
+                        <li>{{ $item | safeHTML }}</li></li>
+                    {{ end }}
                 </ul>
-            {{ end }}
-        </div>
+            </div>
+        </article>
     </section>
 
     {{ partial "footer.html" $footerCtx }}

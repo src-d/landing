@@ -5,9 +5,11 @@ import React from 'react';
 
 import $ from 'jquery';
 import 'slick-carousel';
+import lightbox from 'lightbox2';
+import 'lightbox2/dist/css/lightbox.css';
 import hljs from 'highlight.js';
 import BlogPostsContainer from './components/Posts';
-import PositionsMain from './components/Positions';
+import PositionsPanel from './components/Positions';
 import SlackForm from './components/SlackForm';
 
 polyfill();
@@ -46,10 +48,13 @@ window.addEventListener('DOMContentLoaded', _ => {
   setupStickyHeader();
   setupExamples();
   renderBlogCategories('.blog__category', 'blog-container');
-  renderComponent(PositionsMain, 'offers');
+  renderComponent(PositionsPanel, 'offers');
   renderComponent(SlackForm, 'slack-join');
   renderHorizontalSlackForms();
   setupTestimonials();
+  lightbox.option({
+    disableScrolling: true
+  });
 });
 
 function renderHorizontalSlackForms() {

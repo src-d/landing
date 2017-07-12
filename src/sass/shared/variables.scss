@@ -71,11 +71,15 @@ $color-examples-dot: $color-light-blue;
 $color-examples-dot-border: $color-light-blue;
 
 $color-footer-text: $color-pale-grey;
+$color-contact-text-light: $color-pale-grey;
+$color-contact-text-dark: $color-light-blue;
 $color-footer-links-hover: $color-pale-blue;
 $color-footer-titles: $color-white;
 $color-footer-titles-pill: rgba(255, 255, 255, .1);
-$color-footer-email: $color-white;
-$color-footer-pgp-key-icon: rgba(255, 255, 255, .3);
+$color-contact-email-light: $color-white;
+$color-contact-email-dark: $color-light-blue;
+$color-contact-pgp-key-icon-light: rgba(255, 255, 255, .3);
+$color-contact-pgp-key-icon-dark: transparentize($color-light-blue, .7);
 $color-footer-social-icon-bg: rgba(255, 255, 255, .1);
 $color-footer-slack-band-title: white;
 $color-footer-slack-band-bg: rgba(0, 0, 0, .3);
@@ -90,6 +94,12 @@ $color-striked-title-line: $color-terminal-text;
 $color-card-background: $color-clear-bg;
 $color-card-project-title: $color-dark-blue;
 
+$color-careers-benefits-dot: $color-terminal-text;
+$color-positions-filter-border: #ebebeb;
+$color-positions-filter-dot: #d2d2d2;
+$color-positions-filter-dot-active: $color-light-blue;
+$color-position-job-feature: rgba(0, 0, 0, .7);
+
 // Text sizes
 $font-size-body: 20px;
 $font-size-menu: 24px;
@@ -102,7 +112,7 @@ $font-size-terminal-source-code: 14px;
 $font-size-signature: 48px;
 $font-size-footer-section: 16px;
 $font-size-footer-slack-band-title: 24px;
-$font-size-footer-email: 24px;
+$font-size-contact-email: 24px;
 $font-size-title-xsmall: 21px;
 $font-size-large: 24px;
 $font-size-small: 18px;
@@ -111,10 +121,13 @@ $font-size-xxsmall: 14px;
 $font-size-micro: 12px;
 $font-size-footer-titles: 21px;
 $font-size-footer-text: $font-size-xsmall;
+$font-size-contact-text: $font-size-xsmall;
 $font-size-secondary-nav-item: 21px;
 $font-size-testimonial-usernames: 18px;
 $font-size-slack-form-title: 36px;
 $font-size-slack-band-message: 16px;
+$font-size-positions-filter: 18px;
+$font-size-positions-btn: 18px;
 
 // Line Height
 $line-height-condensed: 1em;
@@ -196,6 +209,15 @@ $size-circles-below-item-title: 15px;
 
 $size-stack-between-groups: 120px;
 $size-stack-below-group-name: 60px;
+
+$margin-top-careers-content: 45px;
+$margin-bottom-careers-section: 90px;
+$padding-left-careers-benefits-list-item: 20px;
+
+$padding-left-position-filter: $gutter-size;
+$padding-right-position-filter: $gutter-size / 2;
+$padding-position-job-footer: $gutter-size / 2;
+$padding-position-job-feature-spacing: 8px;
 
 // Heights and widths
 $height-pill-buttons: 45px;
@@ -290,6 +312,19 @@ $max-width-circles-info: 240px;
 
 $height-stack-pipeline: 45px;
 $width-stack-pipeline: 28px;
+
+$size-careers-benefits-list-item-dot-spacing-top: ($gutter-size / 2) + ($font-size-body / 2) - 1px;
+$size-careers-benefits-list-item-dot: 10px;
+
+$height-position-filter: $gutter-size;
+$size-position-filter-spacing: $gutter-size / 2;
+$size-position-filter-dot: 16px;
+$height-positions-job-header: 100px;
+$size-positions-job-header-icon: 45px;
+$width-positions-job-header-icon-wrap: 75px;
+$size-positions-job-feature-icon: 20px;
+$width-positions-btn: 180px;
+$height-positions-btn: $gutter-size;
 
 // Radius
 $border-radius-main: 5px;
