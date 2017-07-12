@@ -1,5 +1,5 @@
 title: tech stack
-desc: At source{d} we work carefully to find the best languages, libraries and tools for each purpose in our pipeline. We rely heavily on open source software to build the projects that make way for machine learning on source code.
+desc: At source{d} we work carefully to find the best languages, libraries and tools for each purpose in our pipeline. We rely heavily on open source software to build the <a href="/projects">projects</a> that make way for machine learning on source code.
 stack:
   - id: languages
     title: Languages we use
@@ -32,6 +32,7 @@ stack:
         url: "https://github.com"
   - id: deploy
     title: Our deployment pipeline
+    pipeline: true
     items:
       - id: github
         name: GitHub

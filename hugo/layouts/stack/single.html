@@ -8,41 +8,31 @@
     {{ partial "header.html" $headerCtx }}
     {{ partial "hero.html" $heroCtx }}
 
-    <header
-        style="background-image: url('{{ default .Site.Params.headerImageUrl .Params.headerImageUrl }}');"
-    >
-        <div class="mainContainer">
-            <div class="description">
-                <h1 class="title">Our stack</h1>
-                <p>At source{d} we work carefully to find the best languages, libraries and tools for each purpose in our pipeline</p>
-            </div>
-        </div>
-    </header>
-
-    <div class="fullWidth">
-        <div class="stack mainContainer">
-            <h2>Our stack</h2>
-            {{ range $section := $.Site.Data.stack.stack }}
-            <div class="stackSection {{ $section.id }}">
-                <h3>{{ $section.title }}</h3>
-
-                <div class="stackItems">
-                    {{ range $item := $section.items }}
-                    <div class="stackItem">
-                        <a href="{{ $item.url }}" target="_blank">
-                            <div class="itempic"><img src="/img/stack/{{ $item.id }}.svg" alt="{{ $item.name }}" /></div>
-                            {{ if ne $item.desc "" }}
-                            <p>{{ $item.desc | safeHTML }} {{ end }}
-                        </a>
+    <div class="circle-list">
+        {{ range $role := $.Site.Data.stack.stack }}
+            <section
+                class="
+                    band
+                    band_grey
+                    band_condensed
+                    circle-list__section
+                    circle-list__section_{{ $role.items | len }}
+                    circle-list__section_{{ $role.id }}
+                "
+            >
+                <div class="band__container">
+                    <h1 class="striked">
+                        <span class="title">{{ $role.title }}</span>
+                    </h1>
+                    <div class="circle-list__section__group">
+                        {{ partial "stack/tecnologies.html" (dict "ctx" . "group" $role) }}
                     </div>
-                    {{ end }}
                 </div>
-            </div>
-            {{ end }}
-        </div>
+            </section>
+        {{ end }}
     </div>
+
 
     {{ partial "footer.html" $footerCtx }}
 </body>
-
 </html>

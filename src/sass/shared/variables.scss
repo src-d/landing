@@ -17,7 +17,6 @@ $color-pill-button-white-main: $color-white;
 $color-pill-button-white-hover-main: $color-dark-blue;
 $color-pill-button-white-hover-bg: $color-pill-button-white-main;
 
-
 $color-text-default: black;
 
 $color-links: $color-light-blue;
@@ -105,6 +104,7 @@ $font-size-footer-section: 16px;
 $font-size-footer-slack-band-title: 24px;
 $font-size-footer-email: 24px;
 $font-size-title-xsmall: 21px;
+$font-size-large: 24px;
 $font-size-small: 18px;
 $font-size-xsmall: 16px;
 $font-size-xxsmall: 14px;
@@ -139,10 +139,13 @@ $gutter-size: 30px;
 $num-columns: 12;
 
 // Paddings and margins
+$padding-section-vertical: $column-size;
+
 $padding-slack-form: 0;
 $margin-bottom-slack-form-input: 15px;
 $margin-bottom-slack-form-submit-button: 15px;
 $margin-bottom-slack-form-message: 15px;
+$margin-top-footer-slack: -($padding-section-vertical / 2);
 $padding-top-slack-form-header: 15px;
 $padding-lateral-slack-form: 2 * $padding-top-slack-form-header;
 $padding-lateral-slack-form-header: 2 * $padding-top-slack-form-header;
@@ -154,7 +157,6 @@ $padding-bottom-slack-form-description: 60px;
 
 $margin-hero-desc-vertical: 30px;
 $padding-hero-vertical: 90px;
-$padding-section-vertical: $column-size;
 
 $padding-pill-button-sides: 25px; //$height-pill-buttons / 2;
 
@@ -185,6 +187,15 @@ $padding-roadmap-signature-name-bottom: $gutter-size / 2;
 
 $padding-footer-contact-vertical: 45px;
 $padding-footer-social-vertical: 45px;
+
+$size-circle-image: 200px;
+$size-circles-between-groups: 60px;
+$size-circles-below-group-name: 45px;
+$size-circles-above-item-title: 15px;
+$size-circles-below-item-title: 15px;
+
+$size-stack-between-groups: 120px;
+$size-stack-below-group-name: 60px;
 
 // Heights and widths
 $height-pill-buttons: 45px;
@@ -272,6 +283,14 @@ $size-projects-title-icon-spacing: 7px;
 
 $height-hero-info: 465px;
 
+$size-team-social: 30px;
+$size-team-social-shift: 5px;
+
+$max-width-circles-info: 240px;
+
+$height-stack-pipeline: 45px;
+$width-stack-pipeline: 28px;
+
 // Radius
 $border-radius-main: 5px;
 $border-radius-pill-style: $height-pill-buttons / 2;
@@ -286,3 +305,6 @@ $shadow-color-pill-button-white-hover: 0 0 1px 5px rgba(60, 118, 159, 1);
 // Transitions
 $transition-main-time: .3s;
 $transition-main-effect: ease-in;
+
+// Borders
+$border-person-card: 5px solid #E8ECED;

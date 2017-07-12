@@ -1,0 +1,93 @@
+.circle-list {
+    .band {
+        padding-bottom: 0;
+
+        &__container p {
+            text-align: center;
+        }
+
+        .striked {
+            margin: $size-circles-between-groups auto $size-circles-below-group-name;
+        }
+
+        &:last-child {
+            padding-bottom: $size-circles-between-groups - $margin-top-footer-slack;
+        }
+    }
+
+    &__section_3 {
+        .circle-list__section__group {
+            &__item  {
+                @include columns(4);
+            }
+        }
+    }
+
+    &__section_2 {
+        .circle-list__section__group {
+            &__item  {
+                @include columns(6);
+            }
+        }
+    }
+
+    &__section_1 {
+        .circle-list__section__group {
+            &__item  {
+                @include columns(12);
+            }
+        }
+    }
+
+    &__section__group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__item {
+            @include columns(3);
+            text-align: center;
+            position: relative;
+            margin-top: $size-circles-below-group-name;
+
+            &:nth-child(4n+1) {
+                margin-left: 0;
+            }
+
+            figure {
+                position: relative;
+                width: $size-circle-image;
+                height: $size-circle-image;
+                margin: 0 auto;
+                overflow: hidden;
+                border-radius: 100%;
+                border: $border-person-card;
+                background: $color-card-background;
+            }
+
+            &__info {
+                max-width: $max-width-circles-info;
+                margin: auto;
+
+                h2 {
+                    @include title-large;
+                    margin: $size-circles-above-item-title auto $size-circles-below-item-title;
+                    color: $color-pill-button-main;
+                }
+
+                &__subtitle,
+                &__sub-subtitle {
+                    display: block;
+                }
+
+                &__subtitle {
+                    @include title-xsmall;
+                }
+
+                &__sub-subtitle {
+                    @include title-xsmall(light);
+                }
+            }
+        }
+    }
+}
