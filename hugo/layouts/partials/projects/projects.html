@@ -1,9 +1,12 @@
+{{ $categories := $.categories.categories }}
+
 <section class="projects band band_grey">
-    <div class="band__container">
-        {{ range $categoryName := .categories.order }}
-            {{ $category := index $.categories.contents $categoryName }}
-            {{ $title := $category.name }}
-            {{ $gradient := $category.colors }}
+    {{ range $categoryName := $categories.order }}
+        {{ $category := index $categories.contents $categoryName }}
+        {{ $title := $category.name }}
+        {{ $gradient := $category.colors }}
+
+        <div class="band__container">
             <h1 class="striked">
                 {{ partial "svg" $categoryName }}
                 <span class="title">{{ $title }}</span>
@@ -16,9 +19,25 @@
                         {{ partial "card.html" $context }}
                     {{ end }}
                 {{ else }}
-                    <p class="cards_projects_no-data">{{ $.no_data_message }}</p>
+                    <p class="cards_projects_no-data">{{ $.categories.no_data_message }}</p>
+
+                    {{ with $.slack }}
+                        <div class="slack-form__root horizontal-slack-join"
+                             data-button="{{ .msgs.button }}"
+                             data-endpoint="{{ .endpoint }}"
+                             data-fetch-error="{{ .msgs.fetch_error }}"
+                             data-horizontal="horizontal"
+                             data-logo="{{ "/img/icons/slack-enter-color.svg" | relURL }}"
+                             data-placeholder="{{ .placeholder }}"
+                             data-server-error="{{ .msgs.server_error }}"
+                             data-success="{{ .msgs.success }}"
+                             data-title="{{ .title }}"
+                             data-wait="{{ .msgs.wait }}"
+                             >
+                        </div>
+                    {{ end }}
                 {{ end }}
             </div>
-        {{ end }}
-    </div>
+        </div>
+    {{ end }}
 </section>

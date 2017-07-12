@@ -8,18 +8,6 @@ links:
     url: http://sourced.tech/manifesto
     text: Our manifesto
 
-slack:
-  title: "Join the community"
-  placeholder: "Your email"
-  desc: "We'd be thrilled to have you on our slack"
-  endpoint: "/invite"
-  msgs:
-    success: Success! Check your email!
-    button: Join us on slack
-    wait: Please wait...
-    server_error: Error! submit again.
-    fetch_error: Server error
-
 examples:
   display: true
 

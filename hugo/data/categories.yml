@@ -7,7 +7,6 @@ categories:
     - languages
     - science
     - demos
-    - other
   contents:
     datasets:
       name: datasets
@@ -83,17 +82,3 @@ categories:
       name: demos
       colors: {left: "#ffba34", right: "#fff444"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
-    other:
-      name: other
-      colors: {left: "#00b3ed", right: "#aaedf4"}
-      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
-      items:
-        - name: Kallax
-          url: https://github.com/src-d/go-kallax
-          desc: Kallax is a PostgreSQL typesafe ORM for the Go language.
-        - name: Proteus
-          url: https://github.com/src-d/proteus
-          desc: Generate .proto files from Go source code.
-        - name: docsrv
-          url: https://docsrv.sourced.tech
-          desc: docsrv is an app to serve versioned documentation for GitHub projects on demand
