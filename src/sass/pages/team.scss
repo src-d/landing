@@ -2,4 +2,33 @@
     .hero__picture img {
         width: 90%;
     }
+
+    .circle-list {
+        figure img {
+            position: absolute;
+            top: -20px;
+            left: -35px;
+            width: 135%;
+        }
+
+        address {
+            $circle-shift: $size-circle-image - $size-team-social + $size-team-social-shift;
+            position: absolute;
+            top: $circle-shift;
+            left: $circle-shift + (grid-size(3) - $size-circle-image) / 2;
+            width: $size-team-social;
+
+            svg {
+                fill: $color-pill-button-main;
+
+                g {
+                    fill: inherit !important;
+                }
+            }
+
+            .sr {
+                @include sr-only;
+            }
+        }
+    }
 }
