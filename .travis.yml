@@ -27,6 +27,7 @@ install:
   - . $HOME/.nvm/nvm.sh
   - nvm install 8
   - nvm use 8
+  - npm rebuild node-sass --no-bin-links
   - go get -u -v -t ./api/...
 
 script:
