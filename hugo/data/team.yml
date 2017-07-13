@@ -6,7 +6,7 @@ teams:
       subteams:
         - teamName: Data Retrieval Team
           members:
-          - picture: santiago.jpg
+          - picture: santiago.png
             name: Santiago Mola
             position: Lead Software Engineer
             github: https://github.com/smola
@@ -55,7 +55,7 @@ teams:
 
         - teamName: Machine Learning Team
           members:
-          - picture: vadim.jpg
+          - picture: vadim.png
             name: Vadim Markovtsev
             position: Lead Software Engineer
             github: https://github.com/vmarkovtsev
@@ -64,7 +64,7 @@ teams:
             position: Senior Software Engineer
             github: https://github.com/EgorBu
           - picture: placeholder/new-man.png
-            name: Konstantin
+            name: Konstantin Slavnov
             position: Software Engineering Intern
             github: https://github.com/zurk
           - picture: placeholder/new-man.png
@@ -94,7 +94,7 @@ teams:
     - name: Product & Data Intelligence
       headline: Translating our vision into amazing products & making smarter decisions with hard data
       members:
-        - picture: marcelo.jpg
+        - picture: marcelo.png
           name: Marcelo Novaes
           position: Product Manager & Data Intelligence Lead
           linkedin: https://linkedin.com/in/mnovaes
@@ -105,7 +105,7 @@ teams:
     - name: Operations
       headline: Taking care of the team at source{d}
       members:
-        - picture: esther.jpg
+        - picture: esther.png
           name: Esther García
           position: Office Manager
           linkedin: https://www.linkedin.com/in/esther-garc%C3%ADa-mart%C3%ADn-0331692b
