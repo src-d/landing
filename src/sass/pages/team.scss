@@ -4,21 +4,24 @@
     }
 
     .circle-list {
-        figure img {
-            position: absolute;
-            top: -20px;
-            left: -35px;
-            width: 135%;
+        &__section__group__item__picture-area {
+            display: block;
+            position: relative;
+            width: $width-person-card-image;
+            height: $height-person-card-image;
+            margin: 0 auto;
+            cursor: pointer;
         }
 
         address {
-            $circle-shift: $size-circle-image - $size-team-social + $size-team-social-shift;
             position: absolute;
-            top: $circle-shift;
-            left: $circle-shift + (grid-size(3) - $size-circle-image) / 2;
+            bottom: $size-team-social-shift;
+            right: $size-team-social-shift;
             width: $size-team-social;
+            display: block;
 
             svg {
+                display: block;
                 fill: $color-pill-button-main;
 
                 g {
@@ -30,5 +33,32 @@
                 @include sr-only;
             }
         }
+
+        h2 > a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.person-circle {
+    $image-width: $ratio-person-card-image * $width-person-card-image;
+    width: $width-person-card-image;
+    height: $height-person-card-image;
+
+    image.person-circle__image {
+        x: - ($image-width - $width-person-card-image) / 2;
+        y: $margin-top-person-card-image;
+        width: $image-width;
+    }
+
+    &__background {
+        fill: $color-card-background;
+    }
+
+    &__border {
+        stroke-width: $border-width-person-card;
+        stroke: $color-lightest-grey;
+        fill: transparent;
     }
 }
