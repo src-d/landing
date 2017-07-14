@@ -7,6 +7,7 @@ $color-medium-grey: #e6e9ec;
 $color-pale-grey: #ecf0f1;
 $color-light-greysh: #EBF0F1;
 $color-light-grey: #737373;
+$color-lightest-grey: #E8ECED;
 $color-white: white;
 
 $color-pill-button-main: $color-light-blue;
@@ -206,6 +207,7 @@ $size-circles-between-groups: 60px;
 $size-circles-below-group-name: 45px;
 $size-circles-above-item-title: 15px;
 $size-circles-below-item-title: 15px;
+$margin-top-person-card-image: -30px;
 
 $size-stack-between-groups: 120px;
 $size-stack-below-group-name: 60px;
@@ -306,9 +308,12 @@ $size-projects-title-icon-spacing: 7px;
 $height-hero-info: 465px;
 
 $size-team-social: 30px;
-$size-team-social-shift: 5px;
+$size-team-social-shift: -5px;
 
 $max-width-circles-info: 240px;
+$ratio-person-card-image: 1.4;
+$width-person-card-image: 200px;
+$height-person-card-image: 220px;
 
 $height-stack-pipeline: 45px;
 $width-stack-pipeline: 28px;
@@ -342,4 +347,5 @@ $transition-main-time: .3s;
 $transition-main-effect: ease-in;
 
 // Borders
-$border-person-card: 5px solid #E8ECED;
+$border-width-person-card: 4px;
+$border-person-card: $border-width-person-card solid $color-lightest-grey;
