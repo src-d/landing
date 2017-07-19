@@ -14,7 +14,7 @@ export var states = {
   ERROR: 'error',
 };
 
-const LOCAL_URL = 'http://localhost:8080';
+const LOCAL_URL = 'http://localhost:8080/api';
 const PROD_URL = '/api';
 const PROD_FORCED_URL = null; //'http://sourced.tech/api'
 const BLOG_URL = '//blog.sourced.tech';

@@ -35,17 +35,20 @@ func main() {
 
 	store := persistence.NewInMemoryStore(*ttl)
 
-	r.GET("/posts/:kind", cache.CachePage(
-		store,
-		*ttl,
-		handlers.NewPosts(services.NewPostProvider(conf)).Get,
-	))
-	r.GET("/positions", cache.CachePage(
-		store,
-		*ttl,
-		handlers.NewPositions(services.NewPositionsProvider(conf)).Get,
-	))
-	r.POST("/invite", handlers.SlackInvite(conf))
+	api := r.Group("/api")
+	{
+		api.GET("/posts/:kind", cache.CachePage(
+			store,
+			*ttl,
+			handlers.NewPosts(services.NewPostProvider(conf)).Get,
+		))
+		api.GET("/positions", cache.CachePage(
+			store,
+			*ttl,
+			handlers.NewPositions(services.NewPositionsProvider(conf)).Get,
+		))
+		api.POST("/invite", handlers.SlackInvite(conf))
+	}
 
 	r.NoRoute(func(c *gin.Context) {
 		c.AbortWithStatus(http.StatusNotFound)
