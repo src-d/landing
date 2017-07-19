@@ -32,7 +32,7 @@ install:
 
 script:
   - go test ./api/...
-  - make hugo-build
+  - make build
 
 before_deploy:
   - make packages
