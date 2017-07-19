@@ -4,7 +4,7 @@
   "description": "source{d} landing page",
   "main": "./src/js/index.js",
   "scripts": {
-    "api-run": "go run api/api.go --config production.yaml",
+    "api-run": "go run api/api.go",
     "build": "webpack --config=webpack.config.js",
     "serve": "concurrently --kill-others \"yarn run webpack-watcher\" \"make hugo-server\" \"yarn run api-run\"",
     "test": "echo \"Error: no test specified\" && exit 1",

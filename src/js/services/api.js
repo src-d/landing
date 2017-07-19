@@ -29,17 +29,6 @@ function request(url) {
   return fetch(url).then(checkStatus).then(resp => resp.json());
 }
 
-const MAIN_REPOS_URL = '/repositories/main';
-const OTHER_REPOS_URL = '/repositories/other';
-
-export function loadMainRepos() {
-  return request(apiURL(MAIN_REPOS_URL)).then(resp => resp.Repos);
-}
-
-export function loadOtherRepos() {
-  return request(apiURL(OTHER_REPOS_URL)).then(resp => resp.Repos);
-}
-
 export function loadPosts(category) {
   return request(apiURL('/posts/' + category)).then(resp => {
     const posts = resp.Posts.slice(0, 3);

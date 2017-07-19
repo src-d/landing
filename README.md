@@ -24,3 +24,16 @@ If you want to build the project separatelly, you can replace the last command w
 * `yarn run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
 * `yarn run webpack-watcher` To start webpack watcher, that will rebuild the assets when you change its sources
 * `make hugo-server` To serve the landing locally using hugo server
+
+Configuration
+===
+
+The following envars are available for configuration
+
+- `ADDR`
+- `FEED_BASE_URL`
+- `POSITIONS_BASE_URL`
+- `SLACK_CHANNEL`
+- `SLACKIN_URL`
+
+You can see more in the `config` package in `api`.

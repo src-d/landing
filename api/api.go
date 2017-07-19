@@ -7,7 +7,6 @@ import (
 	"time"
 
 	"github.com/src-d/landing/api/config"
-	"github.com/src-d/landing/api/github"
 	"github.com/src-d/landing/api/handlers"
 	"github.com/src-d/landing/api/services"
 
@@ -19,14 +18,12 @@ import (
 )
 
 var (
-	configFile  = flag.String("config", "", "config file path")
-	ttl         = flag.Duration("ttl", 1*time.Hour, "ttl of the cache")
-	githubToken = os.Getenv("GITHUB_TOKEN")
+	ttl = flag.Duration("ttl", 1*time.Hour, "ttl of the cache")
 )
 
 func main() {
 	flag.Parse()
-	conf, err := config.Load(*configFile)
+	conf, err := config.Load()
 	checkErr(err)
 
 	r := gin.Default()
@@ -36,12 +33,8 @@ func main() {
 		AllowMethods:    []string{"GET", "POST"},
 	}))
 
-	provider := github.NewRepoProvider(github.NewRepoFetcher(githubToken))
-	repositories := handlers.NewRepositories(conf, provider)
 	store := persistence.NewInMemoryStore(*ttl)
 
-	r.GET("/repositories/main", cache.CachePage(store, *ttl, repositories.Main))
-	r.GET("/repositories/other", cache.CachePage(store, *ttl, repositories.Other))
 	r.GET("/posts/:kind", cache.CachePage(
 		store,
 		*ttl,
