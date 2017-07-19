@@ -11,7 +11,7 @@
 		rotate_keep 20
 	}
 
-    proxy /api 127.0.0.1:8080 {
+    proxy /api api:8080 {
         without /api
         header_upstream Host {host}
         header_upstream X-Real-IP {remote}
