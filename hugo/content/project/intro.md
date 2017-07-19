@@ -26,3 +26,39 @@ Build sdk
 ```
 go get -u -v github.com/bblfsh/sdk/...
 ```
+
+## styles
+
+Some `inline` code.
+
+- List element
+- List
+  - Nested list
+
+### h3 header
+
+```
+{
+    "some": "more code"
+}
+```
+
+#### H4 heading
+
+1. Some
+2. Ordered
+3. List
+
+##### H5 heading
+
+Name    | Age  | Something
+--------|------|-----------
+Bob     | 27   | something
+Alice   | 23   | some `inline` code
+Jane    | 52   | some `inline` code
+
+###### H6 heading
+
+After this, goes an `<hr>`.
+
+---

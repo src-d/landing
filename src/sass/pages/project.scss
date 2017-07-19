@@ -95,6 +95,120 @@
 
     a {
         color: $color-links;
+
+        &:visited {
+            color: $color-links-visited;
+        }
+    }
+
+    code {
+        background-color: $color-project-code-bg;
+        padding: $padding-vertical-project-code $padding-horizontal-project-code;
+        font-family: $font-source-code;
+        font-size: $font-size-small;
+        color: $color-project-code;
+    }
+
+    pre {
+        display: block;
+        font-family: $font-source-code;
+        font-size: $font-size-small;
+        color: $color-terminal-text;
+        background: $color-terminal-bg;
+        padding: $padding-project-code-block;
+        margin: $margin-project-code-block 0;
+        border-radius: 5px;
+
+        code {
+            background-color: transparent;
+            padding: 0;
+            color: $color-terminal-text;
+        }
+    }
+
+    ul {
+        padding-left: $padding-left-project-list;
+
+        li {
+            position: relative;
+
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: $size-left-spacing-project-list-dot;
+                top: $size-top-spacing-project-list-dot;
+                background: $color-project-list-dot;
+                height: $size-project-list-dot;
+                width: $size-project-list-dot;
+                border-radius: 50%;
+            }
+        }
+
+        ul li:before {
+            background: transparent;
+            border: 1px solid $color-project-list-dot;
+        }
+    }
+
+    table {
+        border: 1px solid $color-project-table-border;
+        
+        tr,
+        thead {
+            border-bottom: 1px solid $color-project-table-border;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        td,
+        th {
+            padding: $padding-vertical-project-table-cell $padding-horizontal-project-table-cell;
+            border-right: 1px solid $color-project-table-border;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+
+        th {
+            background: $color-project-table-heading-bg;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        tbody tr:nth-child(even) {
+            td {
+                background-color: $color-project-table-even-row-bg;
+            }
+
+            code {
+                background-color: $color-project-table-even-row-code-bg;
+            }
+        }
+    }
+
+    ol {
+        list-style: decimal;
+        padding-left: $padding-left-project-ordered-list;
+    }
+
+    h3 {
+        font-style: italic;
+        color: $color-title-medium;
+        font-size: $font-size-large;
+        line-height: 3em;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-style: italic;
+        color: $color-title-medium;
+        font-size: $font-size-body;
+        line-height: 3em;
     }
 }
 

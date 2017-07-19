@@ -22,6 +22,7 @@ $color-text-default: black;
 
 $color-links: $color-light-blue;
 $color-links-hover: $color-dark-blue;
+$color-links-visited: $color-dark-blue;
 $color-links-darkbg: $color-white;
 $color-links-darkbg-hover: $color-pale-grey;
 
@@ -104,6 +105,14 @@ $color-position-job-feature: rgba(0, 0, 0, .7);
 $color-project-badges-bg: $color-pale-blue;
 $color-project-header-text: white;
 $color-project-header-logo: white;
+
+$color-project-code-bg: $color-pale-grey;
+$color-project-code: $color-light-grey;
+$color-project-list-dot: $color-dark-grey;
+$color-project-table-border: $color-light-grey;
+$color-project-table-heading-bg: $color-dark-grey;
+$color-project-table-even-row-bg: $color-pale-grey;
+$color-project-table-even-row-code-bg: white;
 
 // Text sizes
 $font-size-body: 20px;
@@ -349,6 +358,17 @@ $size-project-content-headings-bottom-spacing: $gutter-size / 2;
 $size-project-nav-logo: 30px;
 $margin-left-project-nav-menu: $gutter-size;
 $size-project-nav-github-icon: 30px;
+$padding-vertical-project-code: 2px;
+$padding-horizontal-project-code: 5px;
+$padding-project-code-block: $gutter-size;
+$margin-project-code-block: $gutter-size;
+$padding-left-project-list: $gutter-size;
+$size-left-spacing-project-list-dot: -19px;
+$size-top-spacing-project-list-dot: 8px;
+$size-project-list-dot: 8px;
+$padding-vertical-project-table-cell: 10px;
+$padding-horizontal-project-table-cell: 15px;
+$padding-left-project-ordered-list: 20px;
 
 // Radius
 $border-radius-main: 5px;
