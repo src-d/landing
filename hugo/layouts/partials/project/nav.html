@@ -1,0 +1,53 @@
+{{ $project := .Site.Data.project }}
+
+<div class="project-nav">
+    <h2 class="project-nav__title">
+        <img src="{{ $project.small_logo }}" alt="{{ $project.name}} logo"/>
+        <span>{{ $project.name }}</span>
+    </h2>
+
+
+    <ul class="project-nav__menu">
+        <li>
+            <a href="/intro">
+                Intro
+            </a>
+        </li>
+
+        <li>
+            <a href="/get-started">
+                Get started
+            </a>
+        </li>
+
+        <li>
+            <a href="/support">
+                Support
+            </a>
+        </li>
+
+        <li>
+            <a href="/versions">
+                Versions
+            </a>
+        </li>
+
+        <li>
+            <a href="/docs">
+                Docs
+            </a>
+        </li>
+    </ul>
+
+    <div class="project-nav__icons">
+        {{ if $project.slack_channel }}
+            <a href="{{ $project.slack_channel }}" class="project-nav__icon-link" alt="Talk about this project on Slack">
+                {{ partial "svg" "slack-filled" }}
+            </a>
+        {{ end }}
+
+        <a href="{{ $project.url }}" class="project-nav__icon-link" alt="View project on GitHub">
+            {{ partial "svg" "github-filled" }}
+        </a>
+    </div>
+</div>
