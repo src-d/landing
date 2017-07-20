@@ -1,0 +1,49 @@
+{{ partial "head.html" }}
+{{ $headerCtx := dict "ctx" . "opaque" true }}
+{{ $project := .Site.Data.project }}
+{{ $gradStart := $project.gradient.start }}
+{{ $gradEnd := $project.gradient.end }}
+{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
+
+<body class="project-intro">
+    {{ partial "header.html" $headerCtx }}
+    <header class="project-header" style="background: -webkit-linear-gradient(left, {{ $gradStart }}, {{ $gradEnd }});
+    background: -o-linear-gradient(right, {{ $gradStart }}, {{ $gradEnd }});
+    background: -moz-linear-gradient(right, {{ $gradStart }}, {{ $gradEnd }});
+    background: linear-gradient(to right, {{ $gradStart }}, {{ $gradEnd }});">
+        <div>
+            <img class="code-pills-left" src="{{ "img/bgs/codepills-bg-1.png" | absURL }}" />
+            <figure class="project-header__logo">
+                <div>
+                    <img src="{{ $project.logo }}" alt="{{ $project.name }} logo" />
+                </div>
+            </figure>
+
+            <p class="project-header__desc">
+                {{ $project.description | safeHTML }}
+            </p>
+        </div>
+    </header>
+
+    {{ if default false $project.badges }}
+    <div class="project-badges">
+        <div>
+            {{ range $project.badges }}
+                <a href="{{ .url }}">
+                    <img src="{{ .image }}">
+                </a>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+    <section class="project-content">
+        <div>
+            {{ .Content }}
+        </div>
+    </section>
+
+    {{ partial "footer.html" $footerCtx }}
+</body>
+
+</html>

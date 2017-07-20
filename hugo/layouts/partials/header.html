@@ -4,7 +4,7 @@
 {{ $category := default "" $ctx.Site.Data.project.category }}
 
 <div class="nav">
-    <nav class="topbar" id="topbar">
+    <nav class="topbar {{ if .opaque }}opaque{{ end }}" id="topbar">
         <div>
             <a href="{{ "/" | absURL }}" alt="source{d}">
                 <div class="logo"><img src="{{ "/img/logos/source-logo-white.svg" | absURL }}" alt="source{d}" /></div>
@@ -53,11 +53,11 @@
     </nav>
 
     {{ $secondary_nav := default "" .secondary_nav }}
-    {{ if or (ne $category "") (ne $secondary_nav "") }}
+    {{ if or (and (ne $category "") (eq $ctx.Section "project")) (ne $secondary_nav "") }}
         <nav class="secondary-topbar">
             <div>
                 {{ if ne $category "" }}
-                    {{ partial "project_nav.html" . }}
+                    {{ partial "project/nav.html" $ctx }}
                 {{ else }}
                     {{ partial $secondary_nav . }}
                 {{ end }}
