@@ -79,7 +79,6 @@
         h1 {
             @include title-small;
             padding: $padding-card;
-            text-transform: capitalize;
             background: $color-card-background;
         }
 
