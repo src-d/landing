@@ -1,39 +1,26 @@
 package config
 
 import (
-	"io/ioutil"
-
-	yaml "gopkg.in/yaml.v1"
+	"github.com/src-d/envconfig"
+	defaults "gopkg.in/mcuadros/go-defaults.v1"
 )
 
 type Config struct {
-	Addr             string `yaml:"addr"`
-	GithubToken      string `yaml:"github-token"`
-	FeedBaseURL      string `yaml:"feed-base-url"`
-	PositionsBaseURL string `yaml:"positions-base-url"`
-	SlackChannel     string `yaml:"slack-channel"`
-	SlackinURL       string `yaml:"slackin-url"`
-	PinnedRepos      struct {
-		Main  []AllowedRepos `yaml:"main"`
-		Other []AllowedRepos `yaml:"other"`
-	} `yaml:"repos"`
+	Addr             string `envconfig:"addr" default:":8080"`
+	FeedBaseURL      string `envconfig:"feed_base_url" default:"http://blog.sourced.tech/json/"`
+	PositionsBaseURL string `envconfig:"positions_base_url" default:"https://api.lever.co/v0/postings/sourced?mode=json"`
+	SlackChannel     string `envconfig:"slack_channel" default:""`
+	SlackinURL       string `envconfig:"slackin_url" default:"http://slackin:3000/invite"`
 }
 
-type AllowedRepos struct {
-	Owner string   `yaml:"owner"`
-	Repos []string `yaml:"repos"`
-}
-
-func Load(file string) (*Config, error) {
-	data, err := ioutil.ReadFile(file)
+func Load() (*Config, error) {
+	var c Config
+	err := envconfig.Process("", &c)
 	if err != nil {
 		return nil, err
 	}
 
-	var config Config
-	if err := yaml.Unmarshal(data, &config); err != nil {
-		return nil, err
-	}
+	defaults.SetDefaults(&c)
 
-	return &config, nil
+	return &c, err
 }
