@@ -1,5 +1,5 @@
 title: "Join the community"
-placeholder: "Your email"
+placeholder: "your email"
 desc: "We'd be thrilled to have you on our slack"
 endpoint: "/invite"
 msgs:
