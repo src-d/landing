@@ -1,11 +1,36 @@
-.DS_Store
-static/css
-static/js
+# output and logs
+/tmp
+/coverage/*
+logs
+*.log
+.eslintcache
+.sass-cache
+
+# builds
 .ci
 .hugo
-artifacts
-bin
-node_modules/*
-public/*
-npm-debug.log
 Makefile.main
+public/*
+static/css
+static/js
+artifacts
+/dist
+/build
+bin
+
+# dependencies
+/node_modules
+/bower_components
+jspm_packages/
+.grunt
+.npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.yarn-integrity
+package-lock.json
+
+# environment config
+.env
+.env.local
+.DS_Store
