@@ -3,6 +3,7 @@ PROJECT = landing
 COMMANDS = api
 CODECOV_TOKEN ?=
 DESTINATION ?= public
+DOCKERFILES = Dockerfile:landing Dockerfile.api:landing-api Dockerfile.slackin:landing-slackin
 
 HUGO_VERSION := 0.21
 HUGO_BINARY = hugo_$(HUGO_VERSION)_linux_amd64

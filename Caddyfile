@@ -4,26 +4,7 @@
 	gzip
 
 	ext .html
-	errors /tmp/caddy-server-errors.log {
+	errors stdout {
 		404 404.html
-		rotate_size 50
-		rotate_age  90
-		rotate_keep 20
 	}
-
-    proxy /api 127.0.0.1:8080 {
-        without /api
-        header_upstream Host {host}
-        header_upstream X-Real-IP {remote}
-        header_upstream X-Forwarded-For {remote}
-        header_upstream X-Forwarded-Proto {scheme}
-    }
-
-    proxy /slackin slackin:3000 {
-        without /slackin
-        header_upstream Host {host}
-        header_upstream X-Real-IP {remote}
-        header_upstream X-Forwarded-For {remote}
-        header_upstream X-Forwarded-Proto {scheme}
-    }
 }
