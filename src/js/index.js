@@ -94,7 +94,7 @@ function setupExamples() {
   example.slick({
     dots: true,
     infinite: true,
-    speed: 0,
+    speed: 500,
     fade: true,
     swipe: false,
     adaptiveHeight: true,
