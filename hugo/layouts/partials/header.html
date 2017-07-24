@@ -24,7 +24,7 @@
                             {{ range $k := $ctx.Site.Data.categories.categories.order }}
                                 {{ $section := (index $categories $k) }}
                                 <li {{ if eq $category $k }}class="active"{{end}}>
-                                    <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}">
+                                    <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}" class="scroll-to">
                                         {{ partial "svg" $k }}
                                         <span>{{ $section.name }}</span>
                                     </a>

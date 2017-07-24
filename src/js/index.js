@@ -55,7 +55,28 @@ window.addEventListener('DOMContentLoaded', _ => {
   lightbox.option({
     disableScrolling: true
   });
+  setupSmoothScroll();
 });
+
+function setupSmoothScroll() {
+  const elems = Array.from(document.querySelectorAll('.scroll-to'));
+
+  elems.forEach(elem => {
+    elem.onclick = function(e) {
+      const [url, id] = elem.href.split('#');
+      if (window.location.href.indexOf(url) >= 0 && id) {
+        e.preventDefault();
+
+        $('body, html').animate(
+          {
+            scrollTop: $(`#${id}`).offset().top
+          },
+          1000
+        );
+      }
+    };
+  });
+}
 
 function renderHorizontalSlackForms() {
   const elems = document.querySelectorAll('.horizontal-slack-join');

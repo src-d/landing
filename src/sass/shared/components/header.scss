@@ -69,6 +69,7 @@
     right: 0;
     top: 100%;
     display: none;
+    z-index: 9999;
 
     &:before {
       content: " ";
