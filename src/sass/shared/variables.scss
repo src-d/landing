@@ -181,7 +181,7 @@ $size-title-medium-pill-spacing: 15px;
 $height-title-footer-pill: 15px;
 $width-title-footer-pill: 30px;
 $size-title-footer-pill-spacing: 7px;
-$size-title-footer-spacing: $gutter-size / 3 - 1px;
+$size-title-footer-spacing: 30px / 3 - 1px;
 
 $height-slack-form-logo: 110px;
 $height-slack-form-input: 45px;
@@ -189,10 +189,10 @@ $height-slack-form-message: 30px;
 $height-slack-form-horizontal-message: 20px;
 $width-slack-form-submit: 240px;
 
-$size-button-spacing: $gutter-size / 2;
+$size-button-spacing: 30px / 2;
 
-$size-terminal-header-btn: $gutter-size / 2;
-$size-terminal-header-btn-spacing: $gutter-size / 4;
+$size-terminal-header-btn: 30px / 2;
+$size-terminal-header-btn-spacing: 30px / 4;
 
 $size-examples-dot: 15px;
 $size-examples-dot-spacing: 10px;
@@ -207,14 +207,14 @@ $height-secondary-nav: 60px;
 
 $width-testimonials-avatar: 90px;
 
-$size-button-spacing: $gutter-size / 2;
+$size-button-spacing: 30px / 2;
 
 $width-topbar-submenu-border-size: 5px;
 
 $size-roadmap-photo: 90px;
-$size-roadmap-photo-spacing: $gutter-size;
+$size-roadmap-photo-spacing: 30px;
 
-$size-secondary-nav-item-spacing: $gutter-size / 2;
+$size-secondary-nav-item-spacing: 30px / 2;
 
 $size-card-top-border: 7px;
 $size-card-arrow: 30px;
@@ -264,26 +264,26 @@ $height-person-card-image: 220px;
 $height-stack-pipeline: 45px;
 $width-stack-pipeline: 28px;
 
-$size-careers-benefits-list-item-dot-spacing-top: ($gutter-size / 2) + ($font-size-body / 2) - 1px;
+$size-careers-benefits-list-item-dot-spacing-top: (30px / 2) + ($font-size-body / 2) - 1px;
 $size-careers-benefits-list-item-dot: 10px;
 
-$height-position-filter: $gutter-size;
-$size-position-filter-spacing: $gutter-size / 2;
+$height-position-filter: 30px;
+$size-position-filter-spacing: 30px / 2;
 $size-position-filter-dot: 16px;
 $height-positions-job-header: 100px;
 $size-positions-job-header-icon: 45px;
 $width-positions-job-header-icon-wrap: 75px;
 $size-positions-job-feature-icon: 20px;
 $width-positions-btn: 180px;
-$height-positions-btn: $gutter-size;
+$height-positions-btn: 30px;
 
-$size-project-badges-spacing: $gutter-size / 3;
+$size-project-badges-spacing: 30px / 3;
 $size-project-header-large-spacing: 60px;
 $size-project-header-logo-circle: 180px;
 $size-project-header-logo-picture: 120px;
 
 // Paddings and margins
-$padding-section-vertical: $column-size;
+$padding-section-vertical: 70px;
 
 $padding-slack-form: 0;
 $margin-bottom-slack-form-input: 15px;
@@ -302,32 +302,32 @@ $padding-bottom-slack-form-description: 60px;
 $margin-hero-desc-vertical: 30px;
 $padding-hero-vertical: 90px;
 
-$padding-pill-button-sides: 25px; //$height-pill-buttons / 2;
+$padding-pill-button-sides: 25px;
 
-$padding-terminal-header-vertical: $gutter-size / 3;
-$padding-terminal-header-horizontal: $gutter-size / 2;
+$padding-terminal-header-vertical: 30px / 3;
+$padding-terminal-header-horizontal: 30px / 2;
 
-$margin-examples-title-medium-top: $gutter-size / 4;
-$padding-examples-desc-vertical: $gutter-size;
-$padding-examples-project-bottom: $gutter-size;
+$margin-examples-title-medium-top: 30px / 4;
+$padding-examples-desc-vertical: 30px;
+$padding-examples-project-bottom: 30px;
 
 $padding-topbar-vertical: 15px;
-$padding-topbar-menu-vertical-spacing: $gutter-size / 3;
-$padding-topbar-menu-horizontal-spacing: $gutter-size / 2;
-$padding-topbar-submenu-item: $gutter-size / 4;
+$padding-topbar-menu-vertical-spacing: 30px / 3;
+$padding-topbar-menu-horizontal-spacing: 30px / 2;
+$padding-topbar-submenu-item: 30px / 4;
 $padding-secondary-nav-item: 10px;
 
-$padding-card: $gutter-size / 2;
+$padding-card: 30px / 2;
 
 $padding-projects-title: 10px;
 
 $margin-topbar-submenu-arrow-right: $padding-topbar-menu-horizontal-spacing + 8px;
-$margin-topbar-menu-spacing: $gutter-size / 4;
-$padding-roadmap-vertical: $gutter-size;
-$padding-roadmap-paragraph-vertical: $gutter-size / 2;
-$padding-roadmap-photo-top: $padding-roadmap-paragraph-vertical + $font-size-title-big + ($gutter-size / 2);
-$padding-roadmap-signature: $gutter-size / 2;
-$padding-roadmap-signature-name-bottom: $gutter-size / 2;
+$margin-topbar-menu-spacing: 30px / 4;
+$padding-roadmap-vertical: 30px;
+$padding-roadmap-paragraph-vertical: 30px / 2;
+$padding-roadmap-photo-top: $padding-roadmap-paragraph-vertical + $font-size-title-big + (30px / 2);
+$padding-roadmap-signature: 30px / 2;
+$padding-roadmap-signature-name-bottom: 30px / 2;
 
 $padding-footer-contact-vertical: 45px;
 $padding-footer-social-vertical: 45px;
@@ -346,24 +346,24 @@ $margin-top-careers-content: 45px;
 $margin-bottom-careers-section: 90px;
 $padding-left-careers-benefits-list-item: 20px;
 
-$padding-left-position-filter: $gutter-size;
-$padding-right-position-filter: $gutter-size / 2;
-$padding-position-job-footer: $gutter-size / 2;
+$padding-left-position-filter: 30px;
+$padding-right-position-filter: 30px / 2;
+$padding-position-job-footer: 30px / 2;
 $padding-position-job-feature-spacing: 8px;
 
 $padding-top-project-header: $height-topbar + $height-secondary-nav;
 $padding-top-project-header-desc: 60px;
 $padding-bottom-project-header-desc: 120px;
-$size-project-content-headings-top-spacing: $gutter-size;
-$size-project-content-headings-bottom-spacing: $gutter-size / 2;
+$size-project-content-headings-top-spacing: 30px;
+$size-project-content-headings-bottom-spacing: 30px / 2;
 $size-project-nav-logo: 30px;
-$margin-left-project-nav-menu: $gutter-size;
+$margin-left-project-nav-menu: 30px;
 $size-project-nav-github-icon: 30px;
 $padding-vertical-project-code: 2px;
 $padding-horizontal-project-code: 5px;
-$padding-project-code-block: $gutter-size;
-$margin-project-code-block: $gutter-size;
-$padding-left-project-list: $gutter-size;
+$padding-project-code-block: 30px;
+$margin-project-code-block: 30px;
+$padding-left-project-list: 30px;
 $size-left-spacing-project-list-dot: -19px;
 $size-top-spacing-project-list-dot: 8px;
 $size-project-list-dot: 8px;
