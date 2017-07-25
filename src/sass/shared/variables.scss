@@ -55,6 +55,12 @@ $color-topbar-submenu-icon-bg: $color-dark-grey;
 $color-topbar-submenu-hover-bg: #e9eeef;
 $color-topbar-submenu-hover-border: $color-dark-blue;
 $color-topbar-submenu-hover: #5b92be;
+$color-topbar-menu-toggle: white;
+$color-topbar-menu-mobile-bg: white;
+$color-topbar-menu-mobile-shadow: rgba(0, 0, 0, 0.5);
+$color-topbar-menu-mobile-item-active: rgba(27, 120, 183, 0.1);
+$color-topbar-menu-mobile-close-bg: $color-light-blue;
+$color-topbar-menu-mobile-close-icon-bg: white;
 
 $color-secondary-nav-bg: rgba(0, 0, 0, .3);
 
@@ -210,6 +216,16 @@ $width-testimonials-avatar: 90px;
 $size-button-spacing: $gutter-size / 2;
 
 $width-topbar-submenu-border-size: 5px;
+$size-topbar-menu-mobile-close: 30px;
+$height-topbar-menu-mobile-close-strip: 4px;
+$width-topbar-menu-mobile-close-strip: 30px;
+$height-topbar-menu-mobile-back: 45px;
+$height-topbar-menu-mobile-item: 50px;
+$size-topbar-menu-toggle: 30px;
+$height-topbar-menu-toggle-strip: 4px;
+$width-topbar-menu-toggle-strip: 25px;
+$padding-horizontal-topbar-menu-mobile-back: 10px;
+$padding-left-topbar-menu-mobile-item: 45px;
 
 $size-roadmap-photo: 90px;
 $size-roadmap-photo-spacing: $gutter-size;

@@ -46,6 +46,7 @@ function renderBlogCategories(selector, containerId) {
 
 window.addEventListener('DOMContentLoaded', _ => {
   setupStickyHeader();
+  setupMenu();
   setupExamples();
   renderBlogCategories('.blog__category', 'blog-container');
   renderComponent(PositionsPanel, 'offers');
@@ -75,6 +76,20 @@ function setupSmoothScroll() {
         );
       }
     };
+  });
+}
+
+function setupMenu() {
+  const menu = document.getElementById('menu');
+  const toggle = document.getElementById('menu-toggle');
+  const close = document.getElementById('menu-close');
+
+  toggle.addEventListener('click', e => {
+    menu.classList.add('topbar__menu_open');
+  });
+
+  close.addEventListener('click', e => {
+    menu.classList.remove('topbar__menu_open');
   });
 }
 

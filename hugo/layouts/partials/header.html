@@ -9,8 +9,17 @@
             <a href="{{ "/" | absURL }}" alt="source{d}">
                 <div class="logo"><img src="{{ "/img/logos/source-logo-white.svg" | absURL }}" alt="source{d}" /></div>
             </a>
-            <div class="topbar__menu" id="menu">
+
+            <div class="topbar__menu-toggle mobile-only" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="topbar__menu mobile-hidden" id="menu">
                 <ul>
+                    <li class="mobile-only topbar__menu__back">
+                        <div class="topbar__menu__back__icon" id="menu-close"></div>
+                    </li>
                     <li {{ if eq $ctx.URL "/" }}class="active"{{ end }} title="homepage">
                         <a href="{{ "/" | absURL }}" title="Home">Home</a>
                     </li>

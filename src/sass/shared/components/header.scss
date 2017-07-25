@@ -18,6 +18,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    position: relative;
   }
 
   .logo img {
@@ -169,4 +170,110 @@
       margin-left: $size-secondary-nav-item-spacing;
     }
   }
+}
+
+// TODO: change this when the new grid is ready
+@media all and (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+
+    .topbar__menu-toggle {
+        height: $size-topbar-menu-toggle;
+        width: $size-topbar-menu-toggle;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+
+        span {
+            display: block;
+            height: $height-topbar-menu-toggle-strip;
+            width: $width-topbar-menu-toggle-strip;
+            background: $color-topbar-menu-toggle;
+
+            & + span {
+                margin-top: $height-topbar-menu-toggle-strip;
+            }
+        }
+    }
+
+    .topbar__menu {
+        &_open {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 10%;
+            bottom: 0;
+            background: $color-topbar-menu-mobile-bg;
+            overflow-y: auto;
+            box-shadow: -2px 0 6px 0 $color-topbar-menu-mobile-shadow;
+
+            ul {
+                li {
+                    margin: 0;
+                    border-radius: 0;
+                }
+
+                li:not(.topbar__menu__back) {
+                    padding: 0 0 0 $padding-left-topbar-menu-mobile-item;
+                    display: block;
+                    height: $height-topbar-menu-mobile-item;
+                    display: flex;
+                    align-items: center;
+
+                    a {
+                        color: $color-links;
+                        font-size: 26px;
+                    }
+
+                    &.active {
+                        background-color: $color-topbar-menu-mobile-item-active;
+                    }
+                }
+
+                li.topbar__menu__back {
+                    background: $color-topbar-menu-mobile-close-bg;
+                    display: block;
+                    padding: 0 $padding-horizontal-topbar-menu-mobile-back;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    height: $height-topbar-menu-mobile-back;
+                }
+            }
+        }
+
+        &__back__icon {
+            cursor: pointer;
+            height: $size-topbar-menu-mobile-close;
+            width: $size-topbar-menu-mobile-close;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            &:before,
+            &:after {
+                content: " ";
+                display: block;
+                height: $height-topbar-menu-mobile-close-strip;
+                width: $width-topbar-menu-mobile-close-strip;
+                background: $color-topbar-menu-mobile-close-icon-bg;
+                position: absolute;
+            }
+
+            &:before {
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
 }
