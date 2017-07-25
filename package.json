@@ -7,6 +7,7 @@
     "api-run": "go run api/api.go",
     "build": "webpack --config=webpack.config.js",
     "serve": "concurrently --kill-others \"yarn run webpack-watcher\" \"make hugo-server\" \"yarn run api-run\"",
+    "serve-without-api": "concurrently --kill-others \"yarn run webpack-watcher\" \"make hugo-server\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors",
     "svg-clean": "svgo --input=static/img/icons; svgo --input=static/img/icons/codepills; svgo --input=static/img/icons/projects"

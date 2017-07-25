@@ -7,7 +7,7 @@ Install and build
 You should already have [hugo installed](https://gohugo.io/overview/installing/) in your machine;<br />
 You need also [npm installed](https://docs.npmjs.com/getting-started/installing-node) ; then...
 ```
-make hugo-build
+make build
 ```
 If you want to build the project separatelly, you can replace the last command with these two:
 * `yarn run build` To compile webpack stuff into `/static` folder
