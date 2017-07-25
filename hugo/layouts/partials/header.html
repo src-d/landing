@@ -1,7 +1,8 @@
 {{ $ctx := .ctx }}
 {{ $categories := $ctx.Site.Data.categories.categories.contents }}
 {{ $project := $ctx.Site.Data.project }}
-{{ $category := default "" $ctx.Site.Data.project.category }}
+{{ $isDocSite := default false $project.is_doc_site }}
+{{ $category := default "" $project.project.category }}
 
 <div class="nav">
     <nav class="topbar {{ if .opaque }}opaque{{ end }}" id="topbar">
@@ -23,7 +24,7 @@
                         <ul class="topbar__submenu" id="submenu">
                             {{ range $k := $ctx.Site.Data.categories.categories.order }}
                                 {{ $section := (index $categories $k) }}
-                                <li {{ if eq $category $k }}class="active"{{end}}>
+                                <li {{ if and (eq $category $k) $isDocSite }}class="active"{{end}}>
                                     <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}">
                                         {{ partial "svg" $k }}
                                         <span>{{ $section.name }}</span>
