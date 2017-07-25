@@ -174,8 +174,8 @@
 
 // TODO: change this when the new grid is ready
 @media all and (max-width: 768px) {
-    .mobile-hidden {
-        display: none;
+    .topbar {
+        height: $height-topbar-mobile;
     }
 
     .topbar__menu-toggle {
@@ -186,22 +186,59 @@
         justify-content: center;
         flex-direction: column;
         cursor: pointer;
-        position: absolute;
-        right: 0;
+        position: fixed;
+        right: $padding-right-topbar-menu-toggle;
 
         span {
             display: block;
+            position: absolute;
             height: $height-topbar-menu-toggle-strip;
             width: $width-topbar-menu-toggle-strip;
             background: $color-topbar-menu-toggle;
+            transition: all 300ms ease-in-out;
 
-            & + span {
-                margin-top: $height-topbar-menu-toggle-strip;
+            &:first-child {
+                top: ($size-topbar-menu-toggle - 5 * $height-topbar-menu-toggle-strip) / 2;
+            }
+
+            &:nth-child(2) {
+                top: ($size-topbar-menu-toggle - 5 * $height-topbar-menu-toggle-strip) / 2 + ($height-topbar-menu-toggle-strip * 2);
+            }
+
+            &:nth-child(3) {
+                top: ($size-topbar-menu-toggle - 5 * $height-topbar-menu-toggle-strip) / 2 + (4 * $height-topbar-menu-toggle-strip);
+            }
+        }
+
+        &_open span {
+            margin: 0 !important;
+            &:first-child {
+                transform: rotate(45deg);
+                top: auto;
+            }
+
+            &:nth-child(2) {
+                width: 0;
+            }
+
+            &:last-child {
+                transform: rotate(-45deg);
+                top: auto;
             }
         }
     }
 
     .topbar__menu {
+        display: none;
+
+        ul {
+            display: none;
+
+            &.visible {
+                display: block;
+            }
+        }
+
         &_open {
             display: block;
             position: fixed;
@@ -217,6 +254,21 @@
                 li {
                     margin: 0;
                     border-radius: 0;
+
+                    .svg-icon:not(.svg-icon--go-arrow-nocircle) {
+                        padding-right: 15px;
+                    }
+
+                    .svg-icon--go-arrow-nocircle {
+                        position: absolute;
+                        right: 0;
+
+                        svg {
+                            fill: $color-links;
+                            height: $height-topbar-menu-mobile-item;
+                            width: $height-topbar-menu-mobile-item;
+                        }
+                    }
                 }
 
                 li:not(.topbar__menu__back) {
@@ -228,7 +280,7 @@
 
                     a {
                         color: $color-links;
-                        font-size: 26px;
+                        font-size: $font-size-topbar-menu-mobile;
                     }
 
                     &.active {
@@ -239,40 +291,27 @@
                 li.topbar__menu__back {
                     background: $color-topbar-menu-mobile-close-bg;
                     display: block;
-                    padding: 0 $padding-horizontal-topbar-menu-mobile-back;
                     display: flex;
                     align-items: center;
-                    justify-content: flex-end;
                     height: $height-topbar-menu-mobile-back;
+
+                    h4 {
+                        font-size: $font-size-topbar-menu-mobile;
+                        color: $color-topbar-menu-mobile-close-text;
+                        display: flex;
+                        align-items: center;
+
+                        span.svg-icon {
+                            transform: rotate(180deg);
+                            position: static;
+                            margin-left: -10px;
+
+                            svg {
+                                fill: $color-topbar-menu-mobile-close-text;
+                            }
+                        }
+                    }
                 }
-            }
-        }
-
-        &__back__icon {
-            cursor: pointer;
-            height: $size-topbar-menu-mobile-close;
-            width: $size-topbar-menu-mobile-close;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-
-            &:before,
-            &:after {
-                content: " ";
-                display: block;
-                height: $height-topbar-menu-mobile-close-strip;
-                width: $width-topbar-menu-mobile-close-strip;
-                background: $color-topbar-menu-mobile-close-icon-bg;
-                position: absolute;
-            }
-
-            &:before {
-                transform: rotate(45deg);
-            }
-
-            &:after {
-                transform: rotate(-45deg);
             }
         }
     }

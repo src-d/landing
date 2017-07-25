@@ -5,3 +5,18 @@
 .as-is {
     text-transform: none !important;
 }
+
+.mobile-only {
+    display: none;
+}
+
+// TODO: change when the new grid is ready
+@media all and (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+}

@@ -7,15 +7,60 @@
     <nav class="topbar {{ if .opaque }}opaque{{ end }}" id="topbar">
         <div>
             <a href="{{ "/" | absURL }}" alt="source{d}">
-                <div class="logo"><img src="{{ "/img/logos/source-logo-white.svg" | absURL }}" alt="source{d}" /></div>
+                <div class="logo">
+                    <img src="{{ "/img/logos/source-logo-white.svg" | absURL }}" alt="source{d}" />
+                </div>
             </a>
 
-            <div class="topbar__menu-toggle mobile-only" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="topbar__menu mobile-only" id="menu">
+                <ul class="visible" id="menu-main">
+                    <li class="topbar__menu__back"></li>
+                    <li {{ if eq $ctx.URL "/" }}class="active"{{ end }} title="homepage">
+                        <a href="{{ "/" | absURL }}" title="Home">Home</a>
+                    </li>
+                    <li class="{{ if eq $ctx.URL "projects" }}active {{end}}nav-to" data-nav-to="projects">
+                        <a>
+                            <span>Projects</span>
+                            {{ partial "svg" "go-arrow-nocircle" }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://talks.sourced.tech" target="_blank" title="Talks">Talks</a>
+                    </li>
+                    <li>
+                        <a href="https://blog.sourced.tech" title="Blog">Blog</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "stack" }}class="active"{{ end }}>
+                        <a href="{{ "/stack" | absURL }}" title="Our stack">Stack</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "team" }}class="active" {{ end }}>
+                        <a href="{{ "/team" | absURL }}" title="Team">Team</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "careers" }}class="active" {{ end }}>
+                        <a href="{{ "/careers" | absURL }}" title="Our Job Opportunities">Careers</a>
+                    </li>
+                </ul>
+
+                <ul id="menu-projects">
+                    <li class="topbar__menu__back">
+                        <h4 class="nav-to" data-nav-to="main">
+                            {{ partial "svg" "go-arrow-nocircle" }}
+                            <span>projects</span>
+                        </h4>
+                    </li>
+                    {{ range $k := $ctx.Site.Data.categories.categories.order }}
+                        {{ $section := (index $categories $k) }}
+                        <li {{ if eq $category $k }}class="active"{{end}}>
+                            <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}">
+                                {{ partial "svg" $k }}
+                                <span>{{ $section.name }}</span>
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
             </div>
-            <div class="topbar__menu mobile-hidden" id="menu">
+
+            <div class="topbar__menu mobile-hidden">
                 <ul>
                     <li class="mobile-only topbar__menu__back">
                         <div class="topbar__menu__back__icon" id="menu-close"></div>
@@ -24,12 +69,12 @@
                         <a href="{{ "/" | absURL }}" title="Home">Home</a>
                     </li>
                     <li {{ if eq $ctx.URL "projects" }}class="active"{{ end }}>
-                        <a href="{{ "/projects" | absURL}}" class="topbar__menu--projects" id="submenu-toggle" title="Projects">
+                        <a href="{{ "/projects" | absURL}}" class="topbar__menu--projects" title="Projects">
                             <span>Projects</span>
                             {{ partial "svg" "go-arrow-nocircle" }}
                         </a>
 
-                        <ul class="topbar__submenu" id="submenu">
+                        <ul class="topbar__submenu">
                             {{ range $k := $ctx.Site.Data.categories.categories.order }}
                                 {{ $section := (index $categories $k) }}
                                 <li {{ if eq $category $k }}class="active"{{end}}>
@@ -58,12 +103,18 @@
                     </li>
                 </ul>
             </div>
+
+            <div class="topbar__menu-toggle mobile-only" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     {{ $secondary_nav := default "" .secondary_nav }}
     {{ if or (and (ne $category "") (eq $ctx.Section "project")) (ne $secondary_nav "") }}
-        <nav class="secondary-topbar">
+        <nav class="secondary-topbar mobile-hidden">
             <div>
                 {{ if ne $secondary_nav "" }}
                     {{ partial $secondary_nav . }}

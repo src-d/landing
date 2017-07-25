@@ -82,14 +82,24 @@ function setupSmoothScroll() {
 function setupMenu() {
   const menu = document.getElementById('menu');
   const toggle = document.getElementById('menu-toggle');
-  const close = document.getElementById('menu-close');
 
   toggle.addEventListener('click', e => {
-    menu.classList.add('topbar__menu_open');
+    menu.classList.toggle('topbar__menu_open');
+    toggle.classList.toggle('topbar__menu-toggle_open');
   });
 
-  close.addEventListener('click', e => {
-    menu.classList.remove('topbar__menu_open');
+  const mainMenu = document.getElementById('menu-main');
+  const navs = Array.from(document.querySelectorAll('.nav-to'));
+  const menus = Array.from(document.querySelectorAll('#menu > ul'));
+  navs.forEach(n => {
+    const to = n.getAttribute('data-nav-to');
+    n.addEventListener('click', e => {
+      e.preventDefault();
+
+      menus.forEach(m => m.classList.remove('visible'));
+      const menu = document.getElementById(`menu-${to}`) || mainMenu;
+      menu.classList.add('visible');
+    });
   });
 }
 
