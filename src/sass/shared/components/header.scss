@@ -61,8 +61,8 @@
   }
 
   ul.topbar__submenu {
-    @include width(3.3);
     @include card-shadow;
+    width: 300px;
     position: absolute;
     background-color: $color-topbar-submenu-bg;
     border-radius: 5px;
