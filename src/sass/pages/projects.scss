@@ -26,8 +26,9 @@
         }
 
         .slack-form__root {
-            margin: 0 auto;
+            width: 100%;
             .slackForm {
+                margin: 0 auto;
                 &__title {
                     display: none;
                 }
@@ -43,7 +44,7 @@
                 }
 
                 &__submit {
-                @include pill-style(blue);
+                    @include pill-style(blue);
                 }
 
                 &__message {
@@ -56,6 +57,7 @@
     }
 
     .cards_projects_no-data {
+        @include row;
         max-width: 400px;
         margin: $gutter-size auto;
         text-align: center;

@@ -1,3 +1,5 @@
+@import "breakpoints.scss";
+
 @mixin clearfix() {
   &:after {
     content: " ";
@@ -16,28 +18,53 @@
   width: grid-size($num);
 }
 
+@function column-size($num) {
+  @return "(#{$num} * ((100% - #{(($num-columns - 1) * $gutter-size)}) / #{$num-columns}) - 1px)";
+}
+
+@function gutter-size($num) {
+  @return "(#{$gutter-size * $num})";
+}
+
 @function grid-size($num) {
-  @return ($column-size * $num) + ($gutter-size * ($num - 1));
+  @return calc(#{gutter-size($num - 1)} + #{column-size($num)});
 }
 
 @function grid-offset-size($num) {
-  @return ($column-size * $num) + ($gutter-size * $num - 1);
+  @return calc(#{gutter-size($num + 1)} + #{column-size($num)});
 }
 
 @mixin offset($num) {
   margin-left: grid-offset-size($num);
 }
 
+/*
+ * The grid system was documented to be based on Bootstrap's. Bootstrap requires content to be in a container.
+ * Container's children can only be rows.
+ * A row's children are the colummned ones.
+ */
 @mixin row() {
   width: 100%;
   @include clearfix;
+  margin-right: -$gutter-size/2;
+  margin-left: -$gutter-size/2;
 
   > *:first-child {
     margin-left: 0 !important;
   }
 }
 
-@mixin container() {
+/*
+ * Usually used as a mixin without parameters, sets the width for each breakpoint and centers the content.
+ */
+@mixin container($max-widths: $container-max-widths) {
   margin: 0 auto;
-  width: ($num-columns * $column-size) + (($num-columns - 1) * $gutter-size);
+  width: 100%;
+
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint) {
+      width: $container-max-width;
+      max-width: 100%
+    }
+  }
 }
