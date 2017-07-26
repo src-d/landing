@@ -3,6 +3,7 @@
 
   &__slack {
     @include row;
+    width: initial;
     margin-top: $margin-top-footer-slack;
     background-color: $color-footer-slack-band-bg;
     height: $size-footer-slack-band;
