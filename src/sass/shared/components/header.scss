@@ -228,7 +228,24 @@
     }
 
     .topbar__menu {
-        display: none;
+        visibility: hidden;
+        left: 120%;
+        transition: all 300ms ease-in-out;
+        display: block;
+        position: fixed;
+        visibility: visible;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: $color-topbar-menu-mobile-bg;
+        overflow-y: auto;
+        box-shadow: -2px 0 6px 0 $color-topbar-menu-mobile-shadow;
+        max-width: $size-max-topbar-menu-mobile;
+
+        &_open {
+            visiblity: visible;
+            left: 10%;
+        }
 
         ul {
             display: none;
@@ -236,78 +253,64 @@
             &.visible {
                 display: block;
             }
-        }
 
-        &_open {
-            display: block;
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 10%;
-            bottom: 0;
-            background: $color-topbar-menu-mobile-bg;
-            overflow-y: auto;
-            box-shadow: -2px 0 6px 0 $color-topbar-menu-mobile-shadow;
+            li {
+                margin: 0;
+                border-radius: 0;
 
-            ul {
-                li {
-                    margin: 0;
-                    border-radius: 0;
+                .svg-icon:not(.svg-icon--go-arrow-nocircle) {
+                    padding-right: 15px;
+                }
 
-                    .svg-icon:not(.svg-icon--go-arrow-nocircle) {
-                        padding-right: 15px;
+                .svg-icon--go-arrow-nocircle {
+                    position: absolute;
+                    right: 0;
+
+                    svg {
+                        fill: $color-links;
+                        height: $height-topbar-menu-mobile-item;
+                        width: $height-topbar-menu-mobile-item;
                     }
+                }
+            }
 
-                    .svg-icon--go-arrow-nocircle {
-                        position: absolute;
-                        right: 0;
+            li:not(.topbar__menu__back) {
+                padding: 0 0 0 $padding-left-topbar-menu-mobile-item;
+                display: block;
+                height: $height-topbar-menu-mobile-item;
+                display: flex;
+                align-items: center;
+
+                a {
+                    color: $color-links;
+                    font-size: $font-size-topbar-menu-mobile;
+                }
+
+                &.active {
+                    background-color: $color-topbar-menu-mobile-item-active;
+                }
+            }
+
+            li.topbar__menu__back {
+                background: $color-topbar-menu-mobile-close-bg;
+                display: block;
+                display: flex;
+                align-items: center;
+                height: $height-topbar-menu-mobile-back;
+
+                h4 {
+                    font-size: $font-size-topbar-menu-mobile;
+                    color: $color-topbar-menu-mobile-close-text;
+                    display: flex;
+                    align-items: center;
+
+                    span.svg-icon {
+                        transform: rotate(180deg);
+                        position: static;
+                        margin-left: -10px;
 
                         svg {
-                            fill: $color-links;
-                            height: $height-topbar-menu-mobile-item;
-                            width: $height-topbar-menu-mobile-item;
-                        }
-                    }
-                }
-
-                li:not(.topbar__menu__back) {
-                    padding: 0 0 0 $padding-left-topbar-menu-mobile-item;
-                    display: block;
-                    height: $height-topbar-menu-mobile-item;
-                    display: flex;
-                    align-items: center;
-
-                    a {
-                        color: $color-links;
-                        font-size: $font-size-topbar-menu-mobile;
-                    }
-
-                    &.active {
-                        background-color: $color-topbar-menu-mobile-item-active;
-                    }
-                }
-
-                li.topbar__menu__back {
-                    background: $color-topbar-menu-mobile-close-bg;
-                    display: block;
-                    display: flex;
-                    align-items: center;
-                    height: $height-topbar-menu-mobile-back;
-
-                    h4 {
-                        font-size: $font-size-topbar-menu-mobile;
-                        color: $color-topbar-menu-mobile-close-text;
-                        display: flex;
-                        align-items: center;
-
-                        span.svg-icon {
-                            transform: rotate(180deg);
-                            position: static;
-                            margin-left: -10px;
-
-                            svg {
-                                fill: $color-topbar-menu-mobile-close-text;
-                            }
+                            fill: $color-topbar-menu-mobile-close-text;
                         }
                     }
                 }
