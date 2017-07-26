@@ -56,10 +56,10 @@
     {{ if or (and (ne $category "") (eq $ctx.Section "project")) (ne $secondary_nav "") }}
         <nav class="secondary-topbar">
             <div>
-                {{ if ne $category "" }}
-                    {{ partial "project/nav.html" $ctx }}
-                {{ else }}
+                {{ if ne $secondary_nav "" }}
                     {{ partial $secondary_nav . }}
+                {{ else if ne $category "" }}
+                    {{ partial "project/nav.html" $ctx }}
                 {{ end }}
             </div>
         </nav>
