@@ -55,6 +55,10 @@
 
 @mixin title-big() {
   @include title($font-size-title-big);
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-title-big-mobile;
+  }
 }
 
 @mixin svg-color($icon, $color) {
@@ -111,12 +115,20 @@
   @include title-big;
   @include title-pill($color-title-big-pill, $width-title-big-pill, $height-title-big-pill, $size-title-big-pill-spacing);
   color: $color-title-big;
+
+  @include media-breakpoint-down(sm) {
+    @include title-pill($color-title-big-pill, $width-title-big-pill, $height-title-big-pill, $size-title-pill-spacing-mobile);
+  }
 }
 
 @mixin white-title-big() {
   @include title-big;
   @include title-pill($color-white, $width-title-big-pill, $height-title-big-pill, $size-title-big-pill-spacing);
   color: $color-white;
+
+  @include media-breakpoint-down(sm) {
+  @include title-pill($color-white, $width-title-big-pill, $height-title-big-pill, $size-title-pill-spacing-mobile);
+  }
 }
 
 @mixin default-title-medium() {
@@ -124,6 +136,11 @@
   @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-medium-pill-spacing);
   color: $color-title-medium;
   margin-top: $margin-examples-title-medium-top;
+
+  @include media-breakpoint-down(sm) {
+      @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-pill-spacing-mobile);
+    font-size: $font-size-title-medium-mobile;
+  }
 }
 
 @mixin transition($properties: all, $time: $transition-main-time, $effect: $transition-main-effect) {
@@ -164,6 +181,10 @@
     &.disabled {
         cursor: not-allowed;
         opacity: 0.3;
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: $font-size-pill-button-mobile;
     }
 }
 

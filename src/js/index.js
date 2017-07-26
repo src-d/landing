@@ -133,6 +133,7 @@ function setupExamples() {
   const example = $('.examples__project');
   const code = document.getElementById('example-code');
   const title = document.getElementById('example-title');
+  const btn = document.getElementById('example-btn');
   if (!code) {
     return;
   }
@@ -154,6 +155,8 @@ function setupExamples() {
     const project =
       window.examples[nextSlide >= window.examples.length ? 0 : nextSlide];
     title.innerText = project.title;
+    btn.title = project.title;
+    btn.href = project.link;
     code.innerHTML = `
     <pre><code class="${project.language}">${project.code}</code></pre>
     `;

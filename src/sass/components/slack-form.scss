@@ -199,3 +199,43 @@
     }
   }
 }
+
+@include media-breakpoint-down(sm) {
+    .slackForm {
+        position: relative;
+
+        &__header {
+            display: flex;
+            flex-align: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        &__logo {
+            float: none;
+            height: $height-slack-logo-mobile;
+            width: $height-slack-logo-mobile;
+            margin: 0;
+        }
+
+        &__title {
+            float: none;
+            margin-bottom: 0;
+            margin-left: $margin-left-slack-title-mobile;
+            font-size: $font-size-slack-title-mobile;
+            line-height: $height-slack-title-mobile;
+        }
+
+        &__description {
+            width: 100%;
+            padding-top: $padding-top-slack-desc-mobile;
+            padding-bottom: $padding-bottom-slack-desc-mobile;
+            font-size: $font-size-body-mobile;
+        }
+
+        &__body {
+            top: 100%;
+            bottom: auto;
+        }
+    }
+}

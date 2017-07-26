@@ -31,6 +31,7 @@ $color-main-bg: $color-light-greysh;
 
 $color-hero-bg: $color-dark-blue;
 $color-hero-text: $color-white;
+$color-hero-arrow: $color-white;
 
 $color-title-big: $color-light-blue;
 $color-title-big-pill: $color-light-blue;
@@ -122,12 +123,16 @@ $color-project-table-even-row-code-bg: white;
 
 // Text sizes
 $font-size-body: 20px;
+$font-size-body-mobile: 16px;
 $font-size-menu: 24px;
 $font-size-submenu: 21px;
 $font-size-title-big: 48px;
+$font-size-title-big-mobile: 36px;
 $font-size-title-medium: 30px;
+$font-size-title-medium-mobile: 24px;
 $font-size-title-small: 24px;
 $font-size-pill-button: 21px;
+$font-size-pill-button-mobile: 24px;
 $font-size-terminal-source-code: 14px;
 $font-size-signature: 48px;
 $font-size-footer-section: 16px;
@@ -150,6 +155,7 @@ $font-size-positions-filter: 18px;
 $font-size-positions-btn: 18px;
 $font-size-project-nav-title: 30px;
 $font-size-topbar-menu-mobile: 26px;
+$font-size-slack-title-mobile: 26px;
 
 // Line Height
 $line-height-condensed: 1em;
@@ -184,6 +190,7 @@ $size-title-big-pill-spacing: 15px;
 $height-title-medium-pill: 15px;
 $width-title-medium-pill: 30px;
 $size-title-medium-pill-spacing: 15px;
+$size-title-pill-spacing-mobile: 5px;
 
 $height-title-footer-pill: 15px;
 $width-title-footer-pill: 30px;
@@ -207,10 +214,12 @@ $size-examples-dot-border: 3px;
 $width-examples-arrow: 20px;
 $height-examples-arrow: 30px;
 $size-examples-arrow-spacing: 10px;
+$width-examples-navigation: 150px;
 
 $height-topbar: 75px;
 $height-topbar-mobile: 50px;
 $height-topbar-logo: 45px;
+$height-topbar-logo-mobile: 30px;
 $height-secondary-nav: 60px;
 
 $width-testimonials-avatar: 90px;
@@ -226,7 +235,7 @@ $height-topbar-menu-mobile-item: 50px;
 $size-topbar-menu-toggle: 30px;
 $height-topbar-menu-toggle-strip: 4px;
 $width-topbar-menu-toggle-strip: 30px;
-$padding-right-topbar-menu-toggle: 10px;
+$padding-right-topbar-menu-toggle: 15px;
 $padding-left-topbar-menu-mobile-item: 45px;
 $size-max-topbar-menu-mobile: 400px;
 
@@ -235,6 +244,12 @@ $size-roadmap-photo-spacing: $gutter-size;
 
 $size-secondary-nav-item-spacing: $gutter-size / 2;
 
+$height-cards-wrap-mobile: 250px;
+$margin-top-cards-mobile: 45px;
+$width-card-mobile: 380px;
+$size-card-mobile-spacing: 15px;
+$height-card-figure-mobile: 60px;
+$size-card-figure-icon-mobile: 30px;
 $size-card-top-border: 7px;
 $size-card-arrow: 30px;
 $size-card-srcd-logo: 45px;
@@ -301,8 +316,19 @@ $size-project-header-large-spacing: 60px;
 $size-project-header-logo-circle: 180px;
 $size-project-header-logo-picture: 120px;
 
-// Paddings and margins
-$padding-section-vertical: $column-size;
+$size-hero-arrow: 50px;
+$padding-top-hero-slack: 15px;
+
+$height-slack-logo-mobile: 50px;
+$height-slack-title-mobile: $height-slack-logo-mobile;
+$margin-left-slack-title-mobile: 15px;
+$padding-top-slack-desc-mobile: 8px;
+$padding-bottom-slack-desc-mobile: 45px;
+
+$padding-section-vertical: 90px;
+$padding-section-vertical-mobile: 45px;
+
+$padding-top-home-hero-mobile: 23px + $height-topbar-mobile;
 
 $padding-slack-form: 0;
 $margin-bottom-slack-form-input: 15px;
@@ -329,6 +355,8 @@ $padding-terminal-header-horizontal: $gutter-size / 2;
 $margin-examples-title-medium-top: $gutter-size / 4;
 $padding-examples-desc-vertical: $gutter-size;
 $padding-examples-project-bottom: $gutter-size;
+$width-examples-project-button: 250px;
+$padding-top-examples-project-button: $gutter-size;
 
 $padding-topbar-vertical: 15px;
 $padding-topbar-menu-vertical-spacing: $gutter-size / 3;
@@ -343,10 +371,13 @@ $padding-projects-title: 10px;
 $margin-topbar-submenu-arrow-right: $padding-topbar-menu-horizontal-spacing + 8px;
 $margin-topbar-menu-spacing: $gutter-size / 4;
 $padding-roadmap-vertical: $gutter-size;
+$padding-roadmap-paragraph-mobile: 10px;
 $padding-roadmap-paragraph-vertical: $gutter-size / 2;
 $padding-roadmap-photo-top: $padding-roadmap-paragraph-vertical + $font-size-title-big + ($gutter-size / 2);
 $padding-roadmap-signature: $gutter-size / 2;
 $padding-roadmap-signature-name-bottom: $gutter-size / 2;
+$width-roadmap-links-mobile: 210px;
+$margin-top-roadmap-links-mobile: 22px;
 
 $padding-footer-contact-vertical: 45px;
 $padding-footer-social-vertical: 45px;
@@ -389,6 +420,9 @@ $size-project-list-dot: 8px;
 $padding-vertical-project-table-cell: 10px;
 $padding-horizontal-project-table-cell: 15px;
 $padding-left-project-ordered-list: 20px;
+
+$height-blog-cards-mobile: 270px;
+$height-blog-cards-figure-height-mobile: 80px;
 
 // Radius
 $border-radius-main: 5px;

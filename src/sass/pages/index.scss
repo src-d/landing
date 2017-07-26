@@ -56,6 +56,7 @@
 
   &__info {
     @include columns(4);
+    position: relative;
 
     h1 {
       @include default-title-big;
@@ -82,8 +83,11 @@
     }
 
     &__navigation {
-      position: relative;
-      display: flex;
+      position: absolute;
+      width: $width-examples-navigation;
+      left: calc(50% - #{$width-examples-navigation / 2});
+      bottom: -$gutter-size;
+      display: flex !important;
       align-items: center;
       justify-content: center;
 
@@ -170,8 +174,6 @@
     }
 
     &__code {
-      overflow: auto;
-
       pre {
         background: $color-terminal-code-bg;
         font-family: $font-source-code;
@@ -179,6 +181,7 @@
         line-height: 1.25em;
         padding: 1em;
         color: $color-terminal-text;
+        overflow-x: auto;
 
         .hljs-keyword {
           color: $color-terminal-keyword;
@@ -235,6 +238,7 @@
     padding: $padding-roadmap-signature 0;
     display: flex;
     align-items: center;
+    order: 1;
 
     &__photo {
       width: $size-roadmap-photo;
@@ -256,6 +260,7 @@
 
   &__links {
     @include columns(7);
+    order: 2;
     text-align: right;
 
     a + a {
@@ -346,4 +351,130 @@
       }
     }
   }
+}
+
+@include media-breakpoint-down(sm) {
+    .home-hero {
+        padding-top: $padding-top-home-hero-mobile;
+        padding-bottom: 0;
+
+        &__info,
+        &__slack {
+            width: 100%;
+            float: none;
+        }
+
+        &__arrow {
+            text-align: center;
+
+            span.svg-icon {
+                display: inline-block;
+                height: $size-hero-arrow;
+                width: $size-hero-arrow;
+                transform: rotate(90deg);
+
+                svg {
+                    fill: $color-hero-arrow;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+
+        &__slack {
+            margin-left: 0;
+            padding-top: $padding-top-hero-slack;
+        }
+    }
+
+    .examples {
+        padding: $padding-section-vertical-mobile 0;
+
+        &__info,
+        &__terminal {
+            width: 100%;
+            float: none;
+            margin-left: 0;
+        }
+
+        &__info {
+            &__navigation {
+                position: relative;
+                padding: ($gutter-size / 2) 0;
+                width: auto;
+                top: 0;
+                left: auto;
+            }
+        }
+
+        .project-btn {
+            width: $width-examples-project-button;
+            margin: $padding-top-examples-project-button auto 0 auto;
+        }
+
+        &__project {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .testimonials {
+        padding: $padding-section-vertical-mobile 0;
+
+        .testimonial-list {
+            @include columns(12);
+            float: none;
+            margin-left: 0;
+
+            .testimonial {
+                margin: 0;
+
+                &__avatar img {
+                    margin-left: 0;
+                }
+
+                blockquote {
+                    margin-left: $gutter-size;
+                }
+            }
+        }
+    }
+
+    .roadmap {
+        & > article {
+            padding: $padding-section-vertical-mobile 0;
+        }
+
+        p {
+            font-size: $font-size-body-mobile;
+            padding: $padding-roadmap-paragraph-mobile 0;
+        }
+
+        &__footer {
+            flex-direction: column;
+        }
+
+        &__links {
+            order: 1;
+            width: 100%;
+            margin-left: $gutter-size !important;
+            text-align: center;
+
+            a {
+                display: block;
+                width: $width-roadmap-links-mobile;
+                margin: $margin-top-roadmap-links-mobile auto 0 auto;
+            }
+
+            a + a {
+                margin-left: auto;
+            }
+        }
+
+        &__signature {
+            order: 2;
+            margin-top: $gutter-size;
+            width: 100%;
+            justify-content: center;
+        }
+    }
 }

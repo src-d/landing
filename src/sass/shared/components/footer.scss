@@ -98,3 +98,11 @@
     }
   }
 }
+
+@include media-breakpoint-down(sm) {
+    .footer {
+        &__slack {
+            margin: 0;
+        }
+    }
+}

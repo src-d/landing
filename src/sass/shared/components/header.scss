@@ -175,6 +175,10 @@
 @include media-breakpoint-down(sm) {
     .topbar {
         height: $height-topbar-mobile;
+
+        .logo img {
+            height: $height-topbar-logo-mobile;
+        }
     }
 
     .topbar__menu-toggle {
