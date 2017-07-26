@@ -180,7 +180,7 @@
     .topbar__menu-toggle {
         height: $size-topbar-menu-toggle;
         width: $size-topbar-menu-toggle;
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
         flex-direction: column;

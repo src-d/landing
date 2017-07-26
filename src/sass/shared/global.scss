@@ -7,15 +7,15 @@
 }
 
 .mobile-only {
-    display: none;
+    display: none !important;
 }
 
 @include media-breakpoint-down(sm) {
     .mobile-hidden {
-        display: none;
+        display: none !important;
     }
 
     .mobile-only {
-        display: block;
+        display: block !important;
     }
 }
