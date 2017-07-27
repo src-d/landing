@@ -62,3 +62,11 @@
         fill: transparent;
     }
 }
+
+@include media-breakpoint-only(md) {
+    .team-page .circle-list__section__group__item__picture-area,
+    .person-circle {
+        width: 150px;
+        height: 170px;
+    }
+}

@@ -35,3 +35,18 @@
         }
     }
 }
+
+@include media-breakpoint-only(md) {
+    .stack-page .circle-list__section_deploy article .svg-icon--arrow {
+        left: -24px;
+        top: 60px;
+        width: 20px;
+        height: 30px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .stack-page .circle-list__section_deploy article .svg-icon--arrow {
+        display: none;
+    }
+}
