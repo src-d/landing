@@ -85,6 +85,7 @@ $color-contact-text-dark: $color-light-blue;
 $color-footer-links-hover: $color-pale-blue;
 $color-footer-titles: $color-white;
 $color-footer-titles-pill: rgba(255, 255, 255, .1);
+$color-footer-mobile-buttons: rgba(0, 0, 0, .1);
 $color-contact-email-light: $color-white;
 $color-contact-email-dark: $color-light-blue;
 $color-contact-pgp-key-icon-light: rgba(255, 255, 255, .3);
@@ -156,6 +157,7 @@ $font-size-positions-btn: 18px;
 $font-size-project-nav-title: 30px;
 $font-size-topbar-menu-mobile: 26px;
 $font-size-slack-title-mobile: 26px;
+$font-size-footer-links-title: 21px;
 
 // Line Height
 $line-height-condensed: 1em;
@@ -278,6 +280,11 @@ $size-footer-slack-input: 45px;
 $size-footer-slack-button: 45px;
 $size-footer-slack-band-right-distance: 30px;
 $size-footer-slack-band-bottom-distance: -10px;
+$max-wdith-footer-sitemap-mobile: 285px;
+$height-footer-mobile-buttons: 45px;
+$padding-horizontal-footer-mobile-buttons: 10px;
+$size-footer-mobile-buttons-spacing: 5px;
+$size-footer-mobile-buttons-title-spacing: 10px;
 
 $size-striked-title-pull-top: -26px;
 
