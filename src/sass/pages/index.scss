@@ -353,6 +353,20 @@
   }
 }
 
+@include media-breakpoint-only(md) {
+    .home-hero {
+        &__info {
+            float: none;
+            width: 100%;
+        }
+
+        &__slack {
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+
 @include media-breakpoint-down(sm) {
     .home-hero {
         padding-top: $padding-top-home-hero-mobile;

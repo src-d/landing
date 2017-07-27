@@ -286,6 +286,21 @@
     }
 }
 
+@include media-breakpoint-only(md) {
+    .cards__element {
+        @include columns(6);
+
+        &:nth-child(3n-2) {
+            margin-left: $gutter-size !important;
+        }
+
+        &:first-child,
+        &:nth-child(2n+1) {
+            margin-left: 0 !important;
+        }
+    }
+}
+
 @include media-breakpoint-down(sm) {
     .blog .cards {
         height: $height-blog-cards-mobile;

@@ -172,6 +172,36 @@
   }
 }
 
+@include media-breakpoint-between(sm, lg) {
+    .topbar {
+
+        .logo img {
+            height: 40px;
+        }
+
+        &__menu ul li {
+            padding: 10px;
+            margin: 0;
+
+            a {
+                font-size: 21px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-only(md) {
+    .topbar {
+        .logo img {
+            height: $height-topbar-logo-mobile;
+        }
+
+        &__menu ul li a {
+            font-size: 18px;
+        }
+    }
+}
+
 @include media-breakpoint-down(sm) {
     .topbar {
         height: $height-topbar-mobile;
