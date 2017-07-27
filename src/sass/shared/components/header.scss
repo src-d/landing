@@ -18,6 +18,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    position: relative;
   }
 
   .logo img {
@@ -169,4 +170,151 @@
       margin-left: $size-secondary-nav-item-spacing;
     }
   }
+}
+
+@include media-breakpoint-down(sm) {
+    .topbar {
+        height: $height-topbar-mobile;
+    }
+
+    .topbar__menu-toggle {
+        height: $size-topbar-menu-toggle;
+        width: $size-topbar-menu-toggle;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+        position: fixed;
+        right: $padding-right-topbar-menu-toggle;
+
+        span {
+            display: block;
+            position: absolute;
+            height: $height-topbar-menu-toggle-strip;
+            width: $width-topbar-menu-toggle-strip;
+            background: $color-topbar-menu-toggle;
+            transition: all 300ms ease-in-out;
+
+            &:first-child {
+                top: ($size-topbar-menu-toggle - 5 * $height-topbar-menu-toggle-strip) / 2;
+            }
+
+            &:nth-child(2) {
+                top: ($size-topbar-menu-toggle - 5 * $height-topbar-menu-toggle-strip) / 2 + ($height-topbar-menu-toggle-strip * 2);
+            }
+
+            &:nth-child(3) {
+                top: ($size-topbar-menu-toggle - 5 * $height-topbar-menu-toggle-strip) / 2 + (4 * $height-topbar-menu-toggle-strip);
+            }
+        }
+
+        &_open span {
+            margin: 0 !important;
+            &:first-child {
+                transform: rotate(45deg);
+                top: auto;
+            }
+
+            &:nth-child(2) {
+                width: 0;
+            }
+
+            &:last-child {
+                transform: rotate(-45deg);
+                top: auto;
+            }
+        }
+    }
+
+    .topbar__menu {
+        visibility: hidden;
+        left: 120%;
+        transition: all 300ms ease-in-out;
+        display: block;
+        position: fixed;
+        visibility: visible;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: $color-topbar-menu-mobile-bg;
+        overflow-y: auto;
+        box-shadow: -2px 0 6px 0 $color-topbar-menu-mobile-shadow;
+        max-width: $size-max-topbar-menu-mobile;
+
+        &_open {
+            visiblity: visible;
+            left: 10%;
+        }
+
+        ul {
+            display: none;
+
+            &.visible {
+                display: block;
+            }
+
+            li {
+                margin: 0;
+                border-radius: 0;
+
+                .svg-icon:not(.svg-icon--go-arrow-nocircle) {
+                    padding-right: 15px;
+                }
+
+                .svg-icon--go-arrow-nocircle {
+                    position: absolute;
+                    right: 0;
+
+                    svg {
+                        fill: $color-links;
+                        height: $height-topbar-menu-mobile-item;
+                        width: $height-topbar-menu-mobile-item;
+                    }
+                }
+            }
+
+            li:not(.topbar__menu__back) {
+                padding: 0 0 0 $padding-left-topbar-menu-mobile-item;
+                display: block;
+                height: $height-topbar-menu-mobile-item;
+                display: flex;
+                align-items: center;
+
+                a {
+                    color: $color-links;
+                    font-size: $font-size-topbar-menu-mobile;
+                }
+
+                &.active {
+                    background-color: $color-topbar-menu-mobile-item-active;
+                }
+            }
+
+            li.topbar__menu__back {
+                background: $color-topbar-menu-mobile-close-bg;
+                display: block;
+                display: flex;
+                align-items: center;
+                height: $height-topbar-menu-mobile-back;
+
+                h4 {
+                    font-size: $font-size-topbar-menu-mobile;
+                    color: $color-topbar-menu-mobile-close-text;
+                    display: flex;
+                    align-items: center;
+
+                    span.svg-icon {
+                        transform: rotate(180deg);
+                        position: static;
+                        margin-left: -10px;
+
+                        svg {
+                            fill: $color-topbar-menu-mobile-close-text;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -55,6 +55,12 @@ $color-topbar-submenu-icon-bg: $color-dark-grey;
 $color-topbar-submenu-hover-bg: #e9eeef;
 $color-topbar-submenu-hover-border: $color-dark-blue;
 $color-topbar-submenu-hover: #5b92be;
+$color-topbar-menu-toggle: white;
+$color-topbar-menu-mobile-bg: white;
+$color-topbar-menu-mobile-shadow: rgba(0, 0, 0, 0.5);
+$color-topbar-menu-mobile-item-active: rgba(27, 120, 183, 0.1);
+$color-topbar-menu-mobile-close-bg: $color-light-blue;
+$color-topbar-menu-mobile-close-text: white;
 
 $color-secondary-nav-bg: rgba(0, 0, 0, .3);
 
@@ -143,6 +149,7 @@ $font-size-slack-band-message: 16px;
 $font-size-positions-filter: 18px;
 $font-size-positions-btn: 18px;
 $font-size-project-nav-title: 30px;
+$font-size-topbar-menu-mobile: 26px;
 
 // Line Height
 $line-height-condensed: 1em;
@@ -202,6 +209,7 @@ $height-examples-arrow: 30px;
 $size-examples-arrow-spacing: 10px;
 
 $height-topbar: 75px;
+$height-topbar-mobile: 50px;
 $height-topbar-logo: 45px;
 $height-secondary-nav: 60px;
 
@@ -210,6 +218,17 @@ $width-testimonials-avatar: 90px;
 $size-button-spacing: $gutter-size / 2;
 
 $width-topbar-submenu-border-size: 5px;
+$size-topbar-menu-mobile-close: 30px;
+$height-topbar-menu-mobile-close-strip: 4px;
+$width-topbar-menu-mobile-close-strip: 30px;
+$height-topbar-menu-mobile-back: 50px;
+$height-topbar-menu-mobile-item: 50px;
+$size-topbar-menu-toggle: 30px;
+$height-topbar-menu-toggle-strip: 4px;
+$width-topbar-menu-toggle-strip: 30px;
+$padding-right-topbar-menu-toggle: 10px;
+$padding-left-topbar-menu-mobile-item: 45px;
+$size-max-topbar-menu-mobile: 400px;
 
 $size-roadmap-photo: 90px;
 $size-roadmap-photo-spacing: $gutter-size;

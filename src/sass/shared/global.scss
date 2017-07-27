@@ -5,3 +5,17 @@
 .as-is {
     text-transform: none !important;
 }
+
+.mobile-only {
+    display: none !important;
+}
+
+@include media-breakpoint-down(sm) {
+    .mobile-hidden {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+}
