@@ -46,6 +46,7 @@
 
                 &__submit {
                     @include pill-style(blue);
+                    display: block;
                 }
 
                 &__message {
