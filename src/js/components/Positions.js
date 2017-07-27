@@ -66,7 +66,11 @@ function Positions({ positions, filterBy }) {
 
   return (
     <div className="positions__list cards">
-      {positionList.map((position, i) => <Position key={i} data={position} />)}
+      <div className="cards__wrap">
+        {positionList.map((position, i) =>
+          <Position key={i} data={position} />
+        )}
+      </div>
     </div>
   );
 }
