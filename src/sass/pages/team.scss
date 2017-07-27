@@ -7,8 +7,6 @@
         &__section__group__item__picture-area {
             display: block;
             position: relative;
-            width: $width-person-card-image;
-            height: $height-person-card-image;
             margin: 0 auto;
             cursor: pointer;
         }
@@ -42,16 +40,6 @@
 }
 
 .person-circle {
-    $image-width: $ratio-person-card-image * $width-person-card-image;
-    width: $width-person-card-image;
-    height: $height-person-card-image;
-
-    image.person-circle__image {
-        x: - ($image-width - $width-person-card-image) / 2;
-        y: $margin-top-person-card-image;
-        width: $image-width;
-    }
-
     &__background {
         fill: $color-card-background;
     }
