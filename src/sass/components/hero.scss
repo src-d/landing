@@ -51,6 +51,10 @@
 
         &__info {
             height: 380px;
+
+            h1 {
+                font-size: $font-size-title-big-mobile;
+            }
         }
     }
 }

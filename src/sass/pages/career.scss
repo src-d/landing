@@ -9,9 +9,6 @@
         margin-bottom: $margin-bottom-careers-section;
     }
 
-    h1.striked + div {
-        margin-top: $margin-top-careers-content;
-    }
 
     .offers {
         &__list {
@@ -22,6 +19,8 @@
     .text-section {
         @include columns(8);
         @include offset(2);
+        margin: 0 auto !important;
+        float: none;
 
         ul {
             margin-top: $gutter-size;
@@ -45,6 +44,10 @@
                 }
             }
         }
+    }
+
+    h1.striked + div {
+        margin-top: $margin-top-careers-content !important;
     }
 
     .hq-gallery__item {
@@ -202,6 +205,51 @@
                     background: $color-positions-filter-dot-active;
                 }
             }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .careers-page {
+        .cards {
+            overflow: visible;
+            height: auto;
+
+            &__wrap {
+                position: static;
+                flex-wrap: wrap;
+            }
+
+            &__element {
+                width: 90%;
+                max-width: 500px;
+                margin: 0 auto !important;
+
+                & + div {
+                    margin-top: 30px !important;
+                }
+            }
+        }
+
+        .positions__job__apply {
+            padding: 0;
+            height: auto;
+        }
+
+        .text-section ul {
+            columns: 1;
+        }
+
+        .hq-gallery__item,
+        .hq-gallery__item + li {
+            width: 100%;
+            display: block;
+            float: none;
+        }
+
+        .hq-gallery__item + li {
+            margin-top: $gutter-size;
+            margin-left: 0;
         }
     }
 }
