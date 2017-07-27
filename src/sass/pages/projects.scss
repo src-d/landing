@@ -27,6 +27,7 @@
 
         .slack-form__root {
             width: 100%;
+
             .slackForm {
                 margin: 0 auto;
                 &__title {
@@ -61,5 +62,13 @@
         max-width: 400px;
         margin: $gutter-size auto;
         text-align: center;
+    }
+}
+
+
+
+@include media-breakpoint-down(sm) {
+    .projects-page .band .band__container:first-child h1.striked {
+        margin-top: 0;
     }
 }

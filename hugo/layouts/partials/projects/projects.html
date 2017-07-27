@@ -12,16 +12,20 @@
                 <span class="title">{{ $title }}</span>
                 <span id="{{ $categoryName }}" class="anchor"></span>
             </h1>
-            <div class="cards cards_projects">
-                <div class="cards__wrap">
-                    {{ if $category.items }}
+            {{ if $category.items }}
+                <div class="cards cards_projects">
+                    <div class="cards__wrap">
                         {{ range $category.items }}
                             {{ $context := dict "title" .name "icon" .logo "content" .desc "link" .url "gradient" $gradient "zip" .zip_size "raw" .raw_size "date" .created_at }}
                             {{ partial "card.html" $context }}
                         {{ end }}
-                    {{ else }}
-                        <p class="cards_projects_no-data">{{ $.categories.no_data_message }}</p>
+                    </div>
+                </div>
+            {{ else }}
+                <p class="cards_projects_no-data">{{ $.categories.no_data_message }}</p>
 
+                <div class="cards cards_projects">
+                    <div class="cards__wrap">
                         {{ with $.slack }}
                             <div class="slack-form__root horizontal-slack-join"
                                  data-button="{{ .msgs.button }}"
@@ -37,9 +41,9 @@
                                  >
                             </div>
                         {{ end }}
-                    {{ end }}
+                    </div>
                 </div>
-            </div>
+            {{ end }}
         </div>
     {{ end }}
 </section>
