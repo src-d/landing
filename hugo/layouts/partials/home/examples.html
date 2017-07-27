@@ -2,6 +2,8 @@
     <div class="examples__info">
         <h1>{{ .title }}</h1>
 
+        <div class="examples__info__navigation"></div>
+
         {{ range $s := first 1 .examples }}
         <h2 id="example-title">{{ $s.title }}</h2>
         {{ end }}
@@ -11,12 +13,10 @@
                 <div>
                     <p>{{ $s.desc }}</p>
 
-                    <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill">check this project</a>
+                    <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill mobile-hidden">check this project</a>
                 </div>
             {{ end }}
         </div>
-
-        <div class="examples__info__navigation"></div>
     </div>
 
     {{ range $s := first 1 .examples }}
@@ -33,6 +33,8 @@
             </code></pre>
         </div>
     </div>
+
+    <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill mobile-only project-btn" id="example-btn">check this project</a>
     {{ end }}
 </section>
 
@@ -43,6 +45,7 @@
                 title: "{{ $s.title }}",
                 language: "{{ $s.language }}",
                 code: "{{ readFile (print "hugo/data/code/" $s.code) }}",
+                link: "{{ $s.link }}",
             },
         {{ end }}
     ];

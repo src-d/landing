@@ -199,3 +199,93 @@
     }
   }
 }
+
+@include media-breakpoint-down(md) {
+    .slackForm {
+        position: relative;
+
+        &__header {
+            display: flex;
+            flex-align: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        &__logo {
+            float: none;
+            height: $height-slack-logo-mobile;
+            width: $height-slack-logo-mobile;
+            margin: 0;
+        }
+
+        &__title {
+            float: none;
+            margin-bottom: 0;
+            margin-left: $margin-left-slack-title-mobile;
+            font-size: $font-size-slack-title-mobile;
+            line-height: $height-slack-title-mobile;
+        }
+
+        &__description {
+            width: 100%;
+            padding-top: $padding-top-slack-desc-mobile;
+            padding-bottom: $padding-bottom-slack-desc-mobile;
+            font-size: $font-size-body-mobile;
+        }
+
+        &__body {
+            top: 100%;
+            bottom: auto;
+        }
+    }
+
+    .slackForm--horizontal {
+        .slackForm {
+            &__input {
+                float: none;
+                display: block;
+                width: 100%;
+                max-width: $width-slack-form-horizontal-input-mobile;
+                margin: $margin-top-slack-form-horizontal-elements auto 0 auto;
+            }
+
+            &__submit {
+                float: none;
+                width: $width-slack-form-horizontal-button-mobile;
+                margin: $margin-top-slack-form-horizontal-elements auto 0 auto;
+                display: block;
+            }
+
+            &__header {
+                display: flex;
+                align-items: center;
+                width: auto;
+                height: auto;
+                margin: 0;
+                justify-content: center;
+            }
+
+            &__message {
+                width: 100%;
+                margin: 0;
+                right: 0;
+                bottom: $size-slack-form-horizontal-message-spacing;
+            }
+
+            &__logo {
+                float: none;
+                width: $height-slack-logo-mobile;
+                height: $height-slack-logo-mobile;
+                margin: 0;
+            }
+
+            &__title {
+                float: none;
+                display: block;
+                width: auto;
+                margin: 0 0 0 $margin-left-slack-title-mobile;
+                line-height: $height-slack-title-mobile;
+            }
+        }
+    }
+}

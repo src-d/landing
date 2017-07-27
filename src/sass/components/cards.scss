@@ -1,6 +1,8 @@
 .cards {
-    display: flex;
-    flex-wrap: wrap;
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     &__element {
         @include transition(box-shadow);
@@ -167,6 +169,46 @@
         }
     }
 
+    @include media-breakpoint-down(sm) {
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin-left: -($gutter-size / 2);
+        margin-right: -($gutter-size / 2);
+        position: relative;
+        height: $height-cards-wrap-mobile;
+        margin-top: $margin-top-cards-mobile;
+
+        &__wrap {
+            flex-wrap: nowrap;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+        }
+
+        &__element {
+            width: $width-card-mobile;
+            margin: 0 $size-card-mobile-spacing !important;
+
+            header figure {
+                height: $height-card-figure-mobile;
+
+                svg {
+                    height: $size-card-figure-icon-mobile;
+                    width: $size-card-figure-icon-mobile;
+                }
+            }
+
+            p {
+                font-size: $font-size-body-mobile;
+            }
+        }
+
+        &__img {
+            height: $height-card-figure-mobile;
+        }
+    }
+
     &_projects {
         header {
             display: flex;
@@ -239,6 +281,37 @@
                 font-style: italic;
                 text-transform: uppercase;
                 margin-top: -5px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-only(md) {
+    .cards__element {
+        @include columns(6);
+
+        &:nth-child(3n-2) {
+            margin-left: $gutter-size !important;
+        }
+
+        &:first-child,
+        &:nth-child(2n+1) {
+            margin-left: 0 !important;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .blog .cards {
+        height: $height-blog-cards-mobile;
+    }
+
+    .blog .cards__element {
+        header figure {
+            height: $height-blog-cards-figure-height-mobile;
+
+            .cards__element__img {
+                height: $height-blog-cards-figure-height-mobile;
             }
         }
     }

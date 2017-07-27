@@ -67,4 +67,8 @@
       max-width: 100%
     }
   }
+
+  @include media-breakpoint-down(sm) {
+    width: calc(100% - #{$gutter-size});
+  }
 }

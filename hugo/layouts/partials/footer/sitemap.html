@@ -18,6 +18,8 @@
         </ul>
     </div>
 
+    {{ partial "contact-us.html" $ }}
+
     {{ partial "footer/sitemap-links.html" (dict "title" "Company" "items" $footer.company) }}
 
     {{ partial "footer/sitemap-links.html" (dict "title" "Projects" "items" $footer.projects) }}

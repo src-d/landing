@@ -14,7 +14,7 @@ export default class BlogPostsContainer extends Component {
       posts: [],
       title: null,
       moreUrl: null,
-      moreText: null,
+      moreText: null
     };
   }
 
@@ -39,7 +39,9 @@ export default class BlogPostsContainer extends Component {
             </h2>
           : null}
         <div className="cards">
-          {posts.map((p, i) => <Post key={i} first={i === 0} post={p} />)}
+          <div className="cards__wrap">
+            {posts.map((p, i) => <Post key={i} first={i === 0} post={p} />)}
+          </div>
         </div>
         <div className="blog__category__wrapper">
           <a
