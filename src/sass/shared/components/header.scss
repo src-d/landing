@@ -352,3 +352,21 @@
         }
     }
 }
+
+@include media-breakpoint-only(lg) {
+    .secondary-topbar ul li {
+        font-size: $font-size-secondary-nav-item-small;
+    }
+}
+
+@include media-breakpoint-only(md) {
+    .secondary-topbar ul li {
+        font-size: $font-size-secondary-nav-item-smaller;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .projects-page .hero {
+        padding-top: $height-topbar + $height-secondary-nav + $padding-section-vertical-mobile;
+    }
+}
