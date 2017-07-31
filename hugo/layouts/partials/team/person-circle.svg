@@ -1,7 +1,7 @@
 <svg class="person-circle"viewbox="0,0,200,220"
     width="200px" height="220px"
 >
-    <circle class="person-circle__background" cx="100" cy="120" r="100" fill="green" />
+    <circle class="person-circle__background" cx="100" cy="120" r="100" />
     <path class="person-circle__border person-circle__border_upper" d="
             M 198,120
             a -98,-98 0 0,0 -196,0
