@@ -131,7 +131,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @include media-breakpoint-down(sm) {
-    .band__container > h1.striked:before {
-        margin-top: $size-striked-title-pull-top-mobile !important;
+    .band__container > h1.striked {
+        background-color: transparent;
+
+        &:before {
+            display: none;
+        }
     }
 }
