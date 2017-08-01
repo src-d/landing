@@ -311,15 +311,18 @@
             }
 
             li:not(.topbar__menu__back) {
-                padding: 0 0 0 $padding-left-topbar-menu-mobile-item;
+                padding: 0;
                 display: block;
-                height: $height-topbar-menu-mobile-item;
-                display: flex;
-                align-items: center;
 
                 a {
+                    display: block;
+                    width: 100%;
+                    line-height: $height-topbar-menu-mobile-item;
+                    padding: 0 0 0 $padding-left-topbar-menu-mobile-item;
                     color: $color-links;
                     font-size: $font-size-topbar-menu-mobile;
+                    display: flex;
+                    align-items: center;
                 }
 
                 &.active {
