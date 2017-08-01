@@ -2,8 +2,6 @@
     <div class="examples__info">
         <h1>{{ .title }}</h1>
 
-        <div class="examples__info__navigation"></div>
-
         {{ range $s := first 1 .examples }}
         <h2 id="example-title">{{ $s.title }}</h2>
         {{ end }}
@@ -17,6 +15,8 @@
                 </div>
             {{ end }}
         </div>
+
+        <div class="examples__info__navigation"></div>
     </div>
 
     {{ range $s := first 1 .examples }}
