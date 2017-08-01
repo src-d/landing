@@ -44,9 +44,12 @@
             figure {
                 display: flex;
                 align-items: center;
-                justify-content: center;
                 position: relative;
                 height: $size-card-image-height;
+
+                .svg-icon {
+                    margin: 0 auto;
+                }
 
                 svg {
                     width: $size-card-proy-logo;
