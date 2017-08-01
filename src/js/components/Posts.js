@@ -63,6 +63,7 @@ function Post({ post, first }) {
       <a href={post.link} target="_blank">
         <section>
           <header>
+            <div className="cards__element__band" />
             <figure>
               <CardHeaderImage url={post.featured_image} />
             </figure>
