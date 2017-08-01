@@ -156,12 +156,14 @@
   a {
     @include link-dark-bg;
     text-decoration: none;
+    padding: $padding-secondary-nav-item;
+    display: inline-block;
   }
 
   ul {
     li {
       display: inline-block;
-      padding: $padding-secondary-nav-item;
+      padding: 0;
       font-size: $font-size-secondary-nav-item;
       font-family: $font-menus;
     }
@@ -360,7 +362,7 @@
 }
 
 @include media-breakpoint-only(md) {
-    .secondary-topbar ul li {
+    .secondary-topbar ul li a {
         font-size: $font-size-secondary-nav-item-smaller;
         padding-left: 0;
         padding-right: 0;
