@@ -369,30 +369,12 @@
 
 @include media-breakpoint-down(sm) {
     .home-hero {
-        padding-top: $padding-top-home-hero-mobile;
-        padding-bottom: 0;
+        padding: $padding-top-home-hero-mobile 0 $padding-section-vertical-mobile 0;
 
         &__info,
         &__slack {
             width: 100%;
             float: none;
-        }
-
-        &__arrow {
-            text-align: center;
-
-            span.svg-icon {
-                display: inline-block;
-                height: $size-hero-arrow;
-                width: $size-hero-arrow;
-                transform: rotate(90deg);
-
-                svg {
-                    fill: $color-hero-arrow;
-                    height: 100%;
-                    width: 100%;
-                }
-            }
         }
 
         &__slack {
