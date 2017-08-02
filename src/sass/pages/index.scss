@@ -384,6 +384,7 @@
     }
 
     .examples {
+        position: relative;
         padding: $padding-section-vertical-mobile 0;
 
         &__info,
@@ -394,18 +395,17 @@
         }
 
         &__info {
+            position: static;
+
             &__navigation {
-                position: relative;
-                padding: ($gutter-size / 2) 0;
-                width: auto;
-                top: 0;
-                left: auto;
+                position: absolute;
+                bottom: $gutter-size;
             }
         }
 
         .project-btn {
             width: $width-examples-project-button;
-            margin: $padding-top-examples-project-button auto 0 auto;
+            margin: $padding-examples-project-button auto;
         }
 
         &__project {
