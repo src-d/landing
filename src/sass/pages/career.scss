@@ -26,6 +26,10 @@
             margin-top: $gutter-size;
             columns: 2;
 
+            @include media-breakpoint-down(md) {
+                columns: 1;
+            }
+
             li {
                 padding-top: $gutter-size / 2;
                 padding-left: $padding-left-careers-benefits-list-item;
@@ -234,10 +238,6 @@
         .positions__job__apply {
             padding: 0;
             height: auto;
-        }
-
-        .text-section ul {
-            columns: 1;
         }
 
         .hq-gallery__item,
