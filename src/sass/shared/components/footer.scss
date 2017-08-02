@@ -93,6 +93,11 @@
           height: $size-footer-social-icon;
           border-radius: 50%;
           background-color: $color-footer-social-icon-bg;
+          transition: background-color 0.4s ease-in;
+
+          &:hover {
+              background-color: rgba(255, 255, 255, 0.3);
+          }
 
           img {
             height: $size-footer-social-icon-image;
