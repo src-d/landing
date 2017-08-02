@@ -74,6 +74,17 @@ h1, h2, h3, h4, h5, h6 {
                     background: $color-main-bg;
                     padding: 0 $padding-projects-title;
                 }
+
+                @include media-breakpoint-down(sm) {
+
+                    &:before {
+                        display: none;
+                    }
+
+                    span.title {
+                        background-color: transparent;
+                    }
+                }
             }
         }
 
@@ -127,11 +138,5 @@ h1, h2, h3, h4, h5, h6 {
             @include svg-color("key", $color-contact-pgp-key-icon-dark);
             color: $color-contact-text-dark;
         }
-    }
-}
-
-@include media-breakpoint-down(sm) {
-    .band__container > h1.striked:before {
-        margin-top: $size-striked-title-pull-top-mobile !important;
     }
 }
