@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
 {{ $headerCtx := dict "ctx" . "opaque" true }}
-{{ $footerCtx := dict "ctx" . }}
+{{ $footerCtx := dict "ctx" . "include_email" true }}
 
 <body>
     {{ partial "header.html" $headerCtx }}
