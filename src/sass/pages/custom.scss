@@ -1,0 +1,18 @@
+.custom-page {
+    width: $width-custom-page;
+    max-width: $max-width-custom-page;
+    margin: $padding-section-vertical auto;
+    @include media-breakpoint-down(sm) {
+        margin: $gutter-size auto;
+    }
+
+    .last-update {
+        font-size: $font-size-body;
+        padding-top: $padding-top-custom-page-last-update;
+        padding-bottom: $gutter-size;
+    }
+
+    .page-text-content {
+        line-height: 1.5em;
+    }
+}
