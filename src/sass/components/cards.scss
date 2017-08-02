@@ -17,7 +17,17 @@
 
         &_blog {
             header {
-                @include corporate-gradient(#36536C, #2377B6);
+                .cards__element__band {
+                    @include corporate-gradient(#36536C, #2377B6);
+                    position: absolute;
+                    height: $size-card-top-border;
+                    width: 100%;
+                }
+
+                h1,
+                figure {
+                    margin-top: 0;
+                }
             }
         }
 
@@ -216,11 +226,17 @@
         header {
             display: flex;
             height: $size-project-card-height;
+            padding-top: $size-card-top-border;
+
+            & > div {
+                width: 100%;
+                display: flex;
+                background: $color-card-background;
+                margin-bottom: -1px;
+            }
 
             figure {
-                background: $color-card-background;
                 padding: 0 10px 0 15px;
-                margin-top: 7px;
                 height: auto;
                 flex-grow: 0;
 
@@ -243,10 +259,8 @@
             h1 {
                 display: flex;
                 align-items: center;
-                margin-top: 7px;
                 flex-grow: 1;
                 padding-left: 0;
-                color: $color-card-project-title;
             }
         }
 
