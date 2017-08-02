@@ -14,11 +14,6 @@
 
     {{ partial "projects/projects.html" $projectsCtx }}
 
-    {{ if $projects.posts.display }}
-        {{ $postsCtx := dict "title" "technical posts" "categories" (slice $blog.categories.technical) }}
-        {{ partial "posts.html" $postsCtx }}
-    {{ end }}
-
     {{ partial "footer.html" $footerCtx }}
 </body>
 </html>
