@@ -114,6 +114,12 @@
     }
 }
 
+@include media-breakpoint-only(md) {
+    .footer .contact-us a {
+        padding: ($gutter-size / 3) 0;
+    }
+}
+
 @include media-breakpoint-down(sm) {
     .footer {
         .contact-us {
