@@ -1,4 +1,3 @@
-{{ partial "head.html" . }}
 {{ $projects := $.Site.Data.projects }}
 {{ $headerCtx := dict "ctx" . "secondary_nav" "projects/nav.html" }}
 {{ $heroCtx := dict "ctx" . "data" $projects }}
@@ -7,6 +6,9 @@
 {{ $slack := $.Site.Data.slack }}
 {{ $categories := $.Site.Data.categories }}
 {{ $projectsCtx := dict "slack" $slack "categories" $categories }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
 
 <body class="projects-page">
     {{ partial "header.html" $headerCtx }}

@@ -15,3 +15,4 @@
         {{- readFile (printf "static/img/icons/%s.svg" $name) | safeHTML -}}
     </span>
 {{ end }}
+

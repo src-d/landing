@@ -1,53 +1,77 @@
-{{ $project := .Site.Data.project }}
-
-<div class="project-nav">
-    <h2 class="project-nav__title">
-        <img src="{{ $project.small_logo }}" alt="{{ $project.name}} logo"/>
-        <span>{{ $project.name }}</span>
-    </h2>
-
-
-    <ul class="project-nav__menu">
-        <li>
-            <a href="/intro">
-                Intro
+{{ $slack := $.ctx.Site.Params.social.slack }}
+{{ $currentUrl := ( printf "/%s" $.ctx.URL ) }}
+{{ if $.project }}
+    <div class="project-nav">
+        <h2 class="project-nav__title">
+            <a href="/" class="project-nav__title__project-icon">
+                {{ if default false $.project.logosmall }}
+                    {{ partial "svg" $.project.logosmall }}
+                {{ else }}
+                    {{ partial "svg" (dict "name" $.project.codePill "color" "white" ) }}
+                {{ end }}
+                <span>{{ $.project.name }}</span>
             </a>
-        </li>
+        </h2>
 
-        <li>
-            <a href="/get-started">
-                Get started
-            </a>
-        </li>
+        <ul class="project-nav__menu">
+            <li>
+                <a href="/" {{ if eq $currentUrl "//" }}class="active"{{end}}>
+                    Intro
+                </a>
+            </li>
 
-        <li>
-            <a href="/support">
-                Support
-            </a>
-        </li>
+            {{ partial "project/raw_item.html" (dict "currentUrl" $currentUrl "fileName" "raw/documentation/tutorials/README.md" "linkUrl" "/tutorials" "linkText" "Documentation") }}
 
-        <li>
-            <a href="/versions">
-                Versions
-            </a>
-        </li>
+            {{ $langs := dict "cpp" "c++" }}
+            {{ range $lang := $.project.languages }}
+                {{ $langName := default $lang (index $langs $lang) }}
+                {{ if eq $lang "go" }}
+                    {{ $.ctx.Scratch.Set "apiUrl" (printf "https://godoc.org/github.com/%s" $.project.repository) }}
+                {{ else }}
+                    {{ $.ctx.Scratch.Set "apiUrl" (printf "/api/%s" $lang) }}
+                {{ end }}
+                <li>
+                    <a href="{{ $.ctx.Scratch.Get "apiUrl" }}" target="_blank">
+                        {{- if gt (len $.project.languages) 1}}
+                            {{ humanize $langName }}
+                        {{ end -}}
+                        API
+                    </a>
+                </li>
+            {{ end }}
 
-        <li>
-            <a href="/docs">
-                Docs
-            </a>
-        </li>
-    </ul>
+            <li>
+                <a href="{{ $.project.releasesUrl }}">
+                    Releases
+                </a>
+            </li>
 
-    <div class="project-nav__icons">
-        {{ if $project.slack_channel }}
-            <a href="{{ $project.slack_channel }}" class="project-nav__icon-link" alt="Talk about this project on Slack">
+            <li>
+                <a href="{{ $.project.supportUrl }}" target="_blank">
+                    Issues
+                </a>
+            </li>
+
+            {{ partial "project/raw_item.html" (dict "currentUrl" $currentUrl "fileName" "raw/LICENSE" "linkUrl" "/license" "linkText" "License") }}
+        </ul>
+
+        <div class="project-nav__icons">
+            {{ $categoryChannel := index $slack.channels $.project.category }}
+            {{ $slackChannel := default $slack.channels.general $categoryChannel }}
+            {{ $slackOrg := $slack.orgname}}
+            {{ $slackUrl := printf "https://%s.slack.com/messages/%s" $slackOrg $slackChannel }}
+
+            <a href="{{ $slackUrl }}" class="project-nav__icon-link"
+                target="_blank" alt="Talk about {{$.project.name}} on Slack"
+            >
                 {{ partial "svg" "slack-filled" }}
             </a>
-        {{ end }}
 
-        <a href="{{ $project.url }}" class="project-nav__icon-link" alt="View project on GitHub">
-            {{ partial "svg" "github-filled" }}
-        </a>
+            <a href="{{ $.project.projectUrl }}" class="project-nav__icon-link"
+                target="_blank" alt="View {{$.project.name}} project on GitHub"
+            >
+                {{ partial "svg" "github-filled" }}
+            </a>
+        </div>
     </div>
-</div>
+{{ end }}

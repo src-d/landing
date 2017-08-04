@@ -1,5 +1,7 @@
-{{ partial "head.html" . }}
-    <body>
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body>
         <div class="wrap">
             <header>
                 <img src="/img/logos/logo.png" alt="source{d}" class="logo" />

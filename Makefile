@@ -12,15 +12,18 @@ HUGO_TAR_FILE_NAME = hugo_$(HUGO_VERSION)_$(OS)-64bit.tar.gz
 HUGO_URL = https://github.com/spf13/hugo/releases/download/v$(HUGO_VERSION)/$(HUGO_TAR_FILE_NAME)
 
 # Including devops Makefile
-MAKEFILE := Makefile.main
+MAKEFILE_CI := Makefile.main
 CI_REPOSITORY := https://github.com/src-d/ci.git
 CI_FOLDER := .ci
-
-$(MAKEFILE):
+$(MAKEFILE_CI):
 	@git clone --quiet $(CI_REPOSITORY) $(CI_FOLDER); \
-	cp $(CI_FOLDER)/$(MAKEFILE) .;
+	cp $(CI_FOLDER)/$(MAKEFILE_CI) .;
 
--include $(MAKEFILE)
+-include $(MAKEFILE_CI)
+
+# Including doc-site-generator Makefile
+MAKEFILE_DOC_SITE_GEN := doc-site-generator/Makefile
+-include $(MAKEFILE_DOC_SITE_GEN)
 
 # CI
 TAG := master
@@ -58,6 +61,7 @@ CGO_ENABLED := 0
 REMOVE := rm -rf
 COMPRESS := tar -zcf
 UNCOMPRESS := tar -zxf
+COPY := cp -R
 
 export CGO_ENABLED
 

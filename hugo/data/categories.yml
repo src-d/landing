@@ -12,7 +12,7 @@ categories:
       name: datasets
       colors: {left: "#003ca1", right: "#656afa"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure.
-      items:
+      projects:
         - name: Github repositories languages distribution
           url: http://google.es
           desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
@@ -28,7 +28,7 @@ categories:
       name: models
       colors: {left: "#e4415a", right: "#ff6d4c"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
-      items:
+      projects:
         - name: Model Fancy Name
           url: http://google.es
           desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur.
@@ -43,10 +43,17 @@ categories:
       name: data retrieval tools
       colors: {left: "#317d19", right: "#4ecc7b"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla.
-      items:
+      projects:
         - name: go-git
+          hostname: go-git.sourced.tech
           url: https://go-git.sourced.tech
           desc: A highly extensible Git implementation in pure Go.
+          repository: dpordomingo/go-git
+          minVersion: v4.0.0
+          languages:
+            - go
+          logo:
+          logosmall:
         - name: borges
           url: https://github.com/src-d/borges
         - name: rovers
@@ -56,7 +63,7 @@ categories:
       name: language analysis tools
       colors: {left: "#c2732a", right: "#f18406"}
       desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id
-      items:
+      projects:
         - name: Babelfish
           url: https://github.com/bblfsh
           desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore irure.
@@ -65,10 +72,15 @@ categories:
       name: machine learning tools
       colors: {left: "#832fcc", right: "#c05cea"}
       desc: Fugiat aliqua Lorem officia fugiat qui
-      items:
-        - name: Name of project
-          url: https://github.com/src-d
-          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore irure.
+      projects:
+        - name: kmcuda
+          url: https://kmcuda.sourced.tech
+          desc: Large scale K-means and K-nn implementation on NVIDIA GPU / CUDA
+          repository: src-d/kmcuda
+          minVersion: v6.2.1
+          languages:
+            - python
+            - cpp
         - name: Name of project
           url: https://github.com/src-d
           desc: Fugiat aliqua Lorem officia fugiat qui laboris.

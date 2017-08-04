@@ -4,7 +4,7 @@
     <div class="hero__wrap">
         <div class="hero__info">
             <h1>{{ .data.title }}</h1>
-            <p>{{ .data.desc | safeHTML }}</p>
+            <p>{{ default "" .data.desc | safeHTML }}</p>
         </div>
 
         <figure class="hero__picture mobile-only">

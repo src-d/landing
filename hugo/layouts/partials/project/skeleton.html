@@ -1,0 +1,59 @@
+{{ $project := $.ctx.Site.Data.project }}
+{{ $headCtx := dict "ctx" $.ctx }}
+{{ $headerCtx := dict "ctx" $.ctx "opaque" true }}
+{{ $heroCtx := dict "ctx" $.ctx "project" $project }}
+{{ $footerCtx := dict "ctx" $.ctx "include_slack" true "include_email" true }}
+
+    {{ partial "head.html" $headCtx }}
+
+    <body class="
+        {{ if default false $project }}
+            project-page project-page_{{ $.ctx.Title | urlize }}
+        {{ end }}
+    ">
+
+        {{ partial "header.html" $headerCtx }}
+
+        {{ if and (default false $project) (default true $.ctx.Params.herotemplate) }}
+            {{ $heroTpl := default "hero.html" $.ctx.Params.herotemplate }}
+            {{ partial $heroTpl $heroCtx }}
+        {{ end }}
+
+        <section class="
+            page-text-content
+            {{ default "" $.containerClass }}
+            {{ if eq false $.ctx.Params.herotemplate }}
+                page-text-content_no-hero
+            {{ end}}
+            {{ if default false $.ctx.Params.isnarrow }}
+                page-text-content_narrow
+            {{ end}}
+        ">
+            <div>
+                {{ if and (default false $project) (default false $.ctx.Params.asidetemplate) }}
+                    {{ partial $.ctx.Params.asidetemplate $heroCtx }}
+                {{ end }}
+                <div class="
+                    page-text-content__raw
+                    {{ if default false $.ctx.Params.asidetemplate }}
+                        page-text-content__raw_with-aside
+                    {{ end}}
+                ">
+                    {{ if default false $.ctx.Params.showcustomtitle }}
+                        <h1>{{ $.ctx.Title }}</h1>
+                    {{ end }}
+
+                    {{ if ne ($.ctx.Lastmod.Format "02/01/2006") (dateFormat "02/01/2006" "0001-01-01") }}
+                        <p class="last-update">
+                            Last updated at {{ $.ctx.Lastmod.Format "02/01/2006" }}
+                        </p>
+                    {{ end }}
+
+                    {{ default "<h1>404 not found :(</h1>" $.ctx.Content }}
+                </div>
+            </div>
+        </section>
+
+        {{ partial "footer.html" $footerCtx }}
+    </body>
+</html>

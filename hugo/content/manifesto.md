@@ -4,6 +4,9 @@ url: manifesto
 title: Our manifesto
 lastmod: 2016-12-21
 description: The source{d} manifesto talks about our set of beliefs, principles and intentions as we move forward.
+heroTemplate: false
+isNarrow: true
+showCustomTitle: true
 ---
 
 At source{d} we believe that programming is a form of creative expression, similar to painting or writing. Just like painters with paints and writers with words, as a developer you have programming languages that allow you to create and express whatever your ability and creativity allows.
