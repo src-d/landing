@@ -2,14 +2,14 @@
 {{ $imageUrl := (printf "img/header/%s.png" $imageName) | absURL }}
 <header class="hero">
     <div class="hero__wrap">
-        <figure class="hero__picture mobile-only">
-            <img src="{{ $imageUrl | safeURL }}" />
-        </figure>
-
         <div class="hero__info">
             <h1>{{ .data.title }}</h1>
             <p>{{ .data.desc | safeHTML }}</p>
         </div>
+
+        <figure class="hero__picture mobile-only">
+            <img src="{{ $imageUrl | safeURL }}" />
+        </figure>
 
         <figure class="hero__picture mobile-hidden">
             <img src="{{ $imageUrl | safeURL }}" />
