@@ -2,7 +2,6 @@ module.exports = {
   extends: "airbnb-base",
   plugins: ["import", "prettier"],
   rules: {
-    "prettier/prettier": "error",
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
     "import/extensions": 0,
