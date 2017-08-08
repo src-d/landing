@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', (_) => {
 });
 
 function setupSmoothScroll() {
-  const elems = Array.from(document.querySelectorAll('.scroll-to:not([data-track])'));
+  const elems = Array.from(document.querySelectorAll('.scroll-to:not([data-tracked])'));
 
   elems.forEach((elem) => {
     elem.onclick = function (e) {
