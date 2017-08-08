@@ -3,7 +3,7 @@
         {{ if and (default false $.group.pipeline) (ne $i 0) }}
             {{ partial "svg" "arrow" }}
         {{ end }}
-        <a href="{{ $item.url }}" target="_blank">
+        <a href="{{ $item.url }}" target="_blank" data-tracked>
             <figure>
                 <img src="/img/stack/{{ $item.id }}.png" alt="Logo of {{ $item.name }}" />
             </figure>

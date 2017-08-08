@@ -10,8 +10,11 @@
         {{ $.scratch.Set "icon" "social/linkedin" }}
     {{ end }}
     <article class="circle-list__section__group__item">
-        <a href="{{ $.scratch.Get "href" }}" title="{{ $.scratch.Get "alt" }}"
-            target="_blank" class="circle-list__section__group__item__picture-area"
+        <a href="{{ $.scratch.Get "href" }}"
+           title="{{ $.scratch.Get "alt" }}"
+           target="_blank"
+           class="circle-list__section__group__item__picture-area"
+           data-tracked
         >
             {{ partial "team/person-circle.svg" $m.picture }}
             <address>
@@ -21,7 +24,10 @@
         </a>
         <div class="circle-list__section__group__item__info">
             <h2>
-                <a href="{{ $.scratch.Get "href" }}" title="{{ $.scratch.Get "alt" }}" target="_blank">
+                <a href="{{ $.scratch.Get "href" }}"
+                   title="{{ $.scratch.Get "alt" }}"
+                   target="_blank"
+                   data-tracked>
                     {{ $m.name }}
                 </a>
             </h2>

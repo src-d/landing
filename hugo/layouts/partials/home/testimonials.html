@@ -10,7 +10,7 @@
                 <blockquote>
                     <p>{{ partial "svg" "quotes" }}{{ .text | safeHTML }}{{ partial "svg" "quotes" }}</p>
                     <cite>
-                        <a href="{{ .url }}">
+                        <a href="{{ .url }}" target="_blank" data-tracked>
                             {{ if and (ne .name "") (ne .name .nickname) }}
                                 {{ .name }} @{{ .nickname }}
                             {{ else }}
