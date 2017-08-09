@@ -1,112 +1,112 @@
 .footer {
-  @include corporate-gradient;
+    @include corporate-gradient;
 
-  &__slack {
-    @include row;
-    width: initial;
-    margin-right: 0;
-    margin-top: $margin-top-footer-slack;
-    background-color: $color-footer-slack-band-bg;
-    height: $size-footer-slack-band;
+    &__slack {
+        @include row;
+        width: initial;
+        margin-right: 0;
+        margin-top: $margin-top-footer-slack;
+        background-color: $color-footer-slack-band-bg;
+        height: $size-footer-slack-band;
 
-    .slack-form__wrap {
-      @include container;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      height: 100%;
+        .slack-form__wrap {
+            @include container;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            height: 100%;
+        }
+
+        .slack-form__root {
+            height: 100%;
+        }
     }
-
-    .slack-form__root {
-      height: 100%;
-    }
-  }
-
-  .contact-us {
-      padding: $padding-footer-contact-vertical 0;
-  }
-
-  &__sitemap {
-    @include row;
-    @include container;
-    font-size: $font-size-footer-section;
-    color: $color-footer-text;
 
     .contact-us {
-        display: none;
+        padding: $padding-footer-contact-vertical 0;
     }
 
-    a {
-      @include link-dark-bg;
-      color: $color-footer-text;
-      text-decoration: none;
+    &__sitemap {
+        @include row;
+        @include container;
+        font-size: $font-size-footer-section;
+        color: $color-footer-text;
 
-      &:hover {
-        color: $color-footer-links-hover;
-      }
-    }
-
-    &__addresses {
-      @include columns(3);
-
-      p {
-        font-style: italic;
-      }
-
-      &__emails {
-        margin-top: $gutter-size;
-      }
-    }
-
-    &__links {
-      @include columns(3);
-
-      h5 {
-        @include title-pill($color-footer-titles-pill, $width-title-footer-pill, $height-title-footer-pill, $size-title-footer-pill-spacing);
-        font-size: $font-size-footer-titles;
-        color: $color-footer-titles;
-        text-transform: lowercase;
-      }
-
-      ul {
-        margin-top: $size-title-footer-spacing;
-      }
-    }
-  }
-
-  &__social {
-    padding: $padding-footer-social-vertical 0;
-    text-align: center;
-
-    ul {
-      list-style: none;
-
-      li {
-        display: inline-block;
-
-        & + li {
-          margin-left: $size-footer-social-icon-spacing;
+        .contact-us {
+            display: none;
         }
 
         a {
-          display: inline-block;
-          width: $size-footer-social-icon;
-          height: $size-footer-social-icon;
-          border-radius: 50%;
-          background-color: $color-footer-social-icon-bg;
-          @include transition(background-color);
+            @include link-dark-bg;
+            color: $color-footer-text;
+            text-decoration: none;
 
-          &:hover {
-              background-color: rgba(255, 255, 255, 0.3);
-          }
-
-          img {
-            height: $size-footer-social-icon-image;
-            margin-top: ($size-footer-social-icon - $size-footer-social-icon-image) / 2;
-          }
+            &:hover {
+                color: $color-footer-links-hover;
+            }
         }
-      }
+
+        &__addresses {
+            @include columns(3);
+
+            p {
+                font-style: italic;
+            }
+
+            &__emails {
+                margin-top: $gutter-size;
+            }
+        }
+
+        &__links {
+            @include columns(3);
+
+            h5 {
+                @include title-pill($color-footer-titles-pill, $width-title-footer-pill, $height-title-footer-pill, $size-title-footer-pill-spacing);
+                font-size: $font-size-footer-titles;
+                color: $color-footer-titles;
+                text-transform: lowercase;
+            }
+
+            ul {
+                margin-top: $size-title-footer-spacing;
+            }
+        }
     }
-  }
+
+    &__social {
+        padding: $padding-footer-social-vertical 0;
+        text-align: center;
+
+        ul {
+            list-style: none;
+
+            li {
+                display: inline-block;
+
+                & + li {
+                    margin-left: $size-footer-social-icon-spacing;
+                }
+
+                a {
+                    display: inline-block;
+                    width: $size-footer-social-icon;
+                    height: $size-footer-social-icon;
+                    border-radius: 50%;
+                    background-color: $color-footer-social-icon-bg;
+                    @include transition(background-color);
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, .3);
+                    }
+
+                    img {
+                        height: $size-footer-social-icon-image;
+                        margin-top: ($size-footer-social-icon - $size-footer-social-icon-image) / 2;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include media-breakpoint-down(md) {

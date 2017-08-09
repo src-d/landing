@@ -6,13 +6,13 @@
         background: transparent;
         border-radius: 3px;
         bottom: 8px;
-        color: #EFF5FD;
-        content: "Copied to clipboard";
+        color: #eff5fd;
+        content: 'Copied to clipboard';
         font-family: Roboto, sans-serif;
         font-weight: bold;
         text-transform: uppercase;
         font-size: 12px;
-        letter-spacing: 0.87px;
+        letter-spacing: .87px;
         left: 50%;
         margin-left: -110px;
         padding: 12px 15px;
@@ -30,7 +30,7 @@
         border-color: transparent;
         border-width: 8px 10px 0 10px;
         bottom: 0;
-        content: " ";
+        content: ' ';
         margin-left: -10px;
         left: 50%;
         position: absolute;
@@ -42,13 +42,13 @@
     &.show {
         &:after {
             visibility: visible;
-            background: fade-in(#555F66, 0.02);
+            background: fade-in(#555f66, .02);
             bottom: 120%;
         }
 
         &:before {
             visibility: visible;
-            border-color: fade-in(#555F66, 0.02) transparent;
+            border-color: fade-in(#555f66, .02) transparent;
             bottom: calc(120% - 8px);
         }
     }

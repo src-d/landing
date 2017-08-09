@@ -8,7 +8,12 @@ body {
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $font-titles;
 }
 
@@ -41,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &_condensed {
-        padding-top: 0px;
+        padding-top: 0;
 
         .band__container > h1 {
             margin-bottom: -10px;
@@ -76,7 +81,6 @@ h1, h2, h3, h4, h5, h6 {
                 }
 
                 @include media-breakpoint-down(sm) {
-
                     &:before {
                         display: none;
                     }
@@ -102,31 +106,31 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 
     a {
-      display: block;
-      text-decoration: none;
+        display: block;
+        text-decoration: none;
 
-      &.contact-email {
-        font-size: $font-size-contact-email;
-        color: $color-contact-email-light;
-      }
-
-      &.pgp-key {
-        @include svg-color("key", $color-contact-pgp-key-icon-light);
-        font-size: $font-size-contact-text;
-        color: $color-contact-text-light;
-
-        & > * {
-          vertical-align: middle;
-          display: inline-block;
+        &.contact-email {
+            font-size: $font-size-contact-email;
+            color: $color-contact-email-light;
         }
 
-        span + span {
-          padding-left: $gutter-size / 5;
-          // svg icon has a weird size, so aligning the two items in the middle
-          // does not make a very pleasant centering
-          margin-top: -5px;
+        &.pgp-key {
+            @include svg-color('key', $color-contact-pgp-key-icon-light);
+            font-size: $font-size-contact-text;
+            color: $color-contact-text-light;
+
+            & > * {
+                vertical-align: middle;
+                display: inline-block;
+            }
+
+            span + span {
+                padding-left: $gutter-size / 5;
+                // svg icon has a weird size, so aligning the two items in the middle
+                // does not make a very pleasant centering
+                margin-top: -5px;
+            }
         }
-      }
     }
 
     &_dark {
@@ -135,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         a.pgp-key {
-            @include svg-color("key", $color-contact-pgp-key-icon-dark);
+            @include svg-color('key', $color-contact-pgp-key-icon-dark);
             color: $color-contact-text-dark;
         }
     }

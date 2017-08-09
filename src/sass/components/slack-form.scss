@@ -1,204 +1,204 @@
 .slackForm {
-  background-color: transparent;
+    background-color: transparent;
 
-  &__header {
-    padding: $padding-top-slack-form-header $padding-lateral-slack-form-header 0;
-    background-color: $color-slack-form-bg;
-    border-radius: $border-radius-main $border-radius-main 0 0;
-    color: $color-slack-form-description;
-    text-align: center;
-    text-transform: lowercase;
-    margin-bottom: ($height-slack-form-input / 2 ) +
-      $margin-bottom-slack-form-input +
-      $height-pill-buttons +
-      $margin-bottom-slack-form-submit-button +
-      $height-slack-form-message +
-      $margin-bottom-slack-form-message;
-  }
-
-  &__logo {
-    margin: auto;
-    margin-bottom: $margin-bottom-slack-form-logo;
-    height: $height-slack-form-logo;
-  }
-
-  &__title {
-    margin-bottom: $margin-bottom-slack-form-title;
-    color: $color-light-blue;
-    font-family: $font-titles;
-    font-size: $font-size-slack-form-title;
-    line-height: $line-height-tall;
-  }
-
-  &__description {
-    color: $color-dark-blue;
-    font-family: $font-titles;
-    font-size: $font-size-title-small;
-    padding-bottom: $padding-bottom-slack-form-description;
-  }
-
-  &__body {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: $color-slack-form-body-normal-bg;
-    border-radius: 0 0 $border-radius-main $border-radius-main;
-
-    &_success {
-      background-color: $color-slack-form-body-success-bg;
-    }
-
-    &_error {
-      background-color: $color-slack-form-body-error-bg;
-    }
-  }
-
-  &__label {
-    @include sr-only();
-  }
-
-  &__input {
-    @include input(white);
-    display: block;
-    margin: -($height-slack-form-input / 2) auto $margin-bottom-slack-form-input auto;
-    width: calc(100% - #{2 * $padding-lateral-slack-form});
-  }
-
-  &__submit {
-    display: block;
-    margin: 0 auto $margin-bottom-slack-form-submit-button;
-    width: $width-slack-form-submit;
-  }
-
-  &__message {
-    height: $height-slack-form-message;
-    margin: 0 auto $margin-bottom-slack-form-message;
-    text-align: center;
-
-    &_hidden {
-      visibility: hidden;
-    }
-
-    &_success {
-      @include svg-icon("message-icon-success", 30px, 30px) {
-        border-radius: 50%;
-        border-style: solid;
-        border-color: $color-pill-button-white-main;
-        border-width: $border-width-pills;
-        margin-right: $margin-right-slack-form-message-icon;
-      }
-    }
-
-    &_error {
-      @include svg-icon("message-icon-error-face", 30px, 30px) {
-        border-radius: 50%;
-        border-style: solid;
-        border-color: $color-pill-button-white-main;
-        border-width:  $border-width-pills;
-        margin-right: $margin-right-slack-form-message-icon;
-      }
-    }
-  }
-
-  &--horizontal {
-    height: 100%;
-    position: relative;
-
-    .slackForm {
-      &__header {
-        background-color: transparent;
-        position: static;
-        display: inline;
-      }
-
-      &__header {
-        width: 0;
-        height: 0;
-        padding: 0;
-      }
-
-      &__logo {
-        @include columns(2);
-        margin-bottom: 0;
-        margin-left: 0;
-        display: inline;
-        height: $size-footer-slack-logo;
-        margin-top: ($size-footer-slack-band - $size-footer-slack-logo) / 2;
-      }
-
-      &__title {
-        @include columns(3);
-        margin: 0 auto;
-        line-height: $size-footer-slack-band;
-        font-size: $font-size-footer-slack-band-title;
-        color: $color-footer-slack-band-title;
-      }
-
-      &__description {
-        display: none;
-      }
-
-      &__body {
-        position: static;
-        display: inline;
-        background: transparent;
-      }
-
-      &__input {
-        @include columns(4);
-        display: inline;
-        margin-top: ($size-footer-slack-band - $size-footer-slack-input) / 2;
-      }
-
-      &__submit {
-        @include columns(3);
-        display: inline;
-        margin-top: ($size-footer-slack-band - $size-footer-slack-input) / 2;
-      }
-
-      &__message {
-        @include columns(3);
-        position: absolute;
-        right: $size-footer-slack-band-right-distance;
-        bottom: $size-footer-slack-band-bottom-distance;
+    &__header {
+        padding: $padding-top-slack-form-header $padding-lateral-slack-form-header 0;
+        background-color: $color-slack-form-bg;
+        border-radius: $border-radius-main $border-radius-main 0 0;
+        color: $color-slack-form-description;
         text-align: center;
-        color: white;
-        font-size: $font-size-slack-band-message;
+        text-transform: lowercase;
+        margin-bottom: ($height-slack-form-input / 2 ) +
+        $margin-bottom-slack-form-input +
+        $height-pill-buttons +
+        $margin-bottom-slack-form-submit-button +
+        $height-slack-form-message +
+        $margin-bottom-slack-form-message;
+    }
 
-        &:before {
-          height: $height-slack-form-horizontal-message !important;
-          width: $height-slack-form-horizontal-message !important;
-        }
+    &__logo {
+        margin: auto;
+        margin-bottom: $margin-bottom-slack-form-logo;
+        height: $height-slack-form-logo;
+    }
 
-        &_hidden {
-          visibility: hidden;
-        }
+    &__title {
+        margin-bottom: $margin-bottom-slack-form-title;
+        color: $color-light-blue;
+        font-family: $font-titles;
+        font-size: $font-size-slack-form-title;
+        line-height: $line-height-tall;
+    }
+
+    &__description {
+        color: $color-dark-blue;
+        font-family: $font-titles;
+        font-size: $font-size-title-small;
+        padding-bottom: $padding-bottom-slack-form-description;
+    }
+
+    &__body {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $color-slack-form-body-normal-bg;
+        border-radius: 0 0 $border-radius-main $border-radius-main;
 
         &_success {
-          @include svg-icon("message-icon-success", 30px, 30px) {
-            border-radius: 50%;
-            border-style: solid;
-            border-color: $color-footer-slack-band-success-border;
-            border-width:  $width-footer-slack-band-message-icon-border;
-            background-color: $color-footer-slack-band-success-bg;
-            margin-right: $margin-right-slack-form-message-icon;
-          }
+            background-color: $color-slack-form-body-success-bg;
         }
 
         &_error {
-          @include svg-icon("message-icon-error-face", 30px, 30px) {
-            border-radius: 50%;
-            border-style: solid;
-            border-color: $color-footer-slack-band-error-border;
-            border-width:  $width-footer-slack-band-message-icon-border;
-            background-color: $color-footer-slack-band-error-bg;
-            margin-right: $margin-right-slack-form-message-icon;
-          }
+            background-color: $color-slack-form-body-error-bg;
         }
-      }
     }
-  }
+
+    &__label {
+        @include sr-only();
+    }
+
+    &__input {
+        @include input(white);
+        display: block;
+        margin: -($height-slack-form-input / 2) auto $margin-bottom-slack-form-input auto;
+        width: calc(100% - #{2 * $padding-lateral-slack-form});
+    }
+
+    &__submit {
+        display: block;
+        margin: 0 auto $margin-bottom-slack-form-submit-button;
+        width: $width-slack-form-submit;
+    }
+
+    &__message {
+        height: $height-slack-form-message;
+        margin: 0 auto $margin-bottom-slack-form-message;
+        text-align: center;
+
+        &_hidden {
+            visibility: hidden;
+        }
+
+        &_success {
+            @include svg-icon('message-icon-success', 30px, 30px) {
+                border-radius: 50%;
+                border-style: solid;
+                border-color: $color-pill-button-white-main;
+                border-width: $border-width-pills;
+                margin-right: $margin-right-slack-form-message-icon;
+            }
+        }
+
+        &_error {
+            @include svg-icon('message-icon-error-face', 30px, 30px) {
+                border-radius: 50%;
+                border-style: solid;
+                border-color: $color-pill-button-white-main;
+                border-width: $border-width-pills;
+                margin-right: $margin-right-slack-form-message-icon;
+            }
+        }
+    }
+
+    &--horizontal {
+        height: 100%;
+        position: relative;
+
+        .slackForm {
+            &__header {
+                background-color: transparent;
+                position: static;
+                display: inline;
+            }
+
+            &__header {
+                width: 0;
+                height: 0;
+                padding: 0;
+            }
+
+            &__logo {
+                @include columns(2);
+                margin-bottom: 0;
+                margin-left: 0;
+                display: inline;
+                height: $size-footer-slack-logo;
+                margin-top: ($size-footer-slack-band - $size-footer-slack-logo) / 2;
+            }
+
+            &__title {
+                @include columns(3);
+                margin: 0 auto;
+                line-height: $size-footer-slack-band;
+                font-size: $font-size-footer-slack-band-title;
+                color: $color-footer-slack-band-title;
+            }
+
+            &__description {
+                display: none;
+            }
+
+            &__body {
+                position: static;
+                display: inline;
+                background: transparent;
+            }
+
+            &__input {
+                @include columns(4);
+                display: inline;
+                margin-top: ($size-footer-slack-band - $size-footer-slack-input) / 2;
+            }
+
+            &__submit {
+                @include columns(3);
+                display: inline;
+                margin-top: ($size-footer-slack-band - $size-footer-slack-input) / 2;
+            }
+
+            &__message {
+                @include columns(3);
+                position: absolute;
+                right: $size-footer-slack-band-right-distance;
+                bottom: $size-footer-slack-band-bottom-distance;
+                text-align: center;
+                color: white;
+                font-size: $font-size-slack-band-message;
+
+                &:before {
+                    height: $height-slack-form-horizontal-message !important;
+                    width: $height-slack-form-horizontal-message !important;
+                }
+
+                &_hidden {
+                    visibility: hidden;
+                }
+
+                &_success {
+                    @include svg-icon('message-icon-success', 30px, 30px) {
+                        border-radius: 50%;
+                        border-style: solid;
+                        border-color: $color-footer-slack-band-success-border;
+                        border-width: $width-footer-slack-band-message-icon-border;
+                        background-color: $color-footer-slack-band-success-bg;
+                        margin-right: $margin-right-slack-form-message-icon;
+                    }
+                }
+
+                &_error {
+                    @include svg-icon('message-icon-error-face', 30px, 30px) {
+                        border-radius: 50%;
+                        border-style: solid;
+                        border-color: $color-footer-slack-band-error-border;
+                        border-width: $width-footer-slack-band-message-icon-border;
+                        background-color: $color-footer-slack-band-error-bg;
+                        margin-right: $margin-right-slack-form-message-icon;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include media-breakpoint-down(md) {

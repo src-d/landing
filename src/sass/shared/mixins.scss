@@ -1,40 +1,40 @@
 @mixin link() {
-  text-decoration: underline;
-  cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 @mixin sr-only() {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
 }
 
 @mixin link-light-bg() {
-  @include link;
-  color: $color-links;
+    @include link;
+    color: $color-links;
 
-  &:hover {
-    color: $color-links-hover;
-  }
+    &:hover {
+        color: $color-links-hover;
+    }
 }
 
 @mixin link-dark-bg() {
-  @include link;
-  color: $color-links-darkbg;
+    @include link;
+    color: $color-links-darkbg;
 
-  &:hover {
-    color: $color-links-darkbg-hover;
-  }
+    &:hover {
+        color: $color-links-darkbg-hover;
+    }
 }
 
 @mixin corporate-gradient($left: $color-dark-blue, $right: $color-light-blue) {
-  background: $left;
-  background: linear-gradient(to right, $left, $right);
+    background: $left;
+    background: linear-gradient(to right, $left, $right);
 }
 
 @mixin card-shadow($hover-effect: false) {
@@ -48,29 +48,29 @@
 }
 
 @mixin title($size) {
-  font-size: $size;
-  line-height: $line-height-tall;
-  text-transform: lowercase;
+    font-size: $size;
+    line-height: $line-height-tall;
+    text-transform: lowercase;
 }
 
 @mixin title-big() {
-  @include title($font-size-title-big);
+    @include title($font-size-title-big);
 
-  @include media-breakpoint-down(sm) {
-    font-size: $font-size-title-big-mobile;
-  }
+    @include media-breakpoint-down(sm) {
+        font-size: $font-size-title-big-mobile;
+    }
 }
 
 @mixin svg-color($icon, $color) {
-  .svg-icon--#{$icon} {
-    fill: $color;
-  }
+    .svg-icon--#{$icon} {
+        fill: $color;
+    }
 }
 
 @mixin svg-icon($name, $width, $height, $method: before) {
     &:#{$method} {
         content: '';
-        background: transparent url('/img/icons/' + $name + '.svg');
+        background: transparent url('/img/icons/' ) $name + '.svg';;
         background-size: cover;
         display: inline-block;
         width: $width;
@@ -82,71 +82,71 @@
 }
 
 @mixin title-pill($color, $width, $height, $spacing) {
-  position: relative;
+    position: relative;
 
-  &:before {
-    position: absolute;
-    content: " ";
-    display: block;
-    border-radius: 45px;
-    height: $height;
-    width: $width;
-    left: -($width + $spacing);
-    top: calc(50% - #{$height / 2});
-    background-color: $color;
-  }
+    &:before {
+        position: absolute;
+        content: ' ';
+        display: block;
+        border-radius: 45px;
+        height: $height;
+        width: $width;
+        left: -($width + $spacing);
+        top: calc(50% - #{$height / 2});
+        background-color: $color;
+    }
 }
 
 @mixin input($background-color: $color-medium-grey) {
-  height: $height-slack-form-input;
-  border-radius: $border-radius-input;
-  background-color: $background-color;
-  border: $border-width-pills solid $color-slack-form-input-border;
-  font-size: $font-size-body;
-  font-family: $font-default;
-  padding: 0 $padding-lateral-input;
+    height: $height-slack-form-input;
+    border-radius: $border-radius-input;
+    background-color: $background-color;
+    border: $border-width-pills solid $color-slack-form-input-border;
+    font-size: $font-size-body;
+    font-family: $font-default;
+    padding: 0 $padding-lateral-input;
 
-  &::placeholder {
-    color: $color-slack-form-input-placeholder;
-  }
+    &::placeholder {
+        color: $color-slack-form-input-placeholder;
+    }
 }
 
 @mixin default-title-big() {
-  @include title-big;
-  @include title-pill($color-title-big-pill, $width-title-big-pill, $height-title-big-pill, $size-title-big-pill-spacing);
-  color: $color-title-big;
+    @include title-big;
+    @include title-pill($color-title-big-pill, $width-title-big-pill, $height-title-big-pill, $size-title-big-pill-spacing);
+    color: $color-title-big;
 
-  @include media-breakpoint-down(sm) {
-    @include title-pill($color-title-big-pill, $width-title-big-pill, $height-title-big-pill, $size-title-pill-spacing-mobile);
-  }
+    @include media-breakpoint-down(sm) {
+        @include title-pill($color-title-big-pill, $width-title-big-pill, $height-title-big-pill, $size-title-pill-spacing-mobile);
+    }
 }
 
 @mixin white-title-big() {
-  @include title-big;
-  @include title-pill($color-white, $width-title-big-pill, $height-title-big-pill, $size-title-big-pill-spacing);
-  color: $color-white;
+    @include title-big;
+    @include title-pill($color-white, $width-title-big-pill, $height-title-big-pill, $size-title-big-pill-spacing);
+    color: $color-white;
 
-  @include media-breakpoint-down(sm) {
-  @include title-pill($color-white, $width-title-big-pill, $height-title-big-pill, $size-title-pill-spacing-mobile);
-  }
+    @include media-breakpoint-down(sm) {
+        @include title-pill($color-white, $width-title-big-pill, $height-title-big-pill, $size-title-pill-spacing-mobile);
+    }
 }
 
 @mixin default-title-medium() {
-  @include title($font-size-title-medium);
-  @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-medium-pill-spacing);
-  color: $color-title-medium;
-  margin-top: $margin-examples-title-medium-top;
+    @include title($font-size-title-medium);
+    @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-medium-pill-spacing);
+    color: $color-title-medium;
+    margin-top: $margin-examples-title-medium-top;
 
-  @include media-breakpoint-down(sm) {
-      @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-pill-spacing-mobile);
-    font-size: $font-size-title-medium-mobile;
-  }
+    @include media-breakpoint-down(sm) {
+        @include title-pill($color-title-medium-pill, $width-title-medium-pill, $height-title-medium-pill, $size-title-pill-spacing-mobile);
+        font-size: $font-size-title-medium-mobile;
+    }
 }
 
 @mixin transition($properties: all, $time: $transition-main-time, $effect: $transition-main-effect) {
     $values: null;
     @each $property in $properties {
-      $values: append($values, $property $time $effect, comma);
+        $values: append($values, $property $time $effect, comma);
     }
 
     transition: $values;
@@ -173,14 +173,14 @@
     // Using both the semantic way and the global modifier way.
     &:hover:not(:disabled),
     &:hover:not(.disabled) {
-        @include pill-style-hover($type)
+        @include pill-style-hover($type);
     }
 
     // Using both the semantic way and the global modifier way.
     &:disabled,
     &.disabled {
         cursor: not-allowed;
-        opacity: 0.3;
+        opacity: .3;
     }
 
     @include media-breakpoint-down(sm) {
