@@ -28,17 +28,17 @@
                     <div class="cards__wrap">
                         {{ with $.slack }}
                             <div class="slack-form__root horizontal-slack-join"
-                                 data-button="{{ .msgs.button }}"
-                                 data-endpoint="{{ .endpoint }}"
-                                 data-fetch-error="{{ .msgs.fetch_error }}"
-                                 data-horizontal="horizontal"
-                                 data-logo="{{ "/img/icons/slack-enter-color.svg" | relURL }}"
-                                 data-placeholder="{{ .placeholder }}"
-                                 data-server-error="{{ .msgs.server_error }}"
-                                 data-success="{{ .msgs.success }}"
-                                 data-title="{{ .title }}"
-                                 data-wait="{{ .msgs.wait }}"
-                                 >
+                                data-button="{{ .msgs.button }}"
+                                data-endpoint="{{ .endpoint }}"
+                                data-fetch-error="{{ .msgs.fetch_error }}"
+                                data-horizontal="horizontal"
+                                data-logo="{{ "/img/icons/slack-enter-color.svg" | relURL }}"
+                                data-placeholder="{{ .placeholder }}"
+                                data-server-error="{{ .msgs.server_error }}"
+                                data-success="{{ .msgs.success }}"
+                                data-title="{{ .title }}"
+                                data-wait="{{ .msgs.wait }}"
+                                >
                             </div>
                         {{ end }}
                     </div>

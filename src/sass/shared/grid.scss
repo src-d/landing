@@ -39,24 +39,24 @@
 }
 
 /*
- * The grid system was documented to be based on Bootstrap's. Bootstrap requires content to be in a container.
- * Container's children can only be rows.
- * A row's children are the colummned ones.
- */
+* The grid system was documented to be based on Bootstrap's. Bootstrap requires content to be in a container.
+* Container's children can only be rows.
+* A row's children are the colummned ones.
+*/
 @mixin row() {
     width: 100%;
     @include clearfix;
     margin-right: -$gutter-size/2;
     margin-left: -$gutter-size/2;
 
-     > *:first-child {
+    > *:first-child {
         margin-left: 0 !important;
     }
 }
 
 /*
- * Usually used as a mixin without parameters, sets the width for each breakpoint and centers the content.
- */
+* Usually used as a mixin without parameters, sets the width for each breakpoint and centers the content.
+*/
 @mixin container($max-widths: $container-max-widths) {
     margin: 0 auto;
     width: 100%;
