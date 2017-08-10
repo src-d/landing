@@ -1,5 +1,7 @@
 /* eslint-env browser */
 /* global $ */
+import $ from 'jquery';
+
 const SEND_COMMAND = 'send';
 const EVENT_HIT_TYPE = 'event';
 const EVENT_FIELDS = ['eventCategory', 'eventAction', 'eventLabel', 'eventValue', 'transport', 'hitCallback'];
@@ -75,6 +77,8 @@ function commandArguments(link) {
   return [SEND_COMMAND, EVENT_HIT_TYPE, getData(link)];
 }
 
+// If ga is not installed, we have a fallback that both stores and logs the
+// call.
 const gaInternal = [];
 const ga = window.ga || function (...args) {
   gaInternal.push(args);
@@ -114,10 +118,10 @@ function gaPromise(...args) {
   });
 }
 
-function isScrollableLink(link) {
+export function isScrollableLink(link) {
   const [url, id] = link.href.split('#');
 
-  return window.location.href.indexOf(url) > 0 && id;
+  return window.location.href.indexOf(url) >= 0 && id;
 }
 
 /**
@@ -125,7 +129,7 @@ function isScrollableLink(link) {
  *
  * @param {HTMLAnchorElement} link
  */
-function scrollTo(link) {
+export function scrollTo(link) {
   const [, id] = link.href.split('#');
   $('body, html').animate(
     {
@@ -178,6 +182,7 @@ export default function setupLinkTracking() {
     if (isScrollableLink(target)) {
       sendLinkDetails(target);
       scrollTo(target);
+      return;
     }
 
     sendLinkDetails(target)

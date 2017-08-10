@@ -12,7 +12,7 @@ import hljs from 'highlight.js';
 import BlogPostsContainer from './components/Posts';
 import PositionsPanel from './components/Positions';
 import SlackForm from './components/SlackForm';
-import setupLinkTracking from './services/link_track';
+import setupLinkTracking, { isScrollableLink, scrollTo } from './services/link_track';
 
 polyfill();
 
@@ -68,15 +68,10 @@ function setupSmoothScroll() {
   elems.forEach((elem) => {
     elem.onclick = function (e) {
       const [url, id] = elem.href.split('#');
-      if (window.location.href.indexOf(url) >= 0 && id) {
+      if (isScrollableLink(elem)) {
         e.preventDefault();
 
-        $('body, html').animate(
-          {
-            scrollTop: $(`#${id}`).offset().top,
-          },
-          1000,
-        );
+        scrollTo(elem);
       }
     };
   });
