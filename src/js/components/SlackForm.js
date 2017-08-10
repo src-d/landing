@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { inviteToSlack } from '../services/api';
+import { gaPromise as ga } from '../services/link_track';
 
 const emailRegex = /^.+@.+\..+$/;
 
@@ -23,6 +24,11 @@ export default class SlackForm extends React.Component {
       this.input.focus();
     } else {
       this.setState({ loading: true, success: false, errMessage: '' });
+      ga('send', 'event', {
+        eventCategory: 'joinSlack',
+        eventAction: 'button_click',
+        eventLabel: 'slackButton'
+      });
       inviteToSlack(this.props.endpoint, this.state.email)
         .then(resp => {
           if (resp.status === 200) {

@@ -97,7 +97,7 @@ const ga = window.ga || function (...args) {
  * @param {...any} args
  * @return {Promise} a promise that resolves whenever the hitCallback is called.
  */
-function gaPromise(...args) {
+export function gaPromise(...args) {
   let obj = {};
   let oldCallback = () => { };
 
