@@ -78,7 +78,7 @@ function Positions({ positions, filterBy }) {
 function Position({ data }) {
   return (
     <div className="positions__job cards__element">
-      <a href={getPositionExternalUrl(data)} target="_blank">
+      <a href={getPositionExternalUrl(data)} target="_blank" data-tracked>
         <section>
           <header className="positions__job__header">
             <figure>

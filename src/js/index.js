@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import { polyfill } from 'es6-promise';
 import 'isomorphic-fetch';
 import ReactDOM from 'react-dom';
@@ -11,6 +12,7 @@ import hljs from 'highlight.js';
 import BlogPostsContainer from './components/Posts';
 import PositionsPanel from './components/Positions';
 import SlackForm from './components/SlackForm';
+import setupLinkTracking, { isScrollableLink, scrollTo } from './services/link_track';
 
 polyfill();
 
@@ -23,7 +25,7 @@ function renderComponent(component, target, props = {}) {
   if (elem) {
     ReactDOM.render(
       React.createElement(component, Object.assign({}, props, elem.dataset)),
-      elem
+      elem,
     );
   }
 }
@@ -34,17 +36,17 @@ function renderBlogCategories(selector, containerId) {
   };
 
   const categories = Array.from(document.querySelectorAll(selector));
-  categories.forEach(category => {
+  categories.forEach((category) => {
     const props = {
       onSuccess: enableBlogContainer,
-      category: category.dataset
+      category: category.dataset,
     };
     const component = React.createElement(BlogPostsContainer, props);
     ReactDOM.render(component, category);
   });
 }
 
-window.addEventListener('DOMContentLoaded', _ => {
+window.addEventListener('DOMContentLoaded', (_) => {
   setupStickyHeader();
   setupMenu();
   setupExamples();
@@ -54,26 +56,22 @@ window.addEventListener('DOMContentLoaded', _ => {
   renderHorizontalSlackForms();
   setupTestimonials();
   lightbox.option({
-    disableScrolling: true
+    disableScrolling: true,
   });
   setupSmoothScroll();
+  setupLinkTracking();
 });
 
 function setupSmoothScroll() {
-  const elems = Array.from(document.querySelectorAll('.scroll-to'));
+  const elems = Array.from(document.querySelectorAll('.scroll-to:not([data-tracked])'));
 
-  elems.forEach(elem => {
-    elem.onclick = function(e) {
+  elems.forEach((elem) => {
+    elem.onclick = function (e) {
       const [url, id] = elem.href.split('#');
-      if (window.location.href.indexOf(url) >= 0 && id) {
+      if (isScrollableLink(elem)) {
         e.preventDefault();
 
-        $('body, html').animate(
-          {
-            scrollTop: $(`#${id}`).offset().top
-          },
-          1000
-        );
+        scrollTo(elem);
       }
     };
   });
@@ -83,7 +81,7 @@ function setupMenu() {
   const menu = document.getElementById('menu');
   const toggle = document.getElementById('menu-toggle');
 
-  toggle.addEventListener('click', e => {
+  toggle.addEventListener('click', (e) => {
     menu.classList.toggle('topbar__menu_open');
     toggle.classList.toggle('topbar__menu-toggle_open');
   });
@@ -91,9 +89,9 @@ function setupMenu() {
   const mainMenu = document.getElementById('menu-main');
   const navs = Array.from(document.querySelectorAll('.nav-to'));
   const menus = Array.from(document.querySelectorAll('#menu > ul'));
-  navs.forEach(n => {
+  navs.forEach((n) => {
     const to = n.getAttribute('data-nav-to');
-    n.addEventListener('click', e => {
+    n.addEventListener('click', (e) => {
       e.preventDefault();
 
       menus.forEach(m => m.classList.remove('visible'));
@@ -105,7 +103,7 @@ function setupMenu() {
 
 function renderHorizontalSlackForms() {
   const elems = document.querySelectorAll('.horizontal-slack-join');
-  Array.from(elems).forEach(form => {
+  Array.from(elems).forEach((form) => {
     renderComponent(SlackForm, form);
   });
 }
@@ -146,12 +144,12 @@ function setupExamples() {
     swipe: false,
     adaptiveHeight: true,
     appendArrows: '.examples__info__navigation',
-    appendDots: '.examples__info__navigation'
+    appendDots: '.examples__info__navigation',
   });
 
   highlightCode(code);
 
-  example.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
+  example.on('beforeChange', (e, slick, currentSlide, nextSlide) => {
     const project =
       window.examples[nextSlide >= window.examples.length ? 0 : nextSlide];
     title.innerText = project.title;

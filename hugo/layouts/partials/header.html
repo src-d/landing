@@ -25,10 +25,10 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://talks.sourced.tech" target="_blank" title="Talks">Talks</a>
+                        <a href="http://talks.sourced.tech" target="_blank" title="Talks" data-tracked>Talks</a>
                     </li>
                     <li>
-                        <a href="https://blog.sourced.tech" title="Blog">Blog</a>
+                        <a href="https://blog.sourced.tech" title="Blog" data-tracked>Blog</a>
                     </li>
                     <li {{ if eq $ctx.URL "stack" }}class="active"{{ end }}>
                         <a href="{{ "/stack" | absURL }}" title="Our stack">Stack</a>
@@ -78,7 +78,7 @@
                             {{ range $k := $ctx.Site.Data.categories.categories.order }}
                                 {{ $section := (index $categories $k) }}
                                 <li {{ if eq $category $k }}class="active"{{end}}>
-                                    <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}" class="scroll-to">
+                                    <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}" class="scroll-to" data-tracked>
                                         {{ partial "svg" $k }}
                                         <span>{{ $section.name }}</span>
                                     </a>
@@ -87,10 +87,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="http://talks.sourced.tech" target="_blank" title="Talks">Talks</a>
+                        <a href="http://talks.sourced.tech" target="_blank" title="Talks" data-tracked>Talks</a>
                     </li>
                     <li>
-                        <a href="https://blog.sourced.tech" title="Blog">Blog</a>
+                        <a href="https://blog.sourced.tech" title="Blog" data-tracked>Blog</a>
                     </li>
                     <li {{ if eq $ctx.URL "stack" }}class="active"{{ end }}>
                         <a href="{{ "/stack" | absURL }}" title="Our stack">Stack</a>

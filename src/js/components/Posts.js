@@ -48,6 +48,7 @@ export default class BlogPostsContainer extends Component {
             href={blogUrl('categories/' + name)}
             target="_blank"
             className="btn-pill"
+            data-tracked
           >
             {moreText}
           </a>
@@ -60,7 +61,7 @@ export default class BlogPostsContainer extends Component {
 function Post({ post, first }) {
   return (
     <article className="cards__element cards__element_blog">
-      <a href={post.link} target="_blank">
+      <a href={post.link} target="_blank" data-tracked>
         <section>
           <header>
             <div className="cards__element__band" />
