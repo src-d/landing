@@ -1,14 +1,4 @@
-function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
-    return response;
-  } else {
-    let error = new Error(response.statusText);
-    error.response = response;
-    throw error;
-  }
-}
-
-export var states = {
+export const states = {
   LOADING: 'loading',
   LOADED: 'loaded',
   ERROR: 'error',
@@ -16,8 +6,17 @@ export var states = {
 
 const LOCAL_URL = 'http://localhost:8080/api';
 const PROD_URL = '/api';
-const PROD_FORCED_URL = null; //'http://sourced.tech/api'
+const PROD_FORCED_URL = null; // 'http://sourced.tech/api'
 const BLOG_URL = '//blog.sourced.tech';
+
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response;
+  }
+  const error = new Error(response.statusText);
+  error.response = response;
+  throw error;
+}
 
 function apiURL(url) {
   const baseURL =
@@ -30,7 +29,7 @@ function request(url) {
 }
 
 export function loadPosts(category) {
-  return request(apiURL('/posts/' + category)).then(resp => {
+  return request(apiURL(`/posts/${category}`)).then((resp) => {
     const posts = resp.Posts.slice(0, 3);
     return posts.length > 0
       ? posts
@@ -43,17 +42,15 @@ export function blogUrl(path) {
     return path;
   }
 
-  return BLOG_URL + '/' + path.trim('/');
+  return `${BLOG_URL}/${path.trim('/')}`;
 }
 
 const POSITIONS_URL = '/positions';
 
 export function loadPositions() {
-  let url = apiURL(POSITIONS_URL);
+  const url = apiURL(POSITIONS_URL);
   return request(url).then(resp => resp);
 }
-
-const CHANNEL = '';
 
 export function inviteToSlack(endpoint, email) {
   return fetch(apiURL(endpoint), {

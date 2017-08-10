@@ -46,34 +46,16 @@ function renderBlogCategories(selector, containerId) {
   });
 }
 
-window.addEventListener('DOMContentLoaded', (_) => {
-  setupStickyHeader();
-  setupMenu();
-  setupExamples();
-  renderBlogCategories('.blog__category', 'blog-container');
-  renderComponent(PositionsPanel, 'offers');
-  renderComponent(SlackForm, 'slack-join');
-  renderHorizontalSlackForms();
-  setupTestimonials();
-  lightbox.option({
-    disableScrolling: true,
-  });
-  setupSmoothScroll();
-  setupLinkTracking();
-});
-
 function setupSmoothScroll() {
   const elems = Array.from(document.querySelectorAll('.scroll-to:not([data-tracked])'));
 
   elems.forEach((elem) => {
-    elem.onclick = function (e) {
-      const [url, id] = elem.href.split('#');
+    elem.addEventListener('click', (e) => {
       if (isScrollableLink(elem)) {
         e.preventDefault();
-
         scrollTo(elem);
       }
-    };
+    });
   });
 }
 
@@ -81,7 +63,7 @@ function setupMenu() {
   const menu = document.getElementById('menu');
   const toggle = document.getElementById('menu-toggle');
 
-  toggle.addEventListener('click', (e) => {
+  toggle.addEventListener('click', () => {
     menu.classList.toggle('topbar__menu_open');
     toggle.classList.toggle('topbar__menu-toggle_open');
   });
@@ -95,8 +77,8 @@ function setupMenu() {
       e.preventDefault();
 
       menus.forEach(m => m.classList.remove('visible'));
-      const menu = document.getElementById(`menu-${to}`) || mainMenu;
-      menu.classList.add('visible');
+      const menuTo = document.getElementById(`menu-${to}`) || mainMenu;
+      menuTo.classList.add('visible');
     });
   });
 }
@@ -108,6 +90,14 @@ function renderHorizontalSlackForms() {
   });
 }
 
+function checkTopbarOpacity(topBar, opaqueAtOffset) {
+  if (window.pageYOffset > opaqueAtOffset) {
+    topBar.classList.add('opaque');
+  } else {
+    topBar.classList.remove('opaque');
+  }
+}
+
 function setupStickyHeader() {
   const topBar = document.querySelector('#topbar');
   const offset = 50;
@@ -116,14 +106,12 @@ function setupStickyHeader() {
   }
 
   checkTopbarOpacity(topBar, offset);
-  window.addEventListener('scroll', _ => checkTopbarOpacity(topBar, offset));
+  window.addEventListener('scroll', () => checkTopbarOpacity(topBar, offset));
 }
 
-function checkTopbarOpacity(topBar, opaqueAtOffset) {
-  if (window.pageYOffset > opaqueAtOffset) {
-    topBar.classList.add('opaque');
-  } else {
-    topBar.classList.remove('opaque');
+function highlightCode(code) {
+  if (code.children.length >= 0) {
+    hljs.highlightBlock(code.children[0]);
   }
 }
 
@@ -162,9 +150,11 @@ function setupExamples() {
   });
 }
 
-function highlightCode(code) {
-  if (code.children.length >= 0) {
-    hljs.highlightBlock(code.children[0]);
+function shuffle(arr) {
+  for (let i = arr.length; i > 0; i--) {
+    const j = Math.floor(Math.random() * i);
+    // eslint-disable-next-line no-param-reassign
+    [arr[i - 1], arr[j]] = [arr[j], arr[i - 1]];
   }
 }
 
@@ -180,9 +170,18 @@ function setupTestimonials() {
   children.slice(0, 2).forEach(c => testimonials.appendChild(c));
 }
 
-function shuffle(arr) {
-  for (let i = arr.length; i > 0; i--) {
-    const j = Math.floor(Math.random() * i);
-    [arr[i - 1], arr[j]] = [arr[j], arr[i - 1]];
-  }
-}
+window.addEventListener('DOMContentLoaded', () => {
+  setupStickyHeader();
+  setupMenu();
+  setupExamples();
+  renderBlogCategories('.blog__category', 'blog-container');
+  renderComponent(PositionsPanel, 'offers');
+  renderComponent(SlackForm, 'slack-join');
+  renderHorizontalSlackForms();
+  setupTestimonials();
+  lightbox.option({
+    disableScrolling: true,
+  });
+  setupSmoothScroll();
+  setupLinkTracking();
+});

@@ -1,5 +1,4 @@
 /* eslint-env browser */
-/* global $ */
 import $ from 'jquery';
 
 const SEND_COMMAND = 'send';
@@ -82,6 +81,7 @@ function commandArguments(link) {
 const gaInternal = [];
 const ga = window.ga || function (...args) {
   gaInternal.push(args);
+  // eslint-disable-next-line no-console
   console.log(...args);
 
   const last = args.pop();

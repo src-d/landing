@@ -13,7 +13,7 @@ export default class SlackForm extends React.Component {
       errMessage: '',
       hasTyped: false,
       loading: false,
-      success: false
+      success: false,
     };
   }
 
@@ -27,24 +27,25 @@ export default class SlackForm extends React.Component {
       ga('send', 'event', {
         eventCategory: 'joinSlack',
         eventAction: 'button_click',
-        eventLabel: 'slackButton'
+        eventLabel: 'slackButton',
       });
       inviteToSlack(this.props.endpoint, this.state.email)
-        .then(resp => {
+        .then((resp) => {
           if (resp.status === 200) {
             this.setState({ loading: false, success: true, errMessage: '' });
           } else {
             this.setState({
               loading: false,
-              errMessage: this.props.serverError
+              errMessage: this.props.serverError,
             });
           }
         })
-        .catch(err => {
+        .catch((err) => {
+          // eslint-disable-next-line no-console
           console.error(err);
           this.setState({
             loading: false,
-            errMessage: this.props.fetchError
+            errMessage: this.props.fetchError,
           });
         });
     }
@@ -85,7 +86,7 @@ export default class SlackForm extends React.Component {
   }
 
   get bodyClasses() {
-    let classes = ['slackForm__body'];
+    const classes = ['slackForm__body'];
 
     if (this.state.success) {
       classes.push('slackForm__body_success');
@@ -99,7 +100,7 @@ export default class SlackForm extends React.Component {
   }
 
   get messageClasses() {
-    let classes = ['slackForm__message'];
+    const classes = ['slackForm__message'];
 
     if (this.state.success) {
       classes.push('slackForm__message_success');
