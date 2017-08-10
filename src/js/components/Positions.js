@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import { Loading, LoadingError } from './Loading';
 import { states, loadPositions } from '../services/api';
 
@@ -76,6 +76,11 @@ function Positions({ positions, filterBy }) {
   );
 }
 
+Positions.propTypes = {
+  positions: PropTypes.string.isRequired,
+  filterBy: PropTypes.string.isRequired,
+};
+
 function getPositionExternalUrl(position) {
   return POSITION_URL.replace(':positionId', position.id);
 }
@@ -117,6 +122,10 @@ function Position({ data }) {
   );
 }
 
+Position.propTypes = {
+  data: PropTypes.string.isRequired,
+};
+
 function TeamSelector({ teams, active, onTeamSelected }) {
   if (teams.length <= 1) {
     return null;
@@ -139,3 +148,8 @@ function TeamSelector({ teams, active, onTeamSelected }) {
   );
 }
 
+TeamSelector.propTypes = {
+  teams: PropTypes.string.isRequired,
+  active: PropTypes.string.isRequired,
+  onTeamSelected: PropTypes.string.isRequired,
+};

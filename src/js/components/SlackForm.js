@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { inviteToSlack } from '../services/api';
 import { gaPromise as ga } from '../services/link_track';
 
@@ -188,3 +188,18 @@ export default class SlackForm extends React.Component {
     );
   }
 }
+
+SlackForm.propTypes = {
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  endpoint: PropTypes.string.isRequired,
+
+  success: PropTypes.string.isRequired,
+  button: PropTypes.string.isRequired,
+  serverError: PropTypes.string.isRequired,
+  fetchError: PropTypes.string.isRequired,
+
+  logo: PropTypes.string.isRequired,
+  horizontal: PropTypes.string.isRequired,
+};

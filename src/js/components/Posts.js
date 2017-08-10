@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { loadPosts, blogUrl } from '../services/api';
 import { ago } from '../services/dates';
 
@@ -56,6 +57,11 @@ export default class BlogPostsContainer extends Component {
   }
 }
 
+BlogPostsContainer.propTypes = {
+  category: PropTypes.string.isRequired,
+  onSuccess: PropTypes.string.isRequired,
+};
+
 function ellipsis(text, maxLenght) {
   if (text.length <= maxLenght) {
     return text;
@@ -107,6 +113,10 @@ function Post({ post }) {
   );
 }
 
+Post.propTypes = {
+  post: PropTypes.string.isRequired,
+};
+
 function CardHeaderImage({ url }) {
   if (url) {
     return (
@@ -122,6 +132,10 @@ function CardHeaderImage({ url }) {
     </div>
   );
 }
+
+CardHeaderImage.propTypes = {
+  url: PropTypes.string.isRequired,
+};
 
 /* eslint-disable max-len */
 function LinkIcon() {
