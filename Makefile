@@ -79,7 +79,7 @@ hugo-dependencies:
 
 # Prepares yarn
 js-dependencies:
-	$(JS_PACKAGE_MANAGER) install
+	$(JS_PACKAGE_MANAGER) install --force
 	$(JS_PACKAGE_MANAGER) run build
 
 ## Builds project
