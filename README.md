@@ -1,4 +1,5 @@
-# landing [![Build Status](http://drone.srcd.host/api/badges/src-d/landing/status.svg)](http://drone.srcd.host/src-d/landing)
+# landing
+[![Build Status](https://travis-ci.org/src-d/landing.svg?branch=master)](https://travis-ci.org/src-d/landing)
 
 Serves API and landing page
 
