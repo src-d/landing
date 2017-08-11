@@ -1,8 +1,7 @@
-$lang-names:
-    Elm
+$lang-names: Elm
     Haskell
     Swift
-    Elixir 
+    Elixir
     Go
     JavaScript
     Cpp
@@ -12,8 +11,7 @@ $lang-names:
     PHP
     Python
     Ruby;
-$lang-colors: 
-    #60B5CC // Elm
+$lang-colors: #60b5cc // Elm
     #29b544 // Haskell
     #ffac45 // Swift
     #6e4a7e // Elixir
@@ -21,10 +19,10 @@ $lang-colors:
     #f1e05a // JavaScript
     #f34b7d // Cpp
     #db5855 // Clojure
-    #e44b23 // HTML 
+    #e44b23 // HTML
     #b07219 // Java
-    #4F5D95 // PHP
-    #3572A5 // Python
+    #4f5d95 // PHP
+    #3572a5 // Python
     #701516; // Ruby
 
 @each $color in $lang-names {

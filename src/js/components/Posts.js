@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
-import { loadPosts, states, blogUrl } from '../services/api';
-import { ago, isNewer, TIME_UNITS } from '../services/dates';
+import PropTypes from 'prop-types';
+import { loadPosts, blogUrl } from '../services/api';
+import { ago } from '../services/dates';
 
 const POST_TITLE_MAX_LENGTH = 70;
 
@@ -14,7 +13,7 @@ export default class BlogPostsContainer extends Component {
       posts: [],
       title: null,
       moreUrl: null,
-      moreText: null
+      moreText: null,
     };
   }
 
@@ -27,7 +26,7 @@ export default class BlogPostsContainer extends Component {
   render() {
     const { posts } = this.state;
     const { title, name, moreText } = this.props.category;
-    if (posts.length == 0) {
+    if (posts.length === 0) {
       return <div />;
     }
 
@@ -35,17 +34,17 @@ export default class BlogPostsContainer extends Component {
       <div>
         {title
           ? <h2>
-              {title}
-            </h2>
+            {title}
+          </h2>
           : null}
         <div className="cards">
           <div className="cards__wrap">
-            {posts.map((p, i) => <Post key={i} first={i === 0} post={p} />)}
+            {posts.map((p, i) => <Post key={i} post={p} />)}
           </div>
         </div>
         <div className="blog__category__wrapper">
           <a
-            href={blogUrl('categories/' + name)}
+            href={blogUrl(`categories/${name}`)}
             target="_blank"
             className="btn-pill"
             data-tracked
@@ -58,7 +57,31 @@ export default class BlogPostsContainer extends Component {
   }
 }
 
-function Post({ post, first }) {
+BlogPostsContainer.propTypes = {
+  category: PropTypes.string.isRequired,
+  onSuccess: PropTypes.string.isRequired,
+};
+
+function ellipsis(text, maxLenght) {
+  if (text.length <= maxLenght) {
+    return text;
+  }
+
+  let cutterPosition = text.indexOf(' ', maxLenght - 1);
+  if (cutterPosition === -1) {
+    return text;
+  }
+
+  const lastChar = text[cutterPosition - 1];
+  const removedFromTheEndChars = '.,';
+  if (removedFromTheEndChars.indexOf(lastChar) > -1) {
+    cutterPosition -= 1;
+  }
+
+  return `${text.slice(0, cutterPosition)}\u2026`;
+}
+
+function Post({ post }) {
   return (
     <article className="cards__element cards__element_blog">
       <a href={post.link} target="_blank" data-tracked>
@@ -90,23 +113,31 @@ function Post({ post, first }) {
   );
 }
 
+Post.propTypes = {
+  post: PropTypes.string.isRequired,
+};
+
 function CardHeaderImage({ url }) {
-  if (Boolean(url)) {
+  if (url) {
     return (
       <div
         className="cards__element__img"
-        style={{ backgroundImage: 'url(' + url + ')' }}
+        style={{ backgroundImage: `url(${url})` }}
       />
     );
-  } else {
-    return (
-      <div className="cards__element__img  cards__element__img_default">
-        <img src="/img/logos/logo-blue.svg" />
-      </div>
-    );
   }
+  return (
+    <div className="cards__element__img  cards__element__img_default">
+      <img src="/img/logos/logo-blue.svg" />
+    </div>
+  );
 }
 
+CardHeaderImage.propTypes = {
+  url: PropTypes.string.isRequired,
+};
+
+/* eslint-disable max-len */
 function LinkIcon() {
   return (
     <div className="link-icon">
@@ -124,22 +155,4 @@ function LinkIcon() {
     </div>
   );
 }
-
-function ellipsis(text, maxLenght) {
-  if (text.length <= maxLenght) {
-    return text;
-  }
-
-  let cutterPosition = text.indexOf(' ', maxLenght - 1);
-  if (cutterPosition == -1) {
-    return text;
-  }
-
-  const lastChar = text[cutterPosition - 1];
-  const removedFromTheEndChars = '.,';
-  if (removedFromTheEndChars.indexOf(lastChar) > -1) {
-    cutterPosition--;
-  }
-
-  return text.slice(0, cutterPosition) + '\u2026';
-}
+/* eslint-enable max-len */

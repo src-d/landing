@@ -39,7 +39,7 @@ Some `inline` code.
 
 ```
 {
-    "some": "more code"
+  "some": "more code"
 }
 ```
 

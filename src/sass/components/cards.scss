@@ -18,7 +18,7 @@
         &_blog {
             header {
                 .cards__element__band {
-                    @include corporate-gradient(#36536C, #2377B6);
+                    @include corporate-gradient(#36536c, #2377b6);
                     position: absolute;
                     height: $size-card-top-border;
                     width: 100%;
@@ -130,7 +130,7 @@
                 flex-grow: 1;
                 margin-left: 10px;
 
-                & > {
+                & >  {
                     div {
                         line-height: $line-height-condensed;
                     }
@@ -143,15 +143,15 @@
         }
 
         .link-icon {
-          position: absolute;
-          bottom: 0;
-          right: 0;
+            position: absolute;
+            bottom: 0;
+            right: 0;
         }
 
         .link-icon .svg-icon {
             @include pill-style(blue);
             stroke: $color-pill-button-main;
-            stroke-width: 0px;
+            stroke-width: 0;
             fill: $color-pill-button-main;
             border: none;
             width: $size-card-arrow;

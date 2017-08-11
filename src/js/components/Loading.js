@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export function Loading({ text }) {
   return (
@@ -10,6 +11,10 @@ export function Loading({ text }) {
   );
 }
 
+Loading.propTypes = {
+  text: PropTypes.string.isRequired,
+};
+
 export function LoadingError({ text }) {
   return (
     <div className="loading error">
@@ -19,3 +24,7 @@ export function LoadingError({ text }) {
     </div>
   );
 }
+
+LoadingError.propTypes = {
+  text: PropTypes.string.isRequired,
+};

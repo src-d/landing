@@ -16,20 +16,24 @@ export const TIME_UNITS = {
   year: YEAR,
 };
 
+function plural(number, word) {
+  return `${number} ${number === 1 ? word : `${word}s`}`;
+}
+
 export function ago(strTime) {
   const elapsed = Date.now() - Date.parse(strTime);
   let unit;
-  if (elapsed > TIME_UNITS['year']) {
+  if (elapsed > TIME_UNITS.year) {
     unit = 'year';
-  } else if (elapsed > TIME_UNITS['month']) {
+  } else if (elapsed > TIME_UNITS.month) {
     unit = 'month';
-  } else if (elapsed > TIME_UNITS['day']) {
+  } else if (elapsed > TIME_UNITS.day) {
     unit = 'day';
-  } else if (elapsed > TIME_UNITS['hour']) {
+  } else if (elapsed > TIME_UNITS.hour) {
     unit = 'hour';
-  } else if (elapsed > TIME_UNITS['minute']) {
+  } else if (elapsed > TIME_UNITS.minute) {
     unit = 'minute';
-  } else if (elapsed > TIME_UNITS['second']) {
+  } else if (elapsed > TIME_UNITS.second) {
     unit = 'second';
   }
 
@@ -38,8 +42,4 @@ export function ago(strTime) {
 
 export function isNewer(strTime, interval) {
   return Date.now() - Date.parse(strTime) < interval;
-}
-
-function plural(number, word) {
-  return number + ' ' + (number == 1 ? word : word + 's');
 }

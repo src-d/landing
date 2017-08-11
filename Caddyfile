@@ -1,10 +1,10 @@
 0.0.0.0:8090 {
-	root /var/www/public
-	log stdout
-	gzip
+    root /var/www/public
+    log stdout
+    gzip
 
-	ext .html
-	errors stdout {
-		404 404.html
-	}
+    ext .html
+    errors stdout {
+        404 404.html
+    }
 }

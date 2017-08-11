@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import { Loading, LoadingError } from './Loading';
 import { states, loadPositions } from '../services/api';
 
@@ -15,20 +15,21 @@ export default class PositionsPanel extends Component {
       filterBy: ALL_TEAMS,
       positions: {
         positions: [],
-        teams: []
-      }
+        teams: [],
+      },
     };
   }
 
   componentWillMount() {
     loadPositions()
-      .then(positions => {
+      .then((positions) => {
         this.setState({
           status: states.LOADED,
-          positions: positions
+          positions,
         });
       })
-      .catch(err => {
+      .catch((err) => {
+        // eslint-disable-next-line no-console
         console.error(err);
         this.setState({ status: states.ERROR });
       });
@@ -61,18 +62,27 @@ export default class PositionsPanel extends Component {
 
 function Positions({ positions, filterBy }) {
   const positionList = positions.filter(
-    p => p.team === filterBy || filterBy === ALL_TEAMS
+    p => p.team === filterBy || filterBy === ALL_TEAMS,
   );
 
   return (
     <div className="positions__list cards">
       <div className="cards__wrap">
         {positionList.map((position, i) =>
-          <Position key={i} data={position} />
+          <Position key={i} data={position} />,
         )}
       </div>
     </div>
   );
+}
+
+Positions.propTypes = {
+  positions: PropTypes.string.isRequired,
+  filterBy: PropTypes.string.isRequired,
+};
+
+function getPositionExternalUrl(position) {
+  return POSITION_URL.replace(':positionId', position.id);
 }
 
 function Position({ data }) {
@@ -100,7 +110,7 @@ function Position({ data }) {
                 className={`positions__job__feature positions__job__feature_${feature}`}
               >
                 {data[feature]}
-              </li>
+              </li>,
             )}
           </ul>
           <div className="positions__job__actions">
@@ -111,6 +121,10 @@ function Position({ data }) {
     </div>
   );
 }
+
+Position.propTypes = {
+  data: PropTypes.string.isRequired,
+};
 
 function TeamSelector({ teams, active, onTeamSelected }) {
   if (teams.length <= 1) {
@@ -128,12 +142,14 @@ function TeamSelector({ teams, active, onTeamSelected }) {
           onClick={() => onTeamSelected(team)}
         >
           {team}
-        </button>
+        </button>,
       )}
     </div>
   );
 }
 
-function getPositionExternalUrl(position) {
-  return POSITION_URL.replace(':positionId', position.id);
-}
+TeamSelector.propTypes = {
+  teams: PropTypes.string.isRequired,
+  active: PropTypes.string.isRequired,
+  onTeamSelected: PropTypes.string.isRequired,
+};

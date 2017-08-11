@@ -12,6 +12,6 @@ We believe that every developer should be working in an environment where they a
 
 As a developer, your work should speak for you, therefore we aim to give a voice to your code. We aim to analyze all of the world's code, and use technology to build an understanding of it.
 
-Today, there are an estimated 50 million people who know how to program and 21 million who write code professionally. We believe that within the coming 10 years these numbers will grow an order of magnitude. 
+Today, there are an estimated 50 million people who know how to program and 21 million who write code professionally. We believe that within the coming 10 years these numbers will grow an order of magnitude.
 
-We aim (1) for our technology to bring the right people together based on their code, independent of location, gender, education or background (2) to help improve the way people code by building the first AI that understands code. 
+We aim (1) for our technology to bring the right people together based on their code, independent of location, gender, education or background (2) to help improve the way people code by building the first AI that understands code.
