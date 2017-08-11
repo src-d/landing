@@ -1,4 +1,6 @@
 {{ $categories := $.categories.categories }}
+{{ $slackClass := "slack-form__root horizontal-slack-join" }}
+{{ $slackCtx := dict "slack" .slack "inline" true "class" $slackClass }}
 
 <section class="projects band band_grey band_condensed">
     {{ range $categoryName := $categories.order }}
@@ -26,21 +28,7 @@
 
                 <div class="cards cards_projects">
                     <div class="cards__wrap">
-                        {{ with $.slack }}
-                            <div class="slack-form__root horizontal-slack-join"
-                                data-button="{{ .msgs.button }}"
-                                data-endpoint="{{ .endpoint }}"
-                                data-fetch-error="{{ .msgs.fetch_error }}"
-                                data-horizontal="horizontal"
-                                data-logo="{{ "/img/icons/slack-enter-color.svg" | relURL }}"
-                                data-placeholder="{{ .placeholder }}"
-                                data-server-error="{{ .msgs.server_error }}"
-                                data-success="{{ .msgs.success }}"
-                                data-title="{{ .title }}"
-                                data-wait="{{ .msgs.wait }}"
-                                >
-                            </div>
-                        {{ end }}
+                        {{ partial "slack.html" $slackCtx }}
                     </div>
                 </div>
             {{ end }}

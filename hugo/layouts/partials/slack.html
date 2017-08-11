@@ -1,0 +1,22 @@
+<div class="{{ .class }}"
+    {{ with .id }}
+        id={{ . }}
+    {{ end }}
+
+    {{ if .inline }}
+        data-horizontal="horizontal"
+    {{ end }}
+
+    data-logo="{{ "/img/icons/slack-enter-color.svg" | relURL }}"
+
+    data-title="{{ .slack.title }}"
+    data-desc="{{ .desc }}"
+    data-placeholder="{{ .slack.placeholder }}"
+    data-endpoint="{{ .slack.endpoint }}"
+
+    data-success="{{ .slack.msgs.success }}"
+    data-button="{{ .slack.msgs.button }}"
+    data-server-error="{{ .slack.msgs.server_error }}"
+    data-fetch-error="{{ .slack.msgs.fetch_error }}"
+    >
+</div>

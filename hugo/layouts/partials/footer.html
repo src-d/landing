@@ -1,8 +1,15 @@
 {{ $ctx := $.ctx }}
+{{ $slack := $ctx.Site.Data.slack }}
+{{ $slackClass := "slack-form__root horizontal-slack-join" }}
+{{ $slackCtx := dict "slack" $slack "inline" true "class" $slackClass }}
 
 <footer class="footer">
     {{ if default true $.include_slack }}
-        {{ partial "footer/slack.html" $ctx.Site.Data.slack }}
+        <div class="footer__slack">
+            <div class="slack-form__wrap">
+                {{ partial "slack.html" $slackCtx }}
+            </div>
+        </div>
     {{ end }}
 
     {{ if default false $.include_email }}
