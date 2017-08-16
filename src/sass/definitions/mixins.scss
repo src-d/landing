@@ -70,7 +70,7 @@
 @mixin svg-icon($name, $width, $height, $method: before) {
     &:#{$method} {
         content: '';
-        background: transparent url('/img/icons/' ) $name + '.svg';;
+        background: transparent url('/img/icons/' + $name + '.svg');
         background-size: cover;
         display: inline-block;
         width: $width;
