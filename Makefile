@@ -56,8 +56,6 @@ GIT := git
 JS_PACKAGE_MANAGER := yarn
 CGO_ENABLED := 0
 REMOVE := rm -rf
-PACK := tar -cf
-UNPACK := tar -xf
 COMPRESS := tar -zcf
 UNCOMPRESS := tar -zxf
 
@@ -107,22 +105,6 @@ hugo-build:
 # Runs hugo server
 hugo-server:
 	$(HUGO) server --config=hugo.config.yaml --destination=public --port=$(PORT) --watch --buildDrafts
-
-# Exports the common parts of the landing
-exportable_files := "Makefile package.json yarn.lock webpack.config.js .babelrc src/js/services/api.js src/js/components/SlackForm.js src/sass/shared static/img/logos static/img/icons static/fonts hugo/data/footer.yml hugo/data/slack.yml hugo/data/projects.yml hugo/layouts/partials/svg hugo/layouts/partials/footer hugo/layouts/partials/footer.html hugo/layouts/partials/contact-us.html hugo/layouts/partials/head.html hugo/layouts/partials/header.html hugo.config.yaml .gitignore"
-file_list_name ?= .filelist
-bundle_file_name := $(target)/landing-common.tar
-export-landing-commons:
-	@if [[ -z "$(target)" ]]; then \
-		echo "**error 'target' is undefined. STOP"; \
-		exit 1; \
-	fi;
-	@echo $(exportable_files) | sed -e "s/ /\n/g" > $(file_list_name)
-	@tar_command="$(PACK) $(bundle_file_name) "$(exportable_files)" $(file_list_name)"; \
-		`$$tar_command`;
-	$(REMOVE) $(file_list_name)
-	$(UNPACK) $(bundle_file_name) --directory $(target)
-	$(REMOVE) $(bundle_file_name)
 
 # Packages the landing artifact in the build directory
 package-hugo-generated:
