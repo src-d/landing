@@ -230,7 +230,7 @@
     }
 
     &__footer {
-        @include row;
+        @include container;
         display: flex;
         align-items: center;
     }
