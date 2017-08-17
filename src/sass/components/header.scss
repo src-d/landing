@@ -30,6 +30,8 @@
         margin-left: auto;
 
         ul {
+            margin-top: 10px;
+
             li {
                 position: relative;
                 display: inline-block;
@@ -42,6 +44,7 @@
                 }
 
                 a {
+                    margin-top: 0;
                     font-family: $font-menus;
                     text-transform: lowercase;
                     color: $color-topbar-menu-item;
