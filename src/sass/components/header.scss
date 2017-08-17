@@ -8,6 +8,7 @@
 
 .topbar {
     height: $height-topbar;
+    font-weight: 600;
 
     &.opaque {
         background-color: $color-topbar-bg;
