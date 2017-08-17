@@ -25,12 +25,6 @@
                 </div>
             {{ else }}
                 <p class="cards_projects_no-data">{{ $.categories.no_data_message }}</p>
-
-                <div class="cards cards_projects">
-                    <div class="cards__wrap">
-                        {{ partial "slack.html" $slackCtx }}
-                    </div>
-                </div>
             {{ end }}
         </div>
     {{ end }}

@@ -20,7 +20,7 @@
             </figure>
 
             <p class="project-header__desc">
-                {{ $project.description | safeHTML }}
+                {{ default "" $project.description | safeHTML }}
             </p>
         </div>
     </header>
