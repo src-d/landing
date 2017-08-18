@@ -87,3 +87,23 @@ import-documentation:
 
 	$(call git-commit,"Import content from sources")
 
+
+# Develop vars
+dev_output_project_yml := $(landing)/hugo/data/project.yml
+dev_src_raw := $(src_assets)/examples/hugo/content/raw
+dev_output_raw := $(landing)/hugo/content/raw
+dev_src_doc:=$(src_assets)/site/hugo/content
+dev_output_doc := $(landing)/hugo/content/documentation
+
+# Develop documentation over current landing
+develop-documentation:
+	$(MKDIR) $(dev_output_doc)
+	$(COPY) $(dev_src_raw) $(dev_output_raw)
+	$(COPY) $(dev_src_doc)/*.md $(dev_output_doc)
+	go run $(project_yml_generator) -tpl=$(src_project_tpl) -readme=$(SOURCES)/README.md -categories=$(src_categories_yml) > $(dev_output_project_yml)
+
+# Remove develop documentation
+develop-documentation-destroy:
+	$(REMOVE) $(dev_output_raw)
+	$(REMOVE) $(dev_output_doc)
+	$(REMOVE) $(dev_output_project_yml)
