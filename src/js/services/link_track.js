@@ -140,13 +140,25 @@ export function scrollTo(link) {
 }
 
 /**
+ * Same as window.setTimeout, but as a promise.
+ *
+ * @param {Number} ms
+ */
+function setTimeoutPromise(ms) {
+  return new Promise(resolve => window.setTimeout(resolve, ms));
+}
+
+/**
  * Sends to Google Analytics the details from the link
  *
  * @param {HTMLAnchorElement} link anchor clicked
  * @return {Promise} a promise resolved whenever hitCallback is called.
  */
-export function sendLinkDetails(link) {
-  return gaPromise(...commandArguments(link));
+export function sendLinkDetails(link, ms = 500) {
+  return Promise.race([
+    setTimeoutPromise(ms),
+    gaPromise(...commandArguments(link)),
+  ]);
 }
 
 /**
@@ -162,6 +174,10 @@ export function goToLink(link) {
   }
 }
 
+function trackableLink({ dataset, href }) {
+  return 'tracked' in dataset && href;
+}
+
 /**
  * Sets up the tracking of links, inbound and outbound.
  *
@@ -169,11 +185,13 @@ export function goToLink(link) {
  *
  * 1. Have a `data-tracked` attribute.
  * 2. Have a non-empty `href` attribute.
+ *
+ * Or satisfy the acceptableCondition predicate.
  */
-export default function setupLinkTracking() {
+export default function setupLinkTracking(acceptableCondition = () => false) {
   document.addEventListener('click', (evt) => {
     const { target } = evt;
-    if (!('tracked' in target.dataset) || !target.href) {
+    if (!(trackableLink(target) || acceptableCondition(target))) {
       return;
     }
 
