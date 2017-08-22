@@ -58,6 +58,7 @@ MKDIR := mkdir -p
 GIT := git
 JS_PACKAGE_MANAGER := yarn
 CGO_ENABLED := 0
+MOVE := mv -f
 REMOVE := rm -rf
 COMPRESS := tar -zcf
 UNCOMPRESS := tar -zxf
