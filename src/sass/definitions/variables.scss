@@ -125,7 +125,7 @@ $color-project-table-even-row-code-bg: white;
 // Text sizes
 $font-size-body: 20px;
 $font-size-body-mobile: 16px;
-$font-size-menu: 24px;
+$font-size-menu: 18px;
 $font-size-submenu: 21px;
 $font-size-title-big: 48px;
 $font-size-title-big-mobile: 36px;
@@ -201,7 +201,7 @@ $width-title-footer-pill: 30px;
 $size-title-footer-pill-spacing: 7px;
 $size-title-footer-spacing: $gutter-size / 3 - 1px;
 //..
-$height-slack-form-logo: 110px;
+$height-slack-form-logo: 50px;
 $height-slack-form-input: 45px;
 $height-slack-form-message: 30px;
 $height-slack-form-horizontal-message: 20px;
@@ -212,11 +212,11 @@ $size-button-spacing: $gutter-size / 2;
 $size-terminal-header-btn: $gutter-size / 2;
 $size-terminal-header-btn-spacing: $gutter-size / 4;
 //..
-$size-examples-dot: 15px;
+$size-examples-dot: 10px;
 $size-examples-dot-spacing: 10px;
 $size-examples-dot-border: 3px;
 $width-examples-arrow: 20px;
-$height-examples-arrow: 30px;
+$height-examples-arrow: 20px;
 $size-examples-arrow-spacing: 10px;
 $width-examples-navigation: 150px;
 //..
@@ -277,7 +277,7 @@ $size-footer-social-icon-spacing: 15px;
 $size-footer-social-icon: 45px;
 $size-footer-social-icon-image: 30px;
 $size-footer-slack-band: 120px;
-$size-footer-slack-logo: 90px;
+$size-footer-slack-logo: 46px;
 $size-footer-slack-input: 45px;
 $size-footer-slack-button: 45px;
 $size-footer-slack-band-right-distance: 30px;
@@ -348,6 +348,7 @@ $padding-top-slack-form-header: 15px;
 $padding-lateral-slack-form: 2 * $padding-top-slack-form-header;
 $padding-lateral-slack-form-header: 2 * $padding-top-slack-form-header;
 $margin-bottom-slack-form-logo: 20px;
+$margin-top-slack-form-logo: 22px;
 $margin-bottom-slack-form-title: 15px;
 $padding-lateral-input: 15px;
 $margin-right-slack-form-message-icon: 10px;

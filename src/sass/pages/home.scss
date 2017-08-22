@@ -98,10 +98,11 @@
                 width: $width-examples-arrow;
                 transform: none;
                 margin: 0 $size-examples-arrow-spacing;
+                background-size: $width-examples-arrow $height-examples-arrow;
             }
 
             .slick-prev {
-                background: url(/img/icons/arrow-left.svg);
+                background-image: url(/img/icons/arrow-left.svg);
 
                 &:before {
                     content: '';
@@ -109,7 +110,7 @@
             }
 
             .slick-next {
-                background: url(/img/icons/arrow-right.svg);
+                background-image: url(/img/icons/arrow-right.svg);
                 order: 3;
 
                 &:before {

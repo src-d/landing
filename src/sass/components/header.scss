@@ -8,6 +8,7 @@
 
 .topbar {
     height: $height-topbar;
+    font-weight: 600;
 
     &.opaque {
         background-color: $color-topbar-bg;
@@ -22,13 +23,24 @@
     }
 
     .logo img {
-        height: 45px;
+        height: 30px;
+        margin-top: 12px;
     }
 
     &__menu {
         margin-left: auto;
 
+        &.mobile-only {
+            font-weight: normal;
+
+            ul {
+                margin-top: 0;
+            }
+        }
+
         ul {
+            margin-top: 10px;
+
             li {
                 position: relative;
                 display: inline-block;
@@ -41,6 +53,7 @@
                 }
 
                 a {
+                    margin-top: 0;
                     font-family: $font-menus;
                     text-transform: lowercase;
                     color: $color-topbar-menu-item;
@@ -68,9 +81,10 @@
         background-color: $color-topbar-submenu-bg;
         border-radius: 5px;
         right: 0;
-        top: 100%;
+        top: 80%;
         display: none;
         z-index: 9999;
+        font-weight: normal;
 
         &:before {
             content: ' ';
@@ -143,6 +157,7 @@
 .secondary-topbar {
     background: $color-secondary-nav-bg;
     height: $height-secondary-nav;
+    font-weight: normal;
 
     & > div {
         @include row;
