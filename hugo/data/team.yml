@@ -78,10 +78,6 @@ teams:
 
         - teamName: Platform Team
           members:
-          - picture: sergio.png
-            name: Sergio Arbeo
-            position: Lead Software Engineer
-            github: https://github.com/serabe
           - picture: miguel.png
             name: Miguel Molina
             position: Senior Software Engineer
