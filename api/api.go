@@ -35,6 +35,8 @@ func main() {
 
 	store := persistence.NewInMemoryStore(*ttl)
 
+	r.GET("/", handlers.Head(200))
+
 	api := r.Group("/api")
 	{
 		api.GET("/posts/:kind", cache.CachePage(
