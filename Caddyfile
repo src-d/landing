@@ -3,6 +3,11 @@
     log stdout
     gzip
 
+    redir 301 {
+        if {>X-Forwarded-Proto} is http
+        /  https://{host}{uri}
+    }
+
     ext .html
     errors stdout {
         404 404.html
