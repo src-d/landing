@@ -8,6 +8,12 @@ func status(c *gin.Context, status int) {
 	c.Writer.WriteHeaderNow()
 }
 
+func Head(statusCode int) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		status(c, statusCode)
+	}
+}
+
 func json(c *gin.Context, code int, resp interface{}) {
 	status(c, code)
 	c.JSON(code, resp)
