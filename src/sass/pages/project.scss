@@ -1,50 +1,58 @@
-.project-intro {
-    .project-header {
-        @include corporate-gradient;
-        padding-top: $padding-top-project-header;
-        color: $color-project-header-text;
+.project-page .page-text-content_no-hero {
+    margin-top: $height-topbar + $height-secondary-nav + $gutter-size;
+}
+
+.project-header {
+    @include corporate-gradient;
+    padding-top: $padding-top-project-header;
+    color: $color-project-header-text;
+
+    & > div {
+        @include row;
+        @include container;
+        text-align: center;
+        position: relative;
+        padding-top: $size-project-header-large-spacing;
+    }
+
+    .code-pills-left {
+        position: absolute;
+        right: 80%;
+    }
+
+    &__logo {
+        text-align: center;
 
         & > div {
-            @include row;
-            @include container;
-            text-align: center;
-            position: relative;
-            padding-top: $size-project-header-large-spacing;
+            margin: 0 auto;
+            border-radius: 50%;
+            background-color: $color-project-header-logo;
+            width: $size-project-header-logo-circle;
+            height: $size-project-header-logo-circle;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .code-pills-left {
-            position: absolute;
-            right: 80%;
-        }
-
-        &__logo {
-            text-align: center;
-
-            & > div {
-                margin: 0 auto;
-                border-radius: 50%;
-                background-color: $color-project-header-logo;
-                width: $size-project-header-logo-circle;
-                height: $size-project-header-logo-circle;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            img {
+        span {
+            & > svg {
                 width: $size-project-header-logo-picture;
                 height: $size-project-header-logo-picture;
             }
-        }
 
-        &__desc {
-            @include width(6);
-            margin: 0 auto;
-            padding: $padding-top-project-header-desc 0 $padding-bottom-project-header-desc 0;
-
-            strong {
-                font-weight: bold;
+            &[class*="codepill"] > svg {
+                margin-top: $margin-top-project-header-logo-picture;
             }
+        }
+    }
+
+    &__desc {
+        @include width(6);
+        margin: 0 auto;
+        padding: $padding-top-project-header-desc 0 $padding-bottom-project-header-desc 0;
+
+        strong {
+            font-weight: bold;
         }
     }
 }
@@ -52,7 +60,7 @@
 .project-badges {
     background-color: $color-project-badges-bg;
 
-    & > div {
+    & > ul {
         @include row;
         @include container;
         text-align: center;
@@ -60,13 +68,17 @@
         line-height: 0;
         padding: $size-project-badges-spacing 0;
 
+        li {
+            display: inline-block;
+
+            & + li {
+                margin-left: $size-project-badges-spacing;
+            }
+        }
+
         a {
             text-decoration: none;
             display: inline-block;
-
-            & + a {
-                margin-left: $size-project-badges-spacing;
-            }
         }
     }
 }
@@ -87,9 +99,24 @@
         }
 
         span {
+            display: inline-block;
             font-size: $font-size-project-nav-title;
             text-transform: lowercase;
             color: white;
+        }
+
+        .project-nav__title__project-icon span {
+            & > svg {
+                height: 30px;
+                width: 30px;
+                display: inline-block;
+                margin-top: 10px;
+                margin-right: 5px;
+            }
+
+            &[class*="codepill"] > svg {
+                margin-top: $margin-top-project-header-logo-small-picture;
+            }
         }
     }
 

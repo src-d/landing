@@ -14,10 +14,10 @@
                 <span class="title">{{ $title }}</span>
                 <span id="{{ $categoryName }}" class="anchor"></span>
             </h1>
-            {{ if $category.items }}
+            {{ if $category.projects }}
                 <div class="cards cards_projects">
                     <div class="cards__wrap">
-                        {{ range $category.items }}
+                        {{ range $category.projects }}
                             {{ $context := dict "title" .name "icon" .logo "content" .desc "link" .url "gradient" $gradient "zip" .zip_size "raw" .raw_size "date" .created_at }}
                             {{ partial "card.html" $context }}
                         {{ end }}

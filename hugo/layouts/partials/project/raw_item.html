@@ -1,0 +1,18 @@
+{{ $baseDirectory := "hugo/content" }}
+
+{{ $targetPathParts := ( split .fileName "/" ) }}
+{{ $targetRelDirectoryPartsLength := ( sub ( len $targetPathParts ) 1 ) }}
+{{ $targetRelDirectoryParts := ( first $targetRelDirectoryPartsLength $targetPathParts ) }}
+{{ $targetRelDirectory := delimit $targetRelDirectoryParts "/" }}
+{{ $targetFileName := index ( last 1 $targetPathParts ) 0 }}
+
+{{ $targetAbsDirectory := ( printf "%s/%s" $baseDirectory $targetRelDirectory ) }}
+{{ $targetSiblings := ( readDir $targetAbsDirectory ) }}
+
+{{ if ( where $targetSiblings "Name" $targetFileName ) }}
+    <li>
+        <a href="{{.linkUrl}}" {{ if eq .currentUrl .linkUrl }}class="active"{{end}}>
+            {{.linkText}}
+        </a>
+    </li>
+{{ end }}

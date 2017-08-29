@@ -1,8 +1,10 @@
-{{ partial "head.html" . }}
 {{ $stack := $.Site.Data.stack }}
 {{ $headerCtx := dict "ctx" . }}
 {{ $heroCtx := dict "ctx" . "data" $stack }}
 {{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
 
 <body class="stack-page">
     {{ partial "header.html" $headerCtx }}

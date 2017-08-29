@@ -34,3 +34,8 @@ package-lock.json
 .env
 .env.local
 .DS_Store
+
+# documentation site
+hugo/data/project.yml
+hugo/content/raw
+hugo/content/documentation

@@ -15,10 +15,10 @@
             <div class="topbar__menu mobile-only" id="menu">
                 <ul class="visible" id="menu-main">
                     <li class="topbar__menu__back"></li>
-                    <li {{ if eq $ctx.URL "/" }}class="active"{{ end }} title="homepage">
+                    <li {{ if and (eq $ctx.URL "/") (eq $category "") }}class="active"{{ end }} title="homepage">
                         <a href="{{ "/" | absURL }}" title="Home">Home</a>
                     </li>
-                    <li class="{{ if eq $ctx.URL "projects" }}active {{end}}nav-to" data-nav-to="projects">
+                    <li class="{{ if or (eq $ctx.URL "projects") (ne $category "") }}active {{end}}nav-to" data-nav-to="projects">
                         <a>
                             <span>Projects</span>
                             {{ partial "svg" "go-arrow-nocircle" }}
@@ -65,10 +65,10 @@
                     <li class="mobile-only topbar__menu__back">
                         <div class="topbar__menu__back__icon" id="menu-close"></div>
                     </li>
-                    <li {{ if eq $ctx.URL "/" }}class="active"{{ end }} title="homepage">
+                    <li {{ if and (eq $ctx.URL "/") (eq $category "") }}class="active"{{ end }} title="homepage">
                         <a href="{{ "/" | absURL }}" title="Home">Home</a>
                     </li>
-                    <li {{ if eq $ctx.URL "projects" }}class="active"{{ end }}>
+                    <li {{ if or (eq $ctx.URL "projects") (ne $category "") }}class="active"{{ end }}>
                         <a href="{{ "/projects" | absURL}}" class="topbar__menu--projects" title="Projects">
                             <span>Projects</span>
                             {{ partial "svg" "go-arrow-nocircle" }}
@@ -113,13 +113,14 @@
     </nav>
 
     {{ $secondary_nav := default "" .secondary_nav }}
-    {{ if or (and (ne $category "") (eq $ctx.Section "project")) (ne $secondary_nav "") }}
+    {{ if or (ne $category "") (ne $secondary_nav "") }}
         <nav class="secondary-topbar mobile-hidden">
             <div>
-                {{ if ne $secondary_nav "" }}
+                {{ if ne $category "" }}
+                    {{ $projSubheaderCtx := dict "ctx" $ctx "project" $project "category" $category "randomPill" $.randomPill }}
+                    {{ partial "project/nav.html" $projSubheaderCtx }}
+                {{ else }}
                     {{ partial $secondary_nav . }}
-                {{ else if ne $category "" }}
-                    {{ partial "project/nav.html" $ctx }}
                 {{ end }}
             </div>
         </nav>

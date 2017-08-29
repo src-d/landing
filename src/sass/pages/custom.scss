@@ -1,18 +1,235 @@
-.custom-page {
-    width: $width-custom-page;
-    max-width: $max-width-custom-page;
-    margin: $padding-section-vertical auto;
-    @include media-breakpoint-down(sm) {
-        margin: $gutter-size auto;
+.page-text-content {
+    &_no-hero {
+        margin-top: $height-topbar + $gutter-size;
+
+        & > div {
+            padding-top: $gutter-size !important;
+        }
     }
 
-    .last-update {
+    &_narrow {
+        width: $width-custom-page;
+        max-width: $max-width-custom-page;
+        //margin: $padding-section-vertical auto;
+        margin-left: auto;
+        margin-right: auto;
+        @include media-breakpoint-down(sm) {
+            margin: $gutter-size auto;
+        }
+
+        .last-update {
+            font-size: $font-size-body;
+            padding-top: $padding-top-custom-page-last-update;
+            padding-bottom: $gutter-size;
+        }
+
+        .page-text-content {
+            line-height: 1.5em;
+        }
+    }
+
+
+    & > div {
+        @include row;
+        @include container;
+        position: relative;
+        padding: $padding-section-vertical 0;
+
+        .page-text-content__raw_with-aside {
+            margin-right: $size-project-aside-width + $gutter-size;
+        }
+
+        .page-text-content__aside {
+            float: right;
+            width: $size-project-aside-width;
+            background: $color-pale-grey;
+            border-radius: $border-radius-main;
+
+            a,
+            span {
+                display: block;
+                padding: 0 $size-project-aside-space;
+            }
+
+            a {
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            header,
+            ul {
+                padding: 0;
+                line-height: $size-project-aside-space;
+            }
+
+            header {
+                background: $color-dark-blue;
+                border-radius: $border-radius-main $border-radius-main 0 0;
+                color: $color-white;
+
+                a {
+                    color: $color-white;
+                }
+            }
+
+            ul {
+                padding: 0;
+
+                li {
+                    padding: 0;
+                    list-style-type: none;
+
+                    &:before {
+                        display: none;
+                    }
+
+                    & + li {
+                        border-top: 1px solid $color-pale-blue;
+                    }
+
+                    a {
+                        color: $color-light-grey;
+                    }
+                }
+            }
+        }
+    }
+
+    h1 {
+        @include default-title-big;
+        margin-bottom: $size-project-content-headings-bottom-spacing;
+    }
+
+    h2 {
+        @include default-title-medium;
+        margin-bottom: $size-project-content-headings-bottom-spacing;
+    }
+
+    * + h1,
+    * + h2 {
+        margin-top: $size-project-content-headings-top-spacing;
+    }
+
+    p + p {
+        padding-top: $gutter-size / 2;
+    }
+
+    a {
+        color: $color-links;
+
+        &:visited {
+            color: $color-links-visited;
+        }
+    }
+
+    code {
+        background-color: $color-project-code-bg;
+        padding: $padding-vertical-project-code $padding-horizontal-project-code;
+        font-family: $font-source-code;
+        font-size: $font-size-small;
+        color: $color-project-code;
+    }
+
+    pre {
+        display: block;
+        font-family: $font-source-code;
+        font-size: $font-size-small;
+        color: $color-terminal-text;
+        background: $color-terminal-bg;
+        padding: $padding-project-code-block;
+        margin: $margin-project-code-block 0;
+        border-radius: 5px;
+        overflow-x: auto;
+
+        code {
+            background-color: transparent;
+            padding: 0;
+            color: $color-terminal-text;
+        }
+    }
+
+    ul {
+        padding-left: $padding-left-project-list;
+
+        li {
+            position: relative;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: $size-left-spacing-project-list-dot;
+                top: $size-top-spacing-project-list-dot;
+                background: $color-project-list-dot;
+                height: $size-project-list-dot;
+                width: $size-project-list-dot;
+                border-radius: 50%;
+            }
+        }
+
+        ul li:before {
+            background: transparent;
+            border: 1px solid $color-project-list-dot;
+        }
+    }
+
+    table {
+        border: 1px solid $color-project-table-border;
+
+        tr,
+        thead {
+            border-bottom: 1px solid $color-project-table-border;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        td,
+        th {
+            padding: $padding-vertical-project-table-cell $padding-horizontal-project-table-cell;
+            border-right: 1px solid $color-project-table-border;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+
+        th {
+            background: $color-project-table-heading-bg;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        tbody tr:nth-child(even) {
+            td {
+                background-color: $color-project-table-even-row-bg;
+            }
+
+            code {
+                background-color: $color-project-table-even-row-code-bg;
+            }
+        }
+    }
+
+    ol {
+        list-style: decimal;
+        padding-left: $padding-left-project-ordered-list;
+    }
+
+    h3 {
+        font-style: italic;
+        color: $color-title-medium;
+        font-size: $font-size-large;
+        line-height: 3em;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-style: italic;
+        color: $color-title-medium;
         font-size: $font-size-body;
-        padding-top: $padding-top-custom-page-last-update;
-        padding-bottom: $gutter-size;
-    }
-
-    .page-text-content {
-        line-height: 1.5em;
+        line-height: 3em;
     }
 }

@@ -22,8 +22,5 @@ indent_size = 2
 [*.{diff}]
 trim_trailing_whitespace = false
 
-[*.go]
-indent_style = tab
-
-[{Makefile, makefile}]
+[{*.go,Makefile,makefile,Makefile.*}]
 indent_style = tab
