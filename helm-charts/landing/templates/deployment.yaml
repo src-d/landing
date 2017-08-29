@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.image.landing.name }}
-          image: "{{ .Values.image.registry }}/{{ .Values.image.landing.name }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.registry }}/{{ required "Missing .Values.image.landing.name" .Values.image.landing.name }}:{{ required "Missing .Values.image.tag" .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.landing.internalPort }}
@@ -32,7 +32,7 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
         - name: {{ .Values.image.landingSlackin.name }}
-          image: "{{ .Values.image.registry }}/{{ .Values.image.landingSlackin.name }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.registry }}/{{ required "Missing .Values.image.landingSlackin.name" .Values.image.landingSlackin.name }}:{{ required "Missing .Values.image.tag" .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: SLACK_API_TOKEN
@@ -54,7 +54,7 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
         - name: {{ .Values.image.landingApi.name }}
-          image: "{{ .Values.image.registry }}/{{ .Values.image.landingApi.name }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.registry }}/{{ required "Missing .Values.image.landingApi.name" .Values.image.landingApi.name }}:{{ required "Missing .Values.image.tag" .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: ADDR
