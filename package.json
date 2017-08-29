@@ -10,6 +10,7 @@
     "build": "webpack --config=webpack.config.js",
     "serve": "concurrently --kill-others \"yarn run webpack-watcher\" \"make hugo-server\" \"yarn run api-run\"",
     "serve-without-api": "concurrently --kill-others \"yarn run webpack-watcher\" \"make hugo-server\"",
+    "start": "node_modules/.bin/termax server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors",
     "svg-clean": "svgo --input=static/img/icons; svgo --input=static/img/icons/codepills; svgo --input=static/img/icons/projects"
@@ -28,6 +29,7 @@
     "whatwg-fetch": "^2.0.0"
   },
   "devDependencies": {
+    "@tww/terminus-maximus": "^2.0.4",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -38,8 +40,8 @@
     "eslint": "^4.4.0",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.2",
     "node-sass": "^4.0.0",

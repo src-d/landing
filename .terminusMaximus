@@ -1,0 +1,25 @@
+{
+    "errorHeight": 20,
+    "scripts": {
+        "server": {
+            "screensPerRow": 3,
+            "commands": [
+                {
+                    "label": "webpack",
+                    "command": "webpack --config=webpack.config.js --watch --colors",
+                    "screenConfig": {}
+                },
+                {
+                    "label": "hugo",
+                    "command": "make hugo-server",
+                    "screenConfig": {}
+                },
+                {
+                    "label": "api",
+                    "command": "yarn run api-run",
+                    "screenConfig": {}
+                }
+            ]
+        }
+    }
+}
