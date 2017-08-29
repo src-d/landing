@@ -6,10 +6,6 @@ teams:
       subteams:
         - teamName: Data Retrieval Team
           members:
-          - picture: santiago.png
-            name: Santiago Mola
-            position: Lead Software Engineer
-            github: https://github.com/smola
           - picture: placeholder/new-man.png
             name: Alexander Bezzubov
             position: Senior Software Engineer
@@ -18,6 +14,14 @@ teams:
             name: Antonio Navarro
             position: Senior Software Engineer
             github: https://github.com/ajnavarro
+          - picture: manuel.png
+            name: Manuel Carmona
+            position: Junior Software Engineer
+            github: https://github.com/mcarmonaa
+          - picture: miguel.png
+            name: Miguel Molina
+            position: Senior Software Engineer
+            github: https://github.com/erizocosmico
 
         - teamName: Infrastructure Team
           members:
@@ -40,14 +44,6 @@ teams:
             name: Juanjo Álvarez
             position: Senior Software Engineer
             github: https://github.com/juanjux
-          - picture: manuel.png
-            name: Manuel Carmona
-            position: Junior Software Engineer
-            github: https://github.com/mcarmonaa
-          - picture: david-paz.png
-            name: David Paz
-            position: Software Engineering Intern
-            github: https://github.com/dpaz
           - picture: placeholder/new-man.png
             name: Manu Mtz-Almeida
             position: Software Engineering Intern
@@ -78,10 +74,6 @@ teams:
 
         - teamName: Platform Team
           members:
-          - picture: miguel.png
-            name: Miguel Molina
-            position: Senior Software Engineer
-            github: https://github.com/erizocosmico
           - picture: david.png
             name: David Pordomingo
             position: Software Engineer
