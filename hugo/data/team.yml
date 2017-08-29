@@ -89,7 +89,11 @@ teams:
         - picture: fernanda.png
           name: Fernanda Gomes
           position: Data Intelligence Analyst
-          linkedin: https://www.linkedin.com/in/fernandaagomes/
+          linkedin: https://www.linkedin.com/in/fernandaagomes
+        - picture: placeholder/new-man.png
+          name: Ricardo Baeta
+          position: Digital Product Designer
+          linkedin: https://www.linkedin.com/in/ricardobaeta
     - name: Operations
       headline: Taking care of the team at source{d}
       members:
