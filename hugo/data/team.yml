@@ -44,10 +44,6 @@ teams:
             name: Juanjo Álvarez
             position: Senior Software Engineer
             github: https://github.com/juanjux
-          - picture: placeholder/new-man.png
-            name: Manu Mtz-Almeida
-            position: Software Engineering Intern
-            github: https://github.com/manucorporat
 
         - teamName: Machine Learning Team
           members:
