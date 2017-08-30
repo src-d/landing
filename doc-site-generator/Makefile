@@ -39,7 +39,7 @@ copy-assets:
 	$(COPY) $(src_landing_hugo)/* $(OUTPUT);
 
 # Clean files from Landing
-sections_to_clean := home careers manifesto projects stack team temporal upcoming
+sections_to_clean := home careers manifesto projects team temporal upcoming
 clean-landing:
 	@for section in $(sections_to_clean) ;\
 	do \
