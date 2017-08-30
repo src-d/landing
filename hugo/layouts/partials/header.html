@@ -30,9 +30,6 @@
                     <li>
                         <a href="https://blog.sourced.tech" title="Blog" data-tracked>Blog</a>
                     </li>
-                    <li {{ if eq $ctx.URL "stack" }}class="active"{{ end }}>
-                        <a href="{{ "/stack" | absURL }}" title="Our stack">Stack</a>
-                    </li>
                     <li {{ if eq $ctx.URL "team" }}class="active" {{ end }}>
                         <a href="{{ "/team" | absURL }}" title="Team">Team</a>
                     </li>
@@ -91,9 +88,6 @@
                     </li>
                     <li>
                         <a href="https://blog.sourced.tech" title="Blog" data-tracked>Blog</a>
-                    </li>
-                    <li {{ if eq $ctx.URL "stack" }}class="active"{{ end }}>
-                        <a href="{{ "/stack" | absURL }}" title="Our stack">Stack</a>
                     </li>
                     <li {{ if eq $ctx.URL "team" }}class="active" {{ end }}>
                         <a href="{{ "/team" | absURL }}" title="Team">Team</a>
