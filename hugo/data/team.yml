@@ -14,14 +14,14 @@ teams:
             name: Antonio Navarro
             position: Senior Software Engineer
             github: https://github.com/ajnavarro
-          - picture: manuel.png
-            name: Manuel Carmona
-            position: Junior Software Engineer
-            github: https://github.com/mcarmonaa
           - picture: miguel.png
             name: Miguel Molina
             position: Senior Software Engineer
             github: https://github.com/erizocosmico
+          - picture: manuel.png
+            name: Manuel Carmona
+            position: Junior Software Engineer
+            github: https://github.com/mcarmonaa
 
         - teamName: Infrastructure Team
           members:
@@ -82,14 +82,14 @@ teams:
           name: Marcelo Novaes
           position: Product Manager & Data Intelligence Lead
           linkedin: https://linkedin.com/in/mnovaes
-        - picture: fernanda.png
-          name: Fernanda Gomes
-          position: Data Intelligence Analyst
-          linkedin: https://www.linkedin.com/in/fernandaagomes/
         - picture: placeholder/new-man.png
           name: Ricardo Baeta
           position: Digital Product Designer
           linkedin: https://www.linkedin.com/in/ricardobaeta
+        - picture: fernanda.png
+          name: Fernanda Gomes
+          position: Data Intelligence Analyst
+          linkedin: https://www.linkedin.com/in/fernandaagomes/
     - name: Operations
       headline: Taking care of the team at source{d}
       members:
