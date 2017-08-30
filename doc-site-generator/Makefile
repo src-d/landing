@@ -99,7 +99,7 @@ boilerplate-compile:
 
 ## Generate a documentation site
 generate-documentation-site: prepare-landing-like import-documentation
-	$(MAKE) -C $(OUTPUT) serve;
+	$(MAKE) -C $(OUTPUT) serve-without-api;
 
 
 # ----------
@@ -117,6 +117,8 @@ develop-documentation:
 	$(COPY) $(dev_src_raw) $(dev_output_raw)
 	$(COPY) $(dev_src_doc)/*.md $(dev_output_doc)
 	go run $(project_yml_generator) -tpl=$(src_project_tpl) -readme=$(SOURCES)/README.md -categories=$(src_categories_yml) > $(dev_output_project_yml)
+
+	$(MAKE) -C $(landing) serve-without-api;
 
 ## Develop. Remove all stuff created to look like a documentation site
 develop-documentation-destroy:
