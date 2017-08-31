@@ -16,7 +16,7 @@ cache:
 env:
   global:
     - DOCKER_REGISTRY: quay.io
-    - DOCKER_ORG: quay.io/srcd
+    - DOCKER_ORG: srcd
 
 matrix:
   allow_failures:
