@@ -1,6 +1,8 @@
 FROM node:8-alpine
 
 ENV SLACK_SUBDOMAIN sourced-community
+ENV SLACKIN_BIND_PORT 3000
+ENV SLACKIN_BIND_HOST 0.0.0.0
 
 RUN mkdir -p /srv
 
@@ -15,6 +17,6 @@ RUN git checkout 0.13.1
 
 RUN npm install --unsafe-perm
 
-EXPOSE 3000
+EXPOSE $SLACKIN_BIND_PORT
 
-CMD ./bin/slackin --cors --port 3000 $SLACK_SUBDOMAIN $SLACK_API_TOKEN
+CMD ./bin/slackin --cors --hostname $SLACKIN_BIND_HOST --port $SLACKIN_BIND_PORT $SLACK_SUBDOMAIN $SLACK_API_TOKEN
