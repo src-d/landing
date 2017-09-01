@@ -1,30 +1,54 @@
-# landing
+# Landing
 [![Build Status](https://travis-ci.org/src-d/landing.svg?branch=master)](https://travis-ci.org/src-d/landing)
 
-Serves API and landing page
+Serves the source{d} Landing and its API
+
+Requirements
+===
+You should already have [Go installed](https://golang.org/doc/install#install), and properly [configured the $GOPATH](https://github.com/golang/go/wiki/SettingGOPATH)
+```
+go version; # prints your go version
+echo $GOPATH; # prints your $GOPATH path
+```
+
+The project must be under the `$GOPATH`, following the Go import conventions, what means you can go to its directory running:
+```
+cd $GOPATH/src/github.com/src-d/landing
+```
+
+You need also [Yarn installed](https://yarnpkg.com/en/docs/install)
+
+```
+yarn --version; # prints your Yarn version
+```
 
 Install and build
 ===
-You should already have [hugo installed](https://gohugo.io/overview/installing/) in your machine;<br />
-You need also [npm installed](https://docs.npmjs.com/getting-started/installing-node) ; then...
+
+You need to satisfy all [project requirements](#requirements), and then to run:
+
 ```
 make build
 ```
-If you want to build the project separatelly, you can replace the last command with these two:
-* `yarn run build` To compile webpack stuff into `/static` folder
-* `make hugo-build` To compile hugo stuff from `/content/layouts/static/data` folders into `/public` folder
 
-Development:
+Development and running the landing locally
 ===
+
+You need to satisfy all [project requirements](#requirements), and then to run:
+
 ```
 make serve
 ```
-This runs everything you need to get the site working at [http://localhost:8181](http://localhost:8181)
+It runs everything you need to get the site working at [http://localhost:8181](http://localhost:8181)
 
-If you want to build the project separatelly, you can replace the last command with these two:
-* `yarn run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
+Alternatively, you can start hugo, the api-server and webpack in a "three window mode", just running:
+```
+yarn start
+```
+With this command, each window runs a command, that can be also ran by you in case you need to control the output of each command or in any other special case:
 * `yarn run webpack-watcher` To start webpack watcher, that will rebuild the assets when you change its sources
 * `make hugo-server` To serve the landing locally using hugo server
+* `yarn run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
 
 Configuration
 ===
@@ -38,3 +62,7 @@ The following envars are available for configuration
 - `SLACKIN_URL`
 
 You can see more in the `config` package in `api`.
+
+Documentation site generation
+===
+Described in [doc-site-generator/README.md](doc-site-generator/README.md)
