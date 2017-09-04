@@ -55,7 +55,7 @@ teams:
             name: Egor Bulychev
             position: Senior Software Engineer
             github: https://github.com/EgorBu
-          - picture: placeholder/new-man.png
+          - picture: konstantin.png
             name: Konstantin Slavnov
             position: Software Engineering Intern
             github: https://github.com/zurk
@@ -82,9 +82,9 @@ teams:
           name: Marcelo Novaes
           position: Product Manager & Data Intelligence Lead
           linkedin: https://linkedin.com/in/mnovaes
-        - picture: placeholder/new-man.png
+        - picture: ricardo.png
           name: Ricardo Baeta
-          position: Digital Product Designer
+          position: Product Design Lead
           linkedin: https://www.linkedin.com/in/ricardobaeta
         - picture: fernanda.png
           name: Fernanda Gomes
