@@ -205,8 +205,6 @@ $size-title-footer-spacing: $gutter-size / 3 - 1px;
 //..
 $height-slack-form-logo: 50px;
 $height-slack-form-input: 45px;
-$height-slack-form-message: 30px;
-$height-slack-form-horizontal-message: 20px;
 $width-slack-form-submit: 240px;
 //..
 $size-button-spacing: $gutter-size / 2;
@@ -282,8 +280,6 @@ $size-footer-slack-band: 120px;
 $size-footer-slack-logo: 46px;
 $size-footer-slack-input: 45px;
 $size-footer-slack-button: 45px;
-$size-footer-slack-band-right-distance: 30px;
-$size-footer-slack-band-bottom-distance: -10px;
 $max-wdith-footer-sitemap-mobile: 285px;
 $height-footer-mobile-buttons: 45px;
 $padding-horizontal-footer-mobile-buttons: 10px;
@@ -343,7 +339,6 @@ $padding-top-home-hero-mobile: 23px + $height-topbar-mobile;
 //..
 $padding-slack-form: 0;
 $margin-bottom-slack-form-input: 15px;
-$margin-bottom-slack-form-submit-button: 15px;
 $margin-bottom-slack-form-message: 15px;
 $margin-top-footer-slack: -($padding-section-vertical / 2);
 $padding-top-slack-form-header: 15px;
@@ -354,7 +349,7 @@ $margin-top-slack-form-logo: 22px;
 $margin-bottom-slack-form-title: 15px;
 $padding-lateral-input: 15px;
 $margin-right-slack-form-message-icon: 10px;
-$padding-bottom-slack-form-description: 60px;
+$padding-bottom-slack-form-description: 45px;
 //..
 $margin-hero-desc-vertical: 30px;
 $padding-hero-vertical: 90px;
@@ -438,7 +433,9 @@ $height-blog-cards-figure-height-mobile: 80px;
 $width-slack-form-horizontal-input-mobile: 315px;
 $width-slack-form-horizontal-button-mobile: 250px;
 $margin-top-slack-form-horizontal-elements: 20px;
-$size-slack-form-horizontal-message-spacing: -40px;
+$padding-top-slack-form-horizontal-message: 25px;
+$size-slack-form-horizontal-message-spacing: 40px;
+$size-slack-form-message-icon: 30px;
 //..
 $width-custom-page: 90%;
 $max-width-custom-page: 768px;

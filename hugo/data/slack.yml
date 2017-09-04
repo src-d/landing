@@ -5,5 +5,7 @@ endpoint: "/invite"
 msgs:
   success: Success! Check your email.
   button: Join us on slack
-  server_error: Error! Submit it again.
+  server_error: "Oops, something went wrong on our side!
+
+  Please message us via [email](mailto:hello@sourced.tech) or [twitter](https://twitter.com/srcd_) and we will send your invitation soon."
   fetch_error: Server error
