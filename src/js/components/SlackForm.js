@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 import { inviteToSlack } from '../services/api';
 import { gaPromise as ga } from '../services/link_track';
 
@@ -180,9 +181,11 @@ export default class SlackForm extends React.Component {
             {this.props.button}
           </button>
 
-          <p className={this.messageClasses}>
-            {this.responseMessage}
-          </p>
+          <ReactMarkdown
+            source={this.responseMessage}
+            className={this.messageClasses}
+            softBreak="br"
+          />
         </div>
       </form>
     );
