@@ -16,10 +16,10 @@ max_line_length = off
 [*.hbs]
 insert_final_newline = false
 
-[*.{md,ts,js,jsx,yml,json,lock}]
+[*.{md,ts,js,jsx,yml,yml.tpl,json,lock}]
 indent_size = 2
 
-[*.{diff}]
+[*.diff]
 trim_trailing_whitespace = false
 
 [{*.go,Makefile,makefile,Makefile.*}]
