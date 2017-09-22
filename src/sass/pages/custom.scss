@@ -46,9 +46,12 @@
             border-radius: $border-radius-main;
 
             a,
-            span {
+            span,
+            h5 {
                 display: block;
                 padding: 0 $size-project-aside-space;
+                font-style: normal;
+                line-height: $size-project-aside-space;
             }
 
             a {
@@ -66,6 +69,7 @@
                 background: $color-dark-blue;
                 border-radius: $border-radius-main $border-radius-main 0 0;
                 color: $color-white;
+                font-style: normal;
 
                 a {
                     color: $color-white;
@@ -93,6 +97,16 @@
                 }
             }
         }
+    }
+
+    b,
+    strong {
+        font-weight: bold;
+    }
+
+    i,
+    em {
+        font-style: italic;
     }
 
     h1 {

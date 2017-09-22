@@ -24,21 +24,22 @@ badges:
     url: {{ $badge.URL }}
   {{- end }}
 tutorials:
-  - name: dummy
-    url: "#"
+  - name: summary
+    items:
+      - item: "[Instalation](instalation.md)"
+      - item: "[Development](development.md)"
+  - name: Examples of usage
+    items:
+      - item: "[pyspark](examples/pyspark.md)"
+      - item: "[scala](examples/scala.md)"
 examples:
-  - name: Basic
-    url: "#basic"
-  - name: Advanced
-    url: "#advanced"
-  - name: Code example
-    url: "#code-example"
+  - name: basic
+    items:
+      - item: "[Basic+Example.ipynb](basic/Basic+Example.ipynb)"
 home:
-  - name: installation
-    url: "#installation"
-  - name: examples
-    url: "#examples"
-  - name: contribute
-    url: "#contribute"
+  - name: Quick start
+    url: "#quick-start"
+  - name: enry
+    url: "#enry"
   - name: license
     url: "#license"

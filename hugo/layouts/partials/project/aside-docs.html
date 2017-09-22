@@ -1,22 +1,37 @@
 <div class="page-text-content__aside">
     <section>
         <header>
-            <a href="/tutorials">Tutorials</a>
+            <h4><a href="/tutorials">Tutorials</a></h4>
         </header>
         <ul>
-            {{ range $item := $.project.tutorials }}
-                <li><a href="/tutorials{{ $item.url }}">{{ $item.name }}</a></li>
+            {{ range $items := $.project.tutorials }}
+                    <li class="title">
+                        <h5>{{ $items.name }}</h5>
+                        {{ range $item := $items.items }}
+                            <ul>
+                                <li>{{ $item.item | markdownify }}</li>
+                            </ul>
+                        {{ end }}
+                    </li>
             {{ end }}
         </ul>
     </section>
     <section>
         <header>
-            <a href="/examples">Examples</a>
+            <h4><a href="/examples">Examples</a></h4>
         </header>
         <ul>
-            {{ range $item := $.project.examples }}
-                <li><a href="/examples{{ $item.url }}">{{ $item.name }}</a></li>
+            {{ range $items := $.project.examples }}
+                    <li class="title">
+                        <h5>{{ $items.name }}</h5>
+                        {{ range $item := $items.items }}
+                            <ul>
+                                <li>{{ $item.item | markdownify }}</li>
+                            </ul>
+                        {{ end }}
+                    </li>
             {{ end }}
         </ul>
     </section>
 </div>
+
