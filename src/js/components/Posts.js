@@ -58,8 +58,8 @@ export default class BlogPostsContainer extends Component {
 }
 
 BlogPostsContainer.propTypes = {
-  category: PropTypes.string.isRequired,
-  onSuccess: PropTypes.string.isRequired,
+  category: PropTypes.object.isRequired,
+  onSuccess: PropTypes.func.isRequired,
 };
 
 function ellipsis(text, maxLenght) {
@@ -114,7 +114,7 @@ function Post({ post }) {
 }
 
 Post.propTypes = {
-  post: PropTypes.string.isRequired,
+  post: PropTypes.object.isRequired,
 };
 
 function CardHeaderImage({ url }) {
