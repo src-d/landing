@@ -55,14 +55,6 @@ teams:
             name: Egor Bulychev
             position: Senior Software Engineer
             github: https://github.com/EgorBu
-          - picture: konstantin.png
-            name: Konstantin Slavnov
-            position: Software Engineering Intern
-            github: https://github.com/zurk
-          - picture: placeholder/new-man.png
-            name: Timofei Semenov
-            position: Software Engineering Intern
-            github: https://github.com/fineguy
           - picture: waren.png
             name: Waren Long
             position: Software Engineering Intern
