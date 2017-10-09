@@ -1,14 +1,17 @@
+# Default shell
+SHELL := /bin/bash
+
 # provided by ci.docs
-export HOST_NAME ?=
-export BASE_URL ?=
-export VERSION ?=
+HOST_NAME ?=
+BASE_URL ?=
+VERSION ?=
 OUTPUT ?=
 SOURCES ?=
 
 # config
 landing ?= $(shell pwd)
 boilerplate := $(landing)/../landing.boilerplate
-project_yml_generator := $(landing)/doc-site-generator/src/*.go
+project_yml_generator := go run $(landing)/doc-site-generator/src/*.go
 src_assets := $(landing)/doc-site-generator/assets
 src_categories_yml := $(landing)/hugo/data/categories.yml
 src_project_tpl := $(src_assets)/templates/project.yml.tpl
@@ -22,25 +25,34 @@ else
   output_tmp = $(boilerplate)/.doc-site-sources
 endif
 
+define create-ancestors
+	$(MKDIR) $(1)
+	$(REMOVE) $(1)
+endef
+
+define reset-directory
+	$(REMOVE) $(1)
+	$(MKDIR) $(1)
+endef
+
 # Creates a landing-like project into the OUTPUT directory
-prepare-landing-like: copy-landing copy-assets clean-landing
+prepare-landing-like: copy-landing copy-assets landing-clean
 
 # Copies the current landing into a cleaned OUTPUT directory
 copy-landing:
 ifndef OUTPUT
 	$(error "error 'OUTPUT' can not be null.")
 endif
-	$(MKDIR) $(OUTPUT)
-	$(REMOVE) $(OUTPUT)
+	$(call create-ancestors, $(OUTPUT))
 	$(COPY) $(landing) $(OUTPUT)
 
 # Copies documentation assets into the OUTPUT directory
 copy-assets:
 	$(COPY) $(src_landing_hugo)/* $(OUTPUT);
 
-# Clean files from Landing
+# Cleans files from Landing
 sections_to_clean := home careers manifesto projects team temporal upcoming
-clean-landing:
+landing-clean:
 	@for section in $(sections_to_clean) ;\
 	do \
 		$(REMOVE) $(OUTPUT)/hugo/content/$${section}.md; \
@@ -50,7 +62,7 @@ clean-landing:
 		$(REMOVE) $(OUTPUT)/hugo/data/$${section}.yml; \
 	done;
 
-# Import documentation from an external project
+# Imports documentation from an external project
 import-documentation:
 ifdef SOURCES
 	$(COPY) $(SOURCES)/README.md $(output_raw)
@@ -65,13 +77,13 @@ ifdef SOURCES
 		$(COPY) $(SOURCES)/_examples/* $(output_raw)/documentation/examples/; \
 	fi;
 
-	go run $(project_yml_generator) -tpl=$(src_project_tpl) -readme=$(SOURCES)/README.md -categories=$(src_categories_yml) > $(output_yml)
+	$(project_yml_generator) -tpl=$(src_project_tpl) -readme=$(SOURCES)/README.md -categories=$(src_categories_yml) > $(output_yml)
 
 	$(REMOVE) $(OUTPUT)/doc-site-generator;
 endif
 
-## Creates a boilerplate containing all landing-like dependencies
-boilerplate-prepare:
+# Creates a landing-like boilerplate with compiled dependencies
+$(boilerplate):
 	$(MAKE) -C $(landing) prepare-landing-like OUTPUT=$(boilerplate)
 	$(MAKE) -C $(boilerplate) project-dependencies
 	$(REMOVE) \
@@ -80,27 +92,23 @@ boilerplate-prepare:
 		$(boilerplate)/src \
 		$(boilerplate)/node_modules;
 
-## Generate a documentation site from the boilerplate
-boilerplate-compile:
-	@if [[ ! -d "$(boilerplate)" ]]; then \
-		echo "error No boilerplate already created at '$(boilerplate)'."; \
-		exit 1; \
-	fi;
-
+# Generates a documentation site from a boilerplate
+documentation-site-create: $(boilerplate)
 	$(MAKE) -C $(boilerplate) copy-landing OUTPUT=$(output_tmp)
-
 	$(MAKE) -C $(output_tmp) import-documentation OUTPUT=$(output_tmp)
-
 	$(MAKE) -C $(output_tmp) hugo-build DESTINATION=$(output_tmp)/public
-
-	$(MKDIR) $(OUTPUT)
+	$(call reset-directory, $(OUTPUT))
 	$(MOVE) $(output_tmp)/public/* $(OUTPUT)
 	$(REMOVE) $(output_tmp)
 
-## Generate a documentation site
-generate-documentation-site: prepare-landing-like import-documentation
-	$(MAKE) -C $(OUTPUT) serve-without-api;
+## Generates and serves a documentation site
+documentation-site-serve: documentation-site-create
+	@cd $(OUTPUT); \
+	caddy -port $(PORT);
 
+## Cleans the boilerplate directory
+boilerplate-clean:
+	$(REMOVE) $(boilerplate)
 
 # ----------
 
@@ -116,7 +124,7 @@ develop-documentation:
 	$(MKDIR) $(dev_output_doc)
 	$(COPY) $(dev_src_raw) $(dev_output_raw)
 	$(COPY) $(dev_src_doc)/*.md $(dev_output_doc)
-	go run $(project_yml_generator) -tpl=$(src_project_tpl) -readme=$(SOURCES)/README.md -categories=$(src_categories_yml) > $(dev_output_project_yml)
+	$(project_yml_generator) -tpl=$(src_project_tpl) -readme=$(SOURCES)/README.md -categories=$(src_categories_yml) > $(dev_output_project_yml)
 
 	$(MAKE) -C $(landing) serve-without-api;
 

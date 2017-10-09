@@ -1,3 +1,6 @@
+# Default shell
+SHELL := /bin/bash
+
 # Config
 PROJECT := landing
 COMMANDS := api
@@ -12,19 +15,14 @@ OS := Linux
 HUGO_TAR_FILE_NAME = hugo_$(HUGO_VERSION)_$(OS)-64bit.tar.gz
 HUGO_URL = https://github.com/spf13/hugo/releases/download/v$(HUGO_VERSION)/$(HUGO_TAR_FILE_NAME)
 
-# Including devops Makefile
-MAKEFILE_CI := Makefile.main
-CI_REPOSITORY := https://github.com/src-d/ci.git
-CI_FOLDER := .ci
-$(MAKEFILE_CI):
-	@git clone --quiet $(CI_REPOSITORY) $(CI_FOLDER); \
-	cp $(CI_FOLDER)/$(MAKEFILE_CI) .;
-
--include $(MAKEFILE_CI)
-
-# Including doc-site-generator Makefile
-MAKEFILE_DOC_SITE_GEN := doc-site-generator/Makefile
--include $(MAKEFILE_DOC_SITE_GEN)
+# CI: do not edit this
+CI_REPOSITORY = https://github.com/src-d/ci.git
+SHARED_PATH ?= $(shell pwd)
+CI_PATH ?= $(SHARED_PATH)/.ci
+MAKEFILE_MAIN := $(CI_PATH)/Makefile.main
+$(MAKEFILE_MAIN):
+	git clone --quiet --depth 1 $(CI_REPOSITORY) $(CI_PATH);
+-include $(MAKEFILE_MAIN)
 
 # CI
 TAG := master
@@ -36,10 +34,9 @@ endif
 
 # Environment
 UNAME_S := $(shell uname -s)
-BASE_PATH := $(shell pwd)
-HUGO_PATH := $(BASE_PATH)/.hugo
+HUGO_PATH := $(SHARED_PATH)/.hugo
 HUGO_NAME := hugo
-WORKDIR := $(PWD)
+WORKDIR := $(shell pwd)
 BUILD_PATH := $(WORKDIR)/build
 LANDING_ARTIFACT := landing_$(TAG).tar.gz
 

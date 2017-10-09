@@ -11,7 +11,7 @@ export HOST_NAME=<hostname>;
 export VERSION=<version>;
 
 # The following will generate the site into the $OUTPUT dir, and will serve from there under http://<hostname>:<port>
-make generate-documentation-site;
+make documentation-site-serve;
 ```
 
 where:
@@ -35,7 +35,7 @@ export BASE_URL=go-git.sourced.tech:8181;
 export HOST_NAME=go-git.sourced.tech;
 export VERSION=v4;
 
-make generate-documentation-site;
+make documentation-site-serve;
 ```
 
 # For development purposes...
