@@ -1,5 +1,5 @@
 {{ $imageName := default .ctx.Site.Params.headerimagename .ctx.Params.headerimagename }}
-{{ $imageUrl := (printf "img/header/%s.png" $imageName) | absURL }}
+{{ $imageUrl := (printf "img/header/%s.png" $imageName) }}
 <header class="hero">
     <div class="hero__wrap">
         <div class="hero__info">
@@ -15,6 +15,6 @@
             <img src="{{ $imageUrl | safeURL }}" />
         </figure>
 
-        <img class="code-pills-left mobile-hidden" src="{{ "img/bgs/codepills-bg-1.png" | absURL }}" />
+        <img class="code-pills-left mobile-hidden" src="{{ "img/bgs/codepills-bg-1.png" }}" />
     </div>
 </header>

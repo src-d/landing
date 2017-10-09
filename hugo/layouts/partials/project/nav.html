@@ -3,7 +3,7 @@
 {{ if $.project }}
     <div class="project-nav">
         <h2 class="project-nav__title">
-            <a href="/" class="project-nav__title__project-icon">
+            <a href="." class="project-nav__title__project-icon">
                 {{ if default false $.project.logosmall }}
                     {{ partial "svg" $.project.logosmall }}
                 {{ else }}
@@ -15,12 +15,12 @@
 
         <ul class="project-nav__menu">
             <li>
-                <a href="/readme" {{ if eq $currentUrl "//" }}class="active"{{end}}>
+                <a href="readme" {{ if eq $currentUrl "//" }}class="active"{{end}}>
                     Intro
                 </a>
             </li>
 
-            {{ partial "project/raw_item.html" (dict "currentUrl" $currentUrl "fileName" "raw/documentation/tutorials/README.md" "linkUrl" "/tutorials" "linkText" "Documentation") }}
+            {{ partial "project/raw_item.html" (dict "currentUrl" $currentUrl "fileName" "raw/documentation/tutorials/README.md" "linkUrl" "tutorials" "linkText" "Documentation") }}
 
             {{ $langs := dict "cpp" "c++" }}
             {{ range $lang := $.project.languages }}
@@ -28,7 +28,7 @@
                 {{ if eq $lang "go" }}
                     {{ $.ctx.Scratch.Set "apiUrl" (printf "https://godoc.org/github.com/%s" $.project.repository) }}
                 {{ else }}
-                    {{ $.ctx.Scratch.Set "apiUrl" (printf "/api/%s" $lang) }}
+                    {{ $.ctx.Scratch.Set "apiUrl" (printf "api/%s" $lang) }}
                 {{ end }}
                 <li>
                     <a href="{{ $.ctx.Scratch.Get "apiUrl" }}" target="_blank">
@@ -52,7 +52,7 @@
                 </a>
             </li>
 
-            {{ partial "project/raw_item.html" (dict "currentUrl" $currentUrl "fileName" "raw/LICENSE" "linkUrl" "/license" "linkText" "License") }}
+            {{ partial "project/raw_item.html" (dict "currentUrl" $currentUrl "fileName" "raw/LICENSE" "linkUrl" "license" "linkText" "License") }}
         </ul>
 
         <div class="project-nav__icons">

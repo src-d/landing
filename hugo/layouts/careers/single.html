@@ -42,9 +42,9 @@
                 <ul>
                     {{ range $src := $careers.gallery.images }}
                         <li class="hq-gallery__item">
-                            <img src="{{ $src | absURL }}" alt="">
+                            <img src="{{ $src }}" alt="">
 
-                            <a href="{{ $src | absURL }}"class="hq-gallery__item__trigger" data-lightbox="hq" data-title="source{d} headquarters, Madrid">
+                            <a href="{{ $src }}"class="hq-gallery__item__trigger" data-lightbox="hq" data-title="source{d} headquarters, Madrid">
                                 {{ partial "svg" "zoom-open" }}
                             </a>
                         </li>

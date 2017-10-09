@@ -93,7 +93,7 @@ function Position({ data }) {
           <header className="positions__job__header">
             <figure>
               <img
-                src={`/img/icons/teams/${data.team.toLowerCase()}.svg`}
+                src={`img/icons/teams/${data.team.toLowerCase()}.svg`}
                 alt=""
               />
             </figure>

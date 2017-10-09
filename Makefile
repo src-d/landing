@@ -3,7 +3,8 @@ PROJECT := landing
 COMMANDS := api
 CODECOV_TOKEN ?=
 DESTINATION ?= public
-PORT ?= 8181
+LANDING_URL ?= //sourced.tech
+PORT ?= 80
 DOCKERFILES = Dockerfile:landing Dockerfile.api:landing-api Dockerfile.slackin:landing-slackin
 
 HUGO_VERSION := 0.21
@@ -105,11 +106,11 @@ hugo-clean:
 
 # Builds hugo
 hugo-build:
-	$(HUGO) --config=hugo.config.yaml --destination=$(DESTINATION)
+	$(HUGO) --config=hugo.config.yaml --destination=$(DESTINATION) --baseURL=$(LANDING_URL)
 
 # Runs hugo server
 hugo-server:
-	$(HUGO) server --config=hugo.config.yaml --destination=public --port=$(PORT) --watch --buildDrafts
+	$(HUGO) server --config=hugo.config.yaml --destination=public --port=$(PORT) --baseURL=$(LANDING_URL) --watch --buildDrafts
 
 # Packages the landing artifact in the build directory
 package-hugo-generated:

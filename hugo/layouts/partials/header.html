@@ -6,9 +6,9 @@
 <div class="nav">
     <nav class="topbar {{ if .opaque }}opaque{{ end }}" id="topbar">
         <div>
-            <a href="{{ "/" | absURL }}" alt="source{d}">
+            <a href="{{ ("."|absURL ) | safeURL }}" alt="source{d}">
                 <div class="logo">
-                    <img src="{{ "/img/logos/source-logo-white.svg" | absURL }}" alt="source{d}" />
+                    <img src="{{ "img/logos/source-logo-white.svg" }}" alt="source{d}" />
                 </div>
             </a>
 
@@ -16,7 +16,7 @@
                 <ul class="visible" id="menu-main">
                     <li class="topbar__menu__back"></li>
                     <li {{ if and (eq $ctx.URL "/") (eq $category "") }}class="active"{{ end }} title="homepage">
-                        <a href="{{ "/" | absURL }}" title="Home">Home</a>
+                        <a href="{{ ("."|absURL ) | safeURL }}" title="Home">Home</a>
                     </li>
                     <li class="{{ if or (eq $ctx.URL "projects") (ne $category "") }}active {{end}}nav-to" data-nav-to="projects">
                         <a>
@@ -31,10 +31,10 @@
                         <a href="https://blog.sourced.tech" title="Blog" data-tracked>Blog</a>
                     </li>
                     <li {{ if eq $ctx.URL "team" }}class="active" {{ end }}>
-                        <a href="{{ "/team" | absURL }}" title="Team">Team</a>
+                        <a href="{{ ("team"|absURL ) | safeURL }}" title="Team">Team</a>
                     </li>
                     <li {{ if eq $ctx.URL "careers" }}class="active" {{ end }}>
-                        <a href="{{ "/careers" | absURL }}" title="Our Job Opportunities">Careers</a>
+                        <a href="{{ ("careers"|absURL ) | safeURL }}" title="Our Job Opportunities">Careers</a>
                     </li>
                 </ul>
 
@@ -48,7 +48,7 @@
                     {{ range $k := $ctx.Site.Data.categories.categories.order }}
                         {{ $section := (index $categories $k) }}
                         <li {{ if eq $category $k }}class="active"{{end}}>
-                            <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}">
+                            <a href="{{ ("projects"|absURL ) | safeURL }}#{{ $k }}" title="{{ $section.name }}">
                                 {{ partial "svg" $k }}
                                 <span>{{ $section.name }}</span>
                             </a>
@@ -63,10 +63,10 @@
                         <div class="topbar__menu__back__icon" id="menu-close"></div>
                     </li>
                     <li {{ if and (eq $ctx.URL "/") (eq $category "") }}class="active"{{ end }} title="homepage">
-                        <a href="{{ "/" | absURL }}" title="Home">Home</a>
+                        <a href="{{ ("."|absURL ) | safeURL }}" title="Home">Home</a>
                     </li>
                     <li {{ if or (eq $ctx.URL "projects") (ne $category "") }}class="active"{{ end }}>
-                        <a href="{{ "/projects" | absURL}}" class="topbar__menu--projects" title="Projects">
+                        <a href="{{ ("projects"|absURL ) | safeURL }}" class="topbar__menu--projects" title="Projects">
                             <span>Projects</span>
                             {{ partial "svg" "go-arrow-nocircle" }}
                         </a>
@@ -75,7 +75,7 @@
                             {{ range $k := $ctx.Site.Data.categories.categories.order }}
                                 {{ $section := (index $categories $k) }}
                                 <li {{ if eq $category $k }}class="active"{{end}}>
-                                    <a href="{{ "/projects" | absURL }}#{{ $k }}" title="{{ $section.name }}" class="scroll-to" data-tracked>
+                                    <a href="{{ ("projects"|absURL ) | safeURL }}#{{ $k }}" title="{{ $section.name }}" class="scroll-to" data-tracked>
                                         {{ partial "svg" $k }}
                                         <span>{{ $section.name }}</span>
                                     </a>
@@ -90,10 +90,10 @@
                         <a href="https://blog.sourced.tech" title="Blog" data-tracked>Blog</a>
                     </li>
                     <li {{ if eq $ctx.URL "team" }}class="active" {{ end }}>
-                        <a href="{{ "/team" | absURL }}" title="Team">Team</a>
+                        <a href="{{ ("team"|absURL ) | safeURL }}" title="Team">Team</a>
                     </li>
                     <li {{ if eq $ctx.URL "careers" }}class="active" {{ end }}>
-                        <a href="{{ "/careers" | absURL }}" title="Our Job Opportunities">Careers</a>
+                        <a href="{{ ("careers"|absURL ) | safeURL }}" title="Our Job Opportunities">Careers</a>
                     </li>
                 </ul>
             </div>

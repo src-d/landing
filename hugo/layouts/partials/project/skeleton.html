@@ -7,14 +7,14 @@
     {{ partial "head.html" $headCtx }}
 
     <body class="
-        {{ if default false $project }}
+        {{ if and (default false $project) (ne $project.baseURL "/") }}
             project-page project-page_{{ $.ctx.Title | urlize }}
         {{ end }}
     ">
 
         {{ partial "header.html" $headerCtx }}
 
-        {{ if and (default false $project) (default true $.ctx.Params.herotemplate) }}
+        {{ if and (default false $project) (default true $.ctx.Params.herotemplate) (ne $project.baseURL "/") }}
             {{ $heroTpl := default "hero.html" $.ctx.Params.herotemplate }}
             {{ partial $heroTpl $heroCtx }}
         {{ end }}
@@ -30,7 +30,7 @@
             {{ end}}
         ">
             <div>
-                {{ if and (default false $project) (default false $.ctx.Params.asidetemplate) }}
+                {{ if and (default false $project) (default false $.ctx.Params.asidetemplate) (ne $project.baseURL "/") }}
                     {{ partial $.ctx.Params.asidetemplate $heroCtx }}
                 {{ end }}
                 <div class="

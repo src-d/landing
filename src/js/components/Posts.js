@@ -128,7 +128,7 @@ function CardHeaderImage({ url }) {
   }
   return (
     <div className="cards__element__img  cards__element__img_default">
-      <img src="/img/logos/logo-blue.svg" />
+      <img src="img/logos/logo-blue.svg" />
     </div>
   );
 }

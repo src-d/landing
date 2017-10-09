@@ -6,7 +6,7 @@ projectUrl: https://github.com/{{.Repository}}
 repoVersionUrl: https://github.com/{{.Repository}}/releases/tag/{{.Version}}
 releasesUrl: https://github.com/{{.Repository}}/releases
 supportUrl: https://github.com/{{.Repository}}/issues
-baseURL: //{{.BaseURL}}
+baseURL: {{.BaseURL}}
 languages:
   {{- range $lang := .Languages }}
   {{- if ne 0 (len $lang)}}
