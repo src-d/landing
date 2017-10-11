@@ -1,0 +1,146 @@
+workspace:
+  base: /go
+  path: src/github.com/src-d/landing
+
+branches: master
+
+pipeline:
+
+  # staging
+
+  build_stg:
+    image: golang:1.8
+    environment:
+      - LANDING_URL="//landing-staging.srcd.run"
+    commands:
+      - apt-get update
+      - apt-get install -y make bash curl git
+      - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+      - . ~/.nvm/nvm.sh
+      - nvm install 8
+      - nvm use 8
+      - npm install -g yarn
+      - npm rebuild node-sass
+      - go get -v -t ./...
+      - make build
+      - make packages
+    debug: true
+    when:
+      event: [push, pull_request]
+
+  docker_landing_stg:
+    image: plugins/docker
+    registry: quay.io
+    repo: quay.io/srcd/landing
+    secrets: [ docker_username, docker_password ]
+    tag: '${DRONE_COMMIT_SHA:0:7}'
+    dockerfile: Dockerfile
+    debug: true
+    when:
+      event: [push]
+
+  docker_api_stg:
+    image: plugins/docker
+    registry: quay.io
+    repo: quay.io/srcd/landing-api
+    secrets: [ docker_username, docker_password ]
+    tag: '${DRONE_COMMIT_SHA:0:7}'
+    dockerfile: Dockerfile.api
+    debug: true
+    when:
+      event: [push]
+
+  docker_slackin_stg:
+    image: plugins/docker
+    registry: quay.io
+    repo: quay.io/srcd/landing-slackin
+    secrets: [ docker_username, docker_password ]
+    tag: '${DRONE_COMMIT_SHA:0:7}'
+    dockerfile: Dockerfile.slackin
+    debug: true
+    when:
+      event: [push]
+
+  helm_deploy_stg:
+    image: quay.io/ipedrazas/drone-helm
+    skip_tls_verify: true
+    chart: ./helm-charts/landing
+    release: landing
+    prefix: STG
+    secrets: [ STG_API_SERVER, STG_KUBERNETES_TOKEN, SLACK_API_TOKEN ]
+    values: ingress.globalStaticIpName=landing-staging,image.landingSlackin.slackApiToken=$$SLACK_API_TOKEN,ingress.hosts={landing-staging.srcd.run,www.landing-staging.srcd.run},image.registry=quay.io/srcd,image.tag=${DRONE_COMMIT_SHA:0:7}
+    tiller_ns: kube-system
+    debug: true
+    wait: true
+    when:
+      event: [push]
+
+
+  # production
+
+  build_prod:
+    image: golang:1.8
+    environment:
+      - LANDING_URL="//sourced.tech"
+    commands:
+      - apt-get update
+      - apt-get install -y make bash curl git
+      - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+      - . ~/.nvm/nvm.sh
+      - nvm install 8
+      - nvm use 8
+      - npm install -g yarn
+      - npm rebuild node-sass
+      - go get -v -t ./...
+      - make build
+      - make packages
+    debug: true
+    when:
+      event: [tag]
+
+  docker_landing_prod:
+    image: plugins/docker
+    registry: quay.io
+    repo: quay.io/srcd/landing
+    secrets: [ docker_username, docker_password ]
+    tag: '${DRONE_TAG}'
+    dockerfile: Dockerfile
+    debug: true
+    when:
+      event: [tag]
+
+  docker_api_prod:
+    image: plugins/docker
+    registry: quay.io
+    repo: quay.io/srcd/landing-api
+    secrets: [ docker_username, docker_password ]
+    tag: '${DRONE_TAG}'
+    dockerfile: Dockerfile.api
+    debug: true
+    when:
+      event: [tag]
+
+  docker_slackin_prod:
+    image: plugins/docker
+    registry: quay.io
+    repo: quay.io/srcd/landing-slackin
+    secrets: [ docker_username, docker_password ]
+    tag: '${DRONE_TAG}'
+    dockerfile: Dockerfile.slackin
+    debug: true
+    when:
+      event: [tag]
+
+  helm_deploy_prod:
+    image: quay.io/ipedrazas/drone-helm
+    skip_tls_verify: true
+    chart: ./helm-charts/landing
+    release: landing
+    prefix: PROD
+    secrets: [ PROD_API_SERVER, PROD_KUBERNETES_TOKEN, SLACK_API_TOKEN ]
+    values: ingress.globalStaticIpName=landing-sourced-tech,image.landingSlackin.slackApiToken=$$SLACK_API_TOKEN,ingress.hosts={landingprod.sourced.tech,www.landingprod.sourced.tech},image.registry=quay.io/srcd,image.tag=${DRONE_TAG}
+    tiller_ns: kube-system
+    debug: true
+    wait: true
+    when:
+      event: [tag]
