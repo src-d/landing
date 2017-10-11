@@ -33,7 +33,7 @@ pipeline:
     registry: quay.io
     repo: quay.io/srcd/landing
     secrets: [ docker_username, docker_password ]
-    tag: ${DRONE_COMMIT_SHA:0:7}
+    tag: '${DRONE_COMMIT_SHA:0:7}'
     dockerfile: Dockerfile
     debug: true
     when:
@@ -44,7 +44,7 @@ pipeline:
     registry: quay.io
     repo: quay.io/srcd/landing-api
     secrets: [ docker_username, docker_password ]
-    tag: ${DRONE_COMMIT_SHA:0:7}
+    tag: '${DRONE_COMMIT_SHA:0:7}'
     dockerfile: Dockerfile.api
     debug: true
     when:
@@ -55,7 +55,7 @@ pipeline:
     registry: quay.io
     repo: quay.io/srcd/landing-slackin
     secrets: [ docker_username, docker_password ]
-    tag: ${DRONE_COMMIT_SHA:0:7}
+    tag: '${DRONE_COMMIT_SHA:0:7}'
     dockerfile: Dockerfile.slackin
     debug: true
     when:
@@ -103,7 +103,7 @@ pipeline:
     registry: quay.io
     repo: quay.io/srcd/landing
     secrets: [ docker_username, docker_password ]
-    tag: ${DRONE_TAG}
+    tag: '${DRONE_TAG}'
     dockerfile: Dockerfile
     debug: true
     when:
@@ -114,7 +114,7 @@ pipeline:
     registry: quay.io
     repo: quay.io/srcd/landing-api
     secrets: [ docker_username, docker_password ]
-    tag: ${DRONE_TAG}
+    tag: '${DRONE_TAG}'
     dockerfile: Dockerfile.api
     debug: true
     when:
@@ -125,7 +125,7 @@ pipeline:
     registry: quay.io
     repo: quay.io/srcd/landing-slackin
     secrets: [ docker_username, docker_password ]
-    tag: ${DRONE_TAG}
+    tag: '${DRONE_TAG}'
     dockerfile: Dockerfile.slackin
     debug: true
     when:
