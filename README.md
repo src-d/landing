@@ -37,18 +37,18 @@ Development and running the landing locally
 You need to satisfy all [project requirements](#requirements), and then to run:
 
 ```
-make serve
+LANDING_URL=//localhost PORT=8181 make serve
 ```
 It runs everything you need to get the site working at [http://localhost:8181](http://localhost:8181)
 
 Alternatively, you can start hugo, the api-server and webpack in a "three window mode", just running:
 ```
-yarn start
+LANDING_URL=//localhost PORT=8181 yarn start
 ```
 With this command, each window runs a command, that can be also ran by you in case you need to control the output of each command or in any other special case:
 * `yarn run webpack-watcher` To start webpack watcher, that will rebuild the assets when you change its sources
 * `make hugo-server` To serve the landing locally using hugo server
-* `yarn run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
+* `yarn run api-run` To start the landing API at [http://localhost:8181](http://localhost:8181)
 
 Configuration
 ===
@@ -62,7 +62,3 @@ The following envars are available for configuration
 - `SLACKIN_URL`
 
 You can see more in the `config` package in `api`.
-
-Documentation site generation
-===
-Described in [doc-site-generator/README.md](doc-site-generator/README.md)
