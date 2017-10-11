@@ -1,4 +1,3 @@
-baseurl: "/"
 title: "source{d}"
 
 contentdir:   "hugo/content"
@@ -39,8 +38,8 @@ params:
     description: "source{d} aims to understand developers through their code. We analyze contributions from more than 7 million developers in the open source community."
     defaultemail: "hello@sourced.tech"
     location: "Madrid"
-    favicon: "/img/logos/favicon.png"
-    favicon96: "/img/logos/favicon96.png"
+    favicon: "img/logos/favicon.png"
+    favicon96: "img/logos/favicon96.png"
     pgpLink: "https://keybase.io/sourced"
     headerImageName: alan-turing
     social:

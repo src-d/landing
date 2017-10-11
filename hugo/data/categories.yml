@@ -54,6 +54,17 @@ categories:
             - go
           logo:
           logosmall:
+        - name: spark-api
+          hostname: spark-api.sourced.tech
+          url: https://spark-api.sourced.tech
+          desc: An open-source platform for analyzing source code repositories on top of Apache Spark.
+          repository: src-d/spark-api
+          minVersion: v1
+          languages:
+            - scala
+            - python
+          logo:
+          logosmall:
         - name: borges
           url: https://github.com/src-d/borges
         - name: rovers

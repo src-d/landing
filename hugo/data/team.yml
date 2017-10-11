@@ -1,5 +1,5 @@
 title: team
-desc: At source{d} we are all engineers, developers and hackers ourselves. We go as far as to train and encourage all non-technical roles to also become developers.<br /></br>Interested in our people and want to become part of our team? Check more on <a href="/careers">careers</a>.
+desc: At source{d} we are all engineers, developers and hackers ourselves. We go as far as to train and encourage all non-technical roles to also become developers.<br /></br>Interested in our people and want to become part of our team? Check more on <a href="careers">careers</a>.
 teams:
     - name: Engineering
       headline: The core of everything we do, from the beginning to the end; writing great software
@@ -55,14 +55,6 @@ teams:
             name: Egor Bulychev
             position: Senior Software Engineer
             github: https://github.com/EgorBu
-          - picture: konstantin.png
-            name: Konstantin Slavnov
-            position: Software Engineering Intern
-            github: https://github.com/zurk
-          - picture: placeholder/new-man.png
-            name: Timofei Semenov
-            position: Software Engineering Intern
-            github: https://github.com/fineguy
           - picture: waren.png
             name: Waren Long
             position: Software Engineering Intern
