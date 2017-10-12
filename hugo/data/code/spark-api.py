@@ -17,3 +17,7 @@ head_files = api.repositories.filter("is_fork = false").references \
 .classify_languages() \
 .filter("is_binary = false") \
 .select("lang","file_hash").filter("lang is not null").cache()
+
+# get the schema & print results
+head_files.printSchema()
+head_files.show()

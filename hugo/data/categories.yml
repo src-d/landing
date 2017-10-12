@@ -1,4 +1,4 @@
-no_data_message: we still have things to polish here, soon to be released. Join our community to keep posted!
+no_data_message: We still have things to polish here, soon to be released. Join our community to keep posted!
 categories:
   order:
     - datasets
@@ -14,7 +14,7 @@ categories:
     datasets:
       name: datasets
       colors: {left: "#003ca1", right: "#656afa"}
-      desc: output from our pipeline for source code analysis, our open datasets provide  a ready-to-use baseline for your next machine learning and code analysis projects
+      desc: Output from our pipeline for source code analysis, our open datasets provide  a ready-to-use baseline for your next machine learning and code analysis projects
       projects:
         # no datasets added so far as legacy ones didn't use the current pipeline
 
@@ -23,7 +23,7 @@ categories:
     models:
       name: models
       colors: {left: "#e4415a", right: "#ff6d4c"}
-      desc: a selection of machine learning models trained using our tools over large datasets and ready to be used in your research or project with the supporting libraries
+      desc: A selection of machine learning models trained using our tools over large datasets and ready to be used in your research or project with the supporting libraries
       projects:
         # no models added so far as none were publicly published so far
 
@@ -32,7 +32,7 @@ categories:
     retrieval:
       name: data retrieval tools
       colors: {left: "#317d19", right: "#4ecc7b"}
-      desc: a set of tools that allow you to discover, fetch, store, access, filter and extract features from just a single source code repository to tens of millions of repositories
+      desc: A set of tools that allow you to discover, fetch, store, access, filter and extract features from just a single source code repository to tens of millions of repositories
       projects:
         - name: spark-api
           hostname: spark-api.sourced.tech
@@ -83,7 +83,7 @@ categories:
     languages:
       name: language analysis tools
       colors: {left: "#c2732a", right: "#f18406"}
-      desc: a toolset that enables you to identify with speed and precision programming languages from source code files and turn them into universal abstract syntax trees (UASTs)
+      desc: A toolset that enables you to identify with speed and precision programming languages from source code files and turn them into universal abstract syntax trees (UASTs)
       projects:
         - name: babelfish
           hostname: bblf.sh
@@ -111,7 +111,7 @@ categories:
     science:
       name: machine learning tools
       colors: {left: "#832fcc", right: "#c05cea"}
-      desc: our ML tools range from feature extraction on top of source code abstract syntax trees to lightning-fast, large scale clustering algorithms running on GPUs
+      desc: Our ML tools range from feature extraction on top of source code abstract syntax trees to lightning-fast, large scale clustering algorithms running on GPUs
       projects:
         - name: ast2vec
           url: https://github.com/src-d/ast2vec
@@ -157,7 +157,7 @@ categories:
     demos:
       name: demos
       colors: {left: "#ffba34", right: "#fff444"}
-      desc: demos are use case examples based on our tech stack and which both help you to get started with them as well as provide real-world, concrete functionality
+      desc: Demos are use case examples based on our tech stack and which both help you to get started with them as well as provide real-world, concrete functionality
       projects:
         - name: dashboard
           url: https://github.com/bblfsh/dashboard
