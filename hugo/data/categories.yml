@@ -1,4 +1,4 @@
-no_data_message: We are preparing some amazing projects, but it's a bit too early yet to show them. Join our slack and keep posted on them.
+no_data_message: we still have things to polish here, soon to be released. Join our community to keep posted!
 categories:
   order:
     - datasets
@@ -8,100 +8,183 @@ categories:
     - science
     - demos
   contents:
+
+# ########## datasets ##########
+
     datasets:
       name: datasets
       colors: {left: "#003ca1", right: "#656afa"}
-      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure.
+      desc: output from our pipeline for source code analysis, our open datasets provide  a ready-to-use baseline for your next machine learning and code analysis projects
       projects:
-        - name: Github repositories languages distribution
-          url: http://google.es
-          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
-          created_at: 2017-04-19
-          zip_size: 600 MB
-          raw_size: 1.4 GB
-        - name: Github Source Code Names
-          url: http://google.es
-          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure.
-          created_at: 2017-02-01
-          zip_size: 200 MB
+        # no datasets added so far as legacy ones didn't use the current pipeline
+
+# ########## machine learning models ##########
+
     models:
       name: models
       colors: {left: "#e4415a", right: "#ff6d4c"}
-      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+      desc: a selection of machine learning models trained using our tools over large datasets and ready to be used in your research or project with the supporting libraries
       projects:
-        - name: Model Fancy Name
-          url: http://google.es
-          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur.
-        - name: Another Model Fancy Name
-          url: http://google.es
-          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore.
-          created_at: 2016-12-25
-        - name: The best model ever seen over the world
-          url: http://google.es
-          desc: But with a short name :(
+        # no models added so far as none were publicly published so far
+
+# ########## data retrieval tools ##########
+
     retrieval:
       name: data retrieval tools
       colors: {left: "#317d19", right: "#4ecc7b"}
-      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla.
+      desc: a set of tools that allow you to discover, fetch, store, access, filter and extract features from just a single source code repository to tens of millions of repositories
       projects:
+        - name: spark-api
+          hostname: spark-api.sourced.tech
+          url: https://spark-api.sourced.tech
+          desc: spark API combines data retrieval and language analysis tools for scalable pipelines that process any number of Git repositories for source code analysis
+          repository: src-d/spark-api
+          minVersion: v0.0.6
+          languages:
+            - python
+            - scala
+          logo:
+          logosmall:
         - name: go-git
           hostname: go-git.sourced.tech
           url: https://go-git.sourced.tech
-          desc: A highly extensible Git implementation in pure Go.
-          repository: dpordomingo/go-git
+          desc: go-git is a highly extensible Git implementation in pure Go language
+          repository: src-d/go-git
           minVersion: v4.0.0
           languages:
             - go
           logo:
           logosmall:
-        - name: spark-api
-          hostname: spark-api.sourced.tech
-          url: https://spark-api.sourced.tech
-          desc: An open-source platform for analyzing source code repositories on top of Apache Spark.
-          repository: src-d/spark-api
-          minVersion: v1
-          languages:
-            - scala
-            - python
-          logo:
-          logosmall:
-        - name: borges
-          url: https://github.com/src-d/borges
         - name: rovers
           url: https://github.com/src-d/rovers
-          desc: Tools for retrieving different external services
+          desc: rovers is a service to retrieve repository URLs from multiple code repository hosting providers, similarly to a search engine crawler
+          repository: src-d/rovers
+          minVersion: v2.5.3
+          languages:
+            - go
+        - name: borges
+          url: https://github.com/src-d/borges
+          desc: borges reads code repository URLs, then collects and stores them at large scale by using a producer-consumer architecture
+          repository: src-d/borges
+          minVersion: v0.7.1
+          languages:
+            - go
+        - name: śiva
+          hostname: go-siva.sourced.tech
+          url: https://go-siva.sourced.tech
+          desc: śiva is an archiving format similar to TAR/ZIP, focused on allowing constant-time random file access, seekable access to contained files and concatenable files
+          repository: src-d/go-siva
+          minVersion: v1.1.2
+          languages:
+            - go
+
+# ########## language analysis tools ##########
+
     languages:
       name: language analysis tools
       colors: {left: "#c2732a", right: "#f18406"}
-      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id
+      desc: a toolset that enables you to identify with speed and precision programming languages from source code files and turn them into universal abstract syntax trees (UASTs)
       projects:
-        - name: Babelfish
-          url: https://github.com/bblfsh
-          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore irure.
+        - name: babelfish
+          hostname: bblf.sh
+          url: https://doc.bblf.sh
+          desc: babelfish is a self-hosted server for universal source code parsing, turning code files into Universal Abstract Syntax Trees (UASTs)
           logo: projects/bblfsh
+        - name: enry
+          hostname: enry.sourced.tech
+          url: https://enry.sourced.tech
+          desc: enry is a faster source code file programming language detector based on github/linguist and toolbox that ignores binary or vendored files
+          repository: src-d/enry
+          minVersion: v1.5.1
+          languages:
+            - go
+        - name: babelfish tools
+          hostname: enry.sourced.tech
+          url: https://github.com/bblfsh/tools
+          desc: babelfish tools are easy-to-use command line tools for simple code analysis, such as tokenizer, cyclomatic complexity, npath complexity, patch
+          repository: bblfsh/tools
+          languages:
+            - go
+
+# ########## machine learning tools ##########
+
     science:
       name: machine learning tools
       colors: {left: "#832fcc", right: "#c05cea"}
-      desc: Fugiat aliqua Lorem officia fugiat qui
+      desc: our ML tools range from feature extraction on top of source code abstract syntax trees to lightning-fast, large scale clustering algorithms running on GPUs
       projects:
+        - name: ast2vec
+          url: https://github.com/src-d/ast2vec
+          desc: ast2vec provides a framework for Machine Learning on Source Code (MLoSC) over UASTs, including identifier embeddings, document frequencies, topic modeling and more
+          repository: src-d/ast2vec
+          minVersion: 0.3.4-alpha
+          languages:
+            - python
+        - name: modelforge
+          url: https://github.com/src-d/modelforge
+          desc: modelforge is the foundation for storing and sharing machine learning models, with an extensible registry backend and using the ASDF storage format
+          repository: src-d/modelforge
+          minVersion: 0.2.9-alpha
+          languages:
+            - python
         - name: kmcuda
-          url: https://kmcuda.sourced.tech
-          desc: Large scale K-means and K-nn implementation on NVIDIA GPU / CUDA
+          url: https://github.com/src-d/kmcuda
+          desc: kmcuda is a large-scale K-means and K-nn implementation that supports diverse distance metrics and can be accelerated using multiple NVIDIA GPUs (CUDA)
           repository: src-d/kmcuda
-          minVersion: v6.2.1
+          minVersion: 6.2.0
           languages:
             - python
             - cpp
-        - name: Name of project
-          url: https://github.com/src-d
-          desc: Fugiat aliqua Lorem officia fugiat qui laboris.
-        - name: Name of project
-          url: https://github.com/src-d
-          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo.
-        - name: Name of project
-          url: https://github.com/src-d
-          desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt fugiat qui laboris occaecat dolore irure.
+        - name: minhashcuda
+          url: https://github.com/src-d/minshashcuda
+          desc: minhashcuda is a large-scale weighted MinHash implementation optimized for low memory and high speed by running on multiple NVIDIA GPUs (CUDA)
+          repository: src-d/minhashcuda
+          minVersion: 1.1.1
+          languages:
+            - cpp
+            - python
+        - name: wmd-relax
+          url: https://github.com/src-d/wmd-relax
+          desc: wmd-relax is a large-scale Word Mover's Distance implementation optimized for speed by using google/or-tools that is compatible with spaCy
+          repository: src-d/wmd-relax
+          minVersion: v1.2.6
+          languages:
+            - python
+            - cpp
+
+# ########## demos ##########
+
     demos:
       name: demos
       colors: {left: "#ffba34", right: "#fff444"}
-      desc: Fugiat aliqua Lorem officia fugiat qui laboris occaecat dolore irure. Dolore consectetur sunt tempor commodo. Mollit id nulla deserunt
+      desc: demos are use case examples based on our tech stack and which both help you to get started with them as well as provide real-world, concrete functionality
+      projects:
+        - name: dashboard
+          url: https://github.com/bblfsh/dashboard
+          desc: babelfish dashboard is a visualization tool that uses the babelfish universal code parser to display UASTs and its details in a human-friendly manner
+          repository: bblfsh/dashboard
+          languages:
+            - js
+            - go
+        - name: vecino
+          url: https://github.com/src-d/vecino
+          desc: vecino is a CLI app to discover the most similar Git repositories to the one provided through matching or synonymical source code identifiers
+          repository: src-d/vecino
+          languages:
+            - python
+        - name: tmsc
+          url: https://github.com/src-d/tmsc
+          desc: tmsc is a CLI app that applies topic modeling on source code to discover the topics (sets of identifier keywords) of a repository the user provides
+          repository: src-d/tmsc
+          minVersion: 0.1.1-alpha
+          languages:
+            - python
+        - name: hercules
+          url: https://github.com/src-d/hercules
+          desc: hercules (and its labours) calculates and displays various Git repository statistics as code burndown, developer ownership, file & developer copulas
+          repository: src-d/hercules
+          minVersion: v2
+          languages:
+            - go
+            - python
+        # further demos are either legacy or WIP

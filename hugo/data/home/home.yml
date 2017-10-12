@@ -1,5 +1,5 @@
-title: "Building the technological stack for <span class='as-is'>AI</span> on code"
-desc: "source{d} is building the open-source components that enable machine learning on source code. We believe that the next step in programming comes from teaching machines to understand and write code."
+title: "the technology stack<br> for <span class='as-is'>AI</span> on source code"
+desc: "source{d} builds the powerful open-source components that enable large-scale code analysis and machine learning on source code. <br /><br /> our powerful <a href='projects'>tools</a> can ingest all of the world’s public git repositories turning code into ASTs ready for machine learning and other analyses, all exposed through a flexible and friendly API. <br /><br />we are paving the way to the future of software development where code is data that powers the next generation of developer tools."
 links:
   roadmap:
     url: http://blog.sourced.tech/post/our-roadmap
@@ -18,8 +18,9 @@ roadmap:
   ceo_picture: https://avatars2.githubusercontent.com/u/1247608?v=3
   display: true
   content:
-    - Ad id nulla consectetur occaecat duis est pariatur. Sunt anim id cillum aliqua enim id ea sit sunt voluptate dolor labore mollit. Excepteur nulla qui minim voluptate ea. Eu ullamco consectetur voluptate amet commodo mollit esse cillum ullamco.
-    - Ad id nulla consectetur occaecat duis est pariatur. Sunt anim id cillum aliqua enim id ea sit sunt voluptate dolor labore mollit. Excepteur nulla qui minim voluptate ea. Eu ullamco consectetur voluptate amet commodo mollit esse cillum ullamco.
+    - source{d} is building the tech stack for machine learning on source code (MLoSC). We allow code to become a first-class analyzable asset across tens of millions of repositories as well as a single one through our powerful source{d} API and machine learning tools. 
+    - with access to every open source and public git repository online today, developers and organizations can understand their code as part of the complex set of dependencies it really is. we envision every organization running a data pipeline over their software development life cycle, where source code becomes a unique, actionable dataset that can be analyzed and used in machine learning models.
+    - these are the building blocks for next generation of new impactful developer tools & systems that will change the way we learn, write & review code, forever. Building machines that are able to understand and write code to help mankind is closer than ever.
 
 testimonials:
   display: true

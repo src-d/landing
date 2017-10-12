@@ -1,9 +1,9 @@
 title: "Join the community"
-desc: "We'd be thrilled to have you on our slack"
-placeholder: "your email"
+desc: "Learn, create, collaborate"
+placeholder: "email@domain.com"
 endpoint: "/invite"
 msgs:
-  success: Success! Check your email!
+  success: Success! Check your email.
   button: Join us on slack
-  server_error: Error! submit again.
+  server_error: Error! Submit it again.
   fetch_error: Server error
