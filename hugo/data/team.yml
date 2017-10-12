@@ -1,8 +1,8 @@
 title: team
-desc: at source{d} we are all engineers, developers and hackers ourselves. We go as far as to train and encourage all non-technical roles to also become developers themselves.<br /><br />interested in who we are and what we do? Want to become part of our team? Find our openings and perks at our <a href="careers">careers</a> page.
+desc: At source{d} we are all engineers, developers and hackers ourselves. We go as far as to train and encourage all non-technical roles to also become developers themselves.<br /><br />Interested in who we are and what we do? Want to become part of our team? Find our openings and perks at our <a href="careers">careers</a> page.
 teams:
     - name: Engineering
-      headline: the core of everything we do, from the beginning to the end; writing great software
+      headline: The core of everything we do, from the beginning to the end; writing great software
       subteams:
         - teamName: Data Retrieval Team
           members:
@@ -68,7 +68,7 @@ teams:
             github: https://github.com/dpordomingo
 
     - name: Product & Data Intelligence
-      headline: translating our vision into amazing products & making smarter decisions with hard data
+      headline: Translating our vision into amazing products & making smarter decisions with hard data
       members:
         - picture: marcelo.png
           name: Marcelo Novaes
@@ -83,14 +83,14 @@ teams:
           position: Data Intelligence Analyst
           linkedin: https://www.linkedin.com/in/fernandaagomes/
     - name: Operations
-      headline: taking care of the team at source{d}
+      headline: Taking care of the team at source{d}
       members:
         - picture: esther.png
           name: Esther García
           position: Office Manager
           linkedin: https://www.linkedin.com/in/esther-garc%C3%ADa-mart%C3%ADn-0331692b
     - name: Management
-      headline: providing direction, the planning and the leadership to get there
+      headline: Providing direction, the planning and the leadership to get there
       members:
         - picture: eiso.png
           name: Eiso Kant

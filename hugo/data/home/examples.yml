@@ -1,7 +1,7 @@
 title: Examples
 examples:
   - title: spark-api
-    desc: a unified, scalable code analysis pipeline running on Apache Spark™ available through a friendly and flexible API; a single entry point to all source{d} tools. It can crawl, retrieve, store, access, identify languages and filter a single or all of the world’s public git repositories, generating from the source code a dataset of universal ASTs ready to be analysed or input into machine learning tools & models.
+    desc: A unified, scalable code analysis pipeline running on Apache Spark™ available through a friendly and flexible API; <br />A single entry point to all source{d} tools. <br /><br />It crawls, retrieves, stores, accesses, identifies languages and filters a single or all of the world’s public git repositories, generating from the source code a dataset of universal ASTs ready to be analysed or input into machine learning tools & models.
     code: spark-api.py
     language: python
     link: https://spark-api.sourced.tech

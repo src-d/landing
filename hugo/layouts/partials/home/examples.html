@@ -9,9 +9,9 @@
         <div class="examples__project">
             {{ range $s := .examples }}
                 <div>
-                    <p>{{ $s.desc }}</p>
+                    <p>{{ $s.desc | safeHTML }}</p>
 
-                    <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill mobile-hidden">check this project</a>
+                    <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill mobile-hidden">go to project</a>
                 </div>
             {{ end }}
         </div>
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill mobile-only project-btn" id="example-btn">check this project</a>
+    <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill mobile-only project-btn" id="example-btn">go to project</a>
     {{ end }}
 </section>
 
