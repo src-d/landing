@@ -12,7 +12,7 @@ export function Loading({ text }) {
 }
 
 Loading.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
 };
 
 export function LoadingError({ text }) {
@@ -26,5 +26,5 @@ export function LoadingError({ text }) {
 }
 
 LoadingError.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
 };

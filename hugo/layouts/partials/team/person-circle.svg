@@ -12,7 +12,7 @@
         width="280px" height="1000px"
         preserveAspectRatio="xMinYMin"
         clip-path="url(#circleView)"
-        xlink:href="/img/people/{{.}}"
+        xlink:href="img/people/{{.}}"
     />
 
     <path class="person-circle__border person-circle__border_lower" d="
