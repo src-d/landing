@@ -1,17 +1,7 @@
 title: Examples
 examples:
-  - title: Lorem ipsum
-    desc: Lorem ipsum dolor sit amet adiscipit constectetur adis elit.
-    code: lipsum.go
-    language: go
-    link: https://github.com/src-d/go-kallax
-  - title: Consectetur officia consectetur
-    desc: Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Id veniam ex labore est magna eiusmod pariatur nulla et. Consectetur officia consectetur consectetur qui duis excepteur. Dolore ex cillum sint velit ipsum ipsum nulla id.
-    code: lipsum.go
-    language: go
-    link: https://github.com/src-d/go-kallax
-  - title: Really ugly code
-    desc: Lorem ipsum dolor sit amet adiscipit constectetur adis elit. Id veniam ex labore est magna eiusmod pariatur nulla et. Consectetur officia consectetur consectetur qui duis excepteur. Dolore ex cillum sint velit ipsum ipsum nulla id. Occaecat quis cupidatat labore incididunt est dolor quis consectetur dolor sit quis elit. Ad proident sint non culpa consectetur officia eu officia exercitation.
-    code: ugly.js
-    language: js
-    link: https://github.com/src-d/go-kallax
+  - title: spark-api
+    desc: a unified, scalable code analysis pipeline running on Apache Spark™ available through a friendly and flexible API; a single entry point to all source{d} tools. It can crawl, retrieve, store, access, identify languages and filter a single or all of the world’s public git repositories, generating from the source code a dataset of universal ASTs ready to be analysed or input into machine learning tools & models.
+    code: spark-api.py
+    language: python
+    link: https://spark-api.sourced.tech

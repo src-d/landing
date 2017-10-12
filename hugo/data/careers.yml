@@ -1,10 +1,10 @@
 title: Job opportunities
-desc: Exceptional missions require exceptional people. If you want to help us to pave the future road to apply machine learning on source code, check where you fit the best below.
+desc: exceptional missions require exceptional people, we know that. <br /><br /> if our challenges excite you and you want to help us to pave the future road towards machine learning on source code, check where you fit best from our current openings or <a href='talent@sourced.tech'>drop us a message</a>.
 positions:
-  title: current openings
+  title: Current openings
 notice:
-  title: global talent
-  desc: We at source{d} believe that amazing talent should not be constrained by physical barriers. We have a multinational and multicultural team that shares our culture of openness and excellence and our passion for programming. Our team will do their best to help you get a visa and get settle down. Have you looked for the role you think you fit better and could not find it? Want to do something different? Drop us a line as we are eager to hear from you.
+  title: Global talent
+  desc: at source{d} we believe that amazing talent should not be constrained by physical barriers. Our multinational and multicultural team shares a culture of openness and excellence and passion for programming. We will do our best to help you get a visa and settle down. Have you looked for your dream role but could not find it? Want to do something different? Drop us a line, we are eager to hear from you.
 gallery:
   title: Our offices
   images:
@@ -15,13 +15,17 @@ gallery:
     - img/hq/5.jpg
 benefits:
   title: perks and benefits
-  desc: We want everyone to feel at home working with us—well, sometimes you will be actually working from home! We are proud of our culture and we work hard to make sure every employee loves what they do. You may find more about our culture in our open company guide and check some of the perks and benefits we provide
+  desc: we want everyone to feel at home working with us—well, sometimes you will be actually working from home! We are proud of our culture and we work hard to make sure every team member loves what they do. You may find more about our culture in our open company guide and check some of the perks and benefits we provide
   items:
-    - Our people dedicate 10% of their work time to Open Source Days, where they can contribute to any open source project they want.
-    - Our team will help during the whole visa process for you and your family.
-    - Spacious nice physical office, close to public transit and to the amazing Retiro park.
-    - Our kitchen is full of supplies, from beer and sodas to juicy fresh fruit.
-    - We buy you any books that can help you at work.
-    - Flexible hours and possibility of remote work.
-    - Video games (old and new!), Virtual Reality kit.
-    - We brew our own <a href="https://github.com/src-d/homebrew" target="_blank">open source craft beer</a>!
+    - get to know us, check our <a href="https://github.com/src-d/guide/" target="_blank">source{d} guide</a>.
+    - our team will assist you during the whole visa process for you and your family.
+    - our people dedicate 10% of their work time to <a href="https://github.com/src-d/guide/blob/master/open-source/open_source_fridays.md" target="_blank">Open Source Days</a>, contributing to any open source project they wish.
+    - we offer <a href="https://github.com/src-d/guide/blob/master/talent/flexible_holidays_working_schedule_remote_work.md" target="_blank">flexible hours</a> to our people as the possibility of remote work.
+    - we <a href="https://github.com/src-d/guide/blob/master/general/expenses_travel.md" target="_blank">buy you any books</a> that can help you be even better at your work.
+    - our <a href="https://github.com/src-d/guide/tree/master/talent/by-developers-training" target="_blank">"by developers" training</a> helps every one of us get up to speed.
+    - source{d} hosts quarterly <a href="http://talks.sourced.tech/" target="_blank">Tech Talks</a>, as well as 3rd-party talks at the office.
+    - a nice and spacious <a href="https://github.com/src-d/guide/blob/master/office/madrid_office_seating_chart.md" target="_blank">physical office</a>, close to public transit and to the Retiro park.
+    - our kitchen is full of supplies, from beer and sodas to juicy fresh fruit.
+    - video games (vintage and new!) and a fancy Virtual Reality kit.
+    - our team celebrates monthly get-togethers, <a href="https://github.com/src-d/guide/blob/master/office/company_events.md" target="_blank">annual summer and winter parties</a>, as well as a retreat.
+    - we brew our own <a href="https://github.com/src-d/homebrew" target="_blank">open source craft beer</a>!

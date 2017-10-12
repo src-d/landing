@@ -1,50 +1,50 @@
 company:
-  - title: About Us
+  - title: about us
     url: //sourced.tech
-  - title: Manifesto
+  - title: manifesto
     url: //sourced.tech/manifesto
-  - title: Roadmap
+  - title: roadmap
     url: http://blog.sourced.tech/post/our-roadmap
-  - title: Team
+  - title: team
     url: //sourced.tech/team
-  - title: Careers
+  - title: careers
     url: //sourced.tech/careers
 projects:
-  - title: Datasets
+  - title: datasets
     url: "//sourced.tech/projects/#datasets"
-  - title: Models
+  - title: models
     url: "//sourced.tech/projects/#models"
-  - title: Data Retrieval Tools
+  - title: data retrieval tools
     url: "//sourced.tech/projects/#retrieval"
-  - title: Language Analysis Tools
+  - title: language analysis tools
     url: "//sourced.tech/projects/#languages"
-  - title: Machine Learning Tools
+  - title: machine learning tools
     url: "//sourced.tech/projects/#science"
-  - title: Demos
+  - title: demos
     url: "//sourced.tech/projects/#demos"
 community:
-  - title: Tech Talks
+  - title: tech talks
     url: http://talks.sourced.tech
-  - title: Open Source
+  - title: open source
     url: https://github.com/src-d
-  - title: Open Data
+  - title: open data
     url: https://data.world/source-d
-  - title: Blog
+  - title: blog
     url: http://blog.sourced.tech
 networks:
-  - title: Twitter
+  - title: twitter
     url: https://twitter.com/srcd_
     image: img/icons/social/twitter.png
-  - title: GitHub
+  - title: github
     url: https://github.com/src-d
     image: img/icons/social/github.svg
-  - title: Medium
+  - title: medium
     url: https://medium.com/source-d
     image: img/icons/social/medium.png
-  - title: AngelList
+  - title: angellist
     url: https://angel.co/source-d
     image: img/icons/social/angellist.png
-  - title: LinkedIn
+  - title: linkedin
     url: https://www.linkedin.com/company-beta/10284920/
     image: img/icons/social/linkedin.svg
 contact:
