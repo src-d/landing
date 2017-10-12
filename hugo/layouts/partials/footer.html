@@ -22,7 +22,7 @@
             {{ range $ctx.Site.Data.footer.networks }}
                 <li>
                     <a href="{{ .url }}" target="_blank" title="source{d} on {{ .title }}">
-                        <img src="{{ .image | absURL }}" alt="source{d} on {{.title}}" />
+                        <img src="{{ .image }}" alt="source{d} on {{.title}}" />
                     </a>
                 </li>
             {{ end }}

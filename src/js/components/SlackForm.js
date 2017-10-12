@@ -201,5 +201,5 @@ SlackForm.propTypes = {
   fetchError: PropTypes.string.isRequired,
 
   logo: PropTypes.string.isRequired,
-  horizontal: PropTypes.string.isRequired,
+  horizontal: PropTypes.string,
 };

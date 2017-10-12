@@ -77,7 +77,7 @@ function Positions({ positions, filterBy }) {
 }
 
 Positions.propTypes = {
-  positions: PropTypes.string.isRequired,
+  positions: PropTypes.array.isRequired,
   filterBy: PropTypes.string.isRequired,
 };
 
@@ -93,7 +93,7 @@ function Position({ data }) {
           <header className="positions__job__header">
             <figure>
               <img
-                src={`/img/icons/teams/${data.team.toLowerCase()}.svg`}
+                src={`img/icons/teams/${data.team.toLowerCase()}.svg`}
                 alt=""
               />
             </figure>
@@ -123,7 +123,7 @@ function Position({ data }) {
 }
 
 Position.propTypes = {
-  data: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 function TeamSelector({ teams, active, onTeamSelected }) {
@@ -149,7 +149,7 @@ function TeamSelector({ teams, active, onTeamSelected }) {
 }
 
 TeamSelector.propTypes = {
-  teams: PropTypes.string.isRequired,
+  teams: PropTypes.array.isRequired,
   active: PropTypes.string.isRequired,
-  onTeamSelected: PropTypes.string.isRequired,
+  onTeamSelected: PropTypes.func.isRequired,
 };

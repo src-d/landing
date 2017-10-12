@@ -161,7 +161,7 @@ categories:
       projects:
         - name: dashboard
           url: https://github.com/bblfsh/dashboard
-          desc: babelfish dashboard is a visualization tool that uses the babelfish universal code parser to display UASTs and its details in a human-friendly manner 
+          desc: babelfish dashboard is a visualization tool that uses the babelfish universal code parser to display UASTs and its details in a human-friendly manner
           repository: bblfsh/dashboard
           languages:
             - js

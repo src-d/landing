@@ -172,7 +172,6 @@ $font-roboto: 'Roboto', sans-serif;
 $font-source-sans-pro: 'Source Sans Pro', sans-serif;
 $font-source-code: 'Hack', 'monaco', monospace;
 $font-caveat: 'Caveat', cursive;
-$font-icons: 'FontAwesome';
 $font-default: $font-source-sans-pro;
 $font-titles: $font-roboto;
 $font-menus: $font-roboto;
@@ -299,7 +298,7 @@ $height-hero-info: 465px;
 //..
 $size-team-social: 30px;
 $bottom-team-social: 5px;
-$right-team-social: 25px;
+$right-team-social: -15px;
 //..
 $max-width-circles-info: 240px;
 //..
