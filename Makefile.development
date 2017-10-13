@@ -1,0 +1,26 @@
+# Develop. vars
+doc_generator := ../docs
+src_assets := $(doc_generator)/assets
+project_yml_generator := $(doc_generator)/bin/config
+dev_output_project_yml := ./hugo/data/project.yml
+dev_src_raw := $(src_assets)/examples/hugo/content/raw
+dev_output_raw := ./hugo/content/raw
+dev_src_doc:=$(src_assets)/site/hugo/content
+dev_output_doc := ./hugo/content/documentation
+src_project_tpl := $(src_assets)/templates/project.yml.tpl
+src_categories_yml := ./hugo/data/categories.yml
+
+## Develop. Prepares the current Landing to look like a documentation site
+develop-documentation:
+	$(MKDIR) $(dev_output_doc)
+	$(COPY) $(dev_src_raw) $(dev_output_raw)
+	$(COPY) $(dev_src_doc)/*.md $(dev_output_doc)
+	HOST_NAME=landing.sourced.tech VERSION_NAME=v1 $(project_yml_generator) -tpl=$(src_project_tpl) -readme=./README.md -categories=$(src_categories_yml) > $(dev_output_project_yml)
+
+	PORT=8080 LANDING_URL=//localhost $(JS_PACKAGE_MANAGER) start;
+
+## Develop. Remove all stuff created to look like a documentation site
+develop-documentation-destroy:
+	$(REMOVE) $(dev_output_raw)
+	$(REMOVE) $(dev_output_doc)
+	$(REMOVE) $(dev_output_project_yml)

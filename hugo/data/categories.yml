@@ -188,3 +188,20 @@ categories:
             - go
             - python
         # further demos are either legacy or WIP
+
+# ########## demos ##########
+
+    others:
+      name: others
+      colors: {left: "#888088", right: "#BBBBBB"}
+      desc: random and unrelared projects
+      projects:
+        - name: landing
+          hostname: landing.sourced.tech
+          url: https://github.com/src-d/landing
+          desc: landing of source{d}
+          repository: src-d/landing
+          languages:
+            - js
+            - html
+            - css
