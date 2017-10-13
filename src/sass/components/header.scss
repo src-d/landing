@@ -26,55 +26,100 @@
         height: 30px;
         margin-top: 12px;
     }
+}
 
-    &__menu {
-        margin-left: auto;
+.secondary-topbar {
+    background: $color-secondary-nav-bg;
+    height: $height-secondary-nav;
+    font-weight: normal;
 
-        &.mobile-only {
-            font-weight: normal;
+    & > div {
+        @include row;
+        @include container;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
 
-            ul {
-                margin-top: 0;
-            }
+    .item {
+        @include link-dark-bg;
+        text-decoration: none;
+        padding: $padding-secondary-nav-item;
+        display: inline-block;
+    }
+
+    ul {
+        li {
+            display: inline-block;
+            padding: 0;
+            font-size: $font-size-secondary-nav-item;
+            font-family: $font-menus;
         }
+
+        li + li {
+            margin-left: $size-secondary-nav-item-spacing;
+        }
+    }
+}
+
+
+
+.horizontal-menu {
+    margin-left: auto;
+
+    &.mobile-only {
+        font-weight: normal;
 
         ul {
-            margin-top: 10px;
-
-            li {
-                position: relative;
-                display: inline-block;
-                margin: $margin-topbar-menu-spacing;
-                padding: $padding-topbar-menu-vertical-spacing $padding-topbar-menu-horizontal-spacing;
-                border-radius: 5px;
-
-                &.active {
-                    background-color: $color-topbar-menu-item-active-bg;
-                }
-
-                a {
-                    margin-top: 0;
-                    font-family: $font-menus;
-                    text-transform: lowercase;
-                    color: $color-topbar-menu-item;
-                    font-size: $font-size-menu;
-                    display: flex;
-                    align-items: center;
-                    text-decoration: none;
-                }
-            }
+            margin-top: 0;
         }
+    }
 
-        &--projects {
-            @include svg-color('go-arrow-nocircle', $color-topbar-menu-item);
+    ul {
+        margin-top: 10px;
 
-            span.svg-icon--go-arrow-nocircle {
-                transform: rotate(90deg);
+        li {
+            position: relative;
+            display: inline-block;
+            margin: $margin-topbar-menu-spacing;
+            padding: $padding-topbar-menu-vertical-spacing $padding-topbar-menu-horizontal-spacing;
+            border-radius: 5px;
+
+            &.active {
+                background-color: $color-topbar-menu-item-active-bg;
+            }
+
+            a {
+                margin-top: 0;
+                font-family: $font-menus;
+                text-transform: lowercase;
+                color: $color-topbar-menu-item;
+                font-size: $font-size-menu;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
             }
         }
     }
 
-    ul.topbar__submenu {
+    &--projects {
+        @include svg-color('go-arrow-nocircle', $color-topbar-menu-item);
+
+        span.svg-icon--go-arrow-nocircle {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+li.menu-container {
+    position: relative;
+
+    &:hover .menu-container__submenu {
+        display: block;
+    }
+
+    .menu-container__submenu {
         @include card-shadow;
         width: 300px;
         position: absolute;
@@ -85,6 +130,8 @@
         display: none;
         z-index: 9999;
         font-weight: normal;
+        margin-top: 5px;
+
 
         &:before {
             content: ' ';
@@ -148,46 +195,8 @@
             }
         }
     }
-
-    &__menu ul li:hover ul.topbar__submenu {
-        display: block;
-    }
 }
 
-.secondary-topbar {
-    background: $color-secondary-nav-bg;
-    height: $height-secondary-nav;
-    font-weight: normal;
-
-    & > div {
-        @include row;
-        @include container;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        position: relative;
-    }
-
-    a {
-        @include link-dark-bg;
-        text-decoration: none;
-        padding: $padding-secondary-nav-item;
-        display: inline-block;
-    }
-
-    ul {
-        li {
-            display: inline-block;
-            padding: 0;
-            font-size: $font-size-secondary-nav-item;
-            font-family: $font-menus;
-        }
-
-        li + li {
-            margin-left: $size-secondary-nav-item-spacing;
-        }
-    }
-}
 
 @include media-breakpoint-between(sm, lg) {
     .topbar {
@@ -195,7 +204,7 @@
             height: 40px;
         }
 
-        &__menu ul li {
+        .horizontal-menu ul li {
             padding: 10px;
             margin: 0;
 
@@ -212,7 +221,7 @@
             height: $height-topbar-logo-mobile;
         }
 
-        &__menu ul li a {
+        .horizontal-menu ul li a {
             font-size: 18px;
         }
     }
@@ -227,7 +236,7 @@
         }
     }
 
-    .topbar__menu-toggle {
+    .horizontal-menu-toggle {
         height: $size-topbar-menu-toggle;
         width: $size-topbar-menu-toggle;
         display: flex !important;
@@ -277,7 +286,7 @@
         }
     }
 
-    .topbar__menu {
+    .horizontal-menu {
         visibility: hidden;
         left: 120%;
         transition: all 300ms ease-in-out;
@@ -324,7 +333,7 @@
                 }
             }
 
-            li:not(.topbar__menu__back) {
+            li:not(.horizontal-menu__back) {
                 padding: 0;
                 display: block;
 
@@ -344,7 +353,7 @@
                 }
             }
 
-            li.topbar__menu__back {
+            li.horizontal-menu__back {
                 background: $color-topbar-menu-mobile-close-bg;
                 display: block;
                 display: flex;
@@ -379,10 +388,12 @@
 }
 
 @include media-breakpoint-only(md) {
-    .secondary-topbar ul li a {
-        font-size: $font-size-secondary-nav-item-smaller;
-        padding-left: 0;
-        padding-right: 0;
+    .secondary-topbar ul li {
+        .item {
+            font-size: $font-size-secondary-nav-item-smaller;
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
     .projects-page .hero {

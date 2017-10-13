@@ -11,7 +11,11 @@
 
 {{ if ( where $targetSiblings "Name" $targetFileName ) }}
     <li>
-        <a href="{{.linkUrl}}" {{ if eq .currentUrl .linkUrl }}class="active"{{end}}>
+        <a href="{{.linkUrl}}"
+            class="item
+                {{- if eq .currentUrl .linkUrl }}active{{ end -}}
+            "
+        >
             {{.linkText}}
         </a>
     </li>

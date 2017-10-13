@@ -3,7 +3,7 @@
 {{ if $.project }}
     <div class="project-nav">
         <h2 class="project-nav__title">
-            <a href="." class="project-nav__title__project-icon">
+            <a href="readme" class="project-nav__title__project-icon">
                 {{ if default false $.project.logosmall }}
                     {{ partial "svg" $.project.logosmall }}
                 {{ else }}
@@ -14,40 +14,44 @@
         </h2>
 
         <ul class="project-nav__menu">
-            <li>
-                <a href="readme" {{ if eq $currentUrl "//" }}class="active"{{end}}>
-                    Intro
-                </a>
-            </li>
-
             {{ partial "project/raw_item.html" (dict "currentUrl" $currentUrl "fileName" "raw/documentation/tutorials/README.md" "linkUrl" "tutorials" "linkText" "Documentation") }}
 
-            {{ $langs := dict "cpp" "c++" }}
-            {{ range $lang := $.project.languages }}
-                {{ $langName := default $lang (index $langs $lang) }}
-                {{ if eq $lang "go" }}
-                    {{ $.ctx.Scratch.Set "apiUrl" (printf "https://godoc.org/github.com/%s" $.project.repository) }}
-                {{ else }}
-                    {{ $.ctx.Scratch.Set "apiUrl" (printf "api/%s" $lang) }}
-                {{ end }}
-                <li>
-                    <a href="{{ $.ctx.Scratch.Get "apiUrl" }}" target="_blank">
-                        {{- if gt (len $.project.languages) 1}}
-                            {{ humanize $langName }}
-                        {{ end -}}
+            <li class="menu-container">
+                {{ $langs := $.project.languages }}
+                {{ if eq (len $langs ) 1 }}
+                    {{ $lang := index $langs 0 }}
+                    <a href="{{- partial "project/api-data" (dict "lang" $lang "repo" $.project.repository) -}}"
+                        target="_blank"
+                        class="item"
+                    >
                         API
                     </a>
-                </li>
-            {{ end }}
+                {{ else }}
+                    <span class="item">
+                        API
+                    </span>
+                    <ul class="menu-container__submenu">
+                        {{ range $lang := $langs }}
+                            <li>
+                                <a class="item" target="_blank"
+                                    href="{{- partial "project/api-data" (dict "lang" $lang "repo" $.project.repository) -}}"
+                                >
+                                    {{- partial "project/api-data" (dict "lang" $lang "item" "name") -}}
+                                </a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
+            </li>
 
             <li>
-                <a href="{{ $.project.releasesUrl }}">
+                <a href="{{ $.project.releasesUrl }}" class="item">
                     Releases
                 </a>
             </li>
 
             <li>
-                <a href="{{ $.project.supportUrl }}" target="_blank">
+                <a href="{{ $.project.supportUrl }}" target="_blank" class="item">
                     Issues
                 </a>
             </li>

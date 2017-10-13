@@ -1,0 +1,10 @@
+{{- $langs := dict "cpp" "c++" -}}
+{{- if eq ( default false $.item ) "name" -}}
+    {{- humanize (default $.lang (index $langs $.lang)) -}}
+{{- else -}}
+    {{- if eq $.lang "go" -}}
+        {{- printf "https://godoc.org/github.com/%s" $.repo -}}
+    {{- else -}}
+        {{- printf "api/%s" $.lang -}}
+    {{- end -}}
+{{- end -}}
