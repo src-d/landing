@@ -1,5 +1,5 @@
-# import the source{d} API
-from sourced.spark import API as SparkAPI
+# import the source{d} engine API
+from sourced.spark import API as EngineAPI
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 
@@ -8,7 +8,7 @@ spark = SparkSession.builder \
 .master("local[*]").appName("Examples") \
 .getOrCreate()
 
-api = SparkAPI(spark, "/repositories")
+api = EngineAPI(spark, "/repositories")
 
 # get all the files of all head commits
 head_files = api.repositories.filter("is_fork = false").references \
