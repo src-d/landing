@@ -2,7 +2,7 @@ workspace:
   base: /go
   path: src/github.com/src-d/landing
 
-branches: master
+branches: [master, staging]
 
 pipeline:
 
@@ -26,7 +26,8 @@ pipeline:
       - make packages
     debug: true
     when:
-      event: [push, pull_request]
+      branch: [staging]
+      event: [push]
 
   docker_landing_stg:
     image: plugins/docker
@@ -37,6 +38,7 @@ pipeline:
     dockerfile: Dockerfile
     debug: true
     when:
+      branch: [staging]
       event: [push]
 
   docker_api_stg:
@@ -48,6 +50,7 @@ pipeline:
     dockerfile: Dockerfile.api
     debug: true
     when:
+      branch: [staging]
       event: [push]
 
   docker_slackin_stg:
@@ -59,6 +62,7 @@ pipeline:
     dockerfile: Dockerfile.slackin
     debug: true
     when:
+      branch: [staging]
       event: [push]
 
   helm_deploy_stg:
@@ -73,6 +77,7 @@ pipeline:
     debug: true
     wait: true
     when:
+      branch: [staging]
       event: [push]
 
 
@@ -96,7 +101,8 @@ pipeline:
       - make packages
     debug: true
     when:
-      event: [tag]
+      branch: [master]
+      event: [tag, pull_request]
 
   docker_landing_prod:
     image: plugins/docker
@@ -107,6 +113,7 @@ pipeline:
     dockerfile: Dockerfile
     debug: true
     when:
+      branch: [master]
       event: [tag]
 
   docker_api_prod:
@@ -118,6 +125,7 @@ pipeline:
     dockerfile: Dockerfile.api
     debug: true
     when:
+      branch: [master]
       event: [tag]
 
   docker_slackin_prod:
@@ -129,6 +137,7 @@ pipeline:
     dockerfile: Dockerfile.slackin
     debug: true
     when:
+      branch: [master]
       event: [tag]
 
   helm_deploy_prod:
@@ -143,4 +152,5 @@ pipeline:
     debug: true
     wait: true
     when:
+      branch: [master]
       event: [tag]
