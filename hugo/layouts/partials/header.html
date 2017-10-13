@@ -12,9 +12,9 @@
                 </div>
             </a>
 
-            <div class="topbar__menu mobile-only" id="menu">
+            <div class="horizontal-menu mobile-only" id="menu">
                 <ul class="visible" id="menu-main">
-                    <li class="topbar__menu__back"></li>
+                    <li class="horizontal-menu__back"></li>
                     <li {{ if and (eq $ctx.URL "/") (eq $category "") }}class="active"{{ end }} title="homepage">
                         <a href="{{ ("."|absURL ) | safeURL }}" title="Home">Home</a>
                     </li>
@@ -39,7 +39,7 @@
                 </ul>
 
                 <ul id="menu-projects">
-                    <li class="topbar__menu__back">
+                    <li class="horizontal-menu__back">
                         <h4 class="nav-to" data-nav-to="main">
                             {{ partial "svg" "go-arrow-nocircle" }}
                             <span>projects</span>
@@ -57,21 +57,27 @@
                 </ul>
             </div>
 
-            <div class="topbar__menu mobile-hidden">
+            <div class="horizontal-menu mobile-hidden">
                 <ul>
-                    <li class="mobile-only topbar__menu__back">
-                        <div class="topbar__menu__back__icon" id="menu-close"></div>
+                    <li class="mobile-only horizontal-menu__back">
+                        <div class="horizontal-menu__back__icon" id="menu-close"></div>
                     </li>
                     <li {{ if and (eq $ctx.URL "/") (eq $category "") }}class="active"{{ end }} title="homepage">
                         <a href="{{ ("."|absURL ) | safeURL }}" title="Home">Home</a>
                     </li>
-                    <li {{ if or (eq $ctx.URL "projects") (ne $category "") }}class="active"{{ end }}>
-                        <a href="{{ ("projects"|absURL ) | safeURL }}" class="topbar__menu--projects" title="Projects">
+                    <li
+                        class="menu-container
+                            {{- if or (eq $ctx.URL "projects") (ne $category "") }}
+                                active
+                            {{ end -}}
+                        "
+                    >
+                        <a href="{{ ("projects"|absURL ) | safeURL }}" class="horizontal-menu--projects" title="Projects">
                             <span>Projects</span>
                             {{ partial "svg" "go-arrow-nocircle" }}
                         </a>
 
-                        <ul class="topbar__submenu">
+                        <ul class="menu-container__submenu">
                             {{ range $k := $ctx.Site.Data.categories.categories.order }}
                                 {{ $section := (index $categories $k) }}
                                 <li {{ if eq $category $k }}class="active"{{end}}>
@@ -98,7 +104,7 @@
                 </ul>
             </div>
 
-            <div class="topbar__menu-toggle mobile-only" id="menu-toggle">
+            <div class="horizontal-menu-toggle mobile-only" id="menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>

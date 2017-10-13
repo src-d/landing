@@ -64,8 +64,8 @@ function setupMenu() {
   const toggle = document.getElementById('menu-toggle');
 
   toggle.addEventListener('click', () => {
-    menu.classList.toggle('topbar__menu_open');
-    toggle.classList.toggle('topbar__menu-toggle_open');
+    menu.classList.toggle('horizontal-menu_open');
+    toggle.classList.toggle('horizontal-menu-toggle_open');
   });
 
   const mainMenu = document.getElementById('menu-main');

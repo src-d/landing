@@ -5,7 +5,9 @@
     {{ range $k := $ctx.Site.Data.categories.categories.order }}
         {{ $section := (index $categories $k) }}
         <li>
-            <a href="#{{ $k }}" title="{{ $section.name }}" class="scroll-to" data-tracked>
+            <a href="#{{ $k }}" title="{{ $section.name }}"
+                class="item scroll-to" data-tracked
+            >
                 {{ $section.name }}
             </a>
         </li>

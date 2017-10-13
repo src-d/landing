@@ -122,8 +122,21 @@
 
     &__menu {
         margin-left: $margin-left-project-nav-menu;
+
         li {
             text-transform: lowercase;
+        }
+
+        .menu-container__submenu {
+            right: -5px !important;
+            margin-top: 5px;
+            width: auto !important;
+
+            li {
+                display: block;
+                padding-right: 20px !important;
+                padding-left: 10px !important;
+            }
         }
     }
 
@@ -134,7 +147,9 @@
     }
 
     &__icon-link {
-        margin-right: $gutter-size;
+        & + & {
+            margin-left: $gutter-size;
+        }
 
         svg {
             fill: white;
