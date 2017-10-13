@@ -37,18 +37,32 @@ Development and running the landing locally
 You need to satisfy all [project requirements](#requirements), and then to run:
 
 ```
-LANDING_URL=//localhost PORT=8181 make serve
+LANDING_URL=//localhost PORT=8080 make serve
 ```
-It runs everything you need to get the site working at [http://localhost:8181](http://localhost:8181)
+It runs everything you need to get the site working at [http://localhost:8080](http://localhost:8080)
 
 Alternatively, you can start hugo, the api-server and webpack in a "three window mode", just running:
 ```
-LANDING_URL=//localhost PORT=8181 yarn start
+LANDING_URL=//localhost PORT=8080 yarn start
 ```
 With this command, each window runs a command, that can be also ran by you in case you need to control the output of each command or in any other special case:
 * `yarn run webpack-watcher` To start webpack watcher, that will rebuild the assets when you change its sources
 * `make hugo-server` To serve the landing locally using hugo server
-* `yarn run api-run` To start the landing API at [http://localhost:8181](http://localhost:8181)
+* `yarn run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
+
+## Preview the documentation site
+
+It can be seen the landing "as it would be a documentation site". To do so, it is needed to run:
+```
+make develop-documentation
+```
+And then, go to [http://localhost:8080](http://localhost:8080)
+
+To rollback the changes, and see the landing as usual, just run:
+```
+make develop-documentation-destroy
+```
+
 
 Configuration
 ===

@@ -62,6 +62,8 @@ COMPRESS := tar -zcf
 UNCOMPRESS := tar -zxf
 COPY := cp -R
 
+-include Makefile.development
+
 export CGO_ENABLED
 
 ## Lists all recipes
