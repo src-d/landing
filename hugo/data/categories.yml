@@ -135,7 +135,7 @@ categories:
             - python
             - cpp
         - name: minhashcuda
-          url: https://github.com/src-d/minshashcuda
+          url: https://github.com/src-d/minhashcuda
           desc: minhashcuda is a large-scale weighted MinHash implementation optimized for low memory and high speed by running on multiple NVIDIA GPUs (CUDA)
           repository: src-d/minhashcuda
           minVersion: 1.1.1
