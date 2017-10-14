@@ -36,7 +36,7 @@ categories:
       projects:
         - name: engine
           hostname: spark-api.sourced.tech
-          url: https://spark-api.sourced.tech
+          url: https://github.com/src-d/spark-api
           desc: the source{d} engine API combines data retrieval and language analysis tools for scalable pipelines that process any number of Git repositories for source code analysis
           repository: src-d/spark-api
           minVersion: v0.0.6
@@ -47,7 +47,7 @@ categories:
           logosmall:
         - name: go-git
           hostname: go-git.sourced.tech
-          url: https://go-git.sourced.tech
+          url: https://github.com/src-d/go-git
           desc: go-git is a highly extensible Git implementation in pure Go language
           repository: src-d/go-git
           minVersion: v4.0.0
@@ -71,7 +71,7 @@ categories:
             - go
         - name: śiva
           hostname: go-siva.sourced.tech
-          url: https://go-siva.sourced.tech
+          url: https://github.com/src-d/go-siva
           desc: śiva is an archiving format similar to TAR/ZIP, focused on allowing constant-time random file access, seekable access to contained files and concatenable files
           repository: src-d/go-siva
           minVersion: v1.1.2
@@ -92,14 +92,13 @@ categories:
           logo: projects/bblfsh
         - name: enry
           hostname: enry.sourced.tech
-          url: https://enry.sourced.tech
+          url: https://github.com/src-d/enry
           desc: enry is a faster source code file programming language detector based on github/linguist and toolbox that ignores binary or vendored files
           repository: src-d/enry
           minVersion: v1.5.1
           languages:
             - go
         - name: babelfish tools
-          hostname: enry.sourced.tech
           url: https://github.com/bblfsh/tools
           desc: babelfish tools are easy-to-use command line tools for simple code analysis, such as tokenizer, cyclomatic complexity, npath complexity, patch
           repository: bblfsh/tools
