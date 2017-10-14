@@ -34,10 +34,10 @@ categories:
       colors: {left: "#317d19", right: "#4ecc7b"}
       desc: A set of tools that allow you to discover, fetch, store, access, filter and extract features from just a single source code repository to tens of millions of repositories
       projects:
-        - name: spark-api
+        - name: engine
           hostname: spark-api.sourced.tech
           url: https://spark-api.sourced.tech
-          desc: spark API combines data retrieval and language analysis tools for scalable pipelines that process any number of Git repositories for source code analysis
+          desc: the source{d} engine API combines data retrieval and language analysis tools for scalable pipelines that process any number of Git repositories for source code analysis
           repository: src-d/spark-api
           minVersion: v0.0.6
           languages:
