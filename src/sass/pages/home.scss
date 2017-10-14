@@ -25,6 +25,7 @@
 
         h1 {
             @include title-big;
+            text-transform: none;
         }
 
         p {
