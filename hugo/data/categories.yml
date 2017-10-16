@@ -25,7 +25,22 @@ categories:
       colors: {left: "#e4415a", right: "#ff6d4c"}
       desc: A selection of machine learning models trained using our tools over large datasets and ready to be used in your research or project with the supporting libraries
       projects:
-        # no models added so far as none were publicly published so far
+        - name: id2vec
+          url: https://github.com/src-d/models/blob/master/id2vec/92609e70-f79c-46b5-8419-55726e873cfc.md
+          desc: Source code identifier embeddings, where every identifier is represented by a dense vector; no splitting or stemming, later converted with quality loss
+          repository: src-d/models
+        - name: nbow
+          url: https://github.com/src-d/models/blob/master/nbow/1e3da42a-28b6-4b33-94a2-a5671f4102f4.md
+          desc: Weighted bag-of-words where every word is a dense vector; trained over the code of the 140k top starred GitHub repositories
+          repository: src-d/models
+        - name: docfreq
+          url: https://github.com/src-d/models/blob/master/docfreq/f64bacd4-67fb-4c64-8382-399a8e7db52a.md
+          desc: Document frequencies of code identifiers, i.e. how many projects contain a certain identifier after splitting & stemming; trained on 10M GitHub repos after de-duplication
+          repository: src-d/models
+        - name: topics
+          url: https://github.com/src-d/models/blob/master/topics/c70a7514-9257-4b33-b468-27a8588d4dfa.md
+          desc: Topic modeling of Git repositories; trained over 10M GitHub repositories after de-duplication
+          repository: src-d/models
 
 # ########## data retrieval tools ##########
 
@@ -37,7 +52,7 @@ categories:
         - name: engine
           hostname: spark-api.sourced.tech
           url: https://github.com/src-d/spark-api
-          desc: the source{d} engine API combines data retrieval and language analysis tools for scalable pipelines that process any number of Git repositories for source code analysis
+          desc: the source{d} engine combines data retrieval and language analysis tools for scalable pipelines that process any number of Git repositories for source code analysis
           repository: src-d/spark-api
           minVersion: v0.0.6
           languages:
@@ -173,7 +188,7 @@ categories:
             - python
         - name: tmsc
           url: https://github.com/src-d/tmsc
-          desc: tmsc is a CLI app that applies topic modeling on source code to discover the topics (sets of identifier keywords) of a repository the user provides
+          desc: tmsc is a CLI tool that applies topic modeling on source code to discover the topics of a repository the user provides
           repository: src-d/tmsc
           minVersion: 0.1.1-alpha
           languages:
