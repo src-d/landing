@@ -384,6 +384,11 @@ li.menu-container {
 @include media-breakpoint-only(lg) {
     .secondary-topbar ul li {
         font-size: $font-size-secondary-nav-item-small;
+
+        .item {
+            padding-left: $padding-secondary-nav-item-narrow;
+            padding-right: $padding-secondary-nav-item-narrow;
+        }
     }
 }
 
