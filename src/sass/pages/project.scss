@@ -88,6 +88,10 @@
     display: flex;
     align-items: center;
 
+    a {
+        text-decoration: none;
+    }
+
     &__title {
         img,
         span {
@@ -161,4 +165,8 @@
 
 .project-page .page-text-content h1 a img {
     display: none;
+}
+
+.page-text-content__raw img {
+    max-width: 100%;
 }

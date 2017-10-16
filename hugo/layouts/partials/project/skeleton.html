@@ -33,12 +33,7 @@
                 {{ if and (default false $project) (default false $.ctx.Params.asidetemplate) (ne $project.baseURL "/") }}
                     {{ partial $.ctx.Params.asidetemplate $heroCtx }}
                 {{ end }}
-                <div class="
-                    page-text-content__raw
-                    {{ if default false $.ctx.Params.asidetemplate }}
-                        page-text-content__raw_with-aside
-                    {{ end}}
-                ">
+                <div class="page-text-content__raw">
                     {{ if default false $.ctx.Params.showcustomtitle }}
                         <h1>{{ $.ctx.Title }}</h1>
                     {{ end }}

@@ -95,7 +95,7 @@ categories:
           url: https://github.com/src-d/enry
           desc: enry is a faster source code file programming language detector based on github/linguist and toolbox that ignores binary or vendored files
           repository: src-d/enry
-          minVersion: v1.5.1
+          minVersion: v1.5.2
           languages:
             - go
         - name: babelfish tools

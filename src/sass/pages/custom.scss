@@ -35,15 +35,15 @@
         position: relative;
         padding: $padding-section-vertical 0;
 
-        .page-text-content__raw_with-aside {
-            margin-right: $size-project-aside-width + $gutter-size;
-        }
-
         .page-text-content__aside {
             float: right;
             width: $size-project-aside-width;
             background: $color-pale-grey;
             border-radius: $border-radius-main;
+
+            & + .page-text-content__raw {
+                margin-right: $size-project-aside-width + $gutter-size;
+            }
 
             a,
             span,

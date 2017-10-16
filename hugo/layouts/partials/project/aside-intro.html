@@ -1,12 +1,16 @@
-<div class="page-text-content__aside">
-    <section>
-        <header>
-            <span>README</span>
-        </header>
-        <ul>
-            {{ range $item := $.project.home }}
-                <li><a href="{{ $item.url }}">{{ $item.name }}</a></li>
-            {{ end }}
-        </ul>
-    </section>
-</div>
+{{ if default false $.project.home }}
+    {{ if gt (len $.project.home) 0 }}
+        <div class="page-text-content__aside">
+            <section>
+                <header>
+                    <span>README</span>
+                </header>
+                <ul>
+                    {{ range $item := $.project.home }}
+                        <li><a href="{{ $item.url }}">{{ $item.name }}</a></li>
+                    {{ end }}
+                </ul>
+            </section>
+        </div>
+    {{ end }}
+{{ end }}
