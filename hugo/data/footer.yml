@@ -41,9 +41,6 @@ networks:
   - title: medium
     url: https://medium.com/source-d
     image: img/icons/social/medium.png
-  - title: angellist
-    url: https://angel.co/source-d
-    image: img/icons/social/angellist.png
   - title: linkedin
     url: https://www.linkedin.com/company-beta/10284920/
     image: img/icons/social/linkedin.svg

@@ -1,4 +1,4 @@
 title: projects
-desc: "source{d} builds the open-source components that make machine learning on source code a reality: from datasets to full-fledged demos using our stack, all is freely available in our projects below. <br /><br /> The source{d} API wraps our retrieval and language analysis pipeline as a single entry point, allowing you to turn millions of code repositories into UASTs ready for machine learning tools & models. <br /><br /> Interested in trying a live demo of source{d} API? <a href='https://src-d.typeform.com/to/rqgJkW' target=_blank>Let us know</a>"
+desc: "source{d} builds the open-source components that make machine learning on source code a reality: from datasets to full-fledged demos using our stack, all is freely available in our projects below. <br /><br /> The source{d} engine wraps our retrieval and language analysis pipeline as a single entry point, allowing you to turn millions of code repositories into UASTs ready for machine learning tools & models <br /><br /> Interested in trying a live demo of source{d} engine? <a href='https://src-d.typeform.com/to/rqgJkW' target=_blank>Let us know</a>"
 posts:
   display: true

@@ -1,5 +1,5 @@
-title: "Enabling AI on Code"
-desc: "source{d} builds the open-source components that enable<br /> large-scale code analysis and machine learning on source code. <br /><br /> Our powerful <a href='projects'>tools</a> can ingest all of the world’s public git repositories turning code into ASTs ready for machine learning and other analyses, all exposed through a flexible and friendly API. <br /><br />We are paving the way for the future of software development life cycle, where code becomes analyzable data powering the next generation of developer tools."
+title: "Delivering AI on Code<br />"
+desc: "<br />source{d} builds the open-source components that enable<br /> large-scale code analysis and machine learning on source code. <br /><br /> Our powerful <a href='projects'>tools</a> can ingest all of the world’s public git repositories turning code into ASTs ready for machine learning and other analyses, all exposed through a flexible and friendly API. <br /><br />We are paving the way for the future of the software development life cycle, where code becomes analyzable data powering the next generation of developer tools."
 links:
   roadmap:
     url: http://blog.sourced.tech/post/our-roadmap
@@ -18,7 +18,7 @@ roadmap:
   ceo_picture: https://avatars2.githubusercontent.com/u/1247608?v=3
   display: true
   content:
-    - source{d} is building the tech stack for machine learning on source code (MLoSC). We allow code to become a first-class analyzable asset across tens of millions of repositories as well as a single one through our powerful source{d} API and machine learning tools. 
+    - source{d} is building the tech stack for machine learning on source code (MLoSC). We allow code to become a first-class analyzable asset across tens of millions of repositories as well as a single one through our powerful source{d} engine and machine learning tools.
     - With access to every open source and public git repository online today, developers and organizations can understand their code as part of the complex set of dependencies it really is. we envision every organization running a data pipeline over their software development life cycle, where source code becomes a unique, actionable dataset that can be analyzed and used in machine learning models.
     - These are the building blocks for the next generation of new and impactful developer tools & systems that will change the way we learn programming as well as how we write & review code.
 
