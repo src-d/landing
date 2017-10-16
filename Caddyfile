@@ -2,9 +2,10 @@
     root /var/www/public
     log stdout
     gzip
-
     ext .html
-    errors stdout {
-        404 404.html
+
+    errors {
+        404 404/index.html
+        * 500/index.html
     }
 }
