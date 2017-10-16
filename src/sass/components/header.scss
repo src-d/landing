@@ -343,7 +343,7 @@ li.menu-container {
                     line-height: $height-topbar-menu-mobile-item;
                     padding: 0 0 0 $padding-left-topbar-menu-mobile-item;
                     color: $color-links;
-                    font-size: $font-size-topbar-menu-mobile;
+                    font-size: $font-size-topbar-menu-items-mobile;
                     display: flex;
                     align-items: center;
                 }
@@ -398,5 +398,15 @@ li.menu-container {
 
     .projects-page .hero {
         padding-top: $height-topbar + $height-secondary-nav + $padding-section-vertical-mobile;
+    }
+}
+
+@media (max-width: $iphone6-width) {
+    .horizontal-menu ul#menu-projects li:not(.horizontal-menu__back) a {
+        padding-left: 5px;
+
+        svg {
+            display: none;
+        }
     }
 }
