@@ -150,7 +150,7 @@ $font-size-footer-text: $font-size-xsmall;
 $font-size-contact-text: $font-size-xsmall;
 $font-size-secondary-nav-item: 21px;
 $font-size-secondary-nav-item-small: 18px;
-$font-size-secondary-nav-item-smaller: 16px;
+$font-size-secondary-nav-item-smaller: 14px;
 $font-size-testimonial-usernames: 18px;
 $font-size-slack-form-title: 36px;
 $font-size-slack-band-message: 16px;
@@ -158,6 +158,7 @@ $font-size-positions-filter: 18px;
 $font-size-positions-btn: 18px;
 $font-size-project-nav-title: 30px;
 $font-size-topbar-menu-mobile: 26px;
+$font-size-topbar-menu-items-mobile: 24px;
 $font-size-slack-title-mobile: 26px;
 $font-size-footer-links-title: 21px;
 
@@ -183,6 +184,8 @@ $gutter-size: 30px;
 $num-columns: 12;
 
 // Heights and widths
+$iphone6-width: 375px;
+//..
 $height-pill-buttons: 45px;
 $border-width-pills: 2px;
 $width-footer-slack-band-message-icon-border: 2px;
@@ -239,7 +242,7 @@ $size-topbar-menu-toggle: 30px;
 $height-topbar-menu-toggle-strip: 4px;
 $width-topbar-menu-toggle-strip: 30px;
 $padding-right-topbar-menu-toggle: 15px;
-$padding-left-topbar-menu-mobile-item: 45px;
+$padding-left-topbar-menu-mobile-item: 15px;
 $size-max-topbar-menu-mobile: 400px;
 //..
 $size-roadmap-photo: 90px;
@@ -372,6 +375,7 @@ $padding-topbar-menu-vertical-spacing: $gutter-size / 3;
 $padding-topbar-menu-horizontal-spacing: $gutter-size / 2;
 $padding-topbar-submenu-item: $gutter-size / 4;
 $padding-secondary-nav-item: 10px;
+$padding-secondary-nav-item-narrow: 6px;
 //..
 $padding-card: $gutter-size / 2;
 //..
