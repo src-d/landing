@@ -50,8 +50,8 @@ categories:
       desc: A set of tools that allow you to discover, fetch, store, access, filter and extract features from just a single source code repository to tens of millions of repositories
       projects:
         - name: engine
-          hostname: spark-api.sourced.tech
-          url: //github.com/src-d/spark-api
+          hostname: engine.sourced.tech
+          url: //engine.sourced.tech
           desc: the source{d} engine combines data retrieval and language analysis tools for scalable pipelines that process any number of Git repositories for source code analysis
           repository: src-d/spark-api
           minVersion: v0.0.11
@@ -85,8 +85,8 @@ categories:
           languages:
             - go
         - name: śiva
-          hostname: go-siva.sourced.tech
-          url: //github.com/src-d/go-siva
+          hostname: siva.sourced.tech
+          url: //siva.sourced.tech
           desc: śiva is an archiving format similar to TAR/ZIP, focused on allowing constant-time random file access, seekable access to contained files and concatenable files
           repository: src-d/go-siva
           minVersion: v1.1.3
@@ -102,7 +102,7 @@ categories:
       projects:
         - name: babelfish
           hostname: bblf.sh
-          url: //doc.bblf.sh
+          url: //bblf.sh
           desc: babelfish is a self-hosted server for universal source code parsing, turning code files into Universal Abstract Syntax Trees (UASTs)
           repository: bblfsh/bblfshd
           logo: projects/bblfsh
@@ -111,7 +111,7 @@ categories:
             - go
         - name: enry
           hostname: enry.sourced.tech
-          url: //github.com/src-d/enry
+          url: //enry.sourced.tech
           desc: enry is a faster source code file programming language detector based on github/linguist and toolbox that ignores binary or vendored files
           repository: src-d/enry
           minVersion: v1.5.2
