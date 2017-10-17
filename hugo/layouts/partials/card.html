@@ -1,4 +1,4 @@
-{{ $isExternalLink := eq 0 ((findRE "(sourced.tech|^/)" .link ) | len) }}
+{{ $isExternalLink := and (lt 0 ((findRE "^(https?:)?//" .link ) | len)) (eq 0 ((findRE "(sourced.tech|localhost|srcd.run|bblf.sh)" .link ) | len)) }}
 
 <article class="cards__element {{ if or .zip .raw .date }}cards__element_with-footer{{ end }} {{ if $isExternalLink }}cards__element_external-link{{ end }}">
     <a href="{{ .link }}" {{ if $isExternalLink }}target="_blank"{{ end }} data-tracked>
