@@ -8,7 +8,7 @@
 
                     {{ $title := $category.name }}
                     {{ $content := $category.desc }}
-                    {{ $link := printf "projects#%s" $category.name }}
+                    {{ $link := printf "projects#%s" $categoryName }}
                     {{ $gradient := $category.colors }}
                     {{ $context := dict "title" $title "icon" $categoryName "content" $content "link" $link "gradient" $gradient }}
 
