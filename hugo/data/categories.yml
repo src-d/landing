@@ -26,19 +26,19 @@ categories:
       desc: A selection of machine learning models trained using our tools over large datasets and ready to be used in your research or project with the supporting libraries
       projects:
         - name: id2vec
-          url: https://github.com/src-d/models/blob/master/id2vec/92609e70-f79c-46b5-8419-55726e873cfc.md
+          url: //github.com/src-d/models/blob/master/id2vec/92609e70-f79c-46b5-8419-55726e873cfc.md
           desc: Source code identifier embeddings, where every identifier is represented by a dense vector; no splitting or stemming, later converted with quality loss
           repository: src-d/models
         - name: nbow
-          url: https://github.com/src-d/models/blob/master/nbow/1e3da42a-28b6-4b33-94a2-a5671f4102f4.md
+          url: //github.com/src-d/models/blob/master/nbow/1e3da42a-28b6-4b33-94a2-a5671f4102f4.md
           desc: Weighted bag-of-words where every word is a dense vector; trained over the code of the 140k top starred GitHub repositories
           repository: src-d/models
         - name: docfreq
-          url: https://github.com/src-d/models/blob/master/docfreq/f64bacd4-67fb-4c64-8382-399a8e7db52a.md
+          url: //github.com/src-d/models/blob/master/docfreq/f64bacd4-67fb-4c64-8382-399a8e7db52a.md
           desc: Document frequencies of code identifiers, i.e. how many projects contain a certain identifier after splitting & stemming; trained on 10M GitHub repos after de-duplication
           repository: src-d/models
         - name: topics
-          url: https://github.com/src-d/models/blob/master/topics/c70a7514-9257-4b33-b468-27a8588d4dfa.md
+          url: //github.com/src-d/models/blob/master/topics/c70a7514-9257-4b33-b468-27a8588d4dfa.md
           desc: Topic modeling of Git repositories; trained over 10M GitHub repositories after de-duplication
           repository: src-d/models
 
@@ -51,7 +51,7 @@ categories:
       projects:
         - name: engine
           hostname: spark-api.sourced.tech
-          url: https://github.com/src-d/spark-api
+          url: //github.com/src-d/spark-api
           desc: the source{d} engine combines data retrieval and language analysis tools for scalable pipelines that process any number of Git repositories for source code analysis
           repository: src-d/spark-api
           minVersion: v0.0.6
@@ -62,7 +62,7 @@ categories:
           logosmall:
         - name: go-git
           hostname: go-git.sourced.tech
-          url: https://github.com/src-d/go-git
+          url: //github.com/src-d/go-git
           desc: go-git is a highly extensible Git implementation in pure Go language
           repository: src-d/go-git
           minVersion: v4.0.0
@@ -71,14 +71,14 @@ categories:
           logo:
           logosmall:
         - name: rovers
-          url: https://github.com/src-d/rovers
+          url: //github.com/src-d/rovers
           desc: rovers is a service to retrieve repository URLs from multiple code repository hosting providers, similarly to a search engine crawler
           repository: src-d/rovers
           minVersion: v2.5.3
           languages:
             - go
         - name: borges
-          url: https://github.com/src-d/borges
+          url: //github.com/src-d/borges
           desc: borges reads code repository URLs, then collects and stores them at large scale by using a producer-consumer architecture
           repository: src-d/borges
           minVersion: v0.7.1
@@ -86,7 +86,7 @@ categories:
             - go
         - name: śiva
           hostname: go-siva.sourced.tech
-          url: https://github.com/src-d/go-siva
+          url: //github.com/src-d/go-siva
           desc: śiva is an archiving format similar to TAR/ZIP, focused on allowing constant-time random file access, seekable access to contained files and concatenable files
           repository: src-d/go-siva
           minVersion: v1.1.2
@@ -102,19 +102,19 @@ categories:
       projects:
         - name: babelfish
           hostname: bblf.sh
-          url: https://doc.bblf.sh
+          url: //doc.bblf.sh
           desc: babelfish is a self-hosted server for universal source code parsing, turning code files into Universal Abstract Syntax Trees (UASTs)
           logo: projects/bblfsh
         - name: enry
           hostname: enry.sourced.tech
-          url: https://github.com/src-d/enry
+          url: //github.com/src-d/enry
           desc: enry is a faster source code file programming language detector based on github/linguist and toolbox that ignores binary or vendored files
           repository: src-d/enry
           minVersion: v1.5.2
           languages:
             - go
         - name: babelfish tools
-          url: https://github.com/bblfsh/tools
+          url: //github.com/bblfsh/tools
           desc: babelfish tools are easy-to-use command line tools for simple code analysis, such as tokenizer, cyclomatic complexity, npath complexity, patch
           repository: bblfsh/tools
           languages:
@@ -128,21 +128,21 @@ categories:
       desc: Our ML tools range from feature extraction on top of source code abstract syntax trees to lightning-fast, large scale clustering algorithms running on GPUs
       projects:
         - name: ast2vec
-          url: https://github.com/src-d/ast2vec
+          url: //github.com/src-d/ast2vec
           desc: ast2vec provides a framework for Machine Learning on Source Code (MLoSC) over UASTs, including identifier embeddings, document frequencies, topic modeling and more
           repository: src-d/ast2vec
           minVersion: 0.3.4-alpha
           languages:
             - python
         - name: modelforge
-          url: https://github.com/src-d/modelforge
+          url: //github.com/src-d/modelforge
           desc: modelforge is the foundation for storing and sharing machine learning models, with an extensible registry backend and using the ASDF storage format
           repository: src-d/modelforge
           minVersion: 0.2.9-alpha
           languages:
             - python
         - name: kmcuda
-          url: https://github.com/src-d/kmcuda
+          url: //github.com/src-d/kmcuda
           desc: kmcuda is a large-scale K-means and K-nn implementation that supports diverse distance metrics and can be accelerated using multiple NVIDIA GPUs (CUDA)
           repository: src-d/kmcuda
           minVersion: 6.2.0
@@ -150,7 +150,7 @@ categories:
             - python
             - cpp
         - name: minhashcuda
-          url: https://github.com/src-d/minhashcuda
+          url: //github.com/src-d/minhashcuda
           desc: minhashcuda is a large-scale weighted MinHash implementation optimized for low memory and high speed by running on multiple NVIDIA GPUs (CUDA)
           repository: src-d/minhashcuda
           minVersion: 1.1.1
@@ -158,7 +158,7 @@ categories:
             - cpp
             - python
         - name: wmd-relax
-          url: https://github.com/src-d/wmd-relax
+          url: //github.com/src-d/wmd-relax
           desc: wmd-relax is a large-scale Word Mover's Distance implementation optimized for speed by using google/or-tools that is compatible with spaCy
           repository: src-d/wmd-relax
           minVersion: v1.2.6
@@ -174,27 +174,27 @@ categories:
       desc: Demos are use case examples based on our tech stack and which both help you to get started with them as well as provide real-world, concrete functionality
       projects:
         - name: dashboard
-          url: https://github.com/bblfsh/dashboard
+          url: //github.com/bblfsh/dashboard
           desc: babelfish dashboard is a visualization tool that uses the babelfish universal code parser to display UASTs and its details in a human-friendly manner
           repository: bblfsh/dashboard
           languages:
             - js
             - go
         - name: vecino
-          url: https://github.com/src-d/vecino
+          url: //github.com/src-d/vecino
           desc: vecino is a CLI app to discover the most similar Git repositories to the one provided through matching or synonymical source code identifiers
           repository: src-d/vecino
           languages:
             - python
         - name: tmsc
-          url: https://github.com/src-d/tmsc
+          url: //github.com/src-d/tmsc
           desc: tmsc is a CLI tool that applies topic modeling on source code to discover the topics of a repository the user provides
           repository: src-d/tmsc
           minVersion: 0.1.1-alpha
           languages:
             - python
         - name: hercules
-          url: https://github.com/src-d/hercules
+          url: //github.com/src-d/hercules
           desc: hercules (and its labours) calculates and displays various Git repository statistics as code burndown, developer ownership, file & developer copulas
           repository: src-d/hercules
           minVersion: v2
@@ -212,7 +212,7 @@ categories:
       projects:
         - name: landing
           hostname: landing.sourced.tech
-          url: https://github.com/src-d/landing
+          url: //github.com/src-d/landing
           desc: landing of source{d}
           repository: src-d/landing
           languages:
