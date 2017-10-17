@@ -170,6 +170,13 @@ function setupTestimonials() {
   children.slice(0, 2).forEach(c => testimonials.appendChild(c));
 }
 
+function detectSafari() {
+  const detector = name => navigator.userAgent.search(name);
+  if (detector('Safari') >= 0 && detector('Chrome') < 0) {
+    document.body.classList.add('safari');
+  }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   setupStickyHeader();
   setupMenu();
@@ -184,4 +191,5 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   setupSmoothScroll();
   setupLinkTracking();
+  detectSafari();
 });

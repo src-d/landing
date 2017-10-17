@@ -122,3 +122,24 @@
         margin-left: 0 !important;
     }
 }
+
+/* Issue https://github.com/src-d/landing/issues/180 */
+body.safari {
+    .person-circle__background,
+    .person-circle__border,
+    #circleView {
+        display: none;
+    }
+
+    &.team-page .circle-list address {
+        svg {
+            background: white;
+            border-radius: 50%;
+        }
+
+        span[class*='linkedin'] svg {
+            padding: 3px;
+            border-radius: 0;
+        }
+    }
+}
