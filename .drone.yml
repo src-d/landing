@@ -26,8 +26,7 @@ pipeline:
       - make packages
     debug: true
     when:
-      branch: [staging]
-      event: [push]
+      event: [push, pull_request]
 
   docker_landing_stg:
     image: plugins/docker
@@ -101,8 +100,7 @@ pipeline:
       - make packages
     debug: true
     when:
-      branch: [master]
-      event: [tag, pull_request]
+      event: [tag]
 
   docker_landing_prod:
     image: plugins/docker
@@ -113,7 +111,6 @@ pipeline:
     dockerfile: Dockerfile
     debug: true
     when:
-      branch: [master]
       event: [tag]
 
   docker_api_prod:
@@ -125,7 +122,6 @@ pipeline:
     dockerfile: Dockerfile.api
     debug: true
     when:
-      branch: [master]
       event: [tag]
 
   docker_slackin_prod:
@@ -152,5 +148,4 @@ pipeline:
     debug: true
     wait: true
     when:
-      branch: [master]
       event: [tag]
