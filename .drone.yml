@@ -133,7 +133,6 @@ pipeline:
     dockerfile: Dockerfile.slackin
     debug: true
     when:
-      branch: [master]
       event: [tag]
 
   helm_deploy_prod:
