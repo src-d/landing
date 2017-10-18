@@ -51,7 +51,7 @@ categories:
       projects:
         - name: engine
           hostname: engine.sourced.tech
-          url: //github.com/src-d/spark-api
+          url: http://engine.sourced.tech
           desc: the source{d} engine combines data retrieval and language analysis tools for scalable pipelines that process any number of Git repositories for source code analysis
           repository: src-d/spark-api
           minVersion: v0.0.11
@@ -102,7 +102,7 @@ categories:
       projects:
         - name: babelfish
           hostname: bblf.sh
-          url: //doc.bblf.sh
+          url: http://bblf.sh
           desc: babelfish is a self-hosted server for universal source code parsing, turning code files into Universal Abstract Syntax Trees (UASTs)
           repository: bblfsh/bblfshd
           logo: projects/bblfsh
@@ -111,7 +111,7 @@ categories:
             - go
         - name: enry
           hostname: enry.sourced.tech
-          url: //github.com/src-d/enry
+          url: http://enry.sourced.tech
           desc: enry is a faster source code file programming language detector based on github/linguist and toolbox that ignores binary or vendored files
           repository: src-d/enry
           minVersion: v1.5.2
