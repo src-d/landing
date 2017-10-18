@@ -38,8 +38,8 @@ spec:
             - name: SLACK_API_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: {{ template "fullname" . }}
-                  key: slack-api-token
+                  name: {{ required "Missing tokenSecret name" .Values.image.landingSlackin.tokenSecret }}
+                  key: token
           ports:
             - containerPort: {{ .Values.service.landingSlackin.internalPort }}
           livenessProbe:
