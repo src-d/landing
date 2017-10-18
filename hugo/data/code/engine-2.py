@@ -18,10 +18,10 @@ head_files = engine.repositories.filter("is_fork = false") \
              .classify_languages() \
              .filter("is_binary = false") \
              .select("file_hash", "path", "content", "lang") \
-             .filter("lang is not null").cache()
+             .filter("lang is not null")
 
 # shows top languages per number of files
 top_ten_langs = head_files.distinct() \
                 .groupBy("lang").agg(count("*").alias("count")) \
-                .orderBy("count").sort(desc("count")).limit(20) \
+                .orderBy("count").sort(desc("count")).limit(10) \
                 .show()
