@@ -5,6 +5,6 @@
     {{- if eq $.lang "go" -}}
         {{- printf "https://godoc.org/github.com/%s" $.repo -}}
     {{- else -}}
-        {{- printf "api/%s" $.lang -}}
+        {{- printf "api/%s/" $.lang -}}
     {{- end -}}
 {{- end -}}
