@@ -1,5 +1,5 @@
 title: "Delivering AI on Code<br />"
-desc: "<br />source{d} builds the open-source components that enable<br /> large-scale code analysis and machine learning on source code. <br /><br /> Our powerful <a href='projects'>tools</a> can ingest all of the world’s public git repositories turning code into ASTs ready for machine learning and other analyses, all exposed through a flexible and friendly API. <br /><br />We are paving the way for the future of the software development life cycle, where code becomes analyzable data powering the next generation of developer tools."
+desc: "source{d} builds the open-source components that enable<br /> large-scale code analysis and machine learning on source code. <br /><br /> Our powerful <a href='projects'>tools</a> can ingest all of the world’s public git repositories turning code into ASTs ready for machine learning and other analyses, all exposed through a flexible and friendly API. <br /><br />We are paving the way for the future of the software development life cycle, where code becomes analyzable data powering the next generation of developer tools."
 links:
   roadmap:
     url: http://blog.sourced.tech/post/our-roadmap
