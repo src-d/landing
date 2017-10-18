@@ -11,7 +11,7 @@ spark = SparkSession.builder \
 engine = Engine(spark, "/repositories")
 
 # get identifiers of all Python files
-idents = engine.repositories.filter("is_fork = false")
+idents = engine.repositories.filter("is_fork = false") \
          .references \
          .head_ref.commits.first_reference_commit \
          .files \
