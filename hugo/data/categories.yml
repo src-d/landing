@@ -50,7 +50,7 @@ categories:
       desc: A set of tools that allow you to discover, fetch, store, access, filter and extract features from just a single source code repository to tens of millions of repositories
       projects:
         - name: engine
-          hostname: spark-api.sourced.tech
+          hostname: engine.sourced.tech
           url: //github.com/src-d/spark-api
           desc: the source{d} engine combines data retrieval and language analysis tools for scalable pipelines that process any number of Git repositories for source code analysis
           repository: src-d/spark-api
@@ -85,7 +85,7 @@ categories:
           languages:
             - go
         - name: śiva
-          hostname: go-siva.sourced.tech
+          hostname: siva.sourced.tech
           url: //github.com/src-d/go-siva
           desc: śiva is an archiving format similar to TAR/ZIP, focused on allowing constant-time random file access, seekable access to contained files and concatenable files
           repository: src-d/go-siva
