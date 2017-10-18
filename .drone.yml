@@ -70,8 +70,8 @@ pipeline:
     chart: ./helm-charts/landing
     release: landing
     prefix: STG
-    secrets: [ STG_API_SERVER, STG_KUBERNETES_TOKEN, SLACK_API_TOKEN ]
-    values: ingress.globalStaticIpName=landing-staging,image.landingSlackin.slackApiToken=$$SLACK_API_TOKEN,ingress.hosts={landing-staging.srcd.run,www.landing-staging.srcd.run},image.tag=${DRONE_COMMIT_SHA:0:7}
+    secrets: [ STG_API_SERVER, STG_KUBERNETES_TOKEN ]
+    values: ingress.globalStaticIpName=landing-staging,ingress.hosts={landing-staging.srcd.run,www.landing-staging.srcd.run},image.tag=${DRONE_COMMIT_SHA:0:7}
     tiller_ns: kube-system
     wait: true
     when:
@@ -140,8 +140,8 @@ pipeline:
     chart: ./helm-charts/landing
     release: landing
     prefix: PROD
-    secrets: [ PROD_API_SERVER, PROD_KUBERNETES_TOKEN, SLACK_API_TOKEN ]
-    values: ingress.globalStaticIpName=landing-production,image.landingSlackin.slackApiToken=$$SLACK_API_TOKEN,ingress.hosts={sourced.tech,www.sourced.tech},image.tag=${DRONE_TAG}
+    secrets: [ PROD_API_SERVER, PROD_KUBERNETES_TOKEN ]
+    values: ingress.globalStaticIpName=landing-production,ingress.hosts={sourced.tech,www.sourced.tech},image.tag=${DRONE_TAG}
     tiller_ns: kube-system
     wait: true
     when:

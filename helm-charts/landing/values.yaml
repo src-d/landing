@@ -15,7 +15,7 @@ image:
     name: landing
   landingSlackin:
     name: landing-slackin
-    # slackingApiToken: required
+    tokenSecret: landing-slackin-token
   landingApi:
     name: landing-api
 service:
