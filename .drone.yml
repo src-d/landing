@@ -73,7 +73,6 @@ pipeline:
     secrets: [ STG_API_SERVER, STG_KUBERNETES_TOKEN, SLACK_API_TOKEN ]
     values: ingress.globalStaticIpName=landing-staging,image.landingSlackin.slackApiToken=$$SLACK_API_TOKEN,ingress.hosts={landing-staging.srcd.run,www.landing-staging.srcd.run},image.tag=${DRONE_COMMIT_SHA:0:7}
     tiller_ns: kube-system
-    debug: true
     wait: true
     when:
       branch: [staging]
@@ -144,7 +143,6 @@ pipeline:
     secrets: [ PROD_API_SERVER, PROD_KUBERNETES_TOKEN, SLACK_API_TOKEN ]
     values: ingress.globalStaticIpName=landing-production,image.landingSlackin.slackApiToken=$$SLACK_API_TOKEN,ingress.hosts={sourced.tech,www.sourced.tech},image.tag=${DRONE_TAG}
     tiller_ns: kube-system
-    debug: true
     wait: true
     when:
       event: [tag]
