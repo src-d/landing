@@ -95,6 +95,7 @@
             @include title-small;
             padding: $padding-card;
             background: $color-card-background;
+            line-height: initial;
         }
 
         p {
