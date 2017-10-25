@@ -2,11 +2,39 @@ workspace:
   base: /go
   path: src/github.com/src-d/landing
 
-branches: [master, staging]
+branches: [master, staging, release/*]
 
 pipeline:
 
-  # staging
+  clone:
+    image: plugins/git
+    debug: true
+
+
+  # build on pull requests
+
+  build:
+    image: golang:1.8
+    environment:
+      - LANDING_URL="//sourced.tech"
+    commands:
+      - apt-get update
+      - apt-get install -y make bash curl git
+      - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+      - . ~/.nvm/nvm.sh
+      - nvm install 8
+      - nvm use 8
+      - npm install -g yarn
+      - npm rebuild node-sass
+      - go get -v -t ./...
+      - make build
+      - make packages
+    debug: true
+    when:
+      event: [pull_request]
+
+
+  # deployment to staging environment
 
   build_stg:
     image: golang:1.8
@@ -26,7 +54,8 @@ pipeline:
       - make packages
     debug: true
     when:
-      event: [push, pull_request]
+      branch: [staging]
+      event: [push]
 
   docker_landing_stg:
     image: plugins/docker
@@ -79,7 +108,7 @@ pipeline:
       event: [push]
 
 
-  # production
+  # deployment to production environment
 
   build_prod:
     image: golang:1.8
