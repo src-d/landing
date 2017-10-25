@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/readme/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/raw/documentation/examples/readme/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/raw/documentation/tutorials/readme/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/readme/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/other/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/pyspark/pyspark-shell-basic/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/pyspark/pyspark-shell-classifying-languages/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/pyspark/pyspark-shell-lang-and-uast/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/pyspark/pyspark-shell-schemas/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/pyspark/pyspark-shell-uast-extraction/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/scala/spark-shell-basic/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/scala/spark-shell-classifying-languages/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/scala/spark-shell-lang-and-uast/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/scala/spark-shell-schemas/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/scala/spark-shell-uast-extraction/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/classes/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/careers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/manifesto/</loc>
+    <lastmod>2016-12-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/team/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/404/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/raw/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/classes/static/</loc>
+    <lastmod>2016-12-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/xpls/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/examples/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/documentation/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/500/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/license/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/</loc>
+    <lastmod>2016-12-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:8888/v4.0.0/tutorials/</loc>
+  </url>
+  
+</urlset>
