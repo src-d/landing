@@ -32,6 +32,10 @@
     @return calc(#{gutter-size($num + 1)} + #{column-size($num)});
 }
 
+@function grid-offset-size-minus-one($num) {
+    @return calc(#{gutter-size($num)} + #{column-size($num)});
+}
+
 @mixin offset($num) {
     margin-left: grid-offset-size($num);
 }
