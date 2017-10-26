@@ -4,10 +4,11 @@
     &__slack {
         @include row;
         width: initial;
-        margin-right: 0;
+        margin-right: auto;
+        margin-left: auto;
         margin-top: $margin-top-footer-slack;
+        padding-bottom: $size-slack-form-horizontal-message-spacing;
         background-color: $color-footer-slack-band-bg;
-        height: $size-footer-slack-band;
 
         .slack-form__wrap {
             @include container;
@@ -113,7 +114,6 @@
     .footer {
         &__slack {
             margin: 0;
-            height: auto;
             padding: $padding-section-vertical-mobile 0;
         }
     }

@@ -25,6 +25,7 @@
     "lightbox2": "^2.9.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-markdown": "^2.5.0",
     "slick-carousel": "1.6.0",
     "whatwg-fetch": "^2.0.0"
   },
