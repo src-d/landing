@@ -1,0 +1,11 @@
+0.0.0.0:8888 {
+    root .
+    log stdout
+    gzip
+    ext .html
+
+    errors {
+        404 errors/404/index.html
+        * errors/500/index.html
+    }
+}
