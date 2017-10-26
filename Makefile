@@ -10,7 +10,7 @@ LANDING_URL ?= //sourced.tech
 PORT ?= 80
 DOCKERFILES = Dockerfile:landing Dockerfile.api:landing-api Dockerfile.slackin:landing-slackin
 
-HUGO_VERSION := 0.21
+HUGO_VERSION := 0.30.2
 OS := Linux
 HUGO_TAR_FILE_NAME = hugo_$(HUGO_VERSION)_$(OS)-64bit.tar.gz
 HUGO_URL = https://github.com/spf13/hugo/releases/download/v$(HUGO_VERSION)/$(HUGO_TAR_FILE_NAME)
