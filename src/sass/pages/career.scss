@@ -54,36 +54,51 @@
         margin-top: $margin-top-careers-content !important;
     }
 
-    .hq-gallery__item {
-        @include width(6);
-        height: grid-size(4);
-        float: left;
-        font-size: 0;
-        line-height: 0;
+    .hq-gallery > ul {
+        overflow: hidden;
         position: relative;
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .hq-gallery__item {
+            @include width(6);
+            float: left;
+            font-size: 0;
+            line-height: 0;
+            position: relative;
+            display: block;
 
-        & + li {
-            @include width(3);
-            height: grid-size(2);
-            margin-left: $gutter-size;
-        }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
 
-        &:nth-child(n+4) {
-            margin-top: $gutter-size;
-        }
+            & + li {
+                @include width(3);
+                margin-left: $gutter-size;
+            }
 
-        &__trigger {
-            background: transparent;
-            border: none;
-            position: absolute;
-            right: $gutter-size / 3;
-            bottom: $gutter-size / 3;
+            &:first-child {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+            }
+
+            &:nth-child(n+4) {
+                margin-top: $gutter-size;
+            }
+
+            &:nth-child(2n) {
+                margin-left: grid-offset-size-minus-one(6);
+            }
+
+            &__trigger {
+                background: transparent;
+                border: none;
+                position: absolute;
+                right: $gutter-size / 3;
+                bottom: $gutter-size / 3;
+            }
         }
     }
 
@@ -240,16 +255,17 @@
             height: $height-positions-btn-mobile;
         }
 
-        .hq-gallery__item,
-        .hq-gallery__item + li {
-            width: 100%;
-            display: block;
-            float: none;
-        }
+        .hq-gallery > ul {
+            .hq-gallery__item {
+                width: 100% !important;
+                float: none;
+                position: relative !important;
+                margin-left: 0 !important;
 
-        .hq-gallery__item + li {
-            margin-top: $gutter-size;
-            margin-left: 0;
+                & + li {
+                    margin-top: $gutter-size;
+                }
+            }
         }
     }
 }
