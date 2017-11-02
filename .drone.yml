@@ -58,6 +58,7 @@ pipeline:
       event: [push]
 
   docker_landing_stg:
+    group: docker
     image: plugins/docker
     registry: quay.io
     repo: quay.io/srcd/landing
@@ -70,6 +71,7 @@ pipeline:
       event: [push]
 
   docker_api_stg:
+    group: docker
     image: plugins/docker
     registry: quay.io
     repo: quay.io/srcd/landing-api
@@ -82,6 +84,7 @@ pipeline:
       event: [push]
 
   docker_slackin_stg:
+    group: docker
     image: plugins/docker
     registry: quay.io
     repo: quay.io/srcd/landing-slackin
@@ -131,6 +134,7 @@ pipeline:
       event: [tag]
 
   docker_landing_prod:
+    group: docker
     image: plugins/docker
     registry: quay.io
     repo: quay.io/srcd/landing
@@ -142,6 +146,7 @@ pipeline:
       event: [tag]
 
   docker_api_prod:
+    group: docker
     image: plugins/docker
     registry: quay.io
     repo: quay.io/srcd/landing-api
@@ -153,6 +158,7 @@ pipeline:
       event: [tag]
 
   docker_slackin_prod:
+    group: docker
     image: plugins/docker
     registry: quay.io
     repo: quay.io/srcd/landing-slackin
