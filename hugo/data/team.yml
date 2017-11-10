@@ -1,19 +1,30 @@
 title: team
-desc: At source{d} we are all engineers, developers and hackers ourselves. We go as far as to train and encourage all non-technical roles to also become developers.<br /></br>Interested in our people and want to become part of our team? Check more on <a href="/careers">careers</a>.
+desc: At source{d} we are all engineers, developers and hackers ourselves. We go as far as to train and encourage all non-technical roles to also become developers themselves.<br /><br />Interested in who we are and what we do? Want to become part of our team? Find our openings and perks at our <a href="careers">careers</a> page.
 teams:
     - name: Engineering
       headline: The core of everything we do, from the beginning to the end; writing great software
       subteams:
+         - teamName: Applications Team
+          members:
+          - picture: alex.png
+            name: Alexander Bezzubov
+            position: Lead Software Engineer
+            github: https://github.com/bzz
+          - picture: david.png
+            name: David Pordomingo
+            position: Software Engineer
+            github: https://github.com/dpordomingo
+            
         - teamName: Data Retrieval Team
           members:
-          - picture: placeholder/new-man.png
-            name: Alexander Bezzubov
-            position: Senior Software Engineer
-            github: https://github.com/bzz
           - picture: antonio.png
             name: Antonio Navarro
-            position: Senior Software Engineer
+            position: Lead Software Engineer
             github: https://github.com/ajnavarro
+          - picture: javi.png
+            name: Javier Fontán
+            position: Senior Software Engineer
+            github: https://github.com/jfontan            
           - picture: miguel.png
             name: Miguel Molina
             position: Senior Software Engineer
@@ -25,9 +36,9 @@ teams:
 
         - teamName: Infrastructure Team
           members:
-          - picture: placeholder/new-man.png
+          - picture: rafa.png
             name: Rafael Porres
-            position: DevOps Senior Engineer
+            position: Lead DevOps Engineer
             github: https://github.com/rporres
           - picture: sonia.png
             name: Sonia Meruelo
@@ -38,7 +49,7 @@ teams:
           members:
           - picture: alfredo.png
             name: Alfredo Beaumont
-            position: Senior Software Engineer
+            position: Lead Software Engineer
             github: https://github.com/abeaumont
           - picture: juanjo.png
             name: Juanjo Álvarez
@@ -55,41 +66,27 @@ teams:
             name: Egor Bulychev
             position: Senior Software Engineer
             github: https://github.com/EgorBu
-          - picture: placeholder/new-man.png
-            name: Konstantin Slavnov
-            position: Software Engineering Intern
-            github: https://github.com/zurk
-          - picture: placeholder/new-man.png
-            name: Timofei Semenov
-            position: Software Engineering Intern
-            github: https://github.com/fineguy
           - picture: waren.png
             name: Waren Long
-            position: Software Engineering Intern
+            position: Software Engineering
             github: https://github.com/warenlg
-
-        - teamName: Platform Team
-          members:
-          - picture: david.png
-            name: David Pordomingo
-            position: Software Engineer
-            github: https://github.com/dpordomingo
 
     - name: Product & Data Intelligence
       headline: Translating our vision into amazing products & making smarter decisions with hard data
       members:
         - picture: marcelo.png
           name: Marcelo Novaes
-          position: Product Manager & Data Intelligence Lead
+          position: Head of Product & Data Intelligence
           linkedin: https://linkedin.com/in/mnovaes
-        - picture: placeholder/new-man.png
+        - picture: ricardo.png
           name: Ricardo Baeta
-          position: Digital Product Designer
+          position: Product Design Lead
           linkedin: https://www.linkedin.com/in/ricardobaeta
         - picture: fernanda.png
           name: Fernanda Gomes
           position: Data Intelligence Analyst
           linkedin: https://www.linkedin.com/in/fernandaagomes/
+          
     - name: Operations
       headline: Taking care of the team at source{d}
       members:
@@ -97,6 +94,7 @@ teams:
           name: Esther García
           position: Office Manager
           linkedin: https://www.linkedin.com/in/esther-garc%C3%ADa-mart%C3%ADn-0331692b
+          
     - name: Management
       headline: Providing direction, the planning and the leadership to get there
       members:
@@ -110,5 +108,9 @@ teams:
           linkedin: https://es.linkedin.com/in/jorgeschnura
         - picture: maximo.png
           name: Máximo Cuadros
-          position: VP of Engineering
+          position: CTO
           github: https://github.com/mcuadros
+        - picture: francesc.png
+          name: Francesc Campoy
+          position: VP of Developer Relations
+          github: https://github.com/campoy          
