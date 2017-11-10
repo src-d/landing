@@ -4,7 +4,7 @@ teams:
     - name: Engineering
       headline: The core of everything we do, from the beginning to the end; writing great software
       subteams:
-         - teamName: Applications Team
+        - teamName: Applications Team
           members:
           - picture: alex.png
             name: Alexander Bezzubov
@@ -66,13 +66,13 @@ teams:
             name: Egor Bulychev
             position: Senior Software Engineer
             github: https://github.com/EgorBu
-          - picture: konsta.png
+          - picture: konstantin.png
             name: Konstantin Slavnov
-            position: Junior Software Engineering
+            position: Junior Software Engineer
             github: https://github.com/zurk
           - picture: waren.png
             name: Waren Long
-            position: Junior Software Engineering
+            position: Junior Software Engineer
             github: https://github.com/warenlg
 
     - name: Product & Data Intelligence
