@@ -63,7 +63,8 @@ pipeline:
     registry: quay.io
     repo: quay.io/srcd/landing
     secrets: [ docker_username, docker_password ]
-    tag: '${DRONE_COMMIT_SHA:0:7}'
+    # workaround for bug https://github.com/kubernetes/helm/issues/1707
+    tag: 'commit-${DRONE_COMMIT_SHA:0:7}'
     dockerfile: Dockerfile
     debug: true
     when:
@@ -76,7 +77,8 @@ pipeline:
     registry: quay.io
     repo: quay.io/srcd/landing-api
     secrets: [ docker_username, docker_password ]
-    tag: '${DRONE_COMMIT_SHA:0:7}'
+    # workaround for bug https://github.com/kubernetes/helm/issues/1707
+    tag: 'commit-${DRONE_COMMIT_SHA:0:7}'
     dockerfile: Dockerfile.api
     debug: true
     when:
@@ -89,7 +91,8 @@ pipeline:
     registry: quay.io
     repo: quay.io/srcd/landing-slackin
     secrets: [ docker_username, docker_password ]
-    tag: '${DRONE_COMMIT_SHA:0:7}'
+    # workaround for bug https://github.com/kubernetes/helm/issues/1707
+    tag: 'commit-${DRONE_COMMIT_SHA:0:7}'
     dockerfile: Dockerfile.slackin
     debug: true
     when:
@@ -103,7 +106,7 @@ pipeline:
     release: landing
     prefix: STG
     secrets: [ STG_API_SERVER, STG_KUBERNETES_TOKEN ]
-    values: ingress.globalStaticIpName=landing-staging,ingress.hosts={landing-staging.srcd.run,www.landing-staging.srcd.run},image.tag=${DRONE_COMMIT_SHA:0:7}
+    values: ingress.globalStaticIpName=landing-staging,ingress.hosts={landing-staging.srcd.run,www.landing-staging.srcd.run},image.tag=commit-${DRONE_COMMIT_SHA:0:7}
     tiller_ns: kube-system
     wait: true
     when:
