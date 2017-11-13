@@ -4,16 +4,27 @@ teams:
     - name: Engineering
       headline: The core of everything we do, from the beginning to the end; writing great software
       subteams:
+        - teamName: Applications Team
+          members:
+          - picture: alex.png
+            name: Alexander Bezzubov
+            position: Lead Software Engineer
+            github: https://github.com/bzz
+          - picture: david.png
+            name: David Pordomingo
+            position: Software Engineer
+            github: https://github.com/dpordomingo
+
         - teamName: Data Retrieval Team
           members:
           - picture: antonio.png
             name: Antonio Navarro
             position: Lead Software Engineer
             github: https://github.com/ajnavarro
-          - picture: placeholder/new-man.png
-            name: Alexander Bezzubov
+          - picture: javi.png
+            name: Javier Fontán
             position: Senior Software Engineer
-            github: https://github.com/bzz
+            github: https://github.com/jfontan
           - picture: miguel.png
             name: Miguel Molina
             position: Senior Software Engineer
@@ -25,7 +36,7 @@ teams:
 
         - teamName: Infrastructure Team
           members:
-          - picture: placeholder/new-man.png
+          - picture: rafa.png
             name: Rafael Porres
             position: Lead DevOps Engineer
             github: https://github.com/rporres
@@ -55,17 +66,14 @@ teams:
             name: Egor Bulychev
             position: Senior Software Engineer
             github: https://github.com/EgorBu
+          - picture: konstantin.png
+            name: Konstantin Slavnov
+            position: Junior Software Engineer
+            github: https://github.com/zurk
           - picture: waren.png
             name: Waren Long
-            position: Software Engineering Intern
+            position: Junior Software Engineer
             github: https://github.com/warenlg
-
-        - teamName: Platform Team
-          members:
-          - picture: david.png
-            name: David Pordomingo
-            position: Software Engineer
-            github: https://github.com/dpordomingo
 
     - name: Product & Data Intelligence
       headline: Translating our vision into amazing products & making smarter decisions with hard data
@@ -82,6 +90,7 @@ teams:
           name: Fernanda Gomes
           position: Data Intelligence Analyst
           linkedin: https://www.linkedin.com/in/fernandaagomes/
+
     - name: Operations
       headline: Taking care of the team at source{d}
       members:
@@ -89,6 +98,7 @@ teams:
           name: Esther García
           position: Office Manager
           linkedin: https://www.linkedin.com/in/esther-garc%C3%ADa-mart%C3%ADn-0331692b
+
     - name: Management
       headline: Providing direction, the planning and the leadership to get there
       members:
@@ -104,3 +114,7 @@ teams:
           name: Máximo Cuadros
           position: CTO
           github: https://github.com/mcuadros
+        - picture: francesc.png
+          name: Francesc Campoy
+          position: VP of Developer Relations
+          github: https://github.com/campoy
