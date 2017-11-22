@@ -131,18 +131,18 @@ categories:
       colors: {left: "#832fcc", right: "#c05cea"}
       desc: Our ML tools range from feature extraction on top of source code abstract syntax trees to lightning-fast, large scale clustering algorithms running on GPUs
       projects:
-        - name: ast2vec
-          url: //github.com/src-d/ast2vec
-          desc: ast2vec provides a framework for Machine Learning on Source Code (MLoSC) over UASTs, including identifier embeddings, document frequencies, topic modeling and more
+        - name: ml
+          url: //github.com/src-d/ml
+          desc: sourced.ml provides a framework for Machine Learning on Source Code (MLoSC) over UASTs, including identifier embeddings, document frequencies, topic modeling and more
           repository: src-d/ast2vec
-          minVersion: 0.3.4-alpha
+          minVersion: 0.3.5-alpha
           languages:
             - python
         - name: modelforge
           url: //github.com/src-d/modelforge
           desc: modelforge is the foundation for storing and sharing machine learning models, with an extensible registry backend and using the ASDF storage format
           repository: src-d/modelforge
-          minVersion: 0.2.9-alpha
+          minVersion: 0.3.1-alpha
           languages:
             - python
         - name: kmcuda
