@@ -27,7 +27,52 @@ The format can be described more formally as follows:
 ```
 
 
+# Architecture
+
+The landing contains 3 parts:
+
+- The [static site](#static-site) itself: a webpack app,
+- a [Go API](#api) to serve the latest blog posts, job offers and proxy to slackin,
+- [Slackin](#slackin) to send invitations to our visitors to join our slack community.
+
+In production, each part lives in a separated container.
+
+
+## Static site
+
+The static site is built with:
+- **webpack**: `javascript` (with some `REACT` components) and `css` (from `SASS` stylesheets)
+- **hugo**: for the `HTML` from `Go` templates and `YAML` data
+
+Its source code is under:
+- [`hugo` directory](hugo): for `hugo` sources:
+  - `content` directory: contains one `.md` per landing page that defines each page metadata,
+  - `data` directory: contains the landing variable content like titles, captions, descriptions, projects...
+  - `layout` directory: contains the `HTML` templates.
+- [`src` directory](src): for `js` and `sass` code,
+- [`static/img` directory](static/img): for site images,
+
+
+## API
+
+The API serves (a cached version of):
+- the 3 latest blog posts tagged as `technical`, and the 3 latest blog posts tagged as `culture` for the home page,
+- all the opened positions at Lever,
+
+Handles the visitor requests to join our slack community, sending an slack invitation through [Slackin](#slackin)
+
+Its source code is under [`api` directory](api).
+
+
+## Slackin
+
+The slackin container listen for invitation requests made from the landing [api](#api).
+
+For [technical reasons](https://github.com/src-d/landing/issues/62#issuecomment-327194704), slackin container is built from the release [v0.13.1](https://github.com/rauchg/slackin/tree/0.13.1)
+
+
 # Development
+
 
 ## Requirements
 
@@ -55,6 +100,7 @@ You need to satisfy all [project requirements](#requirements), and then to run:
 ```shell
 make build
 ```
+
 
 ## Development and running the landing locally
 
