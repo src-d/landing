@@ -1,5 +1,32 @@
 # Contributing Guidelines
 
+source{d} landing is copyrighted by source{d} and accepts
+contributions via GitHub pull requests. This document outlines some of the
+conventions on development workflow, commit message formatting, contact points,
+and other resources to make it easier to get your contribution accepted.
+
+
+## How to Contribute
+
+Pull Requests (PRs) are the main and exclusive way to contribute to the project.
+In order for a PR to be accepted it needs to pass the personal evaluation of at least one of the [maintainers](MAINTAINERS).
+
+
+### Format of the commit message
+
+Every commit message should describe what was changed and, if applicable, the GitHub issue it relates to:
+
+```
+Skip argument validations for unknown capabilities. Fixes #623
+```
+
+The format can be described more formally as follows:
+
+```
+<what changed>. [Fixes #<issue-number>]
+```
+
+
 Requirements
 ===
 You should already have [Go installed](https://golang.org/doc/install#install), and properly [configured the $GOPATH](https://github.com/golang/go/wiki/SettingGOPATH)
