@@ -108,13 +108,13 @@ make build
 You need to satisfy all [project requirements](#requirements), and then to run:
 
 ```shell
-LANDING_URL=//localhost PORT=8080 make serve
+LANDING_URL=//localhost PORT=8081 make serve
 ```
-It runs everything you need to get the site working at [http://localhost:8080](http://localhost:8080)
+It runs everything you need to get the site working at [http://localhost:8081](http://localhost:8081)
 
 Alternatively, you can start hugo, the api-server and webpack in a "three window mode", just running:
 ```shell
-LANDING_URL=//localhost PORT=8080 yarn start
+LANDING_URL=//localhost PORT=8081 yarn start
 ```
 With this command, each window runs a command, that can be also ran by you in case you need to control the output of each command or in any other special case:
 * `yarn run webpack-watcher` To start webpack watcher, that will rebuild the assets when you change its sources
@@ -127,7 +127,7 @@ It can be seen the landing _"as it would be a documentation site"_. To do so, it
 ```shell
 make develop-documentation
 ```
-And then, go to [http://localhost:8080](http://localhost:8080)
+And then, go to [http://localhost:8081](http://localhost:8081)
 
 To rollback the changes, and see the landing as usual, just run:
 ```shell

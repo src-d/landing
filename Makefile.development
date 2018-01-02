@@ -17,7 +17,7 @@ develop-documentation:
 	$(COPY) $(dev_src_doc)/*.md $(dev_output_doc)
 	HOST_NAME=landing.sourced.tech VERSION_NAME=v1 $(project_yml_generator) -tpl=$(src_project_tpl) -readme=./README.md -categories=$(src_categories_yml) > $(dev_output_project_yml)
 
-	PORT=8080 LANDING_URL=//localhost $(JS_PACKAGE_MANAGER) start;
+	PORT=8081 LANDING_URL=//localhost $(JS_PACKAGE_MANAGER) start;
 
 ## Develop. Remove all stuff created to look like a documentation site
 develop-documentation-destroy:
