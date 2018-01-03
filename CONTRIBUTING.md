@@ -82,12 +82,13 @@ go version; # prints your go version
 echo $GOPATH; # prints your $GOPATH path
 ```
 
-The project must be under the `$GOPATH`, following the Go import conventions, what means you can go to its directory running:
+The project must be under the `$GOPATH`, following the Go import conventions, what means you can install and cd to its directory running:
 ```shell
+go get github.com/src-d/landing/...
 cd $GOPATH/src/github.com/src-d/landing
 ```
 
-You need also [Yarn installed](https://yarnpkg.com/en/docs/install)
+You also need [Yarn v1.* installed](https://yarnpkg.com/en/docs/install)
 
 ```shell
 yarn --version; # prints your Yarn version
@@ -138,10 +139,12 @@ make develop-documentation-destroy
 
 The following envars are available for API configuration
 
-- `ADDR`
-- `FEED_BASE_URL`
-- `POSITIONS_BASE_URL`
-- `SLACK_CHANNEL`
-- `SLACKIN_URL`
+envar | default *
+- | -
+`ADDR` | `:8080`
+`FEED_BASE_URL` | `http://blog.sourced.tech/json/`
+`POSITIONS_BASE_URL` | `https://api.lever.co/v0/postings/sourced?mode=json`
+`SLACK_CHANNEL` |
+`SLACKIN_URL` | `http://slackin:3000/invite`
 
-You can see more in the `config` package in `api`.
+&ast; The default values are defined by [api/config/config.go](https://github.com/src-d/landing/blob/master/api/config/config.go)
