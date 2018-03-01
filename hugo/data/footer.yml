@@ -33,7 +33,7 @@ community:
     url: http://blog.sourced.tech
 networks:
   - title: twitter
-    url: https://twitter.com/srcd_
+    url: https://twitter.com/sourcedtech
     image: img/icons/social/twitter.png
   - title: github
     url: https://github.com/src-d
