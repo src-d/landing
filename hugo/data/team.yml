@@ -10,6 +10,14 @@ teams:
             name: Alexander Bezzubov
             position: Lead Software Engineer
             github: https://github.com/bzz
+          - picture: placeholder/new-man.png
+            name: Carlos Martín
+            position: Senior Software Engineer
+            github: https://github.com/carlosms
+          - picture: placeholder/new-man.png
+            name: Maxim Sukharev
+            position: Senior Software Engineer
+            github: https://github.com/smacker
           - picture: david.png
             name: David Pordomingo
             position: Software Engineer
@@ -43,6 +51,10 @@ teams:
 
         - teamName: Language Analysis Team
           members:
+          - picture: placeholder/new-man.png
+            name: Denys Smirnov
+            position: Senior Software Engineer
+            github: https://github.com/dennwc
           - picture: juanjo.png
             name: Juanjo Álvarez
             position: Senior Software Engineer
@@ -66,6 +78,10 @@ teams:
             name: Waren Long
             position: Junior Software Engineer
             github: https://github.com/warenlg
+          - picture: placeholder/new-man.png
+            name: Romain Keramitas
+            position: Software Engineer Intern
+            github: https://github.com/r0mainK
 
     - name: Product & Data Intelligence
       headline: Translating our vision into amazing products & making smarter decisions with hard data
