@@ -2,7 +2,9 @@
 
 ![source{d} logo](.github/logo-blue.png?raw=true)
 
-Serves the source{d} Landing and its API. The Landing site is also used as a [boilerplate for our documentations](https://github.com/src-d/docs).
+This repository contains the sources of the [source{d}](https://sourced.tech) Landing and its API.
+
+The Landing repository is also used as a [boilerplate for our documentation sites](https://github.com/src-d/docs).
 
 ![Screenshot](.github/screenshot.png?raw=true)
 
