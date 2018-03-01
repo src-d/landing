@@ -40,17 +40,9 @@ teams:
             name: Rafael Porres
             position: Lead DevOps Engineer
             github: https://github.com/rporres
-          - picture: sonia.png
-            name: Sonia Meruelo
-            position: DevOps Engineer
-            github: https://github.com/smeruelo
 
         - teamName: Language Analysis Team
           members:
-          - picture: alfredo.png
-            name: Alfredo Beaumont
-            position: Lead Software Engineer
-            github: https://github.com/abeaumont
           - picture: juanjo.png
             name: Juanjo Álvarez
             position: Senior Software Engineer
