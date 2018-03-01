@@ -79,7 +79,7 @@ For [technical reasons](https://github.com/src-d/landing/issues/62#issuecomment-
 You should already have [Go installed](https://golang.org/doc/install#install), and properly [configured the $GOPATH](https://github.com/golang/go/wiki/SettingGOPATH)
 ```shell
 go version; # prints your go version
-echo $GOPATH; # prints your $GOPATH path
+go env GOPATH; # prints your $GOPATH path
 ```
 
 The project must be under the `$GOPATH`, following the Go import conventions, what means you can install and cd to its directory running:
@@ -123,7 +123,7 @@ With this command, each window runs a command, that can be also ran by you in ca
 
 ### Preview the documentation site
 
-It can be seen the landing _"as it would be a documentation site"_. To do so, it is needed to run:
+Since the Landing repository is used as a blueprint for every documentation site as served by [src-d/docs](https://github.com/src-d/docs), the Landing can be used to generate a _"documentation like"_ site; To do so, it is needed to run:
 ```shell
 make develop-documentation
 ```
