@@ -1,6 +1,6 @@
 # Landing [![Build Status](https://drone.srcd.host/api/badges/src-d/landing/status.svg)](https://drone.srcd.host/src-d/landing)
 
-![source{d} logo](.github/static/img/logos/logo-blue.svg?raw=true)
+![source{d} logo](.github/logo-blue.png?raw=true)
 
 Serves the source{d} Landing and its API. The Landing site is also used as a [boilerplate for our documentations](https://github.com/src-d/docs).
 
