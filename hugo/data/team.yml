@@ -10,11 +10,11 @@ teams:
             name: Alexander Bezzubov
             position: Lead Software Engineer
             github: https://github.com/bzz
-          - picture: placeholder/new-man.png
+          - picture: carlos.png
             name: Carlos Martín
             position: Senior Software Engineer
             github: https://github.com/carlosms
-          - picture: placeholder/new-man.png
+          - picture: maxim.png
             name: Maxim Sukharev
             position: Senior Software Engineer
             github: https://github.com/smacker
