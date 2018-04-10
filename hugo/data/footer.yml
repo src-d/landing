@@ -39,7 +39,7 @@ networks:
     url: https://github.com/src-d
     image: img/icons/social/github.svg
   - title: medium
-    url: https://medium.com/source-d
+    url: https://medium.com/sourcedtech
     image: img/icons/social/medium.png
   - title: linkedin
     url: https://www.linkedin.com/company-beta/10284920/
