@@ -41,6 +41,10 @@ teams:
             name: Manuel Carmona
             position: Junior Software Engineer
             github: https://github.com/mcarmonaa
+          - picture: placeholder/new-man.png
+            name: Kuba Podgórski
+            position: Senior Software Engineer
+            github: https://github.com/kuba--
 
         - teamName: Infrastructure Team
           members:
