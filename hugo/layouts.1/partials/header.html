@@ -1,0 +1,122 @@
+{{ $ctx := .ctx }}
+{{ $categories := $ctx.Site.Data.categories.categories.contents }}
+{{ $project := $ctx.Site.Data.project }}
+{{ $category := default "" $ctx.Site.Data.project.category }}
+
+<div class="nav">
+    <nav class="topbar {{ if .opaque }}opaque{{ end }}" id="topbar">
+        <div>
+            <a href="{{ ("."|absURL ) | safeURL }}" alt="source{d}">
+                <div class="logo">
+                    <img src="{{ "img/logos/source-logo-white.svg" }}" alt="source{d}" />
+                </div>
+            </a>
+
+            <div class="horizontal-menu mobile-only" id="menu">
+                <ul class="visible" id="menu-main">
+                    <li class="horizontal-menu__back"></li>
+                    <li {{ if and (eq $ctx.URL "/") (eq $category "") }}class="active"{{ end }} title="homepage">
+                        <a href="{{ ("."|absURL ) | safeURL }}" title="Home">Home</a>
+                    </li>
+                    <li class="{{ if or (eq $ctx.URL "projects") (ne $category "") }}active {{end}}nav-to" data-nav-to="projects">
+                        <a>
+                            <span>Projects</span>
+                            {{ partial "svg" "go-arrow-nocircle" }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://blog.sourced.tech" title="Blog" data-tracked>Blog</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "team" }}class="active" {{ end }}>
+                        <a href="{{ ("team"|absURL ) | safeURL }}" title="Team">Team</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "careers" }}class="active" {{ end }}>
+                        <a href="{{ ("careers"|absURL ) | safeURL }}" title="Our Job Opportunities">Careers</a>
+                    </li>
+                </ul>
+
+                <ul id="menu-projects">
+                    <li class="horizontal-menu__back">
+                        <h4 class="nav-to" data-nav-to="main">
+                            {{ partial "svg" "go-arrow-nocircle" }}
+                            <span>projects</span>
+                        </h4>
+                    </li>
+                    {{ range $k := $ctx.Site.Data.categories.categories.order }}
+                        {{ $section := (index $categories $k) }}
+                        <li {{ if eq $category $k }}class="active"{{end}}>
+                            <a href="{{ ("projects"|absURL ) | safeURL }}#{{ $k }}" title="{{ $section.name }}">
+                                {{ partial "svg" $k }}
+                                <span>{{ $section.name }}</span>
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <div class="horizontal-menu mobile-hidden">
+                <ul>
+                    <li class="mobile-only horizontal-menu__back">
+                        <div class="horizontal-menu__back__icon" id="menu-close"></div>
+                    </li>
+                    <li {{ if and (eq $ctx.URL "/") (eq $category "") }}class="active"{{ end }} title="homepage">
+                        <a href="{{ ("."|absURL ) | safeURL }}" title="Home">Home</a>
+                    </li>
+                    <li
+                        class="menu-container
+                            {{- if or (eq $ctx.URL "projects") (ne $category "") }}
+                                active
+                            {{ end -}}
+                        "
+                    >
+                        <a href="{{ ("projects"|absURL ) | safeURL }}" class="horizontal-menu--projects" title="Projects">
+                            <span>Projects</span>
+                            {{ partial "svg" "go-arrow-nocircle" }}
+                        </a>
+
+                        <ul class="menu-container__submenu">
+                            {{ range $k := $ctx.Site.Data.categories.categories.order }}
+                                {{ $section := (index $categories $k) }}
+                                <li {{ if eq $category $k }}class="active"{{end}}>
+                                    <a href="{{ ("projects"|absURL ) | safeURL }}#{{ $k }}" title="{{ $section.name }}" class="scroll-to" data-tracked>
+                                        {{ partial "svg" $k }}
+                                        <span>{{ $section.name }}</span>
+                                    </a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://blog.sourced.tech" title="Blog" data-tracked>Blog</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "team" }}class="active" {{ end }}>
+                        <a href="{{ ("team"|absURL ) | safeURL }}" title="Team">Team</a>
+                    </li>
+                    <li {{ if eq $ctx.URL "careers" }}class="active" {{ end }}>
+                        <a href="{{ ("careers"|absURL ) | safeURL }}" title="Our Job Opportunities">Careers</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="horizontal-menu-toggle mobile-only" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    {{ $secondary_nav := default "" .secondary_nav }}
+    {{ if or (ne $category "") (ne $secondary_nav "") }}
+        <nav class="secondary-topbar mobile-hidden">
+            <div>
+                {{ if ne $category "" }}
+                    {{ $projSubheaderCtx := dict "ctx" $ctx "project" $project "category" $category "randomPill" $.randomPill }}
+                    {{ partial "project/nav.html" $projSubheaderCtx }}
+                {{ else }}
+                    {{ partial $secondary_nav . }}
+                {{ end }}
+            </div>
+        </nav>
+    {{ end }}
+</div>

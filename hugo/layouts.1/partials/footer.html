@@ -1,0 +1,31 @@
+{{ $ctx := $.ctx }}
+{{ $slack := $ctx.Site.Data.slack }}
+{{ $slackClass := "slack-form__root horizontal-slack-join" }}
+{{ $slackCtx := dict "slack" $slack "inline" true "class" $slackClass }}
+
+<footer class="footer">
+    {{ if default true $.include_slack }}
+        <div class="footer__slack">
+            <div class="slack-form__wrap">
+                {{ partial "slack.html" $slackCtx }}
+            </div>
+        </div>
+    {{ end }}
+
+    {{ if default false $.include_email }}
+        {{ partial "contact-us.html" $ctx }}
+    {{ end }}
+    {{ partial "footer/sitemap.html" $ctx }}
+
+    <div class="footer__social">
+        <ul>
+            {{ range $ctx.Site.Data.footer.networks }}
+                <li>
+                    <a href="{{ .url }}" target="_blank" title="source{d} on {{ .title }}">
+                        <img src="{{ .image }}" alt="source{d} on {{.title}}" />
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+</footer>
