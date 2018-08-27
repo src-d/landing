@@ -1,0 +1,16 @@
+{{ $slackClass := "home-hero__slack" }}
+{{ $slackCtx := dict "slack" .slack "class" $slackClass "id" "slack-join" "desc" .slack.desc }}
+
+<header class="home-hero">
+    <div class="home-hero__wrap">
+        <div class="home-hero__info">
+            <h1>{{ .home.title | safeHTML }}</h1>
+            <p>{{ .home.desc | safeHTML }}</p>
+        </div>
+
+        {{ partial "slack.html" $slackCtx }}
+
+        <img class="code-pills-left mobile-hidden" src="{{ "img/bgs/codepills-bg-1.png" }}" />
+        <img class="code-pills-right mobile-hidden" src="{{ "img/bgs/codepills-bg-4.png" }}" />
+    </div>
+</header>

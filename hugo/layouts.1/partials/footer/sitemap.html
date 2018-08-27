@@ -1,0 +1,30 @@
+{{ $footer := $.Site.Data.footer }}
+
+<section class="footer__sitemap">
+    <div class="footer__sitemap__addresses">
+        <div class="logo"><img src="{{ "img/logos/source-logo-white.svg" }}" alt="source{d}" /></div>
+        {{ range $addr := $footer.contact.address }}
+            <p>{{ $addr }}</p>
+        {{ end }}
+
+        <ul class="footer__sitemap__addresses__emails">
+            {{ range $m := $footer.contact.mails }}
+                <li>
+                    <a href="mailto:{{ $m }}" title="Contact {{ $m }}">
+                        {{ $m }}
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    {{ partial "contact-us.html" $ }}
+
+    {{ partial "footer/sitemap-links.html" (dict "title" "Company" "items" $footer.company) }}
+
+    {{ partial "footer/sitemap-links.html" (dict "title" "Projects" "items" $footer.projects) }}
+
+    {{ partial "footer/sitemap-links.html" (dict "title" "Community" "items" $footer.community) }}
+</section>
+
+<script src="js/bundle.js"></script>

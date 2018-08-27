@@ -1,0 +1,25 @@
+<section class="testimonials">
+    <h1>What developers say</h1>
+    <div class="testimonial-list" id="testimonials">
+        {{ range $.Site.Data.home.testimonials.testimonials }}
+            <div class="testimonial">
+                <div class="testimonial__avatar">
+                    <img src="img/avatars/{{ .nickname }}.jpg" alt="{{ .nickname }}" />
+                </div>
+
+                <blockquote>
+                    <p>{{ partial "svg" "quotes" }}{{ .text | safeHTML }}{{ partial "svg" "quotes" }}</p>
+                    <cite>
+                        <a href="{{ .url }}" target="_blank" data-tracked>
+                            {{ if and (ne .name "") (ne .name .nickname) }}
+                                {{ .name }} @{{ .nickname }}
+                            {{ else }}
+                                @{{ .nickname }}
+                            {{ end }}
+                        </a>
+                    </cite>
+                </blockquote>
+            </div>
+        {{ end }}
+    </div>
+</section>

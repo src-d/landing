@@ -1,0 +1,81 @@
+{{ $slack := $.ctx.Site.Params.social.slack }}
+{{ $currentUrl := ( printf "/%s" $.ctx.URL ) }}
+{{ if $.project }}
+    <div class="project-nav">
+        <h2 class="project-nav__title">
+            <a href="readme" class="project-nav__title__project-icon">
+                {{ if default false $.project.logosmall }}
+                    {{ partial "svg" $.project.logosmall }}
+                {{ else }}
+                    {{ partial "svg" (dict "name" $.project.codePill "color" "white" ) }}
+                {{ end }}
+                <span>{{ $.project.name }}</span>
+            </a>
+        </h2>
+
+        <ul class="project-nav__menu">
+            {{ partial "project/raw_item.html" (dict "currentUrl" $currentUrl "fileName" "raw/documentation/tutorials/README.md" "linkUrl" "tutorials" "linkText" "Documentation") }}
+
+            <li class="menu-container">
+                {{ $langs := $.project.languages }}
+                {{ if eq (len $langs ) 1 }}
+                    {{ $lang := index $langs 0 }}
+                    <a href="{{- partial "project/api-data" (dict "lang" $lang "repo" $.project.repository) -}}"
+                        target="_blank"
+                        class="item"
+                    >
+                        API
+                    </a>
+                {{ else }}
+                    <span class="item">
+                        API
+                    </span>
+                    <ul class="menu-container__submenu">
+                        {{ range $lang := $langs }}
+                            <li>
+                                <a class="item" target="_blank"
+                                    href="{{- partial "project/api-data" (dict "lang" $lang "repo" $.project.repository) -}}"
+                                >
+                                    {{- partial "project/api-data" (dict "lang" $lang "item" "name") -}}
+                                </a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
+            </li>
+
+            <li>
+                <a href="{{ $.project.releasesUrl }}" target="_blank" class="item">
+                    Releases
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ $.project.supportUrl }}" target="_blank" class="item">
+                    Issues
+                </a>
+            </li>
+
+            {{ partial "project/raw_item.html" (dict "currentUrl" $currentUrl "fileName" "raw/LICENSE" "linkUrl" "license" "linkText" "License") }}
+        </ul>
+
+        <div class="project-nav__icons">
+            {{ $categoryChannel := index $slack.channels $.project.category }}
+            {{ $slackChannel := default $slack.channels.general $categoryChannel }}
+            {{ $slackOrg := $slack.orgname}}
+            {{ $slackUrl := printf "https://%s.slack.com/messages/%s" $slackOrg $slackChannel }}
+
+            <a href="{{ $slackUrl }}" class="project-nav__icon-link"
+                target="_blank" alt="Talk about {{$.project.name}} on Slack"
+            >
+                {{ partial "svg" "slack-filled" }}
+            </a>
+
+            <a href="{{ $.project.projectUrl }}" class="project-nav__icon-link"
+                target="_blank" alt="View {{$.project.name}} project on GitHub"
+            >
+                {{ partial "svg" "github-filled" }}
+            </a>
+        </div>
+    </div>
+{{ end }}

@@ -1,0 +1,12 @@
+{{ $email := .Params.contactemail | default .Site.Params.defaultemail }}
+
+<div class="contact-us">
+    <a class="contact-email" href="mailto:{{ $email }}" data-tracked>{{ $email }}</a>
+
+    {{ if ne .Site.Params.pgpLink "" }}
+    <a class="pgp-key" href="{{ .Site.Params.pgpLink }}" target="_blank" data-tracked>
+        {{ partial "svg" "key" }}
+        <span>Looking for our PGP key?</span>
+    </a>
+    {{end}}
+</div>

@@ -1,0 +1,127 @@
+{{ $projects := $.Site.Data.projects }}
+{{ $headerCtx := dict "ctx" . "secondary_nav" "projects/nav.html" }}
+{{ $heroCtx := dict "ctx" . "data" $projects }}
+{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
+{{ $blog := $.Site.Data.blog }}
+{{ $slack := $.Site.Data.slack }}
+{{ $categories := $.Site.Data.categories }}
+{{ $projectsCtx := dict "slack" $slack "categories" $categories }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body>
+    {{ partial "header.html" $headerCtx }}
+    <div class="pb-5">
+            <h1 class="title text-left p-0 mt-5 mb-4">Turn your code into actionable insights with source{d} Engine</h1>
+            <a href="#" class="btn btn-purple-light mb-5">Learn More</a>
+        </div>
+    </div>
+</header>
+
+<section id="engine" class="product-engine pt-5 pb-5">
+    <div class="container">
+        <header class="text-center">
+            <p class="subtitle text-green">Product</p>
+            <h2 class="text-dark mb-5">source{d} Engine</h2>
+        </header>
+        <div class="row text-dark mb-5">
+            <div class="col-sm-10 offset-md-1">
+                <p class="text-large mb-5">Engineering managers and maintainers of large code bases are starting to realize the potential of Code as Data or how source code can be treated as an analyzable dataset proving valuable information. Think Business Intelligence and processes optimization based on the source code engineers write, rather than adjacent metrics.</p>
+                <h3 class="title-line line-green">Code as Data Challenges</h3>
+                <ul class="small-list mb-5">
+                    <li>Shadow IT</li>
+                    <li>Lack of proper documentation</li>
+                    <li>Language and framework heterogeneity</li>
+                    <li>No easy way to retrieve, parse and query source code</li>
+                    <li>No visibility into code history</li>
+                </ul>
+                <h3 class="title-line line-green">Introducing source{d} Engine</h3>
+                <p>We know that getting started with Code as Data can be challenging. This is why we built the source{d} Engine to enable Engineering managers to retrieve code across millions of repositories, as well as language classification and parsing for deeper analysis.</p>
+            </div>
+        </div>
+        <div class="row text-dark mb-5">
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="card bg-transparent">
+                    <div class="card-body">
+                        <img class="mb-3" src="assets/img/placeholder1.svg" height="140" width="140" alt="">
+                        <h4 class="title-line line-green">Code Retrieval</h4>
+                        <p>Retrieve and store the code history of your organization (including your open-source repositories) as a dataset.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="card bg-transparent">
+                    <div class="card-body">
+                        <img class="mb-3" src="assets/img/placeholder2.svg" height="140" width="140" alt="">
+                        <h4 class="title-line line-green">Language Agnostic Code Analysis</h4>
+                        <p>Automatically identify languages, parse source code, and extract the pieces that matter in a completely language-agnostic way.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="card bg-transparent">
+                    <div class="card-body">
+                        <img class="mb-3" src="assets/img/placeholder3.svg" height="140" width="140" alt="">
+                        <h4 class="title-line line-green">History Analysis</h4>
+                        <p>Extract information from the evolution, commits, and metadata of your codebase and  generate detailed reports and insights.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="card bg-transparent">
+                    <div class="card-body">
+                        <img class="mb-3" src="assets/img/placeholder1.svg" height="140" width="140" alt="">
+                        <h4 class="title-line line-green">Familiar APIs</h4>
+                        <p>Analyze your code through powerful friendly APIs, such as SQL, gRPC, REST, and various client libraries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9 mb-3 mb-lg-0 text-center text-lg-left">
+                <div class="card text-white green">
+                    <div class="card-body p-5">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img class="mb-3 mb-lg-0" src="assets/img/header1.png" alt="" width="100" height="94">
+                            </div>
+                            <div class="col-lg-9">
+                                <h3>Download source{d} Engine</h3>
+                                <p>Leverage the source{d} Engine to turn your source code across versions into actionable data & business intelligence.</p>
+                                <a href="#" class="btn btn-highlight-light">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 engine-more text-center">
+                <div class="card d-flex align-items-center justify-content-center text-white purple">
+                    <div class="card-body p-4">
+                        <p>Do you need distributed analysis at a larger scale, enterprise support, or additional features?</p>
+                        <a href="#" class="btn btn-purple-light">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="full-cta pt-5 pb-5">
+    <div class="container">
+        <header class="text-center">
+            <h2 class="text-white mt-5">Try source{d} today</h2>
+            <p class="text-white">Discover how source{d} can help your business</p>
+        </header>
+        <div class="col-lg-6 offset-lg-3 mt-4 mb-5">
+            <div class="row">
+                <button type="button" class="btn btn-highlight btn-lg col-sm mr-3">Get Started</button>
+                <button type="button" class="btn btn-secondary btn-lg col-sm">Sign Up For Newsletter</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    {{ partial "footer.html" $footerCtx }}
+</body>
+</html>

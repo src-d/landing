@@ -1,0 +1,52 @@
+<section class="examples">
+    <div class="examples__info">
+        <h1>{{ .title }}</h1>
+
+        {{ range $s := first 1 .examples }}
+        <h2 id="example-title">{{ $s.title }}</h2>
+        {{ end }}
+
+        <div class="examples__project">
+            {{ range $s := .examples }}
+                <div>
+                    <p>{{ $s.desc | safeHTML }}</p>
+
+                    <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill mobile-hidden">go to project</a>
+                </div>
+            {{ end }}
+        </div>
+
+        <div class="examples__info__navigation"></div>
+    </div>
+
+    {{ range $s := first 1 .examples }}
+    <div class="examples__terminal">
+        <div class="examples__terminal__header">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div id="example-code" class="examples__terminal__code">
+            <pre><code class="{{ $s.language }}">
+                {{- readFile (print "hugo/data/code/" $s.code) -}}
+            </code></pre>
+        </div>
+    </div>
+
+    <a href="{{ $s.link }}" target="_blank" title="{{ $s.title }}" class="btn-pill mobile-only project-btn" id="example-btn">go to project</a>
+    {{ end }}
+</section>
+
+<script>
+    window.examples = [
+        {{ range $s := .examples }}
+            {
+                title: "{{ $s.title }}",
+                language: "{{ $s.language }}",
+                code: "{{ readFile (print "hugo/data/code/" $s.code) }}",
+                link: "{{ $s.link }}",
+            },
+        {{ end }}
+    ];
+</script>
