@@ -10,8 +10,8 @@ const IS_PRODUCTION = process.env.npm_lifecycle_event === 'build';
 
 const baseConf = {
   entry: [
-    path.join(__dirname, 'src/sass/app.scss'),
-    path.join(__dirname, 'src/js/index.js')
+    path.join(__dirname, 'static/scss/style.scss'),
+    path.join(__dirname, 'src/js/')
   ],
   output: {
     path: path.join(__dirname, 'static'),
@@ -61,7 +61,7 @@ const productionConf = {
         NODE_ENV: JSON.stringify('production')
       }
     }),
-    new ExtractTextPlugin({ filename: 'css/style.css', allChunks: true }),
+    new ExtractTextPlugin({ filename: 'scss/style.css', allChunks: true }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
@@ -76,7 +76,7 @@ const developmentConf = {
     contentBase: 'static/'
   },
   plugins: [
-    new ExtractTextPlugin({ filename: 'css/style.css', allChunks: true })
+    new ExtractTextPlugin({ filename: 'scss/style.css', allChunks: true })
   ]
 };
 
