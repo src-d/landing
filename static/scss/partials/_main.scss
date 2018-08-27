@@ -1,0 +1,214 @@
+// Main styles
+
+a {
+    color: $green;
+    font-weight: 700;
+    text-decoration: underline;
+
+    &:hover {
+        color: lighten($green, 3%);
+    }
+}
+
+// Buttons
+
+.btn {
+    font-family: 'Cerebri Sans', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    border: none;
+    padding: .75rem 1.5rem;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.btn-sm {
+    padding: .25rem 1rem;
+    font-size: 13px;
+}
+
+.btn-lg {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.btn-highlight {
+    background-color: $green;
+    color: $white;
+
+    &:hover {
+        background-color: lighten($green,2);
+    }
+
+    &-light {
+        color: $green !important;
+    }
+}
+
+.btn-secondary {
+    background-color: $orange;
+
+    &:hover {
+        background-color: lighten($orange,2);
+    }
+
+    &-light,
+    &-light:hover {
+        color: $orange !important;
+    }
+}
+
+.btn-purple {
+    background-color: $dark-purple;
+
+    &:hover {
+        background-color: lighten($dark-purple,2);
+    }
+
+    &-light,
+    &-light:hover {
+        color: $dark-purple !important;
+    }
+}
+
+.btn-highlight-light,
+.btn-secondary-light,
+.btn-purple-light {
+    background-color: $white;
+
+    &:hover {
+        background-color: $bright;
+        opacity: 0.9;
+    }
+}
+
+// Cards
+
+.card {
+    border: none;
+    border-radius: .25rem;
+
+    .ic {
+        font-size: 30px;
+        text-decoration: none;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+
+    .author {
+        color: $green;
+        font-family: 'Cerebri Sans', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .card-intro {
+        font-size: 13px;
+        text-transform: uppercase;
+
+        @media (min-width: 768px) {
+            font-size: 18px;
+        }
+    }
+}
+
+.card-img-top {
+    height: auto;
+}
+
+.highlight-cards {
+
+    .card {
+
+        @media (min-width: 992px) {
+            min-height: 460px;
+            padding: 1rem;
+        }
+    }
+}
+
+// Lists
+
+ul {
+    padding-left: 0;
+}
+
+ul.main-list {
+    padding-left: 20px;
+
+    li {
+        font-size: 21px;
+        line-height: 27px;
+        margin-bottom: 1.5rem;
+        position: relative;
+        list-style: none;
+
+        &:before {
+            background-color: $green;
+            content: "";
+            display: block;
+            height: 10px;
+            left: -20px;
+            width: 10px;
+            position: absolute;
+            top: 9px;
+        }
+    }
+}
+
+ul.small-list {
+    padding-left: 20px;
+
+    li {
+        line-height: 21px;
+        margin-bottom: 1rem;
+        position: relative;
+        list-style: none;
+
+        &:before {
+            background-color: $yellow;
+            content: "";
+            display: block;
+            height: 6px;
+            left: -16px;
+            width: 6px;
+            position: absolute;
+            top: 9px;
+        }
+    }
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.order-sm-1 {
+
+    @media (max-width: 767px) {
+        -ms-flex-order: 1;
+        order: 1;
+    }
+}
+
+.order-sm-12 {
+
+    @media (max-width: 767px) {
+        -ms-flex-order: 12;
+        order: 12;
+    }
+}
+
+.slick-arrow {
+
+    @media (max-width: 767px) {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

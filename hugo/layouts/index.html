@@ -11,31 +11,334 @@
 <body class="home-page">
     {{ partial "header.html" $headerCtx }}
 
-    {{ partial "home/hero.html" $heroCtx }}
+    <div class="container">
+        <h1 class="title text-left pt-5 pb-5">Machine Learning for Large Scale Code Analysis</h1>
+        <div class="home-main container p-0 pb-5">
+            <div class="row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card text-white green h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters">
+                                <div class="col-0 col-lg-2">
+                                    <img src="assets/img/header1.png" alt="" width="50" height="47">
+                                </div>
+                                <div class="col-12 col-lg-10">
+                                    <h3 class="card-title">Code as Data</h3>
+                                    <p class="card-text">Turn your code into actionable insights</p>
+                                    <a href="engine" class="btn btn-highlight-light">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card text-white orange h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters">
+                                <div class="col-0 col-lg-2">
+                                    <img src="assets/img/header2.png" alt="" width="50" height="52">
+                                </div>
+                                <div class="col-12 col-lg-10">
+                                    <h3 class="card-title">Machine Learning on Code</h3>
+                                    <p class="card-text">Empower your Developers with Assisted Code Review</p>
+                                    <a href="lookout" class="btn btn-secondary-light">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+ 
+<section class="news pt-3 pb-3">
+    <div class="container">
+        <h4 class="text-dark m-0"><span class="badge badge-warning">New</span><a href="https://blog.sourced.tech/post/announcing-pga/" style="    color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 21px;
+            padding: 0px 0 0 13px;">Announcing Public Git Archive!</a></h4>
+    </div>
+</section>
 
-    {{ if $home.examples.display }}
-        {{ partial "home/examples.html" $examples }}
-    {{ end }}
+<section id="why" class="why pt-5 pb-0 pb-m-5">
+    <div class="container">
+        <header class="text-center">
+            <p class="subtitle text-yellow">Why source{d}</p>
+            <h2 class="text-white">Save time, improve your codebase quality, <br>and get actionable insights</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-1 mb-5">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="mb-3 mb-md-0" src="assets/img/placeholder1.svg" height="170" width="170" alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <h3 class="text-white">Agility</h3>
+                        <p class="description text-white">Faster retrieval and analysis of your source code improving the efficiency of your engineering organization so you can always ship on time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-5 mb-5">
+                <div class="row">
+                    <div class="col-sm-8 order-sm-12">
+                        <h3 class="text-white">Quality</h3>
+                        <p class="description text-white">Improve the quality of your codebase with better Testing and QA, detecting potential defects and similar or duplicate code.</p>
+                    </div>
+                    <div class="col-sm-4 order-sm-1">
+                        <img class="mb-3 mb-md-0" src="assets/img/placeholder2.svg" height="170" width="170" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-1 mb-5">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="mb-3 mb-md-0" src="assets/img/placeholder3.svg" height="170" width="170" alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <h3 class="text-white">Intelligence</h3>
+                        <p class="description text-white">All your codebases in a single place coupled with powerful analytics tools to gain actionable insights for your teams and business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    {{ if $home.projects.display }}
-        {{ partial "home/projects.html" $categories }}
-    {{ end }}
+<section class="how pt-5 pb-5">
+    <div class="container">
+        <header class="text-center">
+            <p class="subtitle text-orange">How it works</p>
+            <h2 class="text-dark mb-5">source{d} powers Code as Data and <br>Machine Learning on Code</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="assets/img/how_it_works.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
 
-    {{ if $home.roadmap.display }}
-        {{ partial "home/roadmap.html" $home }}
-    {{ end }}
+<section class="what">
+    <div class="container">
+        <header class="text-center">
+            <p class="subtitle text-yellow">What you get?</p>
+            <h2 class="text-white">source{d} Engine and source{d} Lookout</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-4 mb-md-5">
+                <div class="card text-white green h-100">
+                    <div class="card-body p-4 p-lg-5">
+                        <img src="assets/img/placeholder4.svg" alt="">
+                        <p class="card-intro pt-5 mb-0">source{d} Engine</p>
+                        <h3 class="card-title">Code as Data</h3>
+                        <p class="card-text">Leverage the source{d} Engine to turn your source code across versions into actionable data & business intelligence.</p>
+                        <p class="text-center"><strong>Features</strong></p>
+                        <ul class="small-list">
+                            <li>Source code retrieval and unification</li>
+                            <li>Language classification and parsing</li>
+                            <li>SQL interface for easy querying of repositories</li>
+                            <li>SDK for analysis beyond SQL</li>
+                        </ul>
+                        <p class="text-center mt-5"><strong>Use cases</strong></p>
+                        <ul class="small-list">
+                            <li>Code search</li>
+                            <li>Engineering Dashboards</li>
+                            <li>Business Intelligence</li>
+                            <li>Security vulnerability detection</li>
+                            <li>Continuous code quality</li>
+                            <li>and much more!</li>
+                        </ul>
+                        <a href="engine" class="btn btn-highlight-light w-100 mt-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-5 mb-sm-4">
+                <div class="card text-white orange h-100">
+                    <div class="card-body p-4 p-lg-5">
+                        <img src="assets/img/placeholder4.svg" alt="">
+                        <p class="card-intro pt-5 mb-0">source{d} Lookout</p>
+                        <h3 class="card-title">Machine Learning on Code</h3>
+                        <p class="card-text">Distill all the knowledge from your code base to assist engineering teams to review code faster while missing fewer mistakes.</p>
+                        <p class="text-center"><strong>Features</strong></p>
+                        <ul class="small-list">
+                            <li>Inferred style guides</li>
+                            <li>Naming suggestions</li>
+                            <li>Common bug detection</li>
+                            <li>Performance bottlenecks identification</li>
+                            <li>Security vulnerabilities</li>
+                            <li>Suspicious code indicators</li>
+                            <li>Language agnostic assisted coding</li>
+                        </ul>
+                        <p class="text-center mt-5"><strong>Use cases</strong></p>
+                        <ul class="small-list">
+                            <li>Code reviewer attention guide</li>
+                            <li>Comment suggestion</li>
+                            <li>Author pre-check tool</li>
+                        </ul>
+                        <a href="lookout" class="btn btn-secondary-light w-100 mt-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    {{ if $home.testimonials.display }}
-        {{ partial "home/testimonials.html" . }}
-    {{ end }}
+<section class="open pt-5 pb-5">
+    <div class="container">
+        <header class="text-center">
+            <h2 class="text-dark mb-5">We believe in Open Source and Open Science</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-6 text-center mb-0 mb-md-5">
+                <img src="assets/img/open-source.png" alt="">
+            </div>
+            <div class="col-sm-6 p-5">
+                <p class="text-large text-dark mb-4">At source{d} we are creating a suite of Open Source tools enabling "Code as Data" and "Machine Learning on Code". We are also great believers in Open Source and its philosophy.</p>
+                <a href="open-source" class="btn btn-highlight w-100">Learn More</a>
+            </div>
+            <!--
+            <div class="col-sm-3">
+                <p class="line line-green">Projects</p>
+            </div>
+            <div class="col-sm-3">
+                <p class="line line-green">Datasets</p>
+            </div>
+            <div class="col-sm-3">
+                <p class="line line-green">ML Models</p>
+            </div>
+            <div class="col-sm-3">
+                <p class="line line-green">Research Papers</p>
+            </div>
+            -->
+        </div>
+    </div>
+</section>
 
-    {{ if $home.blog.display }}
-        {{ $blog := $.Site.Data.blog.categories }}
-        {{ $postsCtx := dict "categories" (slice $blog.culture $blog.technical) "show_subtitle" true "title" "Blog" }}
-        {{ partial "posts.html" $postsCtx }}
-    {{ end }}
+<section class="trust pb-0 pb-md-5">
+    <div class="trust-top pt-5">
+        <div class="container">
+            <header class="text-center">
+                <h2 class="text-white mb-5">Trusted by top engineers at world leading companies</h2>
+            </header>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="trust-cases col-sm-10 offset-sm-1">
+                <div>
+                    <div class="trust-case p-5">
+                        <div class="row">
+                            <div class="col-lg-3 text-center">
+                                <img src="assets/img/jessie.png" class="mb-3" alt="Jessie Frazelle" width="128" height="128">
+                                <img src="assets/img/microsoft.svg" width="128" height="27" alt="Microsoft">
+                            </div>
+                            <div class="col-lg-9">
+                                <h3 class="text-dark mt-5 mt-sm-0">Jessie Frazelle <span>Software Engineer at Microsoft</span></h3>
+                                <p>source{d} is not only a great open source citizen with projects like gitbase and their collection of research papers on machine learning for code. They have the expertise and user experience skills to make something that will be truly revolutionary to the way developers interact with code.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="trust-case p-5">
+                        <div class="row">
+                            <div class="col-lg-3 text-center">
+                                <img src="assets/img/jessie.png" class="mb-3" alt="Jessie Frazelle" width="128" height="128">
+                                <img src="assets/img/microsoft.svg" width="128" height="27" alt="Microsoft">
+                            </div>
+                            <div class="col-lg-9">
+                                <h3 class="text-dark mt-5 mt-sm-0">Jessie Frazelle <span>Software Engineer at Microsoft</span></h3>
+                                <p>source{d} is not only a great open source citizen with projects like gitbase and their collection of research papers on machine learning for code. They have the expertise and user experience skills to make something that will be truly revolutionary to the way developers interact with code.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="trust-case p-5">
+                        <div class="row">
+                            <div class="col-lg-3 text-center">
+                                <img src="assets/img/jessie.png" class="mb-3" alt="Jessie Frazelle" width="128" height="128">
+                                <img src="assets/img/microsoft.svg" width="128" height="27" alt="Microsoft">
+                            </div>
+                            <div class="col-lg-9">
+                                <h3 class="text-dark mt-5 mt-sm-0">Jessie Frazelle <span>Software Engineer at Microsoft</span></h3>
+                                <p>source{d} is not only a great open source citizen with projects like gitbase and their collection of research papers on machine learning for code. They have the expertise and user experience skills to make something that will be truly revolutionary to the way developers interact with code.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trust-logos text-center col-sm-12 mt-5">
+                <ul class="row">
+                    <li class="col-sm">
+                        <img class="mb-sm-4" src="assets/img/nexflow.svg" width="136" height="24" alt="">
+                    </li>
+                    <li class="col-sm">
+                        <img class="mb-sm-4" src="assets/img/github.svg" width="100" height="27" alt="">
+                    </li>
+                    <li class="col-sm">
+                        <img class="mb-sm-4" src="assets/img/docker.svg" width="140" height="35" alt="">
+                    </li>
+                    <li class="col-sm">
+                        <img class="mb-sm-4" src="assets/img/microsoft.svg" width="128" height="27" alt="">
+                    </li>
+                    <li class="col-sm">
+                        <img class="mb-sm-4" src="assets/img/bitbucket.svg" width="139" height="20" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
-    {{ partial "footer.html" $footerCtx }}
+<section class="updates pt-5">
+    <div class="container">
+        <div class="row bg-white">
+            <div class="col-sm-12">
+                <h3 class="mt-1 mb-3">Latest Updates</h3>
+            </div>
+            <div class="col-lg-6 mb-3 mb-md-5">
+                <div class="card p-4 text-white green">
+                    <div class="card-body">
+                        <h3 class="card-title pt-5 mt-3">Announcing public git archive</h3>
+                        <p class="card-text">Announcing Public Git Archive, the largest dataset of git repositories in the world</p>
+                        <a href="#" class="author text-white">Francesc Campoy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3 mb-md-5">
+                <div class="card">
+                    <img class="card-img-top" src="assets/img/updates1.jpg" width="270" height="120" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark">Detecting licenses in code with go and ml</h5>
+                        <p class="card-text">Detecting the license of an open source projects is harder than…</p>
+                        <a href="#" class="author">Vadim Markovtsev</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3 mb-md-5">
+                <div class="card">
+                    <img class="card-img-top" src="assets/img/updates2.jpg" width="270" height="120" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark">Calling C functions from BigQuery with…</h5>
+                        <p class="card-text">As part of our experimentations at source{d}, we decided to…</p>
+                        <a href="#" class="author">Francesc Campoy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "try-sourced.html" }}
+
+{{ partial "footer.html" $footerCtx }}
 </body>
 
 </html>

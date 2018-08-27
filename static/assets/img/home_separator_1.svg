@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 300">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Web_1920_1);
+      }
+
+      .cls-2 {
+        fill: #f6f1fd;
+        opacity: 0.5;
+      }
+
+      .cls-3 {
+        fill: #eedffd;
+        opacity: 0.7;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.484" y1="-0.042" x2="0.482" y2="0.671" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#400d9a"/>
+      <stop offset="1" stop-color="#5c12ad"/>
+    </linearGradient>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="1920" height="300"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" class="cls-1">
+    <rect class="cls-5" width="1920" height="300"/>
+    <path id="Path_1" data-name="Path 1" class="cls-2" d="M5972,2192H7892.992l45.845,141.764c16.321,42-47.79,163.834-47.79,163.834s-170.079-8.183-368.618-84.879c-479.559-185.255-1211.3,14.366-1551.386,85.405S5972,2192,5972,2192Z" transform="translate(-5971 -2198)"/>
+    <path id="Path_2" data-name="Path 2" class="cls-3" d="M5972,2192H7892.992l-1.5,194.335c-67.953,40.7-135.906,140.157-485.937-40.366s-1139.462,195.165-1434.869,40.1S5972,2192,5972,2192Z" transform="translate(-5971 -2228)"/>
+    <path id="Path_3" data-name="Path 3" class="cls-4" d="M-.562-396.039h1922.25l-1.675,1466c-115.734,241.945-399.3,7.647-560.426-35.526C798.367,884.052,152.966,1368.168-.018,1069.975Z" transform="translate(0 -986)"/>
+  </g>
+</svg>

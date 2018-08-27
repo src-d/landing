@@ -3,120 +3,64 @@
 {{ $project := $ctx.Site.Data.project }}
 {{ $category := default "" $ctx.Site.Data.project.category }}
 
-<div class="nav">
-    <nav class="topbar {{ if .opaque }}opaque{{ end }}" id="topbar">
-        <div>
-            <a href="{{ ("."|absURL ) | safeURL }}" alt="source{d}">
-                <div class="logo">
-                    <img src="{{ "img/logos/source-logo-white.svg" }}" alt="source{d}" />
-                </div>
+<header class="header">
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-0">
+        <div class="container nav-container">
+            <a class="navbar-brand" href="index.html">
+                <img class="navbar-brand-light" src="assets/img/logo.svg" alt="source{d}" width="167" height="39">
+                <img class="navbar-brand-dark" src="assets/img/logo_footer.svg" alt="source{d}" width="167" height="39">
             </a>
-
-            <div class="horizontal-menu mobile-only" id="menu">
-                <ul class="visible" id="menu-main">
-                    <li class="horizontal-menu__back"></li>
-                    <li {{ if and (eq $ctx.URL "/") (eq $category "") }}class="active"{{ end }} title="homepage">
-                        <a href="{{ ("."|absURL ) | safeURL }}" title="Home">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkProd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkProd">
+                            <a class="dropdown-item" href="engine">source{d} Engine</a>
+                            <a class="dropdown-item" href="lookout">source{d} Lookout</a>
+                        </div>
                     </li>
-                    <li class="{{ if or (eq $ctx.URL "projects") (ne $category "") }}active {{end}}nav-to" data-nav-to="projects">
-                        <a>
-                            <span>Projects</span>
-                            {{ partial "svg" "go-arrow-nocircle" }}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://docs.sourced.tech/intro/" id="navbarDropdownMenuLinkDocs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkDocs">
+                            <a class="dropdown-item" href="https://docs.sourced.tech/intro/">Introduction to MLonCode</a> 
+                            <a class="dropdown-item" href="https://docs.sourced.tech/engine">source{d} Engine</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="open-source">Open Source</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="community" id="navbarDropdownMenuLinkComm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Community
                         </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkComm">
+                            <a class="dropdown-item" href="community#resources">Resources</a>
+                            <a class="dropdown-item" href="community#talk">Talk To Us</a>
+                            <a class="dropdown-item" href="community#events">Events</a>
+                        </div>
                     </li>
-                    <li>
-                        <a href="https://blog.sourced.tech" title="Blog" data-tracked>Blog</a>
-                    </li>
-                    <li {{ if eq $ctx.URL "team" }}class="active" {{ end }}>
-                        <a href="{{ ("team"|absURL ) | safeURL }}" title="Team">Team</a>
-                    </li>
-                    <li {{ if eq $ctx.URL "careers" }}class="active" {{ end }}>
-                        <a href="{{ ("careers"|absURL ) | safeURL }}" title="Our Job Opportunities">Careers</a>
-                    </li>
-                </ul>
-
-                <ul id="menu-projects">
-                    <li class="horizontal-menu__back">
-                        <h4 class="nav-to" data-nav-to="main">
-                            {{ partial "svg" "go-arrow-nocircle" }}
-                            <span>projects</span>
-                        </h4>
-                    </li>
-                    {{ range $k := $ctx.Site.Data.categories.categories.order }}
-                        {{ $section := (index $categories $k) }}
-                        <li {{ if eq $category $k }}class="active"{{end}}>
-                            <a href="{{ ("projects"|absURL ) | safeURL }}#{{ $k }}" title="{{ $section.name }}">
-                                {{ partial "svg" $k }}
-                                <span>{{ $section.name }}</span>
-                            </a>
-                        </li>
-                    {{ end }}
-                </ul>
-            </div>
-
-            <div class="horizontal-menu mobile-hidden">
-                <ul>
-                    <li class="mobile-only horizontal-menu__back">
-                        <div class="horizontal-menu__back__icon" id="menu-close"></div>
-                    </li>
-                    <li {{ if and (eq $ctx.URL "/") (eq $category "") }}class="active"{{ end }} title="homepage">
-                        <a href="{{ ("."|absURL ) | safeURL }}" title="Home">Home</a>
-                    </li>
-                    <li
-                        class="menu-container
-                            {{- if or (eq $ctx.URL "projects") (ne $category "") }}
-                                active
-                            {{ end -}}
-                        "
-                    >
-                        <a href="{{ ("projects"|absURL ) | safeURL }}" class="horizontal-menu--projects" title="Projects">
-                            <span>Projects</span>
-                            {{ partial "svg" "go-arrow-nocircle" }}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="company" id="navbarDropdownMenuLinkCom" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Company
                         </a>
-
-                        <ul class="menu-container__submenu">
-                            {{ range $k := $ctx.Site.Data.categories.categories.order }}
-                                {{ $section := (index $categories $k) }}
-                                <li {{ if eq $category $k }}class="active"{{end}}>
-                                    <a href="{{ ("projects"|absURL ) | safeURL }}#{{ $k }}" title="{{ $section.name }}" class="scroll-to" data-tracked>
-                                        {{ partial "svg" $k }}
-                                        <span>{{ $section.name }}</span>
-                                    </a>
-                                </li>
-                            {{ end }}
-                        </ul>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkCom">
+                            <a class="dropdown-item" href="company#roadmap">About</a>
+                            <a class="dropdown-item" href="company#careers">Careers</a>
+                            <a class="dropdown-item" href="company#offices">Our Offices</a>
+                            <a class="dropdown-item" href="company#team">Team</a>
+                        </div>
                     </li>
-                    <li>
-                        <a href="https://blog.sourced.tech" title="Blog" data-tracked>Blog</a>
+                    <li class="nav-item nav-btn">
+                        <a class="btn btn-sm btn-highlight" href="http://go.sourced.tech/engine">Request a Demo</a>
                     </li>
-                    <li {{ if eq $ctx.URL "team" }}class="active" {{ end }}>
-                        <a href="{{ ("team"|absURL ) | safeURL }}" title="Team">Team</a>
-                    </li>
-                    <li {{ if eq $ctx.URL "careers" }}class="active" {{ end }}>
-                        <a href="{{ ("careers"|absURL ) | safeURL }}" title="Our Job Opportunities">Careers</a>
-                    </li>
+                    <li class="nav-item nav-btn">
+                        <a class="btn btn-sm btn-secondary" href="https://docs.sourced.tech/engine/#quickstart">Install Engine</a>
+                      </li>
                 </ul>
-            </div>
-
-            <div class="horizontal-menu-toggle mobile-only" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
             </div>
         </div>
     </nav>
-
-    {{ $secondary_nav := default "" .secondary_nav }}
-    {{ if or (ne $category "") (ne $secondary_nav "") }}
-        <nav class="secondary-topbar mobile-hidden">
-            <div>
-                {{ if ne $category "" }}
-                    {{ $projSubheaderCtx := dict "ctx" $ctx "project" $project "category" $category "randomPill" $.randomPill }}
-                    {{ partial "project/nav.html" $projSubheaderCtx }}
-                {{ else }}
-                    {{ partial $secondary_nav . }}
-                {{ end }}
-            </div>
-        </nav>
-    {{ end }}
-</div>

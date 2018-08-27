@@ -1,0 +1,101 @@
+{{ $projects := $.Site.Data.projects }}
+{{ $headerCtx := dict "ctx" . "secondary_nav" "projects/nav.html" }}
+{{ $heroCtx := dict "ctx" . "data" $projects }}
+{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
+{{ $blog := $.Site.Data.blog }}
+{{ $slack := $.Site.Data.slack }}
+{{ $categories := $.Site.Data.categories }}
+{{ $projectsCtx := dict "slack" $slack "categories" $categories }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body>
+    {{ partial "header.html" $headerCtx }}
+    <div class="pb-5">
+            <h1 class="title text-left p-0 mt-5 mb-4">Empower your Developers with source{d} Lookout for Assisted Code Review</h1>
+            <a href="#" class="btn btn-purple-light mb-5">Learn More</a>
+        </div>
+    </div>
+</header>
+
+<section id="lookout" class="product-lookout pt-5 pb-5">
+    <div class="container">
+        <header class="text-center">
+            <p class="subtitle text-orange">Product</p>
+            <h2 class="text-dark mb-5">source{d} Lookout</h2>
+        </header>
+        <div class="row text-dark mb-5">
+            <div class="col-sm-10 offset-md-1">
+                <p class="text-large mb-5">source{d} is the company driving the Machine Learning on Code (<a href="">#MLonCode</a>) movement, an emerging and exciting domain of research between Machine Learning, Natural Language Processing, Social Science and Programming. Doing Machine Learning on Code consists of applying ML techniques to train models that can cluster, identify and predict useful aspects of source code and software repositories.</p>
+                <h3 class="title-line line-orange">Benefits of Machine Learning on Code</h3>
+                <ul class="small-list mb-5">
+                    <li>Performance</li>
+                    <li>Simplicity</li>
+                    <li>Readability</li>
+                    <li>Extensibility</li>
+                    <li>Security</li>
+                </ul>
+                <h3 class="title-line line-orange">Introducing source{d} Lookout</h3>
+                <p>One of the areas where ML on Code would benefit developers most is during code reviews. With source{d} Lookout, we’re introducing a service for assisted code review, that allows running custom code analyzers on pull requests. source{d} Lookout is the first step towards a full suite of Machine Learning on Code applications for AI-assisted coding. </p>
+            </div>
+        </div>
+        <div class="row text-dark mb-5">
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="card bg-transparent">
+                        <div class="card-body">
+                            <img class="mb-3" src="assets/icons/style-and-patterns.svg" height="140" width="140" alt="">
+                            <p>Keep your code base style/patterns consistent</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="card bg-transparent">
+                        <div class="card-body">
+                            <img class="mb-3" src="assets/icons/language-agnostic-code-reviews.svg" height="140" width="140" alt="">
+                            <p>Language Agnostic assisted code reviews</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="card bg-transparent">
+                        <div class="card-body">
+                            <img class="mb-3" src="assets/icons/attention-on-code-reviews.svg" height="140" width="140" alt="">
+                            <p>Identify where to focus your attention on code reviews</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="card bg-transparent">
+                        <div class="card-body">
+                            <img class="mb-3" src="assets/icons/common-mistakes.svg" height="140" width="140" alt="">
+                            <p>Automatically warn about common mistakes before human code review</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="card text-white orange">
+                    <div class="card-body text-center text-md-left p-5">
+                        <div class="row">
+                            <div class="col-12 col-md-3">
+                                <img class="mb-3 mb-md-0" src="assets/img/header2.png" alt="" width="100" height="94">
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <h3>source{d} Lookout</h3>
+                                <p>Interested in a private beta of source{d} Lookout?</p>
+                                <a href="http://go.sourced.tech/lookout" class="btn btn-secondary-light">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "try-sourced.html" }}
+{{ partial "footer.html" $footerCtx }}
+</body>
+</html>

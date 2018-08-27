@@ -3,29 +3,71 @@
 {{ $slackClass := "slack-form__root horizontal-slack-join" }}
 {{ $slackCtx := dict "slack" $slack "inline" true "class" $slackClass }}
 
-<footer class="footer">
-    {{ if default true $.include_slack }}
-        <div class="footer__slack">
-            <div class="slack-form__wrap">
-                {{ partial "slack.html" $slackCtx }}
+
+<footer class="footer pt-5 pb-4">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-sm">
+                <a href="index.html"><img class="mb-4" src="assets/img/logo_footer.svg" alt="" width="167" height="39"></a>
             </div>
         </div>
-    {{ end }}
-
-    {{ if default false $.include_email }}
-        {{ partial "contact-us.html" $ctx }}
-    {{ end }}
-    {{ partial "footer/sitemap.html" $ctx }}
-
-    <div class="footer__social">
-        <ul>
-            {{ range $ctx.Site.Data.footer.networks }}
-                <li>
-                    <a href="{{ .url }}" target="_blank" title="source{d} on {{ .title }}">
-                        <img src="{{ .image }}" alt="source{d} on {{.title}}" />
-                    </a>
-                </li>
-            {{ end }}
-        </ul>
+        <div class="row no-gutters">
+            <div class="col-sm">
+                <ul>
+                    <li><a class="footer-main" href="#">Product</a></li>
+                    <li><a href="product-engine.html">source{d} Engine</a></li>
+                    <li><a href="product-lookout.html">source{d} Lookout</a></li>
+                </ul>
+            </div>
+            <div class="col-sm">
+                <ul>
+                    <li><a class="footer-main" href="https://docs.sourced.tech/intro/">Docs</a></li>
+                    <li><a href="https://docs.sourced.tech/engine">source{d} Engine</a></li>
+                    <li><a href="https://docs.sourced.tech/intro/">source{d} Lookout</a></li>
+                </ul>
+            </div>
+            <div class="col-sm">
+                <ul>
+                    <li><a class="footer-main" href="opensource.html">Open Source</a></li>
+                    <li><a href="">Philosophy</a></li>
+                    <li><a href="">Licensing</a></li>
+                    <li><a href="">Projects</a></li>
+                </ul>
+            </div>
+            <div class="col-sm">
+                <ul>
+                    <li><a class="footer-main" href="community.html">Community</a></li>
+                    <li><a href="community.html#resources">Resources</a></li>
+                    <li><a href="community.html#talk">Talk To Us</a></li>
+                    <li><a href="community.html#events">Events</a></li>
+                </ul>
+            </div>
+            <div class="col-sm">
+                <ul>
+                    <li><a class="footer-main" href="company.html">Company</a></li>
+                    <li><a href="company.html#roadmap">About</a></li>
+                    <li><a href="company.html#careers">Careers</a></li>
+                    <li><a href="company.html#offices">Our Offices</a></li>
+                    <li><a href="company.html#team">Team</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="footer-social col-sm-12 pt-4 mt-3 pb-3">
+                <a href="" class="social-link icon-git"></a>
+                <a href="" class="social-link icon-twi"></a>
+                <a href="" class="social-link icon-lin"></a>
+                <a href="" class="social-link icon-goo"></a>
+                <a href="" class="social-link icon-red"></a>
+                <a href="" class="social-link icon-you"></a>
+                <a href="" class="social-link icon-sli"></a>
+            </div>
+        </div>
     </div>
 </footer>
+
+<!-- jQuery first, then Bootstrap JS. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js-load/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="js-load/slick.min.js"></script>
+<script type="text/javascript" src="js-load/script.js"></script>
