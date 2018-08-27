@@ -25,7 +25,7 @@
                                 <div class="col-12 col-lg-10">
                                     <h3 class="card-title">Code as Data</h3>
                                     <p class="card-text">Turn your code into actionable insights</p>
-                                    <a href="#" class="btn btn-highlight-light">Learn More</a>
+                                    <a href="engine" class="btn btn-highlight-light">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                 <div class="col-12 col-lg-10">
                                     <h3 class="card-title">Machine Learning on Code</h3>
                                     <p class="card-text">Empower your Developers with Assisted Code Review</p>
-                                    <a href="#" class="btn btn-secondary-light">Learn More</a>
+                                    <a href="lookout" class="btn btn-secondary-light">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,11 @@
  
 <section class="news pt-3 pb-3">
     <div class="container">
-        <h4 class="text-dark m-0"><span class="badge badge-warning">New</span> Title of latest blog announcement!</h4>
+        <h4 class="text-dark m-0"><span class="badge badge-warning">New</span><a href="https://blog.sourced.tech/post/announcing-pga/" style="    color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 21px;
+            padding: 0px 0 0 13px;">Announcing Public Git Archive!</a></h4>
     </div>
 </section>
 
@@ -150,7 +154,7 @@
                             <li>Continuous code quality</li>
                             <li>and much more!</li>
                         </ul>
-                        <a href="#" class="btn btn-highlight-light w-100 mt-4">Learn More</a>
+                        <a href="engine" class="btn btn-highlight-light w-100 mt-4">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -177,7 +181,7 @@
                             <li>Comment suggestion</li>
                             <li>Author pre-check tool</li>
                         </ul>
-                        <a href="#" class="btn btn-secondary-light w-100 mt-4">Learn More</a>
+                        <a href="lookout" class="btn btn-secondary-light w-100 mt-4">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -332,22 +336,9 @@
     </div>
 </section>
 
-<section class="full-cta pt-5 pb-5">
-    <div class="container">
-        <header class="text-center">
-            <h2 class="text-white mt-5">Try source{d} today</h2>
-            <p class="text-white">Discover how source{d} can help your business</p>
-        </header>
-        <div class="col-lg-6 offset-lg-3 mt-4 mb-5">
-            <div class="row">
-                <button type="button" class="btn btn-highlight btn-lg col-sm mr-3">Get Started</button>
-                <button type="button" class="btn btn-secondary btn-lg col-sm">Sign Up For Newsletter</button>
-            </div>
-        </div>
-    </div>
-</section>
+{{ partial "try-sourced.html" }}
 
-    {{ partial "footer.html" $footerCtx }}
+{{ partial "footer.html" $footerCtx }}
 </body>
 
 </html>

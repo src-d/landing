@@ -13,8 +13,9 @@
 <body>
     {{ partial "header.html" $headerCtx }}
     <div class="pb-5">
+            <br><br><br>
             <h1 class="title text-left p-0 mt-5 mb-4">Turn your code into actionable insights with source{d} Engine</h1>
-            <a href="#" class="btn btn-purple-light mb-5">Learn More</a>
+            <!-- <a href="#" class="btn btn-purple-light mb-5">Learn More</a> -->
         </div>
     </div>
 </header>
@@ -89,7 +90,7 @@
                             <div class="col-lg-9">
                                 <h3>Download source{d} Engine</h3>
                                 <p>Leverage the source{d} Engine to turn your source code across versions into actionable data & business intelligence.</p>
-                                <a href="#" class="btn btn-highlight-light">Get Started</a>
+                                <a href="https://docs.sourced.tech/engine#quickstart" class="btn btn-highlight-light">Get Started</a>
                             </div>
                         </div>
                     </div>
@@ -99,7 +100,7 @@
                 <div class="card d-flex align-items-center justify-content-center text-white purple">
                     <div class="card-body p-4">
                         <p>Do you need distributed analysis at a larger scale, enterprise support, or additional features?</p>
-                        <a href="#" class="btn btn-purple-light">Learn More</a>
+                        <a href="#" class="btn btn-purple-light">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -107,21 +108,7 @@
     </div>
 </section>
 
-<section class="full-cta pt-5 pb-5">
-    <div class="container">
-        <header class="text-center">
-            <h2 class="text-white mt-5">Try source{d} today</h2>
-            <p class="text-white">Discover how source{d} can help your business</p>
-        </header>
-        <div class="col-lg-6 offset-lg-3 mt-4 mb-5">
-            <div class="row">
-                <button type="button" class="btn btn-highlight btn-lg col-sm mr-3">Get Started</button>
-                <button type="button" class="btn btn-secondary btn-lg col-sm">Sign Up For Newsletter</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-    {{ partial "footer.html" $footerCtx }}
+{{ partial "try-sourced.html" }}
+{{ partial "footer.html" $footerCtx }}
 </body>
 </html>
