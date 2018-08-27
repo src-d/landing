@@ -14,9 +14,10 @@
     {{ partial "header.html" $headerCtx }}
 
     <div class="pb-5">
+            <br><br><br>
             <h1 class="title text-left p-0 mt-5 mb-4">Join our Community and contribute and collaborate with other developers</h1>
-            <a class="btn btn-purple-light mr-4 mb-3 mb-sm-5">Get Involved</a>
-            <a class="btn btn-highlight-light mb-3 mb-sm-5">Sign Up to Newsletter</a>
+            <!-- <a href="community#involved" class="btn btn-purple-light mr-4 mb-3 mb-sm-5">Get Involved</a> -->
+            <!-- <a class="btn btn-highlight-light mb-3 mb-sm-5">Sign Up to Newsletter</a> -->
         </div>
     </div>
 </header>
@@ -24,7 +25,7 @@
 <section id="resources" class="pt-5 pb-5">
     <div class="container">
         <header class="text-center mb-5">
-            <p class="subtitle text-green">Get Involved</p>
+            <p class="subtitle text-green" id="involved">Get Involved</p>
             <h2 class="text-dark">Resources</h2>
         </header>
         <div class="row">
@@ -45,30 +46,30 @@
     </div>
 </section>
 
-<section class="full-cta pt-5 pb-5">
+<!-- <section class="full-cta pt-5 pb-5">
     <div class="container">
         <header class="text-center">
             <h2 class="text-white mt-5">Sign Up to our Newsletter</h2>
             <p class="text-white">Sign up for our Machine Learning on Code newsletter to receive the latest blog posts, videos and events from source{d} and others in the community. </p>
         </header>
         <div class="col-md-10 offset-md-1 mt-4 mb-5">
-            <form action="">
+            <form action="http://go.sourced.tech/l/578561/2018-08-27/3b3jx" method="post">
                 <div class="row">
                     <div class="col-md mb-3 mb-md-0">
-                        <input type="text" class="form-control" placeholder="First name">
+                        <input type="text" class="form-control" name="fullname" placeholder="Margaret Hamilton">
                     </div>
                     <div class="col-md mb-3 mb-md-0">
-                        <input type="text" class="form-control" placeholder="Last name">
+                        <input type="text" class="form-control" name="email" placeholder="margaret@nasa.com">
                     </div>
                     <div class="col-md">
-                        <button type="button" class="btn btn-highlight w-100">Sign Up</button>
+                        <input type="submit" class="btn btn-highlight w-100">Sign Up</input>
                     </div>
                 </div>
             </form>
             <p class="text-center text-white mt-4">We’re happy to answer any questions you might have about  community, help you find the right resources, and meet other Machine Learning on Code enthusiasts from around the world!</p>
         </div>
     </div>
-</section>
+</section> -->
 
 <section id="talk" class="pt-5 pb-5">
     <div class="container text-dark">
@@ -84,14 +85,13 @@
                         <h4 class="title-line line-yellow m-0">Join Our Community</h4>
                         <p>Join hundreds of developers passionate about Code as Data and Machine Learning on Code</p>
                         <form action="">
-                            <input type="text" class="form-control mb-3" placeholder="Your Email Address">
-                            <button type="button" class="btn btn-highlight w-100">Join Us Now</button>
+                            <!-- <input type="text" class="form-control mb-3" placeholder="Your Email Address"> -->
+                            <button type="button" onclick="location.href='https://join.slack.com/t/sourced-community/shared_invite/enQtMjc4Njk5MzEyNzM2LTFjNzY4NjEwZGEwMzRiNTM4MzRlMzQ4MmIzZjkwZmZlM2NjODUxZmJjNDI1OTcxNDAyMmZlNmFjODZlNTg0YWM';" class="btn btn-highlight w-100">Join Us Now</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="row mt-5 text-center text-md-left">
             <div class="col-md-12 mb-4">
                 <p class="text-large">Follow us via these other channels</p>
@@ -232,7 +232,7 @@
     <div class="container">
         <div class="col-md-12">
             <h2 class="text-dark mb-4">Upcoming Conferences & Meetups</h2>
-            <p class="text-large">Here goes the calendar</p>
+            <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;mode=AGENDA&amp;height=500&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=sourced.tech_vnootou25lkv75a70l2qac65og%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="960" height="500" frameborder="0" scrolling="no"></iframe>
         </div>
     </div>
 </section>
