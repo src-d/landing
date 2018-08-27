@@ -361,6 +361,7 @@ a:hover {
   color: #fff;
 }
 .btn-highlight:hover {
+  color: #fff !important;
   background-color: #00be99;
 }
 .btn-highlight-light {
