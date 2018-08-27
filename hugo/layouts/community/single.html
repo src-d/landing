@@ -14,10 +14,9 @@
     {{ partial "header.html" $headerCtx }}
 
     <div class="pb-5">
-            <br><br><br>
             <h1 class="title text-left p-0 mt-5 mb-4">Join our Community and contribute and collaborate with other developers</h1>
-            <!-- <a href="community#involved" class="btn btn-purple-light mr-4 mb-3 mb-sm-5">Get Involved</a> -->
-            <!-- <a class="btn btn-highlight-light mb-3 mb-sm-5">Sign Up to Newsletter</a> -->
+            <a href="community#newsletter" class="btn btn-purple-light mr-4 mb-3 mb-sm-5">Sign Up to Newsletter</a>
+            <a href="community#events" class="btn btn-highlight-light mb-3 mb-sm-5">Event calendar</a>
         </div>
     </div>
 </header>
@@ -35,7 +34,7 @@
             <div class="col-md-6">
                 <div class="card text-white green">
                     <div class="card-body p-5">
-                        <a href="" class="ic icon-git text-white"></a>
+                        <a href="https://github.com/src-d/awesome-machine-learning-on-source-code" class="ic icon-git text-white"></a>
                         <p class="card-intro mb-0">Curated List</p>
                         <h3 class="title-line line-yellow">Machine Learning on Code content</h3>
                         <p>Blog posts, videos, research papers, datasets and software projects devoted to machine learning and source code</p>
@@ -46,30 +45,35 @@
     </div>
 </section>
 
-<!-- <section class="full-cta pt-5 pb-5">
+<section id="newsletter" class="full-cta pt-5 pb-5">
     <div class="container">
         <header class="text-center">
             <h2 class="text-white mt-5">Sign Up to our Newsletter</h2>
             <p class="text-white">Sign up for our Machine Learning on Code newsletter to receive the latest blog posts, videos and events from source{d} and others in the community. </p>
         </header>
         <div class="col-md-10 offset-md-1 mt-4 mb-5">
-            <form action="http://go.sourced.tech/l/578561/2018-08-27/3b3jx" method="post">
+            <!-- <form action="http://go.sourced.tech/l/578561/2018-08-27/3b3jx" method="post"> -->
+            <form action="http://go.sourced.tech/newsletter" method="post">
                 <div class="row">
-                    <div class="col-md mb-3 mb-md-0">
+                    <!-- <div class="col-md mb-3 mb-md-0">
                         <input type="text" class="form-control" name="fullname" placeholder="Margaret Hamilton">
-                    </div>
+                    </div> -->
                     <div class="col-md mb-3 mb-md-0">
-                        <input type="text" class="form-control" name="email" placeholder="margaret@nasa.com">
+                        <!-- <input type="text" class="form-control" name="email" placeholder="margaret@nasa.com"> -->
+                        &nbsp;
                     </div>
                     <div class="col-md">
-                        <input type="submit" class="btn btn-highlight w-100">Sign Up</input>
+                        <button type="submit" class="btn btn-highlight w-100">Sign Up</button>
                     </div>
+                    <div class="col-md mb-3 mb-md-0">
+                            &nbsp;
+                        </div>
                 </div>
             </form>
             <p class="text-center text-white mt-4">We’re happy to answer any questions you might have about  community, help you find the right resources, and meet other Machine Learning on Code enthusiasts from around the world!</p>
         </div>
     </div>
-</section> -->
+</section>
 
 <section id="talk" class="pt-5 pb-5">
     <div class="container text-dark">
@@ -81,7 +85,7 @@
             <div class="col-md-6">
                 <div class="card text-dark light">
                     <div class="card-body p-5">
-                        <a href="" class="ic icon-slack text-light"></a>
+                        <a href="https://join.slack.com/t/sourced-community/shared_invite/enQtMjc4Njk5MzEyNzM2LTFjNzY4NjEwZGEwMzRiNTM4MzRlMzQ4MmIzZjkwZmZlM2NjODUxZmJjNDI1OTcxNDAyMmZlNmFjODZlNTg0YWM" class="ic icon-slack text-light"></a>
                         <h4 class="title-line line-yellow m-0">Join Our Community</h4>
                         <p>Join hundreds of developers passionate about Code as Data and Machine Learning on Code</p>
                         <form action="">
@@ -102,7 +106,9 @@
                         <span class="ic icon-git"></span>
                     </div>
                     <div class="col-md-9">
-                        <h4 class="text-dark mt-3">GitHub</h4>
+                        <a class="nostyle" href="https://www.github.com/src-d/">
+                            <h4 class="text-dark mt-3">GitHub</h4>
+                        </a>
                         <p class="text-medium">All our open source in a single place</p>
                     </div>
                 </div>
@@ -113,7 +119,9 @@
                         <span class="ic icon-twi"></span>
                     </div>
                     <div class="col-md-9">
-                        <h4 class="text-dark mt-3">Twitter</h4>
+                        <a class="nostyle" href="https://www.twitter.com/sourcedtech/">
+                            <h4 class="text-dark mt-3">Twitter</h4>
+                        </a>
                         <p class="text-medium">Content on dev tooling, source code and ML on Code</p>
                     </div>
                 </div>
@@ -124,7 +132,9 @@
                         <span class="ic icon-you"></span>
                     </div>
                     <div class="col-md-9">
-                        <h4 class="text-dark mt-3">YouTube</h4>
+                        <a class="nostyle" href="https://www.youtube.com/sourced/">
+                            <h4 class="text-dark mt-3">YouTube</h4>
+                        </a>
                         <p class="text-medium">Tech talks, meetup recordings and paper reviews</p>
                     </div>
                 </div>
@@ -135,7 +145,9 @@
                         <span class="ic icon-lin"></span>
                     </div>
                     <div class="col-md-9">
-                        <h4 class="text-dark mt-3">Linkedin</h4>
+                        <a class="nostyle" href="https://www.linkedin.com/company/source-d/">
+                            <h4 class="text-dark mt-3">Linkedin</h4>
+                        </a>
                         <p class="text-medium"></p>
                     </div>
                 </div>
@@ -146,7 +158,9 @@
                         <span class="ic icon-sli"></span>
                     </div>
                     <div class="col-md-9">
-                        <h4 class="text-dark mt-3">Slideshare</h4>
+                        <a class="nostyle" href="https://www.slideshare.net/sourcedtech">
+                            <h4 class="text-dark mt-3">Slideshare</h4>
+                        </a>
                         <p class="text-medium"></p>
                     </div>
                 </div>
@@ -157,7 +171,9 @@
                         <span class="ic icon-red"></span>
                     </div>
                     <div class="col-md-9">
-                        <h4 class="text-dark mt-3">Reddit</h4>
+                        <a class="nostyle" href="https://www.reddit.com/r/MachineLearning">
+                            <h4 class="text-dark mt-3">Reddit</h4>
+                        </a>
                         <p class="text-medium"></p>
                     </div>
                 </div>
@@ -168,7 +184,9 @@
                         <span class="ic icon-fac"></span>
                     </div>
                     <div class="col-md-9">
-                        <h4 class="text-dark mt-3">Facebook</h4>
+                        <a class="nostyle" href="https://www.facebook.com/sourced.MLonCode/">
+                            <h4 class="text-dark mt-3">Facebook</h4>
+                        </a>
                         <p class="text-medium"></p>
                     </div>
                 </div>
@@ -179,7 +197,9 @@
                         <span class="ic icon-goo"></span>
                     </div>
                     <div class="col-md-9">
-                        <h4 class="text-dark mt-3">Google +</h4>
+                        <a class="nostyle" href="https://plus.google.com/+sourced">
+                            <h4 class="text-dark mt-3">Google +</h4>
+                        </a>
                         <p class="text-medium"></p>
                     </div>
                 </div>
@@ -190,7 +210,9 @@
                         <span class="ic icon-med"></span>
                     </div>
                     <div class="col-md-9">
-                        <h4 class="text-dark mt-3">Medium</h4>
+                        <a class="nostyle" href="https://medium.com/sourcedtech/">
+                            <h4 class="text-dark mt-3">Medium</h4>
+                        </a>
                         <p class="text-medium"></p>
                     </div>
                 </div>
@@ -213,7 +235,7 @@
             </div>
             <div class="col-md-6">
                 <h3 class="title-line line-magenta">Online Meetup</h3>
-                <p class="text-large">Phasellus posuere tristique vestibulum. Fusce tortor metus, eleifend id leo eu, viverra porta enim. Ut egestas placerat purus, porta iaculis mi. Vivamus porta sit amet dui ac rhoncus. Vivamus varius rhoncus ante eget fringilla.</p>
+                <p class="text-large">We frequently organize online events you can attend such as paper reviews, machine learning workshops, technology tutorials among much more. Stay tuned and join the community.</p>
             </div>
         </div>
         <div class="row">
