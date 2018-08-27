@@ -326,8 +326,17 @@ a {
   font-weight: 700;
   text-decoration: underline;
 }
+
 a:hover {
   color: #00c39d;
+}
+
+.nostyle {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  
 }
 
 .btn {
