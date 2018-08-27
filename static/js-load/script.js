@@ -30,3 +30,12 @@ $(function() {
         }
     });
 });
+
+$(function(){
+    $('.dropdown-toggle').click(
+      function(){
+        if ($(this).next().is(':visible')) {
+          location.href = $(this).attr('href');;
+        }
+       });
+    });
