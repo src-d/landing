@@ -10,6 +10,13 @@ a {
     }
 }
 
+.nostyle {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
 // Buttons
 
 .btn {
@@ -35,6 +42,7 @@ a {
     color: $white;
 
     &:hover {
+        color: #fff !important;
         background-color: lighten($green,2);
     }
 
