@@ -108,7 +108,7 @@
 
   .container.nav-container {
 
-    @media (min-width: 768px) {
+    @media (min-width: 991px) {
       position: relative;
       height: 54px;
     }
@@ -168,7 +168,7 @@
     margin-top: 3rem;
     padding: 1.5rem;
     max-height: 90vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     .nav-link,
     .nav-link:hover,
