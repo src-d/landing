@@ -686,7 +686,7 @@ section header .subtitle {
 .header .container {
   z-index: 1;
 }
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .header .container.nav-container {
     position: relative;
     height: 54px;
@@ -735,7 +735,7 @@ section header .subtitle {
     margin-top: 3rem;
     padding: 1.5rem;
     max-height: 90vh;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   .navbar-dark .navbar-nav .nav-link,
 .navbar-dark .navbar-nav .nav-link:hover,
