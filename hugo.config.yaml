@@ -35,9 +35,9 @@ taxonomies:
 
 params:
     author: source{d}
-    description: "source{d} aims to understand developers through their code. We analyze contributions from more than 7 million developers in the open source community."
+    description: "source{d} provides the technology for large-scale code analysis and machine learning on code."
     defaultemail: "hello@sourced.tech"
-    location: "Madrid"
+    location: "San Francisco, Seattle, Madrid & Remote"
     favicon: "img/logos/favicon.png"
     favicon96: "img/logos/favicon96.png"
     pgpLink: "https://keybase.io/sourced"
