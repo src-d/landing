@@ -3,13 +3,21 @@ $(document).ready(function(){
     });
 });
 
-$('body').on('mouseenter mouseleave','.dropdown',function(e){
-    var _d=$(e.target).closest('.dropdown');_d.addClass('show');
-    setTimeout(function(){
-        _d[_d.is(':hover')?'addClass':'removeClass']('show');
-        $('[data-toggle="dropdown"]', _d).attr('aria-expanded',_d.is(':hover'));
-    },300);
-});
+$('.dropdown')
+  .on('mouseenter', function() {
+    if (!$(this).hasClass('show')) {
+      $('.dropdown-toggle', this).dropdown('toggle');
+    }
+  })
+  .on('mouseleave', function() {
+    const that = this;
+
+    setTimeout(function() {
+      if ($('.dropdown-menu', that).hasClass('show') && !$(that).is(':hover')) {
+        $('.dropdown-toggle', that).dropdown('toggle');
+      }
+    }, 500);
+  });
 
 // $(function () {
 //     $(document).scroll(function () {
