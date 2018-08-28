@@ -47,3 +47,19 @@ $(function(){
         }
        });
     });
+
+const headerHeight = $('nav.navbar').height();
+
+$('body').on('click', 'a', function (e) {
+    const url = new URL(this.href);
+    const urlPath = url.pathname.replace(/\/$/, "");
+    const currentPath = window.location.pathname.replace(/\/$/, "");
+    if (urlPath !== currentPath || url.hash === '') {
+        return true;
+    }
+    
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $(url.hash).offset().top - headerHeight
+    }, 'slow');
+});
