@@ -3,6 +3,10 @@ desc: At source{d} we are all engineers, developers and hackers ourselves. We go
 teams:
     - name: Engineering
       headline: The core of everything we do, from the beginning to the end; writing great software
+        - picture: santiago.png 
+            name: Santiago Mola
+            position: Head of Architecture
+            github: https://github.com/smola
       subteams:
         - teamName: Applications Team
           members:
