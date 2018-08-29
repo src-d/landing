@@ -59,9 +59,18 @@
   left: auto;
   right: -25px;
 }
+
 .slick-prev:before {
-  content: "";
+  content: '';
+  background: url(../assets/icons/carousel-previous.svg);
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  opacity: 1;
+  margin-top: -10px;
+  margin-left: -32px;
 }
+
 [dir=rtl] .slick-prev:before {
   content: "";
 }
@@ -73,9 +82,18 @@
   left: -25px;
   right: auto;
 }
+
 .slick-next:before {
-  content: "";
+  content: '';
+  background: url(../assets/icons/carousel-next.svg);
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  opacity: 1;
+  margin-top: -10px;
+  margin-left: 10px;
 }
+
 [dir=rtl] .slick-next:before {
   content: "";
 }

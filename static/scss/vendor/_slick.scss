@@ -96,7 +96,14 @@ $slick-opacity-not-active: 0.25 !default;
         right: -25px;
     }
     &:before {
-        content: "\ea40";
+        content: '';
+        background: url(../assets/icons/carousel-previous.svg);
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        opacity: 1;
+        margin-top: -10px;
+        margin-left: -32px;
         [dir="rtl"] & {
             content: $slick-next-character;
         }
@@ -110,7 +117,14 @@ $slick-opacity-not-active: 0.25 !default;
         right: auto;
     }
     &:before {
-        content: "\ea3c";
+        content: '';
+        background: url(../assets/icons/carousel-next.svg);
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        opacity: 1;
+        margin-top: -10px;
+        margin-left: 10px;
         [dir="rtl"] & {
             content: $slick-prev-character;
         }
