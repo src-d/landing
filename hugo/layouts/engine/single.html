@@ -1,11 +1,11 @@
 {{ $projects := $.Site.Data.projects }}
-{{ $headerCtx := dict "ctx" . "secondary_nav" "projects/nav.html" }}
-{{ $heroCtx := dict "ctx" . "data" $projects }}
-{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 {{ $blog := $.Site.Data.blog }}
 {{ $slack := $.Site.Data.slack }}
 {{ $categories := $.Site.Data.categories }}
 {{ $projectsCtx := dict "slack" $slack "categories" $categories }}
+
+{{ $headerCtx := dict "ctx" . }}
+{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
 
 {{ $headCtx := dict "ctx" . }}
 {{ partial "head.html" $headCtx }}
