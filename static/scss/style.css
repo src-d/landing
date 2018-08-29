@@ -321,6 +321,11 @@
   background-color: #CFCFCF;
 }
 
+.nav-link:hover, .nav-link:focus, .nav-link:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
 a {
   color: #00b491;
   font-weight: 700;

@@ -1,5 +1,10 @@
 // Main styles
 
+.nav-link:hover, .nav-link:focus, .nav-link:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
 a {
     color: $green;
     font-weight: 700;
