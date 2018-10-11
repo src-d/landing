@@ -10,7 +10,6 @@ const IS_PRODUCTION = process.env.npm_lifecycle_event === 'build';
 
 const baseConf = {
   entry: [
-    path.join(__dirname, 'src/sass/app.scss'),
     path.join(__dirname, 'src/js/index.js')
   ],
   output: {
