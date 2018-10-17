@@ -1,0 +1,7 @@
+ingress: 
+  globalStaticIpName: landing-production
+  hosts:
+    - sourced.tech
+    - www.sourced.tech
+nodeSelector:
+  cloud.google.com/gke-nodepool:default-pool

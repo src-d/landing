@@ -1,0 +1,7 @@
+ingress:
+  globalStaticIpName: landing-staging
+  hosts: 
+    - landing-staging.srcd.run
+    - www.landing-staging.srcd.run
+nodeSelector:
+  cloud.google.com/gke-nodepool:default-pool
