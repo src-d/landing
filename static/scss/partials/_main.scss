@@ -115,6 +115,15 @@ a {
             font-size: 18px;
         }
     }
+    a.card-link {
+        color: inherit;
+        font-weight: inherit;
+        text-decoration: inherit;
+
+        &:hover {
+            color: inherit;
+        }
+    }
 }
 
 .card-img-top {
