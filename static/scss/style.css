@@ -357,7 +357,8 @@ a {
   .card a.card-link {
     color: inherit;
     font-weight: inherit;
-    text-decoration: inherit; }
+    text-decoration: inherit;
+    height: 100%; }
     .card a.card-link:hover {
       color: inherit; }
 
