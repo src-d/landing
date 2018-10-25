@@ -97,8 +97,8 @@ serve-without-api: hugo-clean project-dependencies
 	$(JS_PACKAGE_MANAGER) run serve-without-api
 
 # Prepares project dependencies
-# project-dependencies: hugo-dependencies js-dependencies
-project-dependencies: hugo-dependencies 
+project-dependencies: hugo-dependencies js-dependencies
+# project-dependencies: hugo-dependencies
 
 # Deletes the hugo folder
 hugo-clean:
