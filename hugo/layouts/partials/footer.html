@@ -65,56 +65,60 @@
                 <a href="https://plus.google.com/+sourced" class="social-link icon-goo"></a>
                 <!-- <a href="https://medium.com/sourcedtech/" class="social-link icon-fac"></a> -->
             </div>
+            <div>
+                <iframe src="http://go.sourced.tech/l/578561/2018-08-17/397lv" width="100%" height="500" type="text/html"
+                    frameborder="0" allowTransparency="true" style="border: 0"></iframe>
+            </div>
         </div>
     </div>
 </footer>
 
 <!-- Pardot integration -->
 <script type="text/javascript">
-piAId = '579561';
-piCId = '16757';
-piHostname = 'pi.pardot.com';
+    piAId = '579561';
+    piCId = '16757';
+    piHostname = 'pi.pardot.com';
 
-(function() {
-	function async_load(){
-		var s = document.createElement('script'); s.type = 'text/javascript';
-		s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
-		var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
-	}
-	if(window.attachEvent) { window.attachEvent('onload', async_load); }
-	else { window.addEventListener('load', async_load, false); }
-})();
-</script>   
+    (function () {
+        function async_load() {
+            var s = document.createElement('script'); s.type = 'text/javascript';
+            s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+            var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+        }
+        if (window.attachEvent) { window.attachEvent('onload', async_load); }
+        else { window.addEventListener('load', async_load, false); }
+    })();
+</script>
 <!-- End Pardot integration -->
 
 <!-- Drift integration -->
 <script>
-"use strict";
+    "use strict";
 
-!function() {
-    var t = window.driftt = window.drift = window.driftt || [];
-    if (!t.init) {
-    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
-    t.factory = function(e) {
-        return function() {
-        var n = Array.prototype.slice.call(arguments);
-        return n.unshift(e), t.push(n), t;
-        };
-    }, t.methods.forEach(function(e) {
-        t[e] = t.factory(e);
-    }), t.load = function(t) {
-        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-        var i = document.getElementsByTagName("script")[0];
-        i.parentNode.insertBefore(o, i);
-    };
-    }
-}();
-drift.SNIPPET_VERSION = '0.3.1';
-drift.load('9r2gag6k94nb');
+    !function () {
+        var t = window.driftt = window.drift = window.driftt || [];
+        if (!t.init) {
+            if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+            t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+                t.factory = function (e) {
+                    return function () {
+                        var n = Array.prototype.slice.call(arguments);
+                        return n.unshift(e), t.push(n), t;
+                    };
+                }, t.methods.forEach(function (e) {
+                    t[e] = t.factory(e);
+                }), t.load = function (t) {
+                    var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+                    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+                    var i = document.getElementsByTagName("script")[0];
+                    i.parentNode.insertBefore(o, i);
+                };
+        }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('9r2gag6k94nb');
 </script>
-<!-- End of Async Drift Code --> 
+<!-- End of Async Drift Code -->
 
 <!-- jQuery first, then Bootstrap JS. -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
