@@ -1,4 +1,4 @@
-# Landing [![Build Status](https://drone.srcd.host/api/badges/src-d/landing/status.svg)](https://drone.srcd.host/src-d/landing)
+# Landing [![Build Status](https://drone.srcd.host/api/badges/src-d/landing/status.svg)](https://drone.srcd.host/src-d/landing)[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/src-d/landing/blob/master/LICENSE)
 
 ![source{d} logo](.github/logo-blue.png?raw=true)
 
