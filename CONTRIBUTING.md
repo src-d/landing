@@ -88,7 +88,7 @@ go get github.com/src-d/landing/...
 cd $GOPATH/src/github.com/src-d/landing
 ```
 
-You also need [Yarn v1.* installed](https://yarnpkg.com/en/docs/install)
+You also need [Yarn v1 installed](https://yarnpkg.com/en/docs/install)
 
 ```shell
 yarn --version; # prints your Yarn version
