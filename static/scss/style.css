@@ -437,6 +437,15 @@ a:hover {
     font-size: 18px;
   }
 }
+.card a.card-link {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: inherit;
+  height: 100%;
+}
+.card a.card-link:hover {
+  color: inherit;
+}
 
 .card-img-top {
   height: auto;
