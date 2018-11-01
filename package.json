@@ -20,13 +20,16 @@
     "url": "git+ssh://git@github.com/src-d/landing.git"
   },
   "dependencies": {
+    "bootstrap": "4.1.3",
     "es6-promise": "^4.0.5",
     "highlight.js": "^9.11.0",
+    "jquery": "~2.1.x",
     "lightbox2": "^2.9.0",
+    "popper.js": "^1.14.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-markdown": "^2.5.0",
-    "slick-carousel": "1.6.0",
+    "slick-carousel": "1.8.x"
     "whatwg-fetch": "^2.0.0"
   },
   "devDependencies": {
