@@ -1,7 +1,7 @@
 
 // Main page layout styles
 
-// Headers 
+// Headers
 
 .header {
   background: #8719cb;
@@ -283,7 +283,7 @@ section.why {
 // Home - How
 
 section.how {
-  background: url(../assets/img/home_separator_1.png) center top repeat-x transparent;
+  background: url(/img/home_separator_1.png) center top repeat-x transparent;
   background-size: 768px auto;
   padding-top: 110px !important;
 
@@ -309,7 +309,7 @@ section.what {
     display: block;
     width: 100%;
     height: 120px;
-    background: url(../assets/img/home_separator_2.png) center top repeat-x #fff;
+    background: url(/img/home_separator_2.png) center top repeat-x #fff;
     background-size: 768px auto;
 
     @media (min-width: 768px) {
@@ -330,7 +330,7 @@ section.what {
 // Home - Open Source
 
 section.open {
-  background: url(../assets/img/home_separator_3.png) center top repeat-x transparent;
+  background: url(/img/home_separator_3.png) center top repeat-x transparent;
   background-size: 768px auto;
   padding-top: 110px !important;
   margin-bottom: -100px !important;
@@ -351,7 +351,7 @@ section.open {
     display: block;
     width: 100%;
     height: 120px;
-    background: url(../assets/img/home_separator_4.png) center top repeat-x #fff;
+    background: url(/img/home_separator_4.png) center top repeat-x #fff;
     background-size: 768px auto;
 
     @media (min-width: 768px) {
@@ -532,7 +532,7 @@ section.updates {
     display: block;
     width: 100%;
     height: 120px;
-    background: url(../assets/img/separator_5.png) center top repeat-x #fff;
+    background: url(/img/separator_5.png) center top repeat-x #fff;
     background-size: 768px auto;
 
     @media (min-width: 768px) {
@@ -544,7 +544,7 @@ section.updates {
 }
 
 section.projects {
-  background: url(../assets/img/separator_6.png) center top repeat-x transparent;
+  background: url(/img/separator_6.png) center top repeat-x transparent;
   padding-top: 200px !important;
 }
 
