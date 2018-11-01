@@ -13,7 +13,7 @@
     "start": "node_modules/.bin/termax server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors",
-    "svg-clean": "svgo --input=static/img/icons; svgo --input=static/img/icons/codepills; svgo --input=static/img/icons/projects"
+    "svg-clean": "svgo --input=static/img/icons;"
   },
   "repository": {
     "type": "git",
