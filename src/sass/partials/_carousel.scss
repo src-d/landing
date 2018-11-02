@@ -1,21 +1,41 @@
+$slick-arrow-size: 32px;
+$slick-arrow-hmargin: 15px;
+
 .slick-prev,
 .slick-next {
+    width: $slick-arrow-size;
+    height: $slick-arrow-size;
+    margin-top: -3px;
+
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
     &:before{
         content: '';
-        width: 32px;
-        height: 32px;
+        width: $slick-arrow-size;
+        height: $slick-arrow-size;
         display: inline-block;
         opacity: 1;
-        margin-top: -10px;
       }
 }
 
-.slick-prev:before {
-    background: url(/../img/icons/carousel-previous.svg);
-    margin-left: -32px;
-  }
+.slick-prev{
+    left: -$slick-arrow-size;
+    margin-left: -$slick-arrow-hmargin;
 
-.slick-next:before {
-    background: url(/../img/icons/carousel-next.svg);
-    margin-left: 10px;
+    &:before {
+        background: url(/../img/icons/carousel-previous.svg);
+        margin-left: 0px;
+    }
+}
+
+.slick-next{
+    right: -$slick-arrow-size;
+    margin-right: -$slick-arrow-hmargin;
+
+    &:before {
+        background: url(/../img/icons/carousel-next.svg);
+        margin-right: 0px;
+    }
 }
