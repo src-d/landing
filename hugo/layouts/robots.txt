@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /img/people/*
+Disallow: /img/team/*
