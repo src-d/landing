@@ -13,24 +13,21 @@
     "start": "node_modules/.bin/termax server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors",
-    "svg-clean": "svgo --input=static/img/icons; svgo --input=static/img/icons/codepills; svgo --input=static/img/icons/projects"
+    "svg-clean": "svgo --input=static/img/icons;"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/src-d/landing.git"
   },
   "dependencies": {
+    "bootstrap": "4.1.3",
     "es6-promise": "^4.0.5",
-    "highlight.js": "^9.11.0",
-    "lightbox2": "^2.9.0",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-markdown": "^2.5.0",
-    "slick-carousel": "1.6.0",
-    "whatwg-fetch": "^2.0.0"
+    "jquery": "~2.1.x",
+    "popper.js": "^1.14.4",
+    "slick-carousel": "1.8.x"
   },
   "devDependencies": {
-    "@tww/terminus-maximus": "^2.0.4",
+    "@tww/terminus-maximus": "2.x",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
