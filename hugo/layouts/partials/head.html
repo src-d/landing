@@ -1,20 +1,20 @@
-{{ $project := $.ctx.Site.Data.project }}
-{{ $projectBaseURL := default $.ctx.Site.BaseURL $project.baseURL }}
+{{ $ctx := $.ctx }}
+{{ $projectBaseURL := $ctx.Site.BaseURL }}
 
 <!DOCTYPE html>
-<html lang="{{ with $.ctx.Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<html lang="{{ with $ctx.Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 <head>
     <title>
-        {{ if ne $.ctx.Title $.ctx.Site.Title }}{{ $.ctx.Site.Title }} - {{ end }}{{ with $.ctx.Title }}{{ . }}{{ else }}{{ $.ctx.Site.Title }}{{ end }}
+        {{ if ne $ctx.Title $ctx.Site.Title }}{{ $ctx.Site.Title }} - {{ end }}{{ with $ctx.Title }}{{ . }}{{ else }}{{ $ctx.Site.Title }}{{ end }}
     </title>
-    <meta name="author" content="{{ with $.ctx.Params.author }}{{ . }}{{ else }}{{$.ctx.Site.Params.author}}{{ end }}">
-    <meta name="description" content="{{ with $.ctx.Params.description }}{{ . }}{{ else }}{{ $.ctx.Site.Params.description }}{{ end }}">
+    <meta name="author" content="{{ with $ctx.Params.author }}{{ . }}{{ else }}{{$ctx.Site.Params.author}}{{ end }}">
+    <meta name="description" content="{{ with $ctx.Params.description }}{{ . }}{{ else }}{{ $ctx.Site.Params.description }}{{ end }}">
 
     <base href="{{ $projectBaseURL | safeURL }}">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ $projectBaseURL }}/{{$.ctx.Site.Params.favicon}}">
-    <link rel="apple-touch-icon" type="image/x-icon" href="{{ $projectBaseURL }}/{{$.ctx.Site.Params.favicon96}}">
-    <link rel="icon" type="image/png" href="{{ $projectBaseURL }}/{{$.ctx.Site.Params.favicon96}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ $projectBaseURL }}/{{$ctx.Site.Params.favicon}}">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{{ $projectBaseURL }}/{{$ctx.Site.Params.favicon96}}">
+    <link rel="icon" type="image/png" href="{{ $projectBaseURL }}/{{$ctx.Site.Params.favicon96}}" />
 
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -34,11 +34,11 @@
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@sourcedtech" />
-    <meta name="twitter:title" content="{{$.ctx.Site.Params.author}}">
-    <meta name="twitter:description" content="{{ with $.ctx.Params.description }}{{ . }}{{ else }}{{ $.ctx.Site.Params.description }}{{ end }}">
-    <meta name="twitter:image" content="{{ $projectBaseURL }}/{{$.ctx.Site.Params.favicon96}}">
-    <meta name="og:site_name" content="{{$.ctx.Site.Params.author}}">
-    <meta name="og:title" content="{{$.ctx.Site.Params.author}}">
-    <meta name="og:description" content="{{ with $.ctx.Params.description }}{{ . }}{{ else }}{{ $.ctx.Site.Params.description }}{{ end }}">
-    <meta property="og:image" content="{{ $projectBaseURL }}/{{$.ctx.Site.Params.favicon96}}">
+    <meta name="twitter:title" content="{{$ctx.Site.Params.author}}">
+    <meta name="twitter:description" content="{{ with $ctx.Params.description }}{{ . }}{{ else }}{{ $ctx.Site.Params.description }}{{ end }}">
+    <meta name="twitter:image" content="{{ $projectBaseURL }}/{{$ctx.Site.Params.favicon96}}">
+    <meta name="og:site_name" content="{{$ctx.Site.Params.author}}">
+    <meta name="og:title" content="{{$ctx.Site.Params.author}}">
+    <meta name="og:description" content="{{ with $ctx.Params.description }}{{ . }}{{ else }}{{ $ctx.Site.Params.description }}{{ end }}">
+    <meta property="og:image" content="{{ $projectBaseURL }}/{{$ctx.Site.Params.favicon96}}">
 </head>

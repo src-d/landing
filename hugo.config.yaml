@@ -41,7 +41,6 @@ params:
     favicon: "img/logos/favicon.png"
     favicon96: "img/logos/favicon96.png"
     pgpLink: "https://keybase.io/sourced"
-    headerImageName: alan-turing
     social:
         twitter: "sourcedtech"
         github: "src-d"

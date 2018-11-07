@@ -1,15 +1,8 @@
-{{ $home := $.Site.Data.home.home }}
-{{ $examples := $.Site.Data.home.examples }}
-{{ $categories := $.Site.Data.categories }}
-{{ $headerCtx := dict "ctx" . }}
-{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
-{{ $heroCtx := dict "home" $home "slack" $.Site.Data.slack }}
-
 {{ $headCtx := dict "ctx" . }}
 {{ partial "head.html" $headCtx }}
 
 <body class="home-page">
-    {{ partial "header.html" $headerCtx }}
+    {{ partial "header.html" }}
 
     <div class="container">
         <h1 class="title text-left pt-5 pb-5">Machine Learning for Large Scale Code Analysis</h1>
@@ -22,6 +15,7 @@
                                 <div class="col-0 col-lg-2">
                                     <img src="img/header1.png" alt="" width="50" height="47">
                                 </div>
+
                                 <div class="col-12 col-lg-10">
                                     <h3 class="card-title">Code as Data</h3>
                                     <p class="card-text">Turn your code into actionable insights</p>
@@ -51,7 +45,7 @@
         </div>
     </div>
 </header>
- 
+
 <section class="news pt-3 pb-3">
     <div class="container">
         <h4 class="text-dark m-0"><span class="badge badge-warning">New</span><a href="https://blog.sourced.tech/post/announcing-pga/" style="    color: #000;
@@ -350,7 +344,7 @@
 
 {{ partial "try-sourced.html" }}
 
-{{ partial "footer.html" $footerCtx }}
+{{ partial "footer.html" }}
 </body>
 
 </html>
