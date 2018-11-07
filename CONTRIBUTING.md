@@ -12,11 +12,10 @@ this project follows the guidelines described below.
 
 # Architecture
 
-The landing contains 3 parts:
+The landing contains 2 parts:
 
 - The [static site](#static-site) itself: a webpack app,
-- a [Go API](#api) to serve the latest blog posts, job offers and proxy to slackin,
-- [Slackin](#slackin) to send invitations to our visitors to join our slack community.
+- a [Go API](#api) to serve the latest blog posts and job offers.
 
 In production, each part lives in a separated container.
 
@@ -42,16 +41,7 @@ The API serves (a cached version of):
 - the 3 latest blog posts tagged as `technical`, and the 3 latest blog posts tagged as `culture` for the home page,
 - all the opened positions at Lever,
 
-Handles the visitor requests to join our slack community, sending an slack invitation through [Slackin](#slackin)
-
 Its source code is under [`api` directory](api).
-
-
-## Slackin
-
-The slackin container listen for invitation requests made from the landing [api](#api).
-
-For [technical reasons](https://github.com/src-d/landing/issues/62#issuecomment-327194704), slackin container is built from the release [v0.13.1](https://github.com/rauchg/slackin/tree/0.13.1)
 
 
 # Development
@@ -127,7 +117,5 @@ envar | default *
 `ADDR` | `:8080`
 `FEED_BASE_URL` | `http://blog.sourced.tech/json/`
 `POSITIONS_BASE_URL` | `https://api.lever.co/v0/postings/sourced?mode=json`
-`SLACK_CHANNEL` |
-`SLACKIN_URL` | `http://slackin:3000/invite`
 
 &ast; The default values are defined by [api/config/config.go](https://github.com/src-d/landing/blob/master/api/config/config.go)

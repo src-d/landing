@@ -51,11 +51,3 @@ export function loadPositions() {
   const url = apiURL(POSITIONS_URL);
   return request(url).then(resp => resp);
 }
-
-export function inviteToSlack(endpoint, email) {
-  return fetch(apiURL(endpoint), {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email }),
-  });
-}

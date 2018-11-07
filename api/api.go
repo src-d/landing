@@ -49,7 +49,6 @@ func main() {
 			*ttl,
 			handlers.NewPositions(services.NewPositionsProvider(conf)).Get,
 		))
-		api.POST("/invite", handlers.SlackInvite(conf))
 	}
 
 	r.NoRoute(func(c *gin.Context) {
