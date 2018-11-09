@@ -1,0 +1,25 @@
+{{ range $member := $.members }}
+    <div class="col-sm-6 col-lg-3 mb-4">
+        <div class="card white">
+            <img class="w-100" src="img/team/{{ $member.picture }}" alt="{{ $member.name }}">
+            <div class="card-body">
+                {{ if $member.github | default false }}
+                    <a href="{{ $member.github }}" class="ic icon-git text-light"></a>
+                {{ else if $member.linkedin | default false }}
+                    <a href="{{ $member.githlinkedinub }}" class="ic icon-lin text-light"></a>
+                {{ end }}
+                {{ if $.useRoleAsHeading | default false }}
+                    <p class="card-intro text-medium mt-3 mb-2">{{ $member.position }}</p>
+                    <h4 class="text-dark title-line line-yellow">{{ $member.name}}</h4>
+                {{ else }}
+                    <h4 class="text-dark title-line line-yellow mt-3">{{ $member.name}}</h4>
+                {{ end }}
+                {{ if $.useRoleAsHeading | default false }}
+                    <span class="text-medium">{{ $.teamName }}</span>
+                {{ else }}
+                    <span class="text-medium">{{ $member.position }}</span>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+{{ end }}
