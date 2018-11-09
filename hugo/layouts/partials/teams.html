@@ -1,0 +1,23 @@
+{{ $sections := $.teams.sections }}
+
+<div class="row">
+    {{ range $i, $section := $sections }}
+        <div class="col-md-12">
+            {{ if eq $i 0 }}
+                <h3 class="title-line text-dark line-yellow">{{ $section.name }}</h3>
+            {{ else }}
+                <h3 class="title-line text-dark line-yellow mt-5">{{ $section.name }}</h3>
+            {{ end }}
+
+
+            <p class="mb-5">{{ $section.headline }}</p>
+        </div>
+        {{ if $section.subteams | default false }}
+            {{ range $subteam := $section.subteams }}
+                {{ partial "team.html" (dict "teamName" $subteam.name "members" $subteam.members "useRoleAsHeading" true ) }}
+            {{ end }}
+        {{ else }}
+            {{ partial "team.html" (dict "members" $section.members "useRoleAsHeading" false ) }}
+        {{ end }}
+    {{ end }}
+</div>
