@@ -129,6 +129,13 @@ a {
 
 .card-img-top {
     height: auto;
+
+    &.blog-post{
+        min-height: 120px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
 
 .highlight-cards {

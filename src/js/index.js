@@ -1,4 +1,6 @@
 /* eslint-env browser */
+import { polyfill } from 'es6-promise';
+import 'isomorphic-fetch';
 
 import $ from 'jquery';
 
@@ -9,6 +11,10 @@ import 'slick-carousel';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
+import { loadPosts, loadPositions } from './services/api';
+import { render, filters } from './services/templating';
+
+polyfill();
 
 $(document).ready(function(){
     $('.trust-cases').slick({
@@ -77,3 +83,36 @@ $('body').on('click', 'a', function (e) {
         scrollTop: $(url.hash).offset().top - headerHeight
     }, 'slow');
 });
+
+function loadBlogContent(containerId) {
+  loadPosts('all')
+    .then(posts => {
+      const blogData = {
+        main: posts[0],
+        posts: posts.slice(1, 3),
+        ellipsis35: filters.ellipsis(35),
+        ellipsis70: filters.ellipsis(70),
+      };
+
+      render(containerId, blogData);
+    });
+}
+
+function loadPositionsContent(containerId) {
+  loadPositions()
+    .then(positions => {
+      positions.rmHyphen = filters.clean(/\s+-\s+/g, ' ');
+      render(containerId, positions)
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  runIfElementExists('blog-container', loadBlogContent);
+  runIfElementExists('positions-container', loadPositionsContent);
+});
+
+function runIfElementExists(elementId, callback) {
+  if (document.getElementById(elementId)) {
+    callback(elementId);
+  }
+}
