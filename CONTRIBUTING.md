@@ -96,7 +96,7 @@ It runs everything you need to get the site working at [http://localhost:8081](h
 
 Alternatively, you can start hugo, the api-server and webpack in a "three window mode", just running:
 ```shell
-make js-dependencies
+make project-dependencies
 LANDING_URL=//localhost PORT=8081 yarn start
 ```
 With this command, each window runs a command, that can be also ran by you in case you need to control the output of each command or in any other special case:
