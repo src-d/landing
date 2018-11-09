@@ -4,8 +4,79 @@ workspace:
 
 branches: [master, staging, release/*]
 
-pipeline:
+# ANCHORS
 
+test_when: &test_when
+  when:
+    event: [pull_request]
+
+deploy_production_when: &deploy_production_when
+  when:
+    event: [tag]
+
+deploy_staging_when: &deploy_staging_when
+  when:
+    branch: [staging]
+    event: [push]
+
+deploy_production_tag_name: &deploy_production_tag_name
+  tag: '${DRONE_TAG}'
+
+deploy_staging_tag_name: &deploy_staging_tag_name
+  # workaround for bug https://github.com/kubernetes/helm/issues/1707
+  tag: 'commit-${DRONE_COMMIT_SHA:0:7}'
+
+build: &build
+  image: golang:1.8
+  debug: true
+  commands:
+    - apt-get update
+    - apt-get install -y make bash curl git
+    - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+    - . ~/.nvm/nvm.sh
+    - nvm install 8
+    - nvm use 8
+    - npm install -g yarn
+    - npm rebuild node-sass
+    - go get -v -t ./...
+    - make build
+    - make packages
+
+docker_image_base: &docker_image_base
+  group: docker
+  image: plugins/docker
+  registry: quay.io
+  secrets: [ docker_username, docker_password ]
+  debug: true
+
+docker_image_landing: &docker_image_landing
+  <<: *docker_image_base
+  repo: quay.io/srcd/landing
+  dockerfile: Dockerfile
+
+docker_image_api: &docker_image_api
+  <<: *docker_image_base
+  repo: quay.io/srcd/landing-api
+  dockerfile: Dockerfile.api
+
+
+docker_image_slackin: &docker_image_slackin
+  <<: *docker_image_base
+  repo: quay.io/srcd/landing-slackin
+  dockerfile: Dockerfile.slackin
+
+helm_deploy: &helm_deploy
+  image: quay.io/ipedrazas/drone-helm
+  skip_tls_verify: true
+  chart: ./helm-charts/landing
+  release: landing
+  tiller_ns: kube-system
+  wait: true
+
+
+# PIPELINE STEPS
+
+pipeline:
   clone:
     image: plugins/git
     debug: true
@@ -14,175 +85,71 @@ pipeline:
   # build on pull requests
 
   build:
-    image: golang:1.8
+    <<: *build
+    <<: *test_when
     environment:
       - LANDING_URL="//sourced.tech"
-    commands:
-      - apt-get update
-      - apt-get install -y make bash curl git
-      - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
-      - . ~/.nvm/nvm.sh
-      - nvm install 8
-      - nvm use 8
-      - npm install -g yarn
-      - npm rebuild node-sass
-      - go get -v -t ./...
-      - make build
-      - make packages
-    debug: true
-    when:
-      event: [pull_request]
 
 
   # deployment to staging environment
 
   build_stg:
-    image: golang:1.8
+    <<: *build
+    <<: *deploy_staging_when
     environment:
       - LANDING_URL="//landing-staging.srcd.run"
-    commands:
-      - apt-get update
-      - apt-get install -y make bash curl git
-      - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
-      - . ~/.nvm/nvm.sh
-      - nvm install 8
-      - nvm use 8
-      - npm install -g yarn
-      - npm rebuild node-sass
-      - go get -v -t ./...
-      - make build
-      - make packages
-    debug: true
-    when:
-      branch: [staging]
-      event: [push]
 
   docker_landing_stg:
-    group: docker
-    image: plugins/docker
-    registry: quay.io
-    repo: quay.io/srcd/landing
-    secrets: [ docker_username, docker_password ]
-    # workaround for bug https://github.com/kubernetes/helm/issues/1707
-    tag: 'commit-${DRONE_COMMIT_SHA:0:7}'
-    dockerfile: Dockerfile
-    debug: true
-    when:
-      branch: [staging]
-      event: [push]
+    <<: *docker_image_landing
+    <<: *deploy_staging_tag_name
+    <<: *deploy_staging_when
 
   docker_api_stg:
-    group: docker
-    image: plugins/docker
-    registry: quay.io
-    repo: quay.io/srcd/landing-api
-    secrets: [ docker_username, docker_password ]
-    # workaround for bug https://github.com/kubernetes/helm/issues/1707
-    tag: 'commit-${DRONE_COMMIT_SHA:0:7}'
-    dockerfile: Dockerfile.api
-    debug: true
-    when:
-      branch: [staging]
-      event: [push]
+    <<: *docker_image_api
+    <<: *deploy_staging_tag_name
+    <<: *deploy_staging_when
 
   docker_slackin_stg:
-    group: docker
-    image: plugins/docker
-    registry: quay.io
-    repo: quay.io/srcd/landing-slackin
-    secrets: [ docker_username, docker_password ]
-    # workaround for bug https://github.com/kubernetes/helm/issues/1707
-    tag: 'commit-${DRONE_COMMIT_SHA:0:7}'
-    dockerfile: Dockerfile.slackin
-    debug: true
-    when:
-      branch: [staging]
-      event: [push]
+    <<: *docker_image_slackin
+    <<: *deploy_staging_tag_name
+    <<: *deploy_staging_when
 
   helm_deploy_stg:
-    image: quay.io/ipedrazas/drone-helm
-    skip_tls_verify: true
-    chart: ./helm-charts/landing
-    release: landing
+    <<: *helm_deploy
+    <<: *deploy_staging_when
     prefix: STG
     secrets: [ STG_API_SERVER, STG_KUBERNETES_TOKEN ]
     values_files: [ .helm-staging.yml ]
     values: image.tag=commit-${DRONE_COMMIT_SHA:0:7}
-    tiller_ns: kube-system
-    wait: true
-    when:
-      branch: [staging]
-      event: [push]
 
 
   # deployment to production environment
 
   build_prod:
-    image: golang:1.8
+    <<: *build
+    <<: *deploy_production_when
     environment:
       - LANDING_URL="//sourced.tech"
-    commands:
-      - apt-get update
-      - apt-get install -y make bash curl git
-      - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
-      - . ~/.nvm/nvm.sh
-      - nvm install 8
-      - nvm use 8
-      - npm install -g yarn
-      - npm rebuild node-sass
-      - go get -v -t ./...
-      - make build
-      - make packages
-    debug: true
-    when:
-      event: [tag]
 
   docker_landing_prod:
-    group: docker
-    image: plugins/docker
-    registry: quay.io
-    repo: quay.io/srcd/landing
-    secrets: [ docker_username, docker_password ]
-    tag: '${DRONE_TAG}'
-    dockerfile: Dockerfile
-    debug: true
-    when:
-      event: [tag]
+    <<: *docker_image_landing
+    <<: *deploy_production_tag_name
+    <<: *deploy_production_when
 
   docker_api_prod:
-    group: docker
-    image: plugins/docker
-    registry: quay.io
-    repo: quay.io/srcd/landing-api
-    secrets: [ docker_username, docker_password ]
-    tag: '${DRONE_TAG}'
-    dockerfile: Dockerfile.api
-    debug: true
-    when:
-      event: [tag]
+    <<: *docker_image_api
+    <<: *deploy_production_tag_name
+    <<: *deploy_production_when
 
   docker_slackin_prod:
-    group: docker
-    image: plugins/docker
-    registry: quay.io
-    repo: quay.io/srcd/landing-slackin
-    secrets: [ docker_username, docker_password ]
-    tag: '${DRONE_TAG}'
-    dockerfile: Dockerfile.slackin
-    debug: true
-    when:
-      event: [tag]
+    <<: *docker_image_slackin
+    <<: *deploy_production_tag_name
+    <<: *deploy_production_when
 
   helm_deploy_prod:
-    image: quay.io/ipedrazas/drone-helm
-    skip_tls_verify: true
-    chart: ./helm-charts/landing
-    release: landing
+    <<: *helm_deploy
+    <<: *deploy_production_when
     prefix: PROD
     secrets: [ PROD_API_SERVER, PROD_KUBERNETES_TOKEN ]
     values_files: [ .helm-production.yml ]
     values: image.tag=${DRONE_TAG}
-    tiller_ns: kube-system
-    wait: true
-    when:
-      event: [tag]

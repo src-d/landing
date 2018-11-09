@@ -1,17 +1,8 @@
-{{ $projects := $.Site.Data.projects }}
-{{ $headerCtx := dict "ctx" . "secondary_nav" "projects/nav.html" }}
-{{ $heroCtx := dict "ctx" . "data" $projects }}
-{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
-{{ $blog := $.Site.Data.blog }}
-{{ $slack := $.Site.Data.slack }}
-{{ $categories := $.Site.Data.categories }}
-{{ $projectsCtx := dict "slack" $slack "categories" $categories }}
-
 {{ $headCtx := dict "ctx" . }}
 {{ partial "head.html" $headCtx }}
 
 <body>
-    {{ partial "header.html" $headerCtx }}
+    {{ partial "header.html" }}
     <div class="pb-5">
             <br><br>
             <h1 class="title text-left p-0 mt-5 mb-4">Empower your Developers with source{d} Lookout for Assisted Code Review</h1>
@@ -98,6 +89,6 @@
 </section>
 
 {{ partial "try-sourced.html" }}
-{{ partial "footer.html" $footerCtx }}
+{{ partial "footer.html" }}
 </body>
 </html>

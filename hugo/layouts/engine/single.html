@@ -1,17 +1,8 @@
-{{ $projects := $.Site.Data.projects }}
-{{ $blog := $.Site.Data.blog }}
-{{ $slack := $.Site.Data.slack }}
-{{ $categories := $.Site.Data.categories }}
-{{ $projectsCtx := dict "slack" $slack "categories" $categories }}
-
-{{ $headerCtx := dict "ctx" . }}
-{{ $footerCtx := dict "ctx" . "include_slack" true "include_email" true }}
-
 {{ $headCtx := dict "ctx" . }}
 {{ partial "head.html" $headCtx }}
 
 <body>
-    {{ partial "header.html" $headerCtx }}
+    {{ partial "header.html" }}
     <div class="pb-5">
             <br><br>
             <h1 class="title text-left p-0 mt-5 mb-4">Turn your code into actionable insights with source{d} Engine</h1>
@@ -110,6 +101,6 @@
 </section>
 
 {{ partial "try-sourced.html" }}
-{{ partial "footer.html" $footerCtx }}
+{{ partial "footer.html" }}
 </body>
 </html>

@@ -1,30 +1,13 @@
-# Contributing Guidelines
+# Contribution Guidelines
 
-source{d} landing is copyrighted by source{d} and accepts
-contributions via GitHub pull requests. This document outlines some of the
-conventions on development workflow, commit message formatting, contact points,
-and other resources to make it easier to get your contribution accepted.
+As all source{d} projects, this project follows the
+[source{d} Contributing Guidelines](https://github.com/src-d/guide/blob/master/engineering/documents/CONTRIBUTING.md).
 
 
-## How to Contribute
+## Additional Contribution Guidelines
 
-Pull Requests (PRs) are the main and exclusive way to contribute to the project.
-In order for a PR to be accepted it needs to pass the personal evaluation of at least one of the [maintainers](MAINTAINERS).
-
-
-### Format of the commit message
-
-Every commit message should describe what was changed and, if applicable, the GitHub issue it relates to:
-
-```
-Skip argument validations for unknown capabilities. Fixes #623
-```
-
-The format can be described more formally as follows:
-
-```
-<what changed>. [Fixes #<issue-number>]
-```
+In addition to the [source{d} Contributing Guidelines](https://github.com/src-d/guide/blob/master/engineering/documents/CONTRIBUTING.md),
+this project follows the guidelines described below.
 
 
 # Architecture
@@ -73,7 +56,6 @@ For [technical reasons](https://github.com/src-d/landing/issues/62#issuecomment-
 
 # Development
 
-
 ## Requirements
 
 You should already have [Go installed](https://golang.org/doc/install#install), and properly [configured the $GOPATH](https://github.com/golang/go/wiki/SettingGOPATH)
@@ -114,7 +96,7 @@ It runs everything you need to get the site working at [http://localhost:8081](h
 
 Alternatively, you can start hugo, the api-server and webpack in a "three window mode", just running:
 ```shell
-make js-dependencies
+make project-dependencies
 LANDING_URL=//localhost PORT=8081 yarn start
 ```
 With this command, each window runs a command, that can be also ran by you in case you need to control the output of each command or in any other special case:
