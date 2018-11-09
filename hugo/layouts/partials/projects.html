@@ -1,0 +1,27 @@
+{{ $sections := $.projects.sections }}
+
+{{ range $sectionSlug := $sections.order }}
+    {{ $section := index $sections.collection $sectionSlug }}
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="title-line text-dark line-yellow mt-5">{{ $section.title }}</h3>
+        </div>
+
+        {{ range $section.projects }}
+            {{ $context := dict "title" .name "icon" .logo "content" .desc "link" .url  }}
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card text-white green">
+                    <a class="card-link" href="{{ .url }}">
+                        <div class="card-body">
+                            <i class="ic icon-git text-white"></i>
+                            <p class="card-intro mb-0">{{ $section.name }}</p>
+                            <h4 class="m-0">{{ .name }}</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+{{ end }}
