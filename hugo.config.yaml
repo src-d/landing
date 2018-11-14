@@ -45,11 +45,3 @@ params:
         twitter: "sourcedtech"
         github: "src-d"
         linkedin: "sourced"
-        slack:
-            orgName: "sourced-community"
-            channels:
-                languages: "babelfish"
-                datasets: "machine-learning"
-                models: "machine-learning"
-                science: "machine-learning"
-                general: "general"

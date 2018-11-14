@@ -59,12 +59,6 @@ docker_image_api: &docker_image_api
   repo: quay.io/srcd/landing-api
   dockerfile: Dockerfile.api
 
-
-docker_image_slackin: &docker_image_slackin
-  <<: *docker_image_base
-  repo: quay.io/srcd/landing-slackin
-  dockerfile: Dockerfile.slackin
-
 helm_deploy: &helm_deploy
   image: quay.io/ipedrazas/drone-helm
   skip_tls_verify: true
@@ -109,11 +103,6 @@ pipeline:
     <<: *deploy_staging_tag_name
     <<: *deploy_staging_when
 
-  docker_slackin_stg:
-    <<: *docker_image_slackin
-    <<: *deploy_staging_tag_name
-    <<: *deploy_staging_when
-
   helm_deploy_stg:
     <<: *helm_deploy
     <<: *deploy_staging_when
@@ -138,11 +127,6 @@ pipeline:
 
   docker_api_prod:
     <<: *docker_image_api
-    <<: *deploy_production_tag_name
-    <<: *deploy_production_when
-
-  docker_slackin_prod:
-    <<: *docker_image_slackin
     <<: *deploy_production_tag_name
     <<: *deploy_production_when
 

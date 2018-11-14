@@ -12,7 +12,6 @@ All parameters under `settings` in [values.yaml](/landing/values.yaml) must be p
 
 ```
 helm install -n <release-name> <chart path> --set "\
-image.landingSlackin.slackApiToken=TOKEN\
 ingress.hosts={srcd.run,www.srcd.run},\
 ingress.globalStaticIpName=landing-srcd-run,\
 image.tag=your-favourite.tag\

@@ -14,10 +14,6 @@ spec:
       targetPort: {{ .Values.service.landing.internalPort }}
       protocol: TCP
       name: {{ .Values.service.landing.name }}
-    - port: {{ .Values.service.landingSlackin.externalPort }}
-      targetPort: {{ .Values.service.landingSlackin.internalPort }}
-      protocol: TCP
-      name: {{ .Values.service.landingSlackin.name }}
     - port: {{ .Values.service.landingApi.externalPort }}
       targetPort: {{ .Values.service.landingApi.internalPort }}
       protocol: TCP

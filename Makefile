@@ -8,7 +8,7 @@ CODECOV_TOKEN ?=
 DESTINATION ?= public
 LANDING_URL ?= //sourced.tech
 PORT ?= 80
-DOCKERFILES = Dockerfile:landing Dockerfile.api:landing-api Dockerfile.slackin:landing-slackin
+DOCKERFILES = Dockerfile:landing Dockerfile.api:landing-api
 
 HUGO_VERSION := 0.21
 OS := Linux
