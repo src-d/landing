@@ -32,13 +32,20 @@
     ga('send', 'pageview');
     </script>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@sourcedtech" />
-    <meta name="twitter:title" content="{{$ctx.Site.Params.author}}">
-    <meta name="twitter:description" content="{{ with $ctx.Params.description }}{{ . }}{{ else }}{{ $ctx.Site.Params.description }}{{ end }}">
-    <meta name="twitter:image" content="{{ $projectBaseURL }}/{{$ctx.Site.Params.favicon96}}">
-    <meta name="og:site_name" content="{{$ctx.Site.Params.author}}">
-    <meta name="og:title" content="{{$ctx.Site.Params.author}}">
-    <meta name="og:description" content="{{ with $ctx.Params.description }}{{ . }}{{ else }}{{ $ctx.Site.Params.description }}{{ end }}">
-    <meta property="og:image" content="{{ $projectBaseURL }}/{{$ctx.Site.Params.favicon96}}">
+    {{ $url := printf "%s%s" "https:" (absURL $ctx.URL)  }}
+    {{ $title := $ctx.Title | default $ctx.Site.Params.author }}
+    {{ $description := $ctx.Params.socialdescription | default  $ctx.Site.Params.description }}
+    {{ $image := printf "%s%s" "https:" (absURL ($ctx.Params.socialimage | default $ctx.Site.Params.socialimage)) }}
+    {{ $isLargeImage := $ctx.Params.socialislargeimage | default false }}
+    {{ $site := $ctx.Site.Params.author }}
+    {{ $twitterHandler := $ctx.Site.Params.social.twitter }}
+    <meta property="og:url" content="{{ $url }}" />
+    <meta property="og:title" content="{{ $title }}" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta property="og:image" content="{{ $image }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ $site }}" />
+    <meta name="twitter:card" content="{{ if $isLargeImage }}summary_large_image{{ else }}summary{{ end }}">
+    <meta name="twitter:site" content="@{{ $twitterHandler }}" />
+    <meta name="twitter:creator" content="@{{ $twitterHandler }}" />
 </head>
