@@ -20,7 +20,7 @@
                     )"></div>
                 <div class="card-body">
                     <h5 class="card-title text-dark">
-                        [[#ellipsis35]][[description]][[/ellipsis35]]
+                        [[#ellipsis35]][[title]][[/ellipsis35]]
                     </h5>
                     <p class="card-text">[[#ellipsis70]][[description]][[/ellipsis70]]</p>
                     <span class="author">[[author]]</span>
