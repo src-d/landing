@@ -34,6 +34,30 @@ Its source code is under:
 - [`src` directory](src): for `js` and `sass` code,
 - [`static/img` directory](static/img): for site images,
 
+## External Dependents
+
+There are some external applications loading resources from http://sourced.tech/ so they should be preserved between different landing versions or considered as cross-project issues.
+
+### Salesforce Pardot Landing Pages 
+
+- [source{d} Engine Product Demo Sign-Up](http://go.sourced.tech/engine)
+- [source{d} Lookout Product Demo Sign-Up](http://go.sourced.tech/lookout)
+- [source{d} Contact Us](http://go.sourced.tech/contact)
+	
+#### Dependent Files
+
+- `https://sourced.tech/css/bundle.css`
+- `https://sourced.tech/js/bundle.js`
+- `https://sourced.tech/img/home_separator_3.png`
+- `https://sourced.tech/img/logo_footer.svg`
+- `https://sourced.tech/img/logos/favicon.png`
+
+#### Linked pages
+- `https://sourced.tech/engine`
+- `https://sourced.tech/lookout`
+- `https://sourced.tech/open-source`
+- `https://sourced.tech/community`
+- `https://sourced.tech/company`
 
 ## API
 
