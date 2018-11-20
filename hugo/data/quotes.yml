@@ -1,0 +1,45 @@
+# The images for people and companies MUST follow these specifications:
+# - they MUST be stored under "static/quotes/" directory,
+# - PEOPLE:
+#  - it SHOULD be a PNG image,
+#  - the image will be shown in a 128x128 rectangle,
+#  - the image of the quoted person MUST be contained in a circle,
+#  - the background MUST be transparent;
+# - COMPANY:
+#  - it SHOULD be a SVG image,
+#  - the image will be shown in a 128x27 rectangle,
+#  - the background MUST be transparent;
+
+quotes:
+  - person:
+      name: Jessie Frazelle
+      picture: jessie.png
+      role: Software Engineer at Microsoft
+    company:
+      name: Microsoft
+      picture: microsoft.svg
+    text: source{d} is not only a great open source citizen with projects like gitbase and their collection of research papers on machine learning for code. They have the expertise and user experience skills to make something that will be truly revolutionary to the way developers interact with code.
+  - person:
+      name: Arnaud Porterie
+      picture: arnaud.png
+      role: VP of Engineering at Vente Privée
+    company:
+      name: Vente Privée
+      picture: vente-privee.svg
+    text: source{d} Engine and Lookout are key building blocks for an entire new generation of developer tools, spanning from the individual developer experience to high-level code analytics dashboards, and I can't wait to see what this will bring us.
+  - person:
+      name: Jérôme Petazzoni
+      picture: jerome.png
+      role: Software Engineer at Docker
+    company:
+      name: Docker
+      picture: docker.svg
+    text: The folks at source{d} are doing neat deep learning on source code history; and, of course, it's in Docker containers🐳.
+  - person:
+      name: Joseph Jacks
+      picture: joseph.png
+      role: Founder & General Partner at OSS Capital
+    company:
+      name: OSS Capital
+      picture: ossc.svg
+    text: Combining code retrieval, language agnostic and git history tools with familiar APIs parsing, source{d} Engine not only simplifies large scale code analysis but also lays the foundation for effective Machine Learning on Code.

@@ -1,0 +1,22 @@
+
+<div class="trust-cases col-sm-10 offset-sm-1">
+    {{ range $quote := $.quotes.quotes }}
+        <div>
+            <div class="trust-case p-5">
+                <div class="row">
+                    <div class="col-lg-3 text-center">
+                        <img src="img/quotes/{{ $quote.person.picture }}" alt="{{ $quote.person.name }}"
+                            width="128" height="128" class="mb-3"/>
+                        <img src="img/quotes/{{ $quote.company.picture }}" alt="{{ $quote.company.name }}"
+                            width="128" height="27">
+                    </div>
+                    <div class="col-lg-9">
+                        <h3 class="text-dark mt-5 mt-sm-0">{{ $quote.person.name }}
+                        <span>{{ $quote.person.role }}</span></h3>
+                        <p>{{ $quote.text }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{ end }}
+</div>
