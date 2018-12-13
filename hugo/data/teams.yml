@@ -1,3 +1,8 @@
+# SORT BY
+#  .teamName ASC, .
+#  .seniority DESC,
+#  .name ASC
+
 sections:
   - name: Engineering
     headline: The core of everything we do, from the beginning to the end; writing great software
@@ -52,10 +57,14 @@ sections:
           name: Rafael Porres
           position: Lead DevOps Engineer
           github: https://github.com/rporres
+        - picture: placeholder/male.png
+          name: David Riosalido
+          position: Senior DevOps Engineer
+          github: https://github.com/driosalido
         - picture: maartje.png
           name: Maartje Eyskens
-          position: Software Engineer
-          github: https://github.com/
+          position: DevOps Engineer
+          github: https://github.com/meyskens
 
       - name: Language Analysis Team
         members:
@@ -115,10 +124,6 @@ sections:
         name: Fernanda Gomes
         position: Data Intelligence Analyst
         github: https://github.com/gomesfernanda
-      - picture: alicia.png
-        name: Alicia Kozlowski
-        position: Intern Product Designer
-        linkedin: https://www.linkedin.com/in/alicia-kozlowski/
 
 
   - name: Developer Relations
