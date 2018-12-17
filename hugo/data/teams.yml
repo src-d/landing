@@ -37,6 +37,10 @@ sections:
           name: David Pordomingo
           position: Software Engineer
           github: https://github.com/dpordomingo
+        - picture: placeholder/male.png
+          name: Lou Marvin Caraig
+          position: Software Engineer
+          github: https://github.com/se7entyse7en
 
       - name: Data Retrieval Team
         members:
