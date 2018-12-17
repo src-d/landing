@@ -7,7 +7,7 @@
 # new hires will have a default picture till they have one; to choose between:
 # - `placeholder/male.png`
 # - `placeholder/female.png`
-# 
+#
 # Every person has a link to their social network using the `github` or `linkedin` key (only one)
 # - Engineers MUST use their `github` url (personal or professional one; whatever they'll use at source{d}),
 # - Non engineers CAN use either `linkedin` or `github`
@@ -67,8 +67,7 @@ sections:
           name: Rafael Porres
           position: Lead DevOps Engineer
           github: https://github.com/rporres
-        - picture: 
-        holder/male.png
+        - picture: holder/male.png
           name: David Riosalido
           position: Senior DevOps Engineer
           github: https://github.com/driosalido
