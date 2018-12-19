@@ -37,7 +37,7 @@ sections:
           name: David Pordomingo
           position: Software Engineer
           github: https://github.com/dpordomingo
-        - picture: placeholder/male.png
+        - picture: marvin.png
           name: Lou Marvin Caraig
           position: Software Engineer
           github: https://github.com/se7entyse7en
@@ -71,7 +71,7 @@ sections:
           name: Rafael Porres
           position: Lead DevOps Engineer
           github: https://github.com/rporres
-        - picture: placeholder/male.png
+        - picture: david-riosalido.png
           name: David Riosalido
           position: Senior DevOps Engineer
           github: https://github.com/driosalido
