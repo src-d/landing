@@ -1,6 +1,6 @@
-# Landing [![Build Status](https://drone.srcd.host/api/badges/src-d/landing/status.svg)](https://drone.srcd.host/src-d/landing)
-
 ![source{d} logo](.github/logo-blue.png?raw=true)
+
+# Landing [![Build Status](https://drone.srcd.host/api/badges/src-d/landing/status.svg)](https://drone.srcd.host/src-d/landing)
 
 This repository contains the sources of the [source{d}](https://sourced.tech) Landing and its API.
 
