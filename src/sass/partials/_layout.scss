@@ -115,27 +115,40 @@
   }
 
   .navbar {
-    min-height: 54px;
+    min-height: 60px;
     transition: background-color 0.5s;
+
+    @media (min-width: 768px) {
+      height: 68px;
+    }
 
     .navbar-toggler {
       position: absolute;
       right: 15px;
-      top: 7px;
+      top: 10px;
     }
 
     .navbar-brand {
       position: absolute;
       left: 15px;
-      top: 0;
-      width: 167px;
-      height: 39px;
+      top: 10px;
+      width: 144px;
+      height: 34px;
+
+      @media (max-width: 768px) {
+        top: 16px;
+      }
 
       img {
         position: absolute;
         left: 0;
-        top: 6px;
+        top: 0px;
         transition: opacity 0.5s;
+
+        @media (max-width: 767px) {
+          height: 30px;
+          width: 128px;
+        }
       }
 
       &-light {
@@ -451,17 +464,35 @@ section.updates {
 
 // Common - Full CTA
 
+// Common - Full CTA
+
 .full-cta {
-  background: #8419c9;
-  background: -moz-linear-gradient(-45deg, #8419c9 0%, #450e9e 100%);
-  background: -webkit-linear-gradient(-45deg, #8419c9 0%,#450e9e 100%);
-  background: linear-gradient(135deg, #8419c9 0%,#450e9e 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8419c9', endColorstr='#450e9e',GradientType=1 );
+  background: #490fa0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#490fa0), to(#5c12ad));
+  background: linear-gradient(to bottom, #490fa0 0%, #5c12ad 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#400d9a', endColorstr='#5c12ad',GradientType=0 );
+}
+
+// Common - Footer
+
+.footer-newsletter {
+  background: url(/img/home_separator_3.png) center top repeat-x transparent;
+  background-size: 768px auto;
+  padding-top: 75px !important;
+
+  @media (min-width: 768px) {
+    background-size: 1920px auto;
+    padding-top: 150px !important;
+  }
 }
 
 // Common - Footer
 
 .footer {
+
+  .footer-line {
+    border-top: 1px solid lighten($xdark-purple, 60%);
+  }
 
   ul {
     padding: 0;
@@ -470,15 +501,16 @@ section.updates {
       list-style: none;
 
       a {
-        color: #93A5E4;
+        color: $xdark-purple;
         display: inline-block;
         line-height: 2rem;
+        opacity: 0.9;
         text-decoration: none;
         font-weight: normal;
         transition: all 0.5s;
 
         &.footer-main {
-          color: #274BCA;
+          color: $xdark-purple;
           display: inline-block;
           font-family: $cerebri;
           margin-bottom: 1rem;
@@ -493,22 +525,23 @@ section.updates {
   }
 
   .footer-social {
-    border-top: 1px solid #C7D1F1;
+    border-top: 1px solid lighten($xdark-purple, 60%);
 
     .social-link {
-      color: #BDC8EE;
+      color: lighten($xdark-purple, 50%);
       font-size: 30px;
       margin-right: .75rem;
       text-decoration: none;
       transition: all 0.5s;
 
       &:hover {
-        color: darken(#BDC8EE, 4);
+        color: lighten($xdark-purple, 40%);
         text-decoration: none;
       }
     }
   }
 }
+
 
 
 // Product Page
