@@ -9,7 +9,7 @@ This repository contains the sources of the [source{d}](https://sourced.tech) La
 
 # Deployment
 
-This site is deployed in `production` and in `staging` following our [web application deployment workflow](https://github.com/src-d/guide/blob/master/engineering/continuous-delivery.md)
+This site is deployed in `production` and in `staging` following our [web application deployment workflow](https://github.com/src-d/guide/blob/master/engineering/continuous-delivery.md).
 
 
 # Contributing
@@ -19,7 +19,7 @@ Please take a look at [CONTRIBUTING](CONTRIBUTING.md) file to see how to contrib
 
 # Code of Conduct
 
-All activities under source{d} projects are governed by the [source{d} code of conduct](.github/CODE_OF_CONDUCT.md).
+All activities under source{d} projects are governed by the [source{d} code of conduct](.github/CODE_OF_CONDUCT.md),
 
 
 # License
