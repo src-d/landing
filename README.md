@@ -19,7 +19,7 @@ Please take a look at [CONTRIBUTING](CONTRIBUTING.md) file to see how to contrib
 
 # Code of Conduct
 
-All activities under source{d} projects are governed by the [source{d} code of conduct](.github/CODE_OF_CONDUCT.md),
+All activities under source{d} projects are governed by the [source{d} code of conduct](.github/CODE_OF_CONDUCT.md).
 
 
 # License
