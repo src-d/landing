@@ -234,3 +234,140 @@ ul.small-list {
         height: auto;
     }
 }
+
+// Pills Nav
+
+.pills-nav {
+
+    .nav-item a {
+        font-family: 'Cerebri Sans', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: normal;
+
+        color: $black;
+
+        &:active,
+        &.active,
+        &:hover {
+            color: $green;
+
+            &:after {
+                background: $green;
+                content: '';
+                display: block;
+                height: 4px;
+                margin: 0.5rem 0;
+                width: 64px;
+
+                @media (min-width: 992px) {
+                    margin: 0.5rem auto;
+                }
+            }
+        }
+    }
+}
+
+// Carousel
+
+@media (min-width: 768px) {
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+
+.carousel-item .card-body {
+    background-color: $white;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    min-height: 128px;
+
+    * {
+        font-weight: normal;
+        text-decoration: none;
+    }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    opacity: 1;
+    width: 32px;
+    display: block;
+    top: 50%;
+    height: 32px;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    opacity: 1;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.carousel-control-next-icon {
+    background-image: url(/../img/icons/carousel-next.svg);
+}
+
+.carousel-control-prev-icon {
+    background: url(/../img/icons/carousel-previous.svg);
+}

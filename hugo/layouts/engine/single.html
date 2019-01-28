@@ -72,6 +72,92 @@
                 </div>
             </div>
         <div class="row">
+            <ul class="nav pills-nav col-12 justify-content-center flex-column flex-lg-row">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Software Architecture</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#c-prod">Productivity</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Security and Compliance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Talent Management</a>
+                </li>
+            </ul>
+        </div>
+        <div id="engineCarousel" class="carousel slide mb-5" data-ride="carousel">
+            <div class="carousel-inner row m-0 py-4">
+                <div class="carousel-item col-md-4 active">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <a href="#" data-toggle="modal" data-target="#modalSoft1">
+                                <p class="card-intro text-green mb-2">Software Architecture</p>
+                                <h4 class="card-title text-dark">How many repositories our codebase has per programming language?</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <p class="card-intro text-green mb-2">Software Architecture</p>
+                            <h4 class="card-title text-dark">What were the largest files added to our codebase?</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <p class="card-intro text-green mb-2">Software Architecture</p>
+                            <h4 class="card-title text-dark">What projects have the most files?</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item col-md-4" id="c-prod">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <p class="card-intro text-green mb-2">Productivity</p>
+                            <h4 class="card-title text-dark">What of projects and files have 'to-dos' pending?</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <p class="card-intro text-green mb-2">Software Architecture</p>
+                            <h4 class="card-title text-dark">What were the largest files added to our codebase?</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <p class="card-intro text-green mb-2">Software Architecture</p>
+                            <h4 class="card-title text-dark">What were the largest files added to our codebase?</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <p class="card-intro text-green mb-2">Software Architecture</p>
+                            <h4 class="card-title text-dark">What were the largest files added to our codebase?</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#engineCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#engineCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="row">
             <div class="col-lg-9 mb-3 mb-lg-0 text-center text-lg-left">
                 <div class="card text-white green">
                     <div class="card-body p-5">
@@ -99,6 +185,24 @@
         </div>
     </div>
 </section>
+
+    <!-- Modal -->
+    <div class="modal modal-code fade" id="modalSoft1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-intro text-green mb-2">Software Architecture</p>
+                    <h4 class="modal-title text-black" id="exampleModalLabel">How many repositories our codebase has per programming language?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 {{ partial "try-sourced.html" }}
 {{ partial "footer.html" }}
