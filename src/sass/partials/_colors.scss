@@ -38,6 +38,10 @@ $light-border: #DBDBDB;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b491', endColorstr='#0174b0',GradientType=1 );
 }
 
+.flat-green {
+    background: $green;
+}
+
 .orange {
     background: #f15f5f;
     background: -moz-linear-gradient(45deg, #f15f5f 0%, #f89c30 100%);
