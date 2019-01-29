@@ -529,6 +529,56 @@ section.updates {
   }
 }
 
+.modal-code {
+
+  .modal-content {
+    background: #F5F9FB;
+
+    .modal-header {
+      border: none;
+
+      .modal-intro {
+        color: $green;
+        font-size: 1rem;
+        font-family: 'Cerebri Sans', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+        text-transform: uppercase;
+      }
+    }
+
+    .modal-body {
+      padding: 0 1rem;
+
+      pre {
+        margin: 0;
+      }
+    }
+  }
+
+  .hljs {
+    border: 1px solid #3083BD;
+    padding: 0 1rem;
+  }
+}
+
+// Product Modal Code Styling
+
+.hljs {
+  background: $white;
+  color: $black;
+}
+
+.hljs-keyword {
+  color: #720084;
+}
+
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  color: #0962B5;
+}
+
+.hljs-literal {
+  color: #D0021B;
+}
+
 // Open Source
 
 .licensing,
