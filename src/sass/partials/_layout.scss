@@ -560,6 +560,21 @@ section.updates {
   }
 }
 
+.icon-sq {
+  font-size: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(0,0,0,0.9)
+  }
+}
+
 // Open Source
 
 .licensing,
