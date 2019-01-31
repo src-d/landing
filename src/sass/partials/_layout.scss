@@ -531,6 +531,10 @@ section.updates {
 
 .engine-cards {
 
+  div[data-toggle="modal"] {
+    cursor: pointer;
+  }
+
   .card-body {
     background-color: $white;
     box-shadow: 0 0 10px rgba(0,0,0,.1);
