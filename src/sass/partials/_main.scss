@@ -11,8 +11,14 @@ a {
     text-decoration: underline;
 
     &:hover {
-        color: lighten($green, 3%);
+        opacity: 0.75;
     }
+}
+
+// Helpers
+
+.mw-150 {
+    max-width: 150px;
 }
 
 // Buttons
@@ -40,11 +46,16 @@ a {
     color: $white;
 
     &:hover {
-        background-color: #004437;
+        color: $white;
+        opacity: 0.9;
     }
 
     &-light {
         color: $green !important;
+
+        &:hover {
+            background-color: $medium-light;
+        }
     }
 }
 
