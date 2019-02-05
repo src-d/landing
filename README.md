@@ -14,7 +14,7 @@ This site is deployed in `production` and in `staging` following our [web applic
 
 # Contributing
 
-Please take a look at [CONTRIBUTING](CONTRIBUTING.md) file to see how to contribute in this project, get more information about the landing [architecture](CONTRIBUTING.md#Architecture) and how to launch it for [development](CONTRIBUTING.md#Development) purposes.
+Please take a look at [CONTRIBUTING](CONTRIBUTING.md) doc to see how to contribute in this project, get more information about the landing [architecture](CONTRIBUTING.md#Architecture) and how to launch it for [development](CONTRIBUTING.md#Development) purposes.
 
 
 # Code of Conduct
