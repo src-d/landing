@@ -575,6 +575,78 @@ section.updates {
   }
 }
 
+.engine-cards {
+
+  div[data-toggle="modal"] {
+    cursor: pointer;
+  }
+
+  .card-body {
+    background-color: $white;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    min-height: 202px;
+
+    @media (min-width: 1200px) {
+      min-height: 172px;
+    }
+
+    * {
+      font-weight: normal;
+      text-decoration: none;
+    }
+  }
+}
+
+.modal-code {
+
+  .modal-content {
+    background: #F5F9FB;
+
+    .modal-header {
+      border: none;
+
+      .modal-intro {
+        color: $green;
+        font-size: 1rem;
+        font-family: 'Cerebri Sans', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+        text-transform: uppercase;
+      }
+    }
+
+    .modal-body {
+      padding: 0 1rem;
+
+      pre {
+        margin: 0;
+      }
+    }
+  }
+
+  .hljs {
+    border: 1px solid #3083BD;
+    padding: 0 1rem;
+  }
+}
+
+// Product Modal Code Styling
+
+.hljs {
+  background: $white;
+  color: $black;
+}
+
+.hljs-keyword {
+  color: #720084;
+}
+
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  color: #0962B5;
+}
+
+.hljs-literal {
+  color: #D0021B;
+}
+
 // Open Source
 
 .licensing,

@@ -231,10 +231,25 @@ ul.small-list {
     }
 }
 
-.slick-arrow {
+//.slick-arrow {
+
+    //@media (max-width: 767px) {
+    //    display: none !important;
+    //}
+//}
+
+.slick-next {
 
     @media (max-width: 767px) {
-        display: none !important;
+        right:10px !important;
+    }
+}
+
+.slick-prev {
+
+    @media (max-width: 767px) {
+        left:10px !important;
+        z-index: 1;
     }
 }
 
@@ -243,5 +258,40 @@ ul.small-list {
     img {
         max-width: 100%;
         height: auto;
+    }
+}
+
+// Pills Nav
+
+.pills-nav {
+
+    .nav-item a {
+        font-family: 'Cerebri Sans', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: normal;
+
+        color: $black;
+
+        &:active,
+        &.active,
+        &:hover {
+            color: $green;
+
+            &:after {
+                background: $green;
+                content: '';
+                display: block;
+                height: 4px;
+                margin: 0.5rem 0;
+                width: 64px;
+
+                @media (min-width: 992px) {
+                    margin: 0.5rem auto;
+                }
+            }
+        }
     }
 }
