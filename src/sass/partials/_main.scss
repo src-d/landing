@@ -231,10 +231,25 @@ ul.small-list {
     }
 }
 
-.slick-arrow {
+//.slick-arrow {
+
+    //@media (max-width: 767px) {
+    //    display: none !important;
+    //}
+//}
+
+.slick-next {
 
     @media (max-width: 767px) {
-        display: none !important;
+        right:10px !important;
+    }
+}
+
+.slick-prev {
+
+    @media (max-width: 767px) {
+        left:10px !important;
+        z-index: 1;
     }
 }
 
