@@ -8,6 +8,7 @@ logs
 
 # builds
 .ci
+.idea
 .hugo
 Makefile.main
 public/*

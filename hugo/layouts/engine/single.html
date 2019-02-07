@@ -19,7 +19,7 @@
             <h2 class="text-dark mb-5">source{d} Engine</h2>
         </header>
         <div class="row text-dark mb-5">
-            <div class="col-sm-10 offset-md-1">
+            <div class="col-sm-12">
                 <p class="text-large mb-5">Engineering managers and maintainers of large code bases are starting to realize the potential of Code as Data or how source code can be treated as an analyzable dataset proving valuable information. Think Business Intelligence and processes optimization based on the source code engineers write, rather than adjacent metrics.</p>
                 <h3 class="title-line line-green">Code as Data Challenges</h3>
                 <ul class="small-list mb-5">
@@ -34,43 +34,220 @@
             </div>
         </div>
         <div class="row text-dark mb-5">
-                <div class="col-md-6 col-lg-3 text-center">
+                <div class="col-md-6">
                     <div class="card bg-transparent">
-                        <div class="card-body">
-                            <img class="mb-3" src="img/icons/code-retrieval.svg" height="140" width="140" alt="">
-                            <h4 class="title-line line-green">Code Retrieval</h4>
-                            <p>Retrieve and store the code history of your organization (including your open-source repositories) as a dataset.</p>
+                        <div class="card-body row">
+                            <div class="col-sm-3 col-md-12 col-lg-4">
+                                <img class="mb-3 img-fluid mw-150" src="img/icons/code-retrieval.svg" alt="">
+                            </div>
+                            <div class="col-sm-9 col-md-12 col-lg-8">
+                                <h4 class="title-line line-green">Code Retrieval</h4>
+                                <p>Retrieve and store the code history of your organization (including your open-source repositories) as a dataset.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center">
+                <div class="col-md-6">
                     <div class="card bg-transparent">
-                        <div class="card-body">
-                            <img class="mb-3" src="img/icons/language-agnostic-code-analysis.svg" height="140" width="140" alt="">
-                            <h4 class="title-line line-green">Language Agnostic Code Analysis</h4>
-                            <p>Automatically identify languages, parse source code, and extract the pieces that matter in a completely language-agnostic way.</p>
+                        <div class="card-body row">
+                            <div class="col-sm-3 col-md-12 col-lg-4">
+                                <img class="mb-3 img-fluid mw-150" src="img/icons/language-agnostic-code-analysis.svg" alt="">
+                            </div>
+                            <div class="col-sm-9 col-md-12 col-lg-8">
+                                <h4 class="title-line line-green">Language Agnostic Code Analysis</h4>
+                                <p>Automatically identify languages, parse source code, and extract the pieces that matter in a completely language-agnostic way.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center">
+                <div class="col-md-6">
                     <div class="card bg-transparent">
-                        <div class="card-body">
-                            <img class="mb-3" src="img/icons/history-analysis.svg" height="140" width="140" alt="">
-                            <h4 class="title-line line-green">History Analysis</h4>
-                            <p>Extract information from the evolution, commits, and metadata of your codebase and  generate detailed reports and insights.</p>
+                        <div class="card-body row">
+                            <div class="col-sm-3 col-md-12 col-lg-4">
+                                <img class="mb-3 img-fluid mw-150" src="img/icons/history-analysis.svg" alt="">
+                            </div>
+                            <div class="col-sm-9 col-md-12 col-lg-8">
+                                <h4 class="title-line line-green">History Analysis</h4>
+                                <p>Extract information from the evolution, commits, and metadata of your codebase and  generate detailed reports and insights.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 text-center">
+                <div class="col-md-6">
                     <div class="card bg-transparent">
-                        <div class="card-body">
-                            <img class="mb-3" src="img/icons/familiar-apis.svg" height="140" width="140" alt="">
-                            <h4 class="title-line line-green">Familiar APIs</h4>
-                            <p>Analyze your code through powerful friendly APIs, such as SQL, gRPC, REST, and various client libraries.</p>
+                        <div class="card-body row">
+                            <div class="col-sm-3 col-md-12 col-lg-4">
+                                <img class="mb-3 img-fluid mw-150" src="img/icons/familiar-apis.svg" alt="">
+                            </div>
+                            <div class="col-sm-9 col-md-12 col-lg-8">
+                                <h4 class="title-line line-green">Familiar APIs</h4>
+                                <p>Analyze your code through powerful friendly APIs, such as SQL, gRPC, REST, and various client libraries.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row text-dark">
+                <div class="col-sm-12 mb-4">
+                    <h3 class="title-line line-green">Have questions? Ask your codebase</h3>
+                    <p>With the source{d} Engine you can start getting answers to tough questions in a matter of minutes with simple SQL queries in your preferred interface. Connecting your data science, business intelligence and software development tools and pipelines takes you even further.</p>
+                </div>
+                <div class="col-sm-12">
+                    <div id="engineCarousel" class="mb-5">
+                    <div class="engine-cards row m-0 p-0">
+                        <div class="active">
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalSoft1">
+                                        <p class="card-intro text-green mb-2">Software Architecture</p>
+                                        <h4 class="card-title text-dark">How many repositories our codebase has per programming language?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalSoft2">
+                                        <p class="card-intro text-green mb-2">Software Architecture</p>
+                                        <h4 class="card-title text-dark">What were the largest files added to our codebase?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalSoft3">
+                                        <p class="card-intro text-green mb-2">Software Architecture</p>
+                                        <h4 class="card-title text-dark">What projects have the most files?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="c-prod">
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalProd1">
+                                        <p class="card-intro text-green mb-2">Productivity</p>
+                                        <h4 class="card-title text-dark">What of projects and files have 'to-dos' pending?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalProd2">
+                                        <p class="card-intro text-green mb-2">Productivity</p>
+                                        <h4 class="card-title text-dark">How many new projects do we start per year in our organization?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalProd3">
+                                        <p class="card-intro text-green mb-2">Productivity</p>
+                                        <h4 class="card-title text-dark">What projects have been inactive the longest?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalTale1">
+                                        <p class="card-intro text-green mb-2">Talent Management</p>
+                                        <h4 class="card-title text-dark">What are the most active developers in all our codebase?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalTale2">
+                                        <p class="card-intro text-green mb-2">Talent Management</p>
+                                        <h4 class="card-title text-dark">What are our top 50 projects with the most developers working on them?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalSecu1">
+                                        <p class="card-intro text-green mb-2">Security & Compliance</p>
+                                        <h4 class="card-title text-dark">How often do our developers contribute code using personal emails?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalSecu2">
+                                        <p class="card-intro text-green mb-2">Security & Compliance</p>
+                                        <h4 class="card-title text-dark">Did we ever license any of our projects as Apache license?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalSecu3">
+                                        <p class="card-intro text-green mb-2">Security & Compliance</p>
+                                        <h4 class="card-title text-dark">Are our security keys for certificates or applications exposed in our code?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card m-3 h-100">
+                                <div class="card-body p-4">
+                                    <div href="#" data-toggle="modal" data-target="#modalSecu4">
+                                        <p class="card-intro text-green mb-2">Security & Compliance</p>
+                                        <h4 class="card-title text-dark">What are the LICENSEs from our projects?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-dark mb-5">
+            <div class="col-sm-12 mb-4">
+                <h3 class="title-line line-green">Multiple interfaces</h3>
+                <p>The source{d} Engine supports different interfaces that adapt to different stages of development, workflows and business needs. Enjoy the flexibility to choose whether to work on our built-in interactive web interface, your favorite SQL client, command-line interface, programmatically, or a combination of these with ease.</p>
+            </div>
+            <div class="col-sm-12">
+                <div class="card white shadow-lg">
+                    <div class="card-body p-3">
+                        <a href="img/engine_screen.png">
+                            <span class="icon-sq icon-zoom-in"></span>
+                            <img class="img-fluid d-block d-sm-none" src="img/engine_ui_small.jpg" alt="source{d} Engine">
+                            <img class="img-fluid d-none d-sm-block" src="img/engine_screen.png" alt="source{d} Engine">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 mb-5">
+                <h3 class="title-line text-dark line-green">source{d} Engine in five minutes</h3>
+                <div class="card white shadow-lg">
+                    <div class="card-body p-3">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YLxvK027Npo" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-9 mb-3 mb-lg-0 text-center text-lg-left">
                 <div class="card text-white green">
@@ -99,6 +276,406 @@
         </div>
     </div>
 </section>
+
+    <!-- Modal Soft 1 -->
+    <div class="modal modal-code fade" id="modalSoft1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Software Architecture</p>
+                        <h4 class="modal-title text-dark">How many repositories our codebase has per programming language?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT
+    language,
+    COUNT(repository_id) AS repository_count
+FROM (
+    SELECT DISTINCT
+        language(t.tree_entry_name, b.blob_content) AS language,
+        r.repository_id
+    FROM
+        refs r
+        JOIN commits c ON r.commit_hash = c.commit_hash
+        JOIN commit_trees ct ON c.commit_hash = ct.commit_hash
+        JOIN tree_entries t ON ct.tree_hash = t.tree_hash
+        JOIN blobs b ON t.blob_hash = b.blob_hash
+    WHERE
+        r.ref_name REGEXP 'refs/heads/HEAD/.*' OR r.ref_name = 'HEAD'
+) AS q1
+GROUP BY language
+ORDER BY repository_count DESC;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Soft 2 -->
+    <div class="modal modal-code fade" id="modalSoft2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Software Architecture</p>
+                        <h4 class="modal-title text-dark">What were the largest files added to our codebase?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT repository_id, cf.file_path, f.blob_size
+FROM ref_commits r
+NATURAL JOIN commit_files cf
+NATURAL JOIN files f
+WHERE r.ref_name = 'HEAD'
+AND r.history_index = 0
+ORDER BY f.blob_size DESC
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Soft 3 -->
+    <div class="modal modal-code fade" id="modalSoft3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Software Architecture</p>
+                        <h4 class="modal-title text-dark">What projects have the most files?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT repository_id, num_files FROM (
+  SELECT COUNT(f.*) num_files, f.repository_id
+  FROM ref_commits r
+  NATURAL JOIN commit_files cf
+  NATURAL JOIN files f
+  WHERE r.ref_name = 'HEAD' GROUP BY f.repository_id
+) AS t
+ORDER BY num_files DESC
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Prod 1 -->
+    <div class="modal modal-code fade" id="modalProd1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Productivity</p>
+                        <h4 class="modal-title text-dark">What of projects and files have 'to-dos' pending?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT
+    ref_commits.repository_id, files.file_path, files.blob_content
+FROM
+    files
+NATURAL JOIN
+    commit_files
+NATURAL JOIN
+    ref_commits
+WHERE
+    ref_commits.ref_name = 'HEAD'
+    AND ref_commits.history_index = 0
+    AND is_binary(blob_content) = false
+    AND files.file_path NOT REGEXP '^vendor.*'
+    AND (
+        blob_content REGEXP '\\b(?i)(to do|to dos|todo|todos|to-do|to-dos|to_do|to_dos)\\b'
+    );
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Prod 2 -->
+    <div class="modal modal-code fade" id="modalProd2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Productivity</p>
+                        <h4 class="modal-title text-dark">How many new projects do we start per year in our organization?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT
+    year,
+    COUNT(q.commit_hash) AS project_count
+FROM (
+    SELECT DISTINCT
+        r.commit_hash,
+        YEAR(commit_author_when) AS year
+    FROM
+        refs r
+        NATURAL JOIN commits c
+    WHERE
+        r.ref_name REGEXP 'refs/heads/HEAD/*' OR r.ref_name = 'HEAD'
+    ) AS q
+GROUP BY year
+ORDER BY year DESC;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Prod 3 -->
+    <div class="modal modal-code fade" id="modalProd3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Productivity</p>
+                        <h4 class="modal-title text-dark">What projects have been inactive the longest?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT r.repository_id, commit_author_name, commit_author_when, commit_message
+FROM   refs r
+       NATURAL JOIN commits
+WHERE  r.ref_name = 'HEAD'
+ORDER BY commit_author_when
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tale 1-->
+    <div class="modal modal-code fade" id="modalTale1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Talent Management</p>
+                        <h4 class="modal-title text-dark">What are the most active developers in all our codebase?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT * FROM (
+  SELECT
+    commit_author_email as author,
+    count(*) as num_commits
+    FROM commits
+    GROUP BY commit_author_email
+) AS t
+ORDER BY num_commits DESC
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tale 2-->
+    <div class="modal modal-code fade" id="modalTale2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Talent Management</p>
+                        <h4 class="modal-title text-dark">What are our top 50 projects with the most developers working on them?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT repository_id, count(*) as contributor_count
+FROM (
+    SELECT DISTINCT repository_id, commit_author_email
+    FROM commits
+) AS q
+GROUP BY repository_id
+ORDER BY contributor_count DESC
+LIMIT 50;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Secu 1-->
+    <div class="modal modal-code fade" id="modalSecu1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Security & Compliance</p>
+                        <h4 class="modal-title text-dark">How often do our developers contribute code using personal emails?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT * FROM (
+  SELECT
+    commit_author_email as author,
+    count(*) as num_commits
+    FROM commits
+
+    GROUP BY commit_author_email
+) AS t
+WHERE author NOT REGEXP '@sourced.tech'
+ORDER BY num_commits DESC
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Secu 2-->
+    <div class="modal modal-code fade" id="modalSecu2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Security & Compliance</p>
+                        <h4 class="modal-title text-dark">Did we ever license any of our projects as Apache license?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT repository_id, blob_content
+FROM files
+WHERE file_path = 'LICENSE'
+AND blob_content REGEXP 'Apache License'
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Secu 3-->
+    <div class="modal modal-code fade" id="modalSecu3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Security & Compliance</p>
+                        <h4 class="modal-title text-dark">Are our security keys for certificates or applications exposed in our code?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+select
+    files.file_path, ref_commits.repository_id, files.blob_content
+FROM
+    files
+NATURAL JOIN
+    commit_files
+NATURAL JOIN
+    ref_commits
+WHERE
+    ref_commits.ref_name = 'HEAD'
+    AND ref_commits.history_index BETWEEN 0 AND 5
+    AND is_binary(blob_content) = false
+    AND files.file_path NOT REGEXP '^vendor.*'
+    AND (
+        blob_content REGEXP '(?i)facebook.*[\'\\"][0-9a-f]{32}[\'\\"]'
+        OR blob_content REGEXP '(?i)twitter.*[\'\\"][0-9a-zA-Z]{35,44}[\'\\"]'
+        OR blob_content REGEXP '(?i)github.*[\'\\"][0-9a-zA-Z]{35,40}[\'\\"]'
+        OR blob_content REGEXP 'AKIA[0-9A-Z]{16}'
+        OR blob_content REGEXP '(?i)heroku.*[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}'
+        OR blob_content REGEXP '.*-----BEGIN PRIVATE KEY-----.*'
+        OR blob_content REGEXP '.*-----BEGIN RSA PRIVATE KEY-----.*'
+        OR blob_content REGEXP '.*-----BEGIN DSA PRIVATE KEY-----.*'
+        OR blob_content REGEXP '.*-----BEGIN OPENSSH PRIVATE KEY-----.*'
+    );
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Secu 4-->
+    <div class="modal modal-code fade" id="modalSecu4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header pt-4 pb-0">
+                    <div>
+                        <p class="modal-intro text-green mb-0">Security & Compliance</p>
+                        <h4 class="modal-title text-dark">What are the LICENSEs from our projects?</h4>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>
+                        <code>
+SELECT blob_content FROM files WHERE file_path = 'LICENSE'
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {{ partial "try-sourced.html" }}
 {{ partial "footer.html" }}

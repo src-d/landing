@@ -58,6 +58,9 @@
 .icon-git:before {
   content: "\e90c";
 }
+.icon-zoom-in:before {
+  content: "\e987";
+}
 .icon-arrow-right2:before {
   content: "\ea3c";
 }
