@@ -26,6 +26,7 @@ $(document).ready(function(){
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
+        asNavFor: '.engine-nav',
         responsive: [
             {
                 breakpoint: 992,
@@ -41,6 +42,8 @@ $(document).ready(function(){
             }
         ]
     });
+
+    $('#slider_1').slick('slickGoTo', 1);
 });
 
 $('.dropdown')
