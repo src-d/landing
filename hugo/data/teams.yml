@@ -21,7 +21,7 @@ sections:
         members:
         - picture: santiago.png
           name: Santiago Mola
-          position: Head of architecture
+          position: VP of Engineering
           github: https://github.com/smola
       - name: Applications Team
         members:
@@ -35,7 +35,7 @@ sections:
           github: https://github.com/smacker
         - picture: david.png
           name: David Pordomingo
-          position: Software Engineer
+          position: Senior Software Engineer
           github: https://github.com/dpordomingo
         - picture: marvin.png
           name: Lou Marvin Caraig
@@ -44,25 +44,13 @@ sections:
 
       - name: Data Retrieval Team
         members:
-        - picture: antonio.png
-          name: Antonio Navarro
-          position: Lead Software Engineer
-          github: https://github.com/ajnavarro
         - picture: javi.png
           name: Javier Fontán
-          position: Senior Software Engineer
+          position: Lead Software Engineer
           github: https://github.com/jfontan
-        - picture: kuba.png
-          name: Kuba Podgórski
-          position: Senior Software Engineer
-          github: https://github.com/kuba--
-        - picture: miguel.png
-          name: Miguel Molina
-          position: Senior Software Engineer
-          github: https://github.com/erizocosmico
         - picture: manuel.png
           name: Manuel Carmona
-          position: Junior Software Engineer
+          position: Software Engineer
           github: https://github.com/mcarmonaa
 
       - name: Infrastructure Team
@@ -94,6 +82,21 @@ sections:
           name: Denys Smirnov
           position: Senior Software Engineer
           github: https://github.com/dennwc
+
+      - name: Data Processing Team
+        members:
+        - picture: antonio.png
+          name: Antonio Navarro
+          position: Lead Software Engineer
+          github: https://github.com/ajnavarro          
+        - picture: kuba.png
+          name: Kuba Podgórski
+          position: Senior Software Engineer
+          github: https://github.com/kuba--
+        - picture: miguel.png
+          name: Miguel Molina
+          position: Senior Software Engineer
+          github: https://github.com/erizocosmico
         - picture: juanjo.png
           name: Juanjo Álvarez
           position: Senior Software Engineer
@@ -115,13 +118,16 @@ sections:
           github: https://github.com/m09
         - picture: konstantin.png
           name: Konstantin Slavnov
-          position: Junior Software Engineer
+          position: Software Engineer
           github: https://github.com/zurk
         - picture: waren.png
           name: Waren Long
           position: Junior Software Engineer
           github: https://github.com/warenlg
-
+        - picture: placeholder/male.png
+          name: Jan Hůla 
+          position: Machine Learning Intern
+          github: https://github.com/Jan21
 
   - name: Product & Data Intelligence
     headline: Translating our vision into amazing products & making smarter decisions with hard data
