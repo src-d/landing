@@ -17,12 +17,6 @@ sections:
   - name: Engineering
     headline: The core of everything we do, from the beginning to the end; writing great software
     subteams:
-      - name:
-        members:
-        - picture: santiago.png
-          name: Santiago Mola
-          position: VP of Engineering
-          github: https://github.com/smola
       - name: Applications Team
         members:
         - picture: carlos.png
@@ -124,6 +118,10 @@ sections:
           name: Waren Long
           position: Junior Software Engineer
           github: https://github.com/warenlg
+        - picture: irina.png
+          name: Irina Khismatullina
+          position: Junior Software Engineer
+          github: https://github.com/irinakhismatullina
         - picture: placeholder/male.png
           name: Jan Hůla 
           position: Machine Learning Intern
@@ -187,3 +185,8 @@ sections:
         name: Francesc Campoy
         position: VP of Developer Relations
         github: https://github.com/campoy
+        - picture: santiago.png
+          name: Santiago Mola
+          position: VP of Engineering
+          github: https://github.com/smola
+
