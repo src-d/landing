@@ -160,11 +160,6 @@ sections:
         name: Esther García
         position: Office Manager
         linkedin: https://www.linkedin.com/in/esther-garc%C3%ADa-mart%C3%ADn-0331692b
-      - picture: anna.png
-        name: Anna Tsolakou
-        position: Talent Manager
-        github: https://github.com/tsolakoua
-
 
   - name: Management
     headline: Providing direction, the planning and the leadership to get there
