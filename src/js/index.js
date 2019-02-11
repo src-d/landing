@@ -22,11 +22,9 @@ $(document).ready(function(){
 
     $('.engine-cards').slick({
         dots: false,
-        infinite: true,
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
-        asNavFor: '.engine-nav',
         responsive: [
             {
                 breakpoint: 992,
@@ -43,7 +41,26 @@ $(document).ready(function(){
         ]
     });
 
-    $('#slider_1').slick('slickGoTo', 1);
+    $('.engine-nav li span').click(function(){
+        $('.engine-nav li span').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $("#slider_1").click(function(){
+      $( '.engine-cards' ).slick('slickGoTo', 0);
+    });
+
+    $("#slider_2").click(function(){
+      $( '.engine-cards' ).slick('slickGoTo', 3);
+    });
+
+    $("#slider_3").click(function(){
+      $( '.engine-cards' ).slick('slickGoTo', 6);
+    });
+
+    $("#slider_4").click(function(){
+      $( '.engine-cards' ).slick('slickGoTo', 8);
+    });
 });
 
 $('.dropdown')
