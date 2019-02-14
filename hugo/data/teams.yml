@@ -17,41 +17,35 @@ sections:
   - name: Engineering
     headline: The core of everything we do, from the beginning to the end; writing great software
     subteams:
-      - name:
-        members:
-        - picture: santiago.png
-          name: Santiago Mola
-          position: Head of architecture
-          github: https://github.com/smola
       - name: Applications Team
         members:
         - picture: carlos.png
           name: Carlos Martín
           position: Senior Software Engineer
           github: https://github.com/carlosms
+        - picture: david.png
+          name: David Pordomingo
+          position: Senior Software Engineer
+          github: https://github.com/dpordomingo
         - picture: maxim.png
           name: Maxim Sukharev
           position: Senior Software Engineer
           github: https://github.com/smacker
-        - picture: david.png
-          name: David Pordomingo
-          position: Software Engineer
-          github: https://github.com/dpordomingo
         - picture: marvin.png
           name: Lou Marvin Caraig
           position: Software Engineer
           github: https://github.com/se7entyse7en
 
-      - name: Data Retrieval Team
+      - name: Data Processing Team
         members:
         - picture: antonio.png
           name: Antonio Navarro
           position: Lead Software Engineer
           github: https://github.com/ajnavarro
-        - picture: javi.png
-          name: Javier Fontán
+        - picture: juanjo.png
+          name: Juanjo Álvarez
           position: Senior Software Engineer
-          github: https://github.com/jfontan
+          github: https://github.com/juanjux
         - picture: kuba.png
           name: Kuba Podgórski
           position: Senior Software Engineer
@@ -60,9 +54,16 @@ sections:
           name: Miguel Molina
           position: Senior Software Engineer
           github: https://github.com/erizocosmico
+
+      - name: Data Retrieval Team
+        members:
+        - picture: javi.png
+          name: Javier Fontán
+          position: Lead Software Engineer
+          github: https://github.com/jfontan
         - picture: manuel.png
           name: Manuel Carmona
-          position: Junior Software Engineer
+          position: Software Engineer
           github: https://github.com/mcarmonaa
 
       - name: Infrastructure Team
@@ -94,10 +95,6 @@ sections:
           name: Denys Smirnov
           position: Senior Software Engineer
           github: https://github.com/dennwc
-        - picture: juanjo.png
-          name: Juanjo Álvarez
-          position: Senior Software Engineer
-          github: https://github.com/juanjux
 
       - name: Machine Learning Team
         members:
@@ -115,13 +112,20 @@ sections:
           github: https://github.com/m09
         - picture: konstantin.png
           name: Konstantin Slavnov
-          position: Junior Software Engineer
+          position: Software Engineer
           github: https://github.com/zurk
         - picture: waren.png
           name: Waren Long
-          position: Junior Software Engineer
+          position: Software Engineer
           github: https://github.com/warenlg
-
+        - picture: irina.png
+          name: Irina Khismatullina
+          position: Junior Software Engineer
+          github: https://github.com/irinakhismatullina
+        - picture: placeholder/male.png
+          name: Jan Hůla
+          position: Machine Learning Intern
+          github: https://github.com/Jan21
 
   - name: Product & Data Intelligence
     headline: Translating our vision into amazing products & making smarter decisions with hard data
@@ -156,11 +160,6 @@ sections:
         name: Esther García
         position: Office Manager
         linkedin: https://www.linkedin.com/in/esther-garc%C3%ADa-mart%C3%ADn-0331692b
-      - picture: anna.png
-        name: Anna Tsolakou
-        position: Talent Manager
-        github: https://github.com/tsolakoua
-
 
   - name: Management
     headline: Providing direction, the planning and the leadership to get there
@@ -181,3 +180,7 @@ sections:
         name: Francesc Campoy
         position: VP of Developer Relations
         github: https://github.com/campoy
+      - picture: santiago.png
+        name: Santiago Mola
+        position: VP of Engineering
+        github: https://github.com/smola
