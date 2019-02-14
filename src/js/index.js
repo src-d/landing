@@ -41,26 +41,11 @@ $(document).ready(function(){
         ]
     });
 
-    $('.engine-nav li span').click(function(){
-        $('.engine-nav li span').removeClass('active');
-        $(this).addClass('active');
-    });
-
-    $("#slider_1").click(function(){
-      $( '.engine-cards' ).slick('slickGoTo', 0);
-    });
-
-    $("#slider_2").click(function(){
-      $( '.engine-cards' ).slick('slickGoTo', 3);
-    });
-
-    $("#slider_3").click(function(){
-      $( '.engine-cards' ).slick('slickGoTo', 6);
-    });
-
-    $("#slider_4").click(function(){
-      $( '.engine-cards' ).slick('slickGoTo', 8);
-    });
+    $(".engine-nav .nav-item").click(function(){
+      $('.engine-nav .nav-item span').removeClass('active');
+      $(this).children('span').addClass('active');
+      $('.engine-cards').slick('slickGoTo', $(this).data('slide'));
+  });
 });
 
 $('.dropdown')
