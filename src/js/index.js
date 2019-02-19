@@ -22,7 +22,6 @@ $(document).ready(function(){
 
     $('.engine-cards').slick({
         dots: false,
-        infinite: true,
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -41,6 +40,12 @@ $(document).ready(function(){
             }
         ]
     });
+
+    $(".engine-nav .nav-item").click(function(){
+      $('.engine-nav .nav-item span').removeClass('active');
+      $(this).children('span').addClass('active');
+      $('.engine-cards').slick('slickGoTo', $(this).data('slide'));
+  });
 });
 
 $('.dropdown')

@@ -265,7 +265,9 @@ ul.small-list {
 
 .pills-nav {
 
-    .nav-item a {
+    .nav-item a,
+    .nav-item span {
+        cursor: pointer;
         font-family: 'Cerebri Sans', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;;
         font-size: 1rem;
         line-height: 1.5;
