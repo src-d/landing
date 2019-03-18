@@ -112,16 +112,21 @@ $('body').on('click', 'a', function (e) {
 });
 
 function loadBlogContent(containerId) {
-  loadPosts('all')
+  const blogHost = 'blog.sourced.tech';
+  const blogKey = '842234e3cc759da920cb8244f3'
+  loadPosts(blogHost, blogKey)
     .then(posts => {
       const blogData = {
         main: posts[0],
         posts: posts.slice(1, 3),
         ellipsis35: filters.ellipsis(35),
         ellipsis70: filters.ellipsis(70),
+        ellipsis480: filters.ellipsis(480),
       };
 
       render(containerId, blogData);
+    }, () => {
+      console.error('error fetching posts');
     });
 }
 
