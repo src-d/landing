@@ -27,7 +27,7 @@ deploy_staging_tag_name: &deploy_staging_tag_name
   tag: 'commit-${DRONE_COMMIT_SHA:0:7}'
 
 build: &build
-  image: golang:1.8
+  image: golang:1.12
   debug: true
   commands:
     - apt-get update
