@@ -188,10 +188,6 @@ sections:
         name: Máximo Cuadros
         position: CTO
         github: https://github.com/mcuadros
-      - picture: francesc.png
-        name: Francesc Campoy
-        position: VP of Developer Relations
-        github: https://github.com/campoy
       - picture: santiago.png
         name: Santiago Mola
         position: VP of Engineering
