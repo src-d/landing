@@ -130,6 +130,10 @@ sections:
           name: Jan Hůla
           position: Machine Learning Intern
           github: https://github.com/Jan21
+        - picture: placeholder/male.png
+          name: Tristan Kalos
+          position: Machine Learning Intern
+          github: https://github.com/glimow
 
   - name: Product & Data Intelligence
     headline: Translating our vision into amazing products & making smarter decisions with hard data
