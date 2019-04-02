@@ -152,15 +152,6 @@ sections:
         github: https://github.com/gomesfernanda
 
 
-  - name: Developer Relations
-    headline: Bringing the community and source{d} close together
-    members:
-      - picture: placeholder/male.png
-        name: Victor Coisne
-        position: Head of Developer Community
-        linkedin: https://www.linkedin.com/in/victorcoisne
-
-
   - name: Operations
     headline: Taking care of the team at source{d}
     members:
@@ -172,6 +163,7 @@ sections:
         name: Esther García
         position: Office Manager
         linkedin: https://www.linkedin.com/in/esther-garc%C3%ADa-mart%C3%ADn-0331692b
+
 
   - name: Management
     headline: Providing direction, the planning and the leadership to get there
@@ -192,3 +184,7 @@ sections:
         name: Santiago Mola
         position: VP of Engineering
         github: https://github.com/smola
+      - picture: placeholder/male.png
+        name: Victor Coisne
+        position: VP of Marketing
+        linkedin: https://www.linkedin.com/in/victorcoisne
