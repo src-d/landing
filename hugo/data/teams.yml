@@ -152,6 +152,15 @@ sections:
         github: https://github.com/gomesfernanda
 
 
+  - name: Marketing
+    headline: Bringing the community and source{d} close together
+    members:
+      - picture: placeholder/male.png
+        name: Alex Dahlin
+        position: Marketing Intern
+        linkedin: https://www.linkedin.com/in/alexanderdahlin/
+
+
   - name: Operations
     headline: Taking care of the team at source{d}
     members:
