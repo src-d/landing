@@ -164,6 +164,10 @@ sections:
   - name: Operations
     headline: Taking care of the team at source{d}
     members:
+      - picture: placeholder/male.png
+        name: Robbie Blue
+        position: Talent Manager
+        linkedin: https://www.linkedin.com/in/robbie-blue-b3296068
       - picture: esther.png
         name: Esther García
         position: Office Manager
