@@ -124,3 +124,12 @@ section {
     }
   }
 }
+
+.product-lookout header img,
+.product-engine header img {
+
+  @media (max-width: 768px) {
+    margin-bottom: 32px;
+  }
+
+}
