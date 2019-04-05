@@ -59,6 +59,14 @@ There are some external applications loading resources from http://sourced.tech/
 - `https://sourced.tech/community`
 - `https://sourced.tech/company`
 
+### Ghost Blog Theme
+
+#### Dependent Files
+
+- source{d} Ghost Theme repo [docs directory](https://github.com/src-d/sourced.ghost.io/tree/master/docs/README.md) has the assets that are depentents on source{d} Landing.
+- source{d} Ghost Theme developmennt will soon have closer itegration with Landing as stated on the [Ghost Theme repo](https://github.com/src-d/sourced.ghost.io/tree/master/README.md).
+
+
 ## API
 
 The API serves (a cached version of):
