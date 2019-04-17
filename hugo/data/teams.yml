@@ -159,10 +159,7 @@ sections:
         name: Hassen Ali
         position: Head of Sales US
         linkedin: https://www.linkedin.com/in/hassali/
-      - picture: placeholder/male.png
-        name: Alex Dahlin
-        position: Marketing Intern
-        linkedin: https://www.linkedin.com/in/alexanderdahlin/
+
 
 
   - name: Operations
