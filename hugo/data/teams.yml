@@ -15,7 +15,7 @@
 
 sections:
   - name: Engineering
-    headline: The core of everything we do, from the beginning to the end; writing great software
+    headline: The core of everything we do, from the beginning to the end; writing great software.
     subteams:
       - name: Applications Team
         members:
@@ -110,6 +110,10 @@ sections:
           name: Hugo Mougard
           position: Senior Software Engineer
           github: https://github.com/m09
+        - picture: placeholder/male.png
+          name: Guillem Durán
+          position: Software Engineer
+          github: https://github.com/Guillemdb
         - picture: konstantin.png
           name: Konstantin Slavnov
           position: Software Engineer
@@ -126,9 +130,13 @@ sections:
           name: Jan Hůla
           position: Machine Learning Intern
           github: https://github.com/Jan21
+        - picture: placeholder/male.png
+          name: Tristan Kalos
+          position: Machine Learning Intern
+          github: https://github.com/glimow
 
   - name: Product & Data Intelligence
-    headline: Translating our vision into amazing products & making smarter decisions with hard data
+    headline: Translating our vision into amazing products & making smarter decisions with hard data.
     members:
       - picture: marcelo.png
         name: Marcelo Novaes
@@ -144,25 +152,31 @@ sections:
         github: https://github.com/gomesfernanda
 
 
-  - name: Developer Relations
-    headline: Bringing the community and source{d} close together
+  - name: Sales
+    headline: Revenue generation through strategic alliances with customers.
     members:
       - picture: placeholder/male.png
-        name: Victor Coisne
-        position: Head of Developer Community
-        linkedin: https://www.linkedin.com/in/victorcoisne
+        name: Hassen Ali
+        position: Head of Sales US
+        linkedin: https://www.linkedin.com/in/hassali/
+
 
 
   - name: Operations
-    headline: Taking care of the team at source{d}
+    headline: Taking care of the team at source{d}.
     members:
+      - picture: placeholder/male.png
+        name: Robbie Blue
+        position: Talent Manager
+        linkedin: https://www.linkedin.com/in/robbie-blue-b3296068
       - picture: esther.png
         name: Esther García
         position: Office Manager
         linkedin: https://www.linkedin.com/in/esther-garc%C3%ADa-mart%C3%ADn-0331692b
 
+
   - name: Management
-    headline: Providing direction, the planning and the leadership to get there
+    headline: Providing direction, the planning and the leadership to get there.
     members:
       - picture: eiso.png
         name: Eiso Kant
@@ -176,11 +190,11 @@ sections:
         name: Máximo Cuadros
         position: CTO
         github: https://github.com/mcuadros
-      - picture: francesc.png
-        name: Francesc Campoy
-        position: VP of Developer Relations
-        github: https://github.com/campoy
       - picture: santiago.png
         name: Santiago Mola
         position: VP of Engineering
         github: https://github.com/smola
+      - picture: placeholder/male.png
+        name: Victor Coisne
+        position: VP of Marketing
+        linkedin: https://www.linkedin.com/in/victorcoisne
