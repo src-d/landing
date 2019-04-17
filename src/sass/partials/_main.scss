@@ -297,3 +297,23 @@ ul.small-list {
         }
     }
 }
+
+// How it Works Diagram
+
+.how-it-works-desktop {
+
+    display: block;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.how-it-works-mobile {
+
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
