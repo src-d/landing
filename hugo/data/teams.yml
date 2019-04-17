@@ -15,7 +15,7 @@
 
 sections:
   - name: Engineering
-    headline: The core of everything we do, from the beginning to the end; writing great software
+    headline: The core of everything we do, from the beginning to the end; writing great software.
     subteams:
       - name: Applications Team
         members:
@@ -136,7 +136,7 @@ sections:
           github: https://github.com/glimow
 
   - name: Product & Data Intelligence
-    headline: Translating our vision into amazing products & making smarter decisions with hard data
+    headline: Translating our vision into amazing products & making smarter decisions with hard data.
     members:
       - picture: marcelo.png
         name: Marcelo Novaes
@@ -163,7 +163,7 @@ sections:
 
 
   - name: Operations
-    headline: Taking care of the team at source{d}
+    headline: Taking care of the team at source{d}.
     members:
       - picture: placeholder/male.png
         name: Robbie Blue
@@ -176,7 +176,7 @@ sections:
 
 
   - name: Management
-    headline: Providing direction, the planning and the leadership to get there
+    headline: Providing direction, the planning and the leadership to get there.
     members:
       - picture: eiso.png
         name: Eiso Kant
