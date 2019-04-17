@@ -152,9 +152,13 @@ sections:
         github: https://github.com/gomesfernanda
 
 
-  - name: Marketing
-    headline: Bringing the community and source{d} close together
+  - name: Sales
+    headline: Revenue generation through strategic alliances with customers.
     members:
+      - picture: placeholder/male.png
+        name: Hassen Ali
+        position: Head of Sales US
+        linkedin: https://www.linkedin.com/in/hassali/
       - picture: placeholder/male.png
         name: Alex Dahlin
         position: Marketing Intern
