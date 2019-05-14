@@ -541,6 +541,36 @@ section.updates {
 }
 
 
+// Why source{d} Page
+
+.circle {
+    border: 4px solid $yellow-border;
+    border-radius: 100%;
+    font-family: $cerebri;
+    line-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    width: 100px;
+
+    &.purple-text {
+      color: $purple;
+    }
+
+    &.white-text {
+      color: $white;
+    }
+
+    &.small-text {
+      font-size: 18px;
+    }
+
+    &.large-text {
+      font-size: 30px;
+    }
+}
+
+
 
 // Product Page
 
@@ -650,7 +680,8 @@ section.updates {
 // Open Source
 
 .licensing,
-.events {
+.events,
+.journey {
   background: #400d9a;
   background: -moz-linear-gradient(top,  #400d9a 0%, #5c12ad 100%);
   background: -webkit-linear-gradient(top,  #400d9a 0%,#5c12ad 100%);
@@ -673,7 +704,8 @@ section.updates {
   }
 }
 
-section.projects {
+section.projects,
+section.visibility {
   background: url(/img/separator_6.png) center top repeat-x transparent;
   padding-top: 200px !important;
 }
