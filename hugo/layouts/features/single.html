@@ -1,0 +1,120 @@
+{{ $projects := $.Site.Data.projects }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body>
+{{ partial "header.html" }}
+<div class="text-left pb-5">
+    <br><br>
+    <h1 class="title text-left p-0 mt-5 mb-4">source{d} integrates with you favorite Development tools & platforms</h1>
+</div>
+</div>
+</header>
+
+<section id="visualize" class="pt-5 pb-0">
+    <div class="container">
+        <header class="mb-5 text-center">
+            <h2 class="text-dark">Visualize your software development data  to make better decisions</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-6 mb-5">
+                <h3 class="text-medium-light mb-4">Transparent roadmap and Ecosystem collaboration</h3>
+                <p class="text-dark">With source{d} you can start getting answers to tough questions in a matter of minutes with simple SQL queries. source{d} supports all major operating systems (Linux, Windows, MacOS), hosting environments (Cloud or On-premise), version control systems (GitHub, GitLab, Bitbucket, etc) and adapts to different stages of development, workflows and business needs. Enjoy the flexibility to choose whether to work on our built-in interactive web interface, your favorite SQL client, command-line interface or Business Intelligence platform (Tableau, Looker, PowerBI, etc).</p>
+                <div class="text-center d-flex mt-5">
+                    <a href="#" class="btn btn-purple text-white flex-fill mr-4">Download source{d}</a>
+                    <a href="#" class="btn btn-highlight flex-fill">Request a Demo</a>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-5">
+                <img class="img-fluid p-3" src="img/visualize.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="all" class="py-5">
+    <div class="container text-dark">
+        <header class="text-center mb-5">
+            <h2>Get all your code and engineering data in one place</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-6 mb-5">
+                <img class="img-fluid p-3" src="img/all.svg" alt="">
+            </div>
+            <div class="col-sm-6 text-dark">
+                <h3 class="text-medium-light mb-4">From code retrieval to insights in minutes</h3>
+                <h4 class="title-line line-yellow">Code Retrieval</h4>
+                <p class="mb-5">Retrieve and store the code history of your organization (including your open-source repositories) as a dataset.</p>
+                <h4 class="title-line line-yellow">Analysis in/for any Language</h4>
+                <p class="mb-5">Automatically identify languages, parse source code, and extract the pieces that matter in a distributed and language-agnostic way.</p>
+                <h4 class="title-line line-yellow">History Analysis</h4>
+                <p class="mb-5">Extract information from the evolution, commits, and metadata of your codebase and generate detailed reports and insights.</p>
+                <h4 class="title-line line-yellow">Familiar APIs</h4>
+                <p class="mb-5">Analyze your code through powerful friendly APIs, such as SQL, gRPC, REST, and various client libraries. Use tools you're familiar with to create reports and dashboards.</p>
+                <div class="text-center d-flex mt-5">
+                    <a href="#" class="btn btn-purple text-white mr-4 flex-fill">Watch Video</a>
+                    <a href="#" class="btn btn-highlight flex-fill">Technical Documentation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="open-components" class="open-components text-white pb-5">
+    <div class="container pt-5">
+        <header class="text-center mb-5">
+            <h2>Built on top of powerful Open Source components</h2>
+        </header>
+        <div class="row text-white">
+            <div class="col-sm-6 mb-5">
+                <h3 class="mb-4">Transparent roadmap and Ecosystem collaboration</h3>
+                <p>At source{d} we are creating a suite of Open Source tools enabling "Code as Data" and "Machine Learning on Code". From datasets and Machine Learning models to code retrieval and analysis tools, we have open-sourced more than 15 projects and are great believers in the value of Open Source transparency and collaboration.</p>
+                <p>Top OSS projects are:</p>
+                <h4 class="title-line line-yellow mt-4">go-git</h4>
+                <p>is a highly extensible git implementation library written in pure Go. It can be used to manipulate git repositories at low level (plumbing) or high level (porcelain), through an idiomatic Go API.</p>
+                <h4 class="title-line line-yellow mt-4 mt-4">Babelfish</h4>
+                <p>Babelfish is a self-hosted server for source code parsing. It can parse any file, in any supported language, extracting an Abstract Syntax Tree (AST) from it and converting it into a Universal Abstract Syntax Tree (UAST).</p>
+            </div>
+            <div class="col-sm-6 mb-5">
+                <img class="img-fluid p-3" src="img/open-components.jpg" alt="">
+            </div>
+            <div class="col-sm-12 d-flex justify-content-center">
+                <a href="#" class="btn btn-highlight-light text-white mr-4">Learn More</a>
+                <a href="#" class="btn btn-highlight">Join the Community</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="how-works" class="how-for-you pb-5">
+    <div class="container text-dark pt-5">
+        <header class="text-center mb-5">
+            <h2>How source{d} works for you</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-4 mb-5">
+                <img src="" alt="">
+                <h3 class="title-line line-yellow">Engineers & Researchers</h3>
+                <p class="mb-4">From data retrieval, language analysis and machine learning on code tools, datasets and models, the source{d} stack can be helpful for many software engineering use cases.</p>
+                <a href="#" class="btn btn-highlight w-100">Learn More</a>
+            </div>
+            <div class="col-sm-4 mb-5">
+                <img src="" alt="">
+                <h3 class="title-line line-yellow">Engineering Managers</h3>
+                <p class="mb-4">With a built-in UI and a great user experience, source{d} delivers an enterprise-ready data platform to shift your IT budget from maintenance to innovation.</p>
+                <a href="#" class="btn btn-highlight w-100">Learn More</a>
+            </div>
+            <div class="col-sm-4 mb-5">
+                <img src="" alt="">
+                <h3 class="title-line line-yellow">Business Leaders</h3>
+                <p class="mb-4">The source{d} platform allows you to modernize your entire software development life cycle so that your comapny can focus on providing more value to your customers quicker.</p>
+                <a href="#" class="btn btn-highlight w-100">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" }}
+</body>
+</html>
