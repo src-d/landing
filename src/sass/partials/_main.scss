@@ -102,6 +102,16 @@ a {
     border: none;
     border-radius: .25rem;
 
+    a {
+        font-weight: normal;
+        text-decoration: none;
+
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
     .ic {
         font-size: 30px;
         text-decoration: none;

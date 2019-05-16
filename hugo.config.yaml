@@ -48,5 +48,5 @@ params:
         linkedin: "sourced"
     # fixed web announcment; if one of its properties is empty, it won't be displayed.
     announcement:
-        title: "Watch a 5 minutes video to understand how the engine works"
-        url: "https://medium.com/sourcedtech/source-d-engine-in-5-minutes-6b3b19789594"
+        title: "source{d} named a source{d} Named 2019 Gartner Cool Vendor"
+        url: "https://blog.sourced.tech/post/source-d-is-officially-cool-according-to-gartner/"
