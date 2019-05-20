@@ -48,5 +48,5 @@ params:
         linkedin: "sourced"
     # fixed web announcment; if one of its properties is empty, it won't be displayed.
     announcement:
-        title: "Watch a 5 minutes video to understand how the engine works"
+        title: "Watch a 5-minute video to understand how the engine works"
         url: "https://medium.com/sourcedtech/source-d-engine-in-5-minutes-6b3b19789594"
