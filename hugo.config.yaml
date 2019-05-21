@@ -48,5 +48,5 @@ params:
         linkedin: "sourced"
     # fixed web announcment; if one of its properties is empty, it won't be displayed.
     announcement:
-        title: "source{d} named a source{d} Named 2019 Gartner Cool Vendor"
+        title: "source{d} named 2019 Gartner Cool Vendor"
         url: "https://blog.sourced.tech/post/source-d-is-officially-cool-according-to-gartner/"
