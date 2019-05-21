@@ -96,6 +96,10 @@ $(function(){
 const headerHeight = $('nav.navbar').height();
 
 $('body').on('click', 'a', function (e) {
+    if (this.getAttribute('data-scroll') === 'no') {
+      return true;
+    }
+
     const url = new URL(this.href);
     const urlPath = url.pathname.replace(/\/$/, "");
     const currentPath = window.location.pathname.replace(/\/$/, "");
