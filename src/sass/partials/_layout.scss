@@ -650,7 +650,8 @@ section.updates {
 // Open Source
 
 .licensing,
-.events {
+.events,
+.what-you-get {
   background: #400d9a;
   background: -moz-linear-gradient(top,  #400d9a 0%, #5c12ad 100%);
   background: -webkit-linear-gradient(top,  #400d9a 0%,#5c12ad 100%);
@@ -673,7 +674,8 @@ section.updates {
   }
 }
 
-section.projects {
+section.projects,
+section.solutions {
   background: url(/img/separator_6.png) center top repeat-x transparent;
   padding-top: 200px !important;
 }
