@@ -1,0 +1,78 @@
+{{ $projects := $.Site.Data.projects }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body>
+{{ partial "header.html" }}
+<div class="text-left pb-5">
+    <br><br>
+    <h1 class="title text-left p-0 my-4">Resources</h1>
+</div>
+</div>
+</header>
+
+<section id="documentation" class="pt-5 pb-0">
+    <div class="container">
+        <div class="row text-dark mb-5">
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">source{d} Documentation</h2>
+                <p class="text-large">source{d} exposes powerful Universal ASTs to analyze your code and a SQL engine to analyze your git history. Check out our documentation to get started, learn about advanced SQL queries and the underlying components that composed our product architecture.</p>
+                <a href="" class="btn btn-highlight mt-4">Documentation</a>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="img/documentation.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="forum" class="pt-5 pb-0">
+    <div class="container">
+        <div class="row text-dark mb-5">
+            <div class="col-md-6">
+                <img class="img-fluid" src="img/img-temp.jpg" alt="">
+            </div>
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">source{d} Forum</h2>
+                <p class="text-large">This is the forum where users and community members discuss anything source{d} related. source{d} is the data platform for the software development life cycle.</p>
+                <p class="text-large">Save time and modernize your codebase by gaining visibility into your software portfolio, engineering team and processes.</p>
+                <a href="" class="btn btn-highlight mt-4">Forum</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog" class="pt-5 pb-0">
+    <div class="container">
+        <div class="row text-dark mb-5">
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">source{d} Blog</h2>
+                <p class="text-large">Our blog allows us to keep you up to date on the latest information regarding source{d} and other related news from the MLonCode community. Main categories include: Product releases, Open source, Events, Research Papers as well as Company and Community news. </p>
+                <a href="https://blog.sourced.tech/" class="btn btn-highlight mt-4">Blog</a>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="img/img-temp.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="mloncode" class="pt-5 pb-0">
+    <div class="container">
+        <div class="row text-dark mb-5">
+            <div class="col-md-6">
+                <img class="img-fluid" src="img/awesome.jpg" alt="">
+            </div>
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">MLonCode curated list of content</h2>
+                <p class="text-large">Check out our curated list of Machine Learning on Code content. The list is continuously updated with links to awesome blog posts, videos, research papers, datasets and software projects devoted to machine learning and source code. #MLonCode</p>
+                <a href="" class="btn btn-highlight mt-4">Awesome MLonCode</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" }}
+</body>
+</html>
