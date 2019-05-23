@@ -283,7 +283,8 @@ section.engineering {
   }
 }
 
-.nav-tabs.eng-tabs {
+.nav-tabs.eng-tabs,
+.nav-tabs.start-tabs {
   border: none;
 }
 
@@ -356,6 +357,32 @@ section.engineering {
 
     &.active {
       background: url(/img/icons/icon-eng-04-act.svg) no-repeat center 20px #fff;
+    }
+  }
+}
+
+.nav-tabs.start-tabs {
+
+  .nav-link {
+    border: none;
+    color: $white;
+    margin-bottom: 0;
+    padding: 1.5rem 0;
+    text-decoration: none;
+
+    @media (max-width: 767.98px) {
+      background-image: none !important;
+      border-radius: .25rem;
+      padding-top: 1rem;
+    }
+
+    &:hover {
+      border: none;
+      opacity: 1;
+    }
+
+    &.active {
+      color: $black;
     }
   }
 }
@@ -873,4 +900,10 @@ section.solutions {
       font-size: 13px;
     }
   }
+}
+
+// Get Started Page
+
+.get-started-page .header {
+  min-height: auto;
 }
