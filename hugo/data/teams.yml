@@ -127,10 +127,6 @@ sections:
           position: Junior Software Engineer
           github: https://github.com/irinakhismatullina
         - picture: placeholder/male.png
-          name: Jan Hůla
-          position: Machine Learning Intern
-          github: https://github.com/Jan21
-        - picture: placeholder/male.png
           name: Tristan Kalos
           position: Machine Learning Intern
           github: https://github.com/glimow
