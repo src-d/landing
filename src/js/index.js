@@ -22,7 +22,6 @@ $(document).ready(function(){
 
     $('.engine-cards').slick({
         dots: false,
-        infinite: true,
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -41,6 +40,12 @@ $(document).ready(function(){
             }
         ]
     });
+
+    $(".engine-nav .nav-item").click(function(){
+      $('.engine-nav .nav-item span').removeClass('active');
+      $(this).children('span').addClass('active');
+      $('.engine-cards').slick('slickGoTo', $(this).data('slide'));
+  });
 });
 
 $('.dropdown')
@@ -91,6 +96,10 @@ $(function(){
 const headerHeight = $('nav.navbar').height();
 
 $('body').on('click', 'a', function (e) {
+    if (this.getAttribute('data-scroll') === 'no') {
+      return true;
+    }
+
     const url = new URL(this.href);
     const urlPath = url.pathname.replace(/\/$/, "");
     const currentPath = window.location.pathname.replace(/\/$/, "");
@@ -107,16 +116,21 @@ $('body').on('click', 'a', function (e) {
 });
 
 function loadBlogContent(containerId) {
-  loadPosts('all')
+  const blogHost = 'blog.sourced.tech';
+  const blogKey = '842234e3cc759da920cb8244f3'
+  loadPosts(blogHost, blogKey)
     .then(posts => {
       const blogData = {
         main: posts[0],
         posts: posts.slice(1, 3),
         ellipsis35: filters.ellipsis(35),
         ellipsis70: filters.ellipsis(70),
+        ellipsis480: filters.ellipsis(480),
       };
 
       render(containerId, blogData);
+    }, () => {
+      console.error('error fetching posts');
     });
 }
 

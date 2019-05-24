@@ -15,12 +15,8 @@
   min-height: 50vh;
   padding-top: 56px;
 
-  .intro {
-    // height: 50vh;
-
-    @media (min-width: 992px) {
-      //padding-top: 140px;
-    }
+  @media (max-width: 991px) {
+    min-height: 30vh;
   }
 
   h1 {
@@ -165,10 +161,9 @@
   .home-main {
 
     img {
-      display: none;
 
-      @media (min-width: 992px) {
-        display: block;
+      @media (min-width: 1200px) {
+        margin-top: -4rem;
       }
     }
   }
@@ -269,6 +264,151 @@ section.news .badge-text {
     font-weight: 500;
     font-size: 21px;
     padding: 0 0 0 13px;
+}
+
+
+// Home - Engineering
+
+section.engineering {
+  background: #5C12AD;
+  background: -moz-linear-gradient(top, #5C12AD 0%, #752CC4 100%);
+  background: -webkit-linear-gradient(top, #5C12AD 0%,#752CC4 100%);
+  background: linear-gradient(to bottom, #5C12AD 0%,#752CC4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5C12AD', endColorstr='#752CC4',GradientType=0 );
+  z-index: 0;
+  position: relative;
+
+  @media (max-width: 575px) {
+    text-align: center;
+  }
+}
+
+.nav-tabs.eng-tabs {
+  border: none;
+}
+
+.eng-tab-1,
+.eng-tab-2,
+.eng-tab-3,
+.eng-tab-4 {
+
+  .nav-link {
+    border: none;
+    color: $white;
+    margin-bottom: 0;
+    padding-top: 140px;
+    text-decoration: none;
+
+    @media (max-width: 767.98px) {
+      background-image: none !important;
+      border-radius: .25rem;
+      padding-top: 1rem;
+    }
+
+    &:hover {
+      border: none;
+      opacity: 1;
+    }
+
+    &.active {
+      color: $black;
+    }
+  }
+}
+
+.eng-tab-1 {
+
+  .nav-link {
+    background: url(/img/icons/icon-eng-01.svg) no-repeat center 20px transparent;
+
+    &.active {
+      background: url(/img/icons/icon-eng-01-act.svg) no-repeat center 20px #fff;
+    }
+  }
+}
+
+.eng-tab-2 {
+
+  .nav-link {
+    background: url(/img/icons/icon-eng-02.svg) no-repeat center 20px transparent;
+
+    &.active {
+      background: url(/img/icons/icon-eng-02-act.svg) no-repeat center 20px #fff;
+    }
+  }
+}
+
+.eng-tab-3 {
+
+  .nav-link {
+    background: url(/img/icons/icon-eng-03.svg) no-repeat center 20px transparent;
+
+    &.active {
+      background: url(/img/icons/icon-eng-03-act.svg) no-repeat center 20px #fff;
+    }
+  }
+}
+
+.eng-tab-4 {
+
+  .nav-link {
+    background: url(/img/icons/icon-eng-04.svg) no-repeat center 20px transparent;
+
+    &.active {
+      background: url(/img/icons/icon-eng-04-act.svg) no-repeat center 20px #fff;
+    }
+  }
+}
+
+
+// Home - Insights
+
+section.insights {
+  background: #490fa0;
+  background: -moz-linear-gradient(top, #490fa0 0%, #5c12ad 100%);
+  background: -webkit-linear-gradient(top, #490fa0 0%,#5c12ad 100%);
+  background: linear-gradient(to bottom, #490fa0 0%,#5c12ad 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#400d9a', endColorstr='#5c12ad',GradientType=0 );
+  z-index: 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 120px;
+    background: url(/img/home_separator_2.png) center top repeat-x #fff;
+    background-size: 768px auto;
+
+    @media (min-width: 768px) {
+      background-size: 1920px auto;
+      height: 300px;
+    }
+  }
+
+  header {
+    padding-bottom: 40px;
+
+    @media (min-width: 768px) {
+      padding-bottom: 100px;
+    }
+  }
+}
+
+
+// Home - Integrates
+
+section.integ {
+  background: url(/img/home_separator_3.png) center top repeat-x transparent;
+  background-size: 768px auto;
+  padding-top: 110px !important;
+  margin-bottom: -100px !important;
+
+  @media (min-width: 768px) {
+    background-size: 1920px auto;
+    padding-top: 220px !important;
+    margin-bottom: -200px !important;
+  }
 }
 
 
@@ -393,7 +533,7 @@ section.open {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5A12AC', endColorstr='#490FA0',GradientType=0 );
     z-index: 0;
     position: relative;
-    height: 300px;
+    padding-bottom: 150px;
   }
 
   .trust-cases {
@@ -681,7 +821,9 @@ section.updates {
 
 .licensing,
 .events,
-.journey {
+.journey,
+.events,
+.what-you-get {
   background: #400d9a;
   background: -moz-linear-gradient(top,  #400d9a 0%, #5c12ad 100%);
   background: -webkit-linear-gradient(top,  #400d9a 0%,#5c12ad 100%);
@@ -705,7 +847,9 @@ section.updates {
 }
 
 section.projects,
-section.visibility {
+section.visibility,
+section.projects,
+section.solutions {
   background: url(/img/separator_6.png) center top repeat-x transparent;
   padding-top: 200px !important;
 }
