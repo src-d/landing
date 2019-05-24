@@ -126,6 +126,10 @@ sections:
           name: Irina Khismatullina
           position: Junior Software Engineer
           github: https://github.com/irinakhismatullina
+        - picture: romain.png
+          name: Romain Keramitas
+          position: Junior Software Engineer
+          github: https://github.com/r0mainK
         - picture: placeholder/male.png
           name: Tristan Kalos
           position: Machine Learning Intern
