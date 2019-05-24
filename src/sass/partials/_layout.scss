@@ -19,6 +19,14 @@
     min-height: 30vh;
   }
 
+  .variable-header & {
+    min-height: auto;
+
+    @media (max-width: 991px) {
+      min-height: auto;
+    }
+  }
+
   h1 {
     color: $white;
     text-align: center;
