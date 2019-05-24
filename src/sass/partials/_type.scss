@@ -19,7 +19,8 @@ body {
   font-size: 1.05rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: $cerebri;
   font-weight: normal;
 }
@@ -122,5 +123,14 @@ section {
       text-transform: uppercase;
       margin: 0;
     }
+  }
+}
+
+.product-lookout header img,
+.product-engine header img {
+
+  @media (max-width: 768px) {
+    margin-bottom: 32px;
+    margin-top: 32px;
   }
 }

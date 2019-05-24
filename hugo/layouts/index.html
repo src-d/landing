@@ -6,46 +6,17 @@
 <body class="home-page">
     {{ partial "header.html" }}
 
-    <div class="container">
-        <h1 class="title text-left pt-5 pb-5">Machine Learning for Large Scale Code Analysis</h1>
-        <div class="home-main container p-0 pb-5">
+        <h1 class="title text-left pt-5 pb-3">The Data Platform for your Software Development Life Cycle</h1>
+        <div class="home-main p-0">
             <div class="row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    <div class="card text-white green h-100">
-                        <div class="card-body">
-                            <div class="row no-gutters">
-                                <div class="col-0 col-lg-2">
-                                    <img src="img/header1.png" alt="" width="50" height="47">
-                                </div>
-
-                                <div class="col-12 col-lg-10">
-                                    <h3 class="card-title">Code as Data</h3>
-                                    <p class="card-text">Turn your code into actionable insights</p>
-                                    <a href="engine" class="btn btn-highlight-light">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-6 mb-3 mb-4">
+                    <h2 class="text-left h4 text-light">Accelerate your Digital Transformation by gaining visibility into your software portfolio, engineering team, and processes.</h2>
                 </div>
-                <div class="col-sm-6">
-                    <div class="card text-white orange h-100">
-                        <div class="card-body">
-                            <div class="row no-gutters">
-                                <div class="col-0 col-lg-2">
-                                    <img src="img/header2.png" alt="" width="50" height="52">
-                                </div>
-                                <div class="col-12 col-lg-10">
-                                    <h3 class="card-title">Machine Learning on Code</h3>
-                                    <p class="card-text">Empower your Developers with Assisted Code Review</p>
-                                    <a href="lookout" class="btn btn-secondary-light">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-6">
+                    <img src="img/header_main.svg" alt="">
                 </div>
             </div>
         </div>
-    </div>
 </header>
 
 <section class="news pt-3 pb-3">
@@ -61,168 +32,237 @@
     {{ end }}
 </section>
 
-<section id="why" class="why pt-5 pb-0 pb-m-5">
+<section id="engineering" class="engineering pt-5 pb-0 pb-m-5">
     <div class="container">
-        <header class="text-center">
-            <p class="subtitle text-yellow">Why source{d}</p>
-            <h2 class="text-white">Save time, improve your codebase quality, <br>and get actionable insights</h2>
+        <header class="text-center pb-3">
+            <h2 class="text-white">Engineering Observability is the key to succesfull IT initiatives</h2>
         </header>
         <div class="row">
-            <div class="col-sm-12 col-md-6 offset-md-1 mb-5">
+            <ul class="nav nav-tabs eng-tabs text-center mb-3 mb-md-0" id="engTabs" role="tablist">
+                <li class="nav-item eng-tab-1 col-sm-12 col-md-3">
+                    <a data-scroll="no" class="nav-link h6 pb-3 h-100 active" id="engTab01-tab" data-toggle="tab" href="#engTab01" role="tab" aria-controls="engTab01" aria-selected="true">IT Modernization & Application Portfolio Management</a>
+                </li>
+                <li class="nav-item eng-tab-2 col-sm-12 col-md-3">
+                    <a data-scroll="no" class="nav-link h6 pb-3 h-100" id="engTab02-tab" data-toggle="tab" href="#engTab02" role="tab" aria-controls="engTab02" aria-selected="false">DevOps & Cloud Native adoption</a>
+                </li>
+                <li class="nav-item eng-tab-3 col-sm-12 col-md-3">
+                    <a data-scroll="no" class="nav-link h6 pb-3 h-100" id="engTab03-tab" data-toggle="tab" href="#engTab03" role="tab" aria-controls="engTab03" aria-selected="false">Engineering effectiveness & efficiency</a>
+                </li>
+                <li class="nav-item eng-tab-4 col-sm-12 col-md-3">
+                    <a data-scroll="no" class="nav-link h6 pb-3 h-100" id="engTab04-tab" data-toggle="tab" href="#engTab04" role="tab" aria-controls="engTab04" aria-selected="false">Talent Assessment and Management</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="background: #fff;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="tab-content" id="engTabContent">
+                        <div class="tab-pane fade show active" id="engTab01" role="tabpanel" aria-labelledby="engTab01-tab">
+                            <div class="row py-5">
+                                <div class="col-sm-12 col-lg-6 mb-4 mb-md-0">
+                                    <ul class="small-list">
+                                        <li>How many COBOL or Fortran lines of code / files do you still have in your codebase?</li>
+                                        <li>What % of your code/ apps is meant for mainframes?</li>
+                                        <li>Do we have any unmaintained code?</li>
+                                    </ul>
+                                    <a href="enterprise" class="btn btn-highlight w-100">Learn More</a>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <img class="img-fluid" src="img/enterprise1.jpg" alt="IT Modernization & Application Portfolio Management">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="engTab02" role="tabpanel" aria-labelledby="engTab02-tab">
+                            <div class="row py-5">
+                                <div class="col-sm-12 col-lg-6 mb-sm-4">
+                                    <ul class="small-list">
+                                        <li>What apps haven't been adapted to the cloud?</li>
+                                        <li>% of apps that have been dockerized?</li>
+                                        <li>Have all our teams upgraded to the latest version of Kubernetes?</li>
+                                    </ul>
+                                    <a href="enterprise" class="btn btn-highlight w-100">Learn More</a>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <img class="img-fluid" src="img/enterprise2.jpg" alt="DevOps & Cloud Native adoption">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="engTab03" role="tabpanel" aria-labelledby="engTab03-tab">
+                            <div class="row py-5">
+                                <div class="col-sm-12 col-lg-6 mb-sm-4">
+                                    <ul class="small-list">
+                                        <li>Where is our development process slowing down?</li>
+                                        <li>Who are the top performing developers on this project?</li>
+                                        <li>How effective are we at cross-team / company collaboration?</li>
+                                        <li>Are teams collaborating using each other's code and contributing back (outside of their core team)?</li>
+                                        <li>Is code being re-used?</li>
+                                    </ul>
+                                    <a href="enterprise" class="btn btn-highlight w-100">Learn More</a>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <img class="img-fluid" src="img/enterprise3.jpg" alt="Engineering effectiveness & efficiency">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="engTab04" role="tabpanel" aria-labelledby="engTab04-tab">
+                            <div class="row py-5">
+                                <div class="col-sm-12 col-lg-6 mb-sm-4">
+                                    <ul class="small-list">
+                                        <li>How effective are individual developers on my team and do they have the right skill set?</li>
+                                        <li>Are any of my developers falling behind on work? How do they compare to the rest of the team?</li>
+                                        <li>What are the mentorship opportunities I can give to my senior developers?</li>
+                                    </ul>
+                                    <a href="enterprise" class="btn btn-highlight w-100">Learn More</a>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <img class="img-fluid" src="img/enterprise4.jpg" alt="Talent Assessment and Management">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="insights" class="insights">
+    <div class="container">
+        <header class="text-center">
+            <h2 class="text-white">Turn your code and software development data into actionable insights</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-6 mb-5">
                 <div class="row">
                     <div class="col-sm-4">
-                        <img class="mb-3 mb-md-0" src="img/icons/placeholder1.svg" height="170" width="170" alt="">
+                        <img class="img-fluid mb-4 mb-md-0" src="img/icons/insight-01.svg" alt="">
                     </div>
                     <div class="col-sm-8">
-                        <h3 class="text-white">Agility</h3>
-                        <p class="description text-white">Faster retrieval and analysis of your source code improving the efficiency of your engineering organization so you can always ship on time.</p>
+                        <h3 class="title-line line-magenta text-white">Timely</h3>
+                        <p class="text-white">Get up-to-date insights into your Software Development Life Cycle</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-6 offset-md-5 mb-5">
-                <div class="row">
-                    <div class="col-sm-8 order-sm-12">
-                        <h3 class="text-white">Quality</h3>
-                        <p class="description text-white">Improve the quality of your codebase with better Testing and QA, detecting potential defects and similar or duplicate code.</p>
-                    </div>
-                    <div class="col-sm-4 order-sm-1">
-                        <img class="mb-3 mb-md-0" src="img/icons/placeholder2.svg" height="170" width="170" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-6 offset-md-1 mb-5">
+            <div class="col-sm-6 mb-5">
                 <div class="row">
                     <div class="col-sm-4">
-                        <img class="mb-3 mb-md-0" src="img/icons/placeholder3.svg" height="170" width="170" alt="">
+                        <img class="img-fluid mb-4 mb-md-0" src="img/icons/insight-02.svg" alt="">
                     </div>
                     <div class="col-sm-8">
-                        <h3 class="text-white">Intelligence</h3>
-                        <p class="description text-white">All your codebases in a single place coupled with powerful analytics tools to gain actionable insights for your teams and business.</p>
+                        <h3 class="title-line line-magenta text-white">Scalable</h3>
+                        <p class="text-white">Process billions of lines of source code from tens of thousands of developers</p>
                     </div>
                 </div>
+            </div>
+            <div class="col-sm-6 mb-5">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-fluid mb-4 mb-md-0" src="img/icons/insight-03.svg" alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <h3 class="title-line line-magenta text-white">AI Powered</h3>
+                        <p class="text-white">Leverage Machine Learning on Code to provide advanced and predictive analysis</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-5">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="img-fluid mb-4 mb-md-0" src="img/icons/insight-04.svg" alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <h3 class="title-line line-magenta text-white">Visual</h3>
+                        <p class="text-white">Make better decisions based on actionable insights from graphs, charts and tables</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center">
+                <a href="enterprise" class="btn btn-highlight col-sm-6 mb-5">Learn More</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="how pt-5 pb-5">
+<section id="integ" class="integ pb-5">
     <div class="container">
         <header class="text-center">
-            <p class="subtitle text-orange">How it works</p>
-            <h2 class="text-dark mb-5">source{d} powers Code as Data and <br>Machine Learning on Code</h2>
+            <h2 class="text-dark mb-5">source{d} integrates with your favorite tools & platforms</h2>
         </header>
         <div class="row">
-            <div class="col-sm-12">
-                <img src="img/how_it_works.svg" alt="">
+            <div class="col-sm-6">
+                <h3 class="h4 title-line line-green text-black">Any Hosting Environments</h3>
+                <p class="text-black">Make better decisions based on actionable insights from graphs, charts and tables</p>
+                <img class="mt-3 mb-5 img-fluid" src="img/integ-01.png" height="50" width="139" alt="">
+            </div>
+            <div class="col-sm-6">
+                <h3 class="h4 title-line line-green text-black">Any OS</h3>
+                <p class="text-black">Run source{d} on your laptop no matter the OS</p>
+                <img class="mt-3 mb-5 img-fluid" src="img/integ-02.png" height="50" width="176" alt="">
+            </div>
+            <div class="col-sm-6">
+                <h3 class="h4 title-line line-green text-black">Any Git & Project Management platforms</h3>
+                <p class="text-black">Retrieve your code from your favorite version control platforms</p>
+                <img class="mt-3 mb-5 img-fluid" src="img/integ-03.png" height="50" width="454" alt="">
+            </div>
+            <div class="col-sm-6">
+                <h3 class="h4 title-line line-green text-black">Any BI Tools</h3>
+                <p class="text-black">Integrate source{d} with your company data warehouse</p>
+                <img class="mt-3 mb-5 img-fluid" src="img/integ-04.png" height="30" width="400" alt="">
             </div>
         </div>
-    </div>
-</section>
-
-<section id="products" class="what">
-    <div class="container">
-        <header class="text-center">
-            <p class="subtitle text-yellow">What you get?</p>
-            <h2 class="text-white">source{d} Engine and source{d} Lookout</h2>
-        </header>
-        <div class="row">
-            <div class="col-sm-6 mb-sm-5 mb-md-4">
-                <div class="card text-white green h-100">
-                    <div class="card-body p-4 p-lg-5">
-                        <img src="img/icons/placeholder4.svg" alt="">
-                        <p class="card-intro pt-5 mb-0">source{d} Engine</p>
-                        <h3 class="card-title">Code as Data</h3>
-                        <p class="card-text">Leverage the source{d} Engine to turn your source code across versions into actionable data & business intelligence.</p>
-                        <p><strong>Features</strong></p>
-                        <ul class="small-list">
-                            <li>Source code retrieval and unification</li>
-                            <li>Language classification and parsing</li>
-                            <li>SQL interface for easy querying of repositories</li>
-                            <li>SDK for analysis beyond SQL</li>
-                        </ul>
-                        <p class="mt-5"><strong>Use cases</strong></p>
-                        <ul class="small-list">
-                            <li>Code exploration</li>
-                            <li>Engineering Dashboards</li>
-                            <li>Business Intelligence</li>
-                            <li>Security vulnerability detection</li>
-                            <li>Continuous code quality</li>
-                            <li>and much more!</li>
-                        </ul>
-                        <br/>
-                        <a href="engine" class="btn btn-highlight-light w-100 mt-4">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 mb-5 mb-sm-4">
-                <div class="card text-white orange h-100">
-                    <div class="card-body p-4 p-lg-5">
-                        <img src="img/icons/placeholder4.svg" alt="">
-                        <p class="card-intro pt-5 mb-0">source{d} Lookout</p>
-                        <h3 class="card-title">Machine Learning on Code</h3>
-                        <p class="card-text">Distill all the knowledge from your code base to assist engineering teams to review code faster while missing fewer mistakes.</p>
-                        <p><strong>Features</strong></p>
-                        <ul class="small-list">
-                            <li>Inferred style guides</li>
-                            <li>Naming suggestions</li>
-                            <li>Common bug detection</li>
-                            <li>Performance bottlenecks identification</li>
-                            <li>Security vulnerabilities</li>
-                            <li>Suspicious code indicators</li>
-                            <li>Language agnostic assisted coding</li>
-                        </ul>
-                        <p class="mt-5"><strong>Use cases</strong></p>
-                        <ul class="small-list">
-                            <li>Code reviewer attention guide</li>
-                            <li>Comment suggestion</li>
-                            <li>Author pre-check tool</li>
-                        </ul>
-                        <a href="lookout" class="btn btn-secondary-light w-100 mt-4">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="open pt-5 pb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 text-center mb-0 mb-md-5">
-                <img src="img/open-source.png" alt="">
-            </div>
-            <div class="col-sm-6 px-5">
-                <h3 class="text-dark mb-3">We believe in Open Source and Open Science</h3>
-                <p class="text-large text-dark mb-4">At source{d} we are creating a suite of Open Source tools enabling "Code as Data" and "Machine Learning on Code". We are also great believers in Open Source and its philosophy.</p>
-                <a href="open-source" class="btn btn-highlight w-100">Learn More</a>
-            </div>
-            <!--
-            <div class="col-sm-3">
-                <p class="line line-green">Projects</p>
-            </div>
-            <div class="col-sm-3">
-                <p class="line line-green">Datasets</p>
-            </div>
-            <div class="col-sm-3">
-                <p class="line line-green">ML Models</p>
-            </div>
-            <div class="col-sm-3">
-                <p class="line line-green">Research Papers</p>
-            </div>
-            -->
+        <div class="col-sm-12 text-center">
+            <a href="enterprise" class="btn btn-highlight col-sm-6 mt-4">Learn More</a>
         </div>
     </div>
 </section>
 
 <section class="trust pb-0 pb-md-5">
-    <div class="trust-top pt-5">
+    <div class="trust-top">
+        <div class="container pt-5">
+            <header class="text-center">
+                <h2 class="text-white mb-5">More from source{d} and our Community</h2>
+            </header>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 mb-4">
+                    <div class="card white h-100">
+                        <a href="open-source">
+                            <img class="w-100" src="img/open-source.jpg" alt="Open Source">
+                            <div class="card-body p-5">
+                                <h4 class="text-dark title-line line-yellow">Open Source</h4>
+                                <span class="text-medium">At source{d} we are creating a suite of Open Source tools enabling "Code as Data" and "Machine Learning on Code". We are also great believers in Open Source and its philosophy.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 mb-4">
+                    <div class="card white h-100">
+                        <a href="community">
+                            <img class="w-100" src="img/mloncode.jpg" alt="Open Source">
+                            <div class="card-body p-5">
+                                <h4 class="text-dark title-line line-yellow">MLonCode Community</h4>
+                                <span class="text-medium">Connect with other MLonCode enthusiasts and researchers through events and online resources! From our slack community to our paper reading club and meetups, there is something for everyone no matter where you're located. </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 mb-4">
+                    <div class="card white h-100">
+                        <a href="community">
+                            <img class="w-100" src="img/event.jpg" alt="Open Source">
+                            <div class="card-body p-5">
+                                <h4 class="text-dark title-line line-yellow">Event</h4>
+                                <span class="text-medium">We frequently organize events you can attend such as Online meetups, research paper reviews,  workshops and happy hours at industry conferences. Check out our event calendar.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <header class="text-center">
-                <h2 class="text-white mb-5">Trusted by top engineers at world leading companies</h2>
+                <h2 class="text-white my-5">Trusted by top engineers at world leading companies</h2>
             </header>
         </div>
     </div>
@@ -260,7 +300,7 @@
     </div>
 </section>
 
-{{ partial "try-sourced.html" }}
+<!-- {{ partial "try-sourced.html" }} -->
 
 {{ partial "footer.html" }}
 </body>

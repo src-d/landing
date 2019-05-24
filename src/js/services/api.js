@@ -7,7 +7,6 @@ export const states = {
 const LOCAL_URL = 'http://localhost:8080/api';
 const PROD_URL = '/api';
 const PROD_FORCED_URL = null; // 'http://sourced.tech/api'
-const BLOG_URL = '//blog.sourced.tech';
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -28,21 +27,34 @@ function request(url) {
   return fetch(url).then(checkStatus).then(resp => resp.json());
 }
 
-export function loadPosts(category) {
-  return request(apiURL(`/posts/${category}`)).then((resp) => {
-    const posts = resp.Posts.slice(0, 3);
-    return posts.length > 0
-      ? posts
-      : Promise.reject(new Error('empty response'));
-  });
-}
+export function loadPosts(host, key) {
+  const apiPath = 'https://' + host + '/ghost/api/v2/content/posts/';
+  const options = [
+    'key=' + key,
+    'limit=3',
+    'fields=url,title,feature_image,custom_excerpt,primary_author',
+    'include=authors',
+    'formats=plaintext',
+    'order=published_at desc',
+  ];
 
-export function blogUrl(path) {
-  if (path.indexOf('//') === 0 || path.indexOf('http') === 0) {
-    return path;
-  }
+  const trim = c => c ? c.trim() : '';
+  const desc = (text, alt) => (clean(text) || clean(alt)).replace(/\s{2,}/g,' ');
+  const removeRefs = c => c.replace(/\[(https?:)?\/\/[^\]]+(\]|$)/g,'');
+  const clean = c => trim(removeRefs(c));
 
-  return `${BLOG_URL}/${path.trim('/')}`;
+  return request(apiPath + '?' + options.join('&'))
+    .then(resp => {
+      return resp.posts.length > 0
+        ? resp.posts.map( post => ({
+          title: post.title,
+          featured_image: post.feature_image,
+          description: desc(post.custom_excerpt, post.plaintext),
+          author: post.primary_author.name,
+          link: post.url,
+        }))
+        : Promise.reject(new Error('no posts found'));
+    });
 }
 
 const POSITIONS_URL = '/positions';

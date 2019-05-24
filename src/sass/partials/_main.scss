@@ -102,6 +102,16 @@ a {
     border: none;
     border-radius: .25rem;
 
+    a {
+        font-weight: normal;
+        text-decoration: none;
+
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
     .ic {
         font-size: 30px;
         text-decoration: none;
@@ -265,7 +275,9 @@ ul.small-list {
 
 .pills-nav {
 
-    .nav-item a {
+    .nav-item a,
+    .nav-item span {
+        cursor: pointer;
         font-family: 'Cerebri Sans', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;;
         font-size: 1rem;
         line-height: 1.5;
@@ -293,5 +305,25 @@ ul.small-list {
                 }
             }
         }
+    }
+}
+
+// How it Works Diagram
+
+.how-it-works-desktop {
+
+    display: block;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.how-it-works-mobile {
+
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
     }
 }

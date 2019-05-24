@@ -39,11 +39,6 @@ func main() {
 
 	api := r.Group("/api")
 	{
-		api.GET("/posts/:kind", cache.CachePage(
-			store,
-			*ttl,
-			handlers.NewPosts(services.NewPostProvider(conf)).Get,
-		))
 		api.GET("/positions", cache.CachePage(
 			store,
 			*ttl,

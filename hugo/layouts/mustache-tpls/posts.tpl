@@ -6,7 +6,7 @@
         <div class="card p-4 text-white green" style="cursor:pointer;" onclick="location.href='[[main.link]]';">
             <div class="card-body">
                 <h3 class="card-title pt-5 mt-3">[[main.title]]</h3>
-                <p class="card-text">[[main.description]]</p>
+                <p class="card-text">[[#ellipsis480]][[main.description]][[/ellipsis480]]</p>
                 <span class="author text-white">[[main.author]]</span>
             </div>
         </div>
