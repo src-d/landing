@@ -874,3 +874,72 @@ section.solutions {
     }
   }
 }
+
+// News and press
+
+.widget__width-height--container {
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.gnw_content_container {
+  margin: 0 auto;
+
+  .gnw_title {
+    color: $black;
+    font-family: $cerebri;
+    font-size: 30px;
+    letter-spacing: -0.6px;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 3rem;
+
+    @media (min-width: 576px) {
+      font-size: 36px;
+      letter-spacing: -0.7px;
+      line-height: 42px;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 42px;
+      line-height: 48px;
+      letter-spacing: -1px;
+    }
+
+    &:after {
+      background-color: $yellow;
+      content: "";
+      display: block;
+      height: 4px;
+      margin: 1rem 0 2rem 50%;
+      width: 64px;
+      left: -32px;
+      position: relative;
+    }
+  }
+
+  .gnw_content_evenrow,
+  .gnw_content_oddrow {
+    margin-bottom: 3rem;
+  }
+
+  .gnw_image_spacer,
+  .gnw_company_name {
+    display: none;
+  }
+
+  .gnw_headline {
+    font-family: $cerebri;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.2px;
+    margin-bottom: 0.5rem;
+
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+}
