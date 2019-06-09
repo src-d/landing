@@ -4,20 +4,14 @@
 	 viewBox="0 0 154.14 138.32" style="enable-background:new 0 0 154.14 138.32;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFA700;}
-	.st1{fill:#FFFFFF;stroke:#FFA700;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:#FFFFFF;stroke:#631AB3;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;stroke:#631AB3;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>
 <g>
-	<polygon class="st0" points="109.12,32.26 119.5,39.68 119.5,27.82 	"/>
-	<g>
-		<path class="st1" d="M44.45,11.59c0,0,47.29,9.8,32.9,46.33l15.94,22.72c0,0-14.39,0.89-14.39,16.93c0,0,5.14,22.28-26.73,14.26
-			l-2.06,19.6"/>
-		<ellipse class="st0" cx="64.32" cy="57.61" rx="5.68" ry="2.84"/>
-	</g>
-	<polyline class="st2" points="83.92,135.8 107.64,70.88 115.13,80.87 120.5,60.5 137.6,99.6 	"/>
-	<line class="st2" x1="120.12" y1="29.69" x2="120.12" y2="60.9"/>
-	<path class="st0" d="M77.84,139.31c-38.08,0-69.16-30.96-69.16-69.16c0-38.08,30.96-69.16,69.16-69.16
-		c38.08,0,69.16,30.96,69.16,69.16C147,108.35,115.92,139.31,77.84,139.31z M77.84,4.74c-36.08,0-65.42,29.34-65.42,65.54
-		c0,36.08,29.34,65.54,65.54,65.54c36.08,0,65.54-29.34,65.54-65.54C143.38,34.07,113.92,4.74,77.84,4.74z"/>
+	<polygon class="st0" points="82.58,19.47 95.34,28.59 95.34,14 	"/>
+	<polyline class="st1" points="56.5,133.5 80.75,66.97 89.96,79.25 96.57,54.2 124.5,114.5 	"/>
+	<line class="st1" x1="96.1" y1="16.3" x2="96.1" y2="54.68"/>
+	<path class="st0" d="M76.84,138.31c-38.08,0-69.16-30.96-69.16-69.16c0-38.08,30.96-69.16,69.16-69.16
+		c38.08,0,69.16,30.96,69.16,69.16C146,107.35,114.92,138.31,76.84,138.31z M76.84,3.74c-36.08,0-65.42,29.34-65.42,65.54
+		c0,36.08,29.34,65.54,65.54,65.54c36.08,0,65.54-29.34,65.54-65.54C142.38,33.07,112.92,3.74,76.84,3.74z"/>
 </g>
 </svg>
