@@ -160,7 +160,8 @@
 
   .home-main {
 
-    img {
+    img,
+    .home-video {
 
       @media (min-width: 1200px) {
         margin-top: -4rem;
@@ -255,6 +256,19 @@
   }
 }
 
+// Home - Video cover
+
+.home-video-cover {
+
+  .play-video {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -80px;
+  }
+}
 
 // Home - Announcement
 

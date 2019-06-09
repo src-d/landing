@@ -41,6 +41,11 @@ $(document).ready(function(){
         ]
     });
 
+    $('.home-video-cover').click( function () {
+      $(this).hide();
+      $('.home-video').show();
+    });
+
     $(".engine-nav .nav-item").click(function(){
       $('.engine-nav .nav-item span').removeClass('active');
       $(this).children('span').addClass('active');
