@@ -45,8 +45,18 @@ $(document).ready(function(){
       $('.engine-nav .nav-item span').removeClass('active');
       $(this).children('span').addClass('active');
       $('.engine-cards').slick('slickGoTo', $(this).data('slide'));
-  });
+    });
+
+    $('#videoModal').on('hidden.bs.modal', function () {
+        $("#videoModal iframe").attr("src", $("#videoModal iframe").attr("src"));
+    });
 });
+
+window.onload = function () {
+    let url = document.location.toString();
+    let splitHash = url.split("#");
+    document.getElementById(splitHash[1]).click();
+};
 
 $('.dropdown')
   .on('mouseenter', function() {
