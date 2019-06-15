@@ -55,7 +55,10 @@ $(document).ready(function(){
 window.onload = function () {
     let url = document.location.toString();
     let splitHash = url.split("#");
-    document.getElementById(splitHash[1]).click();
+    let button = document.getElementById(splitHash[1]);
+    if (button) {
+      button.click();
+    }
 };
 
 $('.dropdown')
