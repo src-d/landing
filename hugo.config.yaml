@@ -35,7 +35,7 @@ taxonomies:
 
 params:
     author: source{d}
-    description: "source{d} provides the technology for large-scale code analysis and machine learning on code."
+    description: "Source{d} is the only end to end Engineering Observability platform to provide executives with actionable insights about their codebases, development processes, and teams. Source{d} not only helps enterprises improve their engineering effectiveness and efficiency but also their IT modernization, DevOps Adoption, and Engineering talent management efforts."
     defaultemail: "hello@sourced.tech"
     location: "San Francisco, Seattle, Madrid & Remote"
     favicon: "img/logos/favicon.png"
