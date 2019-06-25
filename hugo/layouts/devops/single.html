@@ -1,0 +1,151 @@
+{{ $projects := $.Site.Data.projects }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body>
+{{ partial "header.html" }}
+<div class="text-left pb-5">
+    <br><br>
+    <h1 class="title text-left p-0 mt-5 mb-4">Accelerating Cloud Native and DevOps Transformation through actionable data</h1>
+</div>
+</div>
+</header>
+
+<section id="challenges" class="challenges pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6">
+                <h3 class="title-line line-yellow">Challenges</h3>
+                <ul class="small-list">
+                    <li>Ineffective and costly vendor management</li>
+                    <li>Lack of tech stack standardization and duplication of efforts</li>
+                    <li>Slow enterprise adoption of de facto standards or emerging technologies</li>
+                    <li>Negative impact on quality or security</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3 class="title-line line-yellow">Benefits</h3>
+                <ul class="small-list">
+                    <li>De-risk your cloud migration or vendor onboarding</li>
+                    <li>Accelerate innovation to reduce IT expenses</li>
+                    <li>Automate your IT compliance analysis to ensure consistent quality and security levels</li>
+                    <li>Enforce data-driven best practices and center of excellence</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="vendor" class="pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">Vendor Management</h2>
+                <p class="mb-5">With the digital revolution, the number of software vendors has been increasing exponentially. source{d}, helps IT executives monitor, measure and manage vendor adoption and relationships from evaluations to performance and ROI analysis</p>
+                <p>Examples of questions you should have the answers to:</p>
+                <ul class="small-list">
+                    <li>What is the most popular logging library or CI system?</li>
+                    <li>What technology vendors should we be engaging with based on actual usage?</li>
+                    <li>Have all our teams upgraded to a given vendor product version?</li>
+                </ul>
+                <p class="mt-5">Examples of metrics you could be tracking:</p>
+                <ul class="small-list">
+                    <li>Top Vendors by category</li>
+                    <li>Fastest Growing / Declining Vendors</li>
+                    <li>Share of adoption of key technologies broken down by team</li>
+                </ul>
+                <div class="text-center mt-5 row">
+                    <div class="col-xl-6">
+                        <a href="https://go.sourced.tech/engine-download" class="btn btn-purple text-white mb-4 w-100">Download source{d}</a>
+                    </div>
+                    <div class="col-xl-6">
+                        <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="dependency" class="pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">Dependency / Change Management</h2>
+                <p class="mb-5">The adoption of new open source projects, microservices architectures or Cloud Native technologies often comes with potential pitfalls and complexity. source{d} help IT managers assess, execute and manage change and 3rd party dependencies.</p>
+                <p>Examples of questions you should have the answers to:</p>
+                <ul class="small-list">
+                    <li>What external open source libraries are we depending on?</li>
+                    <li>What Open Source project should we be contributing back to?</li>
+                    <li>What teams are going to be impacted by a given change / releases?</li>
+                </ul>
+                <p class="mt-5">Examples of metrics you could be tracking:</p>
+                <ul class="small-list">
+                    <li>Dependency classification breakdown</li>
+                    <li>Top internal vs external imports</li>
+                    <li>3rd party imports heatmap</li>
+                </ul>
+                <div class="text-center mt-5 row">
+                    <div class="col-xl-6">
+                        <a href="https://go.sourced.tech/engine-download" class="btn btn-purple text-white mb-4 w-100">Download source{d}</a>
+                    </div>
+                    <div class="col-xl-6">
+                        <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cloud" class="pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">Cloud Migration</h2>
+                <p class="mb-5">Most large enterprises are embracing a hybrid cloud strategy and moving non-critical applications to the Cloud. However, cloud migration can often be more challenging than expected. By extracting insights from your source code and configuration files, source{d} Enterprise helps you achieve your cloud migration objectives faster. </p>
+                <p>Examples of questions you should have the answers to:</p>
+                <ul class="small-list">
+                    <li>What applications can we quickly and safely move to the Cloud?</li>
+                    <li>What applications are using Helm vs Docker Compose for deployments?</li>
+                    <li>Do applications have an API surface area? Is the Application for internal or external use?</li>
+                </ul>
+                <p class="mt-5">Examples of metrics you could be tracking:</p>
+                <ul class="small-list">
+                    <li>Share of repositories with a Dockerfile</li>
+                    <li>Share of repositories containing Helm charts</li>
+                    <li>Share of API code per repository</li>
+                </ul>
+                <div class="text-center mt-5 row">
+                    <div class="col-xl-6">
+                        <a href="https://go.sourced.tech/engine-download" class="btn btn-purple text-white mb-4 w-100">Download source{d}</a>
+                    </div>
+                    <div class="col-xl-6">
+                        <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "how-works.html" }}
+{{ partial "footer.html" }}
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
