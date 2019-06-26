@@ -3,7 +3,7 @@ type: company
 section: company
 url: company
 title: Company
-socialDescription: An exceptional mission executed by exceptional people
+socialDescription: We empower IT executives to be data-driven leaders
 socialImage: img/office/office1.jpg
 socialIsLargeImage: true
 ---
