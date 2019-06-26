@@ -19,6 +19,14 @@
     min-height: 30vh;
   }
 
+  .variable-header & {
+    min-height: auto;
+
+    @media (max-width: 991px) {
+      min-height: auto;
+    }
+  }
+
   h1 {
     color: $white;
     text-align: center;
@@ -273,11 +281,11 @@
 // Home - Announcement
 
 section.news .badge-text {
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 21px;
-    padding: 0 0 0 13px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 21px;
+  padding: 0 0 0 13px;
 }
 
 
@@ -680,19 +688,21 @@ section.updates {
       list-style: none;
 
       a {
-        color: $xdark-purple;
+        color: $dark-purple;
         display: inline-block;
-        line-height: 2rem;
+        line-height: 1rem;
         opacity: 0.9;
         text-decoration: none;
         font-weight: normal;
+        -webkit-transition: all 0.5s;
         transition: all 0.5s;
+        font-size: 0.75rem;
 
         &.footer-main {
           color: $xdark-purple;
           display: inline-block;
           font-family: $cerebri;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
         }
 
         &:hover {
@@ -717,6 +727,20 @@ section.updates {
         color: lighten($xdark-purple, 40%);
         text-decoration: none;
       }
+    }
+  }
+
+  .footer-copy {
+    color: $dark-purple;
+    line-height: 1rem;
+    opacity: 0.9;
+    font-weight: normal;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 0.75rem;
+
+    a {
+      color: $xdark-purple;
     }
   }
 }
@@ -983,6 +1007,9 @@ section.solutions {
       text-decoration: none;
     }
   }
+
+.card a.btn:hover {
+  color: $white;
 }
 
 // Get Started Page
