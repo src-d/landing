@@ -281,11 +281,11 @@
 // Home - Announcement
 
 section.news .badge-text {
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 21px;
-    padding: 0 0 0 13px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 21px;
+  padding: 0 0 0 13px;
 }
 
 
@@ -938,6 +938,10 @@ section.solutions {
       font-size: 13px;
     }
   }
+}
+
+.card a.btn:hover {
+  color: $white;
 }
 
 // Get Started Page
