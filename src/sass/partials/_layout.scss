@@ -160,7 +160,8 @@
 
   .home-main {
 
-    img {
+    img,
+    .home-video {
 
       @media (min-width: 1200px) {
         margin-top: -4rem;
@@ -255,15 +256,28 @@
   }
 }
 
+// Home - Video cover
+
+.home-video-cover {
+
+  .play-video {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -80px;
+  }
+}
 
 // Home - Announcement
 
 section.news .badge-text {
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 21px;
-    padding: 0 0 0 13px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 21px;
+  padding: 0 0 0 13px;
 }
 
 
@@ -283,7 +297,8 @@ section.engineering {
   }
 }
 
-.nav-tabs.eng-tabs {
+.nav-tabs.eng-tabs,
+.nav-tabs.start-tabs {
   border: none;
 }
 
@@ -356,6 +371,32 @@ section.engineering {
 
     &.active {
       background: url(/img/icons/icon-eng-04-act.svg) no-repeat center 20px #fff;
+    }
+  }
+}
+
+.nav-tabs.start-tabs {
+
+  .nav-link {
+    border: none;
+    color: $white;
+    margin-bottom: 0;
+    padding: 1.5rem 0;
+    text-decoration: none;
+
+    @media (max-width: 767.98px) {
+      background-image: none !important;
+      border-radius: .25rem;
+      padding-top: 1rem;
+    }
+
+    &:hover {
+      border: none;
+      opacity: 1;
+    }
+
+    &.active {
+      color: $black;
     }
   }
 }
@@ -639,19 +680,21 @@ section.updates {
       list-style: none;
 
       a {
-        color: $xdark-purple;
+        color: $dark-purple;
         display: inline-block;
-        line-height: 2rem;
+        line-height: 1rem;
         opacity: 0.9;
         text-decoration: none;
         font-weight: normal;
+        -webkit-transition: all 0.5s;
         transition: all 0.5s;
+        font-size: 0.75rem;
 
         &.footer-main {
           color: $xdark-purple;
           display: inline-block;
           font-family: $cerebri;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
         }
 
         &:hover {
@@ -676,6 +719,20 @@ section.updates {
         color: lighten($xdark-purple, 40%);
         text-decoration: none;
       }
+    }
+  }
+
+  .footer-copy {
+    color: $dark-purple;
+    line-height: 1rem;
+    opacity: 0.9;
+    font-weight: normal;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 0.75rem;
+
+    a {
+      color: $xdark-purple;
     }
   }
 }
@@ -877,4 +934,10 @@ section.solutions {
 
 .card a.btn:hover {
   color: $white;
+}
+
+// Get Started Page
+
+.get-started-page .header {
+  min-height: auto;
 }
