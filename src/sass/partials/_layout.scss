@@ -160,7 +160,8 @@
 
   .home-main {
 
-    img {
+    img,
+    .home-video {
 
       @media (min-width: 1200px) {
         margin-top: -4rem;
@@ -255,6 +256,19 @@
   }
 }
 
+// Home - Video cover
+
+.home-video-cover {
+
+  .play-video {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -80px;
+  }
+}
 
 // Home - Announcement
 
@@ -283,7 +297,8 @@ section.engineering {
   }
 }
 
-.nav-tabs.eng-tabs {
+.nav-tabs.eng-tabs,
+.nav-tabs.start-tabs {
   border: none;
 }
 
@@ -356,6 +371,32 @@ section.engineering {
 
     &.active {
       background: url(/img/icons/icon-eng-04-act.svg) no-repeat center 20px #fff;
+    }
+  }
+}
+
+.nav-tabs.start-tabs {
+
+  .nav-link {
+    border: none;
+    color: $white;
+    margin-bottom: 0;
+    padding: 1.5rem 0;
+    text-decoration: none;
+
+    @media (max-width: 767.98px) {
+      background-image: none !important;
+      border-radius: .25rem;
+      padding-top: 1rem;
+    }
+
+    &:hover {
+      border: none;
+      opacity: 1;
+    }
+
+    &.active {
+      color: $black;
     }
   }
 }
@@ -877,4 +918,10 @@ section.trial {
       font-size: 13px;
     }
   }
+}
+
+// Get Started Page
+
+.get-started-page .header {
+  min-height: auto;
 }
