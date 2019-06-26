@@ -74,9 +74,11 @@ a {
 
 .btn-purple {
     background-color: $dark-purple;
+    color: $white;
 
     &:hover {
         background-color: lighten($dark-purple,2);
+        color: $white;
     }
 
     &-light,
