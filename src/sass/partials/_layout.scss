@@ -923,6 +923,15 @@ section.how-for-you {
   padding-top: 200px !important;
 }
 
+.services-box section.how-for-you {
+  background: transparent;
+  padding-top: 0 !important;
+
+  > .container {
+    border-top: 1px solid lighten($xdark-purple, 60%);
+  }
+}
+
 // Community
 
 .network {
