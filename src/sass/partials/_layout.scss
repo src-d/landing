@@ -915,10 +915,14 @@ section.updates {
 
 section.projects,
 section.visibility,
-section.solutions,
+section.trial,
 section.how-for-you {
   background: url(/img/separator_6.png) center top repeat-x transparent;
   padding-top: 200px !important;
+}
+
+section.trial {
+  padding-top: 250px !important;
 }
 
 .services-box section.how-for-you {
