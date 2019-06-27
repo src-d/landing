@@ -38,12 +38,12 @@ Its source code is under:
 
 There are some external applications loading resources from http://sourced.tech/ so they should be preserved between different landing versions or considered as cross-project issues.
 
-### Salesforce Pardot Landing Pages 
+### Salesforce Pardot Landing Pages
 
 - [source{d} Engine Product Demo Sign-Up](http://go.sourced.tech/engine)
 - [source{d} Lookout Product Demo Sign-Up](http://go.sourced.tech/lookout)
 - [source{d} Contact Us](http://go.sourced.tech/contact)
-	
+
 #### Dependent Files
 
 - `https://sourced.tech/css/bundle.css`
@@ -125,19 +125,6 @@ With this command, each window runs a command, that can be also ran by you in ca
 * `yarn run webpack-watcher` To start webpack watcher, that will rebuild the assets when you change its sources
 * `make hugo-server` To serve the landing locally using hugo server
 * `yarn run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
-
-### Preview the documentation site
-
-Since the Landing repository is used as a blueprint for every documentation site as served by [src-d/docs](https://github.com/src-d/docs), the Landing can be used to generate a _"documentation like"_ site; To do so, it is needed to run:
-```shell
-make develop-documentation
-```
-And then, go to [http://localhost:8081](http://localhost:8081)
-
-To rollback the changes, and see the landing as usual, just run:
-```shell
-make develop-documentation-destroy
-```
 
 
 ## Configuration
