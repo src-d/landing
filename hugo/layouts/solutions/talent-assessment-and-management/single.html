@@ -1,0 +1,186 @@
+{{ $projects := $.Site.Data.projects }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body>
+{{ partial "header.html" }}
+<div class="text-left pb-5">
+    <br><br>
+    <h1 class="title text-left p-0 mt-5 mb-4">Effectively manage team collaboration while identifying talent gaps</h1>
+</div>
+</div>
+</header>
+
+<section id="challenges" class="challenges pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6">
+                <h3 class="title-line line-yellow">Challenges</h3>
+                <ul class="small-list">
+                    <li>Difficulties to hire and retain engineering talents</li>
+                    <li>Inability to proactively identify knowledge gaps</li>
+                    <li>Lack of effective communication and reporting with engineering stakeholders</li>
+                    <li>No data to build cases for new headcounts</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3 class="title-line line-yellow">Benefits</h3>
+                <ul class="small-list">
+                    <li>Spot learning development opportunities for your engineers</li>
+                    <li>Get tangible data to advocate for your team members</li>
+                    <li>Understand effective work and collaboration patterns</li>
+                    <li>Build strong cases for new headcounts and work balance between individuals and teams</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+<section id="expertise" class="pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">Expertise Management</h2>
+                <p class="mb-4">Expertise is defined by the level of knowledge and experience in specific technology areas such as Machine Learning & AI, Security, Distributed Systems, etc. Knowing who the true Machine Learning or Security experts are based on the analysis of their code rather than subjective measures can be extremely valuable to companies in the context of re-organization, hiring or mentoring projects. source{d} dashboards can help IT executives align company-wide objectives with engineering talents and interests.</p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="../../img/talent-1.jpg" alt="">
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col-md-6 mb-4">
+                <p>Examples of questions you should have the answers to:</p>
+                <ul class="small-list">
+                    <li>Do developers on my team have the right skill set?</li>
+                    <li>What are the mentorship opportunities I can give to my senior developers?</li>
+                    <li>What should be the profile of my next hire?</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <p>Examples of metrics you could be tracking:</p>
+                <ul class="small-list">
+                    <li>Top Areas of Expertise</li>
+                    <li>Fastest Growing / Declining Expertise</li>
+                    <li>Code ownership</li>
+                    <li>Expertise Misalignment</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-5 row">
+            <div class="col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine-download" class="btn btn-purple text-white mb-4 w-100">Download source{d}</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+//-->
+
+<section id="inner" class="pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6 order-last order-md-first">
+                <img class="img-fluid" src="../../img/talent-2.jpg" alt="">
+            </div>
+            <div class="col-md-6 order-first order-md-last">
+                <h2 class="title-line line-yellow">InnerSource & Collaboration</h2>
+                <p class="mb-4">Companies are starting to realize that they would benefit from applying the culture and values from Open Source Communities to teams behind companies firewalls. This engineering initiative is called InnerSource and consists of creating a welcoming environment where code development, discussions and decisions are all happening in the open. With source{d}, you can easily measure and manage collaboration and mentorship opportunities. </p>
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col-md-6 mb-4">
+                <p>Examples of questions you should have the answers to:</p>
+                <ul class="small-list">
+                    <li>How effective are we at cross-team / company collaboration?</li>
+                    <li>Are teams collaborating using each other's code and contributing back (outside of their core team)?</li>
+                    <li>Is code being re-used?</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <p>Examples of metrics you could be tracking:</p>
+                <ul class="small-list">
+                    <li>Per-project code ownership plots</li>
+                    <li>Co-occurrence of developers across different projects</li>
+                    <li>Share of repositories with missing documentation</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-5 row">
+            <div class="col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine-download" class="btn btn-purple text-white mb-4 w-100">Download source{d}</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="resource" class="pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">Resource Allocation & Attrition</h2>
+                <p class="mb-5">Hiring and retaining engineering talents is a challenge that most enterprises face. Data is what engineering leaders need to inform their resource allocation decisions. With source{d} they can not only build cases for new headcount but also measure attrition and HR costs and ROI of specific IT initiatives.</p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="../../img/talent-3.jpg" alt="">
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col-md-6 mb-4">
+                <p>Examples of questions you should have the answers to:</p>
+                <ul class="small-list">
+                    <li>How many employees have left or changed teams overtime?</li>
+                    <li>Are my engineering headcounts allocated to the most important/urgent projects?</li>
+                    <li>Is the work evenly distributed across individuals and teams?</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <p class="mt-5">Examples of metrics you could be tracking:</p>
+                <ul class="small-list">
+                    <li>Internal / External Attrition or Churn Rates</li>
+                    <li>Cost breakdown by activity</li>
+                    <li>Workload Balance</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-5 row">
+            <div class="col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine-download" class="btn btn-purple text-white mb-4 w-100">Download source{d}</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="services-box">
+    {{ partial "how-works.html" }}
+</div>
+{{ partial "footer.html" }}
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

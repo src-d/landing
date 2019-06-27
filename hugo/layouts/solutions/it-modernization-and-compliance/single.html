@@ -1,0 +1,190 @@
+{{ $projects := $.Site.Data.projects }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body>
+{{ partial "header.html" }}
+<div class="text-left pb-5">
+    <br><br>
+    <h1 class="title text-left p-0 mt-5 mb-4">Enabling Application Modernization and Software Compliance through actionable IT analytics</h1>
+</div>
+</div>
+</header>
+
+<section id="challenges" class="challenges pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6 mb-4">
+                <h3 class="title-line line-yellow">Challenges</h3>
+                <ul class="small-list">
+                    <li>Redundant application portfolio and development processes across entities and teams</li>
+                    <li>High maintenance costs of legacy apps</li>
+                    <li>Siloed software development life cycle data sources</li>
+                    <li>No data to support IT modernization ROI and time to value analysis</li>
+                    <li>No visibility on software governance, risk, and compliance efforts</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3 class="title-line line-yellow">Benefits</h3>
+                <ul class="small-list">
+                    <li>De risk Application Portfolio Rationalization (APR) or post M&A integration efforts</li>
+                    <li>Accelerate IT modernization decisions based on highest priorities or impact data</li>
+                    <li>Shift IT budget from maintenance to innovation</li>
+                    <li>Proactively monitor, measure and manage software governance, risks, and compliance</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="technical" class="pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">Technical Debt Assesment</h2>
+                <p class="mb-4">Every enterprise accumulates technical debt which will eventually need to be paid back. The longer you wait, the more expensive it will be to fix it. Technical debt not only creates maintenance burdens for engineering teams but also introduces risks (security, quality, reliability, etc) for your business.  source{d} helps you locate and measure your technical debt so that you can prioritize your efforts to get rid of it.</p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="../../img/it-modernization.jpg" alt="">
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col-md-6 mb-4">
+                <p>Examples of questions you should have the answers to:</p>
+                <ul class="small-list">
+                    <li>How many COBOL or Fortran lines of code/files do we have in our codebase?</li>
+                    <li>What percentage of our code/apps are developed for mainframes?</li>
+                    <li>Do we have any unmaintained code?</li>
+                    <li>Are there any high maintenance code?</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <p>Examples of metrics you could be tracking:</p>
+                <ul class="small-list">
+                    <li>Legacy Languages/ Framework analysis</li>
+                    <li>Unmaintained code analysis</li>
+                    <li>Code maintenance hotspots</li>
+                    <li>Arguments and methods counts</li>
+                    <li>File and method lengths</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-5 row">
+            <div class="col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine-download" class="btn btn-purple text-white mb-4 w-100">Download source{d}</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+<section id="portfolio" class="pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6 order-last order-md-first">
+                <img class="img-fluid" src="../../img/it-modernization-2.jpg" alt="">
+            </div>
+            <div class="col-md-6 order-first order-md-last">
+                <h2 class="title-line line-yellow">Application Portfolio Management</h2>
+                <p class="mb-4">Large companies are all turning to Application Portfolio Management to measure the value of their applications and justify their maintenance and operation costs. With source{d}, companies can get the data they need to rationalize their Application Portfolio, identify duplicate or similar source code, and better manage application dependencies. </p>
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col-md-6 mb-4">
+                <p>Examples of questions you should have the answers to:</p>
+                <ul class="small-list">
+                    <li>What applications are costly to maintain?</li>
+                    <li>What is the complexity score of my applications?</li>
+                    <li>Where do we have significant amounts of similar code that can be refactored?</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <p>Examples of metrics you could be tracking:</p>
+                <ul class="small-list">
+                    <li>Share of similar / duplicate code between teams / Repository</li>
+                    <li>Legacy vs Microservices Apps categorization</li>
+                    <li>Complexity / Health scores for major applications</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-5 row">
+            <div class="col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine-download" class="btn btn-purple text-white mb-4 w-100">Download source{d}</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+//-->
+
+<section id="governance" class="pb-5">
+    <div class="container text-dark">
+        <div class="row pt-5">
+            <div class="col-md-6">
+                <h2 class="title-line line-yellow">Software Governance, Risk and Compliance</h2>
+                <p class="mb-4">Governance, Risk and Compliance Software platforms have been around for some time. However, they don't provide the data IT executives need to answer all the questions from their legal or security departments. With source{d}, Engineering leaders can quickly monitor, measure and manage their compliance efforts at every stage of the Software Development Life Cycle. One data platform to build and share compliance dashboards and reports which include a large range of customizable security requirements and development best practices.</p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="../../img/it-modernization-3.jpg" alt="">
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col-md-6 mb-4">
+                <p>Examples of questions you should have the answers to:</p>
+                <ul class="small-list">
+                    <li>What share of public repositories is missing a license?</li>
+                    <li>What are the top overridden rules?</li>
+                    <li>Are your cryptography functions FIPS compliant?</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <p>Examples of metrics you could be tracking:</p>
+                <ul class="small-list">
+                    <li>Share of apps on preferred tech</li>
+                    <li>Top offending Technology Components</li>
+                    <li>Compliance score by entities, teams, repositories</li>
+                    <li>Top detected problems and overridden rules</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-5 row">
+            <div class="col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine-download" class="btn btn-purple text-white mb-4 w-100">Download source{d}</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="services-box">
+    {{ partial "how-works.html" }}
+</div>
+{{ partial "footer.html" }}
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+{{ $projects := $.Site.Data.projects }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body>
+    {{ partial "header.html" }}
+    <div class="text-left pb-5">
+            <br><br>
+            <h1 class="title text-left p-0 mt-5 mb-4">Gain visibility into your software portfolio, engineering team, and processes</h1>
+        </div>
+    </div>
+</header>
+
+<section id="effective" class="effective py-5">
+    <div class="container text-dark">
+        <header class="text-center mb-5">
+            <h2>7 out of 10  enterprise IT initiatives fail because executives have no visibility</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-6">
+                <img class="img-fluid" src="img/visibility.jpg" alt="">
+            </div>
+            <div class="col-sm-6">
+                <p>Lack of visibility comes from:</p>
+                <ul class="small-list">
+                    <li>Volume, variety, intricacy and versioning of source code</li>
+                    <li>Source code, software development and business data are spread across many silos</li>
+                    <li>Large volume, variety, intricacy and versions of data</li>
+                    <li>Retrieving, storing and querying at scale is hard</li>
+                    <li>Shadow IT and “Dark Data” due to developer frustration with legacy systems & slow processes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="success">
+    <div class="container text-dark">
+        <header class="text-center my-5">
+            <h2>source{d} gives IT executives visibility into codebases, IT teams & processes</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="title-line line-yellow">Codebases</h3>
+                <p class="mb-5">Make wiser use of existing technology, reduce duplication of software assets. Accelerate your IT modernization and Cloud Migration.</p>
+                <h3 class="title-line line-yellow">Teams</h3>
+                <p class="mb-5">Quickly assess your talent pool, knowledge gaps and effectively manage your teams with data-driven KPIs.</p>
+                <h3 class="title-line line-yellow">Processes</h3>
+                <p class="mb-5">Identify patterns, drive innovation and collaboration in your organization.</p>
+            </div>
+            <div class="col-sm-6">
+                <img class="img-fluid" src="img/visibility_panels.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="journey" class="journey text-white pb-5">
+    <div class="container text-center pt-5">
+        <header class="mb-5">
+            <h2>source{d} helps you at every step of your Digital Transformation journey</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-4 mb-5">
+                <div class="circle white-text large-text mb-5">1</div>
+                <h3>Set Targets</h3>
+                <p>What do we want and<br>  what do we get out of it?</p>
+            </div>
+            <div class="col-sm-4 mb-5">
+                <div class="circle white-text large-text mb-5">2</div>
+                <h3>Assess & Plan</h3>
+                <p>Where are we now and<br> what should change?</p>
+            </div>
+            <div class="col-sm-4 mb-5">
+                <div class="circle white-text large-text mb-5">3</div>
+                <h3>Execute & Monitor</h3>
+                <p>Who to involve and<br> How do we measure progress?</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "how-works.html" }}
+{{ partial "footer.html" }}
+</body>
+</html>

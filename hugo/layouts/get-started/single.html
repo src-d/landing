@@ -1,0 +1,102 @@
+{{ $projects := $.Site.Data.projects }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body class="get-started-page">
+{{ partial "header.html" }}
+        <div class="text-left py-5">
+            <h1 class="title text-left p-0 my-4">Get started with source{d}: One data platform from CIO to developers</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <ul class="nav nav-tabs start-tabs text-center mb-3 mb-md-0 w-100" id="startTabs" role="tablist">
+                <li class="nav-item col-sm-12 col-md-4">
+                    <a data-scroll="no" class="nav-link h5 h-100 active" id="engineers-tab" data-toggle="tab" href="#engineers" role="tab" aria-controls="engineers" aria-selected="true">Developers</a>
+                </li>
+                <li class="nav-item col-sm-12 col-md-4">
+                    <a data-scroll="no" class="nav-link h5 h-100" id="managers-tab" data-toggle="tab" href="#managers" role="tab" aria-controls="managers" aria-selected="false">Managers</a>
+                </li>
+                <li class="nav-item col-sm-12 col-md-4">
+                    <a data-scroll="no" class="nav-link h5 h-100" id="executives-tab" data-toggle="tab" href="#executives" role="tab" aria-controls="executives" aria-selected="false">Executives</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<section id="engineering" class="pt-5 pb-0 pb-m-5">
+    <div class="container text-dark">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tab-content" id="startTabContent">
+                    <div class="tab-pane fade show active" id="engineers" role="tabpanel" aria-labelledby="engineers-tab">
+                        <div class="row py-4">
+                            <div class="col-sm-12 col-lg-8 mb-4 mb-md-0">
+                                <h2 class="title-line line-yellow">Developers</h2>
+                                <p>With source{d} you can start getting answers to tough questions in a matter of minutes with simple SQL queries. source{d} supports different interfaces that adapt to different stages of development, workflows and use cases. Enjoy the flexibility to choose whether to work on our built-in interactive web interface, your favorite SQL client, command-line interface or a combination of these. Whether you're an Open Source project maintainer or tech lead for a project at work you can use source{d} to better understand what's going on in your codebases, its evolution over time and inform decisions on what needs to happen next!</p>
+                                <p>source{d} is part of a growing community of academic researchers interested in the fields of Software Repository mining, programming language analysis or Machine Learning on Code. We develop Open Source platform components, datasets, and Machine Learning models that researchers can use as part of their research projects The source{d} team also curates a list of tools and research papers related to Machine Learning on Code that we also share via our MLonCode newsletter!</p>
+                            </div>
+                            <div class="col-sm-12 col-lg-4 text-center">
+                                <a href="https://go.sourced.tech/community-edition-download" class="btn btn-highlight w-100 mb-4">Download source{d}</a>
+                                <a href="https://docs.sourced.tech" class="btn btn-highlight w-100 mb-4">Documentation</a>
+                                <a href="https://go.sourced.tech/newsletter" class="btn btn-purple w-100 mb-4">Newsletter Signup</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="managers" role="tabpanel" aria-labelledby="managers-tab">
+                        <div class="row py-4">
+                            <div class="col-sm-12 col-lg-8 mb-4 mb-md-0">
+                                <h2 class="title-line line-yellow">Managers</h2>
+                                <p>Engineering Manager and Directors can start getting actionable insights into the IT initiative they are responsible for. From Engineering Effectiveness to Application Portfolio Management and Cloud Native or Microservices adoption, each IT leader can leverage dashboard templates to learn about the key engineering metrics they should be monitoring closely. Our operational analytics solution allows managers to move from time-consuming rote work to data-driven decision making.</p>
+                                <p>source{d} provides a platform for operational, immediate and self-service Software Development data analysis. Easily connect all the data sources that matter to your engineering team whether it is source code, Jira or Pivotal Tracker tickets or GitHub issues. With source{d}, you can easily build graphs and charts to get the full picture you need to inform your decisions and overall strategy.</p>
+                            </div>
+                            <div class="col-sm-12 col-lg-4 text-center">
+                                <a href="https://go.sourced.tech/community-edition-download" class="btn btn-highlight w-100 mb-4">Download source{d}</a>
+                                <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100 mb-4">Request CE Demo</a>
+                                <a href="products/enterprise-edition/#trial" class="btn btn-purple w-100 mb-4">Request EE demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="executives" role="tabpanel" aria-labelledby="executives-tab">
+                        <div class="row py-4">
+                            <div class="col-sm-12 col-lg-8 mb-4 mb-md-0">
+                                <h2 class="title-line line-yellow">Executives</h2>
+                                <p>7 out 10 enterprise IT initiatives fail. IT projects fail because executives have no visibility into their software portfolios, Engineering teams and Software Development and maintenance processes. This lack of visibility comes from Software Development Life Cycle data silos and the complexity associated with retrieving, storing and querying all that data at an enterprise scale. At source{d} we're helping IT executives manage their organization at scale through Engineering Effectiveness and Efficiency dashboard. For example, we have helped enterprises improve developer productivity, move to DevOps practices and lead Application Portfolio Rationalization project across teams composed of thousands of developers.</p>
+                                <p>At source{d} we believe we can help enterprises improve every layer of their Engineering Data infrastructure stack. From data extraction, transformation, load (ETL), storage, processing, analytics, access and governance, source{d} provides an end-to-end platform designed to make everyone in your organization an operational data analyst.</p>
+                            </div>
+                            <div class="col-sm-12 col-lg-4 text-center">
+                                <a href="products/enterprise-edition/#trial" class="btn btn-highlight w-100 mb-4">Request EE demo</a>
+                                <a href="news-and-press" class="btn btn-highlight w-100 mb-4">News & Press</a>
+                                <a href="" class="btn btn-purple w-100 mb-4" data-toggle="modal" data-target="#videoModal">1m Video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" }}
+
+<div id="videoModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-dark">1m Video</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/L8EuDaVnCIY" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

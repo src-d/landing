@@ -7,9 +7,7 @@
     {{ partial "header.html" }}
 
     <div class="pb-5">
-        <h1 class="title p-0 mt-5 text-left mb-4">An exceptional mission executed by exceptional people</h1>
-        <a class="btn btn-purple-light mr-4 mb-3 mb-sm-5" href="company#careers">Job Opportunities</a>
-        <a class="btn btn-purple-light mb-3 mb-sm-5" href="company#team">Our Team</a>
+        <h1 class="title pt-5 mt-5 text-left mb-4">We empower IT executives to be data-driven leaders</h1>
     </div>
 </div>
 </header>
@@ -19,7 +17,7 @@
     <div class="row">
         <div class="col-md-7">
             <h2 class="title-line text-dark line-yellow">Roadmap</h2>
-            <p class="text-large text-dark">source{d} is building the technology stack for machine learning on source code (MLonCode). We allow code to become a first-class analyzable asset across tens of millions of repositories as well as a single one through our powerful source{d} Engine and machine learning tools.</p>
+            <p class="text-large text-dark">source{d} is building the technology stack for machine learning on source code (MLonCode). We allow code to become a first-class analyzable asset across tens of millions of repositories as well as a single one through our powerful source{d} platform and machine learning tools.</p>
             <p>With access to every open source and public git repository online today, developers and organizations can understand their code as part of the complex set of dependencies it really is. We envision every organization running a data pipeline over their software development life cycle, where source code becomes a unique, actionable dataset that can be analyzed and used in machine learning models.</p>
             <p>These are the building blocks for the next generation of new and impactful developer tools & systems that will change the way we learn programming as well as how we write & review code.</p>
         </div>
@@ -32,12 +30,6 @@
 
 <section id="careers" class="light py-5">
 <div class="container">
-    <header class="text-center mb-5">
-        <p class="subtitle text-yellow">Careers</p>
-        <h2 class="text-dark mb-4">Job Opportunities</h2>
-        <p class="text-large text-dark">Exceptional missions require exceptional people; we know that.<br>
-            If our challenges excite you and you want to help us to pave the future road towards machine learning on source code, check where you fit best from our current openings or drop us a message.</p>
-    </header>
 </div>
 <div id="offices" class="container mb-5">
     <div class="text-center">
@@ -134,16 +126,14 @@
 
 <section id="team" class="team pt-5 pb-5">
     <div class="container text-center mb-5">
-        <h2 class="title-line text-dark line-yellow">Team</h2>
-        <p class="text-dark text-large">At source{d} we are all engineers, developers and hackers ourselves. We go as far as to train and encourage all non-technical roles to also become developers themselves.</p>
+        <h2 class="title-line text-dark line-yellow">Management</h2>
+        <p class="text-dark text-large">Providing direction, the planning and the leadership to get there.</p>
     </div>
     <div class="container">
         {{ $teamsCtx := dict "teams" $teams }}
         {{ partial "teams.html" $teamsCtx }}
     </div>
 </section>
-
-{{ partial "try-sourced.html" }}
 
 {{ partial "footer.html" }}
 </body>
