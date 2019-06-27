@@ -14,8 +14,7 @@
 
 
 sections:
-  - name: Management
-    headline: Providing direction, the planning and the leadership to get there.
+  -
     members:
       - picture: eiso.png
         name: Eiso Kant
