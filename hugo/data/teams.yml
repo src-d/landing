@@ -110,7 +110,7 @@ sections:
           name: Hugo Mougard
           position: Senior Software Engineer
           github: https://github.com/m09
-        - picture: placeholder/male.png
+        - picture: guillem.png
           name: Guillem Durán
           position: Software Engineer
           github: https://github.com/Guillemdb
@@ -126,10 +126,10 @@ sections:
           name: Irina Khismatullina
           position: Junior Software Engineer
           github: https://github.com/irinakhismatullina
-        - picture: placeholder/male.png
-          name: Jan Hůla
-          position: Machine Learning Intern
-          github: https://github.com/Jan21
+        - picture: romain.png
+          name: Romain Keramitas
+          position: Junior Software Engineer
+          github: https://github.com/r0mainK
         - picture: placeholder/male.png
           name: Tristan Kalos
           position: Machine Learning Intern
@@ -194,7 +194,7 @@ sections:
         name: Santiago Mola
         position: VP of Engineering
         github: https://github.com/smola
-      - picture: placeholder/male.png
+      - picture: victor.png
         name: Victor Coisne
         position: VP of Marketing
         linkedin: https://www.linkedin.com/in/victorcoisne
