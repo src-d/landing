@@ -6,7 +6,7 @@
                 {{ if $member.github | default false }}
                     <a href="{{ $member.github }}" class="ic icon-git text-light"></a>
                 {{ else if $member.linkedin | default false }}
-                    <a href="{{ $member.githlinkedinub }}" class="ic icon-lin text-light"></a>
+                    <a href="{{ $member.linkedin }}" class="ic icon-lin text-light"></a>
                 {{ end }}
                 {{ if $.useRoleAsHeading | default false }}
                     <p class="card-intro text-medium mt-3 mb-2">{{ $member.position }}</p>
