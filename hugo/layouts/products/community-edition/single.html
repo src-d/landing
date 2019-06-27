@@ -1,0 +1,111 @@
+{{ $projects := $.Site.Data.projects }}
+
+{{ $headCtx := dict "ctx" . }}
+{{ partial "head.html" $headCtx }}
+
+<body>
+{{ partial "header.html" }}
+<div class="text-left pb-5">
+    <br><br>
+    <h1 class="title text-left p-0 mt-5 mb-4">source{d} integrates with you favorite Development tools & platforms</h1>
+</div>
+</div>
+</header>
+
+<section id="visualize" class="pt-5 pb-0">
+    <div class="container">
+        <header class="mb-5 text-center">
+            <h2 class="text-dark">Visualize your software development data  to make better decisions</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-6 mb-5">
+                <h3 class="text-medium-light mb-4">Built in UI and integrations with your favorite tools</h3>
+                <p class="text-dark">With source{d} you can start getting answers to tough questions in a matter of minutes with simple SQL queries. source{d} supports all major operating systems (Linux, Windows, MacOS), hosting environments (Cloud or On-premise), version control systems (GitHub, GitLab, Bitbucket, etc) and adapts to different stages of development, workflows and business needs. Enjoy the flexibility to choose whether to work on our built-in interactive web interface, your favorite SQL client, command-line interface or Business Intelligence platform (Tableau, Looker, PowerBI, etc).</p>
+                <div class="text-center mt-5 row">
+                    <div class="col-xl-6">
+                        <a href="https://go.sourced.tech/engine-download" class="btn btn-purple text-white mb-4 w-100">Download source{d}</a>
+                    </div>
+                    <div class="col-xl-6">
+                        <a href="https://go.sourced.tech/engine" class="btn btn-highlight w-100">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-5">
+                <img class="img-fluid p-3" src="img/visualize.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="all" class="py-5">
+    <div class="container text-dark">
+        <header class="text-center mb-5">
+            <h2>Get all your code and engineering data in one place</h2>
+        </header>
+        <div class="row">
+            <div class="col-sm-6 mb-5">
+                <img class="img-fluid p-3" src="img/all.png" alt="">
+            </div>
+            <div class="col-sm-6 text-dark">
+                <h3 class="h4 text-medium-light mb-4">From code retrieval to insights in minutes</h3>
+                <ul class="small-list">
+                    <li>
+                        <p class="mb-4"><strong>Code Retrieval</strong>: Retrieve and store the code history of your organization (including your open-source repositories) as a dataset.</p>
+                    </li>
+                    <li>
+                        <p class="mb-4"><strong>Analysis in/for any Language</strong>: Automatically identify languages, parse source code, and extract the pieces that matter in a distributed and language-agnostic way.</p>
+                    </li>
+                    <li>
+                        <p class="mb-4"><strong>History Analysis</strong>: Extract information from the evolution, commits, and metadata of your codebase and generate detailed reports and insights.</p>
+                    </li>
+                    <li>
+                        <p class="mb-4"><strong>Familiar APIs</strong>: Analyze your code through powerful friendly APIs, such as SQL, gRPC, REST, and various client libraries. Use tools you're familiar with to create reports and dashboards.</p>
+                    </li>
+                </ul>
+                <div class="text-center mt-5 row">
+                    <div class="col-lg-6">
+                        <a href="https://www.youtube.com/sourced/" class="btn btn-purple text-white mb-4 w-100">Watch Video</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="https://docs.sourced.tech/intro/" class="btn btn-highlight w-100">Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="open-components" class="open-components text-white pb-5">
+    <div class="container pt-5">
+        <header class="text-center mb-5">
+            <h2>Built on top of powerful Open Source components</h2>
+        </header>
+        <div class="row text-white">
+            <div class="col-sm-6 mb-5">
+                <h3 class="mb-4">Transparent roadmap and Ecosystem collaboration</h3>
+                <p>At source{d} we are creating a suite of Open Source tools enabling "Code as Data" and "Machine Learning on Code". From datasets and Machine Learning models to code retrieval and analysis tools, we have open-sourced more than 15 projects and are great believers in the value of Open Source transparency and collaboration.</p>
+                <p>Top OSS projects are:</p>
+                <ul class="small-list">
+                    <li>
+                        <p><strong>go-git</strong>: a highly extensible git implementation library written in pure Go.</p>
+                    </li>
+                    <li>
+                        <p><strong>Babelfish</strong> is a self-hosted server for source code parsing</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6 mb-5">
+                <img class="img-fluid p-3" src="img/open-components.png" alt="">
+            </div>
+            <div class="col-sm-12 d-sm-flex justify-content-center">
+                <a href="open-source" class="btn btn-highlight-light text-white mr-0 mr-sm-4 mb-4 mb-sm-0 col-12 col-sm-5 col-xl-4">Learn More</a>
+                <a href="community" class="btn btn-highlight col-12 col-sm-5 col-xl-4">Join the Community</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "how-works.html" }}
+{{ partial "footer.html" }}
+</body>
+</html>
