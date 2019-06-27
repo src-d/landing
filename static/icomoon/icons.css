@@ -25,6 +25,9 @@
 }
 
 
+.icon-discourse:before {
+  content: "\e903";
+}
 .icon-med:before {
   content: "\e902";
 }
