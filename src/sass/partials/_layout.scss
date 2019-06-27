@@ -749,30 +749,30 @@ section.updates {
 // Why source{d} Page
 
 .circle {
-    border: 4px solid $yellow-border;
-    border-radius: 100%;
-    font-family: $cerebri;
-    line-height: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100px;
-    width: 100px;
+  border: 4px solid $yellow-border;
+  border-radius: 100%;
+  font-family: $cerebri;
+  line-height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  width: 100px;
 
-    &.purple-text {
-      color: $purple;
-    }
+  &.purple-text {
+    color: $purple;
+  }
 
-    &.white-text {
-      color: $white;
-    }
+  &.white-text {
+    color: $white;
+  }
 
-    &.small-text {
-      font-size: 18px;
-    }
+  &.small-text {
+    font-size: 18px;
+  }
 
-    &.large-text {
-      font-size: 30px;
-    }
+  &.large-text {
+    font-size: 30px;
+  }
 }
 
 
@@ -915,9 +915,7 @@ section.updates {
 
 section.projects,
 section.visibility,
-section.projects,
 section.solutions,
-section.projects,
 section.how-for-you {
   background: url(/img/separator_6.png) center top repeat-x transparent;
   padding-top: 200px !important;
