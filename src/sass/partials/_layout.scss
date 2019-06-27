@@ -882,11 +882,15 @@ section.updates {
 }
 
 section.projects,
-section.solutions,
+section.trial,
 section.projects,
 section.how-for-you {
   background: url(/img/separator_6.png) center top repeat-x transparent;
   padding-top: 200px !important;
+}
+
+section.trial {
+  padding-top: 250px !important;
 }
 
 // Community
