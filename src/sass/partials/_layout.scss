@@ -19,6 +19,14 @@
     min-height: 30vh;
   }
 
+  .variable-header & {
+    min-height: auto;
+
+    @media (max-width: 991px) {
+      min-height: auto;
+    }
+  }
+
   h1 {
     color: $white;
     text-align: center;
@@ -160,7 +168,8 @@
 
   .home-main {
 
-    img {
+    img,
+    .home-video {
 
       @media (min-width: 1200px) {
         margin-top: -4rem;
@@ -255,15 +264,28 @@
   }
 }
 
+// Home - Video cover
+
+.home-video-cover {
+
+  .play-video {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -80px;
+  }
+}
 
 // Home - Announcement
 
 section.news .badge-text {
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 21px;
-    padding: 0 0 0 13px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 21px;
+  padding: 0 0 0 13px;
 }
 
 
@@ -283,7 +305,8 @@ section.engineering {
   }
 }
 
-.nav-tabs.eng-tabs {
+.nav-tabs.eng-tabs,
+.nav-tabs.start-tabs {
   border: none;
 }
 
@@ -356,6 +379,32 @@ section.engineering {
 
     &.active {
       background: url(/img/icons/icon-eng-04-act.svg) no-repeat center 20px #fff;
+    }
+  }
+}
+
+.nav-tabs.start-tabs {
+
+  .nav-link {
+    border: none;
+    color: $white;
+    margin-bottom: 0;
+    padding: 1.5rem 0;
+    text-decoration: none;
+
+    @media (max-width: 767.98px) {
+      background-image: none !important;
+      border-radius: .25rem;
+      padding-top: 1rem;
+    }
+
+    &:hover {
+      border: none;
+      opacity: 1;
+    }
+
+    &.active {
+      color: $black;
     }
   }
 }
@@ -639,19 +688,21 @@ section.updates {
       list-style: none;
 
       a {
-        color: $xdark-purple;
+        color: $dark-purple;
         display: inline-block;
-        line-height: 2rem;
+        line-height: 1rem;
         opacity: 0.9;
         text-decoration: none;
         font-weight: normal;
+        -webkit-transition: all 0.5s;
         transition: all 0.5s;
+        font-size: 0.75rem;
 
         &.footer-main {
           color: $xdark-purple;
           display: inline-block;
           font-family: $cerebri;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
         }
 
         &:hover {
@@ -676,6 +727,20 @@ section.updates {
         color: lighten($xdark-purple, 40%);
         text-decoration: none;
       }
+    }
+  }
+
+  .footer-copy {
+    color: $dark-purple;
+    line-height: 1rem;
+    opacity: 0.9;
+    font-weight: normal;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 0.75rem;
+
+    a {
+      color: $xdark-purple;
     }
   }
 }
@@ -823,7 +888,9 @@ section.updates {
 .events,
 .journey,
 .events,
-.what-you-get {
+.what-you-get,
+.events,
+.open-components {
   background: #400d9a;
   background: -moz-linear-gradient(top,  #400d9a 0%, #5c12ad 100%);
   background: -webkit-linear-gradient(top,  #400d9a 0%,#5c12ad 100%);
@@ -849,7 +916,9 @@ section.updates {
 section.projects,
 section.visibility,
 section.projects,
-section.solutions {
+section.solutions,
+section.projects,
+section.how-for-you {
   background: url(/img/separator_6.png) center top repeat-x transparent;
   padding-top: 200px !important;
 }
@@ -907,4 +976,82 @@ section.solutions {
       font-size: 13px;
     }
   }
+}
+
+// News and press
+
+.widget__width-height--container {
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.gnw_content_container {
+  margin: 0 auto;
+
+  .gnw_title {
+    color: $black;
+    font-family: $cerebri;
+    font-size: 30px;
+    letter-spacing: -0.6px;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 3rem;
+
+    @media (min-width: 576px) {
+      font-size: 36px;
+      letter-spacing: -0.7px;
+      line-height: 42px;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 42px;
+      line-height: 48px;
+      letter-spacing: -1px;
+    }
+
+    &:after {
+      background-color: $yellow;
+      content: "";
+      display: block;
+      height: 4px;
+      margin: 1rem 0 2rem 50%;
+      width: 64px;
+      left: -32px;
+      position: relative;
+    }
+  }
+
+  .gnw_content_evenrow,
+  .gnw_content_oddrow {
+    margin-bottom: 3rem;
+  }
+
+  .gnw_image_spacer,
+  .gnw_company_name {
+    display: none;
+  }
+
+  .gnw_headline {
+    font-family: $cerebri;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.2px;
+    margin-bottom: 0.5rem;
+
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+
+.card a.btn:hover {
+  color: $white;
+}
+
+// Get Started Page
+
+.get-started-page .header {
+  min-height: auto;
 }
