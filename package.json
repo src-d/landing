@@ -10,7 +10,7 @@
     "build": "webpack --config=webpack.config.js",
     "serve": "concurrently --kill-others \"yarn run webpack-watcher\" \"make hugo-server\" \"yarn run api-run\"",
     "serve-without-api": "concurrently --kill-others \"yarn run webpack-watcher\" \"make hugo-server\"",
-    "start": "node_modules/.bin/termax server",
+    "start": "echo \"[ERROR] Removed command, run 'make serve' instead, using the same env vars that you used for 'yarn start' \"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack-watcher": "webpack --config=webpack.config.js --watch --debug --verbose --progress --colors",
     "svg-clean": "svgo --input=static/img/icons;"
@@ -29,14 +29,13 @@
     "slick-carousel": "1.8.x"
   },
   "devDependencies": {
-    "@tww/terminus-maximus": "2.x",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.1.0",
-    "css-loader": "^0.28.4",
+    "css-loader": "^1.0",
     "eslint": "^4.4.0",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-import": "^2.7.0",
@@ -48,7 +47,7 @@
     "postcss-loader": "^2.0.5",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2",
-    "svgo": "^0.7.1",
+    "svgo": "^1.0",
     "webpack": "^2.6.1",
     "webpack-merge": "^4.1.0"
   }
