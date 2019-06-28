@@ -80,16 +80,9 @@ Its source code is under [`api` directory](api).
 
 ## Requirements
 
-You should already have [Go installed](https://golang.org/doc/install#install), and properly [configured the $GOPATH](https://github.com/golang/go/wiki/SettingGOPATH)
+You should already have [Go v1.12 (or newer) installed](https://golang.org/doc/install#install)
 ```shell
 go version; # prints your go version
-go env GOPATH; # prints your $GOPATH path
-```
-
-The project must be under the `$GOPATH`, following the Go import conventions, what means you can install and cd to its directory running:
-```shell
-go get github.com/src-d/landing/...
-cd $GOPATH/src/github.com/src-d/landing
 ```
 
 You also need [Yarn v1 installed](https://yarnpkg.com/en/docs/install)
@@ -121,6 +114,11 @@ With this command, each window runs a command, that can be also ran by you in ca
 * `make hugo-server` To serve the landing locally using hugo server
 * `yarn run api-run` To start the landing API at [http://localhost:8080](http://localhost:8080)
 
+If you do not need to load the job positions from lever (for `/company` page), you do not need to run the landing api, so yo do not [need Go](#requirements). In such circumstances, you can run the landing with:
+
+```shell
+LANDING_URL=//localhost PORT=8081 make serve-without-api
+```
 
 ## Configuration
 
