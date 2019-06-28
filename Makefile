@@ -59,7 +59,7 @@ CGO_ENABLED := 0
 MOVE := mv -f
 REMOVE := rm -rf
 COMPRESS := tar -zcf
-UNCOMPRESS := tar -zxf
+UNCOMPRESS := tar -zx
 COPY := cp -R
 
 export CGO_ENABLED
@@ -69,14 +69,8 @@ list:
 	@grep '^##' Makefile -A 1
 
 # Updates hugo dependencies
-hugo-dependencies:
-	@if [[ ! -f $(HUGO) ]]; then \
-		$(MKDIR) $(HUGO_PATH); \
-		cd $(HUGO_PATH); \
-		echo "Downloading $(HUGO_URL)"; \
-		$(CURL) $(HUGO_URL) -o $(HUGO_TAR_FILE_NAME); \
-		$(UNCOMPRESS) $(HUGO_TAR_FILE_NAME); \
-	fi;
+$(HUGO):
+	$(CURL) $(HUGO_URL) | $(UNCOMPRESS) --one-top-level=$(HUGO_PATH)
 
 # Prepares yarn
 js-dependencies:
@@ -87,19 +81,16 @@ js-dependencies:
 build: project-dependencies hugo-build
 
 ## Serves the project and the API with Hugo and Webpack watchers
-serve: hugo-clean project-dependencies
+serve: project-dependencies
 	$(JS_PACKAGE_MANAGER) run serve
 
 # Serves the project with Hugo and Webpack watchers
-serve-without-api: hugo-clean project-dependencies
+serve-without-api: project-dependencies
 	$(JS_PACKAGE_MANAGER) run serve-without-api
 
 # Prepares project dependencies
-project-dependencies: hugo-dependencies js-dependencies
+project-dependencies: $(HUGO) js-dependencies
 
-# Deletes the hugo folder
-hugo-clean:
-	$(REMOVE) $(HUGO_PATH)
 
 # Builds hugo
 hugo-build:
@@ -112,3 +103,8 @@ hugo-server:
 # Packages the landing artifact in the build directory
 package-hugo-generated:
 	$(COMPRESS) $(BUILD_PATH)/$(LANDING_ARTIFACT) public
+
+## Clean
+clean:
+	$(REMOVE) $(HUGO_PATH) $(CI_PATH) build
+	$(REMOVE) node_modules public/* static/css static/js
