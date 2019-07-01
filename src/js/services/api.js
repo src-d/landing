@@ -40,8 +40,8 @@ export function loadPosts(host, key) {
 
   const trim = c => c ? c.trim() : '';
   const desc = (text, alt) => (clean(text) || clean(alt)).replace(/\s{2,}/g,' ');
-  const removeRefs = c => c.replace(/\[(https?:)?\/\/[^\]]+(\]|$)/g,'');
-  const clean = c => trim(removeRefs(c));
+  const removeRefs = c => c ? c.replace(/\[(https?:)?\/\/[^\]]+(\]|$)/g,'') : '';
+  const clean = c => c ? trim(removeRefs(c)) : '';
 
   return request(apiPath + '?' + options.join('&'))
     .then(resp => {
