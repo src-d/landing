@@ -47,10 +47,8 @@ sections:
             url: https://doc.bblf.sh/
           - name: Gitbase
             url: https://github.com/src-d/gitbase
-          - name: Engine
-            url: https://github.com/src-d/engine
-          - name: Lookout
-            url: https://github.com/src-d/lookout
+          - name: source{d}
+            url: https://github.com/src-d/sourced-ce
 
     science:
       title: Machine Learning
