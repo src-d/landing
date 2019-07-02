@@ -9,6 +9,7 @@
     }
     
     redir /enterprise-edition /products/enterprise-edition/
+    redir /enterprise-edition/ /products/enterprise-edition/
 
     ext .html
 
