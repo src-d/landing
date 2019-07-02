@@ -7,6 +7,8 @@
         if {>X-Forwarded-Proto} is http
         /  https://{host}{uri}
     }
+    
+    redir /enterprise-edition /products/enterprise-edition/
 
     ext .html
 
