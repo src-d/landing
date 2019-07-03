@@ -50,6 +50,10 @@ $(document).ready(function(){
     $('#videoModal').on('hidden.bs.modal', function () {
         $("#videoModal iframe").attr("src", $("#videoModal iframe").attr("src"));
     });
+
+    $('#videoModalMan').on('hidden.bs.modal', function () {
+        $("#videoModalMan iframe").attr("src", $("#videoModalMan iframe").attr("src"));
+    });
 });
 
 window.onload = function () {
