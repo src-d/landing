@@ -40,8 +40,9 @@ There are some external applications loading resources from http://sourced.tech/
 
 ### Salesforce Pardot Landing Pages
 
-- [source{d} Engine Product Demo Sign-Up](http://go.sourced.tech/engine)
-- [source{d} Lookout Product Demo Sign-Up](http://go.sourced.tech/lookout)
+- [source{d} CE Download](https://go.sourced.tech/community-edition-download)
+- [source{d} EE Demo Sign-Up](https://sourced.tech/products/enterprise-edition/#trial)
+- [source{d} Newsletter sign up](https://go.sourced.tech/newsletter)
 - [source{d} Contact Us](http://go.sourced.tech/contact)
 
 #### Dependent Files
@@ -53,11 +54,8 @@ There are some external applications loading resources from http://sourced.tech/
 - `https://sourced.tech/img/logos/favicon.png`
 
 #### Linked pages
-- `https://sourced.tech/engine`
-- `https://sourced.tech/lookout`
-- `https://sourced.tech/open-source`
-- `https://sourced.tech/community`
-- `https://sourced.tech/company`
+
+- Current Header and Footer Navigation
 
 ### Ghost Blog Theme
 
