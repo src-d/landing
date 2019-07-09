@@ -27,7 +27,7 @@
 <section class="news pt-3 pb-3">
     {{ if and (default false .Site.Params.announcement.title) (default false .Site.Params.announcement.url) }}
         <div class="container">
-            <h4 class="text-dark m-0">
+            <h4 class="text-dark text-truncate m-0">
                 <span class="badge badge-warning">New</span>
                 <a class="badge-text" href="{{ .Site.Params.announcement.url }}">
                     {{ .Site.Params.announcement.title }}
