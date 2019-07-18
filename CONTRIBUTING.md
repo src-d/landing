@@ -41,7 +41,7 @@ There are some external applications loading resources from http://sourced.tech/
 ### Salesforce Pardot Landing Pages
 
 - [source{d} CE Download](https://go.sourced.tech/community-edition-download)
-- [source{d} EE Demo Sign-Up](https://sourced.tech/products/enterprise-edition/#trial)
+- [source{d} EE Demo Sign-Up](https://go.sourced.tech/l/578561/2019-04-24/5tqgk)
 - [source{d} Newsletter sign up](https://go.sourced.tech/newsletter)
 - [source{d} Contact Us](http://go.sourced.tech/contact)
 
@@ -55,7 +55,33 @@ There are some external applications loading resources from http://sourced.tech/
 
 #### Linked pages
 
-- Current Header and Footer Navigation
+- https://sourced.tech/products/community-edition/
+- https://sourced.tech/products/community-edition/
+- https://sourced.tech/products/enterprise-edition/
+- https://sourced.tech/get-started/#engineers-tab
+- https://sourced.tech/get-started/#managers-tab
+- https://sourced.tech/get-started/#executives-tab
+- https://sourced.tech/solutions/it-modernization-and-compliance/
+- https://sourced.tech/solutions/engineering-effectiveness-efficiency/
+- https://sourced.tech/solutions/devops-cloud-native-transformation/
+- https://sourced.tech/solutions/talent-assessment-and-management/
+- https://docs.sourced.tech/community-edition/
+- https://blog.sourced.tech/
+- https://sourced.tech/resources/
+- https://forum.sourced.tech/
+- https://github.com/src-d/awesome-machine-learning-on-source-code
+- https://sourced.tech/community/
+- https://sourced.tech/community/#talk
+- https://sourced.tech/community/#events
+- https://sourced.tech/open-source/
+- https://sourced.tech/company/
+- https://sourced.tech/why-sourced/
+- https://sourced.tech/news-and-press/
+- https://sourced.tech/company/#offices
+- https://sourced.tech/company/#careers
+- https://sourced.tech/company/#team
+- https://go.sourced.tech/contact
+- https://sourced.tech/legal/
 
 ### Ghost Blog Theme
 
