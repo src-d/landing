@@ -15,14 +15,14 @@ OS := Linux
 HUGO_TAR_FILE_NAME = hugo_$(HUGO_VERSION)_$(OS)-64bit.tar.gz
 HUGO_URL = https://github.com/spf13/hugo/releases/download/v$(HUGO_VERSION)/$(HUGO_TAR_FILE_NAME)
 
-# CI: do not edit this
-CI_REPOSITORY = https://github.com/src-d/ci.git
-SHARED_PATH ?= $(shell pwd)
-CI_PATH ?= $(SHARED_PATH)/.ci
-MAKEFILE_MAIN := $(CI_PATH)/Makefile.main
-$(MAKEFILE_MAIN):
-	git clone --quiet --depth 1 $(CI_REPOSITORY) $(CI_PATH);
--include $(MAKEFILE_MAIN)
+# Including ci Makefile
+CI_REPOSITORY ?= https://github.com/src-d/ci.git
+CI_BRANCH ?= v1
+CI_PATH ?= .ci
+MAKEFILE := $(CI_PATH)/Makefile.main
+$(MAKEFILE):
+	git clone --quiet --depth 1 -b $(CI_BRANCH) $(CI_REPOSITORY) $(CI_PATH);
+-include $(MAKEFILE)
 
 # CI
 TAG := master
@@ -34,7 +34,7 @@ endif
 
 # Environment
 UNAME_S := $(shell uname -s)
-HUGO_PATH := $(SHARED_PATH)/.hugo
+HUGO_PATH := $(CI_PATH)/.hugo
 HUGO_NAME := hugo
 WORKDIR := $(shell pwd)
 BUILD_PATH := $(WORKDIR)/build

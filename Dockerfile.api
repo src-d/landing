@@ -2,6 +2,6 @@ FROM alpine:3.6
 
 RUN apk --update add ca-certificates
 
-COPY bin /bin/
+COPY /build/bin /bin/
 
 CMD ["/bin/api"]
