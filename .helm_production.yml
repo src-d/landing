@@ -1,8 +1,8 @@
-ingress:
-  globalStaticIpName: landing-staging
-  hosts: 
-    - landing-staging.srcd.run
-    - www.landing-staging.srcd.run
+ingress: 
+  globalStaticIpName: landing-production
+  hosts:
+    - sourced.tech
+    - www.sourced.tech
 nodeSelector:
   cloud.google.com/gke-nodepool: default-pool
 affinity:
@@ -16,3 +16,5 @@ affinity:
          #if the chart name is changed or a nameOverride is used, this value has to be changed to the new name.
                 - landing
         topologyKey: kubernetes.io/hostname
+image:
+  registry: docker.io/srcd

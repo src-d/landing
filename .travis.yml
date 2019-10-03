@@ -1,0 +1,57 @@
+language: go
+
+go:
+  - '1.12.x'
+env:
+  global:
+    - GO111MODULE=on
+stages:
+  - name: test
+  - name: release-staging
+    if: branch = staging AND type = push
+  - name: deploy-staging
+    if: branch = staging AND type = push
+  - name: release-production
+    if: tag IS present
+  - name: deploy-production
+    if: tag IS present
+
+go_import_path: github.com/src-d/landing
+
+jobs:
+  include:
+    - name: 'Test'
+      stage: test
+      env:
+        - LANDING_URL="//sourced.tech"
+      script:
+        - make packages
+
+    - name: 'Push staging image to Docker Hub'
+      stage: release-staging
+      env:
+        - LANDING_URL="//landing-staging.srcd.run"
+      script:
+        - make packages
+        - make docker-push
+    - name: 'Push production image to Docker Hub'
+      stage: release-production
+      env:
+        - LANDING_URL="//sourced.tech"
+      script:
+        - make packages
+        - make docker-push
+
+    - name: 'Deploy to staging'
+      stage: deploy-staging
+      install:
+        - make install-helm
+      script:
+        - HELM_RELEASE=landing HELM_CHART=landing HELM_ARGS="--repo https://src-d.github.io/charts/infra/ --version 0.2.0 --set image.tag=dev-${TRAVIS_COMMIT:0:7} -f .helm_staging.yml" make deploy
+    
+    - name: 'Deploy to production'
+      stage: deploy-production
+      install:
+        - make install-helm
+      script:
+        - HELM_RELEASE=landing HELM_CHART=landing HELM_ARGS="--repo https://src-d.github.io/charts/infra/ --version 0.2.0 --set image.tag=$TRAVIS_TAG -f .helm_production.yml" CLUSTER_ENDPOINT=$PRODUCTION_CLUSTER_ENDPOINT B64_CA_CRT=$PRODUCTION_B64_CA_CRT SERVICE_ACCOUNT_TOKEN=$PRODUCTION_SERVICE_ACCOUNT_TOKEN make deploy
