@@ -48,5 +48,5 @@ params:
         linkedin: "sourced"
     # fixed web announcment; if one of its properties is empty, it won't be displayed.
     announcement:
-        title: "Announcing source{d} Enterprise Edition: A scalable, secure and extensible data platform for enterprises"
-        url: "https://blog.sourced.tech/post/announcing-source-d-enterprise-edition-a-scalable-secure-and-extensible-data-platform-for-enterprises/"
+        title: "Download our new Machine Learning for Software Development Analytics Ebook"
+        url: "https://go.sourced.tech/ml-ebook"
