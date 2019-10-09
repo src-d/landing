@@ -9,7 +9,7 @@ This repository contains the sources of the [source{d}](https://sourced.tech) La
 
 # Deployment
 
-This site is deployed in `production` and in `staging` following our [web application deployment workflow](https://github.com/src-d/guide/blob/master/engineering/continuous-delivery.md)
+This site is deployed in `production` and in `staging` following our [web application deployment workflow](https://github.com/src-d/guide/blob/master/engineering/continuous-delivery.md).
 
 
 # Contributing
